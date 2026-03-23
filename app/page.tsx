@@ -17,6 +17,8 @@ import { SettingsModal } from "@/components/settings/SettingsModal";
 import { ShortcutsModal } from "@/components/settings/ShortcutsModal";
 import { AIPlannerModal } from "@/components/ai-planner/AIPlannerModal";
 import { AnalyticsPanel } from "@/components/analytics/AnalyticsPanel";
+import { InfoSection } from "@/components/layout/InfoSection";
+import { Footer } from "@/components/layout/Footer";
 import { formatTime } from "@/lib/utils";
 import { MODE_LABELS } from "@/lib/constants";
 import type { TimerMode } from "@/lib/types";
@@ -225,6 +227,9 @@ export default function Home() {
           />
         </motion.div>
       </main>
+
+      <InfoSection />
+      <Footer />
 
       <AnimatePresence>
         {settingsOpen && (
