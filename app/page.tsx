@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useCallback, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { useTimer } from "@/hooks/useTimer";
 import { useSettings } from "@/hooks/useSettings";
 import { useSound } from "@/hooks/useSound";
@@ -13,6 +14,7 @@ import { Header } from "@/components/layout/Header";
 import { TaskList } from "@/components/tasks/TaskList";
 import { SoundMixer } from "@/components/sounds/SoundMixer";
 import { SettingsModal } from "@/components/settings/SettingsModal";
+import { ShortcutsModal } from "@/components/settings/ShortcutsModal";
 import { AIPlannerModal } from "@/components/ai-planner/AIPlannerModal";
 import { AnalyticsPanel } from "@/components/analytics/AnalyticsPanel";
 import { formatTime } from "@/lib/utils";
@@ -29,13 +31,17 @@ export default function Home() {
   const [settingsOpen, setSettingsOpen] = useState(false);
   const [aiPlannerOpen, setAIPlannerOpen] = useState(false);
   const [analyticsOpen, setAnalyticsOpen] = useState(false);
+  const [shortcutsOpen, setShortcutsOpen] = useState(false);
+
+  // Apply theme to HTML element
+  useEffect(() => {
+    document.documentElement.setAttribute("data-theme", settings.theme);
+  }, [settings.theme]);
 
   // Auto-advance to break/pomodoro on complete
   const handleComplete = useCallback(() => {
-    // Play alarm
     sound.playAlarm(settings.alarmSound, settings.alarmVolume);
 
-    // Record analytics session
     const durationMinutes = Math.round(
       (timer.mode === "pomodoro"
         ? settings.pomodoroDuration
@@ -45,12 +51,10 @@ export default function Home() {
     );
     analytics.recordSession(timer.mode, durationMinutes, tasks.activeTaskId);
 
-    // Increment pomodoro count on active task
     if (timer.mode === "pomodoro" && tasks.activeTaskId) {
       tasks.incrementPomodoro(tasks.activeTaskId);
     }
 
-    // Determine next mode
     const nextMode: TimerMode =
       timer.mode === "pomodoro"
         ? timer.pomodorosCompleted % settings.longBreakInterval === 0
@@ -60,7 +64,6 @@ export default function Home() {
 
     timer.setMode(nextMode);
 
-    // Auto-start if enabled
     if (
       (nextMode !== "pomodoro" && settings.autoStartBreaks) ||
       (nextMode === "pomodoro" && settings.autoStartPomodoros)
@@ -68,7 +71,6 @@ export default function Home() {
       setTimeout(() => timer.start(), 100);
     }
 
-    // Browser notification
     if (settings.notificationsEnabled && "Notification" in window) {
       if (Notification.permission === "granted") {
         new Notification("Pomodorian", {
@@ -76,18 +78,16 @@ export default function Home() {
             timer.mode === "pomodoro"
               ? "Great work! Time for a break."
               : "Break is over. Let's focus!",
-          icon: "/favicon.ico",
+          icon: "/icon.svg",
         });
       }
     }
   }, [timer, tasks, settings, sound, analytics]);
 
-  // Register completion handler
   useEffect(() => {
     timer.onCompleteRef.current = handleComplete;
   }, [handleComplete, timer.onCompleteRef]);
 
-  // Dynamic document title
   useEffect(() => {
     if (settings.showTimeInTitle && timer.status !== "idle") {
       document.title = `${formatTime(timer.timeRemaining)} - ${MODE_LABELS[timer.mode]}`;
@@ -96,7 +96,6 @@ export default function Home() {
     }
   }, [timer.timeRemaining, timer.mode, timer.status, settings.showTimeInTitle]);
 
-  // Request notification permission on first interaction
   useEffect(() => {
     if (
       settings.notificationsEnabled &&
@@ -112,7 +111,6 @@ export default function Home() {
     }
   }, [settings.notificationsEnabled]);
 
-  // Keyboard shortcuts
   useEffect(() => {
     function handleKeyDown(e: KeyboardEvent) {
       if (
@@ -146,6 +144,9 @@ export default function Home() {
         case "R":
           setAnalyticsOpen((v) => !v);
           break;
+        case "?":
+          setShortcutsOpen((v) => !v);
+          break;
       }
     }
 
@@ -155,7 +156,7 @@ export default function Home() {
 
   return (
     <>
-      <Background mode={timer.mode} />
+      <Background mode={timer.mode} theme={settings.theme} />
       <Header
         pomodorosCompleted={timer.pomodorosCompleted}
         onOpenSettings={() => setSettingsOpen(true)}
@@ -165,21 +166,34 @@ export default function Home() {
       <main className="flex-1 flex flex-col items-center gap-8 px-4 pt-8 pb-16 max-w-lg mx-auto w-full">
         <ModeSelector mode={timer.mode} onChange={timer.setMode} />
 
-        <Timer
-          timeRemaining={timer.timeRemaining}
-          progress={timer.progress}
-          mode={timer.mode}
-        />
+        <motion.div
+          key={timer.mode}
+          initial={{ scale: 0.95, opacity: 0.5 }}
+          animate={{ scale: 1, opacity: 1 }}
+          transition={{ duration: 0.3, ease: "easeOut" }}
+        >
+          <Timer
+            timeRemaining={timer.timeRemaining}
+            progress={timer.progress}
+            mode={timer.mode}
+          />
+        </motion.div>
 
-        <TimerControls
-          status={timer.status}
-          mode={timer.mode}
-          onStart={timer.start}
-          onPause={timer.pause}
-          onResume={timer.resume}
-          onSkip={timer.skip}
-          onReset={timer.reset}
-        />
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.1 }}
+        >
+          <TimerControls
+            status={timer.status}
+            mode={timer.mode}
+            onStart={timer.start}
+            onPause={timer.pause}
+            onResume={timer.resume}
+            onSkip={timer.skip}
+            onReset={timer.reset}
+          />
+        </motion.div>
 
         {timer.mode === "pomodoro" && (
           <div className="text-sm text-muted">
@@ -193,7 +207,12 @@ export default function Home() {
           onVolumeChange={sound.setAmbientVolume}
         />
 
-        <div className="w-full mt-4">
+        <motion.div
+          className="w-full mt-4"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.2 }}
+        >
           <TaskList
             tasks={tasks.tasks}
             activeTaskId={tasks.activeTaskId}
@@ -204,35 +223,41 @@ export default function Home() {
             onIncrementPomodoro={tasks.incrementPomodoro}
             onOpenAIPlanner={() => setAIPlannerOpen(true)}
           />
-        </div>
+        </motion.div>
       </main>
 
-      {settingsOpen && (
-        <SettingsModal
-          settings={settings}
-          onUpdate={updateSettings}
-          onClose={() => setSettingsOpen(false)}
-        />
-      )}
+      <AnimatePresence>
+        {settingsOpen && (
+          <SettingsModal
+            settings={settings}
+            onUpdate={updateSettings}
+            onClose={() => setSettingsOpen(false)}
+          />
+        )}
 
-      {aiPlannerOpen && (
-        <AIPlannerModal
-          settings={settings}
-          onImportTasks={tasks.importAITasks}
-          onClose={() => setAIPlannerOpen(false)}
-        />
-      )}
+        {aiPlannerOpen && (
+          <AIPlannerModal
+            settings={settings}
+            onImportTasks={tasks.importAITasks}
+            onClose={() => setAIPlannerOpen(false)}
+          />
+        )}
 
-      {analyticsOpen && (
-        <AnalyticsPanel
-          todayMinutes={analytics.todayMinutes}
-          todayPomodoros={analytics.todayPomodoros}
-          totalHours={analytics.totalHours}
-          streak={analytics.streak}
-          heatmap={analytics.heatmap}
-          onClose={() => setAnalyticsOpen(false)}
-        />
-      )}
+        {analyticsOpen && (
+          <AnalyticsPanel
+            todayMinutes={analytics.todayMinutes}
+            todayPomodoros={analytics.todayPomodoros}
+            totalHours={analytics.totalHours}
+            streak={analytics.streak}
+            heatmap={analytics.heatmap}
+            onClose={() => setAnalyticsOpen(false)}
+          />
+        )}
+
+        {shortcutsOpen && (
+          <ShortcutsModal onClose={() => setShortcutsOpen(false)} />
+        )}
+      </AnimatePresence>
     </>
   );
 }
