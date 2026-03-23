@@ -37,6 +37,12 @@ export function useSound() {
     audio.play().catch(() => {});
   }, []);
 
+  const playClick = useCallback(() => {
+    const audio = new Audio("/sounds/tick-start.mp3");
+    audio.volume = 0.6;
+    audio.play().catch(() => {});
+  }, []);
+
   const stopAlarm = useCallback(() => {
     if (alarmRef.current) {
       alarmRef.current.pause();
@@ -75,6 +81,7 @@ export function useSound() {
 
   return {
     playAlarm,
+    playClick,
     stopAlarm,
     toggleAmbient,
     setAmbientVolume,

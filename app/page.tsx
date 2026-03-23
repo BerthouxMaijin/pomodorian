@@ -187,9 +187,9 @@ export default function Home() {
           <TimerControls
             status={timer.status}
             mode={timer.mode}
-            onStart={timer.start}
+            onStart={() => { sound.playClick(); timer.start(); }}
             onPause={timer.pause}
-            onResume={timer.resume}
+            onResume={() => { sound.playClick(); timer.resume(); }}
             onSkip={timer.skip}
             onReset={timer.reset}
           />
