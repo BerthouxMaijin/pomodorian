@@ -76,6 +76,35 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col relative overflow-x-hidden">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "SoftwareApplication",
+              name: "Pomodorian",
+              description:
+                "AI-powered Pomodoro timer with session planning, ambient sounds, and focus analytics.",
+              url: "https://pomodorian.vercel.app",
+              applicationCategory: "ProductivityApplication",
+              operatingSystem: "Web",
+              offers: {
+                "@type": "Offer",
+                price: "0",
+                priceCurrency: "USD",
+              },
+              featureList: [
+                "AI Session Planner",
+                "Pomodoro Timer",
+                "Ambient Sounds (Rain, Café, Lo-fi, Nature, Fireplace)",
+                "Focus Analytics with Contribution Heatmap",
+                "Keyboard Shortcuts",
+                "Works Offline (PWA)",
+                "Dark and Light Mode",
+              ],
+            }),
+          }}
+        />
         {children}
       </body>
     </html>

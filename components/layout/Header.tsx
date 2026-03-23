@@ -31,6 +31,12 @@ export function Header({ pomodorosCompleted, onOpenSettings, onOpenAnalytics }: 
       </div>
 
       <div className="flex items-center gap-3">
+        <a
+          href="/blog"
+          className="text-xs text-muted hover:text-foreground transition-colors hidden sm:block"
+        >
+          Blog
+        </a>
         {pomodorosCompleted > 0 && (
           <span className="text-sm text-muted tabular-nums">
             #{pomodorosCompleted}
