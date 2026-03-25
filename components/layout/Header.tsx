@@ -12,17 +12,19 @@ export function Header({ pomodorosCompleted, onOpenSettings, onOpenAnalytics }: 
       <div className="flex items-center gap-3">
         <div className="w-8 h-8 rounded-lg bg-red-500/20 flex items-center justify-center">
           <svg
-            width="18"
-            height="18"
-            viewBox="0 0 24 24"
+            width="20"
+            height="20"
+            viewBox="0 0 100 100"
             fill="none"
-            stroke="#ef4444"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
           >
-            <circle cx="12" cy="12" r="10" />
-            <polyline points="12 6 12 12 16 14" />
+            <line x1="46" y1="18" x2="40" y2="4" stroke="#22c55e" strokeWidth="5" strokeLinecap="round"/>
+            <line x1="54" y1="18" x2="60" y2="4" stroke="#4ade80" strokeWidth="5" strokeLinecap="round"/>
+            <circle cx="50" cy="56" r="38" fill="#ef4444"/>
+            <circle cx="50" cy="56" r="24" fill="none" stroke="rgba(255,255,255,0.25)" strokeWidth="3"/>
+            <circle cx="50" cy="56" r="24" fill="none" stroke="white" strokeWidth="3.5" strokeLinecap="round" strokeDasharray="151" strokeDashoffset="38" transform="rotate(-90 50 56)"/>
+            <line x1="50" y1="56" x2="50" y2="38" stroke="white" strokeWidth="2.5" strokeLinecap="round"/>
+            <line x1="50" y1="56" x2="62" y2="62" stroke="white" strokeWidth="2" strokeLinecap="round"/>
+            <circle cx="50" cy="56" r="2.5" fill="white"/>
           </svg>
         </div>
         <span className="text-lg font-semibold text-foreground">
