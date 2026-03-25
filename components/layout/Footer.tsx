@@ -34,6 +34,15 @@ export function Footer() {
           >
             Contact
           </Link>
+          <span className="text-border">·</span>
+          <a
+            href="https://en.tipeee.com/jbberthoux/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-red-400 hover:text-red-300 transition-colors"
+          >
+            Support Us
+          </a>
         </div>
         <p className="text-center text-xs text-muted mt-4">
           Made with focus by Pomodorian &middot; {new Date().getFullYear()}
