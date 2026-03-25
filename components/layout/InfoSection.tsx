@@ -1,10 +1,11 @@
 "use client";
 
 import Link from "next/link";
+import { PromoVideo } from "./PromoVideo";
 
 export function InfoSection() {
   return (
-    <section className="w-full max-w-3xl mx-auto px-6 mt-12 space-y-16 text-sm leading-relaxed">
+    <section className="w-full max-w-3xl mx-auto px-6 mt-[50vh] space-y-16 text-sm leading-relaxed">
       {/* Hero */}
       <div className="text-center space-y-3">
         <h2 className="text-2xl font-bold text-foreground">
@@ -14,6 +15,9 @@ export function InfoSection() {
           Free. No account required. Works offline.
         </p>
       </div>
+
+      {/* Promo Video */}
+      <PromoVideo />
 
       {/* What is Pomodorian */}
       <div className="glass rounded-2xl p-6 space-y-3">

@@ -129,7 +129,7 @@ export default async function SeoPage({
     isPartOf: {
       "@type": "WebSite",
       name: "Pomodorian",
-      url: "${SITE_URL}",
+      url: `${SITE_URL}`,
     },
   };
 
