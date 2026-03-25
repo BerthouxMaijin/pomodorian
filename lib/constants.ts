@@ -58,7 +58,7 @@ export const MODE_COLORS: Record<
 
 export const ALARM_SOUNDS: Record<string, { label: string; src: string }> = {
   gentle: { label: "Gentle", src: "/sounds/alarm-gentle.mp3" },
-  classic: { label: "Classic", src: "/sounds/alarm-classic.mp3" },
+  classic: { label: "Digital Alert", src: "/sounds/alarm-classic.mp3" },
   bell: { label: "Bell", src: "/sounds/alarm-bell.mp3" },
 };
 
