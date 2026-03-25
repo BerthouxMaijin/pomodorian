@@ -1,5 +1,8 @@
 import type { AppSettings, TimerMode } from "./types";
 
+export const SITE_URL = "https://pomodorian.app";
+export const SITE_NAME = "Pomodorian";
+
 export const DEFAULT_SETTINGS: AppSettings = {
   pomodoroDuration: 25 * 60,
   shortBreakDuration: 5 * 60,

@@ -1,0 +1,47 @@
+Article written to `content/blog/en/stop-procrastinating-timeboxing.md`. Here's what it covers:
+
+**~1,400 words** with proper frontmatter, structured with H2/H3 headings.
+
+**Sources cited (all linked inline):**
+- Sirois & Pychyl (2013) — procrastination as emotion regulation
+- Piers Steel (2007) — meta-analysis on procrastination predictors
+- Marc Zao-Sanders, HBR — timeboxing ranked #1 productivity technique
+- Parkinson's Law — original 1955 observation
+- Gollwitzer & Sheeran (2006) — implementation intentions meta-analysis (d=0.65)
+- Danziger et al. (2011) — judicial decision fatigue study (PNAS)
+- Zeigarnik effect
+
+**Internal links (3):**
+- `/blog/pomodoro-technique-complete-guide`
+- `/deep-work-timer`
+- Pomodorian homepage (linked twice)
+
+**Pomodorian mentions:** 2 natural mentions — one for starting sessions with ambient sounds, one for tracking/analytics. Not pushy.
+```
+FACT-CHECK REPORT: /Users/jean-baptiste/Projects/pomodorian/content/blog/en/stop-procrastinating-timeboxing.md
+Score: 9/10
+Status: published
+Claims checked: 10
+Confirmed: 8
+Reformulated: 2
+Removed: 0
+Issues: none
+```
+
+**Details on the 2 reformulated claims:**
+
+1. **PNAS parole study (line 69)**: The raw finding (65% → ~0%) is confirmed, but the causal interpretation ("depleted cognitive resources") is disputed by multiple follow-up studies (statistical artifact, non-random case ordering). Reformulated from asserting depletion as fact to "suggesting that... may deplete" — properly hedged.
+
+2. **Zeigarnik effect (line 112)**: A 2025 meta-analysis (Ghibellini & Meier) found "the Zeigarnik effect lacks universal validity" for the memory component. The related Ovsiankina effect (tendency to resume tasks) is robust. Reformulated from a definitive scientific claim to "the scientific evidence is mixed, the practical observation is consistent" — hedged while preserving the actionable advice.
+
+**Score breakdown:**
+| Criteria | Points |
+|----------|--------|
+| All factual claims sourced or properly hedged | 3/3 |
+| 1000+ words with good H2/H3 structure | 2/2 |
+| Target keywords present naturally | 1/1 |
+| Actionable, practical content | 2/2 |
+| No repetitive or generic filler | 1/1 |
+| Good readability | 1/1 |
+| **Deduction**: Relies on a contested study (PNAS) even when hedged | -1 |
+| **Total** | **9/10** |
