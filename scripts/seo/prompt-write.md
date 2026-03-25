@@ -23,6 +23,40 @@ Write a high-quality SEO blog article on the following topic:
 8. **Target keywords**: Include them naturally in headings and text. Don't keyword-stuff.
 9. **Internal links**: Link to 1-2 other relevant pages on the site (blog articles or SEO pages) if they exist.
 
+## E-E-A-T Rules (Google Quality Guidelines)
+
+### Experience
+- **Show first-hand experience**. Write as someone who actually uses these techniques, not as a distant observer. Use phrases like "In my experience...", "After testing this for a month...", "What I've found works best is...".
+- **Include practical examples** from real workflows — not abstract theory.
+
+### Expertise
+- **Cite recognized experts** by name and credentials when relevant. Example: "Francesco Cirillo, creator of the Pomodoro Technique, [recommends](...)..." or "Cal Newport, computer science professor and author of Deep Work, [argues](...)..."
+- **Reference peer-reviewed research** when available (journals, university studies). Prefer primary sources over blog summaries.
+- **Use precise, domain-specific language** — don't dumb things down, but explain technical terms when first introduced.
+
+### Authoritativeness
+- **Cite authoritative sources**: prefer .edu, .gov, peer-reviewed journals, recognized industry publications (Harvard Business Review, Nature, etc.) over random blog posts.
+- **Cross-reference claims** — if a stat appears in multiple reliable sources, mention that: "Multiple studies, including [research from Stanford](...) and [a meta-analysis in PLOS ONE](...), confirm..."
+- **Acknowledge nuance and limitations**. Don't make absolute claims. "The evidence suggests..." is more authoritative than "Science proves..."
+
+### Trustworthiness
+- **Be transparent** about Pomodorian being mentioned (we're the publisher). Never disguise promotion as neutral advice.
+- **Present competitor tools fairly** in comparison contexts. State facts, not opinions.
+- **Include a "Key Takeaways" or "TL;DR" section** at the end — this signals content quality and helps both users and AI crawlers extract value quickly.
+- **Date-stamp claims** when relevant: "As of 2026..." — this helps both Google and AI engines assess freshness.
+
+## GEO Rules (Generative Engine Optimization)
+
+The goal is to make this article easily citable by AI search engines (Google AI Overviews, ChatGPT, Perplexity, etc.).
+
+1. **Answer the core question in the first 2-3 sentences** of the article. AI engines extract direct answers from early content. Don't bury the lede.
+2. **Use definition patterns** for key concepts: "[Term] is [clear one-sentence definition]." This makes content snippet-friendly.
+3. **Structure for extraction**: Use bullet points, numbered lists, and comparison tables. AI engines prefer structured data over paragraphs.
+4. **Include a FAQ section** (## Frequently Asked Questions) with 3-5 Q&A pairs using H3 headings for each question. These are directly extractable by AI.
+5. **Add "How to" steps** when applicable — numbered, actionable, concise. AI engines love step-by-step instructions.
+6. **Use clear, unambiguous language**. Avoid idioms, sarcasm, or culturally-specific references that AI might misinterpret.
+7. **Provide statistics with context**: "X% [of what group] [did what] [according to whom] [when]" — not just "X% of people..."
+
 ## Frontmatter format
 
 The article must start with this YAML frontmatter:
@@ -32,6 +66,7 @@ The article must start with this YAML frontmatter:
 title: "SEO-optimized title (50-60 chars ideal)"
 description: "Meta description with target keyword (150-160 chars)"
 date: "{{DATE}}"
+author: "Jean-Baptiste Berthoux"
 readTime: "X min"
 keywords:
   - keyword 1
@@ -53,6 +88,8 @@ sources:
 - Do NOT write walls of text — use short paragraphs, bullets, numbered lists
 - Do NOT mention competitors negatively — be factual and fair
 - Do NOT add emojis unless the article tone calls for it
+- Do NOT make absolute claims ("the best", "proven to", "guaranteed to")
+- Do NOT start the article with a question (Google considers this low-quality pattern)
 
 ## Output
 

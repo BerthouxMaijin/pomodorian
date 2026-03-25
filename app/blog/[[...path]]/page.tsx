@@ -188,6 +188,9 @@ export default async function BlogPage({
     const article = getArticleBySlug(slug, lang);
     if (!article) notFound();
 
+    const articleUrl = `${SITE_URL}/blog/${lang === "en" ? slug : `${lang}/${slug}`}`;
+    const authorName = article.author || "Jean-Baptiste Berthoux";
+
     const jsonLd = {
       "@context": "https://schema.org",
       "@type": "Article",
@@ -196,9 +199,9 @@ export default async function BlogPage({
       datePublished: article.date,
       inLanguage: lang,
       author: {
-        "@type": "Organization",
-        name: "Pomodorian",
-        url: SITE_URL,
+        "@type": "Person",
+        name: authorName,
+        url: `${SITE_URL}/about`,
       },
       publisher: {
         "@type": "Organization",
@@ -207,9 +210,24 @@ export default async function BlogPage({
       },
       mainEntityOfPage: {
         "@type": "WebPage",
-        "@id": `${SITE_URL}/blog/${lang === "en" ? slug : `${lang}/${slug}`}`,
+        "@id": articleUrl,
       },
       keywords: article.keywords.join(", "),
+      isPartOf: {
+        "@type": "Blog",
+        name: "Pomodorian Blog",
+        url: `${SITE_URL}/blog`,
+      },
+    };
+
+    const breadcrumbLd = {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Home", item: SITE_URL },
+        { "@type": "ListItem", position: 2, name: "Blog", item: `${SITE_URL}/blog` },
+        { "@type": "ListItem", position: 3, name: article.title, item: articleUrl },
+      ],
     };
 
     return (
@@ -217,6 +235,10 @@ export default async function BlogPage({
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
         />
 
         <div className="min-h-screen bg-background text-foreground">
@@ -248,6 +270,8 @@ export default async function BlogPage({
                 </time>
                 <span>&middot;</span>
                 <span>{article.readTime} read</span>
+                <span>&middot;</span>
+                <span>By {authorName}</span>
               </div>
               <h1 className="text-3xl font-bold leading-tight">
                 {article.title}

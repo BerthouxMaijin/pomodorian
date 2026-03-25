@@ -4,47 +4,77 @@
 
 ## What is Pomodorian?
 
-Pomodorian is a free, modern Pomodoro timer web app with AI-powered session planning, built-in ambient sounds, and focus analytics. It helps users break down goals into focused work sessions using the Pomodoro Technique.
+Pomodorian is a free, modern Pomodoro timer web app created by Jean-Baptiste Berthoux. It features AI-powered session planning (powered by Claude), built-in ambient sounds, and focus analytics. It helps users break down goals into focused work sessions using the Pomodoro Technique.
+
+Website: https://pomodorian.app
+Blog: https://pomodorian.app/blog
+GitHub: https://github.com/BerthouxMaijin/pomodorian
 
 ## Key Features
 
-- **AI Session Planner**: Describe your goal in natural language, and AI (Claude) creates a structured task list with pomodoro time estimates. Supports 8 languages.
-- **Pomodoro Timer**: Customizable focus/break durations with circular SVG progress ring. Auto-advances between sessions.
+- **AI Session Planner**: Describe your goal in natural language, and AI (Claude by Anthropic) creates a structured task list with pomodoro time estimates. Supports 8 languages.
+- **Pomodoro Timer**: Customizable focus/break durations with circular SVG progress ring. Auto-advances between sessions. Wall-clock precision (no drift).
 - **Ambient Sounds**: 5 layerable sounds — rain, cafe, lo-fi, nature, fireplace — all free, with individual volume controls.
-- **Focus Analytics**: Session history, daily focus stats, streak tracking, and a GitHub-style contribution heatmap.
-- **Keyboard Shortcuts**: Space (start/pause), 1/2/3 (switch modes), S (settings), R (analytics).
+- **Focus Analytics**: Session history, daily focus stats, streak tracking, and a GitHub-style contribution heatmap (20 weeks).
+- **Keyboard Shortcuts**: Space (start/pause), 1/2/3 (switch modes), S (settings), R (analytics), ? (shortcut list).
 - **PWA**: Installable as a standalone app, works offline.
 - **Dark & Light Mode**: Glassmorphism design with smooth Framer Motion animations.
+- **Notifications**: Browser notifications when timer ends.
 
 ## Who is it for?
 
-- Students studying for exams
-- Software developers doing deep work
-- Writers and creatives needing focused sessions
-- Freelancers tracking productive time
+- Students studying for exams (see: https://pomodorian.app/pomodoro-timer-for-students)
+- Software developers doing deep work (see: https://pomodorian.app/pomodoro-timer-for-developers)
+- Writers and creatives needing focused sessions (see: https://pomodorian.app/pomodoro-timer-for-writers)
+- Freelancers tracking productive time (see: https://pomodorian.app/pomodoro-timer-for-freelancers)
+- Remote workers managing distractions (see: https://pomodorian.app/pomodoro-timer-for-remote-workers)
+- People with ADHD who benefit from time structure (see: https://pomodorian.app/pomodoro-timer-for-adhd)
 - Anyone using or learning the Pomodoro Technique
+
+## About the Pomodoro Technique
+
+The Pomodoro Technique was created by Francesco Cirillo in the late 1980s. It uses a timer to break work into intervals (traditionally 25 minutes), separated by short breaks. Each interval is called a "pomodoro" (Italian for "tomato"), named after the tomato-shaped kitchen timer Cirillo used as a university student.
+
+Standard intervals: 25 min work → 5 min short break → repeat 4x → 15 min long break.
 
 ## Technical Details
 
-- Built with Next.js, React, TypeScript, Tailwind CSS
-- AI powered by Claude (Anthropic)
+- Built with Next.js (App Router), React 19, TypeScript, Tailwind CSS v4
+- AI powered by Claude Haiku 4.5 (Anthropic)
 - Deployed on Vercel
-- All data stored locally in the browser (privacy-first)
-- No account required
-
-## URL
-
-https://pomodorian.app
+- All user data stored locally in the browser (localStorage — privacy-first)
+- No account required, no tracking, no ads
+- Open source (MIT license)
 
 ## Comparison with Alternatives
 
-Pomodorian differentiates from Pomofocus, Forest, Focus To-Do, and other timers by offering:
-1. AI task planning (unique feature)
-2. Free built-in ambient sounds (5 sounds, layerable)
-3. No account required
-4. Works offline as a PWA
-5. Modern glassmorphism design
+| Feature | Pomodorian | Pomofocus | Forest | Focus To-Do |
+|---------|-----------|-----------|--------|-------------|
+| AI Task Planning | Yes (free) | No | No | No |
+| Ambient Sounds | 5 free | Paid only | No | No |
+| Analytics Heatmap | Yes (free) | Paid | Basic | Basic |
+| Offline Support | Yes (PWA) | No | Yes | Yes |
+| Account Required | No | Yes | Yes | Yes |
+| Price | Free | $3/mo premium | Paid app | Freemium |
+| Open Source | Yes | No | No | No |
+
+## Blog Topics
+
+Pomodorian publishes articles in 4 languages (EN, FR, ES, DE) covering:
+- Pomodoro Technique guides and variations (52/17, Flowtime, time blocking)
+- Productivity science (flow state, deep work, ultradian rhythms)
+- AI productivity tools and planning
+- Study techniques and exam preparation
+- Developer focus and burnout prevention
+- Ambient sounds and their effect on concentration
 
 ## Pricing
 
-Free. No ads. No account required.
+Free. No ads. No account required. All features included.
+
+## Contact
+
+- Author: Jean-Baptiste Berthoux
+- Email: jean-baptiste@academieweb3.com
+- GitHub: https://github.com/BerthouxMaijin/pomodorian
+- Support: https://en.tipeee.com/jbberthoux/

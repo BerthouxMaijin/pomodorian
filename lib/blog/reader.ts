@@ -7,6 +7,7 @@ export interface Article {
   title: string;
   description: string;
   date: string;
+  author: string;
   readTime: string;
   keywords: string[];
   status: "published" | "draft";
@@ -32,6 +33,7 @@ function readArticlesFromDir(lang: string): Article[] {
         title: data.title ?? "",
         description: data.description ?? "",
         date: data.date ?? "",
+        author: data.author ?? "Jean-Baptiste Berthoux",
         readTime: data.readTime ?? "",
         keywords: data.keywords ?? [],
         status: data.status ?? "draft",
