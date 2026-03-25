@@ -1,1 +1,43 @@
 You're out of extra usage · resets 3pm (Europe/Paris)
+Article written to `/content/blog/fr/meilleurs-sons-ambiance-concentration.md` — ~1,800 words of content (2,181 including frontmatter).
+
+**What's included:**
+- 10 scientific sources linked inline (Mehta et al. 2012, fMRI nature sounds study, pink noise study, lo-fi cognition study, dopamine/music study, etc.)
+- 6 sound types covered: café noise, nature sounds, pink noise, lo-fi, binaural beats, and what to avoid (lyrics)
+- 2 internal links: `/fr/blog/pauses-productives-que-faire` and `/fr/blog/organiser-journee-teletravail`
+- 2 natural Pomodorian mentions with link to https://pomodorian.app
+- Practical "choose by task type" guide and implementation tips
+- All 4 target keywords used naturally throughout
+```
+FACT-CHECK REPORT: /Users/jean-baptiste/Projects/pomodorian/content/blog/fr/meilleurs-sons-ambiance-concentration.md
+Score: 10/10
+Status: published
+Claims checked: 17
+Confirmed: 17
+Reformulated: 0
+Removed: 0
+Issues: none
+```
+
+**Details:**
+
+All 17 factual claims verified against their sources:
+- JCR/University of Illinois study (70 dB moderate noise, creativity) — confirmed
+- 85 dB threshold / inverted U-curve — confirmed
+- Brighton & Sussex Medical School fMRI (natural vs artificial sounds, outward/inward attention) — confirmed
+- Stressed individuals benefit most from nature sounds — confirmed
+- Rensselaer Polytechnic Institute (mountain stream vs white noise vs silence) — confirmed
+- 2022 student study (nature sounds app, engagement, procrastination) — confirmed
+- Pink noise 93.6% vs 88.8% accuracy — confirmed
+- Pink noise working memory improvement — confirmed
+- 2024 ADHD meta-analysis (13 studies, 335 participants) — confirmed
+- Brown noise lacking formal studies — confirmed
+- Journal of Cognition lofi study (no negative effect of instrumental lofi) — confirmed
+- 2024 lofi anxiety study (tandfonline) — confirmed
+- Dopamine/music causal evidence study — confirmed
+- 2021 sustained attention study (62% vs 54%) — confirmed
+- 2015 binaural beats 40 Hz gamma study — confirmed
+- 2023 binaural beats 1000 participants (reduced performance) — confirmed
+- Music with lyrics impairs verbal/visual memory and reading comprehension — confirmed
+
+**Fix applied:** Added 2 missing source URLs to frontmatter (tandfonline lofi study, Nature binaural beats study).

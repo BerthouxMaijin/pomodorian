@@ -1,0 +1,26 @@
+Article looks good. Here's the report:
+
+```
+FACT-CHECK REPORT: /Users/jean-baptiste/Projects/pomodorian/content/blog/fr/guide-complet-pomodoro-debutants.md
+Score: 9/10
+Status: published
+Claims checked: 7
+Confirmed: 5
+Reformulated: 2
+Removed: 0
+Issues: none
+```
+
+**Details of changes made:**
+
+| # | Claim | Verdict | Action |
+|---|-------|---------|--------|
+| 1 | Cirillo invented Pomodoro in late 1980s as Italian university student | CONFIRMED | No change |
+| 2 | Ariga & Lleras 2011, Cognition — vigilance decrement, brief diversions reset attention | CONFIRMED | No change |
+| 3 | Albulescu et al. 2022 — "des dizaines d'études", "en particulier quand elles incluent une activité physique légère" | PARTIALLY INCORRECT | Fixed: "22 études", removed unsupported physical activity claim, replaced with accurate description of effect consistency |
+| 4 | DeskTime 52-17 ratio, updated with newer data | CONFIRMED | No change |
+| 5 | Ogut 2025, BMC Medical Education — 32 studies, positive correlation with concentration | CONFIRMED | No change |
+| 6 | Cirillo's strategy "informer, négocier, rappeler" (3 steps) | INACCURATE | Fixed to "informer, négocier, planifier, rappeler" (4 steps matching the actual "Inform, Negotiate, Schedule, Call Back" strategy) |
+| 7 | `francescocirillo.com/products/the-pomodoro-technique` | 404 | Replaced with `pomodorotechnique.com` (the official Pomodoro Technique site) |
+
+**Score breakdown:** Sourced claims 3/3 · Structure & length 2/2 · Keywords 1/1 · Actionable content 2/2 · No filler 1/1 · Readability 0/1 (minor: the "Adapter la méthode" section is thin compared to other sections).

@@ -1,1 +1,37 @@
 You're out of extra usage · resets 3pm (Europe/Paris)
+Article written to `/content/blog/en/deep-work-programmers-framework.md`.
+
+**Summary:**
+- ~1,500 words, 8-minute read
+- 8 credible sources linked inline (Gloria Mark, Cal Newport, Paul Graham, McKinsey, DeskTime, Mehta et al., GitHub blog, Microsoft Research SPACE framework)
+- Pomodorian mentioned 3 times with natural context (customizable intervals, ambient sounds, focus analytics)
+- 2 internal links: `/blog/en/ambient-sounds-productivity-science` and `/blog/en/science-of-flow-state`
+- Structured with practical 4-layer framework, sample schedule, objections section, and metrics
+- All four target keywords used naturally in headings and body text
+```
+FACT-CHECK REPORT: /Users/jean-baptiste/Projects/pomodorian/content/blog/en/deep-work-programmers-framework.md
+Score: 9/10
+Status: published
+Claims checked: 8
+Confirmed: 6
+Reformulated: 2
+Removed: 0
+Issues: none
+```
+
+**Details:**
+
+| # | Claim | Verdict |
+|---|-------|---------|
+| 1 | Cal Newport is a CS professor at Georgetown who coined "deep work" | CONFIRMED |
+| 2 | Gloria Mark: 23 min 15 sec to resume after interruption | CONFIRMED |
+| 3 | Paul Graham "Maker's Schedule" quote | CONFIRMED |
+| 4 | DeskTime: top performers work ~52 min, break 17 min | CONFIRMED |
+| 5 | McKinsey: executives 5x more productive in flow | CONFIRMED |
+| 6 | JCR: 70 dB ambient noise enhances performance | REFORMULATED — changed "cognitive performance compared to silence" → "creative performance compared to quieter environments" (study tested creativity specifically, compared 70dB vs 50dB, not silence) |
+| 7 | Shopify eliminated all meetings >2 people | REFORMULATED — changed "all meetings" → "all recurring meetings" and "no-meeting days" → "no-meeting Wednesdays" |
+| 8 | SPACE framework: uninterrupted focus time as core dimension | CONFIRMED |
+
+**All 8 source URLs verified as accessible. Both internal links (`/blog/en/ambient-sounds-productivity-science`, `/blog/en/science-of-flow-state`) exist. Pomodorian feature claims are accurate.**
+
+**Score breakdown:** All claims now sourced (3) + good structure/length (2) + keywords natural (1) + very actionable 4-layer framework + sample schedule (2) + no filler (1). Docked 1 point: article could use more concrete code-specific examples in the framework layers.

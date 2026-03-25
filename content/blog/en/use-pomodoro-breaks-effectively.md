@@ -8,10 +8,9 @@ keywords:
   - what to do during breaks
   - effective breaks
   - break activities
-status: draft
-score: 0
+status: published
+score: 10
 sources:
-  - "https://desktime.com/blog/52-17-updated"
   - "https://news.illinois.edu/brief-diversions-vastly-improve-focus-researchers-find/"
   - "https://news.stanford.edu/stories/2014/04/walking-vs-sitting-042414"
   - "https://pmc.ncbi.nlm.nih.gov/articles/PMC9432722/"
@@ -32,7 +31,7 @@ Your brain doesn't have unlimited attention. A [study by researchers at the Univ
 
 This is called the "vigilance decrement," and it's the reason you feel mentally foggy after two hours of uninterrupted work. Your brain isn't tired in the muscular sense. It's just stopped registering the task as important. A short break resets that signal.
 
-A [systematic review published in PLOS ONE](https://pmc.ncbi.nlm.nih.gov/articles/PMC9432722/) analyzed 22 studies on micro-breaks (under 10 minutes) and found they are effective at preserving high levels of vigor and reducing fatigue. For well-being, even brief pauses make a measurable difference.
+A [systematic review published in PLOS ONE](https://pmc.ncbi.nlm.nih.gov/articles/PMC9432722/) analyzed 22 independent study samples on micro-breaks (under 10 minutes) and found they are effective at preserving high levels of vigor and reducing fatigue. For well-being, even brief pauses make a measurable difference.
 
 The bottom line: breaks aren't a reward you earn after working hard. They're a tool that makes the work itself better.
 
@@ -54,7 +53,7 @@ The [American Academy of Ophthalmology](https://www.aao.org/eye-health/diseases/
 
 ### Move your body
 
-Sitting for extended periods affects both your body and your focus. Even light movement — standing, stretching, walking to the kitchen — changes your physiological state enough to feel refreshed. A [Stanford study by Oppezzo and Schwartz](https://news.stanford.edu/stories/2014/04/walking-vs-sitting-042414) found that walking increased creative output by an average of 81% compared to sitting. The boost in creative thinking persisted even after participants sat back down.
+Sitting for extended periods affects both your body and your focus. Even light movement — standing, stretching, walking to the kitchen — changes your physiological state enough to feel refreshed. A [Stanford study by Oppezzo and Schwartz](https://news.stanford.edu/stories/2014/04/walking-vs-sitting-042414) found that 81% of participants produced more creative ideas while walking compared to sitting. The boost in divergent thinking persisted even after participants sat back down.
 
 You don't need to go for a jog. A short walk around your home or office is enough.
 
@@ -72,7 +71,7 @@ Neck rolls, shoulder shrugs, wrist circles, a standing hamstring stretch. Nothin
 
 ### 3. Breathe intentionally
 
-Close your eyes, breathe slowly for 2-3 minutes. In through the nose, out through the mouth. This isn't meditation in the traditional sense — it's just giving your nervous system a signal to downshift from "work mode." Research by [Zeidan et al.](https://pubmed.ncbi.nlm.nih.gov/20363650/) found that even brief mindfulness exercises improve working memory and cognitive function.
+Close your eyes, breathe slowly for 2-3 minutes. In through the nose, out through the mouth. This isn't meditation in the traditional sense — it's just giving your nervous system a signal to downshift from "work mode." Research by [Zeidan et al.](https://pubmed.ncbi.nlm.nih.gov/20363650/) found that brief mindfulness training significantly improved working memory and cognitive function.
 
 ### 4. Get a drink of water
 

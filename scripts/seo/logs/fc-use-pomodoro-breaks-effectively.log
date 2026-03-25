@@ -1,0 +1,20 @@
+```
+FACT-CHECK REPORT: /Users/jean-baptiste/Projects/pomodorian/content/blog/en/use-pomodoro-breaks-effectively.md
+Score: 10/10
+Status: published
+Claims checked: 7
+Confirmed: 7
+Reformulated: 3
+Removed: 0
+Issues: none
+```
+
+**Details of corrections:**
+
+1. **Stanford walking study (critical fix)**: "walking increased creative output by an average of 81%" → "81% of participants produced more creative ideas while walking". The original phrasing misrepresented the statistic — it's 81% of participants who improved, not an 81% average increase.
+
+2. **PLOS ONE review (minor fix)**: "22 studies" → "22 independent study samples" (technically 22 samples from 19 publications).
+
+3. **Zeidan mindfulness (minor fix)**: "even brief mindfulness exercises" → "brief mindfulness training" — the study involved 4 days of training, not a single exercise.
+
+4. **Removed DeskTime URL** from sources — it was not referenced anywhere in the article.

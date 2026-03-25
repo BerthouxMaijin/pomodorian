@@ -1,1 +1,33 @@
 You're out of extra usage · resets 3pm (Europe/Paris)
+
+
+The background research agent finished (it couldn't do web searches, but I had already handled that directly). The article is complete and ready for review.
+```
+FACT-CHECK REPORT: /Users/jean-baptiste/Projects/pomodorian/content/blog/en/best-study-techniques-science.md
+Score: 9/10
+Status: published
+Claims checked: 12
+Confirmed: 9
+Reformulated: 3
+Removed: 0
+Issues: none
+```
+
+**Corrections made:**
+
+1. **Cepeda et al. (2006) numbers** — Article claimed "254 studies involving over 14,000 observations." Actual paper reports 184 articles spanning 317 experiments. Fixed.
+
+2. **Ebbinghaus forgetting curve** — Article said "roughly half of new material within 24 hours." Ebbinghaus's data and modern replications show ~67% forgetting within 24 hours. Changed to "up to two-thirds."
+
+3. **Walker & Stickgold (2006) URL** — Link pointed to PMC2680680 (a different 2007 paper by Stickgold & Walker). Updated to the correct 2006 Annual Review of Psychology paper (PubMed 16318592).
+
+**All other claims confirmed:**
+- Karpicke & Blunt (2011) — retrieval practice vs concept mapping ✓
+- Roediger & Karpicke (2006) — testing effect, one-week retention ✓
+- Taylor & Rohrer (2010) — interleaved math 77% vs 38% ✓
+- Dunlosky et al. (2013) — utility ratings for all techniques ✓
+- Chase et al. (2009) — protégé effect ✓
+- Erickson et al. (2011) — exercise increases hippocampus size ✓
+- Harvard Medical School — exercise, inflammation, growth factors ✓
+- Pomodorian feature claims — accurate ✓
+- All URLs return valid pages ✓

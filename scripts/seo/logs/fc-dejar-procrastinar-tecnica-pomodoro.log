@@ -1,0 +1,27 @@
+```
+FACT-CHECK REPORT: /Users/jean-baptiste/Projects/pomodorian/content/blog/es/dejar-procrastinar-tecnica-pomodoro.md
+Score: 9/10
+Status: published
+Claims checked: 7
+Confirmed: 7
+Reformulated: 0
+Removed: 0
+Issues fixed:
+- "más de 100 técnicas" → "100 técnicas" (HBR article says exactly 100, not "more than 100")
+- Internal link pointed to English slug /blog/pomodoro-technique-complete-guide → fixed to Spanish /blog/guia-completa-tecnica-pomodoro
+- Removed unused desktime.com URL from frontmatter sources (not referenced in article body)
+```
+
+**Verification details:**
+
+| # | Claim | Source | Status |
+|---|-------|--------|--------|
+| 1 | Sirois & Pychyl: procrastination = emotional regulation failure | SPPCS 2013 | CONFIRMED |
+| 2 | Piers Steel meta-analysis: 691 correlations, task aversiveness key predictor | PubMed 17201571 | CONFIRMED |
+| 3 | Cirillo created Pomodoro in late 1980s as university student with tomato timer | pomodorotechnique.com | CONFIRMED |
+| 4 | Zao-Sanders ranked timeboxing #1 of 100 techniques in HBR | HBR Dec 2018 | CONFIRMED (fixed "más de 100" → "100") |
+| 5 | Gollwitzer: 94 studies, 8000+ participants, d=0.65 for implementation intentions | PsycNET 2007-19538-002 | CONFIRMED |
+| 6 | Parkinson's Law coined 1955 | Wikipedia | CONFIRMED |
+| 7 | Zeigarnik effect + mixed evidence caveat | Wikipedia + 2025 meta-analysis | CONFIRMED |
+
+All 7 links verified as live (Wiley returns 403 due to paywall but URL is correct). Pomodorian feature claims (ambient sounds, session tracking, analytics) verified against codebase.

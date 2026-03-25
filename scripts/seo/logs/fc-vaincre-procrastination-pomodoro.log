@@ -1,0 +1,24 @@
+```
+FACT-CHECK REPORT: /Users/jean-baptiste/Projects/pomodorian/content/blog/fr/vaincre-procrastination-pomodoro.md
+Score: 9/10
+Status: published
+Claims checked: 9
+Confirmed: 8
+Reformulated: 1
+Removed: 0
+Issues:
+- Smits et al. (2025): Article originally claimed unstructured students had more fatigue/distractions/less motivation. The actual study found the OPPOSITE — Pomodoro led to faster fatigue and motivation decline vs self-regulated breaks. Reformulated to accurately reflect findings (comparable productivity, importance of adapting cycle duration).
+- Internal link /blog/science-of-flow-state points to an English article (no French version exists) — minor, flagged for future translation.
+```
+
+**Score breakdown:**
+| Criteria | Points |
+|----------|--------|
+| All factual claims sourced or properly hedged | 3/3 |
+| Minimum 1000 words, good H2/H3 structure | 2/2 |
+| Target keywords present naturally | 1/1 |
+| Actionable, practical content | 2/2 |
+| No repetitive or generic filler | 1/1 |
+| Good readability (short paragraphs, lists) | 0/1 |
+
+Deducted 1 point for the broken internal link (FR version of flow-state article doesn't exist) which affects readability for the target audience.

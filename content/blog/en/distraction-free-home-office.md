@@ -8,17 +8,16 @@ keywords:
   - distraction free workspace
   - remote work environment
   - focus workspace
-status: draft
-score: 0
+status: published
+score: 9
 sources:
   - "https://www.sciencedirect.com/science/article/abs/pii/S0272494424000471"
-  - "https://pmc.ncbi.nlm.nih.gov/articles/PMC6901841/"
+  - "https://www.jneurosci.org/content/31/2/587"
+  - "https://www.prnewswire.com/news-releases/study-natural-light-is-the-best-medicine-for-the-office-300590905.html"
   - "https://www.osha.gov/etools/computer-workstations/positions"
   - "https://www.mayoclinic.org/healthy-lifestyle/adult-health/in-depth/office-ergonomics/art-20046169"
-  - "https://www.prnewswire.com/news-releases/study-natural-light-is-the-best-medicine-for-the-office-300590905.html"
-  - "https://www.jneurosci.org/content/31/2/587"
-  - "https://news.stanford.edu/stories/2024/06/hybrid-work-is-a-win-win-win-for-companies-workers"
-  - "https://pmc.ncbi.nlm.nih.gov/articles/PMC12292963/"
+  - "https://pmc.ncbi.nlm.nih.gov/articles/PMC6901841/"
+  - "https://bpspsychub.onlinelibrary.wiley.com/doi/10.1111/bjep.12593"
 ---
 
 Working from home is no longer the exception — it's how millions of people get things done every day. But here's the problem: your home wasn't designed for deep work. The kitchen is right there. Your phone is always within reach. The couch is calling. And somehow the laundry becomes fascinating the moment you have a deadline.
@@ -59,7 +58,7 @@ Everything else — cables, papers, snack wrappers, that random USB drive from 2
 
 Bad lighting causes fatigue, headaches, and that vague "I can't focus" feeling that sends you to the fridge. Good lighting does the opposite.
 
-A [study led by Professor Alan Hedge at Cornell University](https://www.prnewswire.com/news-releases/study-natural-light-is-the-best-medicine-for-the-office-300590905.html) found that workers in office environments with ample daylight reported an 84% reduction in eyestrain, headaches, and blurred vision — plus a 56% drop in drowsiness.
+A [study led by Professor Alan Hedge at Cornell University](https://www.prnewswire.com/news-releases/study-natural-light-is-the-best-medicine-for-the-office-300590905.html) found that workers in office environments with ample daylight reported an 84% reduction in eyestrain, headaches, and blurred vision — plus a 10% decrease in drowsiness.
 
 Practical takeaways for your home office setup:
 
@@ -84,7 +83,7 @@ You don't need a $1,500 chair. A basic office chair with lumbar support, or even
 
 ## Control the Sound Around You
 
-Noise is one of the biggest productivity killers in a home environment. Kids, construction, traffic, the neighbor's dog — it's rarely quiet. And [research published in PubMed Central](https://pmc.ncbi.nlm.nih.gov/articles/PMC6901841/) confirms that noise exposure significantly impairs attention and working memory.
+Noise is one of the biggest productivity killers in a home environment. Kids, construction, traffic, the neighbor's dog — it's rarely quiet. And [research published in PubMed Central](https://pmc.ncbi.nlm.nih.gov/articles/PMC6901841/) found that noise exposure can impair attention and cognitive performance, particularly at higher volume levels.
 
 You have a few options:
 
@@ -98,7 +97,7 @@ Tools like [Pomodorian](https://pomodorian.app) combine ambient soundscapes — 
 
 A great home office setup is only half the equation. Without time structure, even the best workspace can't save you from drifting into YouTube rabbit holes.
 
-This is where the [Pomodoro Technique](/blog/pomodoro-technique-complete-guide) shines. Work in focused 25-minute blocks, take a 5-minute break, and repeat. It sounds simple because it is — and a [2025 study in Behavioral Sciences](https://pmc.ncbi.nlm.nih.gov/articles/PMC12292963/) found that students using the Pomodoro method reported higher concentration and motivation, along with lower fatigue compared to those taking unstructured breaks.
+This is where the [Pomodoro Technique](/blog/pomodoro-technique-complete-guide) shines. Work in focused 25-minute blocks, take a 5-minute break, and repeat. It sounds simple because it is — and a [2023 study in the British Journal of Educational Psychology](https://bpspsychub.onlinelibrary.wiley.com/doi/10.1111/bjep.12593) found that students using systematic break techniques like Pomodoro reported higher concentration and motivation compared to those managing their own break timing.
 
 Structured time blocks work especially well in a home environment because they give you permission to focus *and* permission to rest. You're not trying to white-knuckle through 8 hours of concentration. You're doing 25 minutes at a time.
 
@@ -108,7 +107,7 @@ Structured time blocks work especially well in a home environment because they g
 
 A sterile, empty room isn't inspiring — it's depressing. Once you've removed the clutter, add a few things that make the space feel good without creating distractions:
 
-- **One or two plants.** They improve air quality and give your eyes something restful to land on during breaks.
+- **One or two plants.** They add a touch of nature and give your eyes something restful to land on during breaks.
 - **A piece of art or a photo** you enjoy — something that sparks a moment of calm, not stimulation.
 - **A consistent scent.** A candle or diffuser can become another "this is work time" signal for your brain.
 

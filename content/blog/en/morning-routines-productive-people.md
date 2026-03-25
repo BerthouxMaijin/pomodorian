@@ -8,17 +8,17 @@ keywords:
   - morning habits
   - productive morning
   - focus morning
-status: draft
-score: 0
+status: published
+score: 9
 sources:
+  - "https://www.pnas.org/doi/10.1073/pnas.1018033108"
   - "https://onlinelibrary.wiley.com/doi/abs/10.1111/j.1559-1816.2009.00549.x"
   - "https://academic.oup.com/sleep/article/47/1/zsad285/7344663"
   - "https://www.sleephealthjournal.org/article/S2352-7218(23)00166-3/fulltext"
   - "https://academic.oup.com/jcem/article/86/1/151/2841140"
-  - "https://www.sciencedaily.com/releases/2019/04/190429154529.htm"
-  - "https://www.health.harvard.edu/mind-and-mood/exercise-can-boost-your-memory-and-thinking-skills"
   - "https://www.fielding.edu/how-morning-phone-habits-shape-productivity-and-well-being/"
-  - "https://www.pnas.org/doi/10.1073/pnas.1018033108"
+  - "https://www.sciencedaily.com/releases/2019/04/190429154529.htm"
+  - "https://www.health.harvard.edu/blog/regular-exercise-changes-brain-improve-memory-thinking-skills-201404097110"
   - "https://www.cnbc.com/2018/11/27/tim-cook-reveals-the-morning-routine-that-sets-him-up-for-success.html"
   - "https://www.briantracy.com/blog/time-management/the-truth-about-frogs/"
 ---
@@ -51,7 +51,7 @@ Pick a wake time you can sustain seven days a week. That's it. No heroics requir
 
 Within the first hour after waking, your body produces a [cortisol awakening response](https://academic.oup.com/jcem/article/86/1/151/2841140) — a natural spike in cortisol that helps you feel alert and energized. Bright light, especially natural sunlight, amplifies this response. Research shows that transitioning from dim to bright light in the morning triggers an immediate elevation in cortisol levels, sharpening your alertness.
 
-Meanwhile, [reaching for your phone first thing](https://www.fielding.edu/how-morning-phone-habits-shape-productivity-and-well-being/) does the opposite of what you want. Research from Fielding Graduate University found that checking your phone within minutes of waking floods your brain with other people's priorities — emails, notifications, news — triggering a reactive mindset before you've even had a chance to set your own intentions. The context-switching costs of jumping between content types early in the morning can reduce cognitive performance for hours afterward.
+Meanwhile, [reaching for your phone first thing](https://www.fielding.edu/how-morning-phone-habits-shape-productivity-and-well-being/) does the opposite of what you want. As media psychology experts at Fielding Graduate University point out, checking your phone within minutes of waking floods your brain with other people's priorities — emails, notifications, news — triggering a reactive mindset before you've even had a chance to set your own intentions. The constant context-switching between different content types early in the morning can drain the cognitive resources you'd be better off saving for meaningful work.
 
 The fix is simple: step outside for a few minutes, or sit by a window with your coffee. Save the phone for after you've started your day on your terms.
 
@@ -59,11 +59,11 @@ The fix is simple: step outside for a few minutes, or sit by a window with your 
 
 You don't need a 90-minute gym session. A [study covered by ScienceDaily](https://www.sciencedaily.com/releases/2019/04/190429154529.htm) found that a morning bout of moderate-intensity exercise improves decision-making across the entire day compared to prolonged sitting. The effect wasn't limited to the hour after exercise — it persisted through the afternoon.
 
-[Harvard Health](https://www.health.harvard.edu/mind-and-mood/exercise-can-boost-your-memory-and-thinking-skills) reports that regular exercise boosts the size of the hippocampus, the brain area involved in memory and learning, and stimulates the release of growth factors that affect the health of brain cells. You don't need intensity. You need consistency.
+[Harvard Health](https://www.health.harvard.edu/blog/regular-exercise-changes-brain-improve-memory-thinking-skills-201404097110) reports that regular aerobic exercise boosts the size of the hippocampus, the brain area involved in verbal memory and learning, and stimulates the release of growth factors that affect the health of brain cells. You don't need intensity. You need consistency.
 
 A 10-minute walk, some stretching, a few bodyweight exercises — whatever gets your heart rate slightly elevated. The point isn't fitness (that's a bonus). The point is waking up your brain.
 
-Apple CEO [Tim Cook has said](https://www.cnbc.com/2018/11/27/tim-cook-reveals-the-morning-routine-that-sets-him-up-for-success.html) he hits the gym every morning because "it keeps my stress at bay." But his real insight is about the morning itself: "It's the part of the day that I can control the most. As the day starts to unfold, it becomes less predictable."
+Apple CEO [Tim Cook has said](https://www.cnbc.com/2018/11/27/tim-cook-reveals-the-morning-routine-that-sets-him-up-for-success.html) he hits the gym every morning because "it keeps my stress at bay." But his real insight is about the morning itself. As he put it on the *Table Manners* podcast: "It turns out, it's the part of the day that I can control the most. As the day starts to unfold, it becomes less predictable."
 
 That's the underlying principle. Your morning is the one part of the day that's truly yours. Guard it.
 

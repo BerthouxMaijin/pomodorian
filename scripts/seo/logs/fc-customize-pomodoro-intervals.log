@@ -1,0 +1,24 @@
+```
+FACT-CHECK REPORT: /Users/jean-baptiste/Projects/pomodorian/content/blog/en/customize-pomodoro-intervals.md
+Score: 9/10
+Status: published
+Claims checked: 12
+Confirmed: 11
+Reformulated: 1 (Tony Schwartz "each of his books" → "his two most recent books")
+Removed: 0
+Issues: none
+```
+
+**Details of changes made:**
+
+1. **Fixed inaccurate claim** (line 42): "He wrote each of his books" → "He wrote his two most recent books" — Schwartz only used the three 90-minute sprint method for his last two books, not all of them.
+
+2. **Fixed broken URL** (line 42): `theenergyproject.com/our-team-2/tony-schwartz/` returned 404. Replaced with `mariashriver.com/tony-schwartz-relax-be-more-productive/` which contains his direct quote about the writing routine.
+
+3. **Fixed incorrect source link** (line 28): Wikipedia's Pomodoro Technique page doesn't mention Tony Buzan. Replaced with `pomodo.io/blog/who-is-francesco-cirillo/` which documents Buzan's influence on Cirillo.
+
+4. **Fixed mismatched source link** (line 151): `desktime.com/blog/productivity-research` didn't contain the "stepping away from computer" claim. Replaced with `desktime.com/blog/52-17-updated` which does.
+
+5. **Updated sources list** in frontmatter to reflect all verified URLs actually used in the article.
+
+**Scoring breakdown:** All claims sourced (3/3) · 1400+ words, good H2/H3 structure (2/2) · Keywords natural (1/1) · Actionable with tables and step-by-step (2/2) · No filler (1/1) · Lost 1 point for readability: a few paragraphs run slightly long.

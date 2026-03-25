@@ -1,0 +1,27 @@
+```
+FACT-CHECK REPORT: /Users/jean-baptiste/Projects/pomodorian/content/blog/en/pomodoro-for-creative-work.md
+Score: 9/10
+Status: published
+Claims checked: 10
+Confirmed: 10
+Reformulated: 0
+Removed: 0
+Issues: none
+```
+
+**Details:**
+
+| # | Claim | Verdict |
+|---|-------|---------|
+| 1 | Csikszentmihalyi coined "flow" studying painters in the 1960s | CONFIRMED — his late-1960s painter observations led to the flow concept |
+| 2 | 2024 Drexel neuroimaging study + transient hypofrontality | CONFIRMED — published in *Neuropsychologia*, found reduced frontal executive activity during creative flow |
+| 3 | Mason Currey profiled 161 creators in *Daily Rituals* | CONFIRMED |
+| 4 | LifeAt blog recommends 50/10, quote "productivity isn't one-size-fits-all" | CONFIRMED — exact quote verified |
+| 5 | Ritter & Dijksterhuis — unconscious incubation effect | CONFIRMED — published in *Frontiers in Human Neuroscience* (2014) |
+| 6 | Mehta, Zhu, Cheema — 70 dB ambient noise enhances creativity | CONFIRMED — *Journal of Consumer Research* (2012) |
+| 7 | Gloria Mark / UC Irvine — 23 min to return to task | CONFIRMED — 23 min 15 sec average |
+| 8 | Cal Newport — ~4 hours deep work daily limit | CONFIRMED |
+| 9 | Daniel Pink — creative work better in afternoon recovery phase | CONFIRMED |
+| 10 | Pomodorian features (timer, ambient sounds) | CONFIRMED |
+
+**Frontmatter fixes:** Removed uncited Frontiers in Psychology link; added the UC Irvine PDF URL that was cited in the body but missing from sources. Score: 9/10 (docked 1 point for minor editorial gaps in source metadata). All URLs verified as live.

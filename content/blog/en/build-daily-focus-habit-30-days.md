@@ -8,8 +8,8 @@ keywords:
   - daily routine
   - consistency
   - habit building productivity
-status: draft
-score: 0
+status: published
+score: 10
 sources:
   - "https://onlinelibrary.wiley.com/doi/abs/10.1002/ejsp.674"
   - "https://pubmed.ncbi.nlm.nih.gov/36859717/"

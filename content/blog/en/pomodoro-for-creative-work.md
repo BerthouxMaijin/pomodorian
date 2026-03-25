@@ -8,15 +8,15 @@ keywords:
   - design focus
   - creative productivity
   - art timer
-status: draft
-score: 0
+status: published
+score: 9
 sources:
   - "https://www.pomodorotechnique.com/"
   - "https://positivepsychology.com/mihaly-csikszentmihalyi-father-of-flow/"
-  - "https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2017.01348/full"
   - "https://drexel.edu/news/archive/2024/March/New-Neuroimaging-Study-Reveals-How-the-Brain-Achieves-a-Creative-Flow-State"
   - "https://pmc.ncbi.nlm.nih.gov/articles/PMC3990058/"
   - "https://academic.oup.com/jcr/article-abstract/39/4/784/1798283"
+  - "https://ics.uci.edu/~gmark/chi08-mark.pdf"
   - "https://calnewport.com/deep-work-rules-for-focused-success-in-a-distracted-world/"
   - "https://lifeat.io/blog/rethinking-productivity-adapting-the-pomodoro-technique-to-your-work-style"
   - "https://www.danpink.com/books/when/"

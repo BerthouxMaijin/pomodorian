@@ -1,0 +1,26 @@
+Article looks correct. Here's the report:
+
+```
+FACT-CHECK REPORT: /Users/jean-baptiste/Projects/pomodorian/content/blog/fr/pauses-productives-que-faire.md
+Score: 9/10
+Status: published
+Claims checked: 7
+Confirmed: 5
+Reformulated: 2
+Removed: 0
+Issues: none
+```
+
+**Details of changes:**
+
+| # | Claim | Verdict | Action |
+|---|-------|---------|--------|
+| 1 | Albulescu et al. 2022 — micro-breaks reduce fatigue | CONFIRMED | Softened "les effets les plus marqués sur la vitalité" to accurately reflect study findings (associated with positive emotions & reduced fatigue, not ranked as strongest) |
+| 2 | Ariga & Lleras 2011 — brief breaks prevent habituation | CONFIRMED | No change needed |
+| 3 | Fenesi et al. 2018 — active breaks improve attention | CONFIRMED but WRONG REFERENCE | Fixed journal (JARMAC, not BMC Public Health), fixed DOI (old one was 404), adjusted claim to match actual findings (exercise breaks, not "light activity") |
+| 4 | Norris et al. 2018 — mindfulness improves attention | CONFIRMED but WRONG REFERENCE | Fixed journal (Frontiers in Human Neuroscience, not Consciousness and Cognition), fixed DOI (old one pointed to unrelated paper), removed unsupported mind-wandering claim |
+| 5 | Kaplan 1995 — Attention Restoration Theory | CONFIRMED | Fixed DOI (old one pointed to a different paper by Ulrich et al.) |
+| 6 | Francesco Cirillo — Pomodoro creator | CONFIRMED | No change |
+| 7 | DeskTime 52-17 ratio link | DEAD LINK (404) | Removed from sources (was not cited in article text) |
+
+**Score breakdown:** All claims sourced (3) + 1000+ words with structure (2) + keywords natural (1) + actionable content (2) + no filler (1) = 9/10 (minor deduction: some general advice sections like hydration and tidying are lighter on evidence).

@@ -1,1 +1,39 @@
 You're out of extra usage · resets 3pm (Europe/Paris)
+Article written to `/content/blog/fr/pomodoro-etudiants-reviser-efficacement.md`.
+
+**Summary:**
+- ~1,400 words, written natively in French
+- 10 verified sources linked inline (NIH, BMC Medical Education, Psychological Science, APA, etc.)
+- Pomodorian mentioned 3 times with link to https://pomodorian.app
+- Internal links to 3 existing French articles: guide complet Pomodoro, pauses productives, mythe du multitâche
+- Covers: method overview, science behind it (attention spans, memory consolidation, active recall), concrete study plans by exam type, common mistakes, daily Pomodoro targets
+- Target keywords integrated naturally in headings and body
+Everything looks correct. Here's the summary:
+
+```
+FACT-CHECK REPORT: /Users/jean-baptiste/Projects/pomodorian/content/blog/fr/pomodoro-etudiants-reviser-efficacement.md
+Score: 9/10
+Status: published
+Claims checked: 10
+Confirmed: 7
+Reformulated: 3
+Removed: 0
+Issues: none
+```
+
+**Details of changes:**
+
+| # | Claim | Verdict | Action |
+|---|-------|---------|--------|
+| 1 | Pomodoro invented late 1980s by Cirillo | CONFIRMED | Kept as-is |
+| 2 | "Journal of Educational Psychology" + attention lapses at 10-18 min | CONTRADICTED | Fixed journal name to "Journal of Chemical Education"; reformulated claim — study actually found attention alternates in shorter cycles, not a specific 10-18 min threshold |
+| 3 | NIH: brain replays at 20x speed during breaks | CONFIRMED | Kept |
+| 4 | 5-min unstructured break improves attention | CONFIRMED | Kept |
+| 5 | BMC "systematic review" — 32 studies, 88% positive | CONFIRMED (numbers) | Fixed "revue systématique" → "revue exploratoire (scoping review)" |
+| 6 | Behavioral Sciences: Pomodoro breaks had mood/efficiency advantages | CONTRADICTED | Reformulated — study actually found all break methods led to comparable productivity; no method clearly superior |
+| 7 | Roediger & Karpicke: 13% vs 56% forgetting | CONFIRMED | Kept |
+| 8 | Spaced learning reinforces neural reactivation | CONFIRMED | Kept |
+| 9 | APA: task switching costs up to 40% | CONFIRMED | Kept |
+| 10 | Cerebrum: digital multitaskers worse at attention/memory | CONFIRMED | Kept |
+
+**Score breakdown:** All claims now sourced or hedged (3), good structure >1000 words (2), keywords natural (1), actionable content (2), no filler (1). Lost 1 point: the Behavioral Sciences reformulation weakens the "research confirms" section slightly, though intellectual honesty is a net positive.

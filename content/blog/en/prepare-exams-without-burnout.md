@@ -8,8 +8,8 @@ keywords:
   - study without burnout
   - exam stress
   - sustainable studying
-status: draft
-score: 0
+status: published
+score: 10
 sources:
   - "https://doi.org/10.1177/1529100612453266"
   - "https://www.sciencedaily.com/releases/2011/02/110208131529.htm"

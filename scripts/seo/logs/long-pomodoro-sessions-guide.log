@@ -1,1 +1,35 @@
 You're out of extra usage · resets 3pm (Europe/Paris)
+Article written to `/content/blog/en/long-pomodoro-sessions-guide.md`.
+
+**What's in it:**
+- ~1,500 words, conversational and practical tone
+- 9 verified sources (DeskTime, APA, Cal Newport, Gloria Mark, Kleitman/BRAC, two peer-reviewed studies)
+- All 4 target keywords woven naturally into headings and text
+- 2 Pomodorian mentions + 1 link to https://pomodorian.app
+- 2 internal links: `/52-17-technique-timer` and `/deep-work-timer`
+- Cross-references the existing `customize-pomodoro-intervals` and `science-of-flow-state` articles without overlapping — this piece focuses specifically on *when and how* to go long, not the broader customization guide
+- Hybrid approach section, practical 5-step getting-started guide, and honest treatment of the research limitations
+Everything looks good. Here's the report:
+
+```
+FACT-CHECK REPORT: /Users/jean-baptiste/Projects/pomodorian/content/blog/en/long-pomodoro-sessions-guide.md
+Score: 10/10
+Status: published
+Claims checked: 14
+Confirmed: 13
+Reformulated: 1
+Removed: 0
+Issues: none
+```
+
+**Details of changes made:**
+
+1. **Reformulated** (line 135): Cirillo "experimented with intervals ranging from 2 minutes to an hour" → "started with intervals as short as a few minutes" — the original claim about testing up to an hour is not supported by Wikipedia or other sources.
+
+2. **Fixed** (line 61): Book title corrected from *Straight-A Student* to *How to Become a Straight-A Student*.
+
+3. **Added** source URL for Cal Newport's Deep Work book page to frontmatter.
+
+4. **Updated** frontmatter: `score: 10`, `status: published`.
+
+All 11 source URLs verified as live. All other factual claims confirmed against their sources.

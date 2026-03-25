@@ -1,1 +1,31 @@
 You're out of extra usage · resets 3pm (Europe/Paris)
+Article written to `content/blog/en/remote-worker-guide-staying-focused.md`.
+
+**Summary:**
+- ~1,450 words, 7 min read
+- 12 cited sources from Stanford, Harvard Business Review, University of Illinois, Buffer, Owl Labs, DeskTime, PubMed Central, and Cal Newport
+- All 4 target keywords used naturally in headings and body text
+- Pomodorian mentioned 2 times with a link to https://pomodorian.app
+- 2 internal links: distraction-free home office guide + ambient sounds article
+- 6 sections covering environment design, time blocking, breaks, sound, loneliness, and a daily checklist
+Article is complete. Here's the summary:
+
+```
+FACT-CHECK REPORT: /Users/jean-baptiste/Projects/pomodorian/content/blog/en/remote-worker-guide-staying-focused.md
+Score: 9/10
+Status: published
+Claims checked: 11
+Confirmed: 7
+Reformulated: 4
+Removed: 0
+Issues: none
+```
+
+**Details of corrections:**
+
+1. **Attention residue attribution** — Was "what Newport calls"; corrected to credit psychologist Sophie Leroy who coined the term, with link to her original paper.
+2. **2025 Behavioral Sciences study (CONTRADICTED)** — Original claim said Pomodoro "reduced mental fatigue." The study actually found the opposite (faster fatigue increase). Reformulated to accurately present findings: similar productivity outcomes, but higher perceived fatigue with structured intervals, offset by reduced decision fatigue.
+3. **Ambient noise "compared to silence"** — The JCR study compared 70 dB vs 50 dB (low noise), not silence. Corrected to "compared to quieter environments."
+4. **Stochastic resonance as sole mechanism** — The PMC review identifies two mechanisms (noise masking + stochastic resonance). Added both.
+
+**Minor wording fixes:** Owl Labs "reserve it for focused work" removed (not in source), DeskTime "post-pandemic" → "during the pandemic" (data was from 2021).

@@ -8,16 +8,19 @@ keywords:
   - Cornell notes
   - active note taking
   - study notes retention
-status: draft
-score: 0
+status: published
+score: 9
 sources:
   - "https://lsc.cornell.edu/how-to-study/taking-notes/cornell-note-taking-system/"
   - "https://pubmed.ncbi.nlm.nih.gov/24760141/"
   - "https://pmc.ncbi.nlm.nih.gov/articles/PMC4117135/"
+  - "https://pmc.ncbi.nlm.nih.gov/articles/PMC4492928/"
   - "https://pubmed.ncbi.nlm.nih.gov/16507066/"
   - "https://psycnet.apa.org/record/1980-20399-001"
   - "https://pubmed.ncbi.nlm.nih.gov/12028392/"
   - "https://pmc.ncbi.nlm.nih.gov/articles/PMC5476736/"
+  - "https://www.sciencedaily.com/releases/2011/01/110121111216.htm"
+  - "https://thrive.arizona.edu/news/adding-spaced-repetition-your-study-toolkit"
 ---
 
 You sit through a lecture, fill three pages with notes, and two days later you can barely remember what it was about. Sound familiar? The problem isn't your memory — it's how you're taking notes.
@@ -80,9 +83,9 @@ The method matters more than the medium.
 
 If you only adopt one technique from this article, make it active recall.
 
-[Roediger and Karpicke (2006)](https://pubmed.ncbi.nlm.nih.gov/16507066/) conducted a study comparing two groups of students. One group studied material by re-reading it repeatedly. The other group studied it once and then practiced retrieving it from memory. After one week, the retrieval practice group retained roughly 80% of the material — compared to just 34% for the re-reading group.
+[Roediger and Karpicke (2006)](https://pubmed.ncbi.nlm.nih.gov/16507066/) conducted a landmark study comparing different learning strategies. Students who studied a passage once and then practiced retrieving it from memory three times retained about 61% of the material after one week — compared to just 40% for students who spent the same time re-reading the passage four times.
 
-That's not a small difference. It's a completely different outcome.
+That's a massive difference from the same amount of study time — and it only grows larger with longer delays.
 
 ### How to Build Active Recall Into Your Notes
 
@@ -124,7 +127,7 @@ Taking good notes is only half the equation. When and how you review them matter
 
 Spaced repetition — reviewing material at gradually increasing intervals — is [one of the most robust findings in learning science](https://pmc.ncbi.nlm.nih.gov/articles/PMC5476736/). Instead of cramming all your review into one session, you spread it out: review after one day, then three days, then a week, then two weeks.
 
-The [University of Arizona's learning resources](https://thrive.arizona.edu/news/adding-spaced-repetition-your-study-toolkit) describe spaced repetition as one of the most evidence-backed techniques available to students — and one of the most underused.
+The [University of Arizona's learning resources](https://thrive.arizona.edu/news/adding-spaced-repetition-your-study-toolkit) describe spaced repetition as a "time-tested, scientifically proven method" for improving retention — yet many students still default to last-minute cramming instead.
 
 ### A Simple Spaced Review Schedule
 

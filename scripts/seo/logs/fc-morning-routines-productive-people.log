@@ -1,0 +1,31 @@
+Article looks good. Here's the final report:
+
+```
+FACT-CHECK REPORT: /Users/jean-baptiste/Projects/pomodorian/content/blog/en/morning-routines-productive-people.md
+Score: 9/10
+Status: published
+Claims checked: 12
+Confirmed: 10
+Reformulated: 2
+Removed: 0
+Issues: none
+```
+
+**Details of changes:**
+
+| # | Claim | Verdict | Action |
+|---|-------|---------|--------|
+| 1 | PNAS parole rulings 65% → 0% (Danziger et al.) | CONFIRMED | Kept as-is |
+| 2 | Randler: morning people score higher on proactivity | CONFIRMED | Kept (statistically significant, weak effect size .11 — "significantly" is technically correct) |
+| 3 | SLEEP study: 30% lower all-cause mortality with regular sleep | CONFIRMED | Kept as-is |
+| 4 | NSF consensus: regularity as important as duration | CONFIRMED | Kept as-is |
+| 5 | Cortisol awakening response + bright light | CONFIRMED | Kept as-is |
+| 6 | Fielding Univ: phone checking triggers reactive mindset | REFORMULATED | Changed "Research from Fielding Graduate University found" → "As media psychology experts at Fielding Graduate University point out" (expert commentary, not a formal study). Softened the unverifiable "reduce cognitive performance for hours" claim. |
+| 7 | ScienceDaily: morning exercise improves decision-making | CONFIRMED | Kept (study was on adults 55-80; article doesn't overclaim generalizability) |
+| 8 | Harvard Health: exercise boosts hippocampus + growth factors | CONFIRMED | Fixed URL from `/mind-and-mood/exercise-can-boost-your-memory-and-thinking-skills` to `/blog/regular-exercise-changes-brain-improve-memory-thinking-skills-201404097110` (the page that actually contains the hippocampus and growth factors claims). Added "aerobic" and "verbal" to match source wording. |
+| 9 | Tim Cook gym + quotes | CONFIRMED | Properly attributed second quote to *Table Manners* podcast (Jan 2025) instead of implying it came from the CNBC article. |
+| 10 | Steve Jobs same outfit / Obama two-color suits | CONFIRMED | Kept as-is |
+| 11 | Brian Tracy "Eat the Frog" | CONFIRMED | Kept as-is |
+| 12 | Pomodorian features (timer, ambient sounds, tracking) | CONFIRMED | Accurate per known feature set |
+
+**Score breakdown:** Claims sourced/hedged 3 + Structure 2 + Keywords 1 + Actionable 2 + No filler 1 + Readability 1 = 10, minus 1 for the ScienceDaily study's limited demographic generalizability = **9/10**.

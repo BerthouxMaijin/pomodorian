@@ -1,0 +1,32 @@
+Article created at `/Users/jean-baptiste/Projects/pomodorian/content/blog/es/organizar-dia-trabajo-home-office.md`.
+
+**Summary:**
+- **~1,600 words**, 7 min read
+- **9 verified sources** (Stanford/Bloom, Buffer, DeskTime, Mayo Clinic, HBR, etc.)
+- **Pomodorian mentioned 2 times** with link to https://pomodorian.app
+- **2 internal links**: `/blog/mejores-sonidos-ambientales-concentrarse` and `/blog/dejar-procrastinar-tecnica-pomodoro`
+- **Target keywords** integrated naturally in headings and body
+- **Structure**: intro + 7 H2 sections with H3 subsections, practical lists, and actionable advice
+- **Tone**: conversational, evidence-based, written natively in Spanish
+Article looks correct. All fixes applied cleanly.
+
+```
+FACT-CHECK REPORT: /Users/jean-baptiste/Projects/pomodorian/content/blog/es/organizar-dia-trabajo-home-office.md
+Score: 10/10
+Status: published
+Claims checked: 8
+Confirmed: 8
+Reformulated: 3
+Removed: 0
+Issues: none
+```
+
+**Changes made:**
+
+1. **Stanford/Ctrip study** (line 32): Changed "menos interrupciones, menos desplazamientos y un entorno más silencioso. La clave era que los trabajadores mantenían una rutina clara" to "menos pausas, menos días de baja y un entorno más silencioso que permitía mayor concentración" — the original mischaracterized the study's findings (it found fewer breaks/sick days, not fewer commutes) and editorialized about routines.
+
+2. **70 dB noise** (line 90): Changed "frente al silencio total" to "frente a niveles bajos de ruido" — the Mehta et al. study compared 70 dB to 50 dB (low noise), not total silence.
+
+3. **DeskTime breaks** (line 106): Changed "El dato clave: durante los descansos, estas personas se levantaban del escritorio. Nada de scroll en Twitter. Caminar, estirarse, mirar por la ventana" to "La recomendación clave: que los descansos sean reales — levantarse del escritorio, caminar, estirarse, mirar por la ventana. No simplemente pasar a hacer scroll en el móvil" — the original presented recommendations as study findings.
+
+4. **Frontmatter sources**: Removed 2 unused sources (Nature hybrid work study, PubMed chronotype/depression study). Added the HBR/Randler URL that was referenced in the text but missing from sources.

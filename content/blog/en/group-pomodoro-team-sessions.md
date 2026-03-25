@@ -8,8 +8,8 @@ keywords:
   - team focus session
   - coworking pomodoro
   - collaborative focus
-status: draft
-score: 0
+status: published
+score: 10
 sources:
   - "https://ics.uci.edu/~gmark/chi08-mark.pdf"
   - "https://www.simplypsychology.org/social-facilitation.html"
@@ -41,7 +41,7 @@ There's a related concept called **body doubling** — working on a task with an
 
 But you don't need an ADHD diagnosis to benefit. The principle is universal: when someone else is working alongside you, quitting feels harder. Opening Twitter feels awkward. The social contract — even an unspoken one — keeps you honest.
 
-Virtual coworking platforms like [Focusmate](https://www.focusmate.com/about/) have built entire businesses around this idea. They report that users complete sessions at remarkably high rates, and in an [interview with CHADD](https://chadd.org/attention-article/focusmate-virtual-coworking/), Focusmate's founder described how the structured check-in at the start of each session creates a "micro-commitment" that dramatically reduces procrastination.
+Virtual coworking platforms like [Focusmate](https://www.focusmate.com/about/) have built entire businesses around this idea. As highlighted in [CHADD's *Attention* magazine](https://chadd.org/attention-article/focusmate-virtual-coworking/), the platform is built around a "micro-commitment" — at the start of each session, participants declare what they'll work on, creating a social contract that dramatically reduces procrastination.
 
 ### The Interruption Problem
 

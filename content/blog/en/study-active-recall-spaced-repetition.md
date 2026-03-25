@@ -8,8 +8,8 @@ keywords:
   - spaced repetition
   - effective studying
   - study techniques
-status: draft
-score: 0
+status: published
+score: 9
 sources:
   - "https://doi.org/10.1126/science.1199327"
   - "https://doi.org/10.1111/j.1467-9280.2006.01693.x"
@@ -18,9 +18,10 @@ sources:
   - "https://doi.org/10.1111/j.1467-9280.2008.02209.x"
   - "https://doi.org/10.1016/j.tics.2010.09.003"
   - "https://psychclassics.yorku.ca/Ebbinghaus/index.htm"
-  - "https://doi.org/10.1037/a0026252"
+  - "https://doi.org/10.1007/s10648-012-9210-2"
   - "https://doi.org/10.1177/2372732215624708"
   - "https://www.retrievalpractice.org/"
+  - "https://en.wikipedia.org/wiki/Leitner_system"
 ---
 
 You've been staring at the same chapter for forty-five minutes. You've highlighted half the page. You've reread the introduction three times. And yet, if someone asked you to explain what you just read — nothing. Blank.
@@ -35,7 +36,7 @@ Active recall is the practice of retrieving information from memory rather than 
 
 It sounds almost too simple. But the evidence is overwhelming.
 
-A [landmark study by Karpicke and Blunt (2011)](https://doi.org/10.1126/science.1199327) published in *Science* compared retrieval practice against elaborative concept mapping — a technique widely recommended by educators. Students who practiced active recall produced 50% more correct responses on a delayed test than those who used concept mapping. Perhaps most telling: students predicted that concept mapping would work better. Their intuition was dead wrong.
+A [landmark study by Karpicke and Blunt (2011)](https://doi.org/10.1126/science.1199327) published in *Science* compared retrieval practice against elaborative concept mapping — a technique widely recommended by educators. Students who practiced active recall significantly outperformed those who used concept mapping on a delayed test, with a very large effect size (d = 1.50). Perhaps most telling: students predicted that concept mapping would work better. Their intuition was dead wrong.
 
 Earlier research by [Roediger and Karpicke (2006)](https://doi.org/10.1111/j.1467-9280.2006.01693.x) demonstrated the same pattern. Students who took a single recall test after reading a passage retained dramatically more material after one week compared to students who spent that same time restudying the passage multiple times. The group that restudied felt more confident — but performed worse.
 
@@ -58,9 +59,9 @@ Spaced repetition is the practice of reviewing material at increasing intervals 
 
 In 1885, German psychologist [Hermann Ebbinghaus](https://psychclassics.yorku.ca/Ebbinghaus/index.htm) conducted the first rigorous experiments on memory. He discovered what's now called the **forgetting curve**: without reinforcement, newly learned information decays rapidly — most of it within the first few days. But he also found that each review session flattens the curve. With properly timed repetitions, you can maintain knowledge with surprisingly little effort.
 
-A [meta-analysis by Cepeda et al. (2006)](https://doi.org/10.1037/0033-2909.132.3.354) synthesized 254 studies involving over 14,000 participants and confirmed that distributing practice across time consistently produces better long-term retention than massing it into a single session. The benefit held across different types of material, age groups, and retention intervals.
+A [meta-analysis by Cepeda et al. (2006)](https://doi.org/10.1037/0033-2909.132.3.354) synthesized 839 assessments from 317 experiments across 184 articles and confirmed that distributing practice across time consistently produces better long-term retention than massing it into a single session. The benefit held across different types of material, age groups, and retention intervals.
 
-But here's where it gets interesting: there's an optimal spacing gap, and it depends on when you need to remember the material. [Cepeda et al. (2008)](https://doi.org/10.1111/j.1467-9280.2008.02209.x) found that the ideal review interval is roughly 10-20% of the desired retention period. Studying for a test next week? Review after one day. Need to retain something for a year? Space your reviews about three to four weeks apart.
+But here's where it gets interesting: there's an optimal spacing gap, and it depends on when you need to remember the material. [Cepeda et al. (2008)](https://doi.org/10.1111/j.1467-9280.2008.02209.x) found that the ideal review interval varies with retention period — roughly 20-40% of a one-week delay, declining to about 5-10% for a one-year delay. Studying for a test next week? Review after one to two days. Need to retain something for a year? Space your reviews about three to four weeks apart.
 
 ### The Leitner System: Spaced Repetition Made Simple
 
@@ -120,7 +121,7 @@ Flashcards are the most well-known active recall tool, but they're not the only 
 
 ### Free Recall
 
-After reading a chapter or attending a lecture, close everything and write down everything you remember. Don't organize, don't edit — just dump it all. Then open your materials and see what you missed. Research by [Agarwal et al. (2012)](https://doi.org/10.1037/a0026252) showed that even low-stakes retrieval practice in classroom settings produced significant improvements on exams.
+After reading a chapter or attending a lecture, close everything and write down everything you remember. Don't organize, don't edit — just dump it all. Then open your materials and see what you missed. Research by [Agarwal et al. (2012)](https://doi.org/10.1007/s10648-012-9210-2) showed that even low-stakes retrieval practice in classroom settings produced significant improvements on exams.
 
 ### The Feynman Technique
 

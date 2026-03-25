@@ -8,12 +8,12 @@ keywords:
   - single-tasking
   - focus one thing
   - context switching cost
-status: draft
-score: 0
+status: published
+score: 9
 sources:
   - "https://www.apa.org/topics/research/multitasking"
-  - "https://ics.uci.edu/~gmark/chi08-mark.pdf"
   - "https://ics.uci.edu/~gmark/CHI2005.pdf"
+  - "https://ics.uci.edu/~gmark/chi08-mark.pdf"
   - "https://www.pnas.org/doi/10.1073/pnas.0903620106"
   - "https://gloriamark.com/attention-span/"
   - "https://www.mckinsey.com/capabilities/people-and-organizational-performance/our-insights/increasing-the-meaning-quotient-of-work"
@@ -41,7 +41,7 @@ It gets worse. Research by [Gloria Mark and colleagues at UC Irvine](https://ics
 
 In her book [*Attention Span*](https://gloriamark.com/attention-span/), Mark reveals an even more alarming trend: in 2004, people averaged 2.5 minutes of sustained attention on a computer screen. By 2021, that number had plummeted to just **47 seconds**.
 
-Perhaps the most surprising finding? We interrupt ourselves more often than other people interrupt us. Notifications aren't the only villain here — our own restless minds are.
+Perhaps the most surprising finding? We interrupt ourselves nearly as often as other people interrupt us — roughly half of all work interruptions are self-initiated. Notifications aren't the only villain here — our own restless minds are.
 
 ## Why It Takes So Long to Bounce Back
 
@@ -75,7 +75,7 @@ Single-tasking isn't a new concept, but it's becoming increasingly radical in a 
 
 When you sustain focus on a single task, you give your brain the chance to enter what psychologist Mihaly Csikszentmihalyi called a **flow state** — that feeling of being completely absorbed in your work where time seems to disappear. If you want to go deeper on this, check out our article on [the science of flow state and how to achieve deep focus](/blog/science-of-flow-state).
 
-A [McKinsey study on workplace performance](https://www.mckinsey.com/capabilities/people-and-organizational-performance/our-insights/increasing-the-meaning-quotient-of-work) found that executives reported being up to five times more productive when in flow. Flow requires sustained, uninterrupted attention — the exact opposite of what multitasking provides.
+A [McKinsey study on workplace performance](https://www.mckinsey.com/capabilities/people-and-organizational-performance/our-insights/increasing-the-meaning-quotient-of-work), based on workshops with over 5,000 executives across a decade, found that people are up to five times more productive at their peak than on average — and those peak states depend on sustained, uninterrupted attention. Flow requires exactly that: the opposite of what multitasking provides.
 
 The math is simple: even a modest increase in time spent in deep, single-task focus can dramatically improve what you actually ship at the end of the day.
 

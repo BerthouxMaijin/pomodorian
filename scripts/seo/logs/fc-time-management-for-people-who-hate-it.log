@@ -1,0 +1,14 @@
+```
+FACT-CHECK REPORT: /Users/jean-baptiste/Projects/pomodorian/content/blog/en/time-management-for-people-who-hate-it.md
+Score: 10/10
+Status: published
+Claims checked: 8
+Confirmed: 4 (Sirois & Pychyl, Cal Newport, DeskTime ratios, Sirois 2014 self-compassion)
+Reformulated: 4
+  - APS article: "self-protection strategy" → "complicated failure of self-regulation" (matches source)
+  - Schwartz "earn more": added correct 2006 Iyengar/Schwartz citation instead of misattributing to 2002 paper
+  - Decision fatigue: "systematic review" → "concept analysis" (accurate paper type)
+  - BJEP study: removed specific "25 min / 5 min" intervals (study used 24/6) → "Pomodoro-style intervals"
+Removed: 0
+Issues: none
+```

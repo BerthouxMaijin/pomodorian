@@ -1,0 +1,17 @@
+Article looks good. All corrections applied cleanly.
+
+```
+FACT-CHECK REPORT: /Users/jean-baptiste/Projects/pomodorian/content/blog/de/beste-ambient-sounds-konzentrieren.md
+Score: 9/10
+Status: published
+Claims checked: 11
+Confirmed: 8
+Reformulated: 3
+Removed: 0
+Issues: none
+
+Details of reformulations:
+1. Line 60 — Lofi anxiety study: Overstated "besserer Fokus, mehr Ruhe, geringerer arbeitsbedingter Stress" → corrected to "weniger Angstgefühlen und mehr innerer Ruhe" (matches actual study finding of reduced state anxiety)
+2. Line 102 — Noise colors study: Claimed brown noise was tested → corrected to accurately reflect that only pink/white/red noise were studied; brown noise preference is now hedged as user observation
+3. Line 104 — Meta-analysis: False claim of "8–10% improvement" → corrected to "small but significant effect" with added nuance that non-ADHD individuals showed no benefit (per actual meta-analysis findings, g=0.249)
+```

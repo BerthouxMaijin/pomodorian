@@ -1,0 +1,20 @@
+```
+FACT-CHECK REPORT: /Users/jean-baptiste/Projects/pomodorian/content/blog/en/pomodoro-technique-beginners-guide.md
+Score: 9/10
+Status: published
+Claims checked: 10
+Confirmed: 9
+Reformulated: 1
+Removed: 0
+Issues: none
+```
+
+**Detail on the reformulated claim:** The article originally stated "about 70 minutes of higher focus followed by 20 minutes of reduced alertness" for ultradian rhythms. The Wikipedia source actually says brainwaves are faster during "the first half" of the cycle (~45 min), not 70 minutes. Reformulated to accurately reflect the source: alertness peaks in the first half, then gradually declines with the final ~20 minutes bringing noticeably reduced concentration.
+
+**Score breakdown:**
+- Factual claims sourced or properly hedged: 3/3
+- 1000+ words with good H2/H3 structure: 2/2
+- Target keywords present naturally: 1/1
+- Actionable, practical content: 2/2
+- No repetitive or generic filler: 0.5/1 (closing section lightly echoes the step-by-step guide)
+- Good readability: 0.5/1 (excellent overall, minor density in the science section)

@@ -1,0 +1,16 @@
+```
+FACT-CHECK REPORT: /Users/jean-baptiste/Projects/pomodorian/content/blog/en/why-multitasking-kills-productivity.md
+Score: 9/10
+Status: published
+Claims checked: 12
+Confirmed: 10
+Reformulated: 2
+Removed: 0
+Issues: none
+```
+
+**Reformulations made:**
+1. **Self-interruption claim** (line 44): Changed "We interrupt ourselves more often than other people interrupt us" → "We interrupt ourselves nearly as often as other people interrupt us — roughly half of all work interruptions are self-initiated." Mark's research shows ~50/50 split, not that self-interruptions dominate.
+2. **McKinsey flow claim** (line 78): Changed "executives reported being up to five times more productive when in flow" → more accurate framing noting the study was based on 5,000+ executive workshops over a decade, and the "five times" figure refers to peak vs average performance, not a self-reported flow metric.
+
+**Score breakdown:** All claims sourced (3) + 1000+ words with good H2/H3 structure (2) + keywords natural (1) + actionable strategies (2) + no filler (1) — docked 1 point for some generic advice in the practical tips section (batching, closing tabs are common recommendations without unique depth).

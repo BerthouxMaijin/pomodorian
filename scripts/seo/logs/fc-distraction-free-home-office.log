@@ -1,0 +1,28 @@
+Article looks good. Here's the report:
+
+```
+FACT-CHECK REPORT: /Users/jean-baptiste/Projects/pomodorian/content/blog/en/distraction-free-home-office.md
+Score: 9/10
+Status: published
+Claims checked: 7
+Confirmed: 4
+Reformulated: 3
+Removed: 0
+Issues: none
+```
+
+**Details of changes:**
+
+| Claim | Verdict | Action |
+|-------|---------|--------|
+| J. Environmental Psychology 2024 — workspace design affects productivity | CONFIRMED | Kept as-is |
+| Princeton/J Neurosci — visual clutter suppresses neural activity | CONFIRMED | Kept as-is |
+| Cornell/Hedge — 84% reduction in eyestrain | CONFIRMED | Kept as-is |
+| Cornell/Hedge — **56% drop in drowsiness** | CONTRADICTED (actual: 10%) | Fixed to "10% decrease in drowsiness" |
+| OSHA & Mayo Clinic ergonomics recommendations | CONFIRMED | Kept as-is |
+| PMC noise study — "significantly impairs attention and working memory" | OVERSTATED (only at 95 dBA) | Softened to "can impair attention and cognitive performance, particularly at higher volume levels" |
+| **2025 Behavioral Sciences Pomodoro study** — higher concentration, lower fatigue | CONTRADICTED (study found faster fatigue with Pomodoro, no overall advantage) | Replaced with 2023 Biwer et al. study (BJEP) which actually found systematic breaks improved concentration and motivation |
+| Plants "improve air quality" | UNVERIFIABLE in real-world conditions | Changed to "add a touch of nature" |
+| Pomodorian features (ambient sounds, timer, AI planning) | CONFIRMED | Kept as-is |
+
+**Sources cleanup:** Removed unused Stanford URL, replaced contradicted PMC12292963 with verified Biwer 2023 study.

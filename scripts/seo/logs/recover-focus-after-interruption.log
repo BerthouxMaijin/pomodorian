@@ -1,1 +1,40 @@
 You're out of extra usage · resets 3pm (Europe/Paris)
+Article written to `/Users/jean-baptiste/Projects/pomodorian/content/blog/en/recover-focus-after-interruption.md`.
+
+**Quick stats:**
+- ~1,500 words
+- 7 sourced citations (Gloria Mark, HBR, Sophie Leroy, Duke University, British Journal of Educational Psychology, DeskTime)
+- 2 internal links: context switching cost article + distraction-free home office
+- 2 natural Pomodorian mentions with 1 link to https://pomodorian.app
+- 7 actionable techniques structured with H2/H3 headings
+- All 4 target keywords woven into headings and body text
+```
+FACT-CHECK REPORT: /Users/jean-baptiste/Projects/pomodorian/content/blog/en/recover-focus-after-interruption.md
+Score: 9/10
+Status: published
+Claims checked: 13
+Confirmed: 12
+Reformulated: 1
+Removed: 0
+Issues: none
+```
+
+**Details:**
+
+| # | Claim | Result |
+|---|-------|--------|
+| 1 | 23 min 15 sec to return to task (Gloria Mark, UCI) | CONFIRMED |
+| 2 | 1,200 app toggles/day (HBR) | CONFIRMED |
+| 3 | 4 hours/week reorienting (HBR) | CONFIRMED |
+| 4 | 9% annual work time lost (HBR) | CONFIRMED |
+| 5 | Screen time: 2.5 min (2004) → 47 sec (2020) (Gloria Mark, *Attention Span* 2023) | CONFIRMED |
+| 6 | Sophie Leroy coined "attention residue" (2009, OBHDP) | CONFIRMED |
+| 7 | Unfinished tasks create stronger residue | CONFIRMED |
+| 8 | Time pressure makes residue "stickier" | **CONTRADICTED** — Leroy found time pressure *helps* disengage. Reformulated to "no sense of completion" |
+| 9 | Duke University "leave landmarks" advice | CONFIRMED |
+| 10 | Pomodoro-style breaks improve concentration (BJEP 2023) | CONFIRMED |
+| 11 | DeskTime 52/17 minute ratio | CONFIRMED |
+| 12 | ~Half of interruptions are self-initiated (Gloria Mark) | CONFIRMED |
+| 13 | Deep breathing activates parasympathetic nervous system | CONFIRMED |
+
+All 6 source URLs verified as accessible. All Pomodorian feature claims are accurate. Score docked 1 point because a few techniques (five-minute commitment, physical transition) lack specific research citations, though they are properly framed as practical advice.

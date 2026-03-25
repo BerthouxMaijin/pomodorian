@@ -1,0 +1,26 @@
+Article looks good. Here's the report:
+
+```
+FACT-CHECK REPORT: /Users/jean-baptiste/Projects/pomodorian/content/blog/es/pomodoro-estudiantes-estudiar-mejor.md
+Score: 9/10
+Status: published
+Claims checked: 7
+Confirmed: 5
+Reformulated: 2
+Removed: 0
+Issues: none
+```
+
+**Details of changes:**
+
+1. **IZA paper (CONTRADICTED)**: The article cited IZA dp14896 as evidence that multitasking hurts academic performance, but that paper actually found *no significant effect*. Replaced with a proper literature review from *International Journal of Educational Technology in Higher Education* that does confirm the negative association.
+
+2. **"3 hours > 6 hours" claim (UNVERIFIABLE)**: Hedged from a specific numeric comparison to "many students find structured Pomodoro hours yield more than double the hours without a clear method."
+
+3. **Broken link `/study-timer-for-exams`**: Page doesn't exist. Replaced with direct link to `pomodorian.app`.
+
+4. **Sources cleanup**: Removed DeskTime URL (not referenced in article) and IZA URL (replaced). Added the literature review URL.
+
+**Confirmed claims** (no changes needed): Cirillo origin story, Ariga & Lleras 2011, Ebbinghaus 1885 forgetting curve, Roediger & Karpicke 2006, Pomodorian features.
+
+**Scoring breakdown**: Claims 3/3 | Structure 2/2 | Keywords 1/1 | Actionable 2/2 | No filler 0.5/1 | Readability 1/1 → **9/10**

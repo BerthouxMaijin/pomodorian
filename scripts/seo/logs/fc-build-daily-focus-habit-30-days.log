@@ -1,0 +1,25 @@
+```
+FACT-CHECK REPORT: /Users/jean-baptiste/Projects/pomodorian/content/blog/en/build-daily-focus-habit-30-days.md
+Score: 10/10
+Status: published
+Claims checked: 10
+Confirmed: 10
+Reformulated: 0
+Removed: 0
+Issues: none
+```
+
+**Verification details:**
+
+1. **Lally et al. (UCL) — 66 days, 96 participants, range 18–254 days, missing a day OK** — Confirmed via the original paper and UCL press release.
+2. **21-day habit myth** — Confirmed as widely debunked.
+3. **Gollwitzer & Sheeran meta-analysis — 94 studies, medium-to-large effect** — Confirmed (d = 0.65).
+4. **BJ Fogg Behavior Model — motivation, ability, prompt** — Confirmed via Stanford Behavior Design Lab and ACM paper.
+5. **Harkin et al. meta-analysis — 138 studies, ~20,000 participants, monitoring progress** — Confirmed (N = 19,951). Effect stronger when physically recorded — confirmed.
+6. **Biwer et al. — Pomodoro breaks vs self-regulated** — Confirmed. Same work in less time, higher concentration/motivation.
+7. **Cal Newport — Georgetown CS professor, Deep Work, 3–4 hours max deep work/day** — Confirmed.
+8. **DeskTime — most productive workers alternate focused sprints and rest** — Confirmed (52/17 research).
+9. **Sophie Leroy — attention residue from unfinished tasks** — Confirmed (2009 paper).
+10. **Pomodorian features (session logging, streaks, ambient sounds)** — Match verified feature set.
+
+**All 8 source URLs** resolve correctly (Wiley and ACM return paywalls, not 404s — normal for academic publishers).

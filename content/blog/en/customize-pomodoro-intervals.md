@@ -8,15 +8,18 @@ keywords:
   - optimal timer length
   - pomodoro settings
   - adjust pomodoro
-status: draft
-score: 0
+status: published
+score: 9
 sources:
   - "https://www.pomodorotechnique.com/"
   - "https://desktime.com/blog/52-17-updated"
   - "https://pubmed.ncbi.nlm.nih.gov/21211793/"
   - "https://en.wikipedia.org/wiki/Basic_rest%E2%80%93activity_cycle"
   - "https://calnewport.com/on-deep-breaks/"
-  - "https://theenergyproject.com/our-team-2/tony-schwartz/"
+  - "https://mariashriver.com/tony-schwartz-relax-be-more-productive/"
+  - "https://pomodo.io/blog/who-is-francesco-cirillo/"
+  - "https://desktime.com/blog/post-pandemic-productivity"
+  - "https://hbr.org/2011/01/the-most-important-practice-i"
 ---
 
 The classic Pomodoro Technique tells you to work for 25 minutes, break for 5, and repeat. It's clean, simple, and it works — for a lot of people. But here's the thing: Francesco Cirillo invented that ratio as a university student in the late 1980s, timing himself with a [tomato-shaped kitchen timer](https://www.pomodorotechnique.com/). His context was studying. Yours might be writing code, designing interfaces, drafting a business plan, or plowing through emails.
@@ -25,7 +28,7 @@ The 25-minute pomodoro is a great starting point, not a universal law. The real 
 
 ## Why 25 Minutes Isn't Magic
 
-Cirillo didn't arrive at 25 minutes through lab research. He started with just 10-minute focus sessions and gradually increased the duration as he improved his ability to concentrate. He eventually settled on 25 minutes as his sweet spot, partly influenced by [Tony Buzan's recommendation](https://en.wikipedia.org/wiki/Pomodoro_Technique) of 20–40 minute study periods with breaks in between.
+Cirillo didn't arrive at 25 minutes through lab research. He started with just 10-minute focus sessions and gradually increased the duration as he improved his ability to concentrate. He eventually settled on 25 minutes as his sweet spot, partly influenced by [Tony Buzan's recommendation](https://pomodo.io/blog/who-is-francesco-cirillo/) of 20–40 minute study periods with breaks in between.
 
 That range — 20 to 40 minutes — is significant. It roughly aligns with what attention researchers have found about sustained focus. A [study published in *Cognition*](https://pubmed.ncbi.nlm.nih.gov/21211793/) by Ariga and Lleras (2011) demonstrated that prolonged attention to a single task leads to a "vigilance decrement" — your performance steadily drops. But brief mental switches (even momentary ones) were enough to reset focus and prevent that decline. The takeaway: it's not about powering through for as long as possible. It's about finding the right interval before your attention fades, then taking a genuine break.
 
@@ -39,7 +42,7 @@ Several lines of research point toward different optimal timer lengths, dependin
 
 Sleep researcher Nathaniel Kleitman proposed the [Basic Rest-Activity Cycle (BRAC)](https://en.wikipedia.org/wiki/Basic_rest%E2%80%93activity_cycle) — the idea that humans cycle through roughly 90 minutes of higher alertness followed by about 20 minutes of lower energy. This ultradian rhythm operates during the day, not just at night. Your heart rate, hormonal levels, and brain-wave activity all rise during the first part of the cycle and start declining after about an hour.
 
-Tony Schwartz, author of *The Power of Full Engagement*, built his entire productivity philosophy around this rhythm. He wrote each of his books in [three 90-minute sprints per day](https://theenergyproject.com/our-team-2/tony-schwartz/) with breaks in between — a total of about four and a half hours of focused work. Cal Newport makes a [similar recommendation](https://calnewport.com/on-deep-breaks/) for deep work: start with sessions under 90 minutes and gradually build up.
+Tony Schwartz, author of *The Power of Full Engagement*, built his entire productivity philosophy around this rhythm. He wrote his two most recent books in [three 90-minute sprints per day](https://mariashriver.com/tony-schwartz-relax-be-more-productive/) with breaks in between — a total of about four and a half hours of focused work. Cal Newport makes a [similar recommendation](https://calnewport.com/on-deep-breaks/) for deep work: start with sessions under 90 minutes and gradually build up.
 
 For complex, creative, or deeply analytical work, a 90-minute block might be the optimal timer length — if you can sustain focus that long.
 
@@ -148,7 +151,7 @@ A rough guideline: your break should be about 15–20% of your work session. So:
 - 45-minute work → 8–10-minute break (~20%)
 - 90-minute work → 15–20-minute break (~20%)
 
-And a real break means stepping away from the screen. The DeskTime research specifically noted that the most productive workers weren't checking email or scrolling social media during their breaks — they were [physically stepping away from the computer](https://desktime.com/blog/productivity-research).
+And a real break means stepping away from the screen. The DeskTime research specifically noted that the most productive workers weren't checking email or scrolling social media during their breaks — they were [physically stepping away from the computer](https://desktime.com/blog/52-17-updated).
 
 ## When to Adjust (and When Not To)
 

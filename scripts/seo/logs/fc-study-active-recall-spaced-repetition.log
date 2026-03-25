@@ -1,0 +1,27 @@
+All fixes are in place. Here's the summary:
+
+```
+FACT-CHECK REPORT: /Users/jean-baptiste/Projects/pomodorian/content/blog/en/study-active-recall-spaced-repetition.md
+Score: 9/10
+Status: published
+Claims checked: 10
+Confirmed: 7
+Reformulated: 3
+Removed: 0
+Issues: none
+```
+
+**Details of changes:**
+
+| # | Claim | Verdict | Action |
+|---|-------|---------|--------|
+| 1 | Karpicke & Blunt 2011 — "50% more correct responses" | UNVERIFIABLE (exact %) | Reformulated to "significantly outperformed... with a very large effect size (d = 1.50)" |
+| 2 | Roediger & Karpicke 2006 — recall test > restudy after 1 week | CONFIRMED | No change |
+| 3 | Roediger & Butler 2011 — testing effect review in TICS | CONFIRMED | No change |
+| 4 | Dunlosky 2013 — 10 techniques, practice testing high, highlighting low | CONFIRMED | No change |
+| 5 | Ebbinghaus 1885 — forgetting curve | CONFIRMED | No change |
+| 6 | Cepeda 2006 — "254 studies, 14,000 participants" | CONTRADICTED | Corrected to "839 assessments from 317 experiments across 184 articles" |
+| 7 | Cepeda 2008 — "10-20% of retention period" | CONTRADICTED | Corrected to "20-40% of a one-week delay, declining to 5-10% for a one-year delay" |
+| 8 | Leitner system — German journalist, 1972 | CONFIRMED | No change |
+| 9 | Agarwal 2012 — low-stakes retrieval practice improves exams | CONFIRMED | Fixed wrong DOI (was Roediger et al. 2011 DOI) |
+| 10 | Kang 2016 — spaced repetition robust finding | CONFIRMED | No change |

@@ -1,1 +1,27 @@
 You're out of extra usage · resets 3pm (Europe/Paris)
+Article written to `/Users/jean-baptiste/Projects/pomodorian/content/blog/fr/recuperer-concentration-apres-interruption.md`.
+
+**Summary:**
+- ~1400 words, 7 min read
+- All stats sourced (Gloria Mark, Sophie Leroy, Microsoft Work Trend Index, Ariga & Lleras, Cal Newport, Pomodoro scoping review)
+- Includes the **Loi de Carlson** — a concept well-known to French audiences
+- 6 actionable techniques backed by research
+- Pomodorian mentioned naturally 2x with link to https://pomodorian.app
+- Internal links to `/blog/fr/organiser-journee-teletravail` and `/blog/fr/multitache-mythe-quoi-faire`
+- 8 sources listed in frontmatter
+```
+FACT-CHECK REPORT: /Users/jean-baptiste/Projects/pomodorian/content/blog/fr/recuperer-concentration-apres-interruption.md
+Score: 9/10
+Status: published
+Claims checked: 12
+Confirmed: 12
+Reformulated: 2
+Removed: 0
+Issues: none
+```
+
+**Details of the 2 reformulations:**
+1. **"revue systématique"** → **"revue exploratoire"** — The PMC paper (PMC12532815) is a *scoping review*, not a *systematic review*. Corrected terminology.
+2. **Microsoft stats phrasing** — Original implied 275/day was a direct consequence of "every 2 min during work hours" (which would be ~240). Reformulated to state 275 daily pings as the primary stat, with "every 2 minutes during work hours" as the derived insight, matching the source more accurately.
+
+**Other addition:** Added the Inc.com source URL (44% self-interruption) to the frontmatter `sources` list — it was cited in-text but missing from the list.

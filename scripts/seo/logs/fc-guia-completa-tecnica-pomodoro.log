@@ -1,0 +1,30 @@
+```
+FACT-CHECK REPORT: /Users/jean-baptiste/Projects/pomodorian/content/blog/es/guia-completa-tecnica-pomodoro.md
+Score: 10/10
+Status: published
+Claims checked: 13
+Confirmed: 13
+Reformulated: 0
+Removed: 0
+Issues: none
+```
+
+**Details of verified claims:**
+
+| # | Claim | Verdict | Source |
+|---|-------|---------|--------|
+| 1 | Cirillo invented Pomodoro in late 1980s as university student in Italy | CONFIRMED | Wikipedia, francescocirillo.com |
+| 2 | Used a tomato-shaped kitchen timer | CONFIRMED | Multiple sources |
+| 3 | First challenged himself to work 10 minutes | CONFIRMED | pomodo.io, nucalm.com |
+| 4 | "Pomodoro" = tomato in Italian | CONFIRMED | Common knowledge |
+| 5 | Published on official website + book | CONFIRMED | pomodorotechnique.com |
+| 6 | Gloria Mark (UC) researches attention span decline in digital environments | CONFIRMED | APA podcast, UCI profile |
+| 7 | HBR article by Marc Zao-Sanders on timeboxing as effective technique | CONFIRMED | HBR article fetched OK |
+| 8 | DeskTime: most productive workers alternate work + breaks | CONFIRMED | DeskTime blog (52-17 rule) |
+| 9 | BMC Medical Education study on Pomodoro + learning retention | CONFIRMED | PMC12532815 fetched OK |
+| 10 | PubMed study: Pomodoro breaks vs self-regulated breaks | CONFIRMED | PubMed 36859717 fetched OK |
+| 11 | Taylor & Francis: "Can a Tomato Increase Your Productivity?" | CONFIRMED | DOI exists (403 = paywall, not 404) |
+| 12 | Standard intervals: 25/5/15-30 | CONFIRMED | Official method |
+| 13 | Cirillo recommends starting at 25 and adjusting | CONFIRMED | Consistent with official guidance |
+
+**URLs:** All 8 external URLs valid. Both internal links (`/blog/mejores-sonidos-ambientales-concentrarse`, `/pomodoro-for-students`) resolve to existing pages. Pomodorian feature claims (ambient sounds, timer) match verified feature list.

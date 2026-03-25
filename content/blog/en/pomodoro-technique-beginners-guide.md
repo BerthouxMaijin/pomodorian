@@ -8,8 +8,8 @@ keywords:
   - how to pomodoro
   - start pomodoro
   - pomodoro basics
-status: draft
-score: 0
+status: published
+score: 9
 sources:
   - "https://www.pomodorotechnique.com/"
   - "https://news.illinois.edu/brief-diversions-vastly-improve-focus-researchers-find/"
@@ -45,7 +45,7 @@ The method feels almost too simple to be effective. But there's solid science be
 
 ### Your Brain Wasn't Built for Marathon Focus
 
-Researcher Nathaniel Kleitman discovered that the human body operates on [basic rest-activity cycles](https://en.wikipedia.org/wiki/Basic_rest%E2%80%93activity_cycle) — roughly 90-minute ultradian rhythms where alertness rises and falls. During a cycle, you get about 70 minutes of higher focus followed by 20 minutes of reduced alertness. Trying to power through those low points leads to diminishing returns.
+Researcher Nathaniel Kleitman discovered that the human body operates on [basic rest-activity cycles](https://en.wikipedia.org/wiki/Basic_rest%E2%80%93activity_cycle) — roughly 90-minute ultradian rhythms where alertness rises and falls. During each cycle, alertness peaks in the first half as brainwaves speed up, then gradually declines — with the final 20 minutes or so bringing noticeably reduced concentration. Trying to power through those low points leads to diminishing returns.
 
 The Pomodoro Technique works *with* these natural rhythms rather than against them. By alternating work and rest in shorter cycles, you stay inside the high-alertness window more consistently.
 

@@ -1,1 +1,40 @@
 You're out of extra usage · resets 3pm (Europe/Paris)
+Article written to `/Users/jean-baptiste/Projects/pomodorian/content/blog/en/set-boundaries-working-from-home.md`.
+
+**Summary:**
+- ~1,500 words, 8 min read
+- 9 verified external sources (Buffer, APA, WHO, Stanford, HBR, Owl Labs, Conference Board, CNBC/NordVPN, BMC/PMC)
+- 3 internal links: distraction-free home office, Pomodoro complete guide, avoid burnout
+- 2 natural Pomodorian mentions with 1 link to pomodorian.app
+- Target keywords woven into headings and body: "work from home boundaries," "remote work life balance," "home office boundaries," "WFH tips"
+- Sections: physical boundaries, time boundaries (with Pomodoro technique), communication boundaries, digital boundaries, household boundaries, shutdown ritual, and handling difficult situations
+```
+FACT-CHECK REPORT: /Users/jean-baptiste/Projects/pomodorian/content/blog/en/set-boundaries-working-from-home.md
+Score: 10/10
+Status: published
+Claims checked: 13
+Confirmed: 12
+Reformulated: 1 (APA 2.8x → exact figures 67% vs 23%, "nearly a threefold difference")
+Removed: 0
+Issues: none
+```
+
+**Details:**
+
+| # | Claim | Source | Result |
+|---|-------|--------|--------|
+| 1 | NordVPN/CNBC: US remote workers +3 hours/day | CNBC | CONFIRMED |
+| 2 | Buffer: 3,000 respondents, 22% can't unplug | Buffer 2023 | CONFIRMED |
+| 3 | Buffer: 81% email after hours, 63% weekends, 34% vacation | Buffer 2023 | CONFIRMED |
+| 4 | APA: 2.8x more likely negative mental health | APA 2023 | CORRECTED (67% vs 23% ≈ 2.9x) |
+| 5 | WHO: 12 billion working days lost annually | WHO | CONFIRMED |
+| 6 | Buffer: 37% have dedicated home office | Buffer 2023 | CONFIRMED |
+| 7 | Rothbard/Wharton: integrators vs segmentors | HBR | CONFIRMED |
+| 8 | Conference Board: 53% more hours, 37% fewer vacations | Conf. Board | CONFIRMED |
+| 9 | BMC: 32 studies, 88% positive, r=0.72/r=-0.55 | PMC | CONFIRMED |
+| 10 | Owl Labs: 20% decline after-hours comms | Owl Labs 2024 | CONFIRMED |
+| 11 | Owl Labs: 26% burnout as disengagement reason | Owl Labs 2024 | CONFIRMED |
+| 12 | Stanford/Bloom: hybrid work improves retention | Stanford | CONFIRMED |
+| 13 | Cal Newport: shutdown ritual from *Deep Work* | Multiple | CONFIRMED |
+
+All 9 source URLs are valid. All 3 internal links resolve to existing blog posts.

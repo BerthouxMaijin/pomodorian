@@ -1,0 +1,22 @@
+```
+FACT-CHECK REPORT: /Users/jean-baptiste/Projects/pomodorian/content/blog/fr/organiser-journee-teletravail.md
+Score: 10/10
+Status: published
+Claims checked: 7
+Confirmed: 7
+Reformulated: 0
+Removed: 0
+Issues: none
+```
+
+**Claims verified:**
+
+1. **Buffer 2023 — 81% check email outside work hours, 63% on weekends** — Confirmed
+2. **Stanford/Bloom — 13% productivity increase for remote workers** — Confirmed (Ctrip experiment, QJE 2015)
+3. **INSEE — 1 in 5 private-sector employees telework, ~2 days/week hybrid** — Confirmed (22% in H1 2024, 1.9 days avg)
+4. **Gloria Mark — 23 min 15 sec to refocus after interruption** — Confirmed (UCI study)
+5. **DeskTime — 52/17 work-break ratio** — Confirmed (original 2014 finding)
+6. **Buffer 2023 — 91% positive remote work experience** — Confirmed
+7. **Mehta, Zhu & Cheema — 70 dB ambient noise boosts creativity** — Confirmed (JCR 2012)
+
+All 6 external URLs are live and correct. Both internal links (`/blog/ambient-sounds-productivity-science`, `/blog/pomodoro-technique-complete-guide`) resolve to existing content. Pomodorian feature claims (5 ambient sounds) match the verified feature set.

@@ -1,1 +1,42 @@
 You're out of extra usage · resets 3pm (Europe/Paris)
+Article written to `/Users/jean-baptiste/Projects/pomodorian/content/blog/en/structure-coding-day-maximum-output.md`.
+
+**Quick summary:**
+- ~1,500 words covering practical coding day structure advice
+- 9 verified sources linked inline (Gloria Mark, DeskTime, Paul Graham, Cal Newport, Ericsson, NIH, Microsoft Research, PLoS One meta-analysis, British Journal of Ed Psych)
+- 2 natural Pomodorian mentions + link to pomodorian.app
+- 2 internal links: `/blog/customize-pomodoro-intervals` and `/blog/avoid-burnout-software-engineer`
+- Target keywords woven into headings and body text naturally
+- Structured with 6 H2 sections, 4 H3 subsections, bullet lists, and actionable advice
+```
+FACT-CHECK REPORT: /Users/jean-baptiste/Projects/pomodorian/content/blog/en/structure-coding-day-maximum-output.md
+Score: 9/10
+Status: published
+Claims checked: 15
+Confirmed: 15
+Reformulated: 1 (Pomodorian "focus analytics" → "contribution heatmap" for accuracy)
+Removed: 0
+Issues: none
+```
+
+**Details:**
+
+| Claim | Verdict |
+|-------|---------|
+| Ericsson: 4-5 hours max deliberate practice, ~1hr sessions | CONFIRMED |
+| Gloria Mark: 23 min 15 sec to return after interruption | CONFIRMED (from her interviews, widely cited) |
+| Gloria Mark: ~2 intervening tasks before returning | CONFIRMED (CHI 2005: ~2.3 tasks) |
+| Gloria Mark: ~44% of interruptions self-caused | CONFIRMED (CHI 2011) |
+| Paul Graham: Maker's Schedule essay & half-day blocks | CONFIRMED |
+| Paul Graham: "blow a whole afternoon" quote | CONFIRMED (verbatim) |
+| BJEP study: structured Pomodoro breaks beat self-regulated | CONFIRMED |
+| NIH: brain replays skills ~20x faster during rest | CONFIRMED |
+| NIH: more replay = greater improvement | CONFIRMED |
+| DeskTime: 52/17 ratio, shifted over time | CONFIRMED |
+| PLoS One meta-analysis: breaks improve energy, <10min insufficient for cognitive tasks | CONFIRMED |
+| Microsoft Research: ~6,000 developers (actual: 5,971) | CONFIRMED |
+| Cal Newport: "shutdown ritual" in Deep Work | CONFIRMED |
+| Pomodorian: ambient sounds, customizable intervals | CONFIRMED |
+| Pomodorian: "focus analytics" | REFORMULATED → "contribution heatmap" |
+
+All 9 source URLs verified as valid. Both internal links (`/blog/customize-pomodoro-intervals`, `/blog/avoid-burnout-software-engineer`) exist. Point deducted for minor repetition in the conclusion section summarizing earlier advice.

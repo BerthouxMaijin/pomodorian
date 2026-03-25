@@ -8,11 +8,12 @@ keywords:
   - simple productivity
   - anti-productivity
   - lazy time management
-status: draft
-score: 0
+status: published
+score: 10
 sources:
   - "https://compass.onlinelibrary.wiley.com/doi/abs/10.1111/spc3.12011"
   - "https://psycnet.apa.org/record/2002-18731-012/"
+  - "https://journals.sagepub.com/doi/abs/10.1111/j.1467-9280.2006.01677.x"
   - "https://www.psychologicalscience.org/observer/why-wait-the-science-behind-procrastination"
   - "https://pmc.ncbi.nlm.nih.gov/articles/PMC6119549/"
   - "https://desktime.com/blog/52-17-updated"
@@ -37,7 +38,7 @@ Researchers Fuschia Sirois and Timothy Pychyl found that [procrastination is fun
 
 So when a rigid productivity system triggers those same feelings (dread at a packed schedule, guilt when you slip behind), it can actually make things worse. You're adding a new source of stress on top of the work itself.
 
-The [Association for Psychological Science](https://www.psychologicalscience.org/observer/why-wait-the-science-behind-procrastination) describes procrastination as a self-protection strategy: if you never fully commit to a system, you can't truly fail at it. That's not weakness — it's your brain doing what brains do.
+The [Association for Psychological Science](https://www.psychologicalscience.org/observer/why-wait-the-science-behind-procrastination) calls procrastination "a complicated failure of self-regulation" rooted in an inability to manage emotions. When you avoid committing to a system, part of your brain is simply trying to dodge the discomfort — that's not weakness, it's how brains are wired.
 
 The real question isn't "how do I force myself to follow a schedule?" It's "what's the minimum structure I need to get things done without hating every minute of it?"
 
@@ -51,7 +52,7 @@ The practical takeaway: doing fewer things, but finishing them, beats starting t
 
 ### "Good Enough" Beats Perfect
 
-Psychologist Barry Schwartz's research on [satisficing versus maximizing](https://psycnet.apa.org/record/2002-18731-012/) revealed something counterintuitive: people who settle for "good enough" options are consistently happier and less stressed than those who try to optimize every decision — even when the optimizers achieve objectively better outcomes. The maximizers earn more but feel worse about what they earn.
+Psychologist Barry Schwartz's research on [satisficing versus maximizing](https://psycnet.apa.org/record/2002-18731-012/) revealed something counterintuitive: people who settle for "good enough" options are consistently happier and less stressed than those who try to optimize every decision. A [follow-up study](https://journals.sagepub.com/doi/abs/10.1111/j.1467-9280.2006.01677.x) found that maximizers secured jobs with 20% higher starting salaries — yet felt less satisfied with the outcome than satisficers.
 
 Applied to time management: a rough plan you actually follow beats a perfect system you abandon by Wednesday.
 
@@ -63,13 +64,13 @@ These aren't hacks. They're concessions to how your brain actually works.
 
 Not three things. Not your top five priorities. One. Pick the single task that would make today feel like a win if you finished it. Do that first. Everything else is bonus.
 
-This works because it removes the [decision fatigue](https://pmc.ncbi.nlm.nih.gov/articles/PMC6119549/) that comes from staring at a long to-do list. A systematic review published in the *Journal of Health Psychology* found that making numerous choices depletes mental resources, leading to poorer decisions and outright decision avoidance. Fewer decisions at the start of your day means more energy for actual work.
+This works because it removes the [decision fatigue](https://pmc.ncbi.nlm.nih.gov/articles/PMC6119549/) that comes from staring at a long to-do list. A concept analysis published in the *Journal of Health Psychology* found that making numerous choices depletes mental resources, leading to poorer decisions and outright decision avoidance. Fewer decisions at the start of your day means more energy for actual work.
 
 ### 2. Use a Timer Instead of a Plan
 
 You don't need to plan your whole day. You just need to commit to focused work for a set amount of time.
 
-A [study published in the British Journal of Educational Psychology](https://bpspsychub.onlinelibrary.wiley.com/doi/10.1111/bjep.12593) found that students using structured work-break intervals (25 minutes of work, 5 minutes of rest) completed similar amounts of work in less total time and reported lower fatigue compared to those who managed their own breaks.
+A [study published in the British Journal of Educational Psychology](https://bpspsychub.onlinelibrary.wiley.com/doi/10.1111/bjep.12593) found that students using structured Pomodoro-style work-break intervals completed similar amounts of work in less total time and reported lower fatigue and higher concentration compared to those who managed their own breaks.
 
 The beauty of a timer is that it asks nothing of you except to start. No planning, no prioritizing, no color-coding. Just press start and work until it rings. Tools like [Pomodorian](https://pomodorian.app) make this even simpler — set a timer, add ambient sounds if that helps you focus, and go.
 
