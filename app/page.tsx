@@ -221,6 +221,7 @@ export default function Home() {
             onAdd={tasks.addTask}
             onToggle={tasks.toggleComplete}
             onDelete={tasks.deleteTask}
+            onEdit={tasks.editTask}
             onSetActive={tasks.setActiveTask}
             onIncrementPomodoro={tasks.incrementPomodoro}
             onOpenAIPlanner={() => setAIPlannerOpen(true)}

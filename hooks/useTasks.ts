@@ -10,6 +10,7 @@ type TaskAction =
   | { type: "ADD"; title: string; estimatedPomodoros?: number; aiGenerated?: boolean }
   | { type: "DELETE"; id: string }
   | { type: "TOGGLE"; id: string }
+  | { type: "EDIT"; id: string; title: string }
   | { type: "INCREMENT_POMODORO"; id: string }
   | { type: "IMPORT_AI"; suggestions: AITaskSuggestion[] };
 
@@ -36,6 +37,10 @@ function taskReducer(state: Task[], action: TaskAction): Task[] {
     case "TOGGLE":
       return state.map((t) =>
         t.id === action.id ? { ...t, completed: !t.completed } : t
+      );
+    case "EDIT":
+      return state.map((t) =>
+        t.id === action.id ? { ...t, title: action.title } : t
       );
     case "INCREMENT_POMODORO":
       return state.map((t) =>
@@ -99,6 +104,10 @@ export function useTasks() {
     dispatch({ type: "TOGGLE", id });
   }, []);
 
+  const editTask = useCallback((id: string, title: string) => {
+    dispatch({ type: "EDIT", id, title });
+  }, []);
+
   const incrementPomodoro = useCallback((id: string) => {
     dispatch({ type: "INCREMENT_POMODORO", id });
   }, []);
@@ -117,6 +126,7 @@ export function useTasks() {
     addTask,
     deleteTask,
     toggleComplete,
+    editTask,
     incrementPomodoro,
     importAITasks,
     setActiveTask,

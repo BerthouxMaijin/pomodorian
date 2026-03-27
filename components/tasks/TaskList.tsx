@@ -10,6 +10,7 @@ interface TaskListProps {
   onAdd: (title: string, estimatedPomodoros?: number) => void;
   onToggle: (id: string) => void;
   onDelete: (id: string) => void;
+  onEdit: (id: string, title: string) => void;
   onSetActive: (id: string | null) => void;
   onIncrementPomodoro: (id: string) => void;
   onOpenAIPlanner: () => void;
@@ -21,6 +22,7 @@ export function TaskList({
   onAdd,
   onToggle,
   onDelete,
+  onEdit,
   onSetActive,
   onOpenAIPlanner,
 }: TaskListProps) {
@@ -53,6 +55,7 @@ export function TaskList({
             isActive={task.id === activeTaskId}
             onToggle={() => onToggle(task.id)}
             onDelete={() => onDelete(task.id)}
+            onEdit={(title) => onEdit(task.id, title)}
             onSetActive={() =>
               onSetActive(task.id === activeTaskId ? null : task.id)
             }
