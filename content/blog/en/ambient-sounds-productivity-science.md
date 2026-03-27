@@ -48,6 +48,8 @@ Important distinction: ambient sounds work because they lack semantic content. M
 - **Fireplace**: Warm, calming crackling sounds
 - **Nature with water**: River or ocean sounds promote relaxation
 
+Making the most of these breaks is just as important as the focus sessions themselves — learn more about [how micro-breaks boost focus and prevent burnout](/blog/micro-breaks-boost-focus).
+
 ## Using Ambient Sounds with the Pomodoro Technique
 
 The combination of ambient sounds and timed focus sessions is powerful:
@@ -55,7 +57,7 @@ The combination of ambient sounds and timed focus sessions is powerful:
 1. **Start your pomodoro** with your chosen ambient sound
 2. **The sound becomes an anchor** — your brain learns to associate it with focused work
 3. **During breaks**, switch to a different sound or silence to signal the transition
-4. **Over time**, just hearing the sound triggers a focus state (classical conditioning)
+4. **Over time**, just hearing the sound triggers a focus state (classical conditioning) — helping you enter a [flow state faster with each session](/blog/science-of-flow-state)
 
 Tools like [Pomodorian](https://pomodorian.app) integrate ambient sounds directly into the timer, so you can start a focus session and your sounds in one click. It includes five layerable sounds — rain, cafe, lo-fi, nature, and fireplace — all free and adjustable.
 

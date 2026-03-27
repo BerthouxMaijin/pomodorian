@@ -93,7 +93,7 @@ As Martin Fowler notes in his [guide to pair programming](https://martinfowler.c
 
 ### Use timeboxing to switch modes
 
-The transition between solo coding and collaboration can be jarring. Timeboxing helps. Set a focused block — say 25 or 50 minutes — for solo deep work, then switch to a collaborative task during your break or next block. Tools like [Pomodorian](https://pomodorian.app) make this easy by structuring your work into timed focus sessions with built-in breaks, so you can alternate between deep solo work and pairing without losing your rhythm.
+The transition between solo coding and collaboration can be jarring. Timeboxing helps. Set a focused block — say 25 or 50 minutes — for solo deep work, then switch to a collaborative task during your break or next block. Tools like [Pomodorian](https://pomodorian.app) make this easy by structuring your work into timed focus sessions with built-in breaks, so you can alternate between deep solo work and pairing without losing your rhythm. If your team wants to try focused collaboration, [group Pomodoro team sessions](/blog/group-pomodoro-team-sessions) can bring the same structured rhythm to pair programming blocks.
 
 ### Communicate your availability
 

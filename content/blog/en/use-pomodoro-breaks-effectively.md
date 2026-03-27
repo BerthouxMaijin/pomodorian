@@ -31,7 +31,7 @@ Your brain doesn't have unlimited attention. A [study by researchers at the Univ
 
 This is called the "vigilance decrement," and it's the reason you feel mentally foggy after two hours of uninterrupted work. Your brain isn't tired in the muscular sense. It's just stopped registering the task as important. A short break resets that signal.
 
-A [systematic review published in PLOS ONE](https://pmc.ncbi.nlm.nih.gov/articles/PMC9432722/) analyzed 22 independent study samples on micro-breaks (under 10 minutes) and found they are effective at preserving high levels of vigor and reducing fatigue. For well-being, even brief pauses make a measurable difference.
+A [systematic review published in PLOS ONE](https://pmc.ncbi.nlm.nih.gov/articles/PMC9432722/) analyzed 22 independent study samples on micro-breaks (under 10 minutes) and found they are effective at preserving high levels of vigor and reducing fatigue. For a deeper look at how [micro-breaks boost focus and productivity](/blog/micro-breaks-boost-focus), the evidence is compelling. For well-being, even brief pauses make a measurable difference.
 
 The bottom line: breaks aren't a reward you earn after working hard. They're a tool that makes the work itself better.
 

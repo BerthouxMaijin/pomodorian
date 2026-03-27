@@ -123,7 +123,7 @@ Quelques conseils pratiques pour tirer le maximum de vos **sons d'ambiance trava
 
 1. **Associez un son à un type de tâche.** Votre cerveau finira par créer un ancrage : "ce son = mode focus". C'est un signal conditionné, comme le rituel du café du matin qui dit à votre corps qu'il est temps de se mettre en route.
 
-2. **Combinez sons d'ambiance et technique Pomodoro.** Lancez votre son au début d'un pomodoro de 25 minutes et coupez-le pendant la pause. Le contraste renforce le signal de focus. C'est exactement ce que propose [Pomodorian](https://pomodorian.app) : un timer Pomodoro avec des sons d'ambiance intégrés (lofi, pluie, café, feu de cheminée) qui se lancent automatiquement avec vos sessions et se coupent pendant les pauses — pas besoin de jongler entre plusieurs apps.
+2. **Combinez sons d'ambiance et technique Pomodoro.** Si vous débutez, consultez notre [guide complet de la technique Pomodoro](/blog/fr/guide-complet-pomodoro-debutants). Lancez votre son au début d'un pomodoro de 25 minutes et coupez-le pendant la pause. Le contraste renforce le signal de focus. C'est exactement ce que propose [Pomodorian](https://pomodorian.app) : un timer Pomodoro avec des sons d'ambiance intégrés (lofi, pluie, café, feu de cheminée) qui se lancent automatiquement avec vos sessions et se coupent pendant les pauses — pas besoin de jongler entre plusieurs apps.
 
 3. **Variez selon l'heure de la journée.** Le matin, quand l'énergie est haute, un simple bruit rose peut suffire. L'après-midi, quand la motivation baisse, le lofi peut vous porter. En fin de journée, les sons de la nature aident à maintenir le calme tout en restant productif.
 
@@ -147,4 +147,4 @@ La science est claire sur plusieurs points : le silence total n'est pas optimal 
 
 Le seul vrai piège ? La musique avec des paroles. Gardez-la pour la salle de sport.
 
-Le meilleur son d'ambiance est celui que vous oublierez en quelques minutes parce que vous serez déjà plongé dans votre travail. Testez, ajustez, et laissez le son disparaître au profit du flow.
+Le meilleur son d'ambiance est celui que vous oublierez en quelques minutes parce que vous serez déjà plongé dans votre travail — dans un état de [concentration profonde et de deep work](/blog/fr/deep-work-concentration-profonde). Testez, ajustez, et laissez le son disparaître au profit du flow.

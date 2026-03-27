@@ -15,7 +15,7 @@ sources: []
 
 ## Why Developers Need the Pomodoro Technique
 
-Software development is deep work. Writing code, debugging, and system design all require sustained mental focus. But the modern developer's environment is full of interruptions: Slack messages, PR reviews, standups, and the temptation to check Hacker News.
+Software development is deep work. Writing code, debugging, and system design all require sustained mental focus — what Cal Newport calls a [deep work framework for programmers](/blog/deep-work-programmers-framework). But the modern developer's environment is full of interruptions: Slack messages, PR reviews, standups, and the temptation to check Hacker News.
 
 The Pomodoro Technique gives developers a framework to protect their focus time and make measurable progress.
 
@@ -78,7 +78,7 @@ Over time, this data helps you estimate more accurately and plan more realistica
 
 ## Common Mistakes
 
-- **Not protecting your pomodoros**: If you pause for every Slack message, the technique doesn't work. Use Do Not Disturb mode.
+- **Not protecting your pomodoros**: If you pause for every Slack message, the technique doesn't work. The [cost of context switching in software development](/blog/context-switching-cost-development) is enormous — use Do Not Disturb mode.
 - **Skipping breaks**: Breaks aren't optional. They prevent burnout and maintain focus quality.
 - **Using it for everything**: Some tasks (brainstorming, pair programming) don't need a timer. Use Pomodoro for solo deep work.
 - **Not tracking**: The real power comes from tracking over time. Use a tool that records your sessions.

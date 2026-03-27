@@ -100,7 +100,7 @@ Before you start the timer, spend 10 seconds defining what "done" looks like for
 - "Set up the project folder and install dependencies"
 - "Read and annotate the first five pages"
 
-This micro-outcome serves as your implementation intention. It tells your brain exactly where to aim.
+For quick tasks that take less than two minutes, you might not even need a timebox — the [2-minute rule combined with Pomodoro](/blog/2-minute-rule-with-pomodoro) can help you knock them out before they pile up. For everything else, this micro-outcome serves as your implementation intention. It tells your brain exactly where to aim.
 
 ### 4. Work Until the Timer Stops
 
@@ -118,7 +118,7 @@ After the break, decide: do another timebox on the same task, or switch to somet
 
 ## Common Mistakes (And How to Avoid Them)
 
-**Setting timeboxes too long.** If you're procrastinating on something, a 2-hour timebox will feel just as daunting as the task itself. Keep it under 30 minutes until you build momentum.
+**Setting timeboxes too long.** If you're procrastinating on something, a 2-hour timebox will feel just as daunting as the task itself. Keep it under 30 minutes until you build momentum. And if traditional productivity systems feel like overkill, you're not alone — our guide on [time management for people who hate time management](/blog/time-management-for-people-who-hate-it) offers lighter alternatives.
 
 **Skipping the break.** The break isn't optional. It's what makes the next timebox possible. Without breaks, you burn out and the system collapses within a day.
 

@@ -36,13 +36,13 @@ The key rule: during a pomodoro, you do not switch tasks, check email, or respon
 The Pomodoro Technique works because it aligns with how the brain processes information:
 
 - **Focused attention has limits**: Research shows that sustained attention declines after 20-30 minutes. The Pomodoro Technique works within this natural window.
-- **Time pressure boosts performance**: Parkinson's Law states that work expands to fill the time available. A 25-minute constraint creates healthy urgency.
+- **Time pressure boosts performance**: Parkinson's Law states that work expands to fill the time available. A 25-minute constraint creates healthy urgency — a principle also known as [timeboxing, which is one of the best ways to stop procrastinating](/blog/stop-procrastinating-timeboxing).
 - **Breaks consolidate learning**: Short breaks allow the brain to process and store information from the focused session.
 - **Reduces decision fatigue**: Instead of constantly deciding what to work on, you commit to one task for 25 minutes.
 
 ## Best Practices
 
-- **Start small**: If 25 minutes feels too long, start with 15-minute pomodoros and increase over time.
+- **Start small**: If 25 minutes feels too long, start with 15-minute pomodoros and increase over time. You can also [customize your Pomodoro intervals](/blog/customize-pomodoro-intervals) to match different types of tasks.
 - **Plan your pomodoros**: Before starting, estimate how many pomodoros a task will take. Tools like [Pomodorian](https://pomodorian.app) can use AI to help break down goals into pomodoro-sized tasks.
 - **Track completed pomodoros**: This builds awareness of how long tasks actually take and motivates consistency.
 - **Protect your pomodoros**: Treat each session as sacred. Defer interruptions when possible.
@@ -59,4 +59,4 @@ Modern Pomodoro timer apps add features that enhance the original technique:
 
 ## Getting Started Today
 
-The best way to start is to pick one task, set a 25-minute timer, and begin. Don't overthink the setup — the power of the Pomodoro Technique is in its simplicity. As you build the habit, you can add tools and refine your approach.
+The best way to start is to pick one task, set a 25-minute timer, and begin. Don't overthink the setup — the power of the Pomodoro Technique is in its simplicity. If you're completely new to the method, our [Pomodoro Technique beginners guide](/blog/pomodoro-technique-beginners-guide) walks you through your first sessions step by step. As you build the habit, you can add tools and refine your approach.

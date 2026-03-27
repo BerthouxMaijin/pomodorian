@@ -88,7 +88,7 @@ Noise is one of the biggest productivity killers in a home environment. Kids, co
 You have a few options:
 
 - **Noise-canceling headphones** are the single best investment for a distraction-free workspace.
-- **Ambient sounds** like rain, cafe noise, or lo-fi music can mask unpredictable background noise and keep you in the zone. There's [solid science behind why this works](/blog/ambient-sounds-productivity-science).
+- **Ambient sounds** like rain, cafe noise, or lo-fi music can mask unpredictable background noise and keep you in the zone. There's [solid science behind why this works](/blog/ambient-sounds-productivity-science). Beyond physical noise, managing digital distractions is equally critical — our guide on [digital minimalism for remote workers](/blog/digital-minimalism-remote-workers) covers how to tame notifications, apps, and the constant pull of screens.
 - **A white noise machine** is a low-tech alternative if you don't like wearing headphones all day.
 
 Tools like [Pomodorian](https://pomodorian.app) combine ambient soundscapes — rain, nature, cafe, lo-fi — with a built-in Pomodoro timer, so you can manage both your sound environment and your work rhythm in one place.

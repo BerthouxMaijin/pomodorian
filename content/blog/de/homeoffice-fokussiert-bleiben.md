@@ -65,7 +65,7 @@ Wenn der Schreibtisch im Wohnzimmer steht und der Feierabend nicht klar definier
 
 ### Die Pomodoro-Technik
 
-Das Prinzip ist simpel: 25 Minuten konzentriert arbeiten, dann 5 Minuten Pause. Nach vier Runden eine längere Pause von 15–30 Minuten.
+Das Prinzip ist simpel: 25 Minuten konzentriert arbeiten, dann 5 Minuten Pause. Nach vier Runden eine längere Pause von 15–30 Minuten. Wenn du die Methode noch nicht kennst, findest du alles Wichtige in unserem [Leitfaden zur Pomodoro-Technik für Anfänger](/blog/de/pomodoro-technik-leitfaden-anfaenger).
 
 Eine [Studie im British Journal of Educational Psychology](https://bpspsychub.onlinelibrary.wiley.com/doi/10.1111/bjep.12593) hat strukturierte Pausen wie die der Pomodoro-Technik mit selbstgesteuerten Pausen verglichen. Das Ergebnis: Wer nach einem festen Rhythmus arbeitet, berichtet über weniger Ablenkung, geringere Müdigkeit und höhere Konzentration — bei vergleichbarer Aufgabenerfüllung in kürzerer Zeit.
 
@@ -102,7 +102,7 @@ Was das für dein Homeoffice bedeutet:
 - **Für kreative Aufgaben** (Brainstorming, Planung, Konzeption): Café-Atmosphäre oder Naturgeräusche
 - **Für Pausen**: Kaminfeuer oder Stille
 
-Pomodorian bietet genau dafür [fünf verschiedene Hintergrundgeräusche](https://pomodorian.app) an — Regen, Café, Lo-fi, Natur und Kamin — die du direkt mit deiner Fokus-Session kombinieren kannst.
+Pomodorian bietet genau dafür [fünf verschiedene Hintergrundgeräusche](https://pomodorian.app) an — Regen, Café, Lo-fi, Natur und Kamin — die du direkt mit deiner Fokus-Session kombinieren kannst. Mehr über die Wissenschaft hinter diesen Klängen erfährst du in unserem Artikel über die [besten Ambient Sounds zum Konzentrieren](/blog/de/beste-ambient-sounds-konzentrieren).
 
 ### Ergonomie und Licht
 

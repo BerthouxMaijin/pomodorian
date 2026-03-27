@@ -49,7 +49,7 @@ A [comprehensive review by Dunlosky et al. (2013)](https://doi.org/10.1177/15291
 - **High utility**: Practice testing (active recall) and distributed practice (spaced repetition)
 - **Low utility**: Highlighting, rereading, and summarization
 
-The techniques most students lean on — the ones that feel comfortable and productive — received the lowest ratings. The ones that feel effortful and uncertain received the highest.
+The techniques most students lean on — the ones that feel comfortable and productive — received the lowest ratings. The ones that feel effortful and uncertain received the highest. If you want the full breakdown of which methods made the cut (and which didn't), check out our guide to the [best study techniques backed by science](/blog/best-study-techniques-science).
 
 This isn't a coincidence. Learning that feels easy often isn't learning at all. It's recognition masquerading as knowledge.
 
@@ -121,7 +121,7 @@ Flashcards are the most well-known active recall tool, but they're not the only 
 
 ### Free Recall
 
-After reading a chapter or attending a lecture, close everything and write down everything you remember. Don't organize, don't edit — just dump it all. Then open your materials and see what you missed. Research by [Agarwal et al. (2012)](https://doi.org/10.1007/s10648-012-9210-2) showed that even low-stakes retrieval practice in classroom settings produced significant improvements on exams.
+After reading a chapter or attending a lecture, close everything and write down everything you remember. Don't organize, don't edit — just dump it all. Then open your materials and see what you missed. Pairing this with effective [note-taking methods for better retention](/blog/note-taking-methods-retention) can help you identify gaps faster and structure your review sessions more effectively. Research by [Agarwal et al. (2012)](https://doi.org/10.1007/s10648-012-9210-2) showed that even low-stakes retrieval practice in classroom settings produced significant improvements on exams.
 
 ### The Feynman Technique
 

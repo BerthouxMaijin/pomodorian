@@ -36,7 +36,7 @@ The 25-minute Pomodoro works because it sits within the window where most people
 
 But not all tasks are created equal. Answering emails, organizing files, reviewing pull requests — these fit neatly into 25-minute blocks. Writing a research paper, debugging a distributed system, designing a database schema, composing music — these don't. They require what Cal Newport calls [deep work](https://calnewport.com/deep-work-rules-for-focused-success-in-a-distracted-world/): sustained, uninterrupted cognitive effort on a problem that demands your full attention.
 
-The issue is ramp-up time. Many productivity researchers observe that it takes roughly 10 to 15 minutes of uninterrupted focus to reach a state of deep engagement — what psychologists call [flow state](https://asana.com/resources/flow-state-work). With a 25-minute timer, that leaves you only 10 to 15 minutes of peak-performance work before the break pulls you out. And once you break, the re-entry cost is real. [Research by Gloria Mark](https://ics.uci.edu/~gmark/chi08-mark.pdf) at UC Irvine found that recovering full focus after an interruption can take over 20 minutes — meaning a 5-minute break might cost you far more than 5 minutes of deep work.
+The issue is ramp-up time. Many productivity researchers observe that it takes roughly 10 to 15 minutes of uninterrupted focus to reach a state of deep engagement — what psychologists call [flow state](https://asana.com/resources/flow-state-work) (learn more about the [science of flow state and how to trigger it](/blog/science-of-flow-state)). With a 25-minute timer, that leaves you only 10 to 15 minutes of peak-performance work before the break pulls you out. And once you break, the re-entry cost is real. [Research by Gloria Mark](https://ics.uci.edu/~gmark/chi08-mark.pdf) at UC Irvine found that recovering full focus after an interruption can take over 20 minutes — meaning a 5-minute break might cost you far more than 5 minutes of deep work.
 
 For certain types of work, the math simply doesn't add up.
 
@@ -102,7 +102,7 @@ Even with longer intervals, respect your limits. Most people can sustain 3 to 4 
 
 ### 5. Track and adjust
 
-One of the most useful things you can do is log how your sessions feel. Did 50 minutes leave you energized or drained? Did you lose focus at the 35-minute mark? Use that data to calibrate. Some people thrive at 45 minutes, others at 60 or even 90. Tools like [Pomodorian](https://pomodorian.app) let you set a custom timer to any length and track your focus patterns over time, so you can find your personal sweet spot based on real data rather than guesswork.
+One of the most useful things you can do is log how your sessions feel. Did 50 minutes leave you energized or drained? Did you lose focus at the 35-minute mark? Use that data to [customize your Pomodoro intervals](/blog/customize-pomodoro-intervals) and calibrate. Some people thrive at 45 minutes, others at 60 or even 90. Tools like [Pomodorian](https://pomodorian.app) let you set a custom timer to any length and track your focus patterns over time, so you can find your personal sweet spot based on real data rather than guesswork.
 
 ## The Hybrid Approach: Mixing Short and Long Sessions
 

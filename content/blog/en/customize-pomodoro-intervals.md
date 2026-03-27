@@ -117,7 +117,7 @@ Coding often requires holding complex mental models in your head. A 25-minute po
 - **Short break**: 10 minutes
 - **Long break**: 20 minutes after 3 sessions
 
-Writing is cognitively intense but often benefits from a rhythm of sprint and pause. The break gives your subconscious time to process ideas — many writers find that solutions to tricky passages come during breaks, not during the session itself.
+Writing is cognitively intense but often benefits from a rhythm of sprint and pause. If you do creative work like writing, design, or music, our guide on [using the Pomodoro Technique for creative work](/blog/pomodoro-for-creative-work) goes deeper into interval strategies tailored to the creative process. The break gives your subconscious time to process ideas — many writers find that solutions to tricky passages come during breaks, not during the session itself.
 
 ### For Students
 

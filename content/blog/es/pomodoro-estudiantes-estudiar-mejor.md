@@ -34,7 +34,7 @@ El método es simple:
 4. **Toma un descanso de 5 minutos**
 5. **Cada 4 pomodoros**, toma un descanso largo de 15-30 minutos
 
-Parece demasiado sencillo para funcionar, pero hay razones científicas detrás de su eficacia.
+Si quieres profundizar en los fundamentos del método, consulta nuestra [guía completa de la técnica Pomodoro](/blog/es/guia-completa-tecnica-pomodoro). Parece demasiado sencillo para funcionar, pero hay razones científicas detrás de su eficacia.
 
 ## La ciencia detrás del temporizador de estudio
 
@@ -68,7 +68,7 @@ Antes de poner el temporizador, dedica 5 minutos a decidir:
 - **Cuántos pomodoros** estimas que necesitas por tema
 - **Qué tipo de estudio** harás en cada bloque (lectura nueva, repaso, ejercicios, autoevaluación)
 
-Tener un plan evita esos momentos de "¿y ahora qué estudio?" que matan la productividad.
+Tener un plan evita esos momentos de "¿y ahora qué estudio?" que matan la productividad. Si la procrastinación es tu mayor enemigo, descubre cómo [dejar de procrastinar con la técnica Pomodoro](/blog/es/dejar-procrastinar-tecnica-pomodoro).
 
 ### 2. Un pomodoro, un tema
 

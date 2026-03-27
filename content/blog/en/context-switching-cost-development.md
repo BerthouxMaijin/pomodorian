@@ -54,7 +54,7 @@ Even when you successfully switch back to your code, part of your brain is still
 
 The effect is worse when Task A was left incomplete — which is almost always the case with interruptions. You didn't choose to stop; you were pulled away. So your brain keeps running a background thread on the unfinished problem, degrading your performance on whatever you switch to.
 
-This is why checking Slack "for just a second" between coding tasks is so damaging. Even if the message is irrelevant, your brain has already loaded a new context. The residue lingers.
+This is why checking Slack "for just a second" between coding tasks is so damaging. Even if the message is irrelevant, your brain has already loaded a new context. The residue lingers. If you want practical strategies for dealing with this, read our guide on [how to recover focus after an interruption](/blog/recover-focus-after-interruption).
 
 ### The Compounding Effect of Multiple Projects
 
@@ -86,7 +86,7 @@ Knowing the context switching cost is one thing. Doing something about it is ano
 
 ### 1. Time-block your deep work
 
-Don't hope for uninterrupted time — schedule it. Block 2-3 hour windows on your calendar specifically for focus coding. Treat these blocks as non-negotiable. Decline meetings that fall in them. Set your Slack status to "Deep work — back at 2pm."
+Don't hope for uninterrupted time — schedule it. Block 2-3 hour windows on your calendar specifically for focus coding, following a [deep work framework designed for programmers](/blog/deep-work-programmers-framework). Treat these blocks as non-negotiable. Decline meetings that fall in them. Set your Slack status to "Deep work — back at 2pm."
 
 The key is making this visible. If your team can see you're in a focused block, they're more likely to hold their question for later.
 

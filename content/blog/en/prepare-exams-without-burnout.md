@@ -33,7 +33,7 @@ This is the cruel irony of exam stress: the more desperately you push yourself, 
 
 ## Study Smarter: Techniques That Actually Work
 
-Not all study methods are created equal. A landmark [review by Dunlosky et al.](https://doi.org/10.1177/1529100612453266) published in *Psychological Science in the Public Interest* evaluated ten popular learning techniques and found that most of what students do — highlighting, re-reading, summarizing — ranks low in effectiveness. The two techniques that scored highest? **Practice testing** (active recall) and **distributed practice** (spaced repetition).
+Not all study methods are created equal. A landmark [review by Dunlosky et al.](https://doi.org/10.1177/1529100612453266) published in *Psychological Science in the Public Interest* evaluated ten popular learning techniques and found that most of what students do — highlighting, re-reading, summarizing — ranks low in effectiveness. The two techniques that scored highest? **Practice testing** (active recall) and **distributed practice** (spaced repetition). For a deeper look at these and other [best study techniques backed by science](/blog/best-study-techniques-science), it's worth understanding why the methods you choose matter more than the hours you put in.
 
 ### Active Recall
 

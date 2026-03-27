@@ -15,7 +15,7 @@ sources: []
 
 ## Why Use a Pomodoro Timer App?
 
-While you can use any timer for the Pomodoro Technique, dedicated apps add features that make the method more effective: task tracking, automatic break management, analytics, and ambient sounds. Here are the best options in 2026.
+While you can use any timer for the Pomodoro Technique, dedicated apps add features that make the method more effective: task tracking, automatic break management, analytics, and ambient sounds. If you're new to the method, check out our [complete guide to the Pomodoro Technique](/blog/pomodoro-technique-complete-guide) before diving into tools. Here are the best options in 2026.
 
 ## 1. Pomodorian — Best for AI-Powered Planning
 
@@ -126,4 +126,4 @@ Reclaim.ai integrates Pomodoro sessions with your calendar, automatically blocki
 
 ## Our Recommendation
 
-For most people, **[Pomodorian](https://pomodorian.app)** offers the best combination of features at the best price (free). The AI Session Planner alone makes it worth trying — it solves the common problem of not knowing how to break down a big task into manageable sessions. Add in ambient sounds, beautiful analytics, and offline support, and it's a compelling package.
+For most people, **[Pomodorian](https://pomodorian.app)** offers the best combination of features at the best price (free). The AI Session Planner alone makes it worth trying — it solves the common problem of not knowing how to break down a big task into manageable sessions. And if you find that 25 minutes doesn't suit every task, you can easily [customize your Pomodoro intervals](/blog/customize-pomodoro-intervals). Add in ambient sounds, beautiful analytics, and offline support, and it's a compelling package.

@@ -41,7 +41,7 @@ The first week is about one thing: removing every barrier between you and actual
 
 ### Pick a Specific Focus Window
 
-Don't tell yourself "I'll focus more today." That's a wish, not a plan. Instead, choose a specific time and place for your daily focus session.
+Don't tell yourself "I'll focus more today." That's a wish, not a plan. Instead, choose a specific time and place for your daily focus session. Many people find that anchoring their focus habit to a [morning routine built for productivity](/blog/morning-routines-productive-people) makes it far easier to show up consistently.
 
 A [meta-analysis of 94 studies by Gollwitzer and Sheeran](https://psycnet.apa.org/record/2007-19538-002) found that these "implementation intentions" — if-then plans that link a situation to an action — had a medium-to-large effect on goal attainment. The format is simple:
 

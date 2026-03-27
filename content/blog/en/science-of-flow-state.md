@@ -152,7 +152,7 @@ Pick one task. Work on that one task. If another task pops into your head, write
 
 Flow is more accessible during your peak energy hours. Most people have a window of 2-4 hours per day where they can do their best cognitive work. For many, this is mid-morning. For others, it's late at night.
 
-Track your energy levels for a week. When do you feel sharpest? Schedule your flow-demanding work there. Save meetings, email, and administrative tasks for your low-energy periods.
+Track your energy levels for a week. When do you feel sharpest? Schedule your flow-demanding work there. Save meetings, email, and administrative tasks for your low-energy periods. These peaks and dips aren't random — they follow [ultradian rhythms and natural focus cycles](/blog/ultradian-rhythms-natural-focus-cycles) that you can learn to work with instead of against.
 
 ### Leverage the Flow Cycle
 
@@ -189,7 +189,7 @@ A practical daily approach:
 6. **Take a real break** when the session ends — walk, stretch, hydrate
 7. **Track your sessions** so you can see patterns in when and how you access flow
 
-Over time, this ritual becomes automatic. Your brain starts associating the setup with focus, and the time-to-flow shrinks.
+Over time, this ritual becomes automatic. Your brain starts associating the setup with focus, and the time-to-flow shrinks. If you want a structured roadmap for turning this into a lasting habit, our guide on how to [build a daily focus habit in 30 days](/blog/build-daily-focus-habit-30-days) walks through the process week by week.
 
 ## The Bottom Line
 

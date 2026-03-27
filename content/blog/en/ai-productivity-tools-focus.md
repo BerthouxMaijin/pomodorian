@@ -15,7 +15,7 @@ sources: []
 
 ## The Problem with Traditional Productivity
 
-Most productivity systems require you to do the hardest part yourself: figuring out what to do and how long it will take. You stare at a vague goal like "finish the report" and feel overwhelmed. This planning paralysis is one of the biggest obstacles to getting started.
+Most productivity systems require you to do the hardest part yourself: figuring out what to do and how long it will take. You stare at a vague goal like "finish the report" and feel overwhelmed. This planning paralysis is one of the biggest obstacles to getting started — and a major reason people [procrastinate even on tasks they care about](/blog/stop-procrastinating-timeboxing).
 
 ## How AI Changes the Game
 
@@ -44,7 +44,7 @@ Each task starts with a verb, has a clear scope, and has a realistic time estima
 
 ### The Best Workflow
 
-The most effective approach combines AI planning with the Pomodoro Technique:
+The most effective approach combines AI planning with the [Pomodoro Technique](/blog/pomodoro-technique-complete-guide):
 
 1. **Start your day** by telling the AI planner what you want to accomplish
 2. **Review the generated tasks** and adjust if needed

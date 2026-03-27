@@ -90,7 +90,7 @@ Pay attention to when you naturally feel sharp. Protect that window. Let the res
 
 ### 5. Shrink the Task
 
-If you're avoiding something, it's probably because it feels too big. So make it smaller.
+If you're avoiding something, it's probably because it feels too big. So make it smaller. One of the simplest approaches is the [2-minute rule paired with Pomodoro](/blog/2-minute-rule-with-pomodoro) — if a task takes under two minutes, just do it now; if it's bigger, timebox it.
 
 "Write the report" becomes "open the document and write one paragraph." "Clean the apartment" becomes "clear the kitchen counter." The goal is to make starting feel trivial. Once you're in motion, you usually keep going. And if you don't? You still wrote one paragraph more than you would have.
 

@@ -47,7 +47,7 @@ Not every job burns people out at the same rate. Software engineering has a few 
 
 ### Constant context switching
 
-Most developers don't get to write code for eight straight hours. There are Slack messages, code reviews, meetings, incidents, and the dreaded "quick question." Each interruption forces your brain to reload context — a cognitively expensive operation. A [systematic mapping study in *Information and Software Technology*](https://www.sciencedirect.com/science/article/pii/S0950584922002257) identified job demands and work tension as primary drivers of burnout and turnover among software developers.
+Most developers don't get to write code for eight straight hours. There are Slack messages, code reviews, meetings, incidents, and the dreaded "quick question." Each interruption forces your brain to reload context — a cognitively expensive operation. Learning how to [recover focus after an interruption](/blog/recover-focus-after-interruption) can significantly reduce the cumulative toll of these context switches. A [systematic mapping study in *Information and Software Technology*](https://www.sciencedirect.com/science/article/pii/S0950584922002257) identified job demands and work tension as primary drivers of burnout and turnover among software developers.
 
 ### Technical debt as a silent stressor
 
@@ -84,7 +84,7 @@ A [Harvard Business Review analysis of 80+ studies](https://hbr.org/2023/05/how-
 
 Concrete steps:
 
-- Block 2-3 hours of "no meetings" time on your calendar daily
+- Block 2-3 hours of "no meetings" time on your calendar daily — if you need help designing those blocks, our guide on how to [structure your coding day for maximum output](/blog/structure-coding-day-maximum-output) has a practical framework
 - Turn off Slack notifications during focus blocks
 - Batch code reviews into a single time slot instead of doing them all day
 - Use a timer to enforce work/break cycles — tools like [Pomodorian](https://pomodorian.app) make this dead simple with built-in ambient sounds and session tracking, so you don't have to rely on willpower alone

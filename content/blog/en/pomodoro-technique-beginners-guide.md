@@ -143,7 +143,7 @@ It depends on the kind of work you do.
 
 **For admin or shallow work** (answering emails, filing, organizing), 25 minutes is often plenty. You might even find 15-minute bursts work better for tasks that don't require deep thought.
 
-**For studying**, the classic 25/5 format tends to work well because it forces active recall and prevents passive re-reading. Many students find it especially helpful during exam prep.
+**For studying**, the classic 25/5 format tends to work well because it forces active recall and prevents passive re-reading. Many students find it especially helpful during exam prep. The technique also pairs well with [Pomodoro-based language learning](/blog/pomodoro-language-learning), where short, focused repetition sessions accelerate vocabulary retention.
 
 The right interval is whichever one you'll actually stick with. If you want to explore other timing approaches, our guide on [how to stop procrastinating with timeboxing](/blog/stop-procrastinating-timeboxing) covers several alternatives.
 

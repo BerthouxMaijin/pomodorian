@@ -55,7 +55,7 @@ The most important thing you can do is **schedule your deep work like a meeting 
 
 [A study by DeskTime](https://desktime.com/blog/productivity-research) analyzing their most productive users found that top performers worked in focused bursts of about 52 minutes followed by 17-minute breaks. The Pomodoro Technique follows a similar principle with 25-minute focused intervals. The exact numbers matter less than the pattern: **focused sprint, real break, repeat.**
 
-If 90 minutes feels too long at first, start with shorter intervals. Tools like [Pomodorian](https://pomodorian.app) let you customize your focus intervals and break durations, so you can experiment with what ratio keeps you in the zone longest.
+If 90 minutes feels too long at first, start with shorter intervals. For guidance on structuring [long Pomodoro sessions for extended deep work](/blog/long-pomodoro-sessions-guide), a gradual approach works best. Tools like [Pomodorian](https://pomodorian.app) let you customize your focus intervals and break durations, so you can experiment with what ratio keeps you in the zone longest.
 
 ### Layer 2: Eliminate the Interrupt Surface
 
@@ -129,7 +129,7 @@ Start smaller. Even a single 45-minute protected block per day is better than ze
 
 ### "I work better with some background noise/chat"
 
-That's fine — and research supports it. The key distinction is between **chosen ambient input** (lo-fi music, white noise) and **unpredictable interruptions** (Slack notifications, tap on the shoulder). The former supports focus. The latter destroys it.
+That's fine — and research supports it. The key distinction is between **chosen ambient input** (lo-fi music, white noise) and **unpredictable interruptions** (Slack notifications, tap on the shoulder). The former supports focus. The latter destroys it. Of course, not all coding is solo work — knowing when to switch between [pair programming and solo deep work](/blog/pair-programming-vs-solo-deep-work) is its own skill.
 
 ### "Open source / async work makes this harder"
 

@@ -45,7 +45,7 @@ This is known as the **testing effect**: the act of pulling information out of y
 ### How to use it
 
 - After reading a section, close the material and write down the key ideas from memory
-- Create questions from your notes, then answer them without looking
+- Create questions from your notes, then answer them without looking — the way you take notes matters too, so explore the [best note-taking methods for retention](/blog/note-taking-methods-retention)
 - Use flashcards — but grade yourself honestly before flipping
 - Explain the material out loud as if teaching someone
 
