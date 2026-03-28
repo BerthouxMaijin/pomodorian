@@ -8,9 +8,9 @@ export function InfoSection() {
     <section className="w-full max-w-3xl mx-auto px-6 mt-[50vh] space-y-16 text-sm leading-relaxed">
       {/* Hero */}
       <div className="text-center space-y-3">
-        <h2 className="text-2xl font-bold text-foreground">
+        <h1 className="text-2xl font-bold text-foreground">
           An AI-powered Pomodoro Timer to boost your productivity
-        </h2>
+        </h1>
         <p className="text-muted max-w-xl mx-auto">
           Free. No account required. Works offline.
         </p>

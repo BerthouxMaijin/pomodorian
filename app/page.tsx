@@ -23,6 +23,7 @@ import { formatTime } from "@/lib/utils";
 import { MODE_LABELS } from "@/lib/constants";
 import type { TimerMode } from "@/lib/types";
 import { useTasks } from "@/hooks/useTasks";
+import { HomeSchemas } from "@/components/seo/HomeSchemas";
 
 export default function Home() {
   const { settings, updateSettings } = useSettings();
@@ -158,6 +159,7 @@ export default function Home() {
 
   return (
     <>
+      <HomeSchemas />
       <Background mode={timer.mode} theme={settings.theme} />
       <Header
         pomodorosCompleted={timer.pomodorosCompleted}

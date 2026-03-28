@@ -74,6 +74,16 @@ export async function generateMetadata({
       description:
         "Articles about the Pomodoro Technique, productivity, focus, and how AI can help you work smarter.",
       openGraph: { title },
+      alternates: {
+        canonical: `${SITE_URL}/blog${lang === "en" ? "" : `/${lang}`}`,
+        languages: {
+          en: `${SITE_URL}/blog`,
+          fr: `${SITE_URL}/blog/fr`,
+          es: `${SITE_URL}/blog/es`,
+          de: `${SITE_URL}/blog/de`,
+          "x-default": `${SITE_URL}/blog`,
+        },
+      },
     };
   }
 
@@ -191,22 +201,35 @@ export default async function BlogPage({
     const articleUrl = `${SITE_URL}/blog/${lang === "en" ? slug : `${lang}/${slug}`}`;
     const authorName = article.author || "Jean-Baptiste Berthoux";
 
+    const wordCount = article.content.split(/\s+/).length;
+
     const jsonLd = {
       "@context": "https://schema.org",
       "@type": "Article",
       headline: article.title,
       description: article.description,
       datePublished: article.date,
+      dateModified: article.date,
       inLanguage: lang,
+      wordCount,
       author: {
         "@type": "Person",
         name: authorName,
         url: `${SITE_URL}/about`,
+        jobTitle: "Founder & Developer",
+        sameAs: [
+          "https://github.com/BerthouxMaijin",
+          "https://linkedin.com/in/jbberthoux",
+        ],
       },
       publisher: {
         "@type": "Organization",
         name: "Pomodorian",
         url: SITE_URL,
+        logo: {
+          "@type": "ImageObject",
+          url: `${SITE_URL}/icons/icon-512.png`,
+        },
       },
       mainEntityOfPage: {
         "@type": "WebPage",
@@ -217,6 +240,10 @@ export default async function BlogPage({
         "@type": "Blog",
         name: "Pomodorian Blog",
         url: `${SITE_URL}/blog`,
+      },
+      speakable: {
+        "@type": "SpeakableSpecification",
+        cssSelector: ["h1", "article > header > p"],
       },
     };
 
@@ -232,6 +259,13 @@ export default async function BlogPage({
 
     return (
       <>
+        {lang !== "en" && (
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `document.documentElement.lang="${lang}"`,
+            }}
+          />
+        )}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
@@ -313,6 +347,14 @@ export default async function BlogPage({
   const articles = getPublishedArticles(lang);
 
   return (
+    <>
+    {lang !== "en" && (
+      <script
+        dangerouslySetInnerHTML={{
+          __html: `document.documentElement.lang="${lang}"`,
+        }}
+      />
+    )}
     <div className="min-h-screen bg-background text-foreground">
       <header className="max-w-3xl mx-auto px-6 pt-12 pb-8">
         <Link
@@ -374,5 +416,6 @@ export default async function BlogPage({
         )}
       </main>
     </div>
+    </>
   );
 }

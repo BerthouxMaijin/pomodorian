@@ -129,8 +129,26 @@ export default async function SeoPage({
     isPartOf: {
       "@type": "WebSite",
       name: "Pomodorian",
-      url: `${SITE_URL}`,
+      url: SITE_URL,
     },
+    speakable: {
+      "@type": "SpeakableSpecification",
+      cssSelector: ["h1", "header > p"],
+    },
+  };
+
+  const breadcrumbLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Home", item: SITE_URL },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: page.h1,
+        item: `${SITE_URL}/${page.slug}`,
+      },
+    ],
   };
 
   return (
@@ -138,6 +156,10 @@ export default async function SeoPage({
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
       />
 
       <div className="min-h-screen bg-background text-foreground">
