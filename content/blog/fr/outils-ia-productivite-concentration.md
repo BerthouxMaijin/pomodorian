@@ -15,7 +15,7 @@ sources: []
 
 ## Le problème des méthodes de productivité classiques
 
-La plupart des systèmes de productivité vous demandent de faire la partie la plus difficile vous-même : déterminer quoi faire et combien de temps ça va prendre. Vous fixez un objectif vague comme « finir le rapport » et vous vous sentez submergé. Cette paralysie de la planification est l'un des plus grands obstacles au démarrage — et une raison majeure pour laquelle on [procrastine même sur les tâches qui nous tiennent à coeur](/blog/fr/arreter-procrastination-timeboxing).
+La plupart des systèmes de productivité vous demandent de faire la partie la plus difficile vous-même : déterminer quoi faire et combien de temps ça va prendre. Vous fixez un objectif vague comme « finir le rapport » et vous vous sentez submergé. Cette paralysie de la planification est l'un des plus grands obstacles au démarrage — et une raison majeure pour laquelle on [procrastine même sur les tâches qui nous tiennent à coeur](/blog/fr/vaincre-procrastination-pomodoro).
 
 ## Comment l'IA change la donne
 

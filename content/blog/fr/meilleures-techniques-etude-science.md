@@ -171,4 +171,4 @@ La meilleure façon de réviser ne repose pas sur une seule technique — c'est 
 
 Les preuves sont claires : ces méthodes d'apprentissage fonctionnent. Non pas parce qu'elles sont à la mode ou nouvelles, mais parce qu'elles s'alignent avec la manière dont votre cerveau traite, stocke et récupère réellement l'information. Le plus difficile n'est pas de savoir quoi faire — c'est de le faire régulièrement. Commencez par une technique, construisez l'habitude, puis ajoutez-en d'autres au fil du temps.
 
-Pour plus de stratégies sur des révisions durables, consultez notre guide sur [comment préparer ses examens sans s'épuiser](/blog/fr/preparer-examens-sans-burnout).
+Pour plus de stratégies sur des révisions durables, consultez notre guide sur [comment préparer ses examens sans s'épuiser](/blog/fr/pomodoro-etudiants-reviser-efficacement).

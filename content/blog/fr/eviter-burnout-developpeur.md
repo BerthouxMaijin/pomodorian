@@ -135,7 +135,7 @@ Toutes les heures ne se valent pas. La plupart des développeurs ont une fenêtr
 - Reléguez les réunions, emails et tâches admin à vos périodes de basse énergie
 - Une [revue de cadrage sur la technique Pomodoro](https://pmc.ncbi.nlm.nih.gov/articles/PMC12532815/) a montré que les intervalles structurés travail/pause améliorent la concentration de 15–25 % et réduisent la fatigue d'environ 20 % — le bénéfice ne vient pas juste de « prendre des pauses », mais de structurer la dépense d'énergie
 
-Si vous êtes curieux d'implémenter des sessions de concentration structurées dans votre workflow, consultez notre article sur l'[état de flow et la concentration profonde](/blog/fr/science-etat-de-flow) — il couvre les mécanismes du focus intense et comment l'atteindre.
+Si vous êtes curieux d'implémenter des sessions de concentration structurées dans votre workflow, consultez notre article sur l'[état de flow et la concentration profonde](/blog/fr/deep-work-concentration-profonde) — il couvre les mécanismes du focus intense et comment l'atteindre.
 
 ### 7. Sachez quand partir
 
@@ -169,5 +169,5 @@ Votre vous du futur — celui qui prend encore plaisir à écrire du code — vo
 ## Pour aller plus loin
 
 - [Guide complet de la technique Pomodoro](/blog/fr/guide-complet-pomodoro-debutants)
-- [La science de l'état de flow et de la concentration profonde](/blog/fr/science-etat-de-flow)
+- [La science de l'état de flow et de la concentration profonde](/blog/fr/deep-work-concentration-profonde)
 - [Récupérer sa concentration après une interruption](/blog/fr/recuperer-concentration-apres-interruption)

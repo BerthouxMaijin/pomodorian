@@ -57,7 +57,7 @@ La connexion entre ces cycles biologiques et la haute performance apparaît dans
 
 Cela correspond parfaitement au cadre ultradien : travail concentré en phase haute, repos authentique pendant le creux. Les meilleurs performers ne travaillaient pas plus dur — ils se reposaient plus intelligemment.
 
-Le même principe s'applique à [l'état de flow](/blog/fr/science-etat-de-flow). Le flow nécessite généralement 10 à 15 minutes de concentration ininterrompue pour s'installer, et les sessions de flow les plus profondes tendent à durer 60 à 90 minutes avant de s'estomper naturellement. Ce n'est pas une coïncidence. Le flow chevauche probablement la phase ascendante de votre cycle ultradien, et le point de sortie naturel correspond au signal de récupération de votre corps.
+Le même principe s'applique à [l'état de flow](/blog/fr/deep-work-concentration-profonde). Le flow nécessite généralement 10 à 15 minutes de concentration ininterrompue pour s'installer, et les sessions de flow les plus profondes tendent à durer 60 à 90 minutes avant de s'estomper naturellement. Ce n'est pas une coïncidence. Le flow chevauche probablement la phase ascendante de votre cycle ultradien, et le point de sortie naturel correspond au signal de récupération de votre corps.
 
 ## Travailler avec ses rythmes ultradiens : guide pratique
 

@@ -56,7 +56,7 @@ Fait intéressant : quand DeskTime a [refait l'étude en 2021](https://desktime.
 
 À l'autre extrémité, certaines personnes trouvent que même 25 minutes c'est trop long — surtout pour les tâches ennuyeuses, anxiogènes ou inconnues. Si vous procrastinez sur quelque chose, un minuteur de 15 minutes peut abaisser la barrière psychologique du passage à l'action. C'est bien plus facile de s'engager sur « juste 15 minutes » que sur un pomodoro complet.
 
-Ce n'est pas une faiblesse. C'est une stratégie légitime, et elle est particulièrement efficace pour [vaincre la procrastination par le timeboxing](/blog/fr/arreter-procrastination-timeboxing).
+Ce n'est pas une faiblesse. C'est une stratégie légitime, et elle est particulièrement efficace pour [vaincre la procrastination par le timeboxing](/blog/fr/vaincre-procrastination-pomodoro).
 
 ## Comment trouver votre durée optimale
 
@@ -82,7 +82,7 @@ Pour chaque catégorie, choisissez un intervalle de départ :
 | Apprentissage | 25–30 min | 5–10 min |
 | Communication | 30–40 min | 10 min |
 
-Ce ne sont pas des règles — ce sont des points de départ basés sur les recherches citées plus haut. Le 25/5 classique fonctionne bien pour les tâches routinières parce que la pression du temps vous maintient en mouvement. Le deep work bénéficie de sessions plus longues parce qu'il faut 10 à 15 minutes rien que pour entrer en [état de flow](/blog/fr/science-etat-de-flow).
+Ce ne sont pas des règles — ce sont des points de départ basés sur les recherches citées plus haut. Le 25/5 classique fonctionne bien pour les tâches routinières parce que la pression du temps vous maintient en mouvement. Le deep work bénéficie de sessions plus longues parce qu'il faut 10 à 15 minutes rien que pour entrer en [état de flow](/blog/fr/deep-work-concentration-profonde).
 
 ### Étape 3 : Faites une expérience d'une semaine
 

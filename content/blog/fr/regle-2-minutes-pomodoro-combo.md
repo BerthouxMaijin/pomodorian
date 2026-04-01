@@ -119,7 +119,7 @@ La règle des 2 minutes est faite pour le traitement, pas pour la réactivité p
 
 ### Être trop rigide avec le minuteur
 
-Certaines tâches ne rentrent pas proprement dans des blocs de 25 minutes. Un brainstorming créatif peut demander 45 minutes. Une revue de code peut prendre 15 minutes. Le [créateur de la technique Pomodoro le reconnaissait lui-même](https://todoist.com/productivity-methods/pomodoro-technique) — l'intervalle de 25 minutes est un point de départ, pas un commandement. Ajustez selon vos besoins. Ce qui compte, c'est le principe du timeboxing, pas la durée exacte. Pour en savoir plus, consultez notre guide sur [comment vaincre la procrastination par le timeboxing](/blog/fr/arreter-procrastination-timeboxing).
+Certaines tâches ne rentrent pas proprement dans des blocs de 25 minutes. Un brainstorming créatif peut demander 45 minutes. Une revue de code peut prendre 15 minutes. Le [créateur de la technique Pomodoro le reconnaissait lui-même](https://todoist.com/productivity-methods/pomodoro-technique) — l'intervalle de 25 minutes est un point de départ, pas un commandement. Ajustez selon vos besoins. Ce qui compte, c'est le principe du timeboxing, pas la durée exacte. Pour en savoir plus, consultez notre guide sur [comment vaincre la procrastination par le timeboxing](/blog/fr/vaincre-procrastination-pomodoro).
 
 ### Sauter l'étape de capture
 

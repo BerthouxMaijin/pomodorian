@@ -118,7 +118,7 @@ La recherche de Sophie Leroy suggère une contre-mesure pratique : le [**plan «
 
 Pour la plupart des gens, les 2–3 premières heures de la journée sont celles où les ressources cognitives sont les plus élevées. Ne les gaspillez pas en tri d'emails et en standups. Faites votre travail le plus difficile et le plus créatif en premier, et repoussez les tâches administratives à l'après-midi.
 
-Si votre standup est à 9h, voyez si l'équipe peut le déplacer à 10h30 ou 11h — après que tout le monde a eu le temps d'un vrai bloc de concentration. Pour aller plus loin sur l'organisation de la journée, consultez notre guide [télétravail et concentration](/blog/fr/guide-teletravail-rester-concentre).
+Si votre standup est à 9h, voyez si l'équipe peut le déplacer à 10h30 ou 11h — après que tout le monde a eu le temps d'un vrai bloc de concentration. Pour aller plus loin sur l'organisation de la journée, consultez notre guide [télétravail et concentration](/blog/fr/organiser-journee-teletravail).
 
 ### 6. Réduisez le travail en cours
 
