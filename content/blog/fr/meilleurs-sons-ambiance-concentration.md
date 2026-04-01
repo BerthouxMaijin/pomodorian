@@ -127,7 +127,7 @@ Quelques conseils pratiques pour tirer le maximum de vos **sons d'ambiance trava
 
 3. **Variez selon l'heure de la journée.** Le matin, quand l'énergie est haute, un simple bruit rose peut suffire. L'après-midi, quand la motivation baisse, le lofi peut vous porter. En fin de journée, les sons de la nature aident à maintenir le calme tout en restant productif.
 
-4. **Ne négligez pas vos pauses.** Pendant vos pauses Pomodoro, coupez tout son de travail. Votre cerveau a besoin de ce contraste pour se recharger. Si vous cherchez des idées pour des [pauses vraiment productives](/fr/blog/pauses-productives-que-faire), on a un article dédié sur le sujet.
+4. **Ne négligez pas vos pauses.** Pendant vos pauses Pomodoro, coupez tout son de travail. Votre cerveau a besoin de ce contraste pour se recharger. Si vous cherchez des idées pour des [pauses vraiment productives](/blog/fr/pauses-productives-que-faire), on a un article dédié sur le sujet.
 
 5. **Testez pendant au moins une semaine.** Ne jugez pas un type de son après 10 minutes. Donnez-vous plusieurs sessions avant de décider si ça vous convient.
 
@@ -139,7 +139,7 @@ Vous n'avez pas besoin de grand-chose :
 - **Une source de sons fiable** — évitez les playlists YouTube avec des pubs toutes les 10 minutes. Préférez des apps dédiées comme [Pomodorian](https://pomodorian.app), qui combine timer et ambiance sonore en une seule interface, ou des streams live sans interruption
 - **La discipline de couper les notifications** — le meilleur son d'ambiance du monde ne peut rien contre le *ping* de Slack
 
-Si vous êtes en [télétravail et que vous cherchez à mieux organiser votre journée](/fr/blog/organiser-journee-teletravail), la combinaison sons d'ambiance + sessions Pomodoro structurées est probablement le duo le plus efficace que vous puissiez mettre en place — sans rien acheter, sans formation, sans méthode compliquée.
+Si vous êtes en [télétravail et que vous cherchez à mieux organiser votre journée](/blog/fr/organiser-journee-teletravail), la combinaison sons d'ambiance + sessions Pomodoro structurées est probablement le duo le plus efficace que vous puissiez mettre en place — sans rien acheter, sans formation, sans méthode compliquée.
 
 ## En résumé
 
