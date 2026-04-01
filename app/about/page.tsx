@@ -6,7 +6,7 @@ import { SITE_URL } from "@/lib/constants";
 export const metadata: Metadata = {
   title: "About — Pomodorian",
   description:
-    "Meet the developer behind Pomodorian. Built by Jean-Baptiste Berthoux, a French developer who needed a better focus tool.",
+    "Meet the builder behind Pomodorian. Built by Jean-Baptiste Berthoux, a French builder who needed a better focus tool.",
   alternates: {
     canonical: `${SITE_URL}/about`,
   },
@@ -17,14 +17,14 @@ const personSchema = {
   "@type": "Person",
   name: "Jean-Baptiste Berthoux",
   url: `${SITE_URL}/about`,
-  jobTitle: "Software Developer",
+  jobTitle: "Builder",
   description:
-    "French developer and creator of Pomodorian, an AI-powered Pomodoro timer.",
+    "French builder and creator of Pomodorian, an AI-powered Pomodoro timer.",
   sameAs: [
     "https://github.com/BerthouxMaijin",
-    "https://linkedin.com/in/jbberthoux",
+    "https://www.linkedin.com/in/jean-baptiste-berthoux/",
   ],
-  image: "https://github.com/BerthouxMaijin.png",
+  image: `${SITE_URL}/jb.jpg`,
   worksFor: {
     "@type": "Organization",
     name: "Pomodorian",
@@ -57,7 +57,7 @@ export default function About() {
           {/* Hero */}
           <div className="flex items-center gap-5 mt-10 mb-10">
             <Image
-              src="https://github.com/BerthouxMaijin.png"
+              src="/jb.jpg"
               alt="Jean-Baptiste Berthoux"
               width={80}
               height={80}
@@ -66,7 +66,7 @@ export default function About() {
             <div>
               <h1 className="text-2xl font-bold">Jean-Baptiste Berthoux</h1>
               <p className="text-muted text-sm mt-1">
-                Developer &amp; creator of Pomodorian
+                Builder &amp; creator of Pomodorian
               </p>
             </div>
           </div>
@@ -78,8 +78,8 @@ export default function About() {
                 Why I built Pomodorian
               </h2>
               <p>
-                I&apos;m a French developer who spends most of his day deep in
-                code. Like many developers, I struggled with context switching,
+                I&apos;m a French builder who spends most of his day shipping
+                products. Like many makers, I struggled with context switching,
                 endless distractions, and that feeling of being busy all day
                 without actually shipping anything meaningful.
               </p>
@@ -150,7 +150,7 @@ export default function About() {
                   GitHub
                 </a>
                 <a
-                  href="https://linkedin.com/in/jbberthoux"
+                  href="https://www.linkedin.com/in/jean-baptiste-berthoux/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="glass rounded-full px-4 py-2 text-xs hover:bg-surface-hover transition-colors"

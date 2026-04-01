@@ -91,7 +91,7 @@ const organization = {
     url: `${SITE_URL}/about`,
     sameAs: [
       "https://github.com/BerthouxMaijin",
-      "https://linkedin.com/in/jbberthoux",
+      "https://www.linkedin.com/in/jean-baptiste-berthoux/",
     ],
   },
   sameAs: [
