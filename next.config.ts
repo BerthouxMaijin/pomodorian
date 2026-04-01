@@ -14,7 +14,7 @@ const securityHeaders = [
       "default-src 'self'",
       "script-src 'self' 'unsafe-inline' 'unsafe-eval'",
       "style-src 'self' 'unsafe-inline'",
-      "img-src 'self' data: blob:",
+      "img-src 'self' data: blob: https://github.com https://avatars.githubusercontent.com",
       "font-src 'self' data:",
       "connect-src 'self' https://api.anthropic.com https://*.vercel-insights.com https://*.vercel-analytics.com",
       "media-src 'self'",
@@ -24,6 +24,18 @@ const securityHeaders = [
 ];
 
 const nextConfig: NextConfig = {
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "github.com",
+      },
+      {
+        protocol: "https",
+        hostname: "avatars.githubusercontent.com",
+      },
+    ],
+  },
   headers: async () => [
     {
       source: "/(.*)",
