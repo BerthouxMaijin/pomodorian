@@ -12,12 +12,54 @@ export function useSound() {
   const audioRefs = useRef<Record<string, HTMLAudioElement>>({});
   const [ambients, setAmbients] = useState<AmbientState>({});
 
+  const crossfadeRefs = useRef<Record<string, HTMLAudioElement>>({});
+  const CROSSFADE_DURATION = 0.5; // seconds
+
+  const setupCrossfadeLoop = (key: string, audio: HTMLAudioElement, src: string) => {
+    const onTimeUpdate = () => {
+      if (!audio.duration || audio.paused) return;
+      const timeLeft = audio.duration - audio.currentTime;
+      if (timeLeft <= CROSSFADE_DURATION && !crossfadeRefs.current[key]) {
+        // Start a second copy for crossfade
+        const next = new Audio(src);
+        next.preload = "auto";
+        next.volume = 0;
+        crossfadeRefs.current[key] = next;
+        next.play().catch(() => {});
+
+        // Fade out current, fade in next
+        const fadeSteps = 20;
+        const stepTime = (CROSSFADE_DURATION * 1000) / fadeSteps;
+        const targetVolume = audio.volume;
+        let step = 0;
+        const fade = setInterval(() => {
+          step++;
+          const progress = step / fadeSteps;
+          next.volume = Math.min(targetVolume, targetVolume * progress);
+          audio.volume = Math.max(0, targetVolume * (1 - progress));
+          if (step >= fadeSteps) {
+            clearInterval(fade);
+            audio.pause();
+            audio.currentTime = 0;
+            audio.volume = targetVolume;
+            // Swap: next becomes the main audio
+            audioRefs.current[key] = next;
+            crossfadeRefs.current[key] = undefined!;
+            delete crossfadeRefs.current[key];
+            setupCrossfadeLoop(key, next, src);
+          }
+        }, stepTime);
+      }
+    };
+    audio.addEventListener("timeupdate", onTimeUpdate);
+  };
+
   const getOrCreateAudio = (key: string, src: string): HTMLAudioElement => {
     if (!audioRefs.current[key]) {
       const audio = new Audio(src);
-      audio.loop = true;
       audio.preload = "auto";
       audioRefs.current[key] = audio;
+      setupCrossfadeLoop(key, audio, src);
     }
     return audioRefs.current[key];
   };
@@ -79,12 +121,28 @@ export function useSound() {
     }));
   }, []);
 
+  const pauseAllAmbients = useCallback(() => {
+    for (const audio of Object.values(audioRefs.current)) {
+      if (!audio.paused) audio.pause();
+    }
+  }, []);
+
+  const resumeAllAmbients = useCallback(() => {
+    for (const [key, state] of Object.entries(ambients)) {
+      if (state.active && audioRefs.current[key]) {
+        audioRefs.current[key].play().catch(() => {});
+      }
+    }
+  }, [ambients]);
+
   return {
     playAlarm,
     playClick,
     stopAlarm,
     toggleAmbient,
     setAmbientVolume,
+    pauseAllAmbients,
+    resumeAllAmbients,
     ambients,
   };
 }

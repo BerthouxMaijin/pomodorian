@@ -127,8 +127,8 @@ export default function Home() {
         case " ":
           e.preventDefault();
           if (timer.status === "idle") timer.start();
-          else if (timer.status === "running") timer.pause();
-          else if (timer.status === "paused") timer.resume();
+          else if (timer.status === "running") { timer.pause(); sound.pauseAllAmbients(); }
+          else if (timer.status === "paused") { timer.resume(); sound.resumeAllAmbients(); }
           break;
         case "1":
           timer.setMode("pomodoro");
@@ -192,8 +192,8 @@ export default function Home() {
             status={timer.status}
             mode={timer.mode}
             onStart={() => { sound.playClick(); timer.start(); }}
-            onPause={timer.pause}
-            onResume={() => { sound.playClick(); timer.resume(); }}
+            onPause={() => { timer.pause(); sound.pauseAllAmbients(); }}
+            onResume={() => { sound.playClick(); timer.resume(); sound.resumeAllAmbients(); }}
             onSkip={timer.skip}
             onReset={timer.reset}
           />
