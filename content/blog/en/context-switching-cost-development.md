@@ -1,6 +1,6 @@
 ---
-title: "The Cost of Context Switching in Software Development"
-description: "Context switching costs developers up to 40% of productive time. Learn how interruptions hurt focus coding and practical strategies to protect deep work."
+title: "Context Switching in Dev: The Hidden Cost and How to Fix It"
+description: "Practical strategies to reduce context switching as a developer. Studies show it costs up to 40% of productive time — here's how to protect your deep work."
 date: "2026-03-25"
 readTime: "7 min"
 keywords:

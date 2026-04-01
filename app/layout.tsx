@@ -20,9 +20,9 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: "Pomodorian — AI-Powered Focus Timer",
+  title: "Pomodorian — Free AI Pomodoro Timer | Focus, Plan, Track",
   description:
-    "Plan smarter, focus deeper. A modern Pomodoro timer with AI session planning, ambient sounds, and beautiful analytics.",
+    "Free Pomodoro timer with AI task planning. Describe your goal, get structured focus sessions. Built-in ambient sounds, analytics, and keyboard shortcuts.",
   keywords: [
     "pomodoro",
     "timer",
@@ -46,18 +46,18 @@ export const metadata: Metadata = {
   },
   manifest: "/manifest.webmanifest",
   openGraph: {
-    title: "Pomodorian — AI-Powered Focus Timer",
+    title: "Pomodorian — Free AI Pomodoro Timer | Focus, Plan, Track",
     description:
-      "Plan smarter, focus deeper. AI breaks down your goals into Pomodoro-sized tasks. Free ambient sounds, beautiful analytics, works offline.",
+      "Free Pomodoro timer with AI task planning. Describe your goal, get structured focus sessions. Built-in ambient sounds, analytics, and keyboard shortcuts.",
     type: "website",
     locale: "en_US",
     siteName: "Pomodorian",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Pomodorian — AI-Powered Focus Timer",
+    title: "Pomodorian — Free AI Pomodoro Timer | Focus, Plan, Track",
     description:
-      "AI breaks down your goals into Pomodoro-sized tasks. Free ambient sounds & analytics.",
+      "Free Pomodoro timer with AI task planning. Ambient sounds, analytics, and keyboard shortcuts.",
   },
   appleWebApp: {
     capable: true,

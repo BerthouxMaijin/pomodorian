@@ -1,6 +1,6 @@
 ---
 title: "The 2-Minute Rule Meets Pomodoro: A Productivity Power Combo"
-description: "Learn how David Allen's 2-minute rule from GTD pairs with Pomodoro to eliminate small tasks and protect deep focus time."
+description: "Combine David Allen's 2-minute rule with Pomodoro to eliminate task buildup. Clear quick wins first, then protect uninterrupted deep focus blocks."
 date: "2026-03-25"
 readTime: "7 min"
 keywords:

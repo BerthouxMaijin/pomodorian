@@ -1,6 +1,6 @@
 ---
-title: "How to Avoid Burnout as a Software Engineer"
-description: "Practical strategies to prevent developer burnout. Recognize the signs, fix the root causes, and build sustainable coding habits."
+title: "Developer Burnout: Signs, Causes, and How to Recover"
+description: "83% of developers report burnout. Spot the warning signs, fix root causes like crunch and scope creep, and build sustainable coding habits that last."
 date: "2026-03-25"
 readTime: "8 min"
 keywords:

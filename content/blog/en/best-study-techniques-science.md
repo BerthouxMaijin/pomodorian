@@ -1,6 +1,6 @@
 ---
 title: "7 Best Study Techniques Backed by Science"
-description: "Discover evidence-based studying methods proven by research. From active recall to interleaving, these are the best ways to study according to science."
+description: "Active recall, spaced repetition, interleaving — 7 study methods proven by cognitive science. Learn how to study smarter, not harder."
 date: "2026-03-25"
 readTime: "8 min"
 keywords:
