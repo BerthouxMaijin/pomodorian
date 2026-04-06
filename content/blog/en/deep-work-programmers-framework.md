@@ -152,4 +152,6 @@ You don't need a perfect system. You need one protected block of time tomorrow m
 
 The developer deep work framework isn't about rigid rules — it's about recognizing that your most valuable professional skill (the ability to solve hard problems with code) requires conditions that don't happen by accident. You have to build those conditions deliberately.
 
+If you want a timer built specifically for deep work sessions — with customizable durations, ambient sounds, and focus analytics — try the [Pomodorian deep work timer](/deep-work-timer). Set it to 60 or 90 minutes, layer some rain and lo-fi, and protect your block.
+
 Block the time. Eliminate the noise. Protect the rhythm. The code will follow.

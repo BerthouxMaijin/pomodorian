@@ -10,6 +10,7 @@ keywords:
   - minuteur pomodoro
 status: published
 score: 9
+translationKey: pomodoro-guide-beginners
 sources:
   - "https://www.pomodorotechnique.com/"
   - "https://doi.org/10.1016/j.cognition.2010.12.007"

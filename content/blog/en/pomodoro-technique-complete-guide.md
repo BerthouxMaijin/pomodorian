@@ -11,6 +11,7 @@ keywords:
 status: published
 score: 10
 sources: []
+translationKey: pomodoro-guide-beginners
 ---
 
 ## What is the Pomodoro Technique?

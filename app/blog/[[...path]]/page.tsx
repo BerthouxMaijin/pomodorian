@@ -5,6 +5,7 @@ import {
   getPublishedArticles,
   getArticleBySlug,
   getAllSlugs,
+  getTranslations,
 } from "@/lib/blog/reader";
 import { SITE_URL } from "@/lib/constants";
 
@@ -90,6 +91,26 @@ export async function generateMetadata({
   const article = getArticleBySlug(slug, lang);
   if (!article) return {};
 
+  const alternates: Metadata["alternates"] = {
+    canonical: `${SITE_URL}/blog/${lang === "en" ? slug : `${lang}/${slug}`}`,
+  };
+
+  if (article.translationKey) {
+    const translations = getTranslations(article.translationKey);
+    if (translations.length > 1) {
+      const languages: Record<string, string> = {};
+      for (const t of translations) {
+        languages[t.lang] =
+          `${SITE_URL}/blog/${t.lang === "en" ? t.slug : `${t.lang}/${t.slug}`}`;
+      }
+      const enTranslation = translations.find((t) => t.lang === "en");
+      if (enTranslation) {
+        languages["x-default"] = `${SITE_URL}/blog/${enTranslation.slug}`;
+      }
+      alternates.languages = languages;
+    }
+  }
+
   return {
     title: `${article.title} — Pomodorian Blog`,
     description: article.description,
@@ -106,9 +127,7 @@ export async function generateMetadata({
       title: article.title,
       description: article.description,
     },
-    alternates: {
-      canonical: `${SITE_URL}/blog/${lang === "en" ? slug : `${lang}/${slug}`}`,
-    },
+    alternates,
   };
 }
 

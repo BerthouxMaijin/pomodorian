@@ -10,6 +10,7 @@ keywords:
   - productividad pomodoro
 status: published
 score: 10
+translationKey: pomodoro-guide-beginners
 sources:
   - "https://www.pomodorotechnique.com/"
   - "https://www.francescocirillo.com/"

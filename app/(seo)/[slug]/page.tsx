@@ -2,6 +2,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { seoPages, getSeoPageBySlug } from "@/lib/seo/pages";
+import { getArticleBySlug } from "@/lib/blog/reader";
 import { SITE_URL } from "@/lib/constants";
 
 export function generateStaticParams() {
@@ -226,6 +227,43 @@ export default async function SeoPage({
               </p>
             </div>
           </section>
+
+          {page.sections && page.sections.length > 0 && (
+            <section className="my-12 space-y-8">
+              {page.sections.map((s) => (
+                <div key={s.heading}>
+                  <h2 className="text-xl font-bold mb-3">{s.heading}</h2>
+                  <p className="text-muted leading-relaxed">{s.body}</p>
+                </div>
+              ))}
+            </section>
+          )}
+
+          {page.relatedArticleSlugs && page.relatedArticleSlugs.length > 0 && (
+            <section className="my-12">
+              <h2 className="text-xl font-bold mb-4">Related Articles</h2>
+              <div className="space-y-3">
+                {page.relatedArticleSlugs
+                  .map((s) => {
+                    const article = getArticleBySlug(s);
+                    if (!article) return null;
+                    return (
+                      <Link
+                        key={s}
+                        href={`/blog/${s}`}
+                        className="block glass rounded-xl p-4 hover:bg-white/5 transition-colors"
+                      >
+                        <div className="font-semibold">{article.title}</div>
+                        <div className="text-sm text-muted mt-1">
+                          {article.description}
+                        </div>
+                      </Link>
+                    );
+                  })
+                  .filter(Boolean)}
+              </div>
+            </section>
+          )}
 
           <div className="mt-16 glass rounded-2xl p-8 text-center">
             <h3 className="text-xl font-semibold mb-2">

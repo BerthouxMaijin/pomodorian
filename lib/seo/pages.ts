@@ -6,6 +6,8 @@ export interface SeoPage {
   intro: string;
   keywords: string[];
   category: "profession" | "technique" | "comparison" | "use-case";
+  sections?: { heading: string; body: string }[];
+  relatedArticleSlugs?: string[];
 }
 
 const professions: SeoPage[] = [
@@ -141,8 +143,27 @@ const techniques: SeoPage[] = [
     h1: "Deep Work Timer",
     intro:
       "Deep work — coined by Cal Newport — is the ability to focus without distraction on a cognitively demanding task. Pomodorian supports deep work with customizable session lengths (set 45-90 minute sessions), ambient sounds that mask distractions, and AI planning that eliminates the overhead of deciding what to work on.",
-    keywords: ["deep work timer", "Cal Newport focus timer", "distraction free timer", "focused work session"],
+    keywords: ["deep work timer", "Cal Newport focus timer", "distraction free timer", "focused work session", "deep focus timer", "long focus session timer"],
     category: "technique",
+    sections: [
+      {
+        heading: "What Is Deep Work?",
+        body: "Cal Newport defines deep work as professional activities performed in a state of distraction-free concentration that push your cognitive capabilities to their limit. These efforts create new value, improve your skill, and are hard to replicate. The opposite — shallow work — includes emails, meetings, and admin tasks that don't require intense focus. Most people spend their entire day in shallow work without realizing it. A deep work timer helps you carve out and protect the focused time where your best output happens.",
+      },
+      {
+        heading: "How to Structure a Deep Work Session",
+        body: "The standard 25-minute Pomodoro works well for task lists, but deep work often requires longer uninterrupted blocks. Cal Newport recommends sessions of 60 to 90 minutes for cognitively demanding tasks. In Pomodorian, you can customize your timer to any duration — set a 60-minute focus session followed by a 15-minute break, or go for a full 90-minute deep work block. The key is committing to zero distractions during the session: close Slack, silence your phone, and let the timer run.",
+      },
+      {
+        heading: "Deep Work + Ambient Sounds",
+        body: "Research shows that moderate ambient noise (around 70 dB) enhances creative cognition compared to silence. That's why many people do their best work in coffee shops. Pomodorian's built-in sound mixer lets you layer rain, café ambience, lo-fi beats, nature sounds, and fireplace crackle — creating your ideal deep work environment without leaving your desk. Adjust individual volumes to find the mix that gets you into flow state.",
+      },
+      {
+        heading: "Track Your Deep Work Hours",
+        body: "Newport recommends tracking deep work hours as a lead metric — the number that predicts results. Pomodorian's analytics dashboard shows your daily focus time on a GitHub-style contribution heatmap, so you can see exactly how many deep work hours you're accumulating each week. Aim for 3-4 hours of deep work per day: that's the practical limit for most people, and it's enough to produce extraordinary output over time.",
+      },
+    ],
+    relatedArticleSlugs: ["deep-work-programmers-framework", "science-of-flow-state", "long-pomodoro-sessions-guide"],
   },
 ];
 

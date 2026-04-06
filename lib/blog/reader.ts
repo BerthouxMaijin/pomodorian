@@ -14,6 +14,7 @@ export interface Article {
   score: number;
   sources: string[];
   content: string;
+  translationKey?: string;
 }
 
 const CONTENT_DIR = path.join(process.cwd(), "content/blog");
@@ -40,6 +41,7 @@ function readArticlesFromDir(lang: string): Article[] {
         score: data.score ?? 0,
         sources: data.sources ?? [],
         content,
+        translationKey: data.translationKey,
       };
     });
 }
@@ -61,4 +63,22 @@ export function getArticleBySlug(
 
 export function getAllSlugs(lang = "en"): string[] {
   return getPublishedArticles(lang).map((a) => a.slug);
+}
+
+const LANGS = ["en", "fr", "es", "de"] as const;
+
+export function getTranslations(
+  translationKey: string
+): { lang: string; slug: string }[] {
+  const results: { lang: string; slug: string }[] = [];
+  for (const lang of LANGS) {
+    const articles = readArticlesFromDir(lang);
+    const match = articles.find(
+      (a) => a.translationKey === translationKey && a.status === "published"
+    );
+    if (match) {
+      results.push({ lang, slug: match.slug });
+    }
+  }
+  return results;
 }
