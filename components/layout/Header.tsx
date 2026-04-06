@@ -1,5 +1,7 @@
 "use client";
 
+import Link from "next/link";
+
 interface HeaderProps {
   pomodorosCompleted: number;
   onOpenSettings: () => void;
@@ -33,12 +35,12 @@ export function Header({ pomodorosCompleted, onOpenSettings, onOpenAnalytics }: 
       </div>
 
       <div className="flex items-center gap-3">
-        <a
+        <Link
           href="/blog"
           className="text-xs text-muted hover:text-foreground transition-colors hidden sm:block"
         >
           Blog
-        </a>
+        </Link>
         {pomodorosCompleted > 0 && (
           <span className="text-sm text-muted tabular-nums">
             #{pomodorosCompleted}

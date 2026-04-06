@@ -108,6 +108,7 @@ export function useSound() {
         return { ...prev, [key]: { active: true, volume } };
       }
     });
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- getOrCreateAudio is stable (only uses refs)
   }, []);
 
   const setAmbientVolume = useCallback((key: string, volume: number) => {

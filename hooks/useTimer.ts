@@ -97,6 +97,10 @@ export function useTimer(settings: AppSettings) {
 
   const onCompleteRef = useRef<(() => void) | null>(null);
 
+  const registerOnComplete = useCallback((fn: (() => void) | null) => {
+    onCompleteRef.current = fn;
+  }, []);
+
   // Tick interval
   useEffect(() => {
     if (state.status !== "running") return;
@@ -166,6 +170,6 @@ export function useTimer(settings: AppSettings) {
     reset,
     skip,
     setMode,
-    onCompleteRef,
+    registerOnComplete,
   };
 }

@@ -13,6 +13,7 @@ export function useLocalStorage<T>(
     try {
       const item = localStorage.getItem(key);
       if (item !== null) {
+        // eslint-disable-next-line react-hooks/set-state-in-effect -- SSR hydration: must read localStorage after mount to avoid server/client mismatch
         setStoredValue(JSON.parse(item));
       }
     } catch {

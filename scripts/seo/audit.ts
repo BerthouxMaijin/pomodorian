@@ -113,14 +113,29 @@ function statusBadge(verdict: string) {
   return '<span style="color:#ef4444;font-weight:600">✕ Error</span>';
 }
 
+interface AnalyticsRow {
+  keys: string[];
+  clicks: number;
+  impressions: number;
+  ctr: number;
+  position: number;
+}
+
+interface SitemapInfo {
+  path?: string;
+  errors?: number;
+  warnings?: number;
+  contents?: { type?: string; submitted?: number }[];
+}
+
 function buildHtml(data: {
   perf: { clicks: number; impressions: number; ctr: number; position: number };
   prevPerf: { clicks: number; impressions: number; ctr: number; position: number };
-  queries: any[];
-  pages: any[];
-  countries: any[];
+  queries: AnalyticsRow[];
+  pages: AnalyticsRow[];
+  countries: AnalyticsRow[];
   indexation: { url: string; verdict: string; state: string; lastCrawl: string | null }[];
-  sitemaps: any[];
+  sitemaps: SitemapInfo[];
 }) {
   const indexed = data.indexation.filter((u) => u.verdict === "PASS").length;
   const pending = data.indexation.filter((u) => u.verdict === "NEUTRAL").length;
@@ -192,7 +207,7 @@ function buildHtml(data: {
           <th style="text-align:right;padding:8px 0;color:#6b7280">Impr.</th>
           <th style="text-align:right;padding:8px 0;color:#6b7280">Pos.</th>
         </tr>
-        ${data.queries.map((q: any) => `
+        ${data.queries.map((q: AnalyticsRow) => `
         <tr style="border-bottom:1px solid #1f1f2e20">
           <td style="padding:6px 0;color:#d1d5db">${q.keys[0]}</td>
           <td style="padding:6px 0;text-align:right;color:#fff;font-weight:600">${q.clicks}</td>
@@ -209,7 +224,7 @@ function buildHtml(data: {
     <!-- Sitemap -->
     <div style="background:#16161d;border-radius:12px;padding:20px;margin-bottom:24px;border:1px solid #1f1f2e">
       <h2 style="color:#fff;font-size:16px;margin:0 0 16px">Sitemap</h2>
-      ${data.sitemaps.map((s: any) => `
+      ${data.sitemaps.map((s: SitemapInfo) => `
       <div style="display:flex;justify-content:space-between;font-size:13px">
         <span style="color:#d1d5db">sitemap.xml</span>
         <span style="color:${s.errors > 0 ? "#ef4444" : "#10b981"};font-weight:600">${s.errors > 0 ? s.errors + " errors" : "Healthy"} · ${s.contents?.[0]?.submitted ?? "?"} URLs</span>
@@ -220,7 +235,7 @@ function buildHtml(data: {
     ${data.countries.length > 0 ? `
     <div style="background:#16161d;border-radius:12px;padding:20px;margin-bottom:24px;border:1px solid #1f1f2e">
       <h2 style="color:#fff;font-size:16px;margin:0 0 16px">Top Countries</h2>
-      ${data.countries.map((c: any) => `
+      ${data.countries.map((c: AnalyticsRow) => `
       <div style="display:flex;justify-content:space-between;font-size:13px;padding:4px 0">
         <span style="color:#d1d5db">${c.keys[0].toUpperCase()}</span>
         <span style="color:#6b7280">${c.clicks} clicks · ${c.impressions} impr.</span>

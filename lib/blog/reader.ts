@@ -50,7 +50,8 @@ export function getPublishedArticles(lang = "en"): Omit<Article, "content">[] {
   return readArticlesFromDir(lang)
     .filter((a) => a.status === "published")
     .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
-    .map(({ content: _, ...meta }) => meta);
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    .map(({ content: _content, ...meta }) => meta);
 }
 
 export function getArticleBySlug(

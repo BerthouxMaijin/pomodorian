@@ -87,9 +87,10 @@ export default function Home() {
     }
   }, [timer, tasks, settings, sound, analytics]);
 
+  const { registerOnComplete } = timer;
   useEffect(() => {
-    timer.onCompleteRef.current = handleComplete;
-  }, [handleComplete, timer.onCompleteRef]);
+    registerOnComplete(handleComplete);
+  }, [handleComplete, registerOnComplete]);
 
   useEffect(() => {
     if (settings.showTimeInTitle && timer.status !== "idle") {
@@ -155,7 +156,7 @@ export default function Home() {
 
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [timer]);
+  }, [timer, sound]);
 
   return (
     <>

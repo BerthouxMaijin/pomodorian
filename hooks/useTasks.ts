@@ -1,6 +1,6 @@
 "use client";
 
-import { useReducer, useEffect, useCallback, useState } from "react";
+import { useReducer, useEffect, useCallback, useState, useRef } from "react";
 import { useLocalStorage } from "./useLocalStorage";
 import { generateId } from "@/lib/utils";
 import { STORAGE_KEYS, type Task, type AITaskSuggestion } from "@/lib/types";
@@ -70,24 +70,23 @@ export function useTasks() {
   const [stored, setStored] = useLocalStorage<Task[]>(STORAGE_KEYS.TASKS, []);
   const [tasks, dispatch] = useReducer(taskReducer, stored);
   const [activeTaskId, setActiveTaskId] = useState<string | null>(null);
-  const [initialized, setInitialized] = useState(false);
+  const initializedRef = useRef(false);
 
   // Hydrate from localStorage
   useEffect(() => {
-    if (stored.length > 0 && !initialized) {
+    if (initializedRef.current) return;
+    initializedRef.current = true;
+    if (stored.length > 0) {
       dispatch({ type: "SET", tasks: stored });
-      setInitialized(true);
-    } else if (!initialized) {
-      setInitialized(true);
     }
-  }, [stored, initialized]);
+  }, [stored]);
 
   // Persist to localStorage
   useEffect(() => {
-    if (initialized) {
+    if (initializedRef.current) {
       setStored(tasks);
     }
-  }, [tasks, initialized, setStored]);
+  }, [tasks, setStored]);
 
   const addTask = useCallback(
     (title: string, estimatedPomodoros?: number) => {
