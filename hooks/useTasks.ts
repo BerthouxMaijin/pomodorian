@@ -1,9 +1,20 @@
 "use client";
 
-import { useReducer, useEffect, useCallback, useState, useRef } from "react";
-import { useLocalStorage } from "./useLocalStorage";
+import { useReducer, useEffect, useCallback, useState } from "react";
 import { generateId } from "@/lib/utils";
 import { STORAGE_KEYS, type Task, type AITaskSuggestion } from "@/lib/types";
+
+function readTasksFromStorage(): Task[] {
+  if (typeof window === "undefined") return [];
+  try {
+    const raw = localStorage.getItem(STORAGE_KEYS.TASKS);
+    if (!raw) return [];
+    const parsed = JSON.parse(raw);
+    return Array.isArray(parsed) ? parsed : [];
+  } catch {
+    return [];
+  }
+}
 
 type TaskAction =
   | { type: "SET"; tasks: Task[] }
@@ -28,6 +39,7 @@ function taskReducer(state: Task[], action: TaskAction): Task[] {
           completedPomodoros: 0,
           completed: false,
           createdAt: new Date().toISOString(),
+          completedAt: null,
           aiGenerated: action.aiGenerated ?? false,
           order: state.length,
         },
@@ -35,9 +47,15 @@ function taskReducer(state: Task[], action: TaskAction): Task[] {
     case "DELETE":
       return state.filter((t) => t.id !== action.id);
     case "TOGGLE":
-      return state.map((t) =>
-        t.id === action.id ? { ...t, completed: !t.completed } : t
-      );
+      return state.map((t) => {
+        if (t.id !== action.id) return t;
+        const nextCompleted = !t.completed;
+        return {
+          ...t,
+          completed: nextCompleted,
+          completedAt: nextCompleted ? new Date().toISOString() : null,
+        };
+      });
     case "EDIT":
       return state.map((t) =>
         t.id === action.id ? { ...t, title: action.title } : t
@@ -56,6 +74,7 @@ function taskReducer(state: Task[], action: TaskAction): Task[] {
         completedPomodoros: 0,
         completed: false,
         createdAt: new Date().toISOString(),
+        completedAt: null,
         aiGenerated: true,
         order: state.length + i,
       }));
@@ -67,26 +86,30 @@ function taskReducer(state: Task[], action: TaskAction): Task[] {
 }
 
 export function useTasks() {
-  const [stored, setStored] = useLocalStorage<Task[]>(STORAGE_KEYS.TASKS, []);
-  const [tasks, dispatch] = useReducer(taskReducer, stored);
+  const [tasks, dispatch] = useReducer(taskReducer, []);
   const [activeTaskId, setActiveTaskId] = useState<string | null>(null);
-  const initializedRef = useRef(false);
+  const [hydrated, setHydrated] = useState(false);
 
-  // Hydrate from localStorage
+  // Hydrate from localStorage after mount. Deferred to a useEffect so the
+  // SSR-rendered HTML (empty task list) matches the first client render.
   useEffect(() => {
-    if (initializedRef.current) return;
-    initializedRef.current = true;
+    const stored = readTasksFromStorage();
     if (stored.length > 0) {
       dispatch({ type: "SET", tasks: stored });
     }
-  }, [stored]);
+    setHydrated(true);
+  }, []);
 
-  // Persist to localStorage
+  // Persist to localStorage on changes. The hydrated guard prevents the
+  // initial empty state from overwriting persisted tasks before hydration.
   useEffect(() => {
-    if (initializedRef.current) {
-      setStored(tasks);
+    if (!hydrated) return;
+    try {
+      localStorage.setItem(STORAGE_KEYS.TASKS, JSON.stringify(tasks));
+    } catch {
+      // ignore quota errors
     }
-  }, [tasks, setStored]);
+  }, [tasks, hydrated]);
 
   const addTask = useCallback(
     (title: string, estimatedPomodoros?: number) => {

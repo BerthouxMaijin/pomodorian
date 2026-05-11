@@ -9,6 +9,7 @@ export interface Task {
   completedPomodoros: number;
   completed: boolean;
   createdAt: string;
+  completedAt: string | null;
   aiGenerated: boolean;
   order: number;
 }
@@ -39,6 +40,7 @@ export interface FocusSession {
   durationMinutes: number;
   mode: TimerMode;
   taskId: string | null;
+  taskTitle: string | null;
   completed: boolean;
 }
 
@@ -60,4 +62,13 @@ export const STORAGE_KEYS = {
   SETTINGS: "pomodorian_settings",
   SESSIONS: "pomodorian_sessions",
   CURRENT_STATE: "pomodorian_current_state",
+  DATA_VERSION: "pomodorian_data_version",
 } as const;
+
+export const DATA_VERSION = "1";
+
+// YYYY-MM-DD key used to bucket sessions by day.
+// Uses UTC for backward compatibility with sessions recorded before this helper existed.
+export function getDateKey(d: Date = new Date()): string {
+  return d.toISOString().split("T")[0];
+}
