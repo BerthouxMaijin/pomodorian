@@ -2,20 +2,24 @@
 
 import { useState, useRef, useEffect } from "react";
 import { cn } from "@/lib/utils";
-import type { Task } from "@/lib/types";
+import type { DisplayTask } from "@/hooks/useTaskHistory";
 
 interface TaskItemProps {
-  task: Task;
+  task: DisplayTask;
   isActive: boolean;
-  onToggle: () => void;
-  onDelete: () => void;
-  onSetActive: () => void;
-  onEdit: (title: string) => void;
+  readOnly?: boolean;
+  showDailyStats?: boolean;
+  onToggle?: () => void;
+  onDelete?: () => void;
+  onSetActive?: () => void;
+  onEdit?: (title: string) => void;
 }
 
 export function TaskItem({
   task,
   isActive,
+  readOnly = false,
+  showDailyStats = false,
   onToggle,
   onDelete,
   onSetActive,
@@ -32,9 +36,14 @@ export function TaskItem({
     }
   }, [isEditing]);
 
+  const canEdit = !readOnly && !task.isGhost && onEdit;
+  const canToggle = !readOnly && !task.isGhost && onToggle;
+  const canDelete = !readOnly && !task.isGhost && onDelete;
+  const canActivate = !readOnly && !task.isGhost && onSetActive;
+
   const handleSave = () => {
     const trimmed = editValue.trim();
-    if (trimmed && trimmed !== task.title) {
+    if (trimmed && trimmed !== task.title && onEdit) {
       onEdit(trimmed);
     }
     setEditValue(trimmed || task.title);
@@ -57,23 +66,28 @@ export function TaskItem({
   return (
     <div
       className={cn(
-        "group glass rounded-xl px-3 py-2.5 flex items-start gap-3 cursor-pointer transition-all duration-200",
+        "group glass rounded-xl px-3 py-2.5 flex items-start gap-3 transition-all duration-200",
+        canActivate && "cursor-pointer",
         isActive && "ring-1 ring-white/20 bg-white/8",
-        task.completed && "opacity-50"
+        task.completed && "opacity-50",
+        task.isGhost && "opacity-60"
       )}
-      onClick={onSetActive}
+      onClick={canActivate ? onSetActive : undefined}
     >
       {/* Checkbox */}
       <button
         onClick={(e) => {
           e.stopPropagation();
-          onToggle();
+          if (canToggle) onToggle();
         }}
+        disabled={!canToggle}
         className={cn(
           "w-5 h-5 mt-0.5 rounded-md border-2 flex-shrink-0 flex items-center justify-center transition-colors",
           task.completed
             ? "border-emerald-500 bg-emerald-500"
-            : "border-muted hover:border-foreground"
+            : "border-muted",
+          canToggle && !task.completed && "hover:border-foreground",
+          !canToggle && "cursor-default"
         )}
       >
         {task.completed && (
@@ -93,7 +107,7 @@ export function TaskItem({
       </button>
 
       {/* Title */}
-      {isEditing ? (
+      {isEditing && canEdit ? (
         <input
           ref={inputRef}
           type="text"
@@ -108,9 +122,11 @@ export function TaskItem({
         <span
           className={cn(
             "flex-1 text-sm text-foreground break-words",
-            task.completed && "line-through"
+            task.completed && "line-through",
+            task.isGhost && "italic"
           )}
           onDoubleClick={(e) => {
+            if (!canEdit) return;
             e.stopPropagation();
             setIsEditing(true);
           }}
@@ -120,9 +136,18 @@ export function TaskItem({
       )}
 
       {/* Pomodoro count */}
-      <span className="text-xs text-muted tabular-nums flex-shrink-0 mt-0.5">
-        {task.completedPomodoros}/{task.estimatedPomodoros}
-      </span>
+      {showDailyStats || task.isGhost ? (
+        <span className="text-xs text-muted tabular-nums flex-shrink-0 mt-0.5">
+          {task.pomodorosForDay} · {task.minutesForDay}m
+        </span>
+      ) : (
+        task.estimatedPomodoros !== null &&
+        task.totalCompletedPomodoros !== null && (
+          <span className="text-xs text-muted tabular-nums flex-shrink-0 mt-0.5">
+            {task.totalCompletedPomodoros}/{task.estimatedPomodoros}
+          </span>
+        )
+      )}
 
       {/* AI badge */}
       {task.aiGenerated && (
@@ -132,28 +157,30 @@ export function TaskItem({
       )}
 
       {/* Delete */}
-      <button
-        onClick={(e) => {
-          e.stopPropagation();
-          onDelete();
-        }}
-        className="opacity-0 group-hover:opacity-100 text-muted hover:text-red-400 transition-all flex-shrink-0 mt-0.5"
-        aria-label="Delete task"
-      >
-        <svg
-          width="14"
-          height="14"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
+      {canDelete && (
+        <button
+          onClick={(e) => {
+            e.stopPropagation();
+            onDelete();
+          }}
+          className="opacity-0 group-hover:opacity-100 text-muted hover:text-red-400 transition-all flex-shrink-0 mt-0.5"
+          aria-label="Delete task"
         >
-          <line x1="18" y1="6" x2="6" y2="18" />
-          <line x1="6" y1="6" x2="18" y2="18" />
-        </svg>
-      </button>
+          <svg
+            width="14"
+            height="14"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          >
+            <line x1="18" y1="6" x2="6" y2="18" />
+            <line x1="6" y1="6" x2="18" y2="18" />
+          </svg>
+        </button>
+      )}
     </div>
   );
 }

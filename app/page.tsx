@@ -52,7 +52,15 @@ export default function Home() {
           ? settings.shortBreakDuration
           : settings.longBreakDuration) / 60
     );
-    analytics.recordSession(timer.mode, durationMinutes, tasks.activeTaskId);
+    const activeTask = tasks.activeTaskId
+      ? tasks.tasks.find((t) => t.id === tasks.activeTaskId)
+      : null;
+    analytics.recordSession(
+      timer.mode,
+      durationMinutes,
+      tasks.activeTaskId,
+      activeTask?.title ?? null
+    );
 
     if (timer.mode === "pomodoro" && tasks.activeTaskId) {
       tasks.incrementPomodoro(tasks.activeTaskId);
@@ -220,7 +228,9 @@ export default function Home() {
         >
           <TaskList
             tasks={tasks.tasks}
+            sessions={analytics.sessions}
             activeTaskId={tasks.activeTaskId}
+            locale={settings.aiLanguage}
             onAdd={tasks.addTask}
             onToggle={tasks.toggleComplete}
             onDelete={tasks.deleteTask}
@@ -254,11 +264,10 @@ export default function Home() {
 
         {analyticsOpen && (
           <AnalyticsPanel
-            todayMinutes={analytics.todayMinutes}
-            todayPomodoros={analytics.todayPomodoros}
-            totalHours={analytics.totalHours}
+            sessions={analytics.sessions}
             streak={analytics.streak}
-            heatmap={analytics.heatmap}
+            totalHours={analytics.totalHours}
+            locale={settings.aiLanguage}
             onClose={() => setAnalyticsOpen(false)}
           />
         )}
