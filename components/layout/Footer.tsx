@@ -40,14 +40,26 @@ export function Footer() {
           >
             Contact
           </Link>
-          <span className="text-border">·</span>
+        </div>
+        <div className="flex justify-center mt-5">
           <a
-            href="https://en.tipeee.com/jbberthoux/"
+            href="https://ko-fi.com/jbbthx"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-red-400 hover:text-red-300 transition-colors"
+            aria-label="Support Pomodorian on Ko-fi"
+            className="inline-flex items-center gap-2 rounded-full bg-[#FF5E5B] px-4 py-2 text-sm font-semibold text-white shadow-md transition hover:bg-[#ff7370] hover:shadow-lg"
           >
-            Support Us
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              width="18"
+              height="18"
+              fill="currentColor"
+              aria-hidden="true"
+            >
+              <path d="M20 4H6a2 2 0 0 0-2 2v8a4 4 0 0 0 4 4h6a4 4 0 0 0 4-4h.5a3.5 3.5 0 0 0 0-7H20V4Zm-1.5 7H18V8h.5a1.5 1.5 0 0 1 0 3ZM4 20h16v2H4z" />
+            </svg>
+            Buy me a coffee
           </a>
         </div>
         <p className="text-center text-xs text-muted mt-4">
