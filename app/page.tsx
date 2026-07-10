@@ -2,6 +2,7 @@
 
 import { useState, useCallback, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { track } from "@vercel/analytics";
 import { useTimer } from "@/hooks/useTimer";
 import { useSettings } from "@/hooks/useSettings";
 import { useSound } from "@/hooks/useSound";
@@ -62,8 +63,11 @@ export default function Home() {
       activeTask?.title ?? null
     );
 
-    if (timer.mode === "pomodoro" && tasks.activeTaskId) {
-      tasks.incrementPomodoro(tasks.activeTaskId);
+    if (timer.mode === "pomodoro") {
+      track("pomodoro_completed");
+      if (tasks.activeTaskId) {
+        tasks.incrementPomodoro(tasks.activeTaskId);
+      }
     }
 
     const nextMode: TimerMode =
@@ -135,9 +139,9 @@ export default function Home() {
       switch (e.key) {
         case " ":
           e.preventDefault();
-          if (timer.status === "idle") timer.start();
+          if (timer.status === "idle") { timer.start(); track("timer_started", { mode: timer.mode }); }
           else if (timer.status === "running") { timer.pause(); sound.pauseAllAmbients(); }
-          else if (timer.status === "paused") { timer.resume(); sound.resumeAllAmbients(); }
+          else if (timer.status === "paused") { timer.resume(); sound.resumeAllAmbients(); track("timer_started", { mode: timer.mode }); }
           break;
         case "1":
           timer.setMode("pomodoro");
@@ -200,9 +204,9 @@ export default function Home() {
           <TimerControls
             status={timer.status}
             mode={timer.mode}
-            onStart={() => { sound.playClick(); timer.start(); }}
+            onStart={() => { sound.playClick(); timer.start(); track("timer_started", { mode: timer.mode }); }}
             onPause={() => { timer.pause(); sound.pauseAllAmbients(); }}
-            onResume={() => { sound.playClick(); timer.resume(); sound.resumeAllAmbients(); }}
+            onResume={() => { sound.playClick(); timer.resume(); sound.resumeAllAmbients(); track("timer_started", { mode: timer.mode }); }}
             onSkip={timer.skip}
             onReset={timer.reset}
           />
@@ -237,13 +241,14 @@ export default function Home() {
             onEdit={tasks.editTask}
             onSetActive={tasks.setActiveTask}
             onIncrementPomodoro={tasks.incrementPomodoro}
-            onOpenAIPlanner={() => setAIPlannerOpen(true)}
+            onOpenAIPlanner={() => { track("ai_planner_opened"); setAIPlannerOpen(true); }}
           />
         </motion.div>
       </main>
 
       <InfoSection />
       <Footer />
+
 
       <AnimatePresence>
         {settingsOpen && (

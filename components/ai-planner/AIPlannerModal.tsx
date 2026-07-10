@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { track } from "@vercel/analytics";
 import type { AppSettings, AITaskSuggestion, AIPlannerResponse } from "@/lib/types";
 
 interface AIPlannerModalProps {
@@ -51,6 +52,7 @@ export function AIPlannerModal({
       }
 
       const data: AIPlannerResponse = await res.json();
+      track("ai_planner_generated", { taskCount: data.tasks.length });
       setResult(data);
       setSelectedTasks(new Set(data.tasks.map((_, i) => i)));
     } catch (err) {
@@ -63,6 +65,7 @@ export function AIPlannerModal({
   const handleImport = () => {
     if (!result) return;
     const tasksToImport = result.tasks.filter((_, i) => selectedTasks.has(i));
+    track("ai_tasks_imported", { count: tasksToImport.length });
     onImportTasks(tasksToImport);
     onClose();
   };

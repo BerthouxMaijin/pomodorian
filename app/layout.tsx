@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import { SITE_URL } from "@/lib/constants";
 import "./globals.css";
 
@@ -81,6 +82,7 @@ export default function RootLayout({
       <body className="min-h-full flex flex-col relative overflow-x-hidden">
         <link rel="llms" type="text/plain" href="/llms.txt" />
         {children}
+        <Analytics />
       </body>
     </html>
   );
