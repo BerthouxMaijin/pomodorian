@@ -19,6 +19,53 @@ const LANG_LABELS: Record<Lang, string> = {
   de: "Deutsch",
 };
 
+const CTA_STRINGS: Record<
+  Lang,
+  {
+    tagline: string;
+    button: string;
+    bottomTitle: string;
+    bottomText: string;
+    bottomButton: string;
+  }
+> = {
+  en: {
+    tagline: "Pomodorian is a free, AI-powered Pomodoro timer. No account required.",
+    button: "Try the timer",
+    bottomTitle: "Ready to focus smarter?",
+    bottomText:
+      "Try Pomodorian, the AI-powered Pomodoro timer. Free, no account required.",
+    bottomButton: "Start Focusing",
+  },
+  fr: {
+    tagline:
+      "Pomodorian est un minuteur Pomodoro gratuit dopé à l'IA. Sans compte.",
+    button: "Essayer le minuteur",
+    bottomTitle: "Prêt à mieux vous concentrer ?",
+    bottomText:
+      "Essayez Pomodorian, le minuteur Pomodoro dopé à l'IA. Gratuit, sans compte.",
+    bottomButton: "Lancer une session",
+  },
+  es: {
+    tagline:
+      "Pomodorian es un temporizador Pomodoro gratuito con IA. Sin cuenta.",
+    button: "Probar el temporizador",
+    bottomTitle: "¿Listo para concentrarte mejor?",
+    bottomText:
+      "Prueba Pomodorian, el temporizador Pomodoro con IA. Gratis y sin cuenta.",
+    bottomButton: "Empezar a concentrarme",
+  },
+  de: {
+    tagline:
+      "Pomodorian ist ein kostenloser, KI-gestützter Pomodoro-Timer. Ohne Konto.",
+    button: "Timer ausprobieren",
+    bottomTitle: "Bereit für besseren Fokus?",
+    bottomText:
+      "Probiere Pomodorian, den KI-gestützten Pomodoro-Timer. Kostenlos, ohne Konto.",
+    bottomButton: "Fokus starten",
+  },
+};
+
 function parsePath(path?: string[]): { lang: Lang; slug?: string } {
   if (!path || path.length === 0) return { lang: "en" };
 
@@ -334,6 +381,18 @@ export default async function BlogPage({
               </p>
             </header>
 
+            <div className="mb-10 glass rounded-2xl px-5 py-4 flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-5">
+              <p className="text-sm text-muted flex-1 leading-relaxed">
+                {CTA_STRINGS[lang].tagline}
+              </p>
+              <Link
+                href="/?utm_source=blog&utm_medium=cta-top"
+                className="shrink-0 inline-flex items-center justify-center px-4 py-2 rounded-lg bg-red-500 text-white text-sm font-semibold hover:bg-red-400 transition-colors"
+              >
+                {CTA_STRINGS[lang].button} &rarr;
+              </Link>
+            </div>
+
             <div
               className="prose-custom"
               dangerouslySetInnerHTML={{
@@ -343,17 +402,14 @@ export default async function BlogPage({
 
             <div className="mt-16 glass rounded-2xl p-8 text-center">
               <h3 className="text-xl font-semibold mb-2">
-                Ready to focus smarter?
+                {CTA_STRINGS[lang].bottomTitle}
               </h3>
-              <p className="text-muted mb-4">
-                Try Pomodorian — the AI-powered Pomodoro timer. Free, no account
-                required.
-              </p>
+              <p className="text-muted mb-4">{CTA_STRINGS[lang].bottomText}</p>
               <Link
-                href="/"
+                href="/?utm_source=blog&utm_medium=cta-bottom"
                 className="inline-block px-8 py-3 rounded-xl bg-red-500 text-white font-semibold hover:bg-red-400 transition-colors"
               >
-                Start Focusing
+                {CTA_STRINGS[lang].bottomButton}
               </Link>
             </div>
           </article>
