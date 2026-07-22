@@ -20,6 +20,7 @@ import { AIPlannerModal } from "@/components/ai-planner/AIPlannerModal";
 import { AnalyticsPanel } from "@/components/analytics/AnalyticsPanel";
 import { InfoSection } from "@/components/layout/InfoSection";
 import { Footer } from "@/components/layout/Footer";
+import { FeedbackPrompt } from "@/components/feedback/FeedbackPrompt";
 import { formatTime } from "@/lib/utils";
 import { MODE_LABELS } from "@/lib/constants";
 import type { TimerMode } from "@/lib/types";
@@ -249,6 +250,7 @@ export default function Home() {
       <InfoSection />
       <Footer />
 
+      <FeedbackPrompt />
 
       <AnimatePresence>
         {settingsOpen && (
