@@ -156,7 +156,7 @@ const techniques: SeoPage[] = [
       },
       {
         heading: "Deep Work + Ambient Sounds",
-        body: "Research shows that moderate ambient noise (around 70 dB) enhances creative cognition compared to silence. That's why many people do their best work in coffee shops. Pomodorian's built-in sound mixer lets you layer rain, café ambience, lo-fi beats, nature sounds, and fireplace crackle — creating your ideal deep work environment without leaving your desk. Adjust individual volumes to find the mix that gets you into flow state.",
+        body: "Research shows that moderate ambient noise (around 70 dB) enhances creative cognition compared to silence. That's why many people do their best work in coffee shops. Pomodorian's built-in sound mixer lets you layer rain, café ambience, lo-fi beats, forest sounds, and fireplace crackle — creating your ideal deep work environment without leaving your desk. Adjust individual volumes to find the mix that gets you into flow state.",
       },
       {
         heading: "Track Your Deep Work Hours",
@@ -241,10 +241,10 @@ const useCases: SeoPage[] = [
     slug: "focus-music-timer",
     title: "Focus Music Timer — Lo-fi, Rain & Cafe Sounds | Pomodorian",
     description:
-      "Free focus timer with built-in ambient sounds. Layer lo-fi beats, rain, cafe noise, nature, and fireplace sounds while you work. No ads.",
+      "Free focus timer with built-in ambient sounds. Layer lo-fi beats, rain, cafe noise, forest, and fireplace sounds while you work. No ads.",
     h1: "Focus Music Timer",
     intro:
-      "The right background sounds can transform your productivity. Pomodorian combines a Pomodoro timer with 5 layerable ambient sounds — lo-fi beats, rain, café noise, nature, and fireplace. Mix them together, adjust individual volumes, and create your perfect focus environment. No ads, no account, completely free.",
+      "The right background sounds can transform your productivity. Pomodorian combines a Pomodoro timer with 5 layerable ambient sounds — lo-fi beats, rain, café noise, forest, and fireplace. Mix them together, adjust individual volumes, and create your perfect focus environment. No ads, no account, completely free.",
     keywords: ["focus music timer", "lofi timer", "ambient sound timer", "study music timer"],
     category: "use-case",
   },

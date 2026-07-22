@@ -88,7 +88,7 @@ export function InfoSection() {
               },
               {
                 title: "Ambient Sounds",
-                desc: "Built-in rain, caf\u00e9, lo-fi, nature, and fireplace sounds. Layer and mix them freely.",
+                desc: "Built-in rain, caf\u00e9, lo-fi, forest, and fireplace sounds. Layer and mix them freely.",
               },
               {
                 title: "Focus Analytics",

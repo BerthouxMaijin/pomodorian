@@ -48,7 +48,7 @@ const features = [
   {
     icon: "🎵",
     title: "Ambient Sounds",
-    text: "5 layerable sounds — rain, café, lo-fi, nature, fireplace. All free, individual volume controls.",
+    text: "5 layerable sounds — rain, café, lo-fi, forest, fireplace. All free, individual volume controls.",
   },
   {
     icon: "📊",

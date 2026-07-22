@@ -17,7 +17,7 @@ const softwareApp = {
   featureList: [
     "AI Session Planner",
     "Pomodoro Timer",
-    "Ambient Sounds (Rain, Café, Lo-fi, Nature, Fireplace)",
+    "Ambient Sounds (Rain, Café, Lo-fi, Forest, Fireplace)",
     "Focus Analytics with Contribution Heatmap",
     "Keyboard Shortcuts",
     "Works Offline (PWA)",
@@ -66,7 +66,7 @@ const faqPage = {
       name: "What ambient sounds are available?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Pomodorian includes 5 free ambient sounds: rain, café, lo-fi beats, nature, and fireplace. You can layer multiple sounds together and adjust individual volume levels to create your perfect focus environment.",
+        text: "Pomodorian includes 5 free ambient sounds: rain, café, lo-fi beats, forest, and fireplace. You can layer multiple sounds together and adjust individual volume levels to create your perfect focus environment.",
       },
     },
   ],

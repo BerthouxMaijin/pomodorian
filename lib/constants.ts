@@ -67,7 +67,7 @@ export const AMBIENT_SOUNDS = [
   { key: "rain", label: "Rain", icon: "🌧", src: "/sounds/rain.mp3" },
   { key: "cafe", label: "Café", icon: "☕", src: "/sounds/cafe.mp3" },
   { key: "lofi", label: "Lo-fi", icon: "🎧", src: "/sounds/lofi.mp3" },
-  { key: "nature", label: "Nature", icon: "🌿", src: "/sounds/nature.mp3" },
+  { key: "forest", label: "Forest", icon: "🌲", src: "/sounds/forest.mp3" },
   {
     key: "fireplace",
     label: "Fireplace",
