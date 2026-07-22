@@ -64,11 +64,10 @@ export default function Terms() {
               Ambient Sounds
             </h2>
             <p>
-              Ambient sounds included in Pomodorian are sourced from
-              royalty-free and Creative Commons licensed content. Rain, forest,
-              and fireplace sounds are from Orange Free Sounds (CC BY-NC 4.0).
-              Lo-fi music is from HoliznaCC0 (CC0 Public Domain). Caf&eacute;
-              ambience is from QuickSounds (free SFX license).
+              Ambient sounds included in Pomodorian (rain, caf&eacute;, lo-fi,
+              forest, fireplace) are original audio tracks generated with Suno
+              under a paid subscription that includes commercial use rights.
+              Alarm and interface sounds are original creations.
             </p>
           </section>
 
