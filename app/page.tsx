@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useCallback, useEffect } from "react";
+import { useState, useCallback, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { track } from "@vercel/analytics";
 import { useTimer } from "@/hooks/useTimer";
@@ -21,11 +21,14 @@ import { AnalyticsPanel } from "@/components/analytics/AnalyticsPanel";
 import { InfoSection } from "@/components/layout/InfoSection";
 import { Footer } from "@/components/layout/Footer";
 import { FeedbackPrompt } from "@/components/feedback/FeedbackPrompt";
+import { NeverDumpModal } from "@/components/neverdump/NeverDumpModal";
 import { formatTime } from "@/lib/utils";
 import { MODE_LABELS } from "@/lib/constants";
 import type { TimerMode } from "@/lib/types";
 import { useTasks } from "@/hooks/useTasks";
 import { HomeSchemas } from "@/components/seo/HomeSchemas";
+import { useBrowserLocale } from "@/hooks/useBrowserLocale";
+import { NEVER_DUMP_COPY } from "@/components/neverdump/neverDumpCopy";
 
 export default function Home() {
   const { settings, updateSettings } = useSettings();
@@ -33,10 +36,15 @@ export default function Home() {
   const tasks = useTasks();
   const sound = useSound();
   const analytics = useAnalytics();
+  const browserLocale = useBrowserLocale();
+  const neverDumpCopy = NEVER_DUMP_COPY[browserLocale];
   const [settingsOpen, setSettingsOpen] = useState(false);
   const [aiPlannerOpen, setAIPlannerOpen] = useState(false);
   const [analyticsOpen, setAnalyticsOpen] = useState(false);
   const [shortcutsOpen, setShortcutsOpen] = useState(false);
+  const [neverDumpOpen, setNeverDumpOpen] = useState(false);
+  const [neverDumpEligible, setNeverDumpEligible] = useState(false);
+  const neverDumpOpenedRef = useRef(false);
 
   // Apply theme to HTML element
   useEffect(() => {
@@ -45,6 +53,7 @@ export default function Home() {
 
   // Auto-advance to break/pomodoro on complete
   const handleComplete = useCallback(() => {
+    setNeverDumpOpen(false);
     sound.playAlarm(settings.alarmSound, settings.alarmVolume);
 
     const durationMinutes = Math.round(
@@ -71,12 +80,21 @@ export default function Home() {
       }
     }
 
+    const completedPomodoros =
+      timer.mode === "pomodoro"
+        ? timer.pomodorosCompleted + 1
+        : timer.pomodorosCompleted;
     const nextMode: TimerMode =
       timer.mode === "pomodoro"
-        ? timer.pomodorosCompleted % settings.longBreakInterval === 0
+        ? completedPomodoros % settings.longBreakInterval === 0
           ? "longBreak"
           : "shortBreak"
         : "pomodoro";
+
+    const eligibleLongBreak =
+      timer.mode === "pomodoro" && nextMode === "longBreak";
+    setNeverDumpEligible(eligibleLongBreak);
+    neverDumpOpenedRef.current = false;
 
     timer.setMode(nextMode);
 
@@ -99,6 +117,45 @@ export default function Home() {
       }
     }
   }, [timer, tasks, settings, sound, analytics]);
+
+  const setModeManually = useCallback(
+    (mode: TimerMode) => {
+      setNeverDumpOpen(false);
+      setNeverDumpEligible(false);
+      neverDumpOpenedRef.current = false;
+      timer.setMode(mode);
+    },
+    [timer]
+  );
+
+  const openNeverDump = useCallback((source: "auto" | "manual") => {
+    setSettingsOpen(false);
+    setAIPlannerOpen(false);
+    setAnalyticsOpen(false);
+    setShortcutsOpen(false);
+    neverDumpOpenedRef.current = true;
+    setNeverDumpOpen(true);
+    track("neverdump_opened", { source });
+  }, []);
+
+  useEffect(() => {
+    if (
+      neverDumpEligible &&
+      settings.neverDumpAutoOpen &&
+      timer.mode === "longBreak" &&
+      timer.status === "running" &&
+      !neverDumpOpenedRef.current
+    ) {
+      const timeout = window.setTimeout(() => openNeverDump("auto"), 0);
+      return () => window.clearTimeout(timeout);
+    }
+  }, [
+    neverDumpEligible,
+    openNeverDump,
+    settings.neverDumpAutoOpen,
+    timer.mode,
+    timer.status,
+  ]);
 
   const { registerOnComplete } = timer;
   useEffect(() => {
@@ -130,6 +187,7 @@ export default function Home() {
 
   useEffect(() => {
     function handleKeyDown(e: KeyboardEvent) {
+      if (neverDumpOpen) return;
       if (
         e.target instanceof HTMLInputElement ||
         e.target instanceof HTMLTextAreaElement
@@ -145,13 +203,13 @@ export default function Home() {
           else if (timer.status === "paused") { timer.resume(); sound.resumeAllAmbients(); track("timer_started", { mode: timer.mode }); }
           break;
         case "1":
-          timer.setMode("pomodoro");
+          setModeManually("pomodoro");
           break;
         case "2":
-          timer.setMode("shortBreak");
+          setModeManually("shortBreak");
           break;
         case "3":
-          timer.setMode("longBreak");
+          setModeManually("longBreak");
           break;
         case "s":
         case "S":
@@ -169,7 +227,7 @@ export default function Home() {
 
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [timer, sound]);
+  }, [timer, sound, neverDumpOpen, setModeManually]);
 
   return (
     <>
@@ -182,7 +240,7 @@ export default function Home() {
       />
 
       <main className="flex-1 flex flex-col items-center gap-8 px-4 pt-8 pb-16 max-w-lg mx-auto w-full">
-        <ModeSelector mode={timer.mode} onChange={timer.setMode} />
+        <ModeSelector mode={timer.mode} onChange={setModeManually} />
 
         <motion.div
           key={timer.mode}
@@ -208,10 +266,29 @@ export default function Home() {
             onStart={() => { sound.playClick(); timer.start(); track("timer_started", { mode: timer.mode }); }}
             onPause={() => { timer.pause(); sound.pauseAllAmbients(); }}
             onResume={() => { sound.playClick(); timer.resume(); sound.resumeAllAmbients(); track("timer_started", { mode: timer.mode }); }}
-            onSkip={timer.skip}
-            onReset={timer.reset}
+            onSkip={() => {
+              setNeverDumpOpen(false);
+              setNeverDumpEligible(false);
+              timer.skip();
+            }}
+            onReset={() => {
+              setNeverDumpOpen(false);
+              setNeverDumpEligible(false);
+              timer.reset();
+            }}
           />
         </motion.div>
+
+        {timer.mode === "longBreak" && timer.status === "running" && !neverDumpOpen && (
+          <button
+            type="button"
+            data-testid="run-neverdump"
+            onClick={() => openNeverDump("manual")}
+            className="-mt-4 rounded-full border border-accent/40 bg-accent/10 px-5 py-2.5 text-xs font-bold uppercase tracking-[0.12em] text-foreground transition-colors hover:bg-accent/20 focus:outline-none focus:ring-2 focus:ring-accent"
+          >
+            {neverDumpCopy.intro.run}
+          </button>
+        )}
 
         {timer.mode === "pomodoro" && (
           <div className="text-sm text-muted">
@@ -250,9 +327,19 @@ export default function Home() {
       <InfoSection />
       <Footer />
 
-      <FeedbackPrompt />
+      {!neverDumpOpen && <FeedbackPrompt />}
 
       <AnimatePresence>
+        {neverDumpOpen && (
+          <NeverDumpModal
+            timeRemaining={timer.timeRemaining}
+            totalTime={timer.totalTime}
+            onClose={() => setNeverDumpOpen(false)}
+            onPauseAmbients={sound.pauseAllAmbients}
+            onResumeAmbients={sound.resumeAllAmbients}
+          />
+        )}
+
         {settingsOpen && (
           <SettingsModal
             settings={settings}

@@ -6,9 +6,11 @@ import { track } from "@vercel/analytics";
 import {
   buildFeedbackEmail,
   FEEDBACK_COPY,
-  resolveFeedbackLocale,
-  type FeedbackLocale,
 } from "./feedbackCopy";
+import {
+  resolveBrowserLocale,
+  type UiLocale,
+} from "@/lib/i18n/locales";
 
 const DISMISSED_KEY = "pomodorian-feedback-prompt-v1-dismissed";
 
@@ -17,7 +19,7 @@ const bugReportUrl =
 
 export function FeedbackPrompt() {
   const [open, setOpen] = useState(false);
-  const [locale, setLocale] = useState<FeedbackLocale>("en");
+  const [locale, setLocale] = useState<UiLocale>("en");
   const triggerRef = useRef<HTMLButtonElement>(null);
   const closeRef = useRef<HTMLButtonElement>(null);
   const copy = FEEDBACK_COPY[locale];
@@ -25,7 +27,7 @@ export function FeedbackPrompt() {
 
   useEffect(() => {
     const timeout = window.setTimeout(() => {
-      setLocale(resolveFeedbackLocale(navigator.languages));
+      setLocale(resolveBrowserLocale(navigator.languages));
     }, 0);
 
     return () => window.clearTimeout(timeout);

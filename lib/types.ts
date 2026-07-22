@@ -29,6 +29,7 @@ export interface AppSettings extends TimerSettings {
   theme: "dark" | "light";
   notificationsEnabled: boolean;
   showTimeInTitle: boolean;
+  neverDumpAutoOpen: boolean;
   aiLanguage: string;
 }
 

@@ -1,15 +1,4 @@
-export const FEEDBACK_LOCALES = [
-  "en",
-  "fr",
-  "es",
-  "de",
-  "pt",
-  "it",
-  "ja",
-  "zh",
-] as const;
-
-export type FeedbackLocale = (typeof FEEDBACK_LOCALES)[number];
+import type { UiLocale } from "@/lib/i18n/locales";
 
 type FeedbackCopy = {
   triggerLabel: string;
@@ -197,20 +186,7 @@ export const FEEDBACK_COPY = {
       "3. 我希望增加的功能：",
     ],
   },
-} satisfies Record<FeedbackLocale, FeedbackCopy>;
-
-const localeSet = new Set<string>(FEEDBACK_LOCALES);
-
-export function resolveFeedbackLocale(
-  languages: readonly string[] | undefined
-): FeedbackLocale {
-  for (const language of languages ?? []) {
-    const baseLanguage = language.toLowerCase().split(/[-_]/)[0];
-    if (localeSet.has(baseLanguage)) return baseLanguage as FeedbackLocale;
-  }
-
-  return "en";
-}
+} satisfies Record<UiLocale, FeedbackCopy>;
 
 export function buildFeedbackEmail(copy: FeedbackCopy): string {
   const body = copy.emailQuestions.join("\n\n");

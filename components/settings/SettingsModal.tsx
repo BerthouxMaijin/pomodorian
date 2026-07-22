@@ -1,8 +1,11 @@
 "use client";
 
 import { useEffect } from "react";
+import { track } from "@vercel/analytics";
 import type { AppSettings } from "@/lib/types";
 import { ALARM_SOUNDS, AI_LANGUAGES } from "@/lib/constants";
+import { useBrowserLocale } from "@/hooks/useBrowserLocale";
+import { NEVER_DUMP_COPY } from "@/components/neverdump/neverDumpCopy";
 
 interface SettingsModalProps {
   settings: AppSettings;
@@ -15,6 +18,8 @@ export function SettingsModal({
   onUpdate,
   onClose,
 }: SettingsModalProps) {
+  const locale = useBrowserLocale();
+  const neverDumpCopy = NEVER_DUMP_COPY[locale];
   // Close on Escape
   useEffect(() => {
     const handler = (e: KeyboardEvent) => {
@@ -110,6 +115,14 @@ export function SettingsModal({
             label="Auto Start Pomodoros"
             checked={settings.autoStartPomodoros}
             onChange={(v) => onUpdate({ autoStartPomodoros: v })}
+          />
+          <Toggle
+            label={neverDumpCopy.shared.settingsAutoOpen}
+            checked={settings.neverDumpAutoOpen}
+            onChange={(v) => {
+              onUpdate({ neverDumpAutoOpen: v });
+              track("neverdump_auto_open_changed", { enabled: v });
+            }}
           />
         </section>
 
@@ -239,6 +252,9 @@ function Toggle({
     <div className="flex items-center justify-between">
       <span className="text-sm text-foreground">{label}</span>
       <button
+        type="button"
+        aria-label={label}
+        aria-pressed={checked}
         onClick={() => onChange(!checked)}
         className={`w-10 h-6 rounded-full transition-colors relative ${
           checked ? "bg-emerald-500" : "bg-surface-active"
