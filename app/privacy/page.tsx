@@ -59,6 +59,21 @@ export default function Privacy() {
 
           <section className="space-y-2">
             <h2 className="text-lg font-semibold text-foreground">
+              Feedback & Bug Reports
+            </h2>
+            <p>
+              When you send feedback or report a bug from the in-app form, we
+              receive the message you wrote, the page you were on, your screen
+              size, your time zone, your interface theme and your browser user
+              agent. Your email address is optional and is only used to reply to
+              you. The message is delivered to us by email through Resend and is
+              not stored in any database. Nothing is sent unless you submit the
+              form yourself.
+            </p>
+          </section>
+
+          <section className="space-y-2">
+            <h2 className="text-lg font-semibold text-foreground">
               Analytics & Tracking
             </h2>
             <p>
@@ -82,6 +97,10 @@ export default function Privacy() {
               <li>
                 &bull; <strong className="text-foreground">Anthropic</strong>:
                 AI task generation (only when you use the AI planner)
+              </li>
+              <li>
+                &bull; <strong className="text-foreground">Resend</strong>: Email
+                delivery (only when you submit the feedback form)
               </li>
             </ul>
           </section>
