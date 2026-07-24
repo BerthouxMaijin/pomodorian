@@ -23,7 +23,7 @@ type TaskAction =
   | { type: "TOGGLE"; id: string }
   | { type: "EDIT"; id: string; title: string }
   | { type: "INCREMENT_POMODORO"; id: string }
-  | { type: "IMPORT_AI"; suggestions: AITaskSuggestion[] };
+  | { type: "IMPORT_AI"; entries: { id: string; suggestion: AITaskSuggestion }[] };
 
 function taskReducer(state: Task[], action: TaskAction): Task[] {
   switch (action.type) {
@@ -67,10 +67,10 @@ function taskReducer(state: Task[], action: TaskAction): Task[] {
           : t
       );
     case "IMPORT_AI": {
-      const newTasks: Task[] = action.suggestions.map((s, i) => ({
-        id: generateId(),
-        title: s.title,
-        estimatedPomodoros: s.estimatedPomodoros,
+      const newTasks: Task[] = action.entries.map((entry, i) => ({
+        id: entry.id,
+        title: entry.suggestion.title,
+        estimatedPomodoros: entry.suggestion.estimatedPomodoros,
         completedPomodoros: 0,
         completed: false,
         createdAt: new Date().toISOString(),
@@ -134,8 +134,10 @@ export function useTasks() {
     dispatch({ type: "INCREMENT_POMODORO", id });
   }, []);
 
-  const importAITasks = useCallback((suggestions: AITaskSuggestion[]) => {
-    dispatch({ type: "IMPORT_AI", suggestions });
+  const importAITasks = useCallback((suggestions: AITaskSuggestion[]): string[] => {
+    const entries = suggestions.map((suggestion) => ({ id: generateId(), suggestion }));
+    dispatch({ type: "IMPORT_AI", entries });
+    return entries.map((e) => e.id);
   }, []);
 
   const setActiveTask = useCallback((id: string | null) => {
