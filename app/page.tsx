@@ -24,7 +24,7 @@ import { FeedbackPrompt } from "@/components/feedback/FeedbackPrompt";
 import { NeverDumpModal } from "@/components/neverdump/NeverDumpModal";
 import { formatTime } from "@/lib/utils";
 import { MODE_LABELS } from "@/lib/constants";
-import type { TimerMode } from "@/lib/types";
+import type { TimerMode, AITaskSuggestion } from "@/lib/types";
 import { useTasks } from "@/hooks/useTasks";
 import { HomeSchemas } from "@/components/seo/HomeSchemas";
 import { useBrowserLocale } from "@/hooks/useBrowserLocale";
@@ -128,6 +128,21 @@ export default function Home() {
     [timer]
   );
 
+  const handleImportAndStart = useCallback(
+    (suggestions: AITaskSuggestion[]) => {
+      const ids = tasks.importAITasks(suggestions);
+      if (ids.length === 0) return;
+      tasks.setActiveTask(ids[0]);
+      // A pomodoro is already running: import and activate without touching the timer.
+      if (timer.status === "running" && timer.mode === "pomodoro") return;
+      setModeManually("pomodoro");
+      sound.playClick();
+      setTimeout(() => timer.start(), 100);
+      track("timer_started", { mode: "pomodoro" });
+    },
+    [tasks, timer, sound, setModeManually]
+  );
+
   const openNeverDump = useCallback((source: "auto" | "manual") => {
     setSettingsOpen(false);
     setAIPlannerOpen(false);
@@ -187,7 +202,7 @@ export default function Home() {
 
   useEffect(() => {
     function handleKeyDown(e: KeyboardEvent) {
-      if (neverDumpOpen) return;
+      if (neverDumpOpen || aiPlannerOpen) return;
       if (
         e.target instanceof HTMLInputElement ||
         e.target instanceof HTMLTextAreaElement
@@ -227,7 +242,7 @@ export default function Home() {
 
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [timer, sound, neverDumpOpen, setModeManually]);
+  }, [timer, sound, neverDumpOpen, aiPlannerOpen, setModeManually]);
 
   return (
     <>
@@ -352,6 +367,7 @@ export default function Home() {
           <AIPlannerModal
             settings={settings}
             onImportTasks={tasks.importAITasks}
+            onImportAndStart={handleImportAndStart}
             onClose={() => setAIPlannerOpen(false)}
           />
         )}

@@ -1,25 +1,39 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef, useMemo } from "react";
 import { track } from "@vercel/analytics";
 import type { AppSettings, AITaskSuggestion, AIPlannerResponse } from "@/lib/types";
+import { generateId } from "@/lib/utils";
+import {
+  estimatePlanDuration,
+  formatApproxDuration,
+  type EditableTask,
+} from "@/lib/plan";
+import { PLANNER_COPY, resolvePlannerLocale } from "./plannerCopy";
+import { PlanTaskRow } from "./PlanTaskRow";
 
 interface AIPlannerModalProps {
   settings: AppSettings;
   onImportTasks: (tasks: AITaskSuggestion[]) => void;
+  onImportAndStart: (tasks: AITaskSuggestion[]) => void;
   onClose: () => void;
 }
 
 export function AIPlannerModal({
   settings,
   onImportTasks,
+  onImportAndStart,
   onClose,
 }: AIPlannerModalProps) {
   const [goal, setGoal] = useState("");
   const [loading, setLoading] = useState(false);
-  const [result, setResult] = useState<AIPlannerResponse | null>(null);
   const [error, setError] = useState<string | null>(null);
-  const [selectedTasks, setSelectedTasks] = useState<Set<number>>(new Set());
+  const [result, setResult] = useState<AIPlannerResponse | null>(null);
+  const [plan, setPlan] = useState<EditableTask[]>([]);
+  const [lastAddedKey, setLastAddedKey] = useState<string | null>(null);
+  const importedRef = useRef(false);
+
+  const copy = PLANNER_COPY[resolvePlannerLocale(settings.aiLanguage)];
 
   useEffect(() => {
     const handler = (e: KeyboardEvent) => {
@@ -29,11 +43,19 @@ export function AIPlannerModal({
     return () => window.removeEventListener("keydown", handler);
   }, [onClose]);
 
+  const validTasks = useMemo(
+    () => plan.filter((t) => t.title.trim().length > 0),
+    [plan]
+  );
+  const estimate = useMemo(
+    () => estimatePlanDuration(validTasks, settings),
+    [validTasks, settings]
+  );
+
   const handleGenerate = async () => {
     if (!goal.trim()) return;
     setLoading(true);
     setError(null);
-    setResult(null);
 
     try {
       const res = await fetch("/api/ai-planner", {
@@ -47,36 +69,92 @@ export function AIPlannerModal({
       });
 
       if (!res.ok) {
-        const data = await res.json().catch(() => null);
-        throw new Error(data?.error || `Error ${res.status}`);
+        setError(res.status === 429 ? copy.errorRateLimited : copy.errorGeneric);
+        return;
       }
 
       const data: AIPlannerResponse = await res.json();
       track("ai_planner_generated", { taskCount: data.tasks.length });
       setResult(data);
-      setSelectedTasks(new Set(data.tasks.map((_, i) => i)));
-    } catch (err) {
-      setError(err instanceof Error ? err.message : "Something went wrong");
+      setPlan(
+        data.tasks.map((t) => ({
+          key: generateId(),
+          title: t.title,
+          estimatedPomodoros: t.estimatedPomodoros,
+          rationale: t.rationale || null,
+        }))
+      );
+    } catch {
+      setError(copy.errorGeneric);
     } finally {
       setLoading(false);
     }
   };
 
-  const handleImport = () => {
-    if (!result) return;
-    const tasksToImport = result.tasks.filter((_, i) => selectedTasks.has(i));
-    track("ai_tasks_imported", { count: tasksToImport.length });
-    onImportTasks(tasksToImport);
-    onClose();
+  const renameTask = (key: string, title: string) => {
+    setPlan((prev) => prev.map((t) => (t.key === key ? { ...t, title } : t)));
   };
 
-  const toggleTask = (index: number) => {
-    setSelectedTasks((prev) => {
-      const next = new Set(prev);
-      if (next.has(index)) next.delete(index);
-      else next.add(index);
+  const stepEstimate = (key: string, delta: number) => {
+    setPlan((prev) =>
+      prev.map((t) =>
+        t.key === key
+          ? {
+              ...t,
+              estimatedPomodoros: Math.min(
+                8,
+                Math.max(1, t.estimatedPomodoros + delta)
+              ),
+            }
+          : t
+      )
+    );
+  };
+
+  const removeTask = (key: string) => {
+    setPlan((prev) => prev.filter((t) => t.key !== key));
+  };
+
+  const addTask = () => {
+    const key = generateId();
+    setPlan((prev) => [
+      ...prev,
+      { key, title: "", estimatedPomodoros: 1, rationale: null },
+    ]);
+    setLastAddedKey(key);
+  };
+
+  const moveTask = (key: string, dir: -1 | 1) => {
+    setPlan((prev) => {
+      const index = prev.findIndex((t) => t.key === key);
+      if (index === -1) return prev;
+      const target = index + dir;
+      if (target < 0 || target >= prev.length) return prev;
+      const next = [...prev];
+      [next[index], next[target]] = [next[target], next[index]];
       return next;
     });
+  };
+
+  const startOver = () => {
+    setResult(null);
+    setPlan([]);
+    setError(null);
+    importedRef.current = false;
+    // `goal` is deliberately kept so the user can refine the same intent.
+  };
+
+  const handleImport = (start: boolean) => {
+    if (importedRef.current || validTasks.length === 0) return;
+    importedRef.current = true;
+    const suggestions = validTasks.map((t) => ({
+      title: t.title.trim(),
+      estimatedPomodoros: t.estimatedPomodoros,
+      rationale: t.rationale ?? "",
+    }));
+    track("ai_tasks_imported", { count: suggestions.length, started: start });
+    (start ? onImportAndStart : onImportTasks)(suggestions);
+    onClose();
   };
 
   return (
@@ -105,11 +183,13 @@ export function AIPlannerModal({
               </svg>
             </div>
             <h2 className="text-lg font-semibold text-foreground">
-              AI Session Planner
+              {copy.title}
             </h2>
           </div>
           <button
+            type="button"
             onClick={onClose}
+            aria-label={copy.closeAriaLabel}
             className="text-muted hover:text-foreground transition-colors"
           >
             <svg
@@ -127,24 +207,26 @@ export function AIPlannerModal({
         </div>
 
         {!result ? (
-          <>
-            <p className="text-sm text-muted">
-              Describe what you want to accomplish and AI will break it down into
-              Pomodoro-sized tasks.
-            </p>
+          <div className="space-y-4">
+            <label
+              htmlFor="ai-planner-goal"
+              className="block text-base font-medium text-foreground"
+            >
+              {copy.question}
+            </label>
             <textarea
+              id="ai-planner-goal"
               value={goal}
               onChange={(e) => setGoal(e.target.value)}
-              placeholder="e.g. Write the introduction for my thesis, review 3 PRs, and prepare slides for tomorrow's meeting"
+              placeholder={copy.placeholder}
               rows={4}
-              className="w-full bg-surface rounded-xl p-3 text-sm text-foreground placeholder:text-muted outline-none border border-border focus:ring-1 focus:ring-purple-500/50 resize-none"
+              className="w-full bg-surface rounded-xl p-3 text-base md:text-sm text-foreground placeholder:text-muted outline-none border border-border focus:ring-1 focus:ring-purple-500/50 resize-none"
               autoFocus
               disabled={loading}
             />
-            {error && (
-              <p className="text-sm text-red-400">{error}</p>
-            )}
+            {error && <p className="text-sm text-red-400">{error}</p>}
             <button
+              type="button"
               onClick={handleGenerate}
               disabled={loading || !goal.trim()}
               className="w-full py-3 rounded-xl bg-purple-600 text-white font-medium text-sm hover:bg-purple-500 transition-colors disabled:opacity-40 disabled:cursor-not-allowed flex items-center justify-center gap-2"
@@ -152,114 +234,108 @@ export function AIPlannerModal({
               {loading ? (
                 <>
                   <span className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
-                  Generating plan...
+                  {copy.generatingCta}
                 </>
               ) : (
-                "Generate Plan"
+                copy.generateCta
               )}
             </button>
-          </>
+          </div>
         ) : (
-          <>
+          <div className="space-y-4">
             {/* Session goal */}
             <div className="glass rounded-xl p-3">
-              <p className="text-xs text-muted mb-1">Session goal</p>
+              <p className="text-xs text-muted mb-1">{copy.sessionGoalLabel}</p>
               <p className="text-sm text-foreground">{result.sessionGoal}</p>
             </div>
 
             {/* Tips */}
             {result.tips && (
               <div className="glass rounded-xl p-3 border-purple-500/20">
-                <p className="text-xs text-purple-300">{result.tips}</p>
+                <p className="text-xs text-accent-text">{result.tips}</p>
               </div>
             )}
 
             {/* Tasks */}
             <div className="space-y-2">
-              <div className="flex items-center justify-between">
+              <div>
                 <h3 className="text-sm font-medium text-foreground">
-                  Tasks ({result.totalEstimatedPomodoros} pomodoros)
+                  {copy.tasksHeading}
                 </h3>
-                <button
-                  onClick={() => {
-                    if (selectedTasks.size === result.tasks.length) {
-                      setSelectedTasks(new Set());
-                    } else {
-                      setSelectedTasks(new Set(result.tasks.map((_, i) => i)));
-                    }
-                  }}
-                  className="text-xs text-muted hover:text-foreground transition-colors"
-                >
-                  {selectedTasks.size === result.tasks.length
-                    ? "Deselect all"
-                    : "Select all"}
-                </button>
+                <p className="text-xs text-muted mt-0.5">
+                  {estimate.pomodoros === 0
+                    ? copy.emptyPlanHint
+                    : copy.totalSummary(
+                        estimate.pomodoros,
+                        formatApproxDuration(estimate.totalMinutes)
+                      )}
+                </p>
               </div>
 
-              {result.tasks.map((task, i) => (
-                <div
-                  key={i}
-                  onClick={() => toggleTask(i)}
-                  className={`glass rounded-xl p-3 cursor-pointer transition-all ${
-                    selectedTasks.has(i)
-                      ? "ring-1 ring-purple-500/40"
-                      : "opacity-50"
-                  }`}
-                >
-                  <div className="flex items-start gap-3">
-                    <div
-                      className={`w-5 h-5 mt-0.5 rounded-md border-2 flex-shrink-0 flex items-center justify-center transition-colors ${
-                        selectedTasks.has(i)
-                          ? "border-purple-500 bg-purple-500"
-                          : "border-muted"
-                      }`}
-                    >
-                      {selectedTasks.has(i) && (
-                        <svg
-                          width="12"
-                          height="12"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="white"
-                          strokeWidth="3"
-                        >
-                          <polyline points="20 6 9 17 4 12" />
-                        </svg>
-                      )}
-                    </div>
-                    <div className="flex-1 min-w-0">
-                      <p className="text-sm text-foreground">{task.title}</p>
-                      <p className="text-xs text-muted mt-1">
-                        {task.estimatedPomodoros} pomodoro
-                        {task.estimatedPomodoros > 1 ? "s" : ""} &middot;{" "}
-                        {task.rationale}
-                      </p>
-                    </div>
-                  </div>
-                </div>
+              {plan.map((task, i) => (
+                <PlanTaskRow
+                  key={task.key}
+                  task={task}
+                  isFirst={i === 0}
+                  isLast={i === plan.length - 1}
+                  autoFocus={task.key === lastAddedKey}
+                  copy={copy}
+                  onRename={(title) => renameTask(task.key, title)}
+                  onStep={(delta) => stepEstimate(task.key, delta)}
+                  onDelete={() => removeTask(task.key)}
+                  onMove={(dir) => moveTask(task.key, dir)}
+                />
               ))}
+
+              <button
+                type="button"
+                onClick={addTask}
+                className="w-full py-2.5 rounded-xl glass text-sm text-muted hover:text-foreground transition-colors flex items-center justify-center gap-2"
+              >
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <line x1="12" y1="5" x2="12" y2="19" />
+                  <line x1="5" y1="12" x2="19" y2="12" />
+                </svg>
+                {copy.addTaskCta}
+              </button>
             </div>
 
-            <div className="flex items-center gap-3">
+            {/* Footer actions */}
+            <div className="flex flex-col gap-2 sm:flex-row sm:items-center">
               <button
-                onClick={() => {
-                  setResult(null);
-                  setGoal("");
-                }}
-                className="flex-1 py-3 rounded-xl glass text-sm text-muted hover:text-foreground transition-colors"
+                type="button"
+                onClick={startOver}
+                className="order-3 sm:order-none py-3 px-4 rounded-xl glass text-sm text-muted hover:text-foreground transition-colors sm:flex-shrink-0"
               >
-                Start over
+                {copy.startOverCta}
               </button>
               <button
-                onClick={handleImport}
-                disabled={selectedTasks.size === 0}
-                className="flex-1 py-3 rounded-xl bg-purple-600 text-white font-medium text-sm hover:bg-purple-500 transition-colors disabled:opacity-40"
+                type="button"
+                onClick={() => handleImport(false)}
+                disabled={validTasks.length === 0}
+                className="order-2 sm:order-none sm:flex-1 py-3 rounded-xl glass text-sm text-foreground hover:bg-white/5 transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
               >
-                Add {selectedTasks.size} task
-                {selectedTasks.size !== 1 ? "s" : ""}
+                {copy.addOnlyCta(validTasks.length)}
+              </button>
+              <button
+                type="button"
+                onClick={() => handleImport(true)}
+                disabled={validTasks.length === 0}
+                className="order-1 sm:order-none sm:flex-1 py-3 rounded-xl bg-purple-600 text-white font-medium text-sm hover:bg-purple-500 transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
+              >
+                {copy.addAndStartCta}
               </button>
             </div>
-          </>
+          </div>
         )}
       </div>
     </div>
