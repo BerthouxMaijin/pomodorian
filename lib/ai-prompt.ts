@@ -20,6 +20,7 @@ Rules:
 - Each task title should start with a verb
 - Keep total Pomodoros realistic${availableMinutes ? ` (max ${Math.floor(availableMinutes / pomodoroDuration)} Pomodoros)` : ""}
 - Include a brief rationale for each time estimate
+- Return between 1 and 10 tasks
 
 Respond ONLY with valid JSON, no markdown fences:
 {
