@@ -13,6 +13,7 @@ export function useSound() {
   const [ambients, setAmbients] = useState<AmbientState>({});
 
   const crossfadeRefs = useRef<Record<string, HTMLAudioElement>>({});
+  const fadeIntervals = useRef<Record<string, ReturnType<typeof setInterval>>>({});
   const CROSSFADE_DURATION = 0.5; // seconds
 
   const setupCrossfadeLoop = (key: string, audio: HTMLAudioElement, src: string) => {
@@ -23,6 +24,7 @@ export function useSound() {
         // Start a second copy for crossfade
         const next = new Audio(src);
         next.preload = "auto";
+        next.loop = true;
         next.volume = 0;
         crossfadeRefs.current[key] = next;
         next.play().catch(() => {});
@@ -39,25 +41,43 @@ export function useSound() {
           audio.volume = Math.max(0, targetVolume * (1 - progress));
           if (step >= fadeSteps) {
             clearInterval(fade);
+            delete fadeIntervals.current[key];
             audio.pause();
             audio.currentTime = 0;
             audio.volume = targetVolume;
             // Swap: next becomes the main audio
             audioRefs.current[key] = next;
-            crossfadeRefs.current[key] = undefined!;
             delete crossfadeRefs.current[key];
             setupCrossfadeLoop(key, next, src);
           }
         }, stepTime);
+        fadeIntervals.current[key] = fade;
       }
     };
     audio.addEventListener("timeupdate", onTimeUpdate);
+  };
+
+  // Abort an in-flight crossfade: kill the fade timer and the second copy.
+  const abortCrossfade = (key: string) => {
+    const fade = fadeIntervals.current[key];
+    if (fade) {
+      clearInterval(fade);
+      delete fadeIntervals.current[key];
+    }
+    const cross = crossfadeRefs.current[key];
+    if (cross) {
+      cross.pause();
+      delete crossfadeRefs.current[key];
+    }
   };
 
   const getOrCreateAudio = (key: string, src: string): HTMLAudioElement => {
     if (!audioRefs.current[key]) {
       const audio = new Audio(src);
       audio.preload = "auto";
+      // Native loop as safety net: in background tabs, timeupdate events are
+      // throttled and can miss the crossfade window entirely.
+      audio.loop = true;
       audioRefs.current[key] = audio;
       setupCrossfadeLoop(key, audio, src);
     }
@@ -98,6 +118,7 @@ export function useSound() {
       const audio = getOrCreateAudio(key, src);
 
       if (current?.active) {
+        abortCrossfade(key);
         audio.pause();
         audio.currentTime = 0;
         return { ...prev, [key]: { ...current, active: false } };
@@ -123,15 +144,20 @@ export function useSound() {
   }, []);
 
   const pauseAllAmbients = useCallback(() => {
-    for (const audio of Object.values(audioRefs.current)) {
+    for (const key of Object.keys(audioRefs.current)) {
+      abortCrossfade(key);
+      const audio = audioRefs.current[key];
       if (!audio.paused) audio.pause();
     }
   }, []);
 
   const resumeAllAmbients = useCallback(() => {
     for (const [key, state] of Object.entries(ambients)) {
-      if (state.active && audioRefs.current[key]) {
-        audioRefs.current[key].play().catch(() => {});
+      const audio = audioRefs.current[key];
+      if (state.active && audio) {
+        // Restore volume: an aborted crossfade may have left it mid-fade
+        audio.volume = state.volume;
+        audio.play().catch(() => {});
       }
     }
   }, [ambients]);
