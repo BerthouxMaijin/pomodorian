@@ -45,6 +45,7 @@ export default function Home() {
   const [neverDumbOpen, setNeverDumbOpen] = useState(false);
   const [neverDumbEligible, setNeverDumbEligible] = useState(false);
   const neverDumbOpenedRef = useRef(false);
+  const sessionReturnTrackedRef = useRef(false);
 
   // Apply theme to HTML element
   useEffect(() => {
@@ -176,6 +177,36 @@ export default function Home() {
   useEffect(() => {
     registerOnComplete(handleComplete);
   }, [handleComplete, registerOnComplete]);
+
+  // Retention signal: fires once per page load, only once sessions are read from
+  // localStorage (before hydration the list is always empty and the data is wrong)
+  useEffect(() => {
+    if (!analytics.hydrated || sessionReturnTrackedRef.current) return;
+    sessionReturnTrackedRef.current = true;
+
+    const totalSessions = analytics.sessions.length;
+    const daysSinceFirst =
+      totalSessions === 0
+        ? 0
+        : Math.max(
+            0,
+            Math.floor(
+              (Date.now() -
+                new Date(
+                  analytics.sessions.reduce(
+                    (min, s) => (s.date < min ? s.date : min),
+                    analytics.sessions[0].date
+                  )
+                ).getTime()) /
+                86400000
+            )
+          );
+    const streak = analytics.streak;
+    const streakBucket =
+      streak === 0 ? "0" : streak <= 2 ? "1-2" : streak <= 6 ? "3-6" : "7+";
+
+    track("session_return", { daysSinceFirst, streakBucket, totalSessions });
+  }, [analytics.hydrated, analytics.sessions, analytics.streak]);
 
   useEffect(() => {
     if (settings.showTimeInTitle && timer.status !== "idle") {

@@ -85,7 +85,7 @@ export function computeRangeStats(
 }
 
 export function useAnalytics() {
-  const [sessions, setSessions] = useLocalStorage<FocusSession[]>(
+  const [sessions, setSessions, hydrated] = useLocalStorage<FocusSession[]>(
     STORAGE_KEYS.SESSIONS,
     []
   );
@@ -171,5 +171,5 @@ export function useAnalytics() {
     };
   }, [sessions]);
 
-  return { sessions, recordSession, ...stats };
+  return { sessions, recordSession, hydrated, ...stats };
 }
