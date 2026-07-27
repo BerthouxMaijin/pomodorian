@@ -15,6 +15,8 @@ export interface Article {
   sources: string[];
   content: string;
   translationKey?: string;
+  updated?: string;
+  image?: string;
 }
 
 const CONTENT_DIR = path.join(process.cwd(), "content/blog");
@@ -42,6 +44,8 @@ function readArticlesFromDir(lang: string): Article[] {
         sources: data.sources ?? [],
         content,
         translationKey: data.translationKey,
+        updated: data.updated,
+        image: data.image,
       };
     });
 }

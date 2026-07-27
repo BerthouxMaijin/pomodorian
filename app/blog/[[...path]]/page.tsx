@@ -8,6 +8,17 @@ import {
   getTranslations,
 } from "@/lib/blog/reader";
 import { SITE_URL } from "@/lib/constants";
+import { markdownToHtml } from "@/lib/markdown";
+import { TrackedCtaLink } from "@/components/blog/TrackedCtaLink";
+import { JsonLd } from "@/components/seo/JsonLd";
+import {
+  ORG_ID,
+  WEBSITE_ID,
+  PERSON_ID,
+  siteNodes,
+  breadcrumbNode,
+  graph,
+} from "@/lib/schema";
 
 const SUPPORTED_LANGS = ["en", "fr", "es", "de"] as const;
 type Lang = (typeof SUPPORTED_LANGS)[number];
@@ -115,13 +126,16 @@ export async function generateMetadata({
   if (!slug) {
     const title =
       lang === "en"
-        ? "Blog — Pomodorian"
-        : `Blog (${LANG_LABELS[lang]}) — Pomodorian`;
+        ? "Blog | Pomodorian"
+        : `Blog (${LANG_LABELS[lang]}) | Pomodorian`;
     return {
       title,
       description:
         "Articles about the Pomodoro Technique, productivity, focus, and how AI can help you work smarter.",
-      openGraph: { title },
+      openGraph: {
+        title,
+        images: [{ url: "/opengraph-image", width: 1200, height: 630 }],
+      },
       alternates: {
         canonical: `${SITE_URL}/blog${lang === "en" ? "" : `/${lang}`}`,
         languages: {
@@ -159,7 +173,10 @@ export async function generateMetadata({
   }
 
   return {
-    title: `${article.title} — Pomodorian Blog`,
+    title:
+      article.title.length <= 48
+        ? `${article.title} | Pomodorian`
+        : article.title,
     description: article.description,
     keywords: article.keywords,
     openGraph: {
@@ -168,57 +185,23 @@ export async function generateMetadata({
       type: "article",
       publishedTime: article.date,
       siteName: "Pomodorian",
+      images: [
+        {
+          url: `/og/blog?slug=${encodeURIComponent(slug)}&lang=${lang}`,
+          width: 1200,
+          height: 630,
+          alt: article.title,
+        },
+      ],
     },
     twitter: {
       card: "summary_large_image",
       title: article.title,
       description: article.description,
+      images: [`/og/blog?slug=${encodeURIComponent(slug)}&lang=${lang}`],
     },
     alternates,
   };
-}
-
-// ─── Markdown renderer ──────────────────────────────────────────
-
-function markdownToHtml(md: string): string {
-  return md
-    .replace(
-      /^### (.+)$/gm,
-      '<h3 class="text-lg font-semibold mt-8 mb-3">$1</h3>'
-    )
-    .replace(
-      /^## (.+)$/gm,
-      '<h2 class="text-xl font-bold mt-10 mb-4">$1</h2>'
-    )
-    .replace(
-      /\*\*\[([^\]]+)\]\(([^)]+)\)\*\*/g,
-      '<a href="$2" class="font-semibold text-red-400 hover:text-red-300 underline underline-offset-2">$1</a>'
-    )
-    .replace(
-      /\[([^\]]+)\]\(([^)]+)\)/g,
-      '<a href="$2" class="text-red-400 hover:text-red-300 underline underline-offset-2">$1</a>'
-    )
-    .replace(/\*\*([^*]+)\*\*/g, "<strong>$1</strong>")
-    .replace(
-      /^\| (.+)$/gm,
-      (line) =>
-        `<div class="overflow-x-auto text-sm text-muted">${line}</div>`
-    )
-    .replace(
-      /^(\d+)\. \*\*(.+?)\*\*(.*)$/gm,
-      '<div class="flex gap-3 my-2"><span class="text-muted font-mono text-sm mt-0.5">$1.</span><div><strong>$2</strong>$3</div></div>'
-    )
-    .replace(
-      /^- \*\*(.+?)\*\*: (.+)$/gm,
-      '<div class="flex gap-2 my-1.5 ml-4"><span class="text-muted">•</span><div><strong>$1</strong>: $2</div></div>'
-    )
-    .replace(
-      /^- (.+)$/gm,
-      '<div class="flex gap-2 my-1 ml-4"><span class="text-muted">•</span><div>$1</div></div>'
-    )
-    .replace(/\n\n/g, '</p><p class="my-4 leading-relaxed text-muted">')
-    .replace(/^/, '<p class="my-4 leading-relaxed text-muted">')
-    .replace(/$/, "</p>");
 }
 
 // ─── Language picker ────────────────────────────────────────────
@@ -249,6 +232,30 @@ function LangPicker({ current }: { current: Lang }) {
   );
 }
 
+// ─── Schema helpers ─────────────────────────────────────────────
+
+function parseReadTimeToISO8601(readTime: string): string | undefined {
+  const match = readTime.match(/\d+/);
+  return match ? `PT${match[0]}M` : undefined;
+}
+
+function formatSourceUrl(url: string): string {
+  try {
+    const parsed = new URL(url);
+    const short = `${parsed.hostname}${parsed.pathname}`;
+    return short.length > 60 ? `${short.slice(0, 60)}…` : short;
+  } catch {
+    return url;
+  }
+}
+
+const SOURCES_LABEL: Record<Lang, string> = {
+  en: "Sources",
+  fr: "Sources",
+  es: "Fuentes",
+  de: "Quellen",
+};
+
 // ─── Page component ─────────────────────────────────────────────
 
 export default async function BlogPage({
@@ -269,80 +276,64 @@ export default async function BlogPage({
 
     const wordCount = article.content.split(/\s+/).length;
 
-    const jsonLd = {
-      "@context": "https://schema.org",
-      "@type": "Article",
-      headline: article.title,
+    const webPageNode = {
+      "@type": "WebPage",
+      "@id": `${articleUrl}#webpage`,
+      url: articleUrl,
+      name: article.title,
+      description: article.description,
+      isPartOf: { "@id": WEBSITE_ID },
+      primaryImageOfPage: { "@id": `${articleUrl}#primaryimage` },
+      inLanguage: lang,
+    };
+
+    const articleNode = {
+      "@type": "BlogPosting",
+      "@id": `${articleUrl}#article`,
+      headline: article.title.slice(0, 110),
+      name: article.title,
       description: article.description,
       datePublished: article.date,
-      dateModified: article.date,
+      dateModified: article.updated ?? article.date,
       inLanguage: lang,
       wordCount,
-      author: {
-        "@type": "Person",
-        name: authorName,
-        url: `${SITE_URL}/about`,
-        jobTitle: "Founder & Developer",
-        sameAs: [
-          "https://github.com/BerthouxMaijin",
-          "https://linkedin.com/in/jbberthoux",
-        ],
+      timeRequired: parseReadTimeToISO8601(article.readTime),
+      keywords: article.keywords,
+      image: {
+        "@type": "ImageObject",
+        "@id": `${articleUrl}#primaryimage`,
+        url: article.image ?? `${SITE_URL}/opengraph-image`,
+        width: 1200,
+        height: 630,
       },
-      publisher: {
-        "@type": "Organization",
-        name: "Pomodorian",
-        url: SITE_URL,
-        logo: {
-          "@type": "ImageObject",
-          url: `${SITE_URL}/icons/icon-512.png`,
-        },
-      },
-      mainEntityOfPage: {
-        "@type": "WebPage",
-        "@id": articleUrl,
-      },
-      keywords: article.keywords.join(", "),
-      isPartOf: {
-        "@type": "Blog",
-        name: "Pomodorian Blog",
-        url: `${SITE_URL}/blog`,
-      },
+      author: { "@id": PERSON_ID },
+      publisher: { "@id": ORG_ID },
+      isPartOf: { "@id": `${SITE_URL}/blog#blog` },
+      mainEntityOfPage: { "@id": `${articleUrl}#webpage` },
+      ...(article.sources.length > 0 && { citation: article.sources }),
       speakable: {
         "@type": "SpeakableSpecification",
         cssSelector: ["h1", "article > header > p"],
       },
     };
 
-    const breadcrumbLd = {
-      "@context": "https://schema.org",
-      "@type": "BreadcrumbList",
-      itemListElement: [
-        { "@type": "ListItem", position: 1, name: "Home", item: SITE_URL },
-        { "@type": "ListItem", position: 2, name: "Blog", item: `${SITE_URL}/blog` },
-        { "@type": "ListItem", position: 3, name: article.title, item: articleUrl },
-      ],
-    };
+    const crumbs = breadcrumbNode([
+      { name: "Home", url: SITE_URL },
+      { name: "Blog", url: `${SITE_URL}/blog` },
+      { name: article.title, url: articleUrl },
+    ]);
 
     return (
       <>
-        {lang !== "en" && (
-          <script
-            dangerouslySetInnerHTML={{
-              __html: `document.documentElement.lang="${lang}"`,
-            }}
-          />
-        )}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
+        <JsonLd
+          data={graph([...siteNodes, webPageNode, articleNode, crumbs])}
         />
 
         <div className="min-h-screen bg-background text-foreground">
-          <article className="max-w-3xl mx-auto px-6 pt-12 pb-20">
+          <article
+            className="max-w-3xl mx-auto px-6 pt-12 pb-20"
+            lang={lang !== "en" ? lang : undefined}
+          >
             <Link
               href={lang === "en" ? "/blog" : `/blog/${lang}`}
               className="text-sm text-muted hover:text-foreground transition-colors"
@@ -385,12 +376,15 @@ export default async function BlogPage({
               <p className="text-sm text-muted flex-1 leading-relaxed">
                 {CTA_STRINGS[lang].tagline}
               </p>
-              <Link
+              <TrackedCtaLink
                 href="/?utm_source=blog&utm_medium=cta-top"
+                position="top"
+                lang={lang}
+                slug={slug}
                 className="shrink-0 inline-flex items-center justify-center px-4 py-2 rounded-lg bg-red-500 text-white text-sm font-semibold hover:bg-red-400 transition-colors"
               >
                 {CTA_STRINGS[lang].button} &rarr;
-              </Link>
+              </TrackedCtaLink>
             </div>
 
             <div
@@ -400,17 +394,42 @@ export default async function BlogPage({
               }}
             />
 
+            {article.sources.length > 0 && (
+              <section className="mt-10">
+                <h2 className="text-xl font-bold mt-10 mb-4 text-foreground">
+                  {SOURCES_LABEL[lang]}
+                </h2>
+                <ol className="space-y-1 text-sm">
+                  {article.sources.map((source) => (
+                    <li key={source}>
+                      <a
+                        href={source}
+                        rel="noopener noreferrer"
+                        target="_blank"
+                        className="text-red-400 hover:text-red-300 underline underline-offset-2 break-all"
+                      >
+                        {formatSourceUrl(source)}
+                      </a>
+                    </li>
+                  ))}
+                </ol>
+              </section>
+            )}
+
             <div className="mt-16 glass rounded-2xl p-8 text-center">
               <h3 className="text-xl font-semibold mb-2">
                 {CTA_STRINGS[lang].bottomTitle}
               </h3>
               <p className="text-muted mb-4">{CTA_STRINGS[lang].bottomText}</p>
-              <Link
+              <TrackedCtaLink
                 href="/?utm_source=blog&utm_medium=cta-bottom"
+                position="bottom"
+                lang={lang}
+                slug={slug}
                 className="inline-block px-8 py-3 rounded-xl bg-red-500 text-white font-semibold hover:bg-red-400 transition-colors"
               >
                 {CTA_STRINGS[lang].bottomButton}
-              </Link>
+              </TrackedCtaLink>
             </div>
           </article>
         </div>
@@ -421,16 +440,41 @@ export default async function BlogPage({
   // ── Index page ──
   const articles = getPublishedArticles(lang);
 
+  const indexUrl = `${SITE_URL}/blog${lang === "en" ? "" : `/${lang}`}`;
+  const blogNode = {
+    "@type": "Blog",
+    "@id": `${SITE_URL}/blog#blog`,
+    url: indexUrl,
+    name: "Pomodorian Blog",
+    description:
+      "Guides, tips, and insights on focus, productivity, and the Pomodoro Technique.",
+    publisher: { "@id": ORG_ID },
+    isPartOf: { "@id": WEBSITE_ID },
+    inLanguage: lang,
+    blogPost: articles.map((a) => {
+      const url = `${SITE_URL}/blog/${lang === "en" ? a.slug : `${lang}/${a.slug}`}`;
+      return {
+        "@type": "BlogPosting",
+        "@id": `${url}#article`,
+        headline: a.title.slice(0, 110),
+        url,
+        datePublished: a.date,
+        author: { "@id": PERSON_ID },
+      };
+    }),
+  };
+  const indexCrumbs = breadcrumbNode([
+    { name: "Home", url: SITE_URL },
+    { name: "Blog", url: indexUrl },
+  ]);
+
   return (
     <>
-    {lang !== "en" && (
-      <script
-        dangerouslySetInnerHTML={{
-          __html: `document.documentElement.lang="${lang}"`,
-        }}
-      />
-    )}
-    <div className="min-h-screen bg-background text-foreground">
+    <JsonLd data={graph([...siteNodes, blogNode, indexCrumbs])} />
+    <div
+      className="min-h-screen bg-background text-foreground"
+      lang={lang !== "en" ? lang : undefined}
+    >
       <header className="max-w-3xl mx-auto px-6 pt-12 pb-8">
         <Link
           href="/"
