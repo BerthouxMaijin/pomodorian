@@ -23,6 +23,7 @@ type TaskAction =
   | { type: "TOGGLE"; id: string }
   | { type: "EDIT"; id: string; title: string }
   | { type: "INCREMENT_POMODORO"; id: string }
+  | { type: "REORDER"; orderedIds: string[] }
   | { type: "IMPORT_AI"; entries: { id: string; suggestion: AITaskSuggestion }[] };
 
 function taskReducer(state: Task[], action: TaskAction): Task[] {
@@ -66,6 +67,30 @@ function taskReducer(state: Task[], action: TaskAction): Task[] {
           ? { ...t, completedPomodoros: t.completedPomodoros + 1 }
           : t
       );
+    case "REORDER": {
+      // `orderedIds` is only the subset of tasks visible in the list (today's
+      // view hides tasks completed on earlier days). Rewriting `order` from
+      // that subset alone would scramble the hidden ones, so instead we keep
+      // every slot the visible tasks already occupy and refill those slots in
+      // the new sequence. Hidden tasks never move relative to their neighbours.
+      const byId = new Map(state.map((t) => [t.id, t]));
+      const visibleIds: string[] = [];
+      const visibleSet = new Set<string>();
+      for (const id of action.orderedIds) {
+        if (!byId.has(id) || visibleSet.has(id)) continue;
+        visibleIds.push(id);
+        visibleSet.add(id);
+      }
+      if (visibleIds.length < 2) return state;
+
+      const sorted = [...state].sort((a, b) => a.order - b.order);
+      let next = 0;
+      const reordered = sorted.map((t) =>
+        visibleSet.has(t.id) ? byId.get(visibleIds[next++])! : t
+      );
+      // Renumber everything, which also closes the gaps left by deletions.
+      return reordered.map((t, i) => (t.order === i ? t : { ...t, order: i }));
+    }
     case "IMPORT_AI": {
       const newTasks: Task[] = action.entries.map((entry, i) => ({
         id: entry.id,
@@ -134,6 +159,12 @@ export function useTasks() {
     dispatch({ type: "INCREMENT_POMODORO", id });
   }, []);
 
+  // `orderedIds` = the visible rows in their new order (real task ids only,
+  // ghost rows excluded).
+  const reorderTasks = useCallback((orderedIds: string[]) => {
+    dispatch({ type: "REORDER", orderedIds });
+  }, []);
+
   const importAITasks = useCallback((suggestions: AITaskSuggestion[]): string[] => {
     const entries = suggestions.map((suggestion) => ({ id: generateId(), suggestion }));
     dispatch({ type: "IMPORT_AI", entries });
@@ -152,6 +183,7 @@ export function useTasks() {
     toggleComplete,
     editTask,
     incrementPomodoro,
+    reorderTasks,
     importAITasks,
     setActiveTask,
   };

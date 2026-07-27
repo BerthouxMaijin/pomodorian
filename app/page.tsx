@@ -334,6 +334,7 @@ export default function Home() {
             onEdit={tasks.editTask}
             onSetActive={tasks.setActiveTask}
             onIncrementPomodoro={tasks.incrementPomodoro}
+            onReorder={tasks.reorderTasks}
             onOpenAIPlanner={() => { track("ai_planner_opened"); setAIPlannerOpen(true); }}
           />
         </motion.div>

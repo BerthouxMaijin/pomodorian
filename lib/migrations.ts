@@ -21,7 +21,7 @@ type LegacyTask = {
   createdAt: string;
   completedAt?: string | null;
   aiGenerated: boolean;
-  order: number;
+  order?: number;
 };
 
 export function runMigrations(): void {
@@ -32,6 +32,7 @@ export function runMigrations(): void {
 
   backfillTaskTitlesInSessions();
   backfillCompletedAtOnTasks();
+  backfillTaskOrder();
 
   localStorage.setItem(STORAGE_KEYS.DATA_VERSION, DATA_VERSION);
 }
@@ -70,6 +71,41 @@ function backfillTaskTitlesInSessions(): void {
   if (touched) {
     localStorage.setItem(STORAGE_KEYS.SESSIONS, JSON.stringify(migrated));
   }
+}
+
+// Manual reordering makes `order` load-bearing: a task missing it (or holding
+// a duplicate) would sort unpredictably and the first drag would freeze that
+// arbitrary order in place. Normalize to a dense 0..n-1 sequence.
+function backfillTaskOrder(): void {
+  const raw = localStorage.getItem(STORAGE_KEYS.TASKS);
+  if (!raw) return;
+
+  let tasks: LegacyTask[];
+  try {
+    tasks = JSON.parse(raw);
+  } catch {
+    return;
+  }
+  if (!Array.isArray(tasks) || tasks.length === 0) return;
+
+  // Tasks without an order keep their array position, which is the order they
+  // were added in.
+  const sorted = tasks
+    .map((t, i) => ({ t, i }))
+    .sort((a, b) => {
+      const ao = typeof a.t.order === "number" ? a.t.order : a.i;
+      const bo = typeof b.t.order === "number" ? b.t.order : b.i;
+      return ao === bo ? a.i - b.i : ao - bo;
+    })
+    .map(({ t }) => t);
+
+  const needsFix = sorted.some((t, i) => t.order !== i);
+  if (!needsFix) return;
+
+  localStorage.setItem(
+    STORAGE_KEYS.TASKS,
+    JSON.stringify(sorted.map((t, i) => ({ ...t, order: i })))
+  );
 }
 
 function backfillCompletedAtOnTasks(): void {

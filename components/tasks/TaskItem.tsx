@@ -13,6 +13,9 @@ interface TaskItemProps {
   onDelete?: () => void;
   onSetActive?: () => void;
   onEdit?: (title: string) => void;
+  /** Rendered before the checkbox. Supplied by TaskList when reordering is on. */
+  dragHandle?: React.ReactNode;
+  isDragging?: boolean;
 }
 
 export function TaskItem({
@@ -24,6 +27,8 @@ export function TaskItem({
   onDelete,
   onSetActive,
   onEdit,
+  dragHandle,
+  isDragging = false,
 }: TaskItemProps) {
   const [isEditing, setIsEditing] = useState(false);
   const [editValue, setEditValue] = useState(task.title);
@@ -70,10 +75,14 @@ export function TaskItem({
         canActivate && "cursor-pointer",
         isActive && "ring-1 ring-white/20 bg-white/8",
         task.completed && "opacity-50",
-        task.isGhost && "opacity-60"
+        task.isGhost && "opacity-60",
+        isDragging && "ring-1 ring-white/25 bg-white/10 shadow-lg cursor-grabbing"
       )}
       onClick={canActivate ? onSetActive : undefined}
     >
+      {/* Drag handle */}
+      {dragHandle}
+
       {/* Checkbox */}
       <button
         onClick={(e) => {

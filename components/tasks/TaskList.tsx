@@ -1,7 +1,9 @@
 "use client";
 
 import { useState } from "react";
+import { Reorder } from "framer-motion";
 import { TaskItem } from "./TaskItem";
+import { SortableTaskItem } from "./SortableTaskItem";
 import { useTaskHistory } from "@/hooks/useTaskHistory";
 import type { FocusSession, Task } from "@/lib/types";
 
@@ -16,6 +18,7 @@ interface TaskListProps {
   onEdit: (id: string, title: string) => void;
   onSetActive: (id: string | null) => void;
   onIncrementPomodoro: (id: string) => void;
+  onReorder: (orderedIds: string[]) => void;
   onOpenAIPlanner: () => void;
 }
 
@@ -29,11 +32,33 @@ export function TaskList({
   onDelete,
   onEdit,
   onSetActive,
+  onReorder,
   onOpenAIPlanner,
 }: TaskListProps) {
   const history = useTaskHistory({ tasks, sessions });
   const [newTaskTitle, setNewTaskTitle] = useState("");
   const [isAdding, setIsAdding] = useState(false);
+
+  // Only today's rows are editable, and only rows backed by a live task can
+  // move: ghost rows (deleted task, untracked focus time) have no id to
+  // reorder and stay pinned below the list.
+  const sortableRows = history.isToday
+    ? history.tasksForDate.filter((t) => t.taskId && !t.isGhost)
+    : [];
+  const staticRows = history.isToday
+    ? history.tasksForDate.filter((t) => !t.taskId || t.isGhost)
+    : history.tasksForDate;
+  const sortableIds = sortableRows.map((t) => t.taskId!);
+  const canReorder = sortableIds.length > 1;
+
+  const moveTask = (id: string, delta: number) => {
+    const from = sortableIds.indexOf(id);
+    const to = from + delta;
+    if (from === -1 || to < 0 || to >= sortableIds.length) return;
+    const next = [...sortableIds];
+    next.splice(to, 0, next.splice(from, 1)[0]);
+    onReorder(next);
+  };
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -88,40 +113,70 @@ export function TaskList({
         </span>
       </div>
 
-      <div className="space-y-1.5">
+      <div className="flex flex-col gap-1.5">
         {history.tasksForDate.length === 0 ? (
           <div className="glass rounded-xl px-3 py-6 text-center text-sm text-muted">
             {history.isToday ? "No tasks yet." : "No tasks tracked on this day."}
           </div>
         ) : (
-          history.tasksForDate.map((task) => (
-            <TaskItem
-              key={task.key}
-              task={task}
-              isActive={history.isToday && task.taskId === activeTaskId}
-              readOnly={!history.isToday}
-              showDailyStats={!history.isToday}
-              onToggle={
-                task.taskId ? () => onToggle(task.taskId!) : undefined
-              }
-              onDelete={
-                task.taskId ? () => onDelete(task.taskId!) : undefined
-              }
-              onEdit={
-                task.taskId
-                  ? (title) => onEdit(task.taskId!, title)
-                  : undefined
-              }
-              onSetActive={
-                task.taskId
-                  ? () =>
+          <>
+            {sortableRows.length > 0 && (
+              <Reorder.Group
+                axis="y"
+                values={sortableIds}
+                onReorder={onReorder}
+                className="flex flex-col gap-1.5"
+              >
+                {sortableRows.map((task) => (
+                  <SortableTaskItem
+                    key={task.key}
+                    task={task}
+                    taskId={task.taskId!}
+                    isActive={task.taskId === activeTaskId}
+                    canReorder={canReorder}
+                    onMove={(delta) => moveTask(task.taskId!, delta)}
+                    onToggle={() => onToggle(task.taskId!)}
+                    onDelete={() => onDelete(task.taskId!)}
+                    onEdit={(title) => onEdit(task.taskId!, title)}
+                    onSetActive={() =>
                       onSetActive(
                         task.taskId === activeTaskId ? null : task.taskId
                       )
-                  : undefined
-              }
-            />
-          ))
+                    }
+                  />
+                ))}
+              </Reorder.Group>
+            )}
+
+            {staticRows.map((task) => (
+              <TaskItem
+                key={task.key}
+                task={task}
+                isActive={history.isToday && task.taskId === activeTaskId}
+                readOnly={!history.isToday}
+                showDailyStats={!history.isToday}
+                onToggle={
+                  task.taskId ? () => onToggle(task.taskId!) : undefined
+                }
+                onDelete={
+                  task.taskId ? () => onDelete(task.taskId!) : undefined
+                }
+                onEdit={
+                  task.taskId
+                    ? (title) => onEdit(task.taskId!, title)
+                    : undefined
+                }
+                onSetActive={
+                  task.taskId
+                    ? () =>
+                        onSetActive(
+                          task.taskId === activeTaskId ? null : task.taskId
+                        )
+                    : undefined
+                }
+              />
+            ))}
+          </>
         )}
       </div>
 

@@ -66,7 +66,7 @@ export const STORAGE_KEYS = {
   DATA_VERSION: "pomodorian_data_version",
 } as const;
 
-export const DATA_VERSION = "1";
+export const DATA_VERSION = "2";
 
 // YYYY-MM-DD key used to bucket sessions by day.
 // Uses UTC for backward compatibility with sessions recorded before this helper existed.
