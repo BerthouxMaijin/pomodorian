@@ -98,7 +98,7 @@ If you consistently feel like you're hitting your stride right as the timer ring
 
 Make small adjustments. If 25 minutes felt too short for your coding sessions, try 35. If 50 minutes left you drained, drop to 40. Small increments help you zero in on the right balance without overshooting.
 
-With [Pomodorian](https://pomodorian.app), you can adjust your timer settings in seconds and track your focus sessions over time — which makes this kind of experimentation much easier than using a kitchen timer.
+With [Pomodorian](https://pomodorian.app), you can adjust your timer settings in seconds and track your focus sessions over time — which makes this kind of experimentation much easier than using a kitchen timer. Not every timer gives you that freedom, so if you're shopping around, our comparison of [the best Pomodoro apps in 2026](/blog/best-pomodoro-apps-2026) lists what each one lets you configure.
 
 ## Practical Pomodoro Settings for Common Scenarios
 
@@ -111,6 +111,8 @@ Here are interval configurations that many people find effective, based on the r
 - **Long break**: 20–30 minutes after 2–3 sessions
 
 Coding often requires holding complex mental models in your head. A 25-minute pomodoro can feel interruptive when you're debugging or architecting a solution. Longer sessions give you time to load context, do the work, and reach a natural stopping point. Check out our [guide to the Pomodoro Technique for developers](/blog/pomodoro-technique-for-developers) for more specific strategies.
+
+If a chunk of your session is now spent briefing an AI agent and waiting for it, interval length is only half the problem. [Pomodoro 2.0 for automated workflows](/blog/pomodoro-2-automated-workflows) proposes three distinct session types for that rhythm instead of one fixed block.
 
 ### For Writers and Content Creators
 

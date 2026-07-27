@@ -71,6 +71,8 @@ The check-in and check-out are what elevate this beyond "just using a timer." Th
 
 Don't make it mandatory. Forced focus sessions breed resentment. Instead, run a pilot with 2-4 people who are genuinely interested. When others see that group consistently shipping work and leaving the session energized, curiosity will do the recruiting for you.
 
+Reading whether your team is ready for this is exactly the kind of judgment call you cannot outsource, which is the argument behind our guide on [when managers should not use AI](/blog/managers-when-not-to-use-ai).
+
 ### Pick a Consistent Time Slot
 
 The best team focus sessions happen at the same time each day. Morning slots (9-11 AM) tend to work well because energy and willpower are highest. But some teams prefer an after-lunch slot to combat the afternoon slump.
@@ -108,7 +110,7 @@ Keep them simple. Here's a starting set:
 
 ### Use the Right Tools
 
-You don't need much. A video call (Zoom, Google Meet, or even a Discord channel) and a shared timer are enough. For the timer, you can use [Pomodorian](https://pomodorian.app) — everyone opens it in their browser, and you start together. The ambient sounds (rain, café noise, lo-fi) can even serve as a shared soundscape if you keep microphones on low, though most teams prefer muted mics during focus blocks.
+You don't need much. A video call (Zoom, Google Meet, or even a Discord channel) and a shared timer are enough. If your team wants to weigh a few timers first, our roundup of [the best Pomodoro apps in 2026](/blog/best-pomodoro-apps-2026) compares what each one costs and where it falls short. For the timer, you can use [Pomodorian](https://pomodorian.app) — everyone opens it in their browser, and you start together. The ambient sounds (rain, café noise, lo-fi) can even serve as a shared soundscape if you keep microphones on low, though most teams prefer muted mics during focus blocks.
 
 For async formats, a dedicated Slack channel (`#focus-sessions`) with a simple convention works well:
 

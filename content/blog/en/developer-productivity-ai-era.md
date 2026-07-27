@@ -32,7 +32,7 @@ Developers in 2026 write code alongside machines. GitHub Copilot autocompletes i
 
 The assumption is straightforward: more AI, more output. The evidence tells a different story. A [randomized controlled trial by METR](https://metr.org/blog/2025-07-10-early-2025-ai-experienced-os-dev-study/) tracked 16 experienced open-source developers across 246 real tasks on their own repositories. Developers allowed to use AI tools took **19% longer** to complete their work. After the study, those same developers estimated they had been 20% faster. The gap between feeling productive and being productive is the core problem.
 
-This guide provides a practical framework for developers who want to use Claude Code, Copilot, and Cursor effectively without fragmenting their attention. It draws on cognitive science research, empirical data from controlled studies, and a Pomodoro adaptation designed specifically for AI-assisted coding workflows. It is part of a broader series on [productivity in the AI era](/blog/en/ai-era-productivity-guide).
+This guide provides a practical framework for developers who want to use Claude Code, Copilot, and Cursor effectively without fragmenting their attention. It draws on cognitive science research, empirical data from controlled studies, and a Pomodoro adaptation designed specifically for AI-assisted coding workflows. It is part of a broader series on [productivity in the AI era](/blog/ai-era-productivity-guide).
 
 ---
 

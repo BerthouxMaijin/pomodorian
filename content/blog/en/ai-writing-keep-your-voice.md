@@ -62,7 +62,7 @@ The most insidious trap is not using AI; it is the habit of *starting* with it. 
 
 ### Your Deep Work Practice
 
-Writing demands [deep, sustained concentration](/blog/en/ai-era-productivity-guide). The constant back-and-forth between your text and a chatbot -- rephrasing, copying, pasting, adjusting -- fragments your attention. Cal Newport defines deep work as "professional activities performed in a state of distraction-free concentration that push your cognitive capabilities to their limit." Creative writing is the very archetype of deep work. Interrupting it to consult an AI is like asking someone to whisper notes to you while you improvise on piano.
+Writing demands [deep, sustained concentration](/blog/ai-era-productivity-guide). The constant back-and-forth between your text and a chatbot -- rephrasing, copying, pasting, adjusting -- fragments your attention. Cal Newport defines deep work as "professional activities performed in a state of distraction-free concentration that push your cognitive capabilities to their limit." Creative writing is the very archetype of deep work. Interrupting it to consult an AI is like asking someone to whisper notes to you while you improvise on piano.
 
 ---
 

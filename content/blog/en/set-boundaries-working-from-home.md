@@ -145,7 +145,7 @@ The point isn't the specific steps. It's having a repeatable ritual that tells y
 
 ## When Boundaries Feel Impossible
 
-Let's be honest — some of these tips are easier to implement than others. If you're in a job where the culture expects 24/7 availability, or if you're a freelancer whose income depends on responsiveness, hard boundaries can feel risky.
+Let's be honest — some of these tips are easier to implement than others. If you're in a job where the culture expects 24/7 availability, or if you're a freelancer whose income depends on responsiveness, hard boundaries can feel risky. Consultants have an extra layer to untangle here, since AI-accelerated work changes what you can promise and what you bill for. Our guide on [orchestrating AI without drowning your clients](/blog/consultant-orchestrate-ai-tools) covers that trade-off.
 
 A few thoughts on that:
 

@@ -74,6 +74,8 @@ Productivity consultant Brian Tracy popularized this as ["Eat the Frog"](https:/
 
 Why? Because your cognitive resources are at their peak in the morning. Every decision you make, every email you process, every notification you handle depletes that pool slightly. By noon, you're running on fumes — and that ambitious project still sits untouched.
 
+If naming that frog is where you stall, [AI planners can turn a fuzzy goal into a short list of concrete steps](/blog/ai-productivity-tools-focus) so the decision is already made when you sit down.
+
 This doesn't mean you need to finish the task. It means you give it your freshest attention. Open [Pomodorian](https://pomodorian.app), set a 25-minute session, put on some ambient sounds to block distractions, and work on nothing but that one task. One focused session in the morning is worth three scattered sessions in the afternoon.
 
 If you're not sure how to structure focused sessions around your hardest work, our guide to [the science of flow state](/blog/science-of-flow-state) breaks down exactly how to engineer deep focus on demand.

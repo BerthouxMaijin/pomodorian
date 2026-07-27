@@ -46,6 +46,8 @@ The AI might generate:
 
 Each task is a clear, completable unit of work.
 
+Planning is only one piece of it. Once Claude Code, Copilot, or Cursor are part of your loop, they generate interruptions of their own. Our guide to [developer productivity in the AI era](/blog/developer-productivity-ai-era) covers how to structure sessions around that.
+
 ### The Developer Pomodoro Workflow
 
 1. **Morning planning** (1 pomodoro): Review tickets, plan the day using AI task breakdown

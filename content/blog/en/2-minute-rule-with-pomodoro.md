@@ -120,7 +120,7 @@ The 2-minute rule is meant for processing, not for all-day reactivity. If you sp
 
 ### Being Too Rigid with the Timer
 
-Some tasks don't fit neatly into 25-minute blocks. A creative brainstorm might need 45 minutes. A code review might take 15. The [Pomodoro Technique's creator acknowledged this](https://todoist.com/productivity-methods/pomodoro-technique) — the 25-minute interval is a starting point, not a commandment. Adjust as needed. What matters is the principle of timeboxing, not the exact duration. If you're looking for more on this approach, check out our guide on [how to stop procrastinating with timeboxing](/blog/en/stop-procrastinating-timeboxing).
+Some tasks don't fit neatly into 25-minute blocks. A creative brainstorm might need 45 minutes. A code review might take 15. The [Pomodoro Technique's creator acknowledged this](https://todoist.com/productivity-methods/pomodoro-technique) — the 25-minute interval is a starting point, not a commandment. Adjust as needed. What matters is the principle of timeboxing, not the exact duration. If you're looking for more on this approach, check out our guide on [how to stop procrastinating with timeboxing](/blog/stop-procrastinating-timeboxing).
 
 ### Skipping the Capture Step
 
@@ -167,6 +167,6 @@ When you trust that small tasks will get handled (because you have a system for 
 
 David Allen productivity principles work because they externalize your commitments into a trusted system. The Pomodoro Technique works because it structures your execution into manageable chunks. Together, they cover the full spectrum: from the quick reply that takes thirty seconds to the complex project that takes thirty pomodoros.
 
-You don't need a complicated setup. A timer, a task list, and the discipline to ask "can I do this in two minutes?" before every task — that's the foundation. If you want to go further, our [complete guide to the Pomodoro Technique](/blog/en/pomodoro-technique-complete-guide) covers the method in depth.
+You don't need a complicated setup. A timer, a task list, and the discipline to ask "can I do this in two minutes?" before every task — that's the foundation. If you want to go further, our [complete guide to the Pomodoro Technique](/blog/pomodoro-technique-complete-guide) covers the method in depth.
 
 The 2-minute rule clears the runway. Pomodoro gets you airborne. Use them together, and you'll spend less time managing your work and more time actually doing it.

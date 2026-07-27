@@ -45,7 +45,7 @@ A [2026 Deloitte study](https://www.deloitte.com/us/en/insights/topics/talent/hu
 
 This article takes a clear position: there are specific moments when a manager must **turn off AI and think alone**. Not out of nostalgia, but out of strategy. Knowing when to unplug has become a leadership skill in its own right.
 
-For a broader framework on balancing AI and productivity, see our [complete guide to productivity in the AI era](/blog/en/ai-era-productivity-guide).
+For a broader framework on balancing AI and productivity, see our [complete guide to productivity in the AI era](/blog/ai-era-productivity-guide).
 
 ---
 

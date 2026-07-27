@@ -73,6 +73,8 @@ Here's a practical framework for deciding:
 - **Knowledge silos.** If only one person understands a critical system, pair programming is insurance against the [bus factor](https://en.wikipedia.org/wiki/Bus_factor).
 - **When you're stuck.** If you've been banging your head against a problem for more than 30 minutes, pairing almost always breaks the logjam faster than continuing alone.
 
+If you're the one running the onboarding, keep in mind that mentoring is one of the few tasks that gets worse when you delegate it to a model. Our guide on [when managers should not use AI](/blog/managers-when-not-to-use-ai) makes that case.
+
 ### When to Work Solo
 
 - **Implementing well-defined tasks.** If the approach is clear and you just need to execute, adding a second person adds overhead without proportional benefit.

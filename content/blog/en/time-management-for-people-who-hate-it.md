@@ -74,6 +74,8 @@ A [study published in the British Journal of Educational Psychology](https://bps
 
 The beauty of a timer is that it asks nothing of you except to start. No planning, no prioritizing, no color-coding. Just press start and work until it rings. Tools like [Pomodorian](https://pomodorian.app) make this even simpler — set a timer, add ambient sounds if that helps you focus, and go.
 
+And if deciding *what* to work on is the part you dread, an AI assistant can draft that first step for you. Our [guide to staying productive in the AI era](/blog/ai-era-productivity-guide) covers how to delegate the planning without handing over your judgment.
+
 ### 3. Batch the Boring Stuff
 
 Email, messages, admin tasks — these are the death of focus. Instead of handling them as they come in, pick two windows during the day (maybe late morning and late afternoon) and deal with them all at once.

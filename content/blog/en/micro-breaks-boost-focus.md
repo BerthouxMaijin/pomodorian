@@ -105,7 +105,7 @@ Knowing that breaks help is one thing. Actually taking them is another. Here's h
 
 The biggest barrier to micro-breaks isn't laziness. It's that deep work makes you lose track of time. By the time you think "I should take a break," you're already 90 minutes in and running on fumes.
 
-The [DeskTime study](https://desktime.com/blog/52-17-updated) that analyzed the habits of their most productive users found they worked in focused sprints of about 52 minutes followed by 17-minute breaks. You don't need to hit those exact numbers, but having a structured rhythm matters. The Pomodoro Technique's classic 25/5 split works well as a starting point — especially if 52-minute sprints feel too long. For more on tailoring that ratio, check out our guide on [how to customize your Pomodoro intervals](/blog/en/customize-pomodoro-intervals).
+The [DeskTime study](https://desktime.com/blog/52-17-updated) that analyzed the habits of their most productive users found they worked in focused sprints of about 52 minutes followed by 17-minute breaks. You don't need to hit those exact numbers, but having a structured rhythm matters. The Pomodoro Technique's classic 25/5 split works well as a starting point — especially if 52-minute sprints feel too long. For more on tailoring that ratio, check out our guide on [how to customize your Pomodoro intervals](/blog/customize-pomodoro-intervals).
 
 The point is: let a timer do the remembering. Pomodorian's built-in break reminders handle this automatically, so you can stay in flow without worrying about when to stop.
 
@@ -129,7 +129,7 @@ A few common "break" activities that tend to make things worse:
 
 - **Social media scrolling** — The constant novelty of a feed doesn't rest your attention. It fragments it further. You come back to work with a head full of unrelated information competing for space.
 - **Reading news or email** — These are cognitive tasks disguised as breaks. You're still processing text, making micro-judgments, and dealing with emotional reactions.
-- **Starting a "quick" side task** — Checking Jira, reviewing a PR, answering a Slack message. These pull you into a new context, and [context switching has its own cognitive cost](/blog/en/why-multitasking-kills-productivity).
+- **Starting a "quick" side task** — Checking Jira, reviewing a PR, answering a Slack message. These pull you into a new context, and [context switching has its own cognitive cost](/blog/why-multitasking-kills-productivity).
 - **Staying at your desk** — Even if you're not working, sitting in the same spot keeps your brain in "work mode." Physical movement away from your workspace is a stronger reset signal.
 
 ## Building the Micro-Break Habit

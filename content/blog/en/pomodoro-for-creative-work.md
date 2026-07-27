@@ -86,6 +86,8 @@ A good creative session isn't just about the timer. The environment matters enor
 
 Before starting, write down a creative intention rather than a task. Instead of "finish homepage mockup," try "explore layout options for the hero section." This keeps you in exploration mode rather than execution mode, which is where creative breakthroughs happen.
 
+If writing is your medium, that exploration needs protecting from autocomplete as much as from notifications. Our piece on [keeping your authentic voice when you write with AI](/blog/ai-writing-keep-your-voice) covers where the tool helps and where it flattens you.
+
 ### 2. Prepare Your Tools in Advance
 
 Nothing kills creative momentum like realizing you need to find a reference image, install a font, or set up an artboard five minutes into a session. Front-load the logistics. Have your references pulled up, your canvas ready, your tools loaded.

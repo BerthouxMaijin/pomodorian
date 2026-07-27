@@ -78,6 +78,8 @@ After your first deep session, batch all your reactive work:
 
 By batching communication, you avoid the constant context-switching tax. Your teammates still get timely responses — they just don't get instant ones.
 
+Background AI agents belong in the same batch. Checking on a running agent costs you the same re-entry time as a Slack ping, which is why [developer productivity in the AI era](/blog/developer-productivity-ai-era) treats agent check-ins as scheduled work rather than something you do while waiting.
+
 ### Late Morning / Early Afternoon: Second Deep Session (90-120 minutes)
 
 After your communication batch, go back into deep mode. This second session is where many developers do their most consistent work. You've cleared the morning inbox anxiety, you know nothing urgent is on fire, and you can settle in.

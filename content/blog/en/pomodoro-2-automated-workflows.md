@@ -28,7 +28,7 @@ translationKey: pomodoro-2-automated-workflows
 
 The question is no longer "how do I stay focused for 25 minutes" but **how do I structure my Pomodoro sessions when part of the work happens without me**.
 
-This guide presents a concrete framework: three types of Pomodoro sessions designed for automated workflows, real examples by profession, and a method for using the Pomodoro Technique as a cognitive load regulator. For a broader look at staying productive with AI, start with our [complete guide to productivity in the AI era](/blog/en/ai-era-productivity-guide).
+This guide presents a concrete framework: three types of Pomodoro sessions designed for automated workflows, real examples by profession, and a method for using the Pomodoro Technique as a cognitive load regulator. For a broader look at staying productive with AI, start with our [complete guide to productivity in the AI era](/blog/ai-era-productivity-guide).
 
 ---
 

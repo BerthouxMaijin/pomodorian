@@ -46,7 +46,7 @@ Here's what that looks like in practice:
 - **Remove visual triggers.** Laundry, dishes, the TV remote — if you can see them from your desk, they'll nag at you. Face a wall or use a screen divider. Out of sight really does mean out of mind.
 - **Set your phone to Do Not Disturb.** Or better yet, put it in another room during your focus blocks. Every notification is a tiny decision: *Should I check that?* Those micro-decisions drain your capacity for the real decisions your work requires.
 
-For a deeper dive into setting up your space, check out our guide on [how to create a distraction-free home office](/blog/en/distraction-free-home-office).
+For a deeper dive into setting up your space, check out our guide on [how to create a distraction-free home office](/blog/distraction-free-home-office).
 
 ## Structure Your Day in Blocks, Not Hours
 
@@ -62,6 +62,8 @@ A simple version of time blocking for remote workers:
 4. **Admin block (30 min):** Status updates, planning tomorrow, tying up loose ends.
 
 According to [Owl Labs' 2024 State of Hybrid Work report](https://owllabs.com/state-of-hybrid-work/2024), 58% of workers already use calendar blocking to protect their time from meetings. If you're not doing this yet, start with just one protected block per day and expand from there.
+
+AI tools deserve a block of their own rather than a seat in every one. Our [guide to staying productive in the AI era](/blog/ai-era-productivity-guide) covers how to sort tasks by cognitive mode so your assistants support the deep block instead of fragmenting it.
 
 ## Take Breaks That Actually Recharge You
 
@@ -89,7 +91,7 @@ What this means practically:
 - **For analytical work** (coding, data analysis, spreadsheets): white or brown noise tends to work better.
 - **For communication tasks** (email, documentation): your preference matters more — experiment.
 
-Pomodorian includes ambient soundscapes — lo-fi, rain, cafe noise — specifically designed to pair with focus sessions. It's a small thing, but having your audio environment change when you start a work session reinforces the mental shift into "focus mode." You can learn more about the research behind this in our article on [why ambient sounds help you focus](/blog/en/ambient-sounds-productivity-science).
+Pomodorian includes ambient soundscapes — lo-fi, rain, cafe noise — specifically designed to pair with focus sessions. It's a small thing, but having your audio environment change when you start a work session reinforces the mental shift into "focus mode." You can learn more about the research behind this in our article on [why ambient sounds help you focus](/blog/ambient-sounds-productivity-science).
 
 ## Handle the Loneliness Factor
 

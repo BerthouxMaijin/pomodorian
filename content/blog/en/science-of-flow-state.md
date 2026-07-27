@@ -140,7 +140,7 @@ Don't try to jump straight into your hardest task. Flow requires activation ener
 - A writer might re-read and lightly edit yesterday's draft before writing new material
 - A designer might organize their layers or review the design brief
 
-This warm-up primes the relevant neural pathways and makes the transition to deep work smoother.
+This warm-up primes the relevant neural pathways and makes the transition to deep work smoother. For writers, drafting before you open a chat window does double duty: it is also the core habit in [AI and writing: how to keep your authentic voice](/blog/ai-writing-keep-your-voice).
 
 ### Single-Task Ruthlessly
 

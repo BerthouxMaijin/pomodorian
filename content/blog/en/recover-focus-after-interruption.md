@@ -48,9 +48,9 @@ The effect is especially strong when:
 - **You had no sense of completion** — being pulled away mid-thought creates more residue than pausing at a natural stopping point
 - **The interruption was unexpected** — you had no time to create a mental bookmark
 
-This is why a five-second Slack notification can wreck twenty minutes of deep thinking. It's not about willpower. It's about how human cognition handles task transitions. Your brain is running background processes on the interrupted task, and those processes compete for the same limited working memory you need for your current work.
+This is why a five-second Slack notification can wreck twenty minutes of deep thinking. It's not about willpower. It's about how human cognition handles task transitions. Your brain is running background processes on the interrupted task, and those processes compete for the same limited working memory you need for your current work. It is also why deliberate multitasking backfires, as we cover in [why single-tasking gets more done](/blog/why-multitasking-kills-productivity).
 
-If you've experienced this while coding, you're not alone — the [cost of context switching in software development](/blog/en/context-switching-cost-development) is particularly brutal because programming requires holding complex mental models in working memory.
+If you've experienced this while coding, you're not alone — the [cost of context switching in software development](/blog/context-switching-cost-development) is particularly brutal because programming requires holding complex mental models in working memory.
 
 ## 7 Research-Backed Techniques to Recover Focus Faster
 
@@ -113,7 +113,7 @@ Recovering from interruptions is important, but so is reducing how many hit you 
 
 - **Notifications**: Turn off all non-essential notifications during focus blocks. Every banner, badge, and buzz is a potential 23-minute derailment.
 - **Open-door culture**: If your workplace values "availability," negotiate focus hours. Most teams can adapt to a few protected hours per day.
-- **Self-interruptions**: Gloria Mark's research found that roughly half of all workplace interruptions are self-initiated. You check email, you open social media, you suddenly remember you need to look something up. A [distraction-free environment](/blog/en/distraction-free-home-office) helps, but self-discipline matters too.
+- **Self-interruptions**: Gloria Mark's research found that roughly half of all workplace interruptions are self-initiated. You check email, you open social media, you suddenly remember you need to look something up. A [distraction-free environment](/blog/distraction-free-home-office) helps, but self-discipline matters too.
 - **Communication norms**: Push your team toward asynchronous communication by default. Not everything needs a real-time response.
 
 ### 7. Use the "Closing Ritual" Before Planned Switches

@@ -118,6 +118,8 @@ If your burnout comes from unclear requirements, constant re-prioritization, or 
 - **Push back on unrealistic deadlines** — document what's actually required and present a realistic timeline
 - **Talk to your manager** — if your workload is unsustainable, that's a staffing problem, not a you problem. A good manager wants to know before you burn out, not after.
 
+If you're on the other side of that conversation as a team lead, spotting an exhausted engineer is a read of the room, not a data problem. Our guide on [when managers should not use AI](/blog/managers-when-not-to-use-ai) covers why those calls stay human.
+
 ### 5. Diversify your identity beyond code
 
 This one is underrated. If coding is the only thing that gives you a sense of accomplishment, a rough patch at work becomes a rough patch in life.

@@ -70,6 +70,8 @@ Deep work blocks are useless if you're still getting pinged every three minutes.
 - **Close unnecessary browser tabs.** Every open tab is a potential rabbit hole.
 - **Use a fullscreen editor.** IDE distraction-free modes exist for a reason.
 
+AI coding assistants deserve their own line on that list. An agent working in the background is an interruption waiting to happen, and the habit of checking on it fragments a block just as effectively as Slack does. We work through that trade-off in [developer productivity in the AI era](/blog/developer-productivity-ai-era).
+
 Shopify took this to the organizational level: they [eliminated all recurring meetings with more than two people](https://www.npr.org/2023/02/15/1156804295/shopify-delete-meetings-zoom-virtual-productivity) and instituted no-meeting Wednesdays. An engineer reportedly told leadership that "for the first time in a very long time, they got to do what they were primarily hired to do: write code all day." If your team has the authority, even a single no-meeting day per week can be transformative.
 
 ### Layer 3: Engineer Your Environment for Flow
@@ -84,7 +86,7 @@ To reliably enter flow while coding, your environment needs to provide three thi
 
 2. **The right level of challenge.** Flow happens when the task is hard enough to be engaging but not so hard you're stuck. If you're blocked, switch to a different deep-work-worthy task rather than burning your focus on frustration.
 
-3. **Minimal sensory disruption.** This is where your physical setup matters. Noise-canceling headphones are almost standard equipment for developers, and for good reason. [Research published in the Journal of Consumer Research](https://academic.oup.com/jcr/article-abstract/39/4/784/1798283) found that moderate ambient noise (around 70 dB — think coffee shop level) actually enhances creative performance compared to quieter environments. That's why many developers swear by lo-fi beats, rain sounds, or café ambience while coding. If you're curious about [the science behind ambient sounds and focus](/blog/en/ambient-sounds-productivity-science), it's worth a deeper read — and Pomodorian includes built-in ambient soundscapes specifically designed for this purpose.
+3. **Minimal sensory disruption.** This is where your physical setup matters. Noise-canceling headphones are almost standard equipment for developers, and for good reason. [Research published in the Journal of Consumer Research](https://academic.oup.com/jcr/article-abstract/39/4/784/1798283) found that moderate ambient noise (around 70 dB — think coffee shop level) actually enhances creative performance compared to quieter environments. That's why many developers swear by lo-fi beats, rain sounds, or café ambience while coding. If you're curious about [the science behind ambient sounds and focus](/blog/ambient-sounds-productivity-science), it's worth a deeper read — and Pomodorian includes built-in ambient soundscapes specifically designed for this purpose.
 
 ### Layer 4: Protect the Rhythm
 
@@ -126,7 +128,7 @@ Most of the time, they don't need you *right now*. They need you within a reason
 
 ### "I can't block 90 minutes — my calendar is full of meetings"
 
-Start smaller. Even a single 45-minute protected block per day is better than zero. Then, advocate for change. Share [the research on flow state](/blog/en/science-of-flow-state) with your team lead. Propose one no-meeting morning per week. Small wins compound.
+Start smaller. Even a single 45-minute protected block per day is better than zero. Then, advocate for change. Share [the research on flow state](/blog/science-of-flow-state) with your team lead. Propose one no-meeting morning per week. Small wins compound.
 
 ### "I work better with some background noise/chat"
 

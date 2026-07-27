@@ -101,6 +101,8 @@ Before you start the timer, spend 10 seconds defining what "done" looks like for
 - "Set up the project folder and install dependencies"
 - "Read and annotate the first five pages"
 
+If naming that outcome is itself the sticking point, [AI session planners can turn a vague goal into concrete steps](/blog/ai-productivity-tools-focus) before you start the timer.
+
 For quick tasks that take less than two minutes, you might not even need a timebox — the [2-minute rule combined with Pomodoro](/blog/2-minute-rule-with-pomodoro) can help you knock them out before they pile up. For everything else, this micro-outcome serves as your implementation intention. It tells your brain exactly where to aim.
 
 ### 4. Work Until the Timer Stops
@@ -127,7 +129,7 @@ After the break, decide: do another timebox on the same task, or switch to somet
 
 **Not tracking your sessions.** After a week of timeboxing, you'll want to know: how many sessions did I actually complete? Where does my time go? Which tasks keep getting postponed? Tools like [Pomodorian](https://pomodorian.app) automatically track your focus sessions and give you analytics, so you can spot patterns without manually logging anything.
 
-**Multitasking during a timebox.** One task per timebox. No exceptions. If you try to "quickly" handle something else, you've broken the container — and the container is the whole point.
+**Multitasking during a timebox.** One task per timebox. No exceptions. If you try to "quickly" handle something else, you've broken the container — and the container is the whole point. The research on [why single-tasking gets more done](/blog/why-multitasking-kills-productivity) explains how expensive that switch really is.
 
 ## When Timeboxing Works Best
 

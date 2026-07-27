@@ -52,6 +52,8 @@ Cramming everything into one marathon session feels productive but isn't. Spaced
 
 Start early enough that you can space your reviews out. If your exam is in three weeks, that gives you time for four or five spaced reviews of each topic — far more effective than one desperate all-nighter.
 
+The two techniques compound when you run them together. Our guide to [active recall and spaced repetition](/blog/study-active-recall-spaced-repetition) lays out a review schedule you can copy straight into your calendar.
+
 ## The Case for Taking Real Breaks
 
 Here's a finding that might surprise you: [research from the University of Illinois](https://www.sciencedaily.com/releases/2011/02/110208131529.htm) showed that brief diversions from a task actually *improve* sustained attention. In the study, participants who took two short breaks during a 50-minute task maintained consistent performance, while those who worked straight through showed significant decline.

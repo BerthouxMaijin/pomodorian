@@ -27,7 +27,7 @@ Digital minimalism means intentionally reducing the digital tools, notifications
 
 Cal Newport, the Georgetown computer science professor who coined the term, defines digital minimalism as "a philosophy of technology use in which you focus your online time on a small number of carefully selected and optimized activities that strongly support things you value." His core argument in [Digital Minimalism](https://calnewport.com/on-digital-minimalism/) is that most people adopt new tools and platforms by default, without ever asking whether the cost in attention is worth the benefit.
 
-Remote workers face this problem at an extreme level. There is no physical separation between the communication layer and the work layer. Slack, email, project management dashboards, and video calls all compete for the same screen where you are trying to write, code, or think.
+Remote workers face this problem at an extreme level. There is no physical separation between the communication layer and the work layer. Slack, email, project management dashboards, and video calls all compete for the same screen where you are trying to write, code, or think. AI assistants now add another layer of tabs and prompts on top of that, which is why our [guide to staying productive in the AI era](/blog/ai-era-productivity-guide) treats tool selection as an attention decision rather than a feature comparison.
 
 A [2025 randomized controlled trial published in PNAS Nexus](https://academic.oup.com/pnasnexus/article/4/2/pgaf017/8016017) found that participants who blocked mobile internet for two weeks showed improved sustained attention equivalent to reversing ten years of age-related cognitive decline, plus better mental health and higher life satisfaction.
 

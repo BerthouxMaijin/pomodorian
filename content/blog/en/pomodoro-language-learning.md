@@ -110,7 +110,7 @@ If you're using [Pomodorian](https://pomodorian.app), you can track your daily s
 
 Five minutes isn't much, but it matters. Step away from your study materials completely. The [research on structured breaks](https://pmc.ncbi.nlm.nih.gov/articles/PMC12532815/) shows that true disconnection during breaks — not scrolling your phone — is what restores your ability to focus in the next interval.
 
-For more ideas on productive break habits, check out our guide on [how to use your Pomodoro breaks effectively](/blog/en/use-pomodoro-breaks-effectively).
+For more ideas on productive break habits, check out our guide on [how to use your Pomodoro breaks effectively](/blog/use-pomodoro-breaks-effectively).
 
 ### Match Your Pomodoro to Your Energy
 
@@ -120,7 +120,7 @@ Not all language skills require the same mental effort. Active recall and gramma
 
 Active recall — testing yourself instead of passively reviewing — is one of the most powerful learning strategies available. Karpicke and Roediger's [research](https://pubmed.ncbi.nlm.nih.gov/18276894/) showed that students who tested themselves on foreign language vocabulary retained dramatically more than those who simply re-read their notes, even when they studied for the same amount of time.
 
-During your vocabulary pomodoro, don't just look at flashcards passively. Cover the answer, try to recall it, and check. This small change in approach has an outsized effect on retention. For a deeper dive into these techniques, read our article on [active recall and spaced repetition](/blog/en/study-active-recall-spaced-repetition).
+During your vocabulary pomodoro, don't just look at flashcards passively. Cover the answer, try to recall it, and check. This small change in approach has an outsized effect on retention. For a deeper dive into these techniques, read our article on [active recall and spaced repetition](/blog/study-active-recall-spaced-repetition).
 
 ### Track Your Hours, Not Just Your Streaks
 
@@ -142,7 +142,9 @@ The biggest advantage of the Pomodoro approach isn't the 25-minute timer itself 
 
 4. **Review your progress monthly.** Look at your total focused hours. At two pomodoros per day, you're hitting roughly 25 hours per month — which means a Category I language (like Spanish or French) becomes reachable in about two years of consistent daily practice. Not fast, but absolutely achievable.
 
-5. **Adjust your intervals as you advance.** Beginners often benefit from shorter, more frequent pomodoros (even 15 or 20 minutes) since the cognitive load of a new language is high. As you advance and build stamina, standard 25-minute or even 30-minute blocks may feel more natural. You can [customize your Pomodoro intervals](/blog/en/customize-pomodoro-intervals) to match your current level.
+5. **Adjust your intervals as you advance.** Beginners often benefit from shorter, more frequent pomodoros (even 15 or 20 minutes) since the cognitive load of a new language is high. As you advance and build stamina, standard 25-minute or even 30-minute blocks may feel more natural. You can [customize your Pomodoro intervals](/blog/customize-pomodoro-intervals) to match your current level.
+
+If you're working toward a certification like the DELF, JLPT, or TOEFL, the temptation is to abandon this pacing in the final weeks. Our guide on [preparing for exams without burning out](/blog/prepare-exams-without-burnout) covers how to raise your hours without wrecking the habit that got you there.
 
 ## The Bottom Line
 

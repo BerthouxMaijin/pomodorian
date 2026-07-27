@@ -75,6 +75,8 @@ Use whatever timer you have. A phone timer works. A kitchen timer works. A dedic
 
 The key: once you start the timer, it's a contract with yourself. Twenty-five minutes of undivided attention.
 
+If you'd rather compare your options before settling on one, we lined up [the best Pomodoro apps of 2026](/blog/best-pomodoro-apps-2026) with their real pricing and limits.
+
 ### Step 3: Work Until the Timer Rings
 
 This is where the magic happens — and where beginners often struggle. Here's what to do when distractions pop up:

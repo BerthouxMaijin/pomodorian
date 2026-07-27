@@ -50,7 +50,7 @@ Esto se conoce como el **efecto testing**: el acto de extraer información de tu
 - Usa tarjetas de memoria (flashcards) -- pero califícate honestamente antes de voltearlas
 - Explica el material en voz alta como si le enseñaras a alguien
 
-Para profundizar en esta técnica, consulta nuestra guía sobre [recuerdo activo y repetición espaciada](/blog/en/study-active-recall-spaced-repetition).
+Para profundizar en esta técnica, consulta nuestra guía sobre [recuerdo activo y repetición espaciada](/blog/study-active-recall-spaced-repetition).
 
 ## 2. Repetición espaciada: el momento lo es todo
 

@@ -99,7 +99,9 @@ Attention Restoration Theory highlights natural environments as particularly eff
 
 The biggest barrier to taking breaks isn't knowing they work — it's actually taking them. When you're deep in a problem, every instinct says "just five more minutes." This is where a timer-based system proves its worth. You don't negotiate with a timer. It tells you to stop, and you stop.
 
-For more ideas on what to do with your break time, check out our guide on [how to use your Pomodoro breaks effectively](/blog/en/use-pomodoro-breaks-effectively).
+Students feel this most acutely during exam season, when rest is the first thing cut and the last thing that should be. Our guide on [preparing for exams without burning out](/blog/prepare-exams-without-burnout) covers what to protect when the pressure rises.
+
+For more ideas on what to do with your break time, check out our guide on [how to use your Pomodoro breaks effectively](/blog/use-pomodoro-breaks-effectively).
 
 ## The Productivity Paradox: Doing Less to Achieve More
 
@@ -107,7 +109,7 @@ There's a deeper point here that goes beyond any single study. We live in a cult
 
 This doesn't mean you should take a break every ten minutes or spend half your day lounging. The evidence points to structured, intentional rest woven into periods of focused work. Work hard, then rest hard. Both parts matter.
 
-If you've ever experienced [flow state](/blog/en/science-of-flow-state) — that feeling of being completely absorbed in a task — you know that deep focus is powerful. But flow isn't sustainable for eight straight hours. The importance of breaks is that they make more flow possible. Each focused session can be intense because you know recovery is coming.
+If you've ever experienced [flow state](/blog/science-of-flow-state) — that feeling of being completely absorbed in a task — you know that deep focus is powerful. But flow isn't sustainable for eight straight hours. The importance of breaks is that they make more flow possible. Each focused session can be intense because you know recovery is coming.
 
 ## Putting It Into Practice
 

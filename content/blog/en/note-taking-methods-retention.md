@@ -79,6 +79,8 @@ If you type your notes, you can still get the benefits of handwriting by deliber
 
 The method matters more than the medium.
 
+The same logic applies when you hand the summarizing to a model: outsourcing the paraphrase removes the processing that made the note stick. Writers face an identical trade-off, which we cover in [AI and writing: how to keep your authentic voice](/blog/ai-writing-keep-your-voice).
+
 ## Active Recall: The Most Powerful Study Notes Retention Strategy
 
 If you only adopt one technique from this article, make it active recall.
@@ -95,6 +97,8 @@ That's a massive difference from the same amount of study time — and it only g
 - **Use flashcards with the Leitner system**: Sort cards into boxes based on how well you know them, reviewing difficult cards more frequently and easy ones less often
 
 A [follow-up study by Karpicke and Blunt (2011)](https://www.sciencedaily.com/releases/2011/01/110121111216.htm) found that retrieval practice outperformed even concept mapping — a method many students believe is more effective. The researchers noted that students consistently overestimated the effectiveness of passive review and underestimated the power of self-testing.
+
+Retrieval practice gets stronger still when you schedule it. Our guide to [active recall and spaced repetition](/blog/study-active-recall-spaced-repetition) covers how to combine the two into a single study loop.
 
 ## Mind Mapping: Visual Note Taking for Complex Topics
 
@@ -152,6 +156,8 @@ No single method is perfect for every situation. The most effective approach com
 5. **Over the following weeks**: Use spaced repetition to review, focusing more time on material you struggle to recall.
 
 This workflow targets every stage of memory formation: encoding (Cornell notes + generation effect), consolidation (same-day review), and retrieval (active recall + spaced repetition).
+
+The same principles apply to professional research, not just coursework. If you synthesize sources for clients, our guide on [how consultants orchestrate AI tools](/blog/consultant-orchestrate-ai-tools) shows where AI can compress the reading phase and where your own notes still have to carry the analysis.
 
 ## Common Mistakes to Avoid
 

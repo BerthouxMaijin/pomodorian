@@ -50,7 +50,7 @@ This is known as the **testing effect**: the act of pulling information out of y
 - Use flashcards — but grade yourself honestly before flipping
 - Explain the material out loud as if teaching someone
 
-For a deeper dive into this technique, check out our guide on [active recall and spaced repetition](/blog/en/study-active-recall-spaced-repetition).
+For a deeper dive into this technique, check out our guide on [active recall and spaced repetition](/blog/study-active-recall-spaced-repetition).
 
 ## 2. Spaced Repetition: Timing Is Everything
 
@@ -174,4 +174,4 @@ The best way to study isn't any single technique — it's combining several of t
 
 The evidence is clear: these learning methods work. Not because they're trendy or new, but because they align with how your brain actually processes, stores, and retrieves information. The hard part isn't knowing what to do — it's doing it consistently. Start with one technique, build the habit, and layer in more over time.
 
-For more strategies on sustainable studying, check out our guide on [how to prepare for exams without burning out](/blog/en/prepare-exams-without-burnout).
+For more strategies on sustainable studying, check out our guide on [how to prepare for exams without burning out](/blog/prepare-exams-without-burnout).

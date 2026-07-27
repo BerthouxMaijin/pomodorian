@@ -90,7 +90,7 @@ The question is not "can AI generate this content?" but "does the client need th
 
 ## The Pomodoro Method Adapted for AI-Assisted Consulting
 
-AI-assisted consulting work naturally alternates between two very different cognitive modes: delegation (prompting, running generations, sorting outputs) and critical reflection (analyzing, judging, synthesizing). Switching between these without structure creates measurable [cognitive fatigue](/blog/en/ai-era-productivity-guide).
+AI-assisted consulting work naturally alternates between two very different cognitive modes: delegation (prompting, running generations, sorting outputs) and critical reflection (analyzing, judging, synthesizing). Switching between these without structure creates measurable [cognitive fatigue](/blog/ai-era-productivity-guide).
 
 The Pomodoro Technique provides an ideal framework for structuring this alternation. Here is a consulting-adapted version.
 
