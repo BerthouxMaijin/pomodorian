@@ -22,6 +22,7 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
+  metadataBase: new URL(SITE_URL),
   title: "Pomodorian — Free AI Pomodoro Timer | Focus, Plan, Track",
   description:
     "Free Pomodoro timer with AI task planning. Describe your goal, get structured focus sessions. Built-in ambient sounds, analytics, and keyboard shortcuts.",
@@ -54,12 +55,22 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     siteName: "Pomodorian",
+    url: SITE_URL,
+    images: [
+      {
+        url: "/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: "Pomodorian — Free AI Pomodoro Timer",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Pomodorian — Free AI Pomodoro Timer | Focus, Plan, Track",
     description:
       "Free Pomodoro timer with AI task planning. Ambient sounds, analytics, and keyboard shortcuts.",
+    images: ["/opengraph-image"],
   },
   appleWebApp: {
     capable: true,
@@ -81,7 +92,12 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col relative overflow-x-hidden">
-        <link rel="llms" type="text/plain" href="/llms.txt" />
+        <link
+          rel="alternate"
+          type="application/rss+xml"
+          title="Pomodorian Blog"
+          href="/feed.xml"
+        />
         {children}
         <Analytics />
         <ConsentAnalytics />
