@@ -58,7 +58,7 @@ const features = [
   {
     icon: "🎵",
     title: "Ambient Sounds",
-    text: "5 layerable sounds — rain, café, lo-fi, forest, fireplace. All free, individual volume controls.",
+    text: "5 layerable sounds: rain, café, lo-fi, forest, fireplace. All free, individual volume controls.",
   },
   {
     icon: "📊",
@@ -71,9 +71,9 @@ const features = [
     text: "Space to start/pause, 1/2/3 to switch modes, S for settings, R for analytics.",
   },
   {
-    icon: "📱",
-    title: "Works Offline",
-    text: "Install as a PWA, use without internet. All data stays in your browser.",
+    icon: "🔒",
+    title: "Private by Design",
+    text: "All your data stays in your browser. No account, no cloud, no tracking.",
   },
   {
     icon: "🎨",
@@ -82,20 +82,83 @@ const features = [
   },
 ];
 
+interface CompetitorFacts {
+  aiPlanning: string;
+  ambientSounds: string;
+  analytics: string;
+  price: string;
+  platform: string;
+  accountRequired: string;
+  offline: string;
+}
+
+// Sourced from the competitor facts sheet, verified 2026-07-27.
+// Unverified or single-source figures are phrased cautiously rather than stated as exact.
+const COMPETITOR_DATA: Record<string, CompetitorFacts> = {
+  Pomofocus: {
+    aiPlanning: "No",
+    ambientSounds: "Yes (free, customizable)",
+    analytics: "Basic reports",
+    price: "≈ $3/mo (third-party listings)",
+    platform: "Web (PWA) + Mac/Windows/Linux apps",
+    accountRequired: "No (basic use)",
+    offline: "Yes (PWA)",
+  },
+  Forest: {
+    aiPlanning: "No",
+    ambientSounds: "1 free, rest paid",
+    analytics: "Paid only (Forest Plus)",
+    price: "Free tier + paid Plus",
+    platform: "iOS, Android, Apple Watch, browser ext.",
+    accountRequired: "No for basic use, yes for sync",
+    offline: "Yes (timer & stats work offline)",
+  },
+  "Focus To-Do": {
+    aiPlanning: "No",
+    ambientSounds: "Yes (white noise, partly free)",
+    analytics: "Basic stats (free tier)",
+    price: "$1.99 (App Store, billing period unspecified)",
+    platform: "Android, iOS, Mac, Windows, Apple Watch, browser ext.",
+    accountRequired: "Not documented",
+    offline: "Not documented",
+  },
+  "Toggl Track": {
+    aiPlanning: "No",
+    ambientSounds: "Not documented",
+    analytics: "Reports + CSV/PDF export",
+    price: "$9/user/mo (Starter, billed annually)",
+    platform: "Web, iOS, Android, Windows, macOS, browser ext.",
+    accountRequired: "Yes",
+    offline: "Yes (desktop app, syncs later)",
+  },
+};
+
+const POMODORIAN_FACTS: CompetitorFacts = {
+  aiPlanning: "Yes (8 languages)",
+  ambientSounds: "5 free sounds",
+  analytics: "Heatmap + stats + export",
+  price: "Free",
+  platform: "Web (any device)",
+  accountRequired: "No",
+  offline: "No",
+};
+
+const COMPARISON_ROWS: { key: keyof CompetitorFacts; label: string }[] = [
+  { key: "aiPlanning", label: "AI Session Planning" },
+  { key: "ambientSounds", label: "Ambient Sounds" },
+  { key: "analytics", label: "Focus Analytics" },
+  { key: "price", label: "Price" },
+  { key: "platform", label: "Platform" },
+  { key: "accountRequired", label: "Account required" },
+  { key: "offline", label: "Offline mode" },
+];
+
 function ComparisonTable({ page }: { page: typeof seoPages[number] }) {
   if (page.category !== "comparison") return null;
 
   const competitor = page.h1.replace("Pomodorian vs ", "");
-
-  const rows = [
-    { feature: "AI Session Planning", pomodorian: "Yes", competitor: competitor === "Pomofocus" ? "No" : competitor === "Forest" ? "No" : competitor === "Focus To-Do" ? "No" : "No" },
-    { feature: "Ambient Sounds", pomodorian: "5 free sounds", competitor: competitor === "Pomofocus" ? "Paid only" : "No" },
-    { feature: "Focus Analytics", pomodorian: "Heatmap + stats", competitor: competitor === "Toggl Track" ? "Detailed reports" : "Basic" },
-    { feature: "Offline Support", pomodorian: "Yes (PWA)", competitor: competitor === "Pomofocus" ? "No" : "Yes" },
-    { feature: "Price", pomodorian: "Free", competitor: competitor === "Forest" ? "Paid" : "Freemium" },
-    { feature: "Platform", pomodorian: "Web (any device)", competitor: competitor === "Forest" ? "Mobile only" : "Web + Mobile" },
-    { feature: "Account Required", pomodorian: "No", competitor: competitor === "Forest" ? "Yes" : "For full features" },
-  ];
+  const facts = COMPETITOR_DATA[competitor];
+  if (!facts) return null;
 
   return (
     <div className="overflow-x-auto my-10">
@@ -108,15 +171,18 @@ function ComparisonTable({ page }: { page: typeof seoPages[number] }) {
           </tr>
         </thead>
         <tbody>
-          {rows.map((row) => (
-            <tr key={row.feature} className="border-b border-border/50">
-              <td className="py-3 px-4 text-muted">{row.feature}</td>
-              <td className="py-3 px-4">{row.pomodorian}</td>
-              <td className="py-3 px-4 text-muted">{row.competitor}</td>
+          {COMPARISON_ROWS.map((row) => (
+            <tr key={row.key} className="border-b border-border/50">
+              <td className="py-3 px-4 text-muted">{row.label}</td>
+              <td className="py-3 px-4">{POMODORIAN_FACTS[row.key]}</td>
+              <td className="py-3 px-4 text-muted">{facts[row.key]}</td>
             </tr>
           ))}
         </tbody>
       </table>
+      <p className="text-xs text-muted mt-2">
+        Features and pricing verified on July 27, 2026.
+      </p>
     </div>
   );
 }
@@ -232,21 +298,21 @@ export default async function SeoPage({
             </h2>
             <div className="space-y-4 text-muted leading-relaxed">
               <p>
-                1. <strong className="text-foreground">Open Pomodorian</strong> — no
+                1. <strong className="text-foreground">Open Pomodorian</strong>: no
                 download, no account needed. Works in any browser.
               </p>
               <p>
-                2. <strong className="text-foreground">Plan with AI</strong> — click
+                2. <strong className="text-foreground">Plan with AI</strong>: click
                 the AI planner, describe your goal, and get a structured task list in
                 seconds.
               </p>
               <p>
-                3. <strong className="text-foreground">Start focusing</strong> — hit
+                3. <strong className="text-foreground">Start focusing</strong>: hit
                 Start, put on ambient sounds, and work through your tasks one pomodoro
                 at a time.
               </p>
               <p>
-                4. <strong className="text-foreground">Track your progress</strong> —
+                4. <strong className="text-foreground">Track your progress</strong>:
                 check your analytics to see your focus patterns and build a consistency
                 streak.
               </p>
@@ -295,7 +361,7 @@ export default async function SeoPage({
               Ready to focus smarter?
             </h3>
             <p className="text-muted mb-4">
-              Try Pomodorian — the AI-powered Pomodoro timer. Free, no account
+              Try Pomodorian, the AI-powered Pomodoro timer. Free, no account
               required.
             </p>
             <Link
