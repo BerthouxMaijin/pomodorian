@@ -8,6 +8,7 @@ import {
   getTranslations,
 } from "@/lib/blog/reader";
 import { SITE_URL } from "@/lib/constants";
+import { extractFaq } from "@/lib/extract-faq";
 import { markdownToHtml } from "@/lib/markdown";
 import { TrackedCtaLink } from "@/components/blog/TrackedCtaLink";
 import { JsonLd } from "@/components/seo/JsonLd";
@@ -276,8 +277,12 @@ export default async function BlogPage({
 
     const wordCount = article.content.split(/\s+/).length;
 
+    // Articles that end on a real Q&A block also qualify as an FAQPage, using
+    // the same wording the page renders.
+    const faq = extractFaq(article.content);
+
     const webPageNode = {
-      "@type": "WebPage",
+      "@type": faq.length >= 2 ? ["WebPage", "FAQPage"] : "WebPage",
       "@id": `${articleUrl}#webpage`,
       url: articleUrl,
       name: article.title,
@@ -285,6 +290,13 @@ export default async function BlogPage({
       isPartOf: { "@id": WEBSITE_ID },
       primaryImageOfPage: { "@id": `${articleUrl}#primaryimage` },
       inLanguage: lang,
+      ...(faq.length >= 2 && {
+        mainEntity: faq.map(({ q, a }) => ({
+          "@type": "Question",
+          name: q,
+          acceptedAnswer: { "@type": "Answer", text: a },
+        })),
+      }),
     };
 
     const articleNode = {
