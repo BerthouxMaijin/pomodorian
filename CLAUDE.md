@@ -31,7 +31,7 @@ components/
   sounds/               # SoundMixer (5 ambient sounds, layerable)
   ai-planner/           # AIPlannerModal (calls /api/ai-planner)
   feedback/             # FeedbackPrompt modal (form posting to /api/feedback)
-  neverdump/            # NeverDump modal
+  neverdumb/            # NeverDumb modal
   analytics/            # AnalyticsPanel, ContributionHeatmap, StatsCards
   settings/             # SettingsModal, ShortcutsModal
   layout/               # Header, Footer, Background, InfoSection

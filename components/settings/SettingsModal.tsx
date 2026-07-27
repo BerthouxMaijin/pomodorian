@@ -5,7 +5,7 @@ import { track } from "@vercel/analytics";
 import type { AppSettings } from "@/lib/types";
 import { ALARM_SOUNDS, AI_LANGUAGES } from "@/lib/constants";
 import { useBrowserLocale } from "@/hooks/useBrowserLocale";
-import { NEVER_DUMP_COPY } from "@/components/neverdump/neverDumpCopy";
+import { NEVER_DUMB_COPY } from "@/components/neverdumb/neverDumbCopy";
 
 interface SettingsModalProps {
   settings: AppSettings;
@@ -19,7 +19,7 @@ export function SettingsModal({
   onClose,
 }: SettingsModalProps) {
   const locale = useBrowserLocale();
-  const neverDumpCopy = NEVER_DUMP_COPY[locale];
+  const neverDumbCopy = NEVER_DUMB_COPY[locale];
   // Close on Escape
   useEffect(() => {
     const handler = (e: KeyboardEvent) => {
@@ -117,11 +117,11 @@ export function SettingsModal({
             onChange={(v) => onUpdate({ autoStartPomodoros: v })}
           />
           <Toggle
-            label={neverDumpCopy.shared.settingsAutoOpen}
-            checked={settings.neverDumpAutoOpen}
+            label={neverDumbCopy.shared.settingsAutoOpen}
+            checked={settings.neverDumbAutoOpen}
             onChange={(v) => {
-              onUpdate({ neverDumpAutoOpen: v });
-              track("neverdump_auto_open_changed", { enabled: v });
+              onUpdate({ neverDumbAutoOpen: v });
+              track("neverdumb_auto_open_changed", { enabled: v });
             }}
           />
         </section>

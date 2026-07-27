@@ -14,20 +14,20 @@ import type { UiLocale } from "@/lib/i18n/locales";
 import { useBrowserLocale } from "@/hooks/useBrowserLocale";
 import {
   FUN_EXERCISES,
-  NEVER_DUMP_COPY,
+  NEVER_DUMB_COPY,
   RESET_EXERCISES,
   SERIOUS_EXERCISES,
   type ExerciseId,
   type FunExercise,
-  type NeverDumpMode,
+  type NeverDumbMode,
   type ResetExercise,
   type SeriousExercise,
-} from "./neverDumpCopy";
+} from "./neverDumbCopy";
 
 type Screen = "intro" | "mode" | "serious-menu" | "reset-menu" | "exercise" | "result";
 type CloseReason = "skip" | "complete" | "timer-ended";
 
-interface NeverDumpModalProps {
+interface NeverDumbModalProps {
   timeRemaining: number;
   totalTime: number;
   onClose: (reason: CloseReason) => void;
@@ -85,16 +85,16 @@ function Panel({ children, className = "" }: { children: ReactNode; className?: 
   );
 }
 
-export function NeverDumpModal({
+export function NeverDumbModal({
   timeRemaining,
   totalTime,
   onClose,
   onPauseAmbients,
   onResumeAmbients,
-}: NeverDumpModalProps) {
+}: NeverDumbModalProps) {
   const locale = useBrowserLocale();
   const [screen, setScreen] = useState<Screen>("intro");
-  const [mode, setMode] = useState<NeverDumpMode | null>(null);
+  const [mode, setMode] = useState<NeverDumbMode | null>(null);
   const [exercise, setExercise] = useState<ExerciseId | null>(null);
   const [stage, setStage] = useState<"ready" | "active" | "recall">("ready");
   const [answer, setAnswer] = useState("");
@@ -111,7 +111,7 @@ export function NeverDumpModal({
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const ambientsPausedRef = useRef(false);
   const shouldReduceMotion = useReducedMotion();
-  const copy = NEVER_DUMP_COPY[locale];
+  const copy = NEVER_DUMB_COPY[locale];
 
   const stopMusic = useCallback(() => {
     if (audioRef.current) {
@@ -128,7 +128,7 @@ export function NeverDumpModal({
   const close = useCallback(
     (reason: CloseReason) => {
       stopMusic();
-      if (reason === "skip") track("neverdump_skipped");
+      if (reason === "skip") track("neverdumb_skipped");
       onClose(reason);
     },
     [onClose, stopMusic]
@@ -178,7 +178,7 @@ export function NeverDumpModal({
     setDeadline(null);
     stopMusic();
     setScreen("result");
-    track("neverdump_exercise_completed", { exercise });
+    track("neverdumb_exercise_completed", { exercise });
   }, [exercise, stopMusic]);
 
   useEffect(() => {
@@ -211,14 +211,14 @@ export function NeverDumpModal({
       setExercise(id);
       setMissionIndex(Math.floor(Math.random() * copy.humanMissions.length));
       setScreen("exercise");
-      track("neverdump_exercise_started", { exercise: id });
+      track("neverdumb_exercise_started", { exercise: id });
     },
     [copy.humanMissions.length, resetExerciseState]
   );
 
-  const chooseMode = (nextMode: NeverDumpMode) => {
+  const chooseMode = (nextMode: NeverDumbMode) => {
     setMode(nextMode);
-    track("neverdump_path_selected", { path: nextMode });
+    track("neverdumb_path_selected", { path: nextMode });
     if (nextMode === "fun") startExercise(drawFunExercise());
     else setScreen(nextMode === "serious" ? "serious-menu" : "reset-menu");
   };
@@ -266,7 +266,7 @@ export function NeverDumpModal({
       <p className="mt-7 max-w-xl mx-auto text-base sm:text-lg leading-relaxed text-[#aaa69d]">{copy.intro.body}</p>
       <button
         type="button"
-        data-testid="neverdump-enter"
+        data-testid="neverdumb-enter"
         onClick={() => setScreen("mode")}
         className="mt-9 rounded-full bg-[#ff5b45] px-7 py-4 text-sm font-black uppercase tracking-[0.12em] text-[#170d0a] hover:bg-[#ff745f] focus:outline-none focus:ring-2 focus:ring-[#8bf0a5]"
       >
@@ -285,7 +285,7 @@ export function NeverDumpModal({
           <button
             key={item}
             type="button"
-            data-testid={`neverdump-mode-${item}`}
+            data-testid={`neverdumb-mode-${item}`}
             onClick={() => chooseMode(item)}
             className="group min-h-48 text-left border border-white/10 bg-white/[0.035] rounded-2xl p-6 hover:border-[#ff5b45]/70 hover:bg-[#ff5b45]/[0.06] focus:outline-none focus:ring-2 focus:ring-[#8bf0a5] transition-colors"
           >
@@ -313,7 +313,7 @@ export function NeverDumpModal({
             <button
               key={id}
               type="button"
-              data-testid={`neverdump-exercise-${id}`}
+              data-testid={`neverdumb-exercise-${id}`}
               onClick={() => startExercise(id)}
               className="text-left border border-white/10 bg-white/[0.035] rounded-2xl p-5 hover:border-[#8bf0a5]/60 hover:bg-[#8bf0a5]/[0.04] focus:outline-none focus:ring-2 focus:ring-[#8bf0a5] transition-colors"
             >
@@ -343,7 +343,7 @@ export function NeverDumpModal({
   );
 
   const resultButton = (
-    <button type="button" data-testid="neverdump-reveal" onClick={finishExercise} className="mt-5 w-full rounded-xl bg-[#ff5b45] px-5 py-3.5 font-bold text-[#170d0a] hover:bg-[#ff745f] focus:outline-none focus:ring-2 focus:ring-[#8bf0a5]">
+    <button type="button" data-testid="neverdumb-reveal" onClick={finishExercise} className="mt-5 w-full rounded-xl bg-[#ff5b45] px-5 py-3.5 font-bold text-[#170d0a] hover:bg-[#ff745f] focus:outline-none focus:ring-2 focus:ring-[#8bf0a5]">
       {copy.shared.reveal}
     </button>
   );
@@ -398,7 +398,7 @@ export function NeverDumpModal({
           <h2 className="mt-3 text-4xl sm:text-6xl font-black text-[#fff9ed]">{exerciseCopy.title}</h2>
           <Panel className="mt-8 p-7 sm:p-10 text-xl sm:text-2xl font-bold leading-relaxed text-[#ff725d]">{copy.humanMissions[missionIndex]}</Panel>
           <p className="mt-5 text-sm text-[#858178]">{exerciseCopy.detail}</p>
-          <button type="button" data-testid="neverdump-fun-done" onClick={finishExercise} className="mt-7 rounded-full bg-[#8bf0a5] px-7 py-3.5 font-bold text-[#0c1a10]">{copy.shared.done}</button>
+          <button type="button" data-testid="neverdumb-fun-done" onClick={finishExercise} className="mt-7 rounded-full bg-[#8bf0a5] px-7 py-3.5 font-bold text-[#0c1a10]">{copy.shared.done}</button>
         </div>
       );
     }
@@ -418,7 +418,7 @@ export function NeverDumpModal({
               <label className="text-sm text-[#aaa69d]">{copy.shared.recall}
                 <textarea autoFocus value={answer} onChange={(event) => setAnswer(event.target.value)} rows={6} className="mt-2 w-full resize-none rounded-xl border border-white/10 bg-black/30 p-3 text-[#fff9ed] outline-none focus:border-[#8bf0a5]" />
               </label>
-              <button type="button" data-testid="neverdump-fun-done" onClick={finishExercise} className="mt-4 w-full rounded-xl bg-[#ff5b45] px-5 py-3.5 font-bold text-[#170d0a]">{copy.shared.done}</button>
+              <button type="button" data-testid="neverdumb-fun-done" onClick={finishExercise} className="mt-4 w-full rounded-xl bg-[#ff5b45] px-5 py-3.5 font-bold text-[#170d0a]">{copy.shared.done}</button>
             </Panel>
           )}
         </div>
@@ -458,7 +458,7 @@ export function NeverDumpModal({
         <p className="mt-4 text-sm text-[#858178]">{duckRound + 1} / {copy.duckQuestions.length}</p>
         <button
           type="button"
-          data-testid="neverdump-duck-hit"
+          data-testid="neverdumb-duck-hit"
           onClick={() => duckRound + 1 >= copy.duckQuestions.length ? finishExercise() : setDuckRound((round) => round + 1)}
           className="mt-6 rounded-full bg-[#8bf0a5] px-7 py-3.5 font-bold text-[#0c1a10]"
         >
@@ -484,7 +484,7 @@ export function NeverDumpModal({
         {stage === "ready" ? (
           <>
             <p className="mt-3 text-sm text-[#858178]">{exerciseCopy.detail}</p>
-            <button type="button" data-testid="neverdump-reset-start" onClick={startTimedExercise} className="mt-8 rounded-full bg-[#8bf0a5] px-8 py-4 font-bold text-[#0c1a10]">{copy.shared.start}</button>
+            <button type="button" data-testid="neverdumb-reset-start" onClick={startTimedExercise} className="mt-8 rounded-full bg-[#8bf0a5] px-8 py-4 font-bold text-[#0c1a10]">{copy.shared.start}</button>
           </>
         ) : (
           <>
@@ -516,7 +516,7 @@ export function NeverDumpModal({
               )}
             </div>
             <div className="font-mono text-2xl text-[#ff725d]">{formatTime(exerciseSecondsLeft)}</div>
-            <button type="button" data-testid="neverdump-finish-early" onClick={finishExercise} className="mt-5 rounded-full border border-white/15 px-6 py-3 text-sm text-[#d0cbc0] hover:border-[#8bf0a5]">{copy.shared.finishEarly}</button>
+            <button type="button" data-testid="neverdumb-finish-early" onClick={finishExercise} className="mt-5 rounded-full border border-white/15 px-6 py-3 text-sm text-[#d0cbc0] hover:border-[#8bf0a5]">{copy.shared.finishEarly}</button>
           </>
         )}
         <p className="mt-7 text-xs text-[#69665f]">{copy.shared.safeNote}</p>
@@ -533,7 +533,7 @@ export function NeverDumpModal({
         <h2 className="mt-3 text-3xl sm:text-5xl font-black tracking-tight text-[#fff9ed]">{exerciseCopy.result}</h2>
         <p className="mt-5 text-[#858178]">{copy.shared.resultBody}</p>
         <div className="mt-9 flex flex-col sm:flex-row justify-center gap-3">
-          <button type="button" data-testid="neverdump-close-complete" onClick={() => close("complete")} className="rounded-full bg-[#ff5b45] px-7 py-3.5 font-bold text-[#170d0a]">{copy.shared.done}</button>
+          <button type="button" data-testid="neverdumb-close-complete" onClick={() => close("complete")} className="rounded-full bg-[#ff5b45] px-7 py-3.5 font-bold text-[#170d0a]">{copy.shared.done}</button>
           <button
             type="button"
             onClick={() => mode === "fun" ? startExercise(drawFunExercise()) : goBack()}
@@ -558,22 +558,22 @@ export function NeverDumpModal({
         tabIndex={-1}
         role="dialog"
         aria-modal="true"
-        aria-labelledby="neverdump-brand"
+        aria-labelledby="neverdumb-brand"
         lang={locale === "zh" ? "zh-Hans" : locale}
         className="min-h-full outline-none"
       >
         <header className="sticky top-0 z-20 border-b border-white/10 bg-[#100f0d]/95 backdrop-blur px-4 sm:px-7 py-3">
           <div className="mx-auto max-w-6xl flex items-center gap-3">
-            <div id="neverdump-brand" className="font-black tracking-[-0.04em] text-sm sm:text-base">NEVER <span className="text-[#ff5b45]">DUMP</span></div>
+            <div id="neverdumb-brand" className="font-black tracking-[-0.04em] text-sm sm:text-base">NEVER <span className="text-[#ff5b45]">DUMB</span></div>
             <div className="hidden sm:block h-4 w-px bg-white/10" />
             <div className="ml-auto flex items-center gap-3 sm:gap-5">
               <div className="text-right">
                 <div className="text-[9px] uppercase tracking-[0.18em] text-[#625f58]">{copy.shared.breakRemaining}</div>
-                <div data-testid="neverdump-break-timer" className="text-sm font-bold tabular-nums text-[#8bf0a5]">{formatTime(timeRemaining)}</div>
+                <div data-testid="neverdumb-break-timer" className="text-sm font-bold tabular-nums text-[#8bf0a5]">{formatTime(timeRemaining)}</div>
               </div>
               <button
                 type="button"
-                data-testid="neverdump-skip"
+                data-testid="neverdumb-skip"
                 onClick={() => close("skip")}
                 className="rounded-full border border-white/15 px-3 sm:px-4 py-2 text-[10px] sm:text-xs uppercase tracking-wide text-[#d0cbc0] hover:border-[#ff5b45] hover:text-white focus:outline-none focus:ring-2 focus:ring-[#8bf0a5]"
               >

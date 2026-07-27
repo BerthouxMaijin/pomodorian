@@ -10,7 +10,7 @@ export const DEFAULT_SETTINGS: AppSettings = {
   longBreakInterval: 4,
   autoStartBreaks: false,
   autoStartPomodoros: false,
-  neverDumpAutoOpen: true,
+  neverDumbAutoOpen: true,
   alarmSound: "gentle",
   alarmVolume: 0.5,
   theme: "dark",
