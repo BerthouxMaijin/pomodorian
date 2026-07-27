@@ -77,17 +77,18 @@ Implémentation parallélisée en 5 lanes (commits `0ac483a`..`1d13084`), QA com
 - [x] **Lot sitemap/robots/RSS** ✅ /about, lastModified stables, hreflang sitemap (187 liens), Disallow /api/ bots IA, link RSS dans le layout
 - [x] **FAQ honnête** ✅ 5 Q/R visibles sur la home, texte = schema via `lib/faq.ts`. ⚠️ La Q « offline » (fausse : pas de service worker) remplacée par une Q privacy véridique. Restent 5 mentions « Works offline » fausses dans le contenu visible (hero, Core Features, tableau InfoSection, best-apps, features SEO) : à corriger en Phase 2 ou shipper un service worker en Phase 5
 
-## Phase 2 : améliorer les pages money AVANT d'écrire (2-3 sessions)
+## Phase 2 : améliorer les pages money ✅ FAIT 2026-07-27
 
-Priorisation par (impressions × déficit CTR) :
+Implémentation parallélisée 6 lanes + fact-check adversarial (commits `37fefc6`..`e7eaf77`), fiche de faits concurrents sourcée, QA : `qa/RAPPORT-2026-07-27-phase2.md`.
 
-- [ ] **RÉÉCRIRE `best-pomodoro-apps-2026`** (pos 5,8, 471 imp, CTR 0,21 %) : méthodologie datée, vrais tarifs 2026, screenshots par app, divulgation « édité par Pomodorian », au moins une catégorie où un concurrent gagne franchement. Répliquer sur ES (meilleur CTR du site : 2,4 %), FR, DE
-- [ ] **RÉÉCRIRE le template des 4 pages `pomodorian-vs-*`** (pos 4,0 sur pomofocus !) : prose spécifique par comparaison, prix, date de vérification, section honnête « choisis X si... ». Retirer les claims concurrents hardcodés invérifiables (risque confiance/juridique)
-- [ ] **AMÉLIORER `use-pomodoro-breaks-effectively`** (1 099 imp, pos 15,4 : problème de ranking, pas de titre) : tableau de décision type de travail → type de pause, FAQ + schema FAQPage, key takeaways, maillage depuis le cluster pauses. NE PAS réécrire
-- [ ] **AMÉLIORER `long-pomodoro-sessions-guide`** (634 imp, pos 20,8) et `context-switching-cost-development` (335 imp, pos 16,7 ; en faire le foyer du template téléchargeable « Ready-to-Resume »)
-- [ ] **Étoffer les 20 pages SEO maigres** via le champ `sections` existant (modèle : `deep-work-timer`), en priorité `/ai-task-planner` (39/100 de citabilité alors qu'elle porte LE différenciateur)
-- [ ] **Désorpheliner les 11 articles à 0 lien entrant** (dont `ai-era-productivity-guide`, le meilleur actif du site, et `best-pomodoro-apps-2026`) ; pages piliers pour les clusters intervalles / pauses / science du focus
-- [ ] **Blocs réponse-first + TL;DR** sur le top 10 trafic (9/42 seulement en ont) ; schema FAQPage sur les 8 articles qui ont déjà une FAQ
+- [x] **best-pomodoro-apps-2026 RÉÉCRIT en 4 langues** ✅ ~1 900 mots EN, prix vérifiés (spot-check live), divulgation éditeur, colonne offline honnête (Pomodorian = No), 2 screenshots produit, FAQ + takeaways, sources remplies. Titre 51 car. sans « Tested »
+- [x] **Les 4 pages `pomodorian-vs-*`** ✅ sections spécifiques (Core Difference / Choose X If / Choose Pomodorian If / Pricing Compared, datées « verified on July 27, 2026 ») + ComparisonTable data-driven sans ternaires morts ni claims invérifiables
+- [x] **`use-pomodoro-breaks-effectively` amélioré** ✅ takeaways, réponse-first sous les H2, tableau de décision travail → pause, FAQ (+832 mots)
+- [x] **`long-pomodoro-sessions-guide` + `context-switching-cost-development` améliorés** ✅ takeaways + FAQ + template Ready-to-Resume copiable
+- [x] **20 pages SEO étoffées** ✅ sections 180-300 mots/page + relatedArticleSlugs (63 slugs validés) ; ai-task-planner la plus soignée (flux réel du planner)
+- [x] **11 orphelins désorphelinés** ✅ 31 liens entrants contextuels ; le silo du cluster IA ouvert depuis le graphe principal ; 23 liens `/blog/en/` normalisés. (Pages piliers des clusters : reportées en Phase 3)
+- [x] **Schema FAQPage** ✅ extrait automatiquement du markdown (`lib/extract-faq.ts`) : 12 articles EN émettent un FAQPage à 5 questions
+- [x] **Bonus véracité** ✅ les 14 claims « works offline » faux + le claim « Open Source » (pas de LICENSE) purgés de tout le site ; fact-check adversarial : 2 erreurs factuelles attrapées (Trees for the Future, période de facturation Focus To-Do)
 
 ## Phase 3 : le nouveau pilier éditorial « Souveraineté cognitive » (cadence 1-2/semaine, PAS de dump)
 
