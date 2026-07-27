@@ -53,10 +53,12 @@ The Pomodoro Technique works because it aligns with how the brain processes info
 
 Modern Pomodoro timer apps add features that enhance the original technique:
 
-- **[Pomodorian](https://pomodorian.app)**: A free, AI-powered Pomodoro timer that breaks down your goals into tasks, includes ambient sounds (rain, café, lo-fi, nature, fireplace), and tracks your focus history with a GitHub-style heatmap. Works offline as a PWA.
+- **[Pomodorian](https://pomodorian.app)**: A free, AI-powered Pomodoro timer that breaks down your goals into tasks, includes ambient sounds (rain, café, lo-fi, nature, fireplace), and tracks your focus history with a GitHub-style heatmap. All your data stays in your browser, with no account required.
 - **Pomofocus**: A popular web-based timer with task management and reports.
 - **Forest**: A gamified approach where you grow virtual trees during focus sessions.
 - **Focus To-Do**: Combines Pomodoro with full task management.
+
+AI planning is the newest of these additions, and it changes what you do before the timer starts. We look at that shift in [how AI is changing the way we focus and plan our work](/blog/ai-productivity-tools-focus).
 
 ## Getting Started Today
 

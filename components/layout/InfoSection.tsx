@@ -13,7 +13,7 @@ export function InfoSection() {
           An AI-powered Pomodoro Timer to boost your productivity
         </h1>
         <p className="text-muted max-w-xl mx-auto">
-          Free. No account required. Works offline.
+          Free. No account required. Your data stays in your browser.
         </p>
       </div>
 
@@ -104,8 +104,8 @@ export function InfoSection() {
                 desc: "Power user shortcuts for every action. Press ? to see them all.",
               },
               {
-                title: "Works Offline",
-                desc: "Installable as a PWA. Use it without internet (except AI planner).",
+                title: "Private by Design",
+                desc: "All your data stays on your device. No account, no cloud, no tracking.",
               },
             ].map((f) => (
               <li key={f.title} className="flex gap-2">
@@ -142,10 +142,6 @@ export function InfoSection() {
               {
                 title: "Privacy-First",
                 desc: "All data stored locally in your browser. Nothing sent to servers (except AI planner requests).",
-              },
-              {
-                title: "Open Source",
-                desc: "Built with Next.js and deployed on Vercel. Contribute on GitHub.",
               },
               {
                 title: "No Downloads",
@@ -185,13 +181,11 @@ export function InfoSection() {
             <tbody className="text-muted">
               {[
                 ["AI Task Planner", "Yes (free)", "No"],
-                ["Ambient Sounds", "5 sounds (free)", "Paid only"],
-                ["Analytics Heatmap", "Yes (free)", "Basic (paid for yearly)"],
-                ["Offline Support", "Yes (PWA)", "No"],
-                ["Dark Mode", "Yes", "No"],
-                ["Price", "Free", "Free + $3/mo premium"],
-                ["Account Required", "No", "Yes (for reports)"],
-                ["Open Source", "Yes", "No"],
+                ["Ambient Sounds", "5 sounds, layerable (free)", "Yes (free)"],
+                ["Detailed Productivity Tracking", "Free", "Premium"],
+                ["Ads", "None", "Yes (removed with Premium)"],
+                ["Price", "Free, no paid tier", "Free tier + paid Premium"],
+                ["Account Required", "No", "Not for basic use"],
               ].map(([feature, pomo, focus]) => (
                 <tr key={feature} className="border-b border-border/50">
                   <td className="py-2 pr-4">{feature}</td>

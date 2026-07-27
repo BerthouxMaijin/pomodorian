@@ -59,7 +59,7 @@ Pomodorian is a web app built by Jean-Baptiste Berthoux. It combines a customiza
 - **Ambient sounds**: rain, café, lo-fi, forest and fireplace, layerable, with independent volume controls.
 - **Analytics**: session history, daily focus time, streaks, and a 20-week contribution heatmap.
 - **Privacy**: all data local to the browser. Nothing is sent to a server except the AI planner prompt.
-- **Tech**: Next.js App Router, React 19, TypeScript, Tailwind CSS v4, deployed on Vercel. Installable as a PWA. Open source (MIT).
+- **Tech**: Next.js App Router, React 19, TypeScript, Tailwind CSS v4, deployed on Vercel. Installable as a PWA, but there is no service worker and therefore no offline mode: the app needs a connection to load, though a running timer keeps counting if the connection drops mid-session.
 
 ## App
 
@@ -95,13 +95,12 @@ The standard cycle: 25 minutes of work, then a 5-minute short break; after four 
 | Feature | Pomodorian | Pomofocus | Forest | Focus To-Do |
 |---------|-----------|-----------|--------|-------------|
 | AI task planning | Yes (free) | No | No | No |
-| Ambient sounds | 5, free (rain, café, lo-fi, forest, fireplace) | Paid only | No | No |
-| Analytics heatmap | Yes (free) | Paid | Basic | Basic |
-| Offline support | Yes (PWA) | No | Yes | Yes |
-| Account required | No | Yes | Yes | Yes |
-| Price | Free | $3/mo premium | Paid app | Freemium |
-| Open source | Yes | No | No | No |
-| Data storage | Local browser only | Server account | Server account | Server account |
+| Ambient sounds | 5, free and layerable (rain, café, lo-fi, forest, fireplace) | Yes, free and customizable | 1 free, more with Plus | White noise, partly premium |
+| Detailed productivity tracking | Free (heatmap, streaks, daily stats) | Premium | Focus Analytics with Plus | Detailed stats with Premium |
+| Offline support | No | Yes (PWA) | Yes | Not documented |
+| Account required | No | Not for basic use | Not for basic use, required for multi-device sync | Not documented |
+| Price | Free, no paid tier | Free tier + paid Premium | Free tier + Plus subscription | Free tier + paid Premium |
+| Data storage | Local browser only | Local browser, or account | Account for sync | Account for sync |
 
 ## Contact
 
