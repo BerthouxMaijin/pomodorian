@@ -2,7 +2,9 @@
 title: "Context Switching in Dev: The Hidden Cost and How to Fix It"
 description: "Practical strategies to reduce context switching as a developer. Studies show it costs up to 40% of productive time — here's how to protect your deep work."
 date: "2026-03-25"
-readTime: "7 min"
+updated: "2026-07-27"
+readTime: "10 min"
+author: "Jean-Baptiste Berthoux"
 keywords:
   - context switching cost
   - developer productivity
@@ -26,6 +28,14 @@ translationKey: context-switching-cost-development
 You sit down, open your editor, start loading the problem into your head — the data model, the edge cases, the function you were about to refactor — and then Slack pings. A quick question from a colleague. You answer it in two minutes. No big deal, right?
 
 Wrong. That two-minute interruption just cost you far more than two minutes. And if you're a developer, this is probably happening to you dozens of times a day.
+
+## Key Takeaways
+
+- A single interruption costs an average of 23 minutes and 15 seconds to fully recover from, according to Gloria Mark's research at UC Irvine, not the few minutes the interruption itself takes.
+- Task switching can eat up to 40% of someone's productive time, and the cost rises with task complexity, which makes programming especially vulnerable.
+- The average programmer gets just one uninterrupted 2-hour session in an entire workday; the rest is fragmented into windows too short for complex problem-solving.
+- Juggling projects compounds the cost: Weinberg's classic analysis shows that working on 3 simultaneous projects loses 40% of your time to switching, and 5 projects loses 75%.
+- A 30-second "Ready-to-Resume" note (where you stopped, what's next, open questions) can save roughly 15 minutes of context reconstruction the next time you sit back down.
 
 ## What Context Switching Actually Costs
 
@@ -69,7 +79,7 @@ Gerald Weinberg's classic work on software management, [summarized well by Jeff 
 | 4 | 10% | 60% |
 | 5 | 5% | 75% |
 
-By the time you're juggling three projects, you're spending more time switching than actually working. Many developers know this intuitively — they feel busier than ever but can't point to what they actually accomplished. This table is why.
+By the time you're juggling three projects, you're spending more time switching than actually working. Many developers know this intuitively — they feel busier than ever but can't point to what they actually accomplished. This table is why. The same arithmetic applies to any knowledge work, which is the case our piece on [why single-tasking gets more done](/blog/why-multitasking-kills-productivity) makes in detail.
 
 ## The Organizational Blind Spot
 
@@ -97,7 +107,7 @@ A [scoping review of 32 studies](https://pmc.ncbi.nlm.nih.gov/articles/PMC125328
 
 The power of the Pomodoro isn't just the 25-minute timer. It's the **commitment to not switching** during that window. When a distraction pops into your head, you write it down and continue. The break gives you a designated moment to check Slack, respond to messages, and handle the small stuff — so it doesn't leak into your focus time.
 
-Tools like [Pomodorian](https://pomodorian.app) make this especially practical for developers by combining the timer with AI task planning and ambient sounds. Instead of figuring out what to work on during each session, you break down your task upfront and then focus purely on execution. It removes one more decision — and one more opportunity to switch context.
+Tools like [Pomodorian](https://pomodorian.app) make this especially practical for developers by combining the timer with AI task planning and ambient sounds. Instead of figuring out what to work on during each session, you break down your task upfront and then focus purely on execution. It removes one more decision — and one more opportunity to switch context. For more on structuring the technique specifically around engineering work, see [pomodoro for developers](/pomodoro-for-developers).
 
 ### 3. Batch your communication
 
@@ -115,6 +125,15 @@ Sophie Leroy's research suggests a practical countermeasure: the [**"Ready-to-Re
 
 This takes 30 seconds and can save you 15 minutes of context reconstruction later. A simple `// TODO: next step — handle the edge case where user.role is null` in your code can be enough to get you back up to speed.
 
+Here's a copy-paste template you can drop into a scratch file, a code comment, or your task tracker right before you step away:
+
+```text
+Where I stopped:
+Next concrete step:
+Open question:
+Files/links involved:
+```
+
 ### 5. Protect your first hours
 
 For most people, the first 2-3 hours of the workday are when cognitive resources are highest. Don't waste them on email triage and standup meetings. Do your hardest, most creative work first, and push administrative tasks to the afternoon.
@@ -127,7 +146,7 @@ If you're working on three features simultaneously, you're not three times as pr
 
 ## Making It Sustainable
 
-Reducing context switching isn't about becoming a hermit or ignoring your team. It's about being intentional with your attention — the most valuable resource you have as a developer.
+Reducing context switching isn't about becoming a hermit or ignoring your team. It's about being intentional with your attention — the most valuable resource you have as a developer. Left unmanaged, this kind of fragmented attention is also one of the clearest paths to [burnout in software engineering](/blog/avoid-burnout-software-engineer), so protecting focus time isn't just about output.
 
 The research is unambiguous: uninterrupted focus time is when the real work happens. Every interruption has a cost, and those costs compound throughout the day. But the fix doesn't require an organizational overhaul. Start small:
 
@@ -137,5 +156,22 @@ The research is unambiguous: uninterrupted focus time is when the real work happ
 - Leave a breadcrumb note when you're pulled away
 
 You won't eliminate context switching entirely — that's not realistic. But even reclaiming one or two extra hours of focused coding per day can transform your output, your code quality, and honestly, how you feel about your work.
+
+## Frequently Asked Questions
+
+### How much does context switching actually cost in lost time?
+Task switching can cost up to 40% of someone's productive time, according to research cited by the American Psychological Association, and the penalty grows with how complex the task is. For programming, which requires holding an intricate mental model in working memory, the cost sits on the higher end of that range.
+
+### What is Gloria Mark's 23-minute finding, exactly?
+Gloria Mark's research at UC Irvine found it takes an average of 23 minutes and 15 seconds to fully return to a task after an interruption, not just to notice you've been interrupted, but to get back to the same depth of focus you had before. Four interruptions in a single session can add up to over 90 minutes of lost recovery time.
+
+### How do I protect focus blocks when I work on a team?
+Block 2-3 hour windows on your calendar and treat them as non-negotiable: decline meetings that land inside them and set a visible status like "Deep work, back at 2pm." Making the block visible to teammates matters as much as the block itself, since most people will hold a question if they can see you're heads-down.
+
+### Should I turn off Slack notifications during focus time?
+Yes, or at minimum batch your communication to a few fixed check-in times a day, such as 9am, noon, and 4pm. Most messages don't need an instant reply despite what it feels like in the moment, and closing Slack during a Pomodoro session removes the temptation to "just check" mid-task.
+
+### Does working on multiple projects at once really hurt productivity that much?
+Yes. Weinberg's classic analysis shows that two simultaneous projects cost you 20% of your time to switching, three projects cost 40%, and five projects cost 75%, leaving only 5% of your time actually productive on any one of them. Finishing one thing before starting the next protects far more time than it costs.
 
 The cost of context switching is real. The good news is, so is the fix.
