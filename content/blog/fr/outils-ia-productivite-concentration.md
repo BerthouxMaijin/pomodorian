@@ -11,6 +11,7 @@ keywords:
 status: published
 score: 9
 sources: []
+translationKey: ai-productivity-tools-focus
 ---
 
 ## Le problème des méthodes de productivité classiques

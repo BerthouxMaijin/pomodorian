@@ -19,6 +19,7 @@ sources:
   - "https://calnewport.com/deep-work-rules-for-focused-success-in-a-distracted-world/"
   - "https://www.frontiersin.org/journals/education/articles/10.3389/feduc.2025.1711718/full"
   - "https://www.thetransmitter.org/from-bench-to-bot/keeping-it-personal-how-to-preserve-your-voice-when-using-ai/"
+translationKey: ai-writing-keep-your-voice
 ---
 
 L'IA ne va pas remplacer les écrivains. Mais elle risque de les faire tous se ressembler.

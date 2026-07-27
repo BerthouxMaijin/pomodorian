@@ -11,6 +11,7 @@ keywords:
 status: published
 score: 10
 sources: []
+translationKey: best-pomodoro-apps-2026
 ---
 
 ## Why Use a Pomodoro Timer App?

@@ -19,6 +19,7 @@ sources:
   - "https://www.pwc.com/us/en/tech-effect/ai-analytics/ai-hallucinations.html"
   - "https://vertu.com/lifestyle/chatgpt-vs-claude-vs-perplexity-the-definitive-2026-ai-tools-comparison-for-business/"
   - "https://futureofconsulting.ai/ai-leadership/2026-consultings-ai-revolution-update/"
+translationKey: consultant-orchestrate-ai-tools
 ---
 
 Un consultant passe en moyenne 60 % de son temps sur la recherche, l'analyse et la production de livrables. Le reste se partage entre la relation client, la coordination d'équipe et la vente. L'IA générative promet d'accélérer massivement ce premier bloc. Et c'est vrai : les consultants qui utilisent des outils IA complètent 12 % de tâches supplémentaires et travaillent 25 % plus vite, selon une étude Harvard/BCG de 2024.

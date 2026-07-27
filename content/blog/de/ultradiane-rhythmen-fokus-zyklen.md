@@ -19,6 +19,7 @@ sources:
   - "https://pubmed.ncbi.nlm.nih.gov/534670/"
   - "https://pubmed.ncbi.nlm.nih.gov/7870505/"
   - "https://pmc.ncbi.nlm.nih.gov/articles/PMC6824411/"
+translationKey: ultradian-rhythms-natural-focus-cycles
 ---
 
 Dein Körper weiß bereits, wann er fokussieren und wann er ruhen sollte. Alle 90 bis 120 Minuten durchläuft dein Gehirn eine Welle hoher Aufmerksamkeit, gefolgt von einem natürlichen Energietief. Das sind ultradiane Rhythmen — und wer lernt, mit ihnen statt gegen sie zu arbeiten, kann mehr schaffen, ohne auszubrennen.

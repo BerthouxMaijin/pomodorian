@@ -20,6 +20,7 @@ sources:
   - "https://pmc.ncbi.nlm.nih.gov/articles/PMC6088366/"
   - "https://gero.usc.edu/2025/07/08/mindfulness-meditation-improve-attention/"
   - "https://miraclemorning.com/"
+translationKey: morning-routines-productive-people
 ---
 
 Vous connaissez ces articles qui vous expliquent que tous les millionnaires se lèvent à 4h30, méditent 45 minutes, prennent un bain glacé et écrivent trois pages de journal intime — le tout avant que vous n'ayez ouvert les yeux ?

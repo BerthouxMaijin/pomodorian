@@ -20,6 +20,7 @@ sources:
   - "https://pomodo.io/blog/who-is-francesco-cirillo/"
   - "https://desktime.com/blog/post-pandemic-productivity"
   - "https://hbr.org/2011/01/the-most-important-practice-i"
+translationKey: customize-pomodoro-intervals
 ---
 
 The classic Pomodoro Technique tells you to work for 25 minutes, break for 5, and repeat. It's clean, simple, and it works — for a lot of people. But here's the thing: Francesco Cirillo invented that ratio as a university student in the late 1980s, timing himself with a [tomato-shaped kitchen timer](https://www.pomodorotechnique.com/). His context was studying. Yours might be writing code, designing interfaces, drafting a business plan, or plowing through emails.

@@ -19,6 +19,7 @@ sources:
   - "https://academic.oup.com/jcr/article-abstract/39/4/784/1798283"
   - "https://github.blog/developer-skills/career-growth/how-to-get-in-the-flow-while-coding-and-why-its-important/"
   - "https://queue.acm.org/detail.cfm?id=3454124"
+translationKey: deep-work-programmers-framework
 ---
 
 You know the feeling. You sit down to solve a gnarly bug or architect a new feature. Thirty minutes in, you're holding the entire call stack in your head — and then Slack pings. A standup reminder fires. Someone asks if you reviewed their PR. By the time you get back to your editor, the mental model is gone. You're starting over.

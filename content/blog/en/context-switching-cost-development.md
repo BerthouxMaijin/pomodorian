@@ -20,6 +20,7 @@ sources:
   - "https://pubsonline.informs.org/doi/10.1287/orsc.2017.1184"
   - "https://www.atlassian.com/blog/workplace-woes-meetings"
   - "https://pmc.ncbi.nlm.nih.gov/articles/PMC12532815/"
+translationKey: context-switching-cost-development
 ---
 
 You sit down, open your editor, start loading the problem into your head — the data model, the edge cases, the function you were about to refactor — and then Slack pings. A quick question from a colleague. You answer it in two minutes. No big deal, right?

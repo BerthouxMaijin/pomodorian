@@ -25,6 +25,7 @@ sources:
   - "https://www.index.dev/blog/developer-productivity-statistics-with-ai-tools"
   - "https://calnewport.com/writing/"
   - "https://www.faros.ai/blog/ai-software-engineering"
+translationKey: developer-productivity-ai-era
 ---
 
 Developers in 2026 write code alongside machines. GitHub Copilot autocompletes in the IDE, Cursor rewrites entire files, Claude Code runs multi-step tasks from the terminal. According to [industry data compiled by Index.dev](https://www.index.dev/blog/developer-productivity-statistics-with-ai-tools), 84% of developers now use at least one AI assistant, and AI generates 41% of all production code.

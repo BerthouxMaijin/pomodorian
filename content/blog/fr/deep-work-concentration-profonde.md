@@ -17,6 +17,7 @@ sources:
   - "https://doi.org/10.1145/1357054.1357072"
   - "https://www.pomodorotechnique.com/"
   - "https://desktime.com/blog/17-52-ratio"
+translationKey: deep-work-programmers-framework
 ---
 
 Vous êtes assis devant votre écran depuis deux heures. Vous avez répondu à des e-mails, scrollé Slack, ouvert trois onglets de documentation, commencé un rapport… et pourtant, vous n'avez rien *produit* de substantiel. Ce sentiment est familier pour la plupart des travailleurs du savoir. Et il a un nom : le travail superficiel.

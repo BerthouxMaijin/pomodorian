@@ -22,6 +22,7 @@ sources:
   - "https://pmc.ncbi.nlm.nih.gov/articles/PMC12292963/"
   - "https://asana.com/resources/flow-state-work"
   - "https://calnewport.com/deep-work-rules-for-focused-success-in-a-distracted-world/"
+translationKey: long-pomodoro-sessions-guide
 ---
 
 Vous vous installez pour écrire une fonction complexe. Vous lancez votre minuteur Pomodoro à 25 minutes. Vous passez les dix premières minutes à cerner le problème, les dix suivantes à prendre de l'élan — et le minuteur sonne. Vous êtes enfin dans la zone, et maintenant vous devriez prendre une pause.

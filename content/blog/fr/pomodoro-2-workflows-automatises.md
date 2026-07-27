@@ -21,6 +21,7 @@ sources:
   - "https://www.pomodorotechnique.com/"
   - "https://formalpsychology.com/cognitive-load-and-workplace-productivity-a-psychological-perspective/"
   - "https://www.todoist.com/productivity-methods/pomodoro-technique"
+translationKey: pomodoro-2-automated-workflows
 ---
 
 **La technique Pomodoro a 35 ans. Les workflows dans lesquels on l'applique, eux, ont radicalement changé.** Quand Francesco Cirillo a saisi son minuteur en forme de tomate à la fin des années 1980, il cherchait à se concentrer sur ses cours universitaires. Aujourd'hui, un développeur lance un agent de code en arrière-plan, un rédacteur demande à Claude de structurer son plan, et un consultant génère une analyse concurrentielle en trois prompts. Le travail n'est plus une suite linéaire de tâches : c'est une alternance entre pilotage d'outils autonomes et réflexion profonde.

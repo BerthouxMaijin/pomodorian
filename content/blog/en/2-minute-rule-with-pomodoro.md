@@ -20,6 +20,7 @@ sources:
   - "https://thedecisionlab.com/biases/decision-fatigue"
   - "https://facilethings.com/blog/en/pomodoro-technique"
   - "https://todoist.com/productivity-methods/pomodoro-technique"
+translationKey: 2-minute-rule-with-pomodoro
 ---
 
 You sit down to start a focused work session. You set your timer. And then it hits you — you forgot to reply to that email. You still need to rename that file. Oh, and that Slack message from this morning is still unanswered.

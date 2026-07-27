@@ -19,6 +19,7 @@ sources:
   - "https://www.sciencedirect.com/science/article/abs/pii/S0749597809000399"
   - "https://calnewport.com/deep-work-rules-for-focused-success-in-a-distracted-world/"
   - "https://desktime.com/blog/productivity-research"
+translationKey: build-daily-focus-habit-30-days
 ---
 
 Vous vous installez pour travailler. Vous ouvrez votre ordinateur. Puis vous vérifiez vos emails, jetez un oeil à Slack, parcourez les news, allez vous resservir un café — et une heure s'est envolée. Ça vous dit quelque chose ?

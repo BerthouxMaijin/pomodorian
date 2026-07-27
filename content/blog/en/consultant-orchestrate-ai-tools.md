@@ -19,6 +19,7 @@ sources:
   - "https://www.pwc.com/us/en/tech-effect/ai-analytics/ai-hallucinations.html"
   - "https://vertu.com/lifestyle/chatgpt-vs-claude-vs-perplexity-the-definitive-2026-ai-tools-comparison-for-business/"
   - "https://futureofconsulting.ai/ai-leadership/2026-consultings-ai-revolution-update/"
+translationKey: consultant-orchestrate-ai-tools
 ---
 
 The average consultant spends roughly 60% of their time on research, analysis, and deliverable production. AI tools promise to compress that block dramatically. And the data backs it up: a 2024 Harvard/BCG study found that consultants using AI completed 12.2% more tasks and finished them 25.1% faster.

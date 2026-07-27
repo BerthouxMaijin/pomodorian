@@ -17,6 +17,7 @@ sources:
   - "https://doi.org/10.1177/0305735605050650"
   - "https://doi.org/10.1002/acp.1731"
   - "https://doi.org/10.1111/j.1469-7610.2007.01749.x"
+translationKey: ambient-sounds-productivity-science
 ---
 
 Abres el portátil para ponerte a trabajar. Silencio total. Y, paradójicamente, ese silencio empieza a ser ruidoso: el zumbido del frigorífico, el vecino que tose, una notificación en el móvil. Tu atención salta de un estímulo a otro y, antes de darte cuenta, han pasado veinte minutos sin que hayas escrito una sola línea.

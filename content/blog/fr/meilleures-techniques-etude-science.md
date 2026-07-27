@@ -22,6 +22,7 @@ sources:
   - "https://pubmed.ncbi.nlm.nih.gov/16318592/"
   - "https://www.sleepfoundation.org/how-sleep-works/memory-and-sleep"
   - "https://pmc.ncbi.nlm.nih.gov/articles/PMC4117135/"
+translationKey: best-study-techniques-science
 ---
 
 Vous révisez depuis trois heures d'affilée. Votre surligneur est presque vide, vos notes couvrent cinq pages, et vous avez le sentiment d'avoir été productif. Mais si quelqu'un vous demandait d'expliquer ce que vous venez d'apprendre en partant de zéro — vous y arriveriez ?

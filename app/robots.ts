@@ -27,6 +27,9 @@ export default function robots(): MetadataRoute.Robots {
           "FacebookBot",
         ],
         allow: "/",
+        // The most specific group wins, so /api/ must be repeated here —
+        // otherwise these bots ignore the disallow in the `*` group.
+        disallow: ["/api/"],
       },
     ],
     sitemap: `${SITE_URL}/sitemap.xml`,

@@ -21,6 +21,7 @@ sources:
   - "https://desktime.com/blog/52-17-updated"
   - "https://www.sciencedirect.com/science/article/pii/S0950584922002257"
   - "https://pmc.ncbi.nlm.nih.gov/articles/PMC12532815/"
+translationKey: avoid-burnout-software-engineer
 ---
 
 You're shipping features, squashing bugs, reviewing PRs, sitting through standups — and somewhere along the way, the thing you used to love starts feeling like a grind. You're not lazy. You're not bad at your job. You might just be burned out.

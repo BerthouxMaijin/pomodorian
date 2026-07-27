@@ -18,6 +18,7 @@ sources:
   - "https://doi.org/10.1126/science.1183614"
   - "https://www.npr.org/2008/10/02/95256794/think-youre-multitasking-think-again"
   - "https://desktime.com/blog/17-52-ratio-most-productive-people"
+translationKey: why-multitasking-kills-productivity
 ---
 
 Vous répondez à un email tout en participant à une réunion en visio, avec trois onglets de travail ouverts en arrière-plan. Vous avez l'impression d'avancer sur tous les fronts. En réalité, votre cerveau fait autre chose : il bascule frénétiquement d'une tâche à l'autre, et chaque basculement a un coût. Un coût que vous ne percevez pas, mais que les neurosciences mesurent très bien.

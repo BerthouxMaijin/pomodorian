@@ -17,6 +17,7 @@ sources:
   - "https://www.pnas.org/doi/10.1073/pnas.0903620106"
   - "https://gloriamark.com/attention-span/"
   - "https://www.mckinsey.com/capabilities/people-and-organizational-performance/our-insights/increasing-the-meaning-quotient-of-work"
+translationKey: why-multitasking-kills-productivity
 ---
 
 You're replying to a Slack message while half-reading an email while a code review tab blinks in the background. You feel busy. You feel productive. But here's the uncomfortable truth: you're probably getting less done than if you picked one of those things and actually finished it.

@@ -22,6 +22,7 @@ sources:
   - "https://pubmed.ncbi.nlm.nih.gov/16318592/"
   - "https://www.sleepfoundation.org/how-sleep-works/memory-and-sleep"
   - "https://pmc.ncbi.nlm.nih.gov/articles/PMC4117135/"
+translationKey: best-study-techniques-science
 ---
 
 Llevas tres horas estudiando sin parar. Tu resaltador está casi seco, tus apuntes cubren cinco páginas, y sientes que has sido productivo. Pero si alguien te pidiera explicar desde cero lo que acabas de aprender, ¿podrías?

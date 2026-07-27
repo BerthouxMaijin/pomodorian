@@ -23,6 +23,7 @@ sources:
   - "https://owllabs.com/state-of-hybrid-work/2024"
   - "https://pmc.ncbi.nlm.nih.gov/articles/PMC12292963/"
   - "https://www.sciencedirect.com/science/article/abs/pii/S0749597809000399"
+translationKey: remote-worker-guide-staying-focused
 ---
 
 You sit down at your desk. You open your laptop. You check Slack, answer two messages, scroll through email, refill your coffee, pet the dog, and suddenly it's 11 a.m. and you haven't started any real work.

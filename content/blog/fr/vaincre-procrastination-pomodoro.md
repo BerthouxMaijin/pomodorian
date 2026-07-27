@@ -19,6 +19,7 @@ sources:
   - "https://pubmed.ncbi.nlm.nih.gov/21211793/"
   - "https://desktime.com/blog/52-17-updated"
   - "https://pmc.ncbi.nlm.nih.gov/articles/PMC12292963/"
+translationKey: stop-procrastinating-timeboxing
 ---
 
 Vous avez une tâche importante à faire. Vous le savez. Et pourtant, vous vérifiez vos emails pour la troisième fois en dix minutes. Vous rangez votre bureau. Vous ouvrez un nouvel onglet « juste pour regarder vite fait ». Une heure plus tard, la tâche n'a pas avancé d'un centimètre — et la culpabilité, elle, a doublé.

@@ -17,6 +17,7 @@ sources:
   - "https://ics.uci.edu/~gmark/chi08-mark.pdf"
   - "https://desktime.com/blog/52-17-updated"
   - "https://academic.oup.com/jcr/article-abstract/39/4/784/1798283"
+translationKey: remote-worker-guide-staying-focused
 ---
 
 Travailler depuis chez soi, c'est la promesse d'un cadre flexible, sans trajets, avec la liberté d'organiser ses journées à sa manière. Pourtant, beaucoup de télétravailleurs connaissent l'envers du décor : la frontière entre vie pro et vie perso s'efface, les interruptions s'accumulent, et on finit par travailler plus longtemps sans être plus efficace. Selon le rapport [State of Remote Work 2023 de Buffer](https://buffer.com/state-of-remote-work/2023), 81 % des télétravailleurs consultent leurs emails en dehors des heures de travail, dont 63 % le week-end.

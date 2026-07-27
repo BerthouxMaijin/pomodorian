@@ -23,6 +23,7 @@ sources:
   - "https://pubmed.ncbi.nlm.nih.gov/38428577/"
   - "https://www.tandfonline.com/doi/full/10.1080/02673843.2024.2388787"
   - "https://www.nature.com/articles/s41598-023-38313-4"
+translationKey: ambient-sounds-productivity-science
 ---
 
 Vous êtes installé à votre bureau, prêt à attaquer une tâche importante. Mais votre collègue passe un appel, la machine à café gronde, et quelqu'un discute du match d'hier à trois mètres de vous. Résultat : votre concentration s'évapore avant même d'avoir commencé. Si vous travaillez de chez vous, remplacez les collègues par les voisins qui bricolent, les livreurs qui sonnent et le chat qui réclame des croquettes — le problème reste le même.

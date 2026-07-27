@@ -21,6 +21,7 @@ sources:
   - "https://gloriamark.com/attention-span/"
   - "https://ics.uci.edu/~gmark/chi08-mark.pdf"
   - "https://calnewport.com/writing/"
+translationKey: ai-era-productivity-guide
 ---
 
 **Sommaire**

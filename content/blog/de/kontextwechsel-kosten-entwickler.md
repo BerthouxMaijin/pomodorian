@@ -20,6 +20,7 @@ sources:
   - "https://pubsonline.informs.org/doi/10.1287/orsc.2017.1184"
   - "https://www.atlassian.com/blog/workplace-woes-meetings"
   - "https://pmc.ncbi.nlm.nih.gov/articles/PMC12532815/"
+translationKey: context-switching-cost-development
 ---
 
 Du setzt dich hin, öffnest deinen Editor, fängst an, das Problem in deinem Kopf aufzubauen — das Datenmodell, die Randfälle, die Funktion, die du gerade refactoren wolltest — und dann pingt Slack. Eine kurze Frage von einem Kollegen. Du antwortest in zwei Minuten. Kein großes Ding, oder?

@@ -20,6 +20,7 @@ sources:
   - "https://www.mckinsey.com/capabilities/strategy-and-corporate-finance/our-insights/building-leaders-in-the-age-of-ai"
   - "https://www.nature.com/articles/s41586-025-09505-x"
   - "https://www.sciencedirect.com/science/article/pii/S0747563224002206"
+translationKey: managers-when-not-to-use-ai
 ---
 
 **Sommaire**

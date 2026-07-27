@@ -20,6 +20,7 @@ sources:
   - "https://pomodo.io/blog/who-is-francesco-cirillo/"
   - "https://desktime.com/blog/post-pandemic-productivity"
   - "https://hbr.org/2011/01/the-most-important-practice-i"
+translationKey: customize-pomodoro-intervals
 ---
 
 La technique Pomodoro classique est limpide : 25 minutes de travail, 5 minutes de pause, on recommence. Ça fonctionne — pour beaucoup de gens. Mais il faut garder en tête que Francesco Cirillo a inventé ce ratio quand il était étudiant à la fin des années 1980, en se chronométrant avec un [minuteur de cuisine en forme de tomate](https://www.pomodorotechnique.com/). Son contexte, c'était les révisions. Le vôtre, c'est peut-être écrire du code, concevoir des interfaces, rédiger un business plan ou traiter une avalanche d'emails.

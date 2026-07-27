@@ -17,6 +17,7 @@ sources:
   - "https://doi.org/10.3389/fnhum.2018.00315"
   - "https://doi.org/10.1016/j.jarmac.2018.01.012"
   - "https://francescocirillo.com/products/the-pomodoro-technique"
+translationKey: use-pomodoro-breaks-effectively
 ---
 
 Le timer sonne. Vos 25 minutes de focus sont terminées. Vous avez exactement 5 minutes devant vous. Et là, le réflexe classique : vous ouvrez Instagram, vous scrollez, vous répondez à un message… et quand le timer reprend, vous êtes *moins* concentré qu'avant la pause.

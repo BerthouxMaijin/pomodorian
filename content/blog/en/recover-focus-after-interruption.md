@@ -17,6 +17,7 @@ sources:
   - "https://pubmed.ncbi.nlm.nih.gov/36859717/"
   - "https://desktime.com/blog/52-17-updated"
   - "https://today.duke.edu/2021/11/3-ways-bounce-back-after-work-interruption"
+translationKey: recover-focus-after-interruption
 ---
 
 You're deep in a problem. The pieces are clicking together. You can almost see the solution — and then your phone buzzes, someone pings you on Slack, or a coworker taps your shoulder. Just like that, the thread you were holding in your mind unravels.

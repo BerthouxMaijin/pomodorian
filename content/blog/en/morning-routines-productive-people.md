@@ -21,6 +21,7 @@ sources:
   - "https://www.health.harvard.edu/blog/regular-exercise-changes-brain-improve-memory-thinking-skills-201404097110"
   - "https://www.cnbc.com/2018/11/27/tim-cook-reveals-the-morning-routine-that-sets-him-up-for-success.html"
   - "https://www.briantracy.com/blog/time-management/the-truth-about-frogs/"
+translationKey: morning-routines-productive-people
 ---
 
 Every productivity article on the internet wants you to wake up at 4 AM, take a cold shower, journal for 30 minutes, and meditate on a mountaintop — all before breakfast. That sounds exhausting. And for most people, it's completely unsustainable.

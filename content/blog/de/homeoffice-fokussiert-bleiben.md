@@ -18,6 +18,7 @@ sources:
   - "https://desktime.com/blog/52-17-updated"
   - "https://bpspsychub.onlinelibrary.wiley.com/doi/10.1111/bjep.12593"
   - "https://escholarship.org/uc/item/9bw3n707"
+translationKey: remote-worker-guide-staying-focused
 ---
 
 Du sitzt am Schreibtisch, der Laptop ist auf, der Kaffee steht bereit — und trotzdem wandert dein Blick alle fünf Minuten zum Handy, zur Küche oder zum Fenster. Willkommen im Homeoffice. Der Ort, an dem Produktivität und Prokrastination ständig um deine Aufmerksamkeit konkurrieren.

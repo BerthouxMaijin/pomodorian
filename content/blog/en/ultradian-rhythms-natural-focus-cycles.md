@@ -20,6 +20,7 @@ sources:
   - "https://pubmed.ncbi.nlm.nih.gov/534670/"
   - "https://pubmed.ncbi.nlm.nih.gov/7870505/"
   - "https://pmc.ncbi.nlm.nih.gov/articles/PMC6824411/"
+translationKey: ultradian-rhythms-natural-focus-cycles
 ---
 
 Your body already knows when to focus and when to rest. Every 90 to 120 minutes, your brain cycles through a wave of high alertness followed by a natural dip in energy. These are ultradian rhythms, and learning to work with them instead of against them is one of the simplest ways to get more done without burning out.

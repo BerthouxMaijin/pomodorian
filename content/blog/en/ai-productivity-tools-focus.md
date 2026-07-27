@@ -11,6 +11,7 @@ keywords:
 status: published
 score: 10
 sources: []
+translationKey: ai-productivity-tools-focus
 ---
 
 ## The Problem with Traditional Productivity

@@ -17,6 +17,7 @@ sources:
   - "https://pubmed.ncbi.nlm.nih.gov/20363650/"
   - "https://www.aao.org/eye-health/diseases/what-is-eye-strain"
   - "https://positivepsychology.com/attention-restoration-theory/"
+translationKey: use-pomodoro-breaks-effectively
 ---
 
 You just finished a 25-minute focus session. The timer rings. Now what? If your instinct is to check Twitter, scroll Instagram, or dive into your inbox — you're not alone. But you're also burning the exact mental resources you need for the next round.

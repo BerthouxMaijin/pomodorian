@@ -19,6 +19,7 @@ sources:
   - "https://academic.oup.com/jcr/article-abstract/39/4/784/1798283"
   - "https://www.mayoclinic.org/healthy-lifestyle/adult-health/in-depth/office-ergonomics/art-20046169"
   - "https://pmc.ncbi.nlm.nih.gov/articles/PMC8582919/"
+translationKey: remote-worker-guide-staying-focused
 ---
 
 Trabajas desde casa. Nadie te controla los horarios, nadie te ve si te levantas a hacer café por quinta vez, nadie te dice cuándo parar. Y eso, que al principio parece libertad, se convierte rápidamente en un problema: los días se desdibujan, las tareas se acumulan sin orden y, cuando cierras el portátil a las ocho de la noche, tienes la sensación de que no avanzaste en nada importante.

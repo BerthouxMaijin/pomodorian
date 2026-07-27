@@ -22,6 +22,7 @@ sources:
   - "https://pmc.ncbi.nlm.nih.gov/articles/PMC12292963/"
   - "https://asana.com/resources/flow-state-work"
   - "https://calnewport.com/deep-work-rules-for-focused-success-in-a-distracted-world/"
+translationKey: long-pomodoro-sessions-guide
 ---
 
 You sit down to write a complex function. You set your Pomodoro timer for 25 minutes. You spend the first ten getting your head around the problem, the next ten building momentum — and then the timer goes off. You're finally in the zone, and now you're supposed to take a break.

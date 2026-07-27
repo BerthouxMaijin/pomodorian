@@ -19,6 +19,7 @@ sources:
   - "https://pubmed.ncbi.nlm.nih.gov/534670/"
   - "https://pubmed.ncbi.nlm.nih.gov/7870505/"
   - "https://pmc.ncbi.nlm.nih.gov/articles/PMC6824411/"
+translationKey: ultradian-rhythms-natural-focus-cycles
 ---
 
 Tu cuerpo ya sabe cuándo concentrarte y cuándo descansar. Cada 90 a 120 minutos, tu cerebro atraviesa una ola de alta alerta seguida de una caída natural de energía. Estos son los ritmos ultradianos, y aprender a trabajar con ellos en lugar de contra ellos es una de las formas más simples de rendir más sin quemarte.

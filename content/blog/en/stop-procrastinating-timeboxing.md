@@ -19,6 +19,7 @@ sources:
   - "https://www.pnas.org/doi/10.1073/pnas.1018033108"
   - "https://www.pomodorotechnique.com/"
   - "https://en.wikipedia.org/wiki/Zeigarnik_effect"
+translationKey: stop-procrastinating-timeboxing
 ---
 
 You know the feeling. You sit down to work. You open the document, the code editor, the blank canvas. And then — nothing. You check your email. You refill your water. You rearrange your desk. Twenty minutes vanish before you write a single word.

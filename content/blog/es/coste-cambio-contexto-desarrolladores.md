@@ -20,6 +20,7 @@ sources:
   - "https://pubsonline.informs.org/doi/10.1287/orsc.2017.1184"
   - "https://www.atlassian.com/blog/workplace-woes-meetings"
   - "https://pmc.ncbi.nlm.nih.gov/articles/PMC12532815/"
+translationKey: context-switching-cost-development
 ---
 
 Te sientas, abres tu editor, empiezas a cargar el problema en tu cabeza -- el modelo de datos, los casos extremos, la función que estabas a punto de refactorizar -- y entonces suena Slack. Una pregunta rápida de un compañero. Respondes en dos minutos. No es gran cosa, ¿verdad?

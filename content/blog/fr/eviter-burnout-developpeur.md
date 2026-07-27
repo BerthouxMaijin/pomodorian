@@ -21,6 +21,7 @@ sources:
   - "https://desktime.com/blog/52-17-updated"
   - "https://www.sciencedirect.com/science/article/pii/S0950584922002257"
   - "https://pmc.ncbi.nlm.nih.gov/articles/PMC12532815/"
+translationKey: avoid-burnout-software-engineer
 ---
 
 Vous livrez des features, squashez des bugs, reviewez des PRs, enchaînez les standups — et quelque part en chemin, ce que vous aimiez faire commence à ressembler à une corvée. Vous n'êtes pas fainéant. Vous ne faites pas mal votre travail. Vous êtes peut-être simplement en burnout.

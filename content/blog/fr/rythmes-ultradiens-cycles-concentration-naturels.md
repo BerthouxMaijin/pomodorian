@@ -19,6 +19,7 @@ sources:
   - "https://pubmed.ncbi.nlm.nih.gov/534670/"
   - "https://pubmed.ncbi.nlm.nih.gov/7870505/"
   - "https://pmc.ncbi.nlm.nih.gov/articles/PMC6824411/"
+translationKey: ultradian-rhythms-natural-focus-cycles
 ---
 
 Votre corps sait déjà quand se concentrer et quand se reposer. Toutes les 90 à 120 minutes, votre cerveau traverse une vague de vigilance élevée suivie d'une baisse naturelle d'énergie. Ce sont les rythmes ultradiens — et apprendre à travailler avec eux plutôt que contre eux est l'un des moyens les plus simples d'être plus productif sans s'épuiser.

@@ -11,6 +11,7 @@ keywords:
 status: published
 score: 10
 sources: []
+translationKey: ambient-sounds-productivity-science
 ---
 
 ## The Coffee Shop Effect

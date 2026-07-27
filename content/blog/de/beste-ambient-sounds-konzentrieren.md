@@ -19,6 +19,7 @@ sources:
   - "https://www.tandfonline.com/doi/full/10.1080/02673843.2024.2388787"
   - "https://pmc.ncbi.nlm.nih.gov/articles/PMC7986458/"
   - "https://pubmed.ncbi.nlm.nih.gov/38428577/"
+translationKey: ambient-sounds-productivity-science
 ---
 
 Du sitzt am Schreibtisch, willst endlich loslegen – und dann hupt draußen ein Auto, der Nachbar bohrt, dein Handy vibriert. Stille ist selten wirklich still. Und selbst wenn es still wäre: Totale Stille ist für viele Menschen gar nicht ideal zum Arbeiten. Genau hier kommen Ambient Sounds ins Spiel.

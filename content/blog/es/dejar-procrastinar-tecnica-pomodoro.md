@@ -18,6 +18,7 @@ sources:
   - "https://psycnet.apa.org/record/2007-19538-002"
   - "https://hbr.org/2018/12/how-timeboxing-works-and-why-it-will-make-you-more-productive"
   - "https://en.wikipedia.org/wiki/Parkinson%27s_law"
+translationKey: stop-procrastinating-timeboxing
 ---
 
 Tienes algo pendiente. Lo sabes. Llevas días (o semanas) arrastrándolo. Abres el documento, miras la pantalla en blanco... y de pronto estás revisando el móvil, haciendo café o reorganizando tu escritorio. Cuando te das cuenta, ha pasado una hora y no has avanzado nada.

@@ -22,6 +22,7 @@ sources:
   - "https://pmc.ncbi.nlm.nih.gov/articles/PMC12292963/"
   - "https://asana.com/resources/flow-state-work"
   - "https://calnewport.com/deep-work-rules-for-focused-success-in-a-distracted-world/"
+translationKey: long-pomodoro-sessions-guide
 ---
 
 Te sientas a escribir una función compleja. Configuras tu temporizador Pomodoro a 25 minutos. Pasas los primeros diez comprendiendo el problema, los siguientes diez tomando impulso -- y entonces suena la alarma. Por fin estás en la zona, y se supone que debes tomar un descanso.

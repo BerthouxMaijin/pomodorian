@@ -20,6 +20,7 @@ sources:
   - "https://www.manager-go.com/efficacite-professionnelle/loi-de-carlson.htm"
   - "https://calnewport.com/deep-work-rules-for-focused-success-in-a-distracted-world/"
   - "https://www.inc.com/karen-tiber-leland/you-could-be-your-own-biggest-interruption-heres-how-to-stop-find-your-focus.html"
+translationKey: recover-focus-after-interruption
 ---
 
 Vous êtes plongé dans un problème complexe — code, rédaction, analyse — et soudain : une notification Slack, un collègue qui passe, un appel imprévu. En quelques secondes, le fil de votre pensée s'est volatilisé. Vous savez exactement ce que ça fait : ce moment où vous regardez votre écran en essayant de vous rappeler *où vous en étiez*.

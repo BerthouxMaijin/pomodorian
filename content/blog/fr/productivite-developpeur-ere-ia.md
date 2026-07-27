@@ -24,6 +24,7 @@ sources:
   - "https://super-productivity.com/blog/pomodoro-technique-for-coders/"
   - "https://www.index.dev/blog/developer-productivity-statistics-with-ai-tools"
   - "https://calnewport.com/writing/"
+translationKey: developer-productivity-ai-era
 ---
 
 En 2026, 84 % des développeurs utilisent au moins un assistant IA au quotidien, et 41 % du code produit dans l'industrie est désormais généré par une machine. Les outils sont partout : Copilot dans l'IDE, Cursor pour le refactoring multi-fichiers, Claude Code dans le terminal pour les tâches complexes. La promesse est claire -- coder plus vite, avec moins de friction.
