@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { FAQ } from "@/lib/faq";
 import { PromoVideo } from "./PromoVideo";
 
 export function InfoSection() {
@@ -201,6 +202,18 @@ export function InfoSection() {
             </tbody>
           </table>
         </div>
+      </div>
+
+      {/* FAQ — text must stay identical to lib/faq.ts, which feeds the FAQPage
+          schema: Google requires the structured data to be visible on the page. */}
+      <div className="glass rounded-2xl p-6 space-y-5">
+        <h3 className="text-lg font-semibold text-foreground">FAQ</h3>
+        {FAQ.map(({ q, a }) => (
+          <div key={q} className="space-y-1.5">
+            <h4 className="font-semibold text-foreground">{q}</h4>
+            <p className="text-muted leading-relaxed">{a}</p>
+          </div>
+        ))}
       </div>
 
       {/* Blog CTA */}

@@ -23,6 +23,7 @@ export function PromoVideo() {
       <video
         ref={videoRef}
         className="w-full aspect-[9/16] object-cover"
+        poster="/promo-poster.jpg"
         playsInline
         muted
         loop

@@ -4,6 +4,16 @@ import type { Metadata } from "next";
 import { seoPages, getSeoPageBySlug } from "@/lib/seo/pages";
 import { getArticleBySlug } from "@/lib/blog/reader";
 import { SITE_URL } from "@/lib/constants";
+import {
+  APP_ID,
+  LOGO_ID,
+  WEBSITE_ID,
+  breadcrumbNode,
+  graph,
+  siteNodes,
+  softwareAppNode,
+} from "@/lib/schema";
+import { JsonLd } from "@/components/seo/JsonLd";
 
 export function generateStaticParams() {
   return seoPages.map((p) => ({ slug: p.slug }));
@@ -121,46 +131,61 @@ export default async function SeoPage({
 
   if (!page) notFound();
 
-  const jsonLd = {
-    "@context": "https://schema.org",
+  const pageUrl = `${SITE_URL}/${page.slug}`;
+
+  const webPageNode = {
     "@type": "WebPage",
+    "@id": `${pageUrl}#webpage`,
+    url: pageUrl,
     name: page.title,
     description: page.description,
-    url: `${SITE_URL}/${page.slug}`,
-    isPartOf: {
-      "@type": "WebSite",
-      name: "Pomodorian",
-      url: SITE_URL,
-    },
+    isPartOf: { "@id": WEBSITE_ID },
+    about: { "@id": APP_ID },
+    primaryImageOfPage: { "@id": LOGO_ID },
+    inLanguage: "en",
     speakable: {
       "@type": "SpeakableSpecification",
       cssSelector: ["h1", "header > p"],
     },
   };
 
-  const breadcrumbLd = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Home", item: SITE_URL },
-      {
-        "@type": "ListItem",
-        position: 2,
-        name: page.h1,
-        item: `${SITE_URL}/${page.slug}`,
-      },
-    ],
-  };
+  // Mirrors the ComparisonTable rendered below, so the list has visible backing.
+  const comparisonNode =
+    page.category === "comparison"
+      ? {
+          "@type": "ItemList",
+          "@id": `${pageUrl}#comparison`,
+          name: page.h1,
+          itemListElement: [
+            { "@type": "ListItem", position: 1, item: { "@id": APP_ID } },
+            {
+              "@type": "ListItem",
+              position: 2,
+              item: {
+                "@type": "SoftwareApplication",
+                name: page.h1.replace("Pomodorian vs ", ""),
+                applicationCategory: "ProductivityApplication",
+              },
+            },
+          ],
+        }
+      : null;
+
+  const crumbs = breadcrumbNode([
+    { name: "Home", url: SITE_URL },
+    { name: page.h1, url: pageUrl },
+  ]);
 
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
+      <JsonLd
+        data={graph([
+          ...siteNodes,
+          softwareAppNode,
+          webPageNode,
+          ...(comparisonNode ? [comparisonNode] : []),
+          crumbs,
+        ])}
       />
 
       <div className="min-h-screen bg-background text-foreground">

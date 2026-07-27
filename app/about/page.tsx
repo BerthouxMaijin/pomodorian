@@ -2,6 +2,15 @@ import Link from "next/link";
 import Image from "next/image";
 import type { Metadata } from "next";
 import { SITE_URL } from "@/lib/constants";
+import {
+  LOGO_ID,
+  PERSON_ID,
+  WEBSITE_ID,
+  breadcrumbNode,
+  graph,
+  siteNodes,
+} from "@/lib/schema";
+import { JsonLd } from "@/components/seo/JsonLd";
 
 export const metadata: Metadata = {
   title: "About — Pomodorian",
@@ -12,39 +21,34 @@ export const metadata: Metadata = {
   },
 };
 
-const personSchema = {
-  "@context": "https://schema.org",
-  "@type": "Person",
-  name: "Jean-Baptiste Berthoux",
+// The Person itself lives in lib/schema (PERSON_ID); this page only declares the
+// page that is *about* him, so both nodes resolve to one entity.
+const profilePage = {
+  "@type": "ProfilePage",
+  "@id": `${SITE_URL}/about#webpage`,
   url: `${SITE_URL}/about`,
-  jobTitle: "Builder",
+  name: "About — Pomodorian",
   description:
-    "French builder and creator of Pomodorian, an AI-powered Pomodoro timer.",
-  sameAs: [
-    "https://github.com/BerthouxMaijin",
-    "https://www.linkedin.com/in/jean-baptiste-berthoux/",
-  ],
-  image: `${SITE_URL}/jb.jpg`,
-  worksFor: {
-    "@type": "Organization",
-    name: "Pomodorian",
-    url: SITE_URL,
+    "Meet the builder behind Pomodorian. Built by Jean-Baptiste Berthoux, a French builder who needed a better focus tool.",
+  isPartOf: { "@id": WEBSITE_ID },
+  mainEntity: { "@id": PERSON_ID },
+  primaryImageOfPage: { "@id": LOGO_ID },
+  inLanguage: "en",
+  speakable: {
+    "@type": "SpeakableSpecification",
+    cssSelector: ["h1", "h1 + p"],
   },
-  knowsAbout: [
-    "Web Development",
-    "Artificial Intelligence",
-    "Productivity",
-    "Pomodoro Technique",
-  ],
 };
+
+const crumbs = breadcrumbNode([
+  { name: "Home", url: SITE_URL },
+  { name: "About", url: `${SITE_URL}/about` },
+]);
 
 export default function About() {
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
-      />
+      <JsonLd data={graph([...siteNodes, profilePage, crumbs])} />
       <div className="min-h-screen bg-background text-foreground">
         <div className="max-w-3xl mx-auto px-6 pt-12 pb-20">
           <Link

@@ -1,138 +1,59 @@
 import { SITE_URL } from "@/lib/constants";
+import { FAQ } from "@/lib/faq";
+import {
+  APP_ID,
+  LOGO_ID,
+  ORG_ID,
+  WEBSITE_ID,
+  graph,
+  siteNodes,
+  softwareAppNode,
+} from "@/lib/schema";
+import { JsonLd } from "./JsonLd";
 
-const softwareApp = {
-  "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
-  name: "Pomodorian",
-  description:
-    "AI-powered Pomodoro timer with session planning, ambient sounds, and focus analytics.",
+const homePage = {
+  "@type": ["WebPage", "FAQPage"],
+  "@id": `${SITE_URL}/#webpage`,
   url: SITE_URL,
-  applicationCategory: "ProductivityApplication",
-  operatingSystem: "Web",
-  offers: {
-    "@type": "Offer",
-    price: "0",
-    priceCurrency: "USD",
+  name: "Pomodorian — Free AI Pomodoro Timer | Focus, Plan, Track",
+  description:
+    "Free Pomodoro timer with AI task planning. Describe your goal, get structured focus sessions. Built-in ambient sounds, analytics, and keyboard shortcuts.",
+  isPartOf: { "@id": WEBSITE_ID },
+  about: { "@id": APP_ID },
+  primaryImageOfPage: { "@id": LOGO_ID },
+  inLanguage: "en",
+  speakable: {
+    "@type": "SpeakableSpecification",
+    cssSelector: ["h1", "h1 + p"],
   },
-  featureList: [
-    "AI Session Planner",
-    "Pomodoro Timer",
-    "Ambient Sounds (Rain, Café, Lo-fi, Forest, Fireplace)",
-    "Focus Analytics with Contribution Heatmap",
-    "Keyboard Shortcuts",
-    "Works Offline (PWA)",
-    "Dark and Light Mode",
-  ],
+  mainEntity: FAQ.map(({ q, a }) => ({
+    "@type": "Question",
+    name: q,
+    acceptedAnswer: { "@type": "Answer", text: a },
+  })),
 };
 
-const faqPage = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: [
-    {
-      "@type": "Question",
-      name: "What is the Pomodoro Technique?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "The Pomodoro Technique is a time management method that uses 25-minute focused work sessions (called pomodoros) separated by 5-minute breaks. After 4 pomodoros, you take a longer 15-30 minute break. It was developed by Francesco Cirillo in the late 1980s.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Is Pomodorian free?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Yes, Pomodorian is completely free. No account required, no ads, and no hidden fees. All features including AI session planning, ambient sounds, and focus analytics are available at no cost.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "How does the AI Session Planner work?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Describe your goal in natural language (e.g., 'Prepare a presentation and write follow-up emails'), and the AI breaks it down into concrete, pomodoro-sized tasks with time estimates. It supports 8 languages and uses Claude AI.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "Does Pomodorian work offline?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Yes, Pomodorian is a Progressive Web App (PWA) that can be installed on your device and works offline. The timer, tasks, ambient sounds, and analytics all work without an internet connection. Only the AI planner requires connectivity.",
-      },
-    },
-    {
-      "@type": "Question",
-      name: "What ambient sounds are available?",
-      acceptedAnswer: {
-        "@type": "Answer",
-        text: "Pomodorian includes 5 free ambient sounds: rain, café, lo-fi beats, forest, and fireplace. You can layer multiple sounds together and adjust individual volume levels to create your perfect focus environment.",
-      },
-    },
-  ],
-};
-
-const organization = {
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  name: "Pomodorian",
-  url: SITE_URL,
-  logo: {
-    "@type": "ImageObject",
-    url: `${SITE_URL}/icons/icon-512.png`,
-    width: 512,
-    height: 512,
-  },
+// Frame extracted from public/promo-reel.mp4; duration and upload date mirror
+// the real asset, so keep them in sync if the reel is ever re-cut.
+const promoVideo = {
+  "@type": "VideoObject",
+  "@id": `${SITE_URL}/#promo-video`,
+  name: "Pomodorian app walkthrough",
   description:
-    "Free AI-powered Pomodoro timer with session planning, ambient sounds, and focus analytics.",
-  founder: {
-    "@type": "Person",
-    name: "Jean-Baptiste Berthoux",
-    url: `${SITE_URL}/about`,
-    sameAs: [
-      "https://github.com/BerthouxMaijin",
-      "https://www.linkedin.com/in/jean-baptiste-berthoux/",
-    ],
-  },
-  sameAs: [
-    "https://github.com/BerthouxMaijin/pomodorian",
-  ],
-  contactPoint: {
-    "@type": "ContactPoint",
-    contactType: "customer support",
-    url: `${SITE_URL}/contact`,
-  },
-};
-
-const webSite = {
-  "@context": "https://schema.org",
-  "@type": "WebSite",
-  name: "Pomodorian",
-  url: SITE_URL,
-  description:
-    "Free AI-powered Pomodoro timer with session planning, ambient sounds, and focus analytics.",
-  inLanguage: ["en", "fr", "es", "de"],
+    "A short walkthrough of Pomodorian: AI session planning, ambient sounds, and the focus analytics heatmap.",
+  thumbnailUrl: [`${SITE_URL}/promo-poster.jpg`],
+  uploadDate: "2026-03-25T14:38:43+01:00",
+  duration: "PT15S",
+  contentUrl: `${SITE_URL}/promo-reel.mp4`,
+  embedUrl: SITE_URL,
+  isFamilyFriendly: true,
+  publisher: { "@id": ORG_ID },
 };
 
 export function HomeSchemas() {
   return (
-    <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(softwareApp) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqPage) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(organization) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(webSite) }}
-      />
-    </>
+    <JsonLd
+      data={graph([...siteNodes, softwareAppNode, homePage, promoVideo])}
+    />
   );
 }
