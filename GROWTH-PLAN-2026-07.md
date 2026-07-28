@@ -124,6 +124,8 @@ Séquencée APRÈS les OG images (sinon toute carte de partage est vide) et cal�
 
 ## Phase 5 : produit et activation (backlog grower, gates chiffrés)
 
+- [ ] **« Focus Scenes » : VALIDÉ JB, à shipper mi-août 2026** (inspiration focusscreen.org, périmètre tranché le 28/07) : (1) mode plein écran immersif pendant le pomodoro (gros timer, fond ambiant, Escape pour sortir) ; (2) Scenes = fond + son assortis (Rain/Forest/Fireplace) ; (3) bruits colorés white/pink/brown générés en Web Audio API (zéro fichier, zéro licence ; renfort naturel de l'article TDAH et de /focus-music-timer) ; (4) fond « Breathing » animé pendant les pauses (synergie Never Dumb 5-5). EXCLUS : binaural beats (claims fragiles, contraire à la marque d'honnêteté), gimmicks (DVD, dead pixel), bibliothèque musicale. Timing idéal : juste avant/avec le lancement Product Hunt (hook visuel).
+
 - [ ] **Sortir l'AI Planner de sa cachette** : l'état vide de la liste de tâches devient l'invite du planner (« Dis-moi sur quoi tu bosses, je découpe la session »). Gate : garder si ai_planner_opened > 20 % des visiteurs de `/`, jeter si < 12 % après 3 semaines (aujourd'hui : 8,2 %)
 - [ ] **QA mobile du parcours d'activation** (Playwright CLI + vrai iPhone) : 22 % mobile vs 90 % desktop. Cible : 50 % (~+15 activations/mois)
 - [ ] **5 tests utilisateurs qualitatifs** (protocole Mom Test, moitié mobile) : à ce volume, aucun A/B n'est significatif. Question clé : trouvent-ils le planner sans aide ? (< 3/5 → l'expérience planner devient prioritaire)
