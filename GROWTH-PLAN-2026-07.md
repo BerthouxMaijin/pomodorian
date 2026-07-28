@@ -90,7 +90,11 @@ Implémentation parallélisée 6 lanes + fact-check adversarial (commits `37fefc
 - [x] **Schema FAQPage** ✅ extrait automatiquement du markdown (`lib/extract-faq.ts`) : 12 articles EN émettent un FAQPage à 5 questions
 - [x] **Bonus véracité** ✅ les 14 claims « works offline » faux + le claim « Open Source » (pas de LICENSE) purgés de tout le site ; fact-check adversarial : 2 erreurs factuelles attrapées (Trees for the Future, période de facturation Focus To-Do)
 
-## Phase 3 : le nouveau pilier éditorial « Souveraineté cognitive » (cadence 1-2/semaine, PAS de dump)
+## Phase 3 : pilier « Souveraineté cognitive » ✅ LANCÉ le 2026-07-28
+
+5 articles écrits (lanes parallèles + fact-check adversarial sur sources primaires) et traduits en FR/ES/DE. **Publiés (12 URLs, clusters hreflang complets)** : Cognitive Debt (flagship, PNAS/Gerlich/MIT préprint/Brooks + vécu réel), Never Dumb breaks (pont produit : lien localisé dans la modale, event `never_dumb_article_click`), Cognitive Sovereignty (matrice Zone Sapiens, METR 39 points, définition « rester l'auteur de son processus »). **En draft, prêts dans les 4 langues** : Méditation pendant les pauses, Pomodoro et TDAH → JB passe `status: published` (8 lignes par cluster, détail dans `qa/RAPPORT-2026-07-28-phase3.md`), recommandé à ~1 semaine d'intervalle. Maillage entrant posé (6 articles sources). Source : NL#199 « La zone sapiens » (⚠️ erratum possible : Stanford = -13/-16 %, pas -6 %).
+
+Reste du pilier (prochaines sessions) :
 
 Le pont produit-contenu : la feature NeverDumb (« L'IA peut finir la phrase. Elle ne doit pas finir la pensée. ») + les concepts du vault (dette cognitive, usage actif, besoin de cognition). Personne dans la niche ne tient cet angle. Chaque article renvoie vers la feature dans l'app, et inversement la modal NeverDumb peut pointer vers les articles.
 
