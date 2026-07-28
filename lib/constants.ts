@@ -16,7 +16,7 @@ export const DEFAULT_SETTINGS: AppSettings = {
   theme: "dark",
   notificationsEnabled: true,
   showTimeInTitle: true,
-  aiLanguage: "fr",
+  aiLanguage: "en",
 };
 
 export const AI_LANGUAGES = [
@@ -81,7 +81,8 @@ export const KEYBOARD_SHORTCUTS = [
   { key: "1", label: "1", action: "Switch to Pomodoro" },
   { key: "2", label: "2", action: "Switch to Short Break" },
   { key: "3", label: "3", action: "Switch to Long Break" },
-  { key: "t", label: "T", action: "Add new task" },
+  // Only list shortcuts that have a matching handler in app/page.tsx:
+  // this array feeds the user-facing ShortcutsModal.
   { key: "s", label: "S", action: "Open / Close settings" },
   { key: "r", label: "R", action: "Open / Close report" },
 ] as const;
