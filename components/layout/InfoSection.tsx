@@ -73,6 +73,12 @@ export function InfoSection() {
             </li>
           ))}
         </ol>
+        <a
+          href="/blog/how-to-use-pomodorian"
+          className="inline-block text-sm text-red-400 hover:text-red-300 underline underline-offset-4"
+        >
+          Read the complete guide with screenshots
+        </a>
       </div>
 
       {/* Features */}

@@ -20,7 +20,7 @@ Never Dumb is the break feature built into Pomodorian: a set of short exercises 
 
 ## When Never Dumb Appears
 
-Never Dumb is tied to your long break, not every break. By default, Pomodorian gives you a long break after every 4th pomodoro (the interval is adjustable in Settings), and that's the only moment Never Dumb becomes eligible to open on its own.
+Never Dumb is tied to your long break, not every break. By default, Pomodorian gives you a long break after every 4th pomodoro (the interval is adjustable in Settings), and that's the only moment Never Dumb becomes eligible to open on its own. If you're new to the app itself, start with [How to Use Pomodorian: The Complete Guide](/blog/how-to-use-pomodorian).
 
 Two things decide what happens next. If the "Auto-open Never Dumb on long breaks" toggle in Settings is on, which it is by default, the Never Dumb screen opens automatically the moment that long break starts running. If you switch modes by hand instead, say you jump straight to a long break from the mode selector without finishing your 4th pomodoro, the automatic pop-up won't fire. Manually changing modes resets the eligibility.
 

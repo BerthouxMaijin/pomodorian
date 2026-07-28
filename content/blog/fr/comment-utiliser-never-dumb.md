@@ -20,7 +20,7 @@ Never Dumb est la fonctionnalité de pause intégrée à Pomodorian : une série
 
 ## Quand Never Dumb apparaît
 
-Never Dumb est rattaché à votre pause longue, pas à chaque pause. Par défaut, Pomodorian vous donne une pause longue après chaque 4e pomodoro (l'intervalle est réglable dans les Réglages), et c'est le seul moment où Never Dumb devient éligible pour s'ouvrir de lui-même.
+Never Dumb est rattaché à votre pause longue, pas à chaque pause. Par défaut, Pomodorian vous donne une pause longue après chaque 4e pomodoro (l'intervalle est réglable dans les Réglages), et c'est le seul moment où Never Dumb devient éligible pour s'ouvrir de lui-même. Si vous découvrez l'application elle-même, commencez par [Comment utiliser Pomodorian : le guide complet](/blog/fr/comment-utiliser-pomodorian).
 
 Deux choses déterminent la suite. Si l'interrupteur « Ouvrir automatiquement Never Dumb pendant les pauses longues » est activé dans les Réglages, ce qui est le cas par défaut, l'écran Never Dumb s'ouvre automatiquement au moment où cette pause longue démarre. Si vous changez de mode à la main à la place, disons que vous passez directement à une pause longue depuis le sélecteur de mode sans finir votre 4e pomodoro, le pop-up automatique ne se déclenchera pas. Changer de mode manuellement réinitialise l'éligibilité.
 

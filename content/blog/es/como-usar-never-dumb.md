@@ -20,7 +20,7 @@ Never Dumb es la función de descansos integrada en Pomodorian: un conjunto de e
 
 ## Cuándo aparece Never Dumb
 
-Never Dumb está ligado a tu descanso largo, no a cada descanso. Por defecto, Pomodorian te da un descanso largo después de cada cuarto pomodoro (el intervalo se puede ajustar en Ajustes), y ese es el único momento en que Never Dumb puede abrirse por sí solo.
+Never Dumb está ligado a tu descanso largo, no a cada descanso. Por defecto, Pomodorian te da un descanso largo después de cada cuarto pomodoro (el intervalo se puede ajustar en Ajustes), y ese es el único momento en que Never Dumb puede abrirse por sí solo. Si la app en sí es nueva para ti, empieza por [Cómo usar Pomodorian: la guía completa](/blog/es/como-usar-pomodorian).
 
 Dos cosas deciden lo que pasa después. Si el interruptor "Abrir Never Dumb automáticamente en descansos largos" de Ajustes está activado (lo está por defecto), la pantalla de Never Dumb se abre automáticamente en cuanto empieza a correr ese descanso largo. Si en cambio cambias de modo a mano, por ejemplo si saltas directo a un descanso largo desde el selector de modos sin terminar tu cuarto pomodoro, la ventana automática no se dispara. Cambiar de modo manualmente reinicia esa condición.
 

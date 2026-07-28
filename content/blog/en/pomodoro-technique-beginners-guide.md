@@ -161,6 +161,6 @@ Here's your action plan:
 
 That's your first pomodoro. No app required, no system to set up, no learning curve. Just a timer and a task.
 
-If you want to take it further — tracking your focus sessions, using ambient sounds to get in the zone, or customizing your intervals — [Pomodorian](https://pomodorian.app) is built exactly for that. But the technique itself costs nothing and starts working the moment you press start.
+If you want to take it further — tracking your focus sessions, using ambient sounds to get in the zone, or customizing your intervals — [Pomodorian](https://pomodorian.app) is built exactly for that, and the [complete walkthrough of the app](/blog/how-to-use-pomodorian) shows every feature with screenshots. But the technique itself costs nothing and starts working the moment you press start.
 
 The hardest part isn't learning the method. It's pressing the button and committing to 25 minutes of focus. So go ahead — start your first pomodoro right now.
