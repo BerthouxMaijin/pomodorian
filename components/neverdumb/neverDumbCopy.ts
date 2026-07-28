@@ -44,7 +44,7 @@ export type NeverDumbCopy = {
     settingsAutoOpen: string;
     audioUnavailable: string;
   };
-  intro: { eyebrow: string; title: string; body: string; run: string };
+  intro: { eyebrow: string; title: string; body: string; run: string; articleLink: string };
   mode: {
     eyebrow: string;
     title: string;
@@ -105,6 +105,7 @@ export const NEVER_DUMB_COPY = {
       title: "Never dump your brain.",
       body: "AI can finish the sentence. It does not get to finish the thought. Use a few minutes of this break to come back online.",
       run: "Run Never Dumb",
+      articleLink: "The science behind Never Dumb",
     },
     mode: {
       eyebrow: "Anti-autopilot protocol",
@@ -149,7 +150,7 @@ export const NEVER_DUMB_COPY = {
   },
   fr: {
     shared: { skip: "Passer — prends ta pause", back: "Retour", start: "Commencer", done: "Terminé", finishEarly: "Terminer maintenant", breakRemaining: "Pause restante", privacy: "Local uniquement. Rien de ce que tu écris n’est sauvegardé ni envoyé.", answer: "Ta réponse", confidence: "Confiance", reveal: "Révéler", compare: "Comparer ma réponse", nextRandom: "Un autre jeu aléatoire", chooseAnother: "Choisir autre chose", source: "Source", invariant: "L’invariant", openQuestion: "La question ouverte", recall: "De quoi te souviens-tu ?", resultTitle: "Pilote automatique interrompu.", resultBody: "Aucun score cérébral. Tu as fait un geste que la machine n’a pas choisi pour toi.", safeNote: "Arrête en cas d’inconfort. Marche uniquement dans un endroit sûr.", minuteShort: "min", settingsAutoOpen: "Ouvrir automatiquement Never Dumb pendant les pauses longues", audioUnavailable: "L’audio n’a pas pu démarrer. Tu peux quand même prendre trois minutes de calme." },
-    intro: { eyebrow: "Runtime humain", title: "Ne vide jamais ton cerveau.", body: "L’IA peut finir la phrase. Elle ne doit pas finir la pensée. Profite de quelques minutes de cette pause pour revenir en ligne.", run: "Lancer Never Dumb" },
+    intro: { eyebrow: "Runtime humain", title: "Ne vide jamais ton cerveau.", body: "L’IA peut finir la phrase. Elle ne doit pas finir la pensée. Profite de quelques minutes de cette pause pour revenir en ligne.", run: "Lancer Never Dumb", articleLink: "La science derrière Never Dumb" },
     mode: { eyebrow: "Protocole anti-pilote automatique", title: "De quoi as-tu besoin ?", body: "Réfléchis, joue ou change d’état. Le minuteur de la pause continue.", serious: "Sérieux", seriousDetail: "Reconstruis un raisonnement, trouve une faille ou compresse le bruit.", fun: "Fun", funDetail: "Un des quatre jeux surprise. Moins d’impact, plus de mouvement.", reset: "Reset", resetDetail: "Respire, scanne, marche, écoute ou bouge sans feed." },
     seriousMenu: { title: "Choisis ta résistance.", body: "Fais l’effort avant de lire la révélation." },
     resetMenu: { title: "Choisis le reset que ton contexte permet.", body: "Pas d’optimisation. Choisis-en un et quitte le feed." },
@@ -178,7 +179,7 @@ export const NEVER_DUMB_COPY = {
   },
   es: {
     shared: { skip: "Saltar — toma el descanso", back: "Volver", start: "Empezar", done: "Terminado", finishEarly: "Terminar ahora", breakRemaining: "Descanso restante", privacy: "Solo local. Nada de lo que escribas se guarda ni se envía.", answer: "Tu respuesta", confidence: "Confianza", reveal: "Mostrar", compare: "Comparar mi respuesta", nextRandom: "Otro juego aleatorio", chooseAnother: "Elegir otro", source: "Fuente", invariant: "La regla invariable", openQuestion: "La pregunta abierta", recall: "¿Qué recuerdas?", resultTitle: "Piloto automático interrumpido.", resultBody: "Sin puntuación cerebral. Hiciste algo que la máquina no eligió por ti.", safeNote: "Detente si sientes molestias. Camina solo en un lugar seguro.", minuteShort: "min", settingsAutoOpen: "Abrir Never Dumb automáticamente en descansos largos", audioUnavailable: "El audio no pudo iniciarse. Aún puedes tomar tres minutos de calma." },
-    intro: { eyebrow: "Runtime humano", title: "Nunca vacíes tu cerebro.", body: "La IA puede terminar la frase. No debe terminar el pensamiento. Usa unos minutos de esta pausa para volver.", run: "Iniciar Never Dumb" },
+    intro: { eyebrow: "Runtime humano", title: "Nunca vacíes tu cerebro.", body: "La IA puede terminar la frase. No debe terminar el pensamiento. Usa unos minutos de esta pausa para volver.", run: "Iniciar Never Dumb", articleLink: "La ciencia detrás de Never Dumb" },
     mode: { eyebrow: "Protocolo antipiloto automático", title: "¿Qué necesitas?", body: "Piensa, juega o cambia de estado. El temporizador sigue corriendo.", serious: "Serio", seriousDetail: "Reconstruye el razonamiento, detecta un fallo o comprime el ruido.", fun: "Diversión", funDetail: "Uno de cuatro juegos sorpresa. Menos impacto, más movimiento.", reset: "Reset", resetDetail: "Respira, escanea, camina, escucha o muévete sin feed." },
     seriousMenu: { title: "Elige tu resistencia.", body: "Haz el trabajo antes de ver la respuesta." },
     resetMenu: { title: "Elige el reset que permita tu contexto.", body: "Sin optimizar. Elige uno y sal del feed." },
@@ -207,7 +208,7 @@ export const NEVER_DUMB_COPY = {
   },
   de: {
     shared: { skip: "Überspringen — Pause machen", back: "Zurück", start: "Starten", done: "Fertig", finishEarly: "Jetzt beenden", breakRemaining: "Verbleibende Pause", privacy: "Nur lokal. Nichts wird gespeichert oder gesendet.", answer: "Deine Antwort", confidence: "Sicherheit", reveal: "Auflösung", compare: "Antwort vergleichen", nextRandom: "Noch ein Zufallsspiel", chooseAnother: "Etwas anderes wählen", source: "Quelle", invariant: "Die unveränderliche Regel", openQuestion: "Die offene Frage", recall: "Woran erinnerst du dich?", resultTitle: "Autopilot unterbrochen.", resultBody: "Kein Gehirn-Score. Du hast etwas getan, das die Maschine nicht gewählt hat.", safeNote: "Bei Unwohlsein aufhören. Nur an einem sicheren Ort gehen.", minuteShort: "Min.", settingsAutoOpen: "Never Dumb bei langen Pausen automatisch öffnen", audioUnavailable: "Audio konnte nicht starten. Drei ruhige Minuten sind trotzdem möglich." },
-    intro: { eyebrow: "Menschliche Laufzeit", title: "Lagere dein Gehirn nie aus.", body: "KI kann den Satz beenden. Sie darf nicht den Gedanken beenden. Komm in dieser Pause wieder selbst online.", run: "Never Dumb starten" },
+    intro: { eyebrow: "Menschliche Laufzeit", title: "Lagere dein Gehirn nie aus.", body: "KI kann den Satz beenden. Sie darf nicht den Gedanken beenden. Komm in dieser Pause wieder selbst online.", run: "Never Dumb starten", articleLink: "Die Wissenschaft hinter Never Dumb" },
     mode: { eyebrow: "Anti-Autopilot-Protokoll", title: "Was brauchst du?", body: "Denken, spielen oder den Zustand wechseln. Die Pause läuft weiter.", serious: "Ernst", seriousDetail: "Denken rekonstruieren, Fehler finden oder Rauschen komprimieren.", fun: "Spaß", funDetail: "Eines von vier Überraschungsspielen. Mehr Bewegung.", reset: "Reset", resetDetail: "Atmen, scannen, gehen, hören oder bewegen — ohne Feed." },
     seriousMenu: { title: "Wähle deinen Widerstand.", body: "Arbeite, bevor du die Auflösung liest." },
     resetMenu: { title: "Wähle den Reset, den dein Umfeld erlaubt.", body: "Nicht optimieren. Wählen und den Feed verlassen." },
@@ -236,7 +237,7 @@ export const NEVER_DUMB_COPY = {
   },
   pt: {
     shared: { skip: "Pular — aproveite a pausa", back: "Voltar", start: "Começar", done: "Concluído", finishEarly: "Terminar agora", breakRemaining: "Pausa restante", privacy: "Somente local. Nada é salvo ou enviado.", answer: "Sua resposta", confidence: "Confiança", reveal: "Revelar", compare: "Comparar resposta", nextRandom: "Outro jogo aleatório", chooseAnother: "Escolher outro", source: "Fonte", invariant: "A regra invariável", openQuestion: "A pergunta em aberto", recall: "Do que você se lembra?", resultTitle: "Piloto automático interrompido.", resultBody: "Sem pontuação cerebral. Você fez algo que a máquina não escolheu.", safeNote: "Pare se sentir desconforto. Caminhe somente em local seguro.", minuteShort: "min", settingsAutoOpen: "Abrir Never Dumb automaticamente nas pausas longas", audioUnavailable: "O áudio não pôde iniciar. Você ainda pode fazer três minutos de silêncio." },
-    intro: { eyebrow: "Runtime humano", title: "Nunca terceirize seu cérebro.", body: "A IA pode terminar a frase. Não pode terminar o pensamento. Use alguns minutos da pausa para voltar.", run: "Iniciar Never Dumb" },
+    intro: { eyebrow: "Runtime humano", title: "Nunca terceirize seu cérebro.", body: "A IA pode terminar a frase. Não pode terminar o pensamento. Use alguns minutos da pausa para voltar.", run: "Iniciar Never Dumb", articleLink: "A ciência por trás do Never Dumb" },
     mode: { eyebrow: "Protocolo antipiloto automático", title: "Do que você precisa?", body: "Pense, brinque ou mude de estado. O cronômetro continua.", serious: "Sério", seriousDetail: "Reconstrua o raciocínio, encontre uma falha ou comprima o ruído.", fun: "Diversão", funDetail: "Um de quatro jogos surpresa. Mais movimento.", reset: "Reset", resetDetail: "Respire, escaneie, caminhe, ouça ou se mova sem feed." },
     seriousMenu: { title: "Escolha sua resistência.", body: "Faça o esforço antes de ver a resposta." },
     resetMenu: { title: "Escolha o reset que seu contexto permite.", body: "Sem otimizar. Escolha e saia do feed." },
@@ -265,7 +266,7 @@ export const NEVER_DUMB_COPY = {
   },
   it: {
     shared: { skip: "Salta — fai la pausa", back: "Indietro", start: "Inizia", done: "Fatto", finishEarly: "Termina ora", breakRemaining: "Pausa rimanente", privacy: "Solo locale. Nulla viene salvato o inviato.", answer: "La tua risposta", confidence: "Sicurezza", reveal: "Mostra", compare: "Confronta risposta", nextRandom: "Altro gioco casuale", chooseAnother: "Scegli altro", source: "Fonte", invariant: "La regola invariabile", openQuestion: "La domanda aperta", recall: "Cosa ricordi?", resultTitle: "Pilota automatico interrotto.", resultBody: "Nessun punteggio cerebrale. Hai fatto qualcosa non scelto dalla macchina.", safeNote: "Fermati se provi disagio. Cammina solo in un luogo sicuro.", minuteShort: "min", settingsAutoOpen: "Apri automaticamente Never Dumb nelle pause lunghe", audioUnavailable: "L’audio non è partito. Puoi comunque prenderti tre minuti di quiete." },
-    intro: { eyebrow: "Runtime umano", title: "Non svuotare mai il cervello.", body: "L’IA può finire la frase. Non deve finire il pensiero. Usa qualche minuto della pausa per tornare presente.", run: "Avvia Never Dumb" },
+    intro: { eyebrow: "Runtime umano", title: "Non svuotare mai il cervello.", body: "L’IA può finire la frase. Non deve finire il pensiero. Usa qualche minuto della pausa per tornare presente.", run: "Avvia Never Dumb", articleLink: "La scienza dietro Never Dumb" },
     mode: { eyebrow: "Protocollo anti-pilota automatico", title: "Di cosa hai bisogno?", body: "Pensa, gioca o cambia stato. Il timer continua.", serious: "Serio", seriousDetail: "Ricostruisci il ragionamento, trova un errore o comprimi il rumore.", fun: "Divertimento", funDetail: "Uno dei quattro giochi a sorpresa. Più movimento.", reset: "Reset", resetDetail: "Respira, scansiona, cammina, ascolta o muoviti senza feed." },
     seriousMenu: { title: "Scegli la tua resistenza.", body: "Fai il lavoro prima di leggere la soluzione." },
     resetMenu: { title: "Scegli il reset permesso dal contesto.", body: "Niente ottimizzazione. Scegli e lascia il feed." },
@@ -294,7 +295,7 @@ export const NEVER_DUMB_COPY = {
   },
   ja: {
     shared: { skip: "スキップして休憩する", back: "戻る", start: "開始", done: "完了", finishEarly: "今すぐ終了", breakRemaining: "残り休憩時間", privacy: "端末内のみ。入力内容は保存も送信もされません。", answer: "あなたの回答", confidence: "確信度", reveal: "答えを見る", compare: "回答を比較", nextRandom: "別のランダムゲーム", chooseAnother: "別のものを選ぶ", source: "原文", invariant: "変えてはいけない条件", openQuestion: "未解決の問い", recall: "何を覚えていますか？", resultTitle: "自動操縦を中断しました。", resultBody: "脳の点数はありません。機械が選ばなかった行動を一つ実行しました。", safeNote: "不快に感じたら中止してください。安全な場所でのみ歩いてください。", minuteShort: "分", settingsAutoOpen: "長い休憩で Never Dumb を自動的に開く", audioUnavailable: "音声を開始できませんでした。静かな3分間を過ごすことはできます。" },
-    intro: { eyebrow: "ヒューマン・ランタイム", title: "脳を手放さない。", body: "AIは文を完成できます。しかし思考まで完成させる必要はありません。休憩の数分で自分に戻りましょう。", run: "Never Dumbを開始" },
+    intro: { eyebrow: "ヒューマン・ランタイム", title: "脳を手放さない。", body: "AIは文を完成できます。しかし思考まで完成させる必要はありません。休憩の数分で自分に戻りましょう。", run: "Never Dumbを開始", articleLink: "Never Dumbの背景にある科学" },
     mode: { eyebrow: "脱・自動操縦プロトコル", title: "今、何が必要ですか？", body: "考える、遊ぶ、状態をリセットする。休憩タイマーは動き続けます。", serious: "シリアス", seriousDetail: "推論を再構築し、欠陥を見つけ、ノイズを圧縮します。", fun: "ファン", funDetail: "4つのサプライズゲームから1つ。もっと動こう。", reset: "リセット", resetDetail: "呼吸、スキャン、散歩、音楽、運動。フィードは不要です。" },
     seriousMenu: { title: "抵抗を選ぶ。", body: "答えを見る前に自分で取り組みましょう。" },
     resetMenu: { title: "今の環境でできるリセットを選ぶ。", body: "最適化せず、一つ選んでフィードを離れます。" },
@@ -323,7 +324,7 @@ export const NEVER_DUMB_COPY = {
   },
   zh: {
     shared: { skip: "跳过——好好休息", back: "返回", start: "开始", done: "完成", finishEarly: "现在结束", breakRemaining: "剩余休息时间", privacy: "仅在本地运行。输入内容不会保存或发送。", answer: "你的回答", confidence: "确信程度", reveal: "查看答案", compare: "对比回答", nextRandom: "再来一个随机游戏", chooseAnother: "选择其他项目", source: "原文", invariant: "必须保持的规则", openQuestion: "尚未解决的问题", recall: "你还记得什么？", resultTitle: "自动驾驶已中断。", resultBody: "没有大脑评分。你完成了一个并非由机器替你选择的动作。", safeNote: "如感到不适请立即停止。只在安全的地方行走。", minuteShort: "分钟", settingsAutoOpen: "长休息时自动打开 Never Dumb", audioUnavailable: "音频无法启动。你仍然可以安静休息三分钟。" },
-    intro: { eyebrow: "人类运行时", title: "别把大脑彻底外包。", body: "AI 可以补完句子，但不应该替你完成思考。用休息中的几分钟重新上线。", run: "启动 Never Dumb" },
+    intro: { eyebrow: "人类运行时", title: "别把大脑彻底外包。", body: "AI 可以补完句子，但不应该替你完成思考。用休息中的几分钟重新上线。", run: "启动 Never Dumb", articleLink: "Never Dumb 背后的科学" },
     mode: { eyebrow: "反自动驾驶协议", title: "你现在需要什么？", body: "思考、玩耍或重置状态。长休息计时会继续。", serious: "认真", seriousDetail: "重建推理、发现漏洞或压缩噪音。", fun: "趣味", funDetail: "四个惊喜游戏随机一个，多动一动。", reset: "重置", resetDetail: "呼吸、扫描、散步、聆听或运动，不刷信息流。" },
     seriousMenu: { title: "选择你的阻力。", body: "先自己完成，再查看答案。" },
     resetMenu: { title: "选择当前环境允许的重置。", body: "不用优化，选一个并离开信息流。" },

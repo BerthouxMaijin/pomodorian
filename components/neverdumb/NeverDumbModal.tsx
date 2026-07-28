@@ -257,6 +257,15 @@ export function NeverDumbModal({
     setScreen(mode === "serious" ? "serious-menu" : mode === "reset" ? "reset-menu" : "mode");
   };
 
+  // Localized companion-article URLs for the locales the blog covers;
+  // every other locale falls back to the English article.
+  const ARTICLE_URLS: Partial<Record<UiLocale, string>> = {
+    fr: "/blog/fr/pauses-never-dumb",
+    es: "/blog/es/pausas-never-dumb",
+    de: "/blog/de/never-dumb-pausen",
+  };
+  const articleUrl = ARTICLE_URLS[locale] ?? "/blog/never-dumb-breaks";
+
   const renderIntro = () => (
     <div className="max-w-3xl mx-auto text-center py-14 sm:py-24">
       <p className="text-[11px] sm:text-xs tracking-[0.32em] uppercase text-[#8bf0a5] mb-5">{copy.intro.eyebrow}</p>
@@ -264,6 +273,18 @@ export function NeverDumbModal({
         {copy.intro.title}
       </h1>
       <p className="mt-7 max-w-xl mx-auto text-base sm:text-lg leading-relaxed text-[#aaa69d]">{copy.intro.body}</p>
+      <div className="mt-5">
+        <a
+          href={articleUrl}
+          target="_blank"
+          rel="noopener"
+          data-testid="neverdumb-article-link"
+          onClick={() => track("never_dumb_article_click")}
+          className="inline-block rounded-sm text-xs sm:text-sm text-[#858178] underline-offset-4 hover:text-[#d0cbc0] hover:underline focus:outline-none focus:ring-2 focus:ring-[#8bf0a5]"
+        >
+          {copy.intro.articleLink} →
+        </a>
+      </div>
       <button
         type="button"
         data-testid="neverdumb-enter"
