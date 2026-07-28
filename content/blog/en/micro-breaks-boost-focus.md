@@ -111,7 +111,7 @@ The point is: let a timer do the remembering. Pomodorian's built-in break remind
 
 ### Plan your break activity in advance
 
-"I'll figure out what to do on my break" is a trap. Decision fatigue means you'll default to your phone. Before starting a work session, decide: "On my next break, I'm going to stand up and stretch" or "I'll walk to the kitchen and back." Remove the decision, and the break becomes frictionless.
+"I'll figure out what to do on my break" is a trap. Decision fatigue means you'll default to your phone. Before starting a work session, decide: "On my next break, I'm going to stand up and stretch" or "I'll walk to the kitchen and back." Remove the decision, and the break becomes frictionless. Pomodorian's [Never Dumb break exercises](/blog/never-dumb-breaks) do exactly that: a ready menu of short resets when the timer rings.
 
 ### Match the break to the work
 

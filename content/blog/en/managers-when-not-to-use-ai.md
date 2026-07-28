@@ -99,7 +99,7 @@ Your role as a manager-decision maker is to synthesize information *and* add int
 
 The most insidious risk is not a single bad decision. It is the **gradual atrophy** of your ability to decide without AI.
 
-Researchers in [Computers in Human Behavior](https://www.sciencedirect.com/science/article/pii/S0747563224002206) have documented a phenomenon called *automation bias*: the more we delegate to a system, the less we question its recommendations. The judgment muscle, like any muscle, weakens without exercise.
+Researchers in [Computers in Human Behavior](https://www.sciencedirect.com/science/article/pii/S0747563224002206) have documented a phenomenon called *automation bias*: the more we delegate to a system, the less we question its recommendations. The judgment muscle, like any muscle, weakens without exercise. This is the management face of [cognitive debt](/blog/cognitive-debt-ai-era), and the strongest argument for protecting your [cognitive sovereignty](/blog/cognitive-sovereignty) on the decisions that define your role.
 
 [Fortune reports](https://fortune.com/2026/03/29/ai-workforce-human-design-gap-doomsday-deloitte-wharton-harvard/) that companies allocate **93% of their AI budgets to technology and only 7% to workforce preparation**. The result: middle managers -- the people who actually orchestrate change -- become what Wharton professor Eric Bradlow calls "the weak link in a chain that's suddenly moving faster than ever."
 

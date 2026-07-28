@@ -138,7 +138,7 @@ The best break strategy is one you actually follow. Here's how to make it stick:
 
 ### Make it automatic
 
-Don't decide what to do when the timer rings — decide once and repeat. For example: "Every short break, I stand up, stretch for two minutes, and look out the window." Remove the decision from the moment so you don't default to your phone.
+Don't decide what to do when the timer rings — decide once and repeat. For example: "Every short break, I stand up, stretch for two minutes, and look out the window." Remove the decision from the moment so you don't default to your phone. If you want ready-made options, [Never Dumb](/blog/never-dumb-breaks) builds a menu of them straight into Pomodorian's long breaks.
 
 ### Match breaks to your work
 

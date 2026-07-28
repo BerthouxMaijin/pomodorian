@@ -70,7 +70,7 @@ Writing demands [deep, sustained concentration](/blog/ai-era-productivity-guide)
 
 ### 1. Write First, Consult AI Second
 
-The most effective rule is also the simplest: **the first draft belongs to you**. Write your raw text without any AI assistance. Let the ideas flow, even clumsily. It is in this initial effort that your voice emerges -- your spontaneous phrasing, your unique associations, your natural rhythm.
+The most effective rule is also the simplest: **the first draft belongs to you**. Write your raw text without any AI assistance. Let the ideas flow, even clumsily. It is in this initial effort that your voice emerges -- your spontaneous phrasing, your unique associations, your natural rhythm. This is [cognitive sovereignty](/blog/cognitive-sovereignty) applied to writing: staying the author of the process that produces your text, not just the person who approves it.
 
 AI comes in *after*: to identify structural weaknesses, suggest rephrasing on passages you flag as problematic, verify facts. But never as a starting point.
 

@@ -77,7 +77,7 @@ Researcher [Gloria Mark](https://gloriamark.com/attention-span/), a professor of
 
 ## 2. The 8 Cognitive Traps of the AI-Augmented Worker
 
-Before building your system, let's identify the enemies. Here are the eight most common pitfalls faced by people who work with AI tools every day.
+Before building your system, let's identify the enemies. Here are the eight most common pitfalls faced by people who work with AI tools every day. They all feed the same underlying problem: [cognitive debt](/blog/cognitive-debt-ai-era), the slow erosion of your own thinking when the tool does too much of it for you.
 
 **Prompt hopping**: You fire off a prompt in Claude, and while the AI generates its response, you switch to ChatGPT for another task, then to Perplexity for a quick search. Result: three open threads of thought, none of them finished.
 
