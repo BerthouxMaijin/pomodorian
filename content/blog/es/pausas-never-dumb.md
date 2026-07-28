@@ -46,41 +46,45 @@ Esto lo he notado en mi propia vida fuera del trabajo también. Mis mejores idea
 
 Never Dumb trae esa misma protección a tus descansos Pomodoro. No se trata de prohibir la IA. Se trata de asegurar que unos minutos de cada descanso te pertenezcan por completo, sin autocompletado, sin sugerencia, sin piloto automático, una pequeña reclamación regular de tu propia [soberanía cognitiva](/blog/es/soberania-cognitiva). Eso es lo que significa "never dump your brain": no le entregues la parte del pensamiento que te toca conservar a ti.
 
+![La pantalla de introducción de Never Dumb en Pomodorian](/screenshots/never-dumb.png)
+
+Para una guía paso a paso de cada pantalla y ajuste, mira [Cómo usar Never Dumb en Pomodorian](/blog/es/como-usar-never-dumb).
+
 ## Los 13 ejercicios, por modo
 
-Cuando Never Dumb se abre, eliges lo que necesitas: Serio, Divertido o Reinicio. Cada modo hace un trabajo distinto.
+Cuando Never Dumb se abre, eliges lo que necesitas: Serio, Diversión (Fun) o Reset. Cada modo hace un trabajo distinto.
 
 ### Serio: reconstruye el razonamiento
 
 El modo Serio es fricción a propósito. El objetivo es hacer el trabajo mental antes de llegar a ver la respuesta.
 
 - **Reconstruir** te pide reconstruir, sin volver a abrir el chat de IA, las tres decisiones que tomaste en tu último bloque de concentración, nombrando cada decisión, la razón detrás de ella, y qué te haría revertirla. Si puedes reconstruir el razonamiento, la respuesta sigue siendo tuya.
-- **Rompe la Respuesta** te da una función que dice devolver usuarios activos y te pide encontrar el error de lógica antes de leer la revelación, y luego explicar el fallo en una frase precisa. Es una pequeña cacería de bugs deliberada: el código mapea a cada usuario a un booleano en lugar de filtrar a los inactivos.
-- **Comprime** toma una fuente y te pide comprimirla en un invariante y una pregunta abierta, usando no más de 25 palabras en total. Un buen resumen conserva la restricción y la incertidumbre. No se limita a suavizar la prosa.
+- **Romper la respuesta** (Break the Answer) te da una función que dice devolver usuarios activos y te pide encontrar el error de lógica antes de leer la revelación, y luego explicar el fallo en una frase precisa. Es una pequeña cacería de bugs deliberada: el código mapea a cada usuario a un booleano en lugar de filtrar a los inactivos.
+- **Comprimir** (Compress) toma una fuente y te pide comprimirla en un invariante y una pregunta abierta, usando no más de 25 palabras en total. Un buen resumen conserva la restricción y la incertidumbre. No se limita a suavizar la prosa.
 
 Los tres existen para reconstruir un razonamiento, detectar un fallo o comprimir el ruido, exactamente el tipo de músculo de razonamiento que se ablanda cuando una herramienta de IA siempre termina el pensamiento por ti.
 
-### Divertido: mueve el cuerpo, demuestra que eres humano
+### Diversión: mueve el cuerpo, demuestra que eres humano
 
-El modo Divertido cambia profundidad por movimiento y un poco de absurdo. Te toca uno de cuatro juegos sorpresa.
+El modo Diversión cambia profundidad por movimiento y un poco de absurdo. Te toca uno de cuatro juegos sorpresa.
 
-- **CAPTCHA Humano** te da una misión física un poco ridícula, sin cámara, sin micrófono, sin puntuación, es un sistema de honor puro. Un modelo podría describir la misión. No podría disfrutar lo tonto que se sintió hacerla.
-- **Redada en la Habitación** te manda lejos del escritorio a encontrar tres cosas específicas, sin fotos permitidas, y luego te pide recordarlas sin volver a mirar una vez que regresas.
-- **Depurador Corporal** te hace seguir una cadena de órdenes físicas excepto las que llevan el prefijo "LA IA DICE", una pequeña prueba de movimiento más inhibición. Si obedeces la orden de la IA de todos modos, la metáfora se escribe sola.
-- **El Jefe del Pato de Goma** te pide responder preguntas en voz alta antes de poder "golpear" al jefe, escribir es opcional. El pato quiere claridad, no tokens: te lo explicas a ti mismo antes de pedirle a una máquina que te lo explique.
+- **CAPTCHA humano** (Human CAPTCHA) te da una misión física un poco ridícula, sin cámara, sin micrófono, sin puntuación, es un sistema de honor puro. Un modelo podría describir la misión. No podría disfrutar lo tonto que se sintió hacerla.
+- **Incursión en la habitación** (Room Raid) te manda lejos del escritorio a encontrar tres cosas específicas, sin fotos permitidas, y luego te pide recordarlas sin volver a mirar una vez que regresas.
+- **Depurador corporal** (Body Debugger) te hace seguir una cadena de órdenes físicas excepto las que llevan el prefijo "LA IA DICE", una pequeña prueba de movimiento más inhibición. Si obedeces la orden de la IA de todos modos, la metáfora se escribe sola.
+- **Jefe Pato** (Rubber Duck Boss) te pide responder preguntas en voz alta antes de poder "golpear" al jefe, escribir es opcional. El pato quiere claridad, no tokens: te lo explicas a ti mismo antes de pedirle a una máquina que te lo explique.
 
 Estos son de menor intensidad que el modo Serio a propósito. Lo que realmente entrenan es movimiento y una especie de prueba de estar vivo: físico, improvisado, imposible de guionizar.
 
-### Reinicio: respiración, meditación, caminar
+### Reset: respiración, meditación, caminar
 
-El modo Reinicio es la opción tranquila, para cuando lo que necesitas no es un rompecabezas sino un cambio de marcha genuino.
+El modo Reset es la opción tranquila, para cuando lo que necesitas no es un rompecabezas sino un cambio de marcha genuino.
 
-- **Respiración 5-5** te marca el ritmo de cinco segundos de inhalación, cinco segundos de exhalación, durante tres minutos.
-- **Meditación Abierta** te da indicaciones escasas para notar sonidos, sensaciones y pensamientos sin intentar arreglarlos, tres minutos sin ningún objetivo de rendimiento.
-- **Escaneo Corporal** mueve tu atención por cada parte de tu cuerpo sin intentar cambiar nada, tres minutos para suavizar lo que se pueda suavizar.
-- **Caminata de Cinco Minutos** te manda lejos de la pantalla por completo, sin teléfono, sin podcast, sin objetivo de productividad.
-- **Reinicio de Una Pista** reproduce tres minutos de una pista lofi local y te pide no hacer nada más mientras suena.
-- **Ping Pong Invisible** te hace ponerte de pie y mimar devolver una pelota de izquierda a derecha durante sesenta segundos, una forma rápida de cruzar la línea media y demostrar que sigues siendo un mamífero móvil.
+- **Respiración 5–5** te marca el ritmo de cinco segundos de inhalación, cinco segundos de exhalación, durante tres minutos.
+- **Meditación abierta** (Open Meditation) te da indicaciones escasas para notar sonidos, sensaciones y pensamientos sin intentar arreglarlos, tres minutos sin ningún objetivo de rendimiento.
+- **Escaneo corporal** (Body Scan) mueve tu atención por cada parte de tu cuerpo sin intentar cambiar nada, tres minutos para suavizar lo que se pueda suavizar.
+- **Caminata de cinco minutos** (Five-minute Walk) te manda lejos de la pantalla por completo, sin teléfono, sin podcast, sin objetivo de productividad.
+- **Reset musical** (One-track Reset) reproduce tres minutos de una pista lofi local y te pide no hacer nada más mientras suena.
+- **Ping-pong invisible** (Invisible Ping Pong) te hace ponerte de pie y mimar devolver una pelota de izquierda a derecha durante sesenta segundos, una forma rápida de cruzar la línea media y demostrar que sigues siendo un mamífero móvil.
 
 Seis opciones porque el contexto varía: algunos días puedes salir afuera, otros días estás en una oficina abierta y un escaneo corporal es el único reinicio realista. El punto de todas es el mismo: deja el feed, no llenes la pausa con más entrada.
 
@@ -95,13 +99,13 @@ Vale la pena ser honesto sobre dónde está esta función: es joven. Construí l
 - Hacer scroll infinito durante un descanso no es descansar, es un cambio de flujo de entrada que mantiene a tu cerebro en el mismo modo estimulado de procesamiento de información que el trabajo.
 - Los descansos activos, que cambian de foco de atención, tienen respaldo medible: Illinois encontró que las breves distracciones evitan el decremento de vigilancia, y Stanford encontró que caminar aumenta la producción creativa un 81%.
 - La filosofía de Never Dumb es simple: la IA puede terminar la frase, no debe terminar el pensamiento. Los descansos son donde practicas razonar sin que la herramienta lo termine por ti.
-- Los 13 ejercicios se dividen en tres trabajos: Serio reconstruye el razonamiento mediante fricción, Divertido añade movimiento y una prueba de humanidad, Reinicio ofrece un cambio de marcha fisiológico genuino.
+- Los 13 ejercicios se dividen en tres trabajos: Serio reconstruye el razonamiento mediante fricción, Diversión añade movimiento y una prueba de humanidad, Reset ofrece un cambio de marcha fisiológico genuino.
 - Never Dumb se abre automáticamente en tu descanso largo (después de tu cuarto pomodoro) y se puede desactivar en Ajustes si prefieres activarlo manualmente.
 
 ## Preguntas frecuentes
 
 ### ¿Qué es Never Dumb en Pomodorian?
-Never Dumb es una función de descansos en Pomodorian que ofrece 13 ejercicios cortos en tres modos, Serio, Divertido y Reinicio, para que tus descansos Pomodoro construyan resiliencia cognitiva en lugar de terminar por defecto en el feed del teléfono.
+Never Dumb es una función de descansos en Pomodorian que ofrece 13 ejercicios cortos en tres modos, Serio, Diversión y Reset, para que tus descansos Pomodoro construyan resiliencia cognitiva en lugar de terminar por defecto en el feed del teléfono.
 
 ### ¿Cuándo se abre Never Dumb?
 Se abre automáticamente durante tu descanso largo, el que sigue a cada cuarto pomodoro. Puedes desactivar la apertura automática en Ajustes y lanzarlo manualmente en su lugar si prefieres elegir cuándo aparece.

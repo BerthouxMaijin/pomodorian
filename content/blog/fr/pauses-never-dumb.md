@@ -46,13 +46,17 @@ Je l'ai remarqué aussi dans ma vie en dehors du travail. Mes plus grandes idée
 
 Never Dumb apporte cette même protection à vos pauses Pomodoro. Il ne s'agit pas d'interdire l'IA. Il s'agit de s'assurer que quelques minutes de chaque pause vous appartiennent entièrement : pas de complétion, pas de suggestion, pas de pilote automatique, une petite revendication régulière sur votre propre [souveraineté cognitive](/blog/fr/souverainete-cognitive). C'est ce que signifie « never dump your brain » (ne jamais vider son cerveau) : ne pas déléguer la part de la réflexion qui vous revient de garder.
 
+![L'écran d'introduction Never Dumb dans Pomodorian](/screenshots/never-dumb.png)
+
+Pour un guide pas à pas de chaque écran et réglage, consultez [Comment utiliser Never Dumb dans Pomodorian](/blog/fr/comment-utiliser-never-dumb).
+
 ## Les 13 exercices, par mode
 
-Quand Never Dumb s'ouvre, vous choisissez ce dont vous avez besoin : Serious, Fun, ou Reset. Chaque mode remplit un rôle différent.
+Quand Never Dumb s'ouvre, vous choisissez ce dont vous avez besoin : Sérieux (Serious), Fun, ou Reset. Chaque mode remplit un rôle différent.
 
-### Serious : reconstruire le raisonnement
+### Sérieux : reconstruire le raisonnement
 
-Le mode Serious est de la friction délibérée. Le but est de faire le travail mental avant d'accéder à la réponse.
+Le mode Sérieux est de la friction délibérée. Le but est de faire le travail mental avant d'accéder à la réponse.
 
 - **Rebuild** vous demande de reconstruire, sans rouvrir le chat IA, les trois décisions que vous avez prises pendant votre dernier bloc de concentration, en nommant chaque décision, la raison derrière, et ce qui vous ferait revenir dessus. Si vous pouvez reconstruire le raisonnement, la réponse est encore la vôtre.
 - **Break the Answer** vous donne une fonction censée retourner les utilisateurs actifs et vous demande de trouver l'erreur de logique avant de lire la solution, puis d'expliquer l'échec en une phrase précise. C'est une petite chasse au bug délibérée : le code associe chaque utilisateur à un booléen au lieu de filtrer les inactifs.
@@ -64,29 +68,29 @@ Les trois existent pour reconstruire un raisonnement, repérer une faille, ou co
 
 Le mode Fun échange la profondeur contre du mouvement et un peu d'absurde. Vous obtenez l'un des quatre jeux surprise.
 
-- **Human CAPTCHA** vous donne une mission physique un peu ridicule, sans caméra, sans micro, sans score, purement sur l'honneur. Un modèle pourrait décrire la mission. Il ne pourrait pas ressentir à quel point c'était bête à faire.
+- **CAPTCHA humain** vous donne une mission physique un peu ridicule, sans caméra, sans micro, sans score, purement sur l'honneur. Un modèle pourrait décrire la mission. Il ne pourrait pas ressentir à quel point c'était bête à faire.
 - **Room Raid** vous envoie loin du bureau trouver trois choses précises, aucune photo autorisée, puis vous demande de les rappeler sans les regarder à nouveau une fois revenu.
 - **Body Debugger** vous fait suivre une série de commandes physiques sauf celles préfixées par « AI SAYS », un petit test de mouvement plus d'inhibition. Si vous obéissez quand même à la commande de l'IA, la métaphore se passe de commentaire.
-- **Rubber Duck Boss** vous demande de répondre à des questions à voix haute avant de pouvoir « frapper » le boss, la saisie au clavier étant facultative. Le canard veut de la clarté, pas des tokens : vous vous l'expliquez vous-même avant de demander à une machine de l'expliquer à votre place.
+- **Boss Canard** vous demande de répondre à des questions à voix haute avant de pouvoir « frapper » le boss, la saisie au clavier étant facultative. Le canard veut de la clarté, pas des tokens : vous vous l'expliquez vous-même avant de demander à une machine de l'expliquer à votre place.
 
-Ils ont, par conception, un impact plus léger que le mode Serious. Ce qu'ils entraînent réellement, c'est le mouvement et une forme de preuve de vie : physique, improvisée, impossible à scripter.
+Ils ont, par conception, un impact plus léger que le mode Sérieux. Ce qu'ils entraînent réellement, c'est le mouvement et une forme de preuve de vie : physique, improvisée, impossible à scripter.
 
 ### Reset : respiration, méditation, marche
 
 Le mode Reset est l'option silencieuse, pour les moments où ce dont vous avez besoin n'est pas une énigme mais une vraie décélération.
 
-- **Breathing 5-5** vous fait respirer cinq secondes en inspirant, cinq secondes en expirant, pendant trois minutes.
-- **Open Meditation** vous donne quelques consignes espacées pour remarquer les sons, les sensations et les pensées sans essayer de les corriger, trois minutes sans objectif de performance.
-- **Body Scan** promène votre attention à travers chaque partie de votre corps sans essayer de rien changer, trois minutes pour assouplir ce qui peut l'être.
-- **Five-minute Walk** vous envoie complètement loin de l'écran, sans téléphone, sans podcast, sans objectif de productivité.
-- **One-track Reset** joue trois minutes d'un morceau lofi local et vous demande de ne rien faire d'autre pendant qu'il joue.
-- **Invisible Ping Pong** vous fait debout mimer un renvoi de balle de gauche à droite pendant soixante secondes, un moyen rapide de croiser la ligne médiane et de prouver que vous êtes toujours un mammifère mobile.
+- **Respiration 5–5** vous fait respirer cinq secondes en inspirant, cinq secondes en expirant, pendant trois minutes.
+- **Méditation ouverte** vous donne quelques consignes espacées pour remarquer les sons, les sensations et les pensées sans essayer de les corriger, trois minutes sans objectif de performance.
+- **Scan corporel** promène votre attention à travers chaque partie de votre corps sans essayer de rien changer, trois minutes pour assouplir ce qui peut l'être.
+- **Marche de cinq minutes** vous envoie complètement loin de l'écran, sans téléphone, sans podcast, sans objectif de productivité.
+- **Reset musical** joue trois minutes d'un morceau lofi local et vous demande de ne rien faire d'autre pendant qu'il joue.
+- **Ping-pong invisible** vous fait debout mimer un renvoi de balle de gauche à droite pendant soixante secondes, un moyen rapide de croiser la ligne médiane et de prouver que vous êtes toujours un mammifère mobile.
 
-Six options parce que le contexte varie : certains jours vous pouvez sortir, d'autres jours vous êtes en open space et un body scan est le seul reset réaliste. Le but de chacune est le même : quitter le fil d'actualité, ne pas remplir la pause avec plus d'input.
+Six options parce que le contexte varie : certains jours vous pouvez sortir, d'autres jours vous êtes en open space et un scan corporel est le seul reset réaliste. Le but de chacune est le même : quitter le fil d'actualité, ne pas remplir la pause avec plus d'input.
 
 ## Comment l'activer
 
-Never Dumb s'ouvre automatiquement à votre pause longue, celle qui suit votre quatrième pomodoro. Vous n'avez rien à faire pour qu'elle apparaisse. Si vous préférez la déclencher manuellement ou désactiver complètement l'ouverture automatique, il y a un interrupteur dans les Réglages appelé « Ouvrir Never Dumb automatiquement aux pauses longues ».
+Never Dumb s'ouvre automatiquement à votre pause longue, celle qui suit votre quatrième pomodoro. Vous n'avez rien à faire pour qu'elle apparaisse. Si vous préférez la déclencher manuellement ou désactiver complètement l'ouverture automatique, il y a un interrupteur dans les Réglages appelé « Ouvrir automatiquement Never Dumb pendant les pauses longues ».
 
 Autant être honnête sur où en est cette fonctionnalité : elle est jeune. J'ai construit la première version des exercices et des modes en me basant sur la philosophie ci-dessus, mais je ne l'ai pas encore affinée sur des mois d'usage réel. Si une consigne tombe à plat, si un exercice sonne faux, ou si vous avez une idée pour en améliorer un, le formulaire de feedback intégré à l'app arrive directement chez moi. C'est réellement comme ça que cette fonctionnalité s'améliore.
 
@@ -95,13 +99,13 @@ Autant être honnête sur où en est cette fonctionnalité : elle est jeune. J'a
 - Le doomscrolling pendant une pause n'est pas du repos, c'est un changement de flux d'entrée qui garde votre cerveau dans le même mode stimulé de traitement de l'information que le travail.
 - Les pauses actives, qui changent le mode d'attention, ont un appui mesurable : l'Illinois a trouvé que de brèves diversions préviennent le déclin de vigilance, et Stanford a trouvé que la marche augmente la production créative de 81 %.
 - La philosophie de Never Dumb est simple : l'IA peut finir la phrase, elle ne doit pas finir la pensée. Les pauses sont l'endroit où vous vous exercez à raisonner sans que l'outil le fasse à votre place.
-- Les 13 exercices se répartissent en trois rôles : Serious reconstruit le raisonnement par la friction, Fun ajoute du mouvement et une preuve d'humanité, Reset offre une vraie décélération physiologique.
+- Les 13 exercices se répartissent en trois rôles : Sérieux reconstruit le raisonnement par la friction, Fun ajoute du mouvement et une preuve d'humanité, Reset offre une vraie décélération physiologique.
 - Never Dumb s'ouvre automatiquement à votre pause longue (après votre 4e pomodoro) et peut être désactivé dans les Réglages si vous préférez le déclencher manuellement.
 
 ## Questions fréquentes
 
 ### Qu'est-ce que Never Dumb dans Pomodorian ?
-Never Dumb est une fonctionnalité de pause dans Pomodorian qui propose 13 exercices courts répartis en trois modes, Serious, Fun et Reset, pour que vos pauses Pomodoro construisent de la résilience cognitive au lieu de basculer par défaut vers le fil d'actualité du téléphone.
+Never Dumb est une fonctionnalité de pause dans Pomodorian qui propose 13 exercices courts répartis en trois modes, Sérieux, Fun et Reset, pour que vos pauses Pomodoro construisent de la résilience cognitive au lieu de basculer par défaut vers le fil d'actualité du téléphone.
 
 ### Quand Never Dumb s'ouvre-t-il ?
 Il s'ouvre automatiquement pendant votre pause longue, celle qui suit chaque quatrième pomodoro. Vous pouvez désactiver l'ouverture automatique dans les Réglages et le lancer manuellement à la place si vous préférez choisir vous-même quand il apparaît.

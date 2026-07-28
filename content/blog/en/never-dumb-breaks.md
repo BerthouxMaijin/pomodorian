@@ -46,6 +46,10 @@ I've noticed this in my own life outside of work too. My biggest ideas don't sho
 
 Never Dumb brings that same protection into your Pomodoro breaks. It's not about banning AI. It's about making sure a few minutes of every break belong entirely to you, no completion, no suggestion, no autopilot, a small, regular claim on your own [cognitive sovereignty](/blog/cognitive-sovereignty). That's what "never dump your brain" means: don't hand off the part of the thinking that's yours to keep.
 
+![The Never Dumb intro screen in Pomodorian](/screenshots/never-dumb.png)
+
+For a full walkthrough of every screen and setting, see [How to Use Never Dumb in Pomodorian](/blog/how-to-use-never-dumb).
+
 ## The 13 exercises, by mode
 
 When Never Dumb opens, you choose what you need: Serious, Fun, or Reset. Each mode does a different job.

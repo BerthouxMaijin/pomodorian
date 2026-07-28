@@ -46,43 +46,47 @@ Das habe ich auch in meinem Leben abseits der Arbeit bemerkt. Meine größten Id
 
 Never Dumb bringt genau diesen Schutz in deine Pomodoro-Pausen. Es geht nicht darum, KI zu verbieten. Es geht darum, sicherzustellen, dass ein paar Minuten jeder Pause ganz dir gehören, keine Vervollständigung, kein Vorschlag, kein Autopilot, ein kleiner, regelmäßiger Anspruch auf deine eigene [kognitive Souveränität](/blog/de/kognitive-souveraenitaet). Das bedeutet "dein Gehirn niemals abladen": Gib den Teil des Denkens nicht ab, der dir gehören sollte.
 
+![Der Never-Dumb-Startbildschirm in Pomodorian](/screenshots/never-dumb.png)
+
+Eine Schritt-für-Schritt-Anleitung zu jedem Bildschirm und jeder Einstellung findest du unter [Never Dumb in Pomodorian nutzen](/blog/de/never-dumb-anleitung).
+
 ## Die 13 Übungen, nach Modus
 
-Wenn Never Dumb sich öffnet, wählst du, was du brauchst: Serious, Fun oder Reset. Jeder Modus erfüllt eine andere Aufgabe.
+Wenn Never Dumb sich öffnet, wählst du, was du brauchst: Ernst (Serious), Spaß (Fun) oder Reset. Jeder Modus erfüllt eine andere Aufgabe.
 
-### Serious: Denken wieder aufbauen
+### Ernst: Denken wieder aufbauen
 
-Der Serious-Modus ist Reibung mit Absicht. Der Punkt ist, die gedankliche Arbeit zu leisten, bevor du die Antwort zu sehen bekommst.
+Der Ernst-Modus ist Reibung mit Absicht. Der Punkt ist, die gedankliche Arbeit zu leisten, bevor du die Antwort zu sehen bekommst.
 
 - **Rebuild** bittet dich, ohne den KI-Chat wieder zu öffnen, die drei Entscheidungen zu rekonstruieren, die du in deinem letzten Fokusblock getroffen hast, jede Entscheidung zu benennen, den Grund dahinter, und was dich dazu bringen würde, sie rückgängig zu machen. Wenn du das Denken rekonstruieren kannst, gehört die Antwort noch dir.
-- **Break the Answer** gibt dir eine Funktion, die vorgibt, aktive Nutzer zurückzugeben, und bittet dich, den Logikfehler zu finden, bevor du die Auflösung liest, und den Fehler dann in einem präzisen Satz zu erklären. Es ist eine kleine, bewusste Bugjagd: Der Code bildet jeden Nutzer auf einen Boolean ab, statt die inaktiven herauszufiltern.
-- **Compress** nimmt eine Quelle und bittet dich, sie auf eine Invariante und eine offene Frage zu komprimieren, mit insgesamt höchstens 25 Wörtern. Eine nützliche Zusammenfassung behält die Einschränkung und die Unsicherheit. Sie glättet den Text nicht einfach nur.
+- **Antwort brechen** (Break the Answer) gibt dir eine Funktion, die vorgibt, aktive Nutzer zurückzugeben, und bittet dich, den Logikfehler zu finden, bevor du die Auflösung liest, und den Fehler dann in einem präzisen Satz zu erklären. Es ist eine kleine, bewusste Bugjagd: Der Code bildet jeden Nutzer auf einen Boolean ab, statt die inaktiven herauszufiltern.
+- **Komprimieren** (Compress) nimmt eine Quelle und bittet dich, sie auf eine Invariante und eine offene Frage zu komprimieren, mit insgesamt höchstens 25 Wörtern. Eine nützliche Zusammenfassung behält die Einschränkung und die Unsicherheit. Sie glättet den Text nicht einfach nur.
 
 Alle drei existieren, um Denken zu rekonstruieren, einen Fehler zu erkennen oder Rauschen zu komprimieren, genau die Art von Denkmuskel, der weich wird, wenn ein KI-Werkzeug den Gedanken immer für dich zu Ende führt.
 
-### Fun: Beweg dich, beweise, dass du ein Mensch bist
+### Spaß: Beweg dich, beweise, dass du ein Mensch bist
 
-Der Fun-Modus tauscht Tiefe gegen Bewegung und ein bisschen Absurdität. Du bekommst eines von vier Überraschungsspielen.
+Der Spaß-Modus tauscht Tiefe gegen Bewegung und ein bisschen Absurdität. Du bekommst eines von vier Überraschungsspielen.
 
-- **Human CAPTCHA** gibt dir eine leicht absurde körperliche Mission, keine Kamera, kein Mikrofon, keine Punktzahl, rein auf Ehrenwort. Ein Modell könnte die Mission beschreiben. Es könnte nicht genießen, wie albern es sich anfühlt, sie auszuführen.
-- **Room Raid** schickt dich vom Schreibtisch weg, um drei bestimmte Dinge zu finden, keine Fotos erlaubt, und bittet dich dann, sie aus dem Gedächtnis aufzuzählen, ohne noch einmal hinzusehen, sobald du zurück bist.
-- **Body Debugger** lässt dich eine Reihe körperlicher Kommandos befolgen, außer solchen mit dem Präfix "AI SAYS", ein kleiner Test aus Bewegung plus Impulskontrolle. Wenn du dem KI-Kommando trotzdem gehorchst, schreibt sich die Metapher von selbst.
-- **Rubber Duck Boss** bittet dich, Fragen laut zu beantworten, bevor du den Boss "treffen" darfst, Tippen ist optional. Die Ente will Klarheit, keine Tokens: Du erklärst es selbst, bevor du eine Maschine bittest, es für dich zu erklären.
+- **Mensch-CAPTCHA** (Human CAPTCHA) gibt dir eine leicht absurde körperliche Mission, keine Kamera, kein Mikrofon, keine Punktzahl, rein auf Ehrenwort. Ein Modell könnte die Mission beschreiben. Es könnte nicht genießen, wie albern es sich anfühlt, sie auszuführen.
+- **Raum-Raid** (Room Raid) schickt dich vom Schreibtisch weg, um drei bestimmte Dinge zu finden, keine Fotos erlaubt, und bittet dich dann, sie aus dem Gedächtnis aufzuzählen, ohne noch einmal hinzusehen, sobald du zurück bist.
+- **Körper-Debugger** (Body Debugger) lässt dich eine Reihe körperlicher Kommandos befolgen, außer solchen mit dem Präfix "AI SAYS", ein kleiner Test aus Bewegung plus Impulskontrolle. Wenn du dem KI-Kommando trotzdem gehorchst, schreibt sich die Metapher von selbst.
+- **Enten-Boss** (Rubber Duck Boss) bittet dich, Fragen laut zu beantworten, bevor du den Boss "treffen" darfst, Tippen ist optional. Die Ente will Klarheit, keine Tokens: Du erklärst es selbst, bevor du eine Maschine bittest, es für dich zu erklären.
 
-Diese sind bewusst weniger intensiv als der Serious-Modus. Was sie tatsächlich trainieren, sind Bewegung und eine Art Lebendigkeitsbeweis: körperlich, improvisiert, nicht skriptbar.
+Diese sind bewusst weniger intensiv als der Ernst-Modus. Was sie tatsächlich trainieren, sind Bewegung und eine Art Lebendigkeitsbeweis: körperlich, improvisiert, nicht skriptbar.
 
 ### Reset: Atmen, Meditation, Spazieren
 
 Der Reset-Modus ist die ruhige Option, für Momente, in denen du kein Rätsel brauchst, sondern ein echtes Herunterschalten.
 
-- **Breathing 5-5** führt dich durch fünf Sekunden einatmen, fünf Sekunden ausatmen, drei Minuten lang.
-- **Open Meditation** gibt dir spärliche Hinweise, um Geräusche, Empfindungen und Gedanken wahrzunehmen, ohne sie korrigieren zu wollen, drei Minuten ohne Leistungsziel.
-- **Body Scan** bewegt deine Aufmerksamkeit durch jeden Teil deines Körpers, ohne etwas verändern zu wollen, drei Minuten, um weich werden zu lassen, was weich werden kann.
-- **Five-minute Walk** schickt dich ganz vom Bildschirm weg, kein Handy, kein Podcast, kein Produktivitätsziel.
-- **One-track Reset** spielt drei Minuten eines lokalen Lofi-Tracks und bittet dich, währenddessen nichts anderes zu tun.
-- **Invisible Ping Pong** lässt dich sechzig Sekunden lang stehen und pantomimisch einen Ball von links nach rechts zurückschlagen, ein schneller Weg, die Körpermitte zu kreuzen und zu beweisen, dass du noch ein bewegliches Säugetier bist.
+- **Atmung 5–5** (Breathing 5-5) führt dich durch fünf Sekunden einatmen, fünf Sekunden ausatmen, drei Minuten lang.
+- **Offene Meditation** (Open Meditation) gibt dir spärliche Hinweise, um Geräusche, Empfindungen und Gedanken wahrzunehmen, ohne sie korrigieren zu wollen, drei Minuten ohne Leistungsziel.
+- **Körperscan** (Body Scan) bewegt deine Aufmerksamkeit durch jeden Teil deines Körpers, ohne etwas verändern zu wollen, drei Minuten, um weich werden zu lassen, was weich werden kann.
+- **Fünf Minuten gehen** (Five-minute Walk) schickt dich ganz vom Bildschirm weg, kein Handy, kein Podcast, kein Produktivitätsziel.
+- **Musik-Reset** (One-track Reset) spielt drei Minuten eines lokalen Lofi-Tracks und bittet dich, währenddessen nichts anderes zu tun.
+- **Unsichtbares Pingpong** (Invisible Ping Pong) lässt dich sechzig Sekunden lang stehen und pantomimisch einen Ball von links nach rechts zurückschlagen, ein schneller Weg, die Körpermitte zu kreuzen und zu beweisen, dass du noch ein bewegliches Säugetier bist.
 
-Sechs Optionen, weil der Kontext variiert: An manchen Tagen kannst du rausgehen, an anderen sitzt du im Großraumbüro, und ein Body Scan ist der einzige realistische Reset. Der Punkt ist bei jeder Übung derselbe: Verlasse den Feed, fülle die Pause nicht mit noch mehr Input.
+Sechs Optionen, weil der Kontext variiert: An manchen Tagen kannst du rausgehen, an anderen sitzt du im Großraumbüro, und ein Körperscan ist der einzige realistische Reset. Der Punkt ist bei jeder Übung derselbe: Verlasse den Feed, fülle die Pause nicht mit noch mehr Input.
 
 ## So schaltest du es ein
 
@@ -95,13 +99,13 @@ Ehrlich gesagt, ist die Funktion noch jung. Ich habe die erste Version der Übun
 - Doomscrolling während einer Pause ist keine Erholung, es ist ein Wechsel des Eingabestroms, der dein Gehirn im selben stimulierten, informationsverarbeitenden Modus hält wie die Arbeit.
 - Aktive Pausen mit Aufmerksamkeitswechsel haben messbare Belege: Illinois fand, dass kurze Ablenkungen den Wachsamkeits-Abfall verhindern, und Stanford fand, dass Gehen die kreative Leistung um 81 % steigert.
 - Never Dumbs Philosophie ist einfach: Die KI darf den Satz beenden, sie darf niemals den Gedanken beenden. Pausen sind der Ort, an dem du Denken übst, ohne dass das Werkzeug es für dich beendet.
-- Die 13 Übungen teilen sich in drei Aufgaben: Serious baut Denken durch Reibung wieder auf, Fun bringt Bewegung und einen Menschlichkeitsbeweis, Reset gibt dir ein echtes physiologisches Herunterschalten.
+- Die 13 Übungen teilen sich in drei Aufgaben: Ernst baut Denken durch Reibung wieder auf, Spaß bringt Bewegung und einen Menschlichkeitsbeweis, Reset gibt dir ein echtes physiologisches Herunterschalten.
 - Never Dumb öffnet sich automatisch bei deiner langen Pause (nach deinem 4. Pomodoro) und lässt sich in den Einstellungen abschalten, wenn du es lieber manuell auslösen willst.
 
 ## Häufige Fragen
 
 ### Was ist Never Dumb in Pomodorian?
-Never Dumb ist eine Pausenfunktion in Pomodorian, die 13 kurze Übungen in drei Modi bietet, Serious, Fun und Reset, damit deine Pomodoro-Pausen kognitive Widerstandsfähigkeit aufbauen, statt standardmäßig im Handy-Feed zu landen.
+Never Dumb ist eine Pausenfunktion in Pomodorian, die 13 kurze Übungen in drei Modi bietet, Ernst, Spaß und Reset, damit deine Pomodoro-Pausen kognitive Widerstandsfähigkeit aufbauen, statt standardmäßig im Handy-Feed zu landen.
 
 ### Wann öffnet sich Never Dumb?
 Es öffnet sich automatisch während deiner langen Pause, der nach jedem vierten Pomodoro. Du kannst das automatische Öffnen in den Einstellungen abschalten und es stattdessen manuell starten, wenn du lieber selbst entscheidest, wann es erscheint.
