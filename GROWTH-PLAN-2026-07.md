@@ -116,7 +116,7 @@ Règles d'écriture (corrige les défauts mesurés du pipeline) : voix first-per
 
 Séquencée APRÈS les OG images (sinon toute carte de partage est vide) et calée sur le gate G0 :
 
-- [ ] **AlternativeTo** (Effort S, dès Phase 1 finie) : fiche statique, alternative à Pomofocus/Forest/Focus To-Do : la source la plus dense pour les prompts « best/alternative to X »
+- [~] **AlternativeTo** : compte créé par JB le 2026-07-28 ; **soumission possible le 2026-08-04** ; kit complet prêt à coller dans `marketing/alternativeto-submission.md` (descriptions, tags, 8 screenshots ordonnés, claims 100 % vérifiés)
 - [ ] **Wikidata** : créer l'entité Pomodorian + la référencer en sameAs (levier de résolution d'entité IA le plus fort restant)
 - [ ] **Product Hunt** (après QA mobile + OG images) : assets, description, jour de lancement préparé
 - [ ] **Reddit** : le plan de 8 posts/7 subreddits existe déjà (`scripts/reddit-launch-plan.md`) : l'exécuter seulement quand G0 montre une courbe qui s'aplatit (règle RARRA : pas d'eau dans un seau percé)
