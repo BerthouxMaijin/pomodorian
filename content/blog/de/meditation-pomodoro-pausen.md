@@ -1,8 +1,8 @@
 ---
 title: "Meditation in Pomodoro-Pausen: Ein 3-Minuten-Protokoll"
 description: "Kurze Meditationspausen sind beliebt, aber die stärkste Evidenz testet 20-Minuten-Sessions, keine 3-Minuten-Pausen. Was wirklich bewiesen ist."
-date: "2026-07-28"
-updated: "2026-07-28"
+date: "2026-08-03"
+updated: "2026-08-03"
 readTime: "8 min"
 author: "Jean-Baptiste Berthoux"
 keywords:
@@ -10,7 +10,7 @@ keywords:
   - kurze Meditation Arbeitspausen
   - 3-Minuten-Meditation
   - Atemübung 5-5
-status: draft
+status: published
 score: 10
 sources:
   - "https://www.sciencedirect.com/science/article/abs/pii/S1053810010000681"

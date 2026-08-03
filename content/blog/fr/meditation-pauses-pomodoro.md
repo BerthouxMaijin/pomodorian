@@ -1,8 +1,8 @@
 ---
 title: "Méditation pendant les pauses Pomodoro : protocole 3 min"
 description: "Les pauses méditation courtes sont un conseil populaire, mais les preuves solides testent des sessions de 20 minutes, pas 3. Ce qui est vraiment prouvé."
-date: "2026-07-28"
-updated: "2026-07-28"
+date: "2026-08-03"
+updated: "2026-08-03"
 readTime: "10 min"
 author: "Jean-Baptiste Berthoux"
 keywords:
@@ -10,7 +10,7 @@ keywords:
   - méditation courte pause travail
   - méditation 3 minutes
   - exercice respiration 5-5
-status: draft
+status: published
 score: 10
 sources:
   - "https://www.sciencedirect.com/science/article/abs/pii/S1053810010000681"

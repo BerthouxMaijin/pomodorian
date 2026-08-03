@@ -1,8 +1,8 @@
 ---
 title: "Meditación en los descansos Pomodoro: protocolo de 3 minutos"
 description: "La meditación corta en los descansos es un consejo popular, pero la evidencia más fuerte prueba sesiones de 20 minutos, no pausas de 3. Esto es lo probado."
-date: "2026-07-28"
-updated: "2026-07-28"
+date: "2026-08-03"
+updated: "2026-08-03"
 readTime: "9 min"
 author: "Jean-Baptiste Berthoux"
 keywords:
@@ -10,7 +10,7 @@ keywords:
   - meditacion corta en el trabajo
   - meditacion de 3 minutos
   - ejercicio de respiracion 5-5
-status: draft
+status: published
 score: 10
 sources:
   - "https://www.sciencedirect.com/science/article/abs/pii/S1053810010000681"

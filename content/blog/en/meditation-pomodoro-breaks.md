@@ -1,8 +1,8 @@
 ---
 title: "Meditation During Pomodoro Breaks: A 3-Minute Protocol"
 description: "Short meditation breaks are popular advice, but the strongest evidence tests 20-minute sessions, not 3-minute pauses. Here's what's actually proven."
-date: "2026-07-28"
-updated: "2026-07-28"
+date: "2026-08-03"
+updated: "2026-08-03"
 readTime: "8 min"
 author: "Jean-Baptiste Berthoux"
 keywords:
@@ -10,7 +10,7 @@ keywords:
   - short meditation work breaks
   - 3 minute meditation
   - breathing exercise 5-5
-status: draft
+status: published
 score: 10
 sources:
   - "https://www.sciencedirect.com/science/article/abs/pii/S1053810010000681"
