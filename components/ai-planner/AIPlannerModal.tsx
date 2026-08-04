@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef, useMemo } from "react";
-import { track } from "@vercel/analytics";
+import { track } from "@/lib/track";
 import type { AppSettings, AITaskSuggestion, AIPlannerResponse } from "@/lib/types";
 import { generateId } from "@/lib/utils";
 import {

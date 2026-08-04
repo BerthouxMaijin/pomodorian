@@ -2,7 +2,7 @@
 
 import { useCallback, useEffect, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { track } from "@vercel/analytics";
+import { track } from "@/lib/track";
 import {
   buildMessagePlaceholder,
   FEEDBACK_COPY,

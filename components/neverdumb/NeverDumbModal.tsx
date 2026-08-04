@@ -8,7 +8,7 @@ import {
   type ReactNode,
 } from "react";
 import { motion, useReducedMotion } from "framer-motion";
-import { track } from "@vercel/analytics";
+import { track } from "@/lib/track";
 import { formatTime } from "@/lib/utils";
 import type { UiLocale } from "@/lib/i18n/locales";
 import { useBrowserLocale } from "@/hooks/useBrowserLocale";

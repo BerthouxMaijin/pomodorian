@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
-import { track } from "@vercel/analytics";
+import { track } from "@/lib/track";
 import type { AppSettings } from "@/lib/types";
 import { ALARM_SOUNDS, AI_LANGUAGES } from "@/lib/constants";
 import { useBrowserLocale } from "@/hooks/useBrowserLocale";

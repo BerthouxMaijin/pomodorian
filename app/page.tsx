@@ -2,7 +2,7 @@
 
 import { useState, useCallback, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { track } from "@vercel/analytics";
+import { track } from "@/lib/track";
 import { useTimer } from "@/hooks/useTimer";
 import { useSettings } from "@/hooks/useSettings";
 import { useSound } from "@/hooks/useSound";
