@@ -11,6 +11,7 @@ keywords:
   - body doubling app
   - virtual body doubling
 status: published
+translationKey: body-doubling
 sources:
   - "https://add.org/the-body-double/"
   - "https://health.clevelandclinic.org/body-doubling-for-adhd"
