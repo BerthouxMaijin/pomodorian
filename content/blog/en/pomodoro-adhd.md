@@ -1,8 +1,8 @@
 ---
 title: "Pomodoro and ADHD: Why External Structure Helps"
 description: "Pomodoro was never clinically tested for ADHD, but time blindness research explains why an external timer can still help you start. Not medical advice."
-date: "2026-07-28"
-updated: "2026-07-28"
+date: "2026-08-10"
+updated: "2026-08-10"
 readTime: "8 min"
 author: "Jean-Baptiste Berthoux"
 keywords:
@@ -10,7 +10,7 @@ keywords:
   - adhd timer technique
   - adhd focus timer
   - time blindness adhd
-status: draft
+status: published
 score: 10
 sources:
   - "https://dl.acm.org/doi/full/10.1145/3689648"

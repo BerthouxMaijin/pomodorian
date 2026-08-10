@@ -1,8 +1,8 @@
 ---
 title: "Pomodoro y TDAH: por qué ayuda la estructura externa"
 description: "El Pomodoro nunca se probó clínicamente para el TDAH, pero la investigación sobre ceguera temporal explica por qué un temporizador externo ayuda a empezar."
-date: "2026-07-28"
-updated: "2026-07-28"
+date: "2026-08-10"
+updated: "2026-08-10"
 readTime: "9 min"
 author: "Jean-Baptiste Berthoux"
 keywords:
@@ -10,7 +10,7 @@ keywords:
   - temporizador para tdah
   - temporizador de concentracion tdah
   - ceguera temporal tdah
-status: draft
+status: published
 score: 10
 sources:
   - "https://dl.acm.org/doi/full/10.1145/3689648"

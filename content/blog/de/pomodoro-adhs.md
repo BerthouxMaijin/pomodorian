@@ -1,8 +1,8 @@
 ---
 title: "Pomodoro und ADHS: Warum äußere Struktur hilft"
 description: "Pomodoro wurde nie klinisch bei ADHS getestet. Zeitblindheit erklärt, warum ein externer Timer beim Start trotzdem hilft. Kein medizinischer Rat."
-date: "2026-07-28"
-updated: "2026-07-28"
+date: "2026-08-10"
+updated: "2026-08-10"
 readTime: "8 min"
 author: "Jean-Baptiste Berthoux"
 keywords:
@@ -10,7 +10,7 @@ keywords:
   - ADHS Timer Technik
   - ADHS Fokus Timer
   - Zeitblindheit ADHS
-status: draft
+status: published
 score: 10
 sources:
   - "https://dl.acm.org/doi/full/10.1145/3689648"

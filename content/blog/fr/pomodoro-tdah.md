@@ -1,8 +1,8 @@
 ---
 title: "Pomodoro et TDAH : pourquoi la structure externe aide"
 description: "Pomodoro n'a jamais été testé cliniquement pour le TDAH, mais la cécité temporelle explique pourquoi un minuteur externe aide à démarrer."
-date: "2026-07-28"
-updated: "2026-07-28"
+date: "2026-08-10"
+updated: "2026-08-10"
 readTime: "9 min"
 author: "Jean-Baptiste Berthoux"
 keywords:
@@ -10,7 +10,7 @@ keywords:
   - technique minuteur tdah
   - minuteur concentration tdah
   - cécité temporelle tdah
-status: draft
+status: published
 score: 10
 sources:
   - "https://dl.acm.org/doi/full/10.1145/3689648"
