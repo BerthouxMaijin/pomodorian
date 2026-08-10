@@ -10,7 +10,7 @@ keywords:
   - what to do while claude code is working
   - ai agent waiting time
   - context switching developers
-status: draft
+status: published
 sources:
   - "https://ics.uci.edu/~gmark/chi08-mark.pdf"
   - "https://www.sciencedirect.com/science/article/abs/pii/S0749597809000399"
