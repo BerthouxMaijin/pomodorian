@@ -47,7 +47,7 @@ One caveat worth stating plainly: this research is drawn almost entirely from ch
 
 Body doubling, working alongside another person (in the room, on a video call, or even with an AI presence) who isn't actually helping with the task, is one of the most talked-about ADHD productivity strategies in online communities. It's worth being honest about where the evidence stands: it's thin. Formal research on it is recent and small. [A qualitative study](https://dl.acm.org/doi/full/10.1145/3689648) interviewed neurodivergent participants about how they discovered and use body doubling and found it helps mainly through external accountability and a shared sense of structure, but it's based on self-report, not a controlled trial. [A separate virtual reality experiment with just 12 participants](https://arxiv.org/pdf/2509.12153) compared working alone, with a human double, and with an AI double on a simple building task, and found people finished faster and reported better focus with a double present. A study of 12 people can point in a direction, not establish a fact.
 
-Body doubling is worth trying if the idea appeals to you. It shouldn't be described, here or anywhere else, as a proven ADHD intervention. It's a widely reported practice with early, small-scale research behind it, nothing more yet.
+Body doubling is worth trying if the idea appeals to you. It shouldn't be described, here or anywhere else, as a proven ADHD intervention. It's a widely reported practice with early, small-scale research behind it, nothing more yet. For the full picture, including every published study and how to set up a session, see [our complete guide to body doubling](/blog/body-doubling).
 
 ## What a Pomodoro timer doesn't solve
 

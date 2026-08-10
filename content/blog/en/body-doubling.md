@@ -10,7 +10,7 @@ keywords:
   - body doubling adhd
   - body doubling app
   - virtual body doubling
-status: draft
+status: published
 sources:
   - "https://add.org/the-body-double/"
   - "https://health.clevelandclinic.org/body-doubling-for-adhd"

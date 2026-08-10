@@ -2,6 +2,7 @@
 title: "Group Pomodoro: How to Run Focus Sessions With Your Team"
 description: "Learn how group Pomodoro sessions help teams focus together. A practical guide to running team focus sessions that boost accountability and deep work."
 date: "2026-03-25"
+updated: "2026-08-10"
 readTime: "7 min"
 keywords:
   - group pomodoro
@@ -37,7 +38,7 @@ This is why so many people find cafés productive. It's not just the coffee. It'
 
 ### Body Doubling: The Accountability You Didn't Know You Needed
 
-There's a related concept called **body doubling** — working on a task with another person present, even if they're doing something completely different. The term comes from the ADHD community, where it's widely recognized as [one of the most effective strategies](https://www.myndlift.com/post/how-body-doubling-improves-productivity) for overcoming task initiation and sustaining focus.
+There's a related concept called **body doubling** — working on a task with another person present, even if they're doing something completely different. The term comes from the ADHD community, where it's one of the most talked-about strategies for overcoming task initiation and sustaining focus. We cover it in depth, including what the research actually shows, in [our complete guide to body doubling](/blog/body-doubling).
 
 But you don't need an ADHD diagnosis to benefit. The principle is universal: when someone else is working alongside you, quitting feels harder. Opening Twitter feels awkward. The social contract — even an unspoken one — keeps you honest.
 
