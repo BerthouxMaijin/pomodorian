@@ -11,6 +11,7 @@ keywords:
   - ai agent waiting time
   - context switching developers
 status: published
+translationKey: what-to-do-while-claude-code-is-working
 sources:
   - "https://ics.uci.edu/~gmark/chi08-mark.pdf"
   - "https://www.sciencedirect.com/science/article/abs/pii/S0749597809000399"
