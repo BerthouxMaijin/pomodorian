@@ -1,11 +1,12 @@
 ---
-title: "How to Use Your Pomodoro Breaks Effectively"
-description: "Discover the best pomodoro break ideas and activities to recharge between work sessions. Science-backed tips for effective breaks."
+title: "What to Do During Pomodoro Breaks: 11 Science-Backed Ideas"
+description: "What to do during Pomodoro breaks: 11 science-backed ideas for 5-minute and long breaks that recharge your focus instead of draining it."
 date: "2026-03-25"
-updated: "2026-07-27"
+updated: "2026-08-11"
 readTime: "11 min"
 author: "Jean-Baptiste Berthoux"
 keywords:
+  - what to do during pomodoro breaks
   - pomodoro break ideas
   - what to do during breaks
   - effective breaks
