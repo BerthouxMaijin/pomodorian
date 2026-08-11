@@ -31,6 +31,7 @@ Mettre à jour `ETAT-ARTICLES.tsv`. Verdict par contenu :
 - `REFRESH` : a des impressions mais sous-optimisé (score mécanique faible, contenu daté, position 8-25 « striking distance », ou tendance en baisse).
 - `FIX` : correctif rapide ≤ 10 min (title/meta, lien cassé, hreflang manquant, FAQ absente).
 - `MERGE` : cannibalise un autre contenu → fusionner/rediriger (proposer à JB, ne pas exécuter seul).
+- `NEW` : publié il y a moins de 30 jours → trop tôt pour juger, ne pas toucher.
 - `DORMANT` : ni trafic ni potentiel identifié → ignorer.
 Au-delà du premier run, ne recalculer en détail que les deltas (contenus dont les données GSC ont bougé).
 
@@ -48,7 +49,7 @@ Au-delà du premier run, ne recalculer en détail que les deltas (contenus dont 
 - Création : article EN d'abord (jamais une autre langue en premier), esprit `/seo-article` : WebSearch 5-8 sources primaires autoritaires et datées, 1 500-2 000 mots, réponse directe dans les 100 premiers mots, H2/H3 scannables, FAQ 3-5 questions (+ FAQPage JSON-LD si substantielle), min 3 liens internes (dont 1 vers le pilier pertinent) + 3 externes, frontmatter complet (`translationKey`, `date`, `status: draft`).
 - Refresh : mise au standard + `updated:` dans le frontmatter (jamais dateModified < datePublished).
 - Fact-check adversarial (esprit `scripts/seo/prompt-factcheck.md`) : score ≥ 8/10 exigé. AUCUN claim produit non vérifié contre le code (leçon « works offline »).
-- `npm run build` vert, commit conventionnel, push (le draft reste invisible en prod).
+- `npm run build` vert, commit conventionnel. **Règle de push** : une CRÉATION en `status: draft` peut être poussée (invisible en prod) ; un REFRESH ou FIX d'une page `published` reste en COMMIT LOCAL NON POUSSÉ (le push = mise en prod) — JB pousse après relecture. Ne jamais pousser d'infra par-dessus un commit contenu local en attente.
 - Les traductions fr/es/de ne partent QU'APRÈS validation JB de l'EN, et seulement si l'article le mérite.
 
 ### Phase 5 — Rapport à JB
