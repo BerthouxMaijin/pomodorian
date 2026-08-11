@@ -1,0 +1,142 @@
+type	lang	slug	url	status	date	updated	translationKey	words	h2Count	faq	internal	external	table
+article	en	2-minute-rule-with-pomodoro	/blog/2-minute-rule-with-pomodoro	published	2026-03-25		2-minute-rule-with-pomodoro	1836	7	0	4	8	0
+article	en	ai-era-productivity-guide	/blog/ai-era-productivity-guide	published	2026-04-02		ai-era-productivity-guide	3520	12	1	10	18	0
+article	en	ai-productivity-tools-focus	/blog/ai-productivity-tools-focus	published	2026-03-23		ai-productivity-tools-focus	470	3	0	3	0	0
+article	en	ai-writing-keep-your-voice	/blog/ai-writing-keep-your-voice	published	2026-04-02		ai-writing-keep-your-voice	1833	7	1	9	5	0
+article	en	ambient-sounds-productivity-science	/blog/ambient-sounds-productivity-science	published	2026-03-23		ambient-sounds-productivity-science	622	6	0	3	0	0
+article	en	avoid-burnout-software-engineer	/blog/avoid-burnout-software-engineer	published	2026-03-25		avoid-burnout-software-engineer	1706	6	0	8	10	0
+article	en	best-pomodoro-apps-2026	/blog/best-pomodoro-apps-2026	published	2026-03-23	2026-07-27	best-pomodoro-apps-2026	2087	11	1	8	0	1
+article	en	best-study-techniques-science	/blog/best-study-techniques-science	published	2026-03-25		best-study-techniques-science	2007	9	0	5	12	0
+article	en	body-doubling	/blog/body-doubling	published	2026-08-10	2026-08-10	body-doubling	1989	9	1	7	9	1
+article	en	build-daily-focus-habit-30-days	/blog/build-daily-focus-habit-30-days	published	2026-03-25		build-daily-focus-habit-30-days	1800	7	0	4	8	0
+article	en	cognitive-debt-ai-era	/blog/cognitive-debt-ai-era	published	2026-07-28	2026-07-28	cognitive-debt-ai-era	2146	7	1	3	7	0
+article	en	cognitive-sovereignty	/blog/cognitive-sovereignty	published	2026-07-28	2026-07-28	cognitive-sovereignty	2567	8	1	4	5	1
+article	en	consultant-orchestrate-ai-tools	/blog/consultant-orchestrate-ai-tools	published	2026-04-02		consultant-orchestrate-ai-tools	1635	7	1	5	5	0
+article	en	context-switching-cost-development	/blog/context-switching-cost-development	published	2026-03-25	2026-07-27	context-switching-cost-development	2123	7	1	8	9	1
+article	en	customize-pomodoro-intervals	/blog/customize-pomodoro-intervals	published	2026-03-25		customize-pomodoro-intervals	1781	7	0	8	10	1
+article	en	deep-work-programmers-framework	/blog/deep-work-programmers-framework	published	2026-03-25		deep-work-programmers-framework	2006	6	0	8	9	1
+article	en	developer-productivity-ai-era	/blog/developer-productivity-ai-era	published	2026-04-02		developer-productivity-ai-era	2141	7	1	7	11	1
+article	en	digital-minimalism-remote-workers	/blog/digital-minimalism-remote-workers	published	2026-03-27			1567	7	1	8	7	0
+article	en	distraction-free-home-office	/blog/distraction-free-home-office	published	2026-03-25			1474	10	0	5	7	0
+article	en	group-pomodoro-team-sessions	/blog/group-pomodoro-team-sessions	published	2026-03-25	2026-08-10		1654	6	0	7	6	0
+article	en	how-to-use-never-dumb	/blog/how-to-use-never-dumb	published	2026-07-28	2026-07-28	how-to-use-never-dumb	1524	6	1	6	0	1
+article	en	how-to-use-pomodorian	/blog/how-to-use-pomodorian	published	2026-07-28	2026-07-28	how-to-use-pomodorian	2414	10	1	12	0	1
+article	en	long-pomodoro-sessions-guide	/blog/long-pomodoro-sessions-guide	published	2026-03-25	2026-07-27	long-pomodoro-sessions-guide	2411	9	1	8	12	0
+article	en	managers-when-not-to-use-ai	/blog/managers-when-not-to-use-ai	published	2026-04-02		managers-when-not-to-use-ai	1835	7	1	8	7	0
+article	en	meditation-pomodoro-breaks	/blog/meditation-pomodoro-breaks	published	2026-08-03	2026-08-03	meditation-pomodoro-breaks	1788	7	1	4	3	0
+article	en	micro-breaks-boost-focus	/blog/micro-breaks-boost-focus	published	2026-03-25			1796	6	0	4	9	0
+article	en	morning-routines-productive-people	/blog/morning-routines-productive-people	published	2026-03-25		morning-routines-productive-people	1509	4	0	5	10	0
+article	en	never-dumb-breaks	/blog/never-dumb-breaks	published	2026-07-28	2026-07-28	never-dumb-breaks	1773	6	1	6	4	0
+article	en	note-taking-methods-retention	/blog/note-taking-methods-retention	published	2026-03-25			1801	9	0	7	11	0
+article	en	pair-programming-vs-solo-deep-work	/blog/pair-programming-vs-solo-deep-work	published	2026-03-25			1475	6	0	6	12	0
+article	en	pomodoro-2-automated-workflows	/blog/pomodoro-2-automated-workflows	published	2026-04-02		pomodoro-2-automated-workflows	1886	8	1	10	6	1
+article	en	pomodoro-adhd	/blog/pomodoro-adhd	published	2026-08-10	2026-08-10	pomodoro-adhd	1679	8	1	5	3	0
+article	en	pomodoro-for-creative-work	/blog/pomodoro-for-creative-work	published	2026-03-25			1867	8	0	5	10	0
+article	en	pomodoro-language-learning	/blog/pomodoro-language-learning	published	2026-03-25			1729	6	0	6	10	1
+article	en	pomodoro-technique-beginners-guide	/blog/pomodoro-technique-beginners-guide	published	2026-03-25			1704	7	0	7	6	0
+article	en	pomodoro-technique-complete-guide	/blog/pomodoro-technique-complete-guide	published	2026-03-23		pomodoro-guide-beginners	597	6	0	6	0	0
+article	en	pomodoro-technique-for-developers	/blog/pomodoro-technique-for-developers	published	2026-03-23			596	4	0	5	0	0
+article	en	prepare-exams-without-burnout	/blog/prepare-exams-without-burnout	published	2026-03-25			1819	8	0	7	6	0
+article	en	recover-focus-after-interruption	/blog/recover-focus-after-interruption	published	2026-03-25		recover-focus-after-interruption	1739	5	0	5	6	0
+article	en	remote-worker-guide-staying-focused	/blog/remote-worker-guide-staying-focused	published	2026-03-25		remote-worker-guide-staying-focused	1666	7	0	4	12	0
+article	en	science-of-flow-state	/blog/science-of-flow-state	published	2026-03-25			2006	7	0	8	7	0
+article	en	set-boundaries-working-from-home	/blog/set-boundaries-working-from-home	published	2026-03-25			2059	9	0	6	12	0
+article	en	stop-procrastinating-timeboxing	/blog/stop-procrastinating-timeboxing	published	2026-03-25		stop-procrastinating-timeboxing	1766	8	0	8	8	0
+article	en	structure-coding-day-maximum-output	/blog/structure-coding-day-maximum-output	published	2026-03-25			1601	6	0	4	9	0
+article	en	study-active-recall-spaced-repetition	/blog/study-active-recall-spaced-repetition	published	2026-03-25			1759	6	0	6	10	0
+article	en	time-management-for-people-who-hate-it	/blog/time-management-for-people-who-hate-it	published	2026-03-25			1490	5	0	6	9	0
+article	en	ultradian-rhythms-natural-focus-cycles	/blog/ultradian-rhythms-natural-focus-cycles	published	2026-03-27		ultradian-rhythms-natural-focus-cycles	1844	7	1	6	8	0
+article	en	use-pomodoro-breaks-effectively	/blog/use-pomodoro-breaks-effectively	published	2026-03-25	2026-07-27	use-pomodoro-breaks-effectively	2480	9	1	9	6	1
+article	en	what-to-do-while-claude-code-is-working	/blog/what-to-do-while-claude-code-is-working	published	2026-08-10	2026-08-10	what-to-do-while-claude-code-is-working	2069	7	1	6	5	0
+article	en	why-breaks-make-you-more-productive	/blog/why-breaks-make-you-more-productive	published	2026-03-25			1815	7	0	5	8	0
+article	en	why-multitasking-kills-productivity	/blog/why-multitasking-kills-productivity	published	2026-03-25		why-multitasking-kills-productivity	1407	7	0	3	6	0
+article	fr	body-doubling	/blog/fr/body-doubling	published	2026-08-10	2026-08-10	body-doubling	2164	9	1	4	9	1
+article	fr	comment-utiliser-never-dumb	/blog/fr/comment-utiliser-never-dumb	published	2026-07-28	2026-07-28	how-to-use-never-dumb	1723	6	1	6	0	1
+article	fr	comment-utiliser-pomodorian	/blog/fr/comment-utiliser-pomodorian	published	2026-07-28	2026-07-28	how-to-use-pomodorian	2898	10	1	12	0	1
+article	fr	consultant-orchestrer-ia	/blog/fr/consultant-orchestrer-ia	published	2026-04-02		consultant-orchestrate-ai-tools	1947	7	1	5	5	0
+article	fr	cout-changement-contexte-developpeurs	/blog/fr/cout-changement-contexte-developpeurs	published	2026-04-01		context-switching-cost-development	1842	5	0	5	9	1
+article	fr	deep-work-concentration-profonde	/blog/fr/deep-work-concentration-profonde	published	2026-03-25		deep-work-programmers-framework	1514	6	0	4	6	0
+article	fr	dette-cognitive-ere-ia	/blog/fr/dette-cognitive-ere-ia	published	2026-07-28	2026-07-28	cognitive-debt-ai-era	2535	7	1	3	7	0
+article	fr	eviter-burnout-developpeur	/blog/fr/eviter-burnout-developpeur	published	2026-04-01		avoid-burnout-software-engineer	1930	6	0	8	10	0
+article	fr	guide-complet-pomodoro-debutants	/blog/fr/guide-complet-pomodoro-debutants	published	2026-03-25		pomodoro-guide-beginners	1702	7	0	4	6	0
+article	fr	habitude-concentration-quotidienne-30-jours	/blog/fr/habitude-concentration-quotidienne-30-jours	published	2026-04-01		build-daily-focus-habit-30-days	2041	7	0	4	8	0
+article	fr	ia-ecriture-garder-sa-voix	/blog/fr/ia-ecriture-garder-sa-voix	published	2026-04-02		ai-writing-keep-your-voice	1969	7	1	6	5	0
+article	fr	managers-quand-ne-pas-utiliser-ia	/blog/fr/managers-quand-ne-pas-utiliser-ia	published	2026-04-02		managers-when-not-to-use-ai	2008	7	1	5	7	0
+article	fr	meditation-pauses-pomodoro	/blog/fr/meditation-pauses-pomodoro	published	2026-08-03	2026-08-03	meditation-pomodoro-breaks	2059	7	1	4	3	0
+article	fr	meilleures-apps-pomodoro-2026	/blog/fr/meilleures-apps-pomodoro-2026	published	2026-03-23	2026-07-27	best-pomodoro-apps-2026	2428	11	1	8	0	1
+article	fr	meilleures-techniques-etude-science	/blog/fr/meilleures-techniques-etude-science	published	2026-04-01		best-study-techniques-science	2315	9	0	3	12	0
+article	fr	meilleurs-sons-ambiance-concentration	/blog/fr/meilleurs-sons-ambiance-concentration	published	2026-03-25		ambient-sounds-productivity-science	2122	7	0	6	13	0
+article	fr	multitache-mythe-quoi-faire	/blog/fr/multitache-mythe-quoi-faire	published	2026-03-25		why-multitasking-kills-productivity	1633	4	0	3	7	0
+article	fr	organiser-journee-teletravail	/blog/fr/organiser-journee-teletravail	published	2026-03-25		remote-worker-guide-staying-focused	1531	9	0	3	7	0
+article	fr	outils-ia-productivite-concentration	/blog/fr/outils-ia-productivite-concentration	published	2026-04-01		ai-productivity-tools-focus	575	3	0	3	0	0
+article	fr	pauses-never-dumb	/blog/fr/pauses-never-dumb	published	2026-07-28	2026-07-28	never-dumb-breaks	2038	6	1	6	4	0
+article	fr	pauses-productives-que-faire	/blog/fr/pauses-productives-que-faire	published	2026-03-25		use-pomodoro-breaks-effectively	1693	8	0	3	6	0
+article	fr	personnaliser-intervalles-pomodoro	/blog/fr/personnaliser-intervalles-pomodoro	published	2026-04-01		customize-pomodoro-intervals	1942	7	0	5	10	1
+article	fr	pomodoro-2-workflows-automatises	/blog/fr/pomodoro-2-workflows-automatises	published	2026-04-02		pomodoro-2-automated-workflows	2068	8	1	10	6	1
+article	fr	pomodoro-etudiants-reviser-efficacement	/blog/fr/pomodoro-etudiants-reviser-efficacement	published	2026-03-25			1793	8	0	5	10	0
+article	fr	pomodoro-tdah	/blog/fr/pomodoro-tdah	published	2026-08-10	2026-08-10	pomodoro-adhd	1987	8	1	4	3	0
+article	fr	productivite-developpeur-ere-ia	/blog/fr/productivite-developpeur-ere-ia	published	2026-04-02		developer-productivity-ai-era	2193	7	1	7	9	1
+article	fr	productivite-ere-ia-guide	/blog/fr/productivite-ere-ia-guide	published	2026-04-02		ai-era-productivity-guide	3904	12	1	9	18	0
+article	fr	que-faire-pendant-que-claude-code-travaille	/blog/fr/que-faire-pendant-que-claude-code-travaille	published	2026-08-10	2026-08-10	what-to-do-while-claude-code-is-working	2321	7	1	6	5	0
+article	fr	recuperer-concentration-apres-interruption	/blog/fr/recuperer-concentration-apres-interruption	published	2026-03-25		recover-focus-after-interruption	1674	5	0	4	9	0
+article	fr	regle-2-minutes-pomodoro-combo	/blog/fr/regle-2-minutes-pomodoro-combo	published	2026-04-01		2-minute-rule-with-pomodoro	2161	7	0	5	8	0
+article	fr	routine-matinale-gens-productifs	/blog/fr/routine-matinale-gens-productifs	published	2026-03-25		morning-routines-productive-people	1837	7	0	3	9	1
+article	fr	rythmes-ultradiens-cycles-concentration-naturels	/blog/fr/rythmes-ultradiens-cycles-concentration-naturels	published	2026-04-01		ultradian-rhythms-natural-focus-cycles	2126	7	1	5	8	0
+article	fr	sessions-pomodoro-longues-guide	/blog/fr/sessions-pomodoro-longues-guide	published	2026-04-01		long-pomodoro-sessions-guide	2181	7	0	8	12	0
+article	fr	souverainete-cognitive	/blog/fr/souverainete-cognitive	published	2026-07-28	2026-07-28	cognitive-sovereignty	2935	8	1	4	6	1
+article	fr	vaincre-procrastination-pomodoro	/blog/fr/vaincre-procrastination-pomodoro	published	2026-03-25		stop-procrastinating-timeboxing	1721	7	0	3	9	0
+article	es	body-doubling	/blog/es/body-doubling	published	2026-08-10	2026-08-10	body-doubling	2130	9	1	4	9	1
+article	es	como-usar-never-dumb	/blog/es/como-usar-never-dumb	published	2026-07-28	2026-07-28	how-to-use-never-dumb	1627	6	1	6	0	1
+article	es	como-usar-pomodorian	/blog/es/como-usar-pomodorian	published	2026-07-28	2026-07-28	how-to-use-pomodorian	2708	10	1	12	0	1
+article	es	coste-cambio-contexto-desarrolladores	/blog/es/coste-cambio-contexto-desarrolladores	published	2026-04-01		context-switching-cost-development	1757	5	0	4	9	1
+article	es	dejar-procrastinar-tecnica-pomodoro	/blog/es/dejar-procrastinar-tecnica-pomodoro	published	2026-03-25		stop-procrastinating-timeboxing	1530	7	0	4	7	0
+article	es	deuda-cognitiva-era-ia	/blog/es/deuda-cognitiva-era-ia	published	2026-07-28	2026-07-28	cognitive-debt-ai-era	2454	7	1	3	7	0
+article	es	guia-completa-tecnica-pomodoro	/blog/es/guia-completa-tecnica-pomodoro	published	2026-03-25		pomodoro-guide-beginners	1491	6	0	4	8	0
+article	es	meditacion-pausas-pomodoro	/blog/es/meditacion-pausas-pomodoro	published	2026-08-03	2026-08-03	meditation-pomodoro-breaks	1990	7	1	4	3	0
+article	es	mejores-apps-pomodoro-2026	/blog/es/mejores-apps-pomodoro-2026	published	2026-03-23	2026-07-27	best-pomodoro-apps-2026	2296	11	1	8	0	1
+article	es	mejores-sonidos-ambientales-concentrarse	/blog/es/mejores-sonidos-ambientales-concentrarse	published	2026-03-25		ambient-sounds-productivity-science	1486	7	0	4	6	0
+article	es	mejores-tecnicas-estudio-ciencia	/blog/es/mejores-tecnicas-estudio-ciencia	published	2026-04-01		best-study-techniques-science	2185	9	0	5	12	0
+article	es	organizar-dia-trabajo-home-office	/blog/es/organizar-dia-trabajo-home-office	published	2026-03-25		remote-worker-guide-staying-focused	1533	8	0	4	8	0
+article	es	pausas-never-dumb	/blog/es/pausas-never-dumb	published	2026-07-28	2026-07-28	never-dumb-breaks	1985	6	1	6	4	0
+article	es	pomodoro-estudiantes-estudiar-mejor	/blog/es/pomodoro-estudiantes-estudiar-mejor	published	2026-03-25			1530	7	0	5	5	0
+article	es	pomodoro-tdah	/blog/es/pomodoro-tdah	published	2026-08-10	2026-08-10	pomodoro-adhd	1932	8	1	4	3	0
+article	es	que-hacer-mientras-claude-code-trabaja	/blog/es/que-hacer-mientras-claude-code-trabaja	published	2026-08-10	2026-08-10	what-to-do-while-claude-code-is-working	2193	7	1	4	5	0
+article	es	ritmos-ultradianos-ciclos-concentracion	/blog/es/ritmos-ultradianos-ciclos-concentracion	published	2026-04-01		ultradian-rhythms-natural-focus-cycles	2014	7	1	6	8	0
+article	es	sesiones-pomodoro-largas-guia	/blog/es/sesiones-pomodoro-largas-guia	published	2026-04-01		long-pomodoro-sessions-guide	2053	7	0	7	12	0
+article	es	soberania-cognitiva	/blog/es/soberania-cognitiva	published	2026-07-28	2026-07-28	cognitive-sovereignty	2765	8	1	4	5	1
+article	de	beste-ambient-sounds-konzentrieren	/blog/de/beste-ambient-sounds-konzentrieren	published	2026-03-25		ambient-sounds-productivity-science	1481	5	0	4	9	1
+article	de	beste-pomodoro-apps-2026	/blog/de/beste-pomodoro-apps-2026	published	2026-03-23	2026-07-27	best-pomodoro-apps-2026	1938	11	0	8	0	1
+article	de	body-doubling	/blog/de/body-doubling	published	2026-08-10	2026-08-10	body-doubling	1804	9	0	4	9	1
+article	de	homeoffice-fokussiert-bleiben	/blog/de/homeoffice-fokussiert-bleiben	published	2026-03-25		remote-worker-guide-staying-focused	1331	7	0	5	8	0
+article	de	kognitive-schulden-ki	/blog/de/kognitive-schulden-ki	published	2026-07-28	2026-07-28	cognitive-debt-ai-era	2214	7	0	3	7	0
+article	de	kognitive-souveraenitaet	/blog/de/kognitive-souveraenitaet	published	2026-07-28	2026-07-28	cognitive-sovereignty	2633	8	0	4	5	1
+article	de	kontextwechsel-kosten-entwickler	/blog/de/kontextwechsel-kosten-entwickler	published	2026-04-01		context-switching-cost-development	1501	5	0	6	9	1
+article	de	meditation-pomodoro-pausen	/blog/de/meditation-pomodoro-pausen	published	2026-08-03	2026-08-03	meditation-pomodoro-breaks	1737	7	0	4	3	0
+article	de	never-dumb-anleitung	/blog/de/never-dumb-anleitung	published	2026-07-28	2026-07-28	how-to-use-never-dumb	1530	6	0	6	0	1
+article	de	never-dumb-pausen	/blog/de/never-dumb-pausen	published	2026-07-28	2026-07-28	never-dumb-breaks	1811	6	0	6	4	0
+article	de	pomodorian-anleitung	/blog/de/pomodorian-anleitung	published	2026-07-28	2026-07-28	how-to-use-pomodorian	2403	10	0	12	0	1
+article	de	pomodoro-adhs	/blog/de/pomodoro-adhs	published	2026-08-10	2026-08-10	pomodoro-adhd	1618	8	0	4	3	0
+article	de	pomodoro-technik-leitfaden-anfaenger	/blog/de/pomodoro-technik-leitfaden-anfaenger	published	2026-03-25		pomodoro-guide-beginners	1564	8	0	4	7	0
+article	de	ultradiane-rhythmen-fokus-zyklen	/blog/de/ultradiane-rhythmen-fokus-zyklen	published	2026-04-01		ultradian-rhythms-natural-focus-cycles	1726	7	1	6	8	0
+article	de	was-tun-waehrend-claude-code-arbeitet	/blog/de/was-tun-waehrend-claude-code-arbeitet	published	2026-08-10	2026-08-10	what-to-do-while-claude-code-is-working	1970	7	0	6	5	0
+seo-page	en	pomodoro-for-developers	/pomodoro-for-developers	published					3		1		
+seo-page	en	pomodoro-for-students	/pomodoro-for-students	published					3		1		
+seo-page	en	pomodoro-for-writers	/pomodoro-for-writers	published					3		1		
+seo-page	en	pomodoro-for-designers	/pomodoro-for-designers	published					3		1		
+seo-page	en	pomodoro-for-freelancers	/pomodoro-for-freelancers	published					3		1		
+seo-page	en	pomodoro-for-remote-workers	/pomodoro-for-remote-workers	published					3		1		
+seo-page	en	pomodoro-for-adhd	/pomodoro-for-adhd	published					3		1		
+seo-page	en	pomodoro-for-entrepreneurs	/pomodoro-for-entrepreneurs	published					3		1		
+seo-page	en	52-17-technique-timer	/52-17-technique-timer	published					3		1		
+seo-page	en	flowtime-technique-timer	/flowtime-technique-timer	published					3		1		
+seo-page	en	time-blocking-timer	/time-blocking-timer	published					3		1		
+seo-page	en	deep-work-timer	/deep-work-timer	published					4		1		
+seo-page	en	pomodorian-vs-pomofocus	/pomodorian-vs-pomofocus	published					4		1		
+seo-page	en	pomodorian-vs-forest	/pomodorian-vs-forest	published					4		1		
+seo-page	en	pomodorian-vs-focus-to-do	/pomodorian-vs-focus-to-do	published					4		1		
+seo-page	en	pomodorian-vs-toggl	/pomodorian-vs-toggl	published					4		1		
+seo-page	en	study-timer-for-exams	/study-timer-for-exams	published					3		1		
+seo-page	en	online-pomodoro-timer	/online-pomodoro-timer	published					3		1		
+seo-page	en	focus-music-timer	/focus-music-timer	published					3		1		
+seo-page	en	ai-task-planner	/ai-task-planner	published					4		1		
+seo-page	en	productivity-tracker	/productivity-tracker	published					3		1		
