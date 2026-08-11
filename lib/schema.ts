@@ -32,6 +32,7 @@ export const organizationNode = {
   sameAs: [
     "https://github.com/BerthouxMaijin/pomodorian",
     "https://ko-fi.com/jbbthx",
+    "https://alternativeto.net/software/pomodorian/",
   ],
   contactPoint: {
     "@type": "ContactPoint",

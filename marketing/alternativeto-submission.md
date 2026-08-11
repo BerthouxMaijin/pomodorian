@@ -44,3 +44,8 @@ Pomofocus, Forest, Focus To-Do, Focus Keeper, Toggl Track
 
 - Ajouter l'URL de la fiche AlternativeTo dans `Organization.sameAs` (`lib/schema.ts`) et dans la fiche de faits marketing.
 - Noter la date de mise en ligne de la fiche dans `GROWTH-PLAN-2026-07.md` (Phase 4).
+
+## ✅ Résultat
+
+- Soumis le 2026-08-10 (review prioritaire 5 $), **APPROUVÉ le 2026-08-11** : https://alternativeto.net/software/pomodorian/
+- URL ajoutée dans `Organization.sameAs` (`lib/schema.ts`) et date notée dans `GROWTH-PLAN-2026-07.md` (Phase 4) le 2026-08-11.
