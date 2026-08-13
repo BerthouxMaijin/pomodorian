@@ -9,6 +9,8 @@ export interface SeoPage {
   /** Competitor product name for comparison pages. Drives the comparison table
    * and its JSON-LD, so the h1 stays free to target the real search intent. */
   competitor?: string;
+  /** When this page's competitor facts were last checked at the source. */
+  verifiedOn?: string;
   sections?: { heading: string; body: string }[];
   relatedArticleSlugs?: string[];
 }
@@ -343,6 +345,7 @@ const comparisons: SeoPage[] = [
       "What Pomofocus includes for free, what Premium unlocks, why the price is not published anywhere, and which alternatives fit if it is not the right timer for you.",
     h1: "Pomofocus Review: What's Free, What's Behind Premium",
     competitor: "Pomofocus",
+    verifiedOn: "August 13, 2026",
     intro:
       "Pomofocus is one of the most-used Pomodoro timers on the web, and its free tier covers most of what a solo user needs: timer, tasks, reports, custom intervals and sounds, no signup. The two things worth knowing before you commit are that the free tier is ad-supported, and that the Premium price is not published anywhere on the site. Disclosure: we build Pomodorian, a competing timer, so verify anything below that matters to your decision.",
     keywords: ["pomofocus", "pomofocus review", "pomofocus premium", "pomofocus pricing", "pomofocus alternative", "pomodorian vs pomofocus"],

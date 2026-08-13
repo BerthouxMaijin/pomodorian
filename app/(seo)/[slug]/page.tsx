@@ -187,7 +187,7 @@ function ComparisonTable({ page }: { page: typeof seoPages[number] }) {
         </tbody>
       </table>
       <p className="text-xs text-muted mt-2">
-        Features and pricing verified on July 27, 2026.
+        Features and pricing verified on {page.verifiedOn ?? "July 27, 2026"}.
       </p>
     </div>
   );

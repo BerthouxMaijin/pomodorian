@@ -26,7 +26,13 @@ Une entrée par run. Lire les 3 dernières avant toute décision.
 
 **Coût OpenSEO** : 43 mots-clés (3 appels `get_keyword_metrics`) + 1 `get_serp_results`, estimé 105-145 crédits. SERP « pomofocus » vérifiée gratuitement via WebSearch.
 
-**Livrable** : `rapports/2026-08-13.md`. Refresh en **commit local non poussé** (page publiée, JB pousse après relecture).
+**Livrable** : `rapports/2026-08-13.md`.
+
+**Clôture du run (même jour)** : JB a donné « ok, fais tes implémentations » → poussé en prod.
+- Claim concurrent revérifié à la source avant le push : Pomofocus sert bien un service worker (`pomofocus-cache-v3.6.1`, stratégie cache-first) et un manifest PWA `standalone`. Le « offline: Yes (PWA) » du tableau est confirmé, notre concession « web-only, pas de service worker » est exacte.
+- Date de vérification rendue propre à chaque page (champ `verifiedOn`) au lieu d'un « July 27, 2026 » codé en dur pour les 4 comparatifs. La page Pomofocus affiche le 13/08, les 3 autres gardent le 27/07 puisqu'elles n'ont pas été revérifiées.
+- **Carryover run 1 « traductions de l'article breaks » : ABANDONNÉ sur données.** La page FR `/blog/fr/pauses-productives-que-faire` ne fait remonter aucune requête nommée sur 56 jours, et toute la famille « pause » du site pèse 1 impression en position 63. Il n'y a pas de demande FR à servir. Pas de version ES ni DE créée. **Règle à retenir : un carryover planifié au run précédent se revalide sur les données avant exécution, sinon on produit du contenu pour honorer un plan, pas pour répondre à une demande.**
+- Reste JB (hors de ma portée, l'API GSC ne permet pas la demande d'indexation) : indexation de `/pomodorian-vs-pomofocus` + les 4 URLs du run 1.
 
 ## Run 1 — 2026-08-11 (premier run, audit initial complet)
 
