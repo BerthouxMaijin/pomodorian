@@ -6,6 +6,9 @@ export interface SeoPage {
   intro: string;
   keywords: string[];
   category: "profession" | "technique" | "comparison" | "use-case";
+  /** Competitor product name for comparison pages. Drives the comparison table
+   * and its JSON-LD, so the h1 stays free to target the real search intent. */
+  competitor?: string;
   sections?: { heading: string; body: string }[];
   relatedArticleSlugs?: string[];
 }
@@ -335,30 +338,39 @@ const techniques: SeoPage[] = [
 const comparisons: SeoPage[] = [
   {
     slug: "pomodorian-vs-pomofocus",
-    title: "Pomodorian vs Pomofocus: Which Pomodoro Timer is Better? (2026)",
+    title: "Pomofocus Review 2026: What's Free, What's Premium | Pomodorian",
     description:
-      "Detailed comparison of Pomodorian and Pomofocus. Compare features, AI planning, ambient sounds, analytics, and pricing side by side.",
-    h1: "Pomodorian vs Pomofocus",
+      "What Pomofocus includes for free, what Premium unlocks, why the price is not published anywhere, and which alternatives fit if it is not the right timer for you.",
+    h1: "Pomofocus Review: What's Free, What's Behind Premium",
+    competitor: "Pomofocus",
     intro:
-      "Pomofocus is one of the most popular Pomodoro timers on the web. But how does it compare to Pomodorian? Here's a detailed, honest comparison of both tools so you can pick the right one for your workflow.",
-    keywords: ["pomodorian vs pomofocus", "pomofocus alternative", "best pomodoro timer comparison", "pomofocus review"],
+      "Pomofocus is one of the most-used Pomodoro timers on the web, and its free tier covers most of what a solo user needs: timer, tasks, reports, custom intervals and sounds, no signup. The two things worth knowing before you commit are that the free tier is ad-supported, and that the Premium price is not published anywhere on the site. Disclosure: we build Pomodorian, a competing timer, so verify anything below that matters to your decision.",
+    keywords: ["pomofocus", "pomofocus review", "pomofocus premium", "pomofocus pricing", "pomofocus alternative", "pomodorian vs pomofocus"],
     category: "comparison",
     sections: [
       {
-        heading: "The Core Difference",
-        body: "Pomofocus is a freemium timer and task tracker: the free tier is full-featured (timer, tasks, reports, customizable sounds, no signup required) but displays ads, and a paid Premium tier removes them while adding multiple projects with detailed reports, more saved templates, CSV export, Todoist import, and webhooks. It also ships downloadable desktop apps for Mac, Windows, and Linux alongside the web version. Pomodorian has no ads and no paid tier at all, but is web-only, and adds an AI planner that Pomofocus does not have (verified on July 27, 2026).",
+        heading: "What You Get for Free",
+        body: "The free tier is unusually complete for a browser tool: the Pomodoro timer with fully customizable work and break intervals, a task list with an estimated finish time for the day, up to three saved task templates, daily, weekly and monthly focus reports, and configurable alarm sounds. None of it requires an account for basic use. The trade-off is advertising: the free tier is ad-supported, and removing the ads is one of the things Premium is for (verified on August 13, 2026).",
       },
       {
-        heading: "Choose Pomofocus If",
-        body: "You want a native desktop app rather than a browser tab, need to track multiple ongoing projects with detailed reporting, or want to import an existing Todoist list and export CSV reports for a client or team.",
+        heading: "What Premium Unlocks, and What Nobody Will Tell You It Costs",
+        body: "Premium adds project tracking with per-project reporting, yearly reports, CSV report downloads, unlimited templates instead of three, Todoist import, webhook integration for third-party apps, and an ad-free interface. The price is the odd part: pomofocus.io does not publish a rate on the site, and there is no public pricing page (checked July 27 and again August 13, 2026). Third-party directories fill the gap with figures we could not confirm at the source, AlternativeTo for instance lists a range of $3 to $54 per month, which is wide enough to be unusable as a number. Treat the directory figures as unverified and expect to reach checkout before you see the real rate.",
       },
       {
-        heading: "Choose Pomodorian If",
-        body: "You do not want to see ads on a free tool at all, want an AI planner that turns a goal into an editable session plan before you start, or want every feature, sounds included, available without ever hitting a paywall.",
+        heading: "Where Pomofocus Is the Better Pick",
+        body: "If you want a native desktop application rather than a browser tab, Pomofocus ships downloadable apps for Mac, Windows and Linux alongside the web version. If you track several ongoing projects and need per-project reporting, or you already live in Todoist and want to pull that list into your timer, or you need CSV exports and webhooks to push session data somewhere else, Premium buys you real functionality that a free browser timer does not have. It also has years of use behind it and a large user base, which counts for something in a category full of abandoned side projects.",
       },
       {
-        heading: "Pricing Compared",
-        body: "Pomofocus: free tier with ads; a paid Premium tier removes ads and unlocks project tracking, templates, and exports (Pomofocus does not publish current pricing on its official pricing page as of this writing, verified July 27, 2026, check pomofocus.io directly for the current rate). Pomodorian: entirely free, no premium tier exists, nothing to unlock.",
+        heading: "Where It Falls Short",
+        body: "Three limits stand out. The free tier shows ads, which is a strange experience in a tool whose entire purpose is removing distractions. The template cap of three on the free tier arrives quickly if you run varied work. And the pricing opacity means you cannot compare Pomofocus against a paid alternative without starting a purchase flow. There is also no AI planning of any kind: Pomofocus times the work you have already broken down, it does not help you break it down.",
+      },
+      {
+        heading: "How Pomodorian Compares",
+        body: "Pomodorian, our tool, is free with no premium tier and no ads, and it adds an AI planner that turns a goal into an editable session plan before you start. The comparison table above is the honest version: we lose on platform (we are web-only, with no native desktop app), we lose on offline use (Pomofocus works offline as a PWA, we have no service worker at all), and we have no Todoist import or webhooks. If a native app or an offline timer is a requirement, Pomofocus is the better tool and this page is not going to argue otherwise.",
+      },
+      {
+        heading: "Other Alternatives Worth Knowing",
+        body: "If Pomofocus is not the fit, the useful comparisons are: Forest, if gamified motivation and a true offline mobile app matter more than reporting; Focus To-Do, if you want a full task manager with projects and subtasks synced across native apps rather than a timer with a task list bolted on; and Toggl Track, if what you actually need is billable time tracking for clients, with the Pomodoro timer as a secondary feature. Detailed comparisons of each are linked below.",
       },
     ],
     relatedArticleSlugs: ["best-pomodoro-apps-2026", "customize-pomodoro-intervals", "pomodoro-technique-complete-guide"],
@@ -369,6 +381,7 @@ const comparisons: SeoPage[] = [
     description:
       "Compare Pomodorian and Forest app. AI planning vs gamification, web vs mobile, free vs paid. Find the best focus tool for you.",
     h1: "Pomodorian vs Forest",
+    competitor: "Forest",
     intro:
       "Forest gamifies focus by growing virtual trees. Pomodorian takes a different approach with AI planning and ambient sounds. Both are great tools, but they serve different needs. Here's how they compare.",
     keywords: ["pomodorian vs forest", "forest app alternative", "pomodoro vs forest", "focus app comparison"],
@@ -399,6 +412,7 @@ const comparisons: SeoPage[] = [
     description:
       "Compare Pomodorian and Focus To-Do. AI-powered planning vs full task management. Which Pomodoro app fits your workflow better?",
     h1: "Pomodorian vs Focus To-Do",
+    competitor: "Focus To-Do",
     intro:
       "Focus To-Do is a full-featured task manager with a built-in Pomodoro timer. Pomodorian is a focused timer with AI planning. If you need robust project management, Focus To-Do might be your pick. If you want a fast, AI-powered focus tool, Pomodorian is worth trying.",
     keywords: ["pomodorian vs focus to do", "focus to do alternative", "pomodoro task manager", "AI pomodoro app"],
@@ -429,6 +443,7 @@ const comparisons: SeoPage[] = [
     description:
       "Compare Pomodorian and Toggl Track. Pomodoro focus vs billable time tracking. Features, pricing, and use cases side by side.",
     h1: "Pomodorian vs Toggl Track",
+    competitor: "Toggl Track",
     intro:
       "Toggl Track is primarily a time-tracking tool for freelancers and teams. Pomodorian is a focus timer with AI planning. They solve different problems: Toggl tracks where your time went, Pomodorian helps you focus it better. Here's when to use each.",
     keywords: ["pomodorian vs toggl", "toggl alternative pomodoro", "focus timer vs time tracker", "toggl pomodoro mode"],

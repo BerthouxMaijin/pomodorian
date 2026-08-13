@@ -5,7 +5,7 @@ article	en	ai-productivity-tools-focus	/blog/ai-productivity-tools-focus	publish
 article	en	ai-writing-keep-your-voice	/blog/ai-writing-keep-your-voice	published	2026-04-02		ai-writing-keep-your-voice	1833	7	1	9	5	0	0	6	19	-10	DORMANT	
 article	en	ambient-sounds-productivity-science	/blog/ambient-sounds-productivity-science	published	2026-03-23		ambient-sounds-productivity-science	622	6	0	3	0	0	1	10	10.4	4	STAR	pos 30->10
 article	en	avoid-burnout-software-engineer	/blog/avoid-burnout-software-engineer	published	2026-03-25		avoid-burnout-software-engineer	1706	6	0	8	10	0	0	1	4	-2	DORMANT	
-article	en	best-pomodoro-apps-2026	/blog/best-pomodoro-apps-2026	published	2026-03-23	2026-07-27	best-pomodoro-apps-2026	2087	11	1	8	0	1	0	87	4.3	-101	FIX	pos amelioree 7.7->4.3 mais 0 clic = CTR
+article	en	best-pomodoro-apps-2026	/blog/best-pomodoro-apps-2026	published	2026-03-23	2026-07-27	best-pomodoro-apps-2026	2087	11	1	8	0	1	0	99	3.5	-75	DORMANT	run2: 91/93 impr = requete de marque 'pomodorian' pos 1.5. Pas un probleme de CTR. FIX run1 annule.
 article	en	best-study-techniques-science	/blog/best-study-techniques-science	published	2026-03-25		best-study-techniques-science	2007	9	0	5	12	0	0	0	0		DORMANT	
 article	en	body-doubling	/blog/body-doubling	published	2026-08-10	2026-08-10	body-doubling	1989	9	1	7	9	1	0	0	0		NEW	
 article	en	build-daily-focus-habit-30-days	/blog/build-daily-focus-habit-30-days	published	2026-03-25		build-daily-focus-habit-30-days	1800	7	0	4	8	0	0	7	37	7	DORMANT	
@@ -18,13 +18,13 @@ article	en	deep-work-programmers-framework	/blog/deep-work-programmers-framework
 article	en	developer-productivity-ai-era	/blog/developer-productivity-ai-era	published	2026-04-02		developer-productivity-ai-era	2141	7	1	7	11	1	0	1	7	-5	DORMANT	
 article	en	digital-minimalism-remote-workers	/blog/digital-minimalism-remote-workers	published	2026-03-27			1567	7	1	8	7	0	0	0	0		DORMANT	
 article	en	distraction-free-home-office	/blog/distraction-free-home-office	published	2026-03-25			1474	10	0	5	7	0	0	9	15.4	-13	DORMANT	
-article	en	group-pomodoro-team-sessions	/blog/group-pomodoro-team-sessions	published	2026-03-25	2026-08-10		1654	6	0	7	6	0	6	80	10.5	62	STAR	top mover clics (+6), piste body doubling
+article	en	group-pomodoro-team-sessions	/blog/group-pomodoro-team-sessions	published	2026-03-25	2026-08-10		1654	6	0	7	6	0	7	108	9.6	90	STAR	run2: top mover confirme, CTR 6.5%, seule page qui convertit hors marque
 article	en	how-to-use-never-dumb	/blog/how-to-use-never-dumb	published	2026-07-28	2026-07-28	how-to-use-never-dumb	1524	6	1	6	0	1	0	0	0		NEW	
 article	en	how-to-use-pomodorian	/blog/how-to-use-pomodorian	published	2026-07-28	2026-07-28	how-to-use-pomodorian	2414	10	1	12	0	1	0	0	0		NEW	
-article	en	long-pomodoro-sessions-guide	/blog/long-pomodoro-sessions-guide	published	2026-03-25	2026-07-27	long-pomodoro-sessions-guide	2411	9	1	8	12	0	2	917	23	711	REFRESH	grosse montee, striking distance
+article	en	long-pomodoro-sessions-guide	/blog/long-pomodoro-sessions-guide	published	2026-03-25	2026-07-27	long-pomodoro-sessions-guide	2411	9	1	8	12	0	2	946	22.5	679	NEW	refresh pousse 11/08, en vol, ne pas toucher avant J+21
 article	en	managers-when-not-to-use-ai	/blog/managers-when-not-to-use-ai	published	2026-04-02		managers-when-not-to-use-ai	1835	7	1	8	7	0	0	0	0		DORMANT	
 article	en	meditation-pomodoro-breaks	/blog/meditation-pomodoro-breaks	published	2026-08-03	2026-08-03	meditation-pomodoro-breaks	1788	7	1	4	3	0	0	0	0		NEW	
-article	en	micro-breaks-boost-focus	/blog/micro-breaks-boost-focus	published	2026-03-25			1796	6	0	4	9	0	0	30	8.9	-405	DORMANT	effondrement, chevauche use-pomodoro-breaks
+article	en	micro-breaks-boost-focus	/blog/micro-breaks-boost-focus	published	2026-03-25			1796	6	0	4	9	0	0	31	8.7	-356	MERGE	run2: effondrement confirme (-356), candidat fusion vers use-pomodoro-breaks a J+28
 article	en	morning-routines-productive-people	/blog/morning-routines-productive-people	published	2026-03-25		morning-routines-productive-people	1509	4	0	5	10	0	0	0	0		DORMANT	
 article	en	never-dumb-breaks	/blog/never-dumb-breaks	published	2026-07-28	2026-07-28	never-dumb-breaks	1773	6	1	6	4	0	0	0	0		NEW	
 article	en	note-taking-methods-retention	/blog/note-taking-methods-retention	published	2026-03-25			1801	9	0	7	11	0	0	0	0		DORMANT	
@@ -45,8 +45,8 @@ article	en	stop-procrastinating-timeboxing	/blog/stop-procrastinating-timeboxing
 article	en	structure-coding-day-maximum-output	/blog/structure-coding-day-maximum-output	published	2026-03-25			1601	6	0	4	9	0	0	0	0		DORMANT	
 article	en	study-active-recall-spaced-repetition	/blog/study-active-recall-spaced-repetition	published	2026-03-25			1759	6	0	6	10	0	0	0	0		DORMANT	
 article	en	time-management-for-people-who-hate-it	/blog/time-management-for-people-who-hate-it	published	2026-03-25			1490	5	0	6	9	0	0	0	0		DORMANT	
-article	en	ultradian-rhythms-natural-focus-cycles	/blog/ultradian-rhythms-natural-focus-cycles	published	2026-03-27		ultradian-rhythms-natural-focus-cycles	1844	7	1	6	8	0	0	214	21.4	92	REFRESH	pos degradee 7.5->21.4, cluster monte en 4 langues
-article	en	use-pomodoro-breaks-effectively	/blog/use-pomodoro-breaks-effectively	published	2026-03-25	2026-07-27	use-pomodoro-breaks-effectively	2480	9	1	9	6	1	0	1168	15	790	REFRESH	explosion impressions, 0 clic, ~20 variantes "what to do during pomodoro break"
+article	en	ultradian-rhythms-natural-focus-cycles	/blog/ultradian-rhythms-natural-focus-cycles	published	2026-03-27		ultradian-rhythms-natural-focus-cycles	1844	7	1	6	8	0	0	297	19.1	181	DORMANT	run2: tete 'ultradian rhythm' a pos 59.8, SERP definitionnelle (ScienceDirect/PMC/Wikipedia). Article deja au standard. Refresh abandonne.
+article	en	use-pomodoro-breaks-effectively	/blog/use-pomodoro-breaks-effectively	published	2026-03-25	2026-07-27	use-pomodoro-breaks-effectively	2480	9	1	9	6	1	0	1256	14.7	794	NEW	FIX title pousse 11/08, en vol, ne pas toucher avant J+21
 article	en	what-to-do-while-claude-code-is-working	/blog/what-to-do-while-claude-code-is-working	published	2026-08-10	2026-08-10	what-to-do-while-claude-code-is-working	2069	7	1	6	5	0	0	0	0		NEW	
 article	en	why-breaks-make-you-more-productive	/blog/why-breaks-make-you-more-productive	published	2026-03-25			1815	7	0	5	8	0	0	0	0		DORMANT	
 article	en	why-multitasking-kills-productivity	/blog/why-multitasking-kills-productivity	published	2026-03-25		why-multitasking-kills-productivity	1407	7	0	3	6	0	0	0	0		DORMANT	
@@ -131,7 +131,7 @@ seo-page	en	52-17-technique-timer	/52-17-technique-timer	published					3		1			0	
 seo-page	en	flowtime-technique-timer	/flowtime-technique-timer	published					3		1			0	2	36	2	DORMANT	
 seo-page	en	time-blocking-timer	/time-blocking-timer	published					3		1			0	4	28.8	-15	DORMANT	
 seo-page	en	deep-work-timer	/deep-work-timer	published					4		1			0	24	7	13	DORMANT	
-seo-page	en	pomodorian-vs-pomofocus	/pomodorian-vs-pomofocus	published					4		1			0	75	3.9	-32	FIX	pos 3.9, 0 clic = CTR
+seo-page	en	pomodorian-vs-pomofocus	/pomodorian-vs-pomofocus	published					4		1			0	80	3.8	-22	REFRESH	run2: repositionnee en page 'Pomofocus review' (marque 6600/mois KD 7). Les 80 impr etaient la requete 'pomodorian'.
 seo-page	en	pomodorian-vs-forest	/pomodorian-vs-forest	published					4		1			0	0	0		DORMANT	
 seo-page	en	pomodorian-vs-focus-to-do	/pomodorian-vs-focus-to-do	published					4		1			0	6	7.2	2	DORMANT	
 seo-page	en	pomodorian-vs-toggl	/pomodorian-vs-toggl	published					4		1			0	14	19.4	-5	DORMANT	

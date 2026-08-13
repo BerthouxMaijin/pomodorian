@@ -153,10 +153,16 @@ const COMPARISON_ROWS: { key: keyof CompetitorFacts; label: string }[] = [
   { key: "offline", label: "Offline mode" },
 ];
 
+/** Comparison pages target competitor-brand queries, so the h1 cannot be
+ * relied on to name the competitor. Fall back to it only for legacy entries. */
+function competitorName(page: typeof seoPages[number]) {
+  return page.competitor ?? page.h1.replace("Pomodorian vs ", "");
+}
+
 function ComparisonTable({ page }: { page: typeof seoPages[number] }) {
   if (page.category !== "comparison") return null;
 
-  const competitor = page.h1.replace("Pomodorian vs ", "");
+  const competitor = competitorName(page);
   const facts = COMPETITOR_DATA[competitor];
   if (!facts) return null;
 
@@ -229,7 +235,7 @@ export default async function SeoPage({
               position: 2,
               item: {
                 "@type": "SoftwareApplication",
-                name: page.h1.replace("Pomodorian vs ", ""),
+                name: competitorName(page),
                 applicationCategory: "ProductivityApplication",
               },
             },
