@@ -11,6 +11,7 @@ import { SITE_URL } from "@/lib/constants";
 import { extractFaq } from "@/lib/extract-faq";
 import { markdownToHtml } from "@/lib/markdown";
 import { TrackedCtaLink } from "@/components/blog/TrackedCtaLink";
+import { OutboundClickTracker } from "@/components/blog/OutboundClickTracker";
 import { JsonLd } from "@/components/seo/JsonLd";
 import {
   ORG_ID,
@@ -340,6 +341,7 @@ export default async function BlogPage({
         <JsonLd
           data={graph([...siteNodes, webPageNode, articleNode, crumbs])}
         />
+        <OutboundClickTracker slug={slug} lang={lang} />
 
         <div className="min-h-screen bg-background text-foreground">
           <article
