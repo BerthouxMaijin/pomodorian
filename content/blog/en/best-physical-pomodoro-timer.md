@@ -10,7 +10,7 @@ keywords:
   - pomodoro timer cube
   - pomodoro cube timer
   - pomodoro timer amazon
-status: draft
+status: published
 sources:
   - "https://www.amazon.com/dp/B0FSL1YNX9"
   - "https://www.amazon.com/dp/B0BK2J71M1"
@@ -35,8 +35,6 @@ If you want a physical timer that actually runs the pomodoro technique, the [Tic
 That is the short answer. The longer answer involves a category quirk almost no roundup mentions: most devices sold as "pomodoro timers" cannot run a pomodoro cycle at all. We will get to that.
 
 Transparency first: Pomodorian is a free web-based pomodoro timer, so we compete, digitally, with every device on this page. All prices, star ratings and review counts below were read directly on Amazon US on August 14, 2026, and will drift over time.
-
-<!-- TODO JB avant publication (fake door affilié) : 1) remplacer les liens https://www.amazon.com/dp/XXX par des liens tagués Amazon Associates (?tag=...) ; 2) ajouter alors la phrase de divulgation : "As an Amazon Associate, Pomodorian earns from qualifying purchases made through some links on this page." ; 3) si pas de tag, publier tel quel (liens propres, pas de divulgation nécessaire). -->
 
 **In this guide:**
 
