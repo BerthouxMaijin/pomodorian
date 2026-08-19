@@ -27,13 +27,13 @@ export function Timer({ timeRemaining, progress, mode }: TimerProps) {
         className="transform -rotate-90"
         viewBox={`0 0 ${SIZE} ${SIZE}`}
       >
-        {/* Background ring */}
+        {/* Background ring — themed: a hardcoded white was invisible on light */}
         <circle
           cx={SIZE / 2}
           cy={SIZE / 2}
           r={RADIUS}
           fill="none"
-          stroke="rgba(255,255,255,0.08)"
+          stroke="var(--border)"
           strokeWidth={STROKE_WIDTH}
         />
         {/* Progress ring */}
