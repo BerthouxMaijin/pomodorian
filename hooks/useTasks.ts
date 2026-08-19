@@ -175,6 +175,24 @@ export function useTasks() {
     setActiveTaskId(id);
   }, []);
 
+  // Called when a pomodoro starts: guarantees the timer is linked to a task.
+  // Users kept running unattributed pomodoros because nothing told them a task
+  // had to be picked first, so we fall back to the first open task (the top row
+  // of today's list). Returns the id the session will be attributed to.
+  const ensureActiveTask = useCallback((): string | null => {
+    const current = activeTaskId
+      ? tasks.find((t) => t.id === activeTaskId)
+      : undefined;
+    if (current && !current.completed) return current.id;
+
+    const next = [...tasks]
+      .sort((a, b) => a.order - b.order)
+      .find((t) => !t.completed);
+    const nextId = next?.id ?? null;
+    setActiveTaskId(nextId);
+    return nextId;
+  }, [tasks, activeTaskId]);
+
   return {
     tasks,
     activeTaskId,
@@ -186,5 +204,6 @@ export function useTasks() {
     reorderTasks,
     importAITasks,
     setActiveTask,
+    ensureActiveTask,
   };
 }

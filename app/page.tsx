@@ -103,6 +103,9 @@ export default function Home() {
       (nextMode !== "pomodoro" && settings.autoStartBreaks) ||
       (nextMode === "pomodoro" && settings.autoStartPomodoros)
     ) {
+      // Auto-started pomodoros need the same task link as a manual start —
+      // the task just completed above may have been checked off in between.
+      if (nextMode === "pomodoro") tasks.ensureActiveTask();
       setTimeout(() => timer.start(), 100);
     }
 
@@ -118,6 +121,16 @@ export default function Home() {
       }
     }
   }, [timer, tasks, settings, sound, analytics]);
+
+  // Single entry point for starting the timer: a pomodoro always gets linked to
+  // a task, so the session and its pomodoro count land somewhere.
+  const { ensureActiveTask } = tasks;
+  const startTimer = useCallback(() => {
+    if (timer.mode === "pomodoro") ensureActiveTask();
+    sound.playClick();
+    timer.start();
+    track("timer_started", { mode: timer.mode });
+  }, [timer, sound, ensureActiveTask]);
 
   const setModeManually = useCallback(
     (mode: TimerMode) => {
@@ -143,6 +156,9 @@ export default function Home() {
     },
     [tasks, timer, sound, setModeManually]
   );
+
+  const activeTask =
+    tasks.tasks.find((t) => t.id === tasks.activeTaskId) ?? null;
 
   const openNeverDumb = useCallback((source: "auto" | "manual") => {
     setSettingsOpen(false);
@@ -244,7 +260,7 @@ export default function Home() {
       switch (e.key) {
         case " ":
           e.preventDefault();
-          if (timer.status === "idle") { timer.start(); track("timer_started", { mode: timer.mode }); }
+          if (timer.status === "idle") { startTimer(); }
           else if (timer.status === "running") { timer.pause(); sound.pauseAllAmbients(); }
           else if (timer.status === "paused") { timer.resume(); sound.resumeAllAmbients(); track("timer_started", { mode: timer.mode }); }
           break;
@@ -273,7 +289,7 @@ export default function Home() {
 
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [timer, sound, neverDumbOpen, aiPlannerOpen, setModeManually]);
+  }, [timer, sound, neverDumbOpen, aiPlannerOpen, setModeManually, startTimer]);
 
   return (
     <>
@@ -309,7 +325,7 @@ export default function Home() {
           <TimerControls
             status={timer.status}
             mode={timer.mode}
-            onStart={() => { sound.playClick(); timer.start(); track("timer_started", { mode: timer.mode }); }}
+            onStart={startTimer}
             onPause={() => { timer.pause(); sound.pauseAllAmbients(); }}
             onResume={() => { sound.playClick(); timer.resume(); sound.resumeAllAmbients(); track("timer_started", { mode: timer.mode }); }}
             onSkip={() => {
@@ -337,8 +353,23 @@ export default function Home() {
         )}
 
         {timer.mode === "pomodoro" && (
-          <div className="text-sm text-muted">
-            #{timer.pomodorosCompleted + 1} &middot; Time to focus!
+          <div className="flex items-center gap-1.5 max-w-full px-4 text-sm text-muted">
+            <span className="tabular-nums flex-shrink-0">
+              #{timer.pomodorosCompleted + 1}
+            </span>
+            <span aria-hidden="true" className="flex-shrink-0">
+              &middot;
+            </span>
+            {activeTask ? (
+              <span
+                className="truncate font-medium text-foreground"
+                title={activeTask.title}
+              >
+                {activeTask.title}
+              </span>
+            ) : (
+              <span>Time to focus!</span>
+            )}
           </div>
         )}
 

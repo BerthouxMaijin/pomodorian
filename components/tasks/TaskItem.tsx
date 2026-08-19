@@ -71,15 +71,45 @@ export function TaskItem({
   return (
     <div
       className={cn(
-        "group glass rounded-xl px-3 py-2.5 flex items-start gap-3 transition-all duration-200",
-        canActivate && "cursor-pointer",
-        isActive && "ring-1 ring-white/20 bg-white/8",
+        "group glass relative overflow-hidden rounded-xl px-3 py-2.5 flex items-start gap-3 transition-all duration-200",
+        canActivate &&
+          "cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-text/60",
+        isActive && "ring-1 ring-accent-text/40 bg-white/8",
         task.completed && "opacity-50",
         task.isGhost && "opacity-60",
         isDragging && "ring-1 ring-white/25 bg-white/10 shadow-lg cursor-grabbing"
       )}
       onClick={canActivate ? onSetActive : undefined}
+      onKeyDown={
+        canActivate
+          ? (e) => {
+              // Enter only: Space stays the app-wide start/pause shortcut, and
+              // a focused row must not swallow it right after a click.
+              if (e.key !== "Enter" || e.target !== e.currentTarget) return;
+              e.preventDefault();
+              onSetActive();
+            }
+          : undefined
+      }
+      role={canActivate ? "button" : undefined}
+      tabIndex={canActivate ? 0 : undefined}
+      aria-pressed={canActivate ? isActive : undefined}
+      aria-label={
+        canActivate
+          ? isActive
+            ? `${task.title} — linked to the timer, click to unlink`
+            : `${task.title} — link the timer to this task`
+          : undefined
+      }
     >
+      {/* Active marker: the timer records its session against this task */}
+      {isActive && (
+        <span
+          aria-hidden="true"
+          className="absolute left-0 top-0 h-full w-[3px] bg-accent-text"
+        />
+      )}
+
       {/* Drag handle */}
       {dragHandle}
 
@@ -131,6 +161,7 @@ export function TaskItem({
         <span
           className={cn(
             "flex-1 text-sm text-foreground break-words",
+            isActive && "font-medium",
             task.completed && "line-through",
             task.isGhost && "italic"
           )}
