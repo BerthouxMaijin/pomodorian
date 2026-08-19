@@ -43,3 +43,6 @@ yarn-error.log*
 next-env.d.ts
 .env*.local
 .playwright-cli/
+
+# QA screenshots (local visual checks)
+qa/shots/
