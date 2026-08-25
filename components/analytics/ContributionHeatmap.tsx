@@ -7,7 +7,7 @@ interface ContributionHeatmapProps {
 }
 
 function getIntensity(minutes: number): string {
-  if (minutes === 0) return "bg-white/5";
+  if (minutes === 0) return "bg-white/10";
   if (minutes < 30) return "bg-emerald-900/60";
   if (minutes < 60) return "bg-emerald-700/60";
   if (minutes < 120) return "bg-emerald-500/60";
@@ -20,7 +20,7 @@ const WEEKS_TO_SHOW = 20;
 export function ContributionHeatmap({ heatmap }: ContributionHeatmapProps) {
   const grid = useMemo(() => {
     const today = new Date();
-    const dayOfWeek = today.getDay(); // 0=Sun
+    const dayOfWeek = today.getUTCDay(); // 0=Sun, UTC to match session date keys
     const cells: { date: string; minutes: number }[][] = [];
 
     // Build grid: columns = weeks, rows = days (Sun=0 to Sat=6)
@@ -32,9 +32,9 @@ export function ContributionHeatmap({ heatmap }: ContributionHeatmapProps) {
 
     for (let i = totalDays; i >= 0; i--) {
       const d = new Date(today);
-      d.setDate(d.getDate() - i);
+      d.setUTCDate(d.getUTCDate() - i);
       const dateStr = d.toISOString().split("T")[0];
-      const dayIndex = d.getDay();
+      const dayIndex = d.getUTCDay();
       const weekIndex = Math.floor((totalDays - i) / 7);
 
       if (weekIndex < cells.length) {
@@ -91,7 +91,7 @@ export function ContributionHeatmap({ heatmap }: ContributionHeatmapProps) {
       {/* Legend */}
       <div className="flex items-center gap-1 text-[9px] text-muted justify-end">
         <span>Less</span>
-        <div className="w-3 h-3 rounded-sm bg-white/5" />
+        <div className="w-3 h-3 rounded-sm bg-white/10" />
         <div className="w-3 h-3 rounded-sm bg-emerald-900/60" />
         <div className="w-3 h-3 rounded-sm bg-emerald-700/60" />
         <div className="w-3 h-3 rounded-sm bg-emerald-500/60" />

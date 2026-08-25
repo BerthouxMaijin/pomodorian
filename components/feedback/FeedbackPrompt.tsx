@@ -223,7 +223,16 @@ export function FeedbackPrompt() {
               exit={{ opacity: 0, y: 10, scale: 0.98 }}
               transition={{ duration: 0.22, ease: [0.16, 1, 0.3, 1] }}
             >
-              <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-red-400/70 to-transparent" />
+              {/* Inline gradient rather than a Tailwind gradient utility, which
+                  compiles to an `in oklab` interpolation that Chromium below
+                  111 drops entirely. */}
+              <div
+                className="absolute inset-x-0 top-0 h-px"
+                style={{
+                  background:
+                    "linear-gradient(to right, transparent, rgba(255, 101, 104, 0.7), transparent)",
+                }}
+              />
 
               <div className="mb-5 flex items-start justify-between gap-4">
                 {view === "form" ? (

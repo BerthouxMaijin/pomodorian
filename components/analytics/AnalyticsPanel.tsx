@@ -36,7 +36,9 @@ export function AnalyticsPanel({
   locale,
   onClose,
 }: AnalyticsPanelProps) {
-  const [periodKind, setPeriodKind] = useState<PeriodKind>("day");
+  // Opens on "week" so a chart is visible right away: the panel's own header
+  // icon is a line chart, but the "day" view renders no chart at all.
+  const [periodKind, setPeriodKind] = useState<PeriodKind>("week");
   const [anchorDate, setAnchorDate] = useState<Date>(() => new Date());
   const [exportOpen, setExportOpen] = useState(false);
 
@@ -191,7 +193,13 @@ export function AnalyticsPanel({
           )}
         </div>
 
-        {periodKind !== "day" && (
+        {periodKind !== "day" && stats.totalPomodoros === 0 && (
+          <div className="glass rounded-xl px-3 py-6 text-center text-sm text-muted">
+            No focus sessions in this period.
+          </div>
+        )}
+
+        {periodKind !== "day" && stats.totalPomodoros > 0 && (
           <MiniBarChart
             data={stats.dailyBreakdown.map((d) => ({
               date: d.date,
