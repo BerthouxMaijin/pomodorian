@@ -9,6 +9,7 @@ import {
 } from "react";
 import { motion, useReducedMotion } from "framer-motion";
 import { track } from "@/lib/track";
+import { LOFI_TRACKS } from "@/lib/constants";
 import { formatTime } from "@/lib/utils";
 import type { UiLocale } from "@/lib/i18n/locales";
 import { useBrowserLocale } from "@/hooks/useBrowserLocale";
@@ -235,7 +236,11 @@ export function NeverDumbModal({
     if (reset === "music") {
       onPauseAmbients();
       ambientsPausedRef.current = true;
-      const audio = new Audio("/sounds/lofi.mp3");
+      // Pick from the same playlist as the mixer's lofi ambient, so a repeat
+      // visitor does not always land on the same track.
+      const lofiTrack =
+        LOFI_TRACKS[Math.floor(Math.random() * LOFI_TRACKS.length)];
+      const audio = new Audio(lofiTrack);
       audio.loop = true;
       audio.volume = 0.5;
       audioRef.current = audio;

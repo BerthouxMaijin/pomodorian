@@ -63,10 +63,22 @@ export const ALARM_SOUNDS: Record<string, { label: string; src: string }> = {
   bell: { label: "Bell", src: "/sounds/alarm-bell.mp3" },
 };
 
+export const LOFI_KEY = "lofi";
+
+// The "lofi" ambient chains through these instead of looping a single file, so
+// a long focus session does not hear the same two minutes over and over. The
+// mixer still exposes 5 sounds — see AMBIENT_SOUNDS below.
+export const LOFI_TRACKS = [
+  "/sounds/lofi.mp3",
+  "/sounds/lofi-crackle-loop-drift.mp3",
+  "/sounds/lofi-loop-in-dust.mp3",
+  "/sounds/lofi-repeat-in-the-dust.mp3",
+];
+
 export const AMBIENT_SOUNDS = [
   { key: "rain", label: "Rain", icon: "🌧", src: "/sounds/rain.mp3" },
   { key: "cafe", label: "Café", icon: "☕", src: "/sounds/cafe.mp3" },
-  { key: "lofi", label: "Lo-fi", icon: "🎧", src: "/sounds/lofi.mp3" },
+  { key: LOFI_KEY, label: "Lo-fi", icon: "🎧", src: LOFI_TRACKS[0] },
   { key: "forest", label: "Forest", icon: "🌲", src: "/sounds/forest.mp3" },
   {
     key: "fireplace",

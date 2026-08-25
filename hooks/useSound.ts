@@ -1,7 +1,7 @@
 "use client";
 
 import { useRef, useCallback, useState } from "react";
-import { ALARM_SOUNDS } from "@/lib/constants";
+import { ALARM_SOUNDS, LOFI_KEY, LOFI_TRACKS } from "@/lib/constants";
 
 interface AmbientState {
   [key: string]: { active: boolean; volume: number };
@@ -13,19 +13,57 @@ export function useSound() {
   const [ambients, setAmbients] = useState<AmbientState>({});
 
   const crossfadeRefs = useRef<Record<string, HTMLAudioElement>>({});
+  const pendingRefs = useRef<Record<string, HTMLAudioElement>>({});
   const fadeIntervals = useRef<Record<string, ReturnType<typeof setInterval>>>({});
   const CROSSFADE_DURATION = 0.5; // seconds
+  // Buffer the upcoming track this many seconds before the swap. Looping one
+  // file was always cache-warm; chaining a playlist means the next file is a
+  // cold multi-megabyte fetch, and starting it at crossfade time would stall.
+  const PRELOAD_LEAD = 20; // seconds
 
-  const setupCrossfadeLoop = (key: string, audio: HTMLAudioElement, src: string) => {
+  // "lofi" walks through LOFI_TRACKS; every other ambient keeps replaying its
+  // own single file, exactly as before.
+  const lofiIndex = useRef(0);
+  const makeNextSrcResolver = (key: string, src: string): (() => string) => {
+    if (key !== LOFI_KEY) return () => src;
+    return () => {
+      lofiIndex.current = (lofiIndex.current + 1) % LOFI_TRACKS.length;
+      return LOFI_TRACKS[lofiIndex.current];
+    };
+  };
+
+  const createBufferedAudio = (src: string): HTMLAudioElement => {
+    const audio = new Audio(src);
+    audio.preload = "auto";
+    audio.loop = true;
+    audio.volume = 0;
+    return audio;
+  };
+
+  const setupCrossfadeLoop = (
+    key: string,
+    audio: HTMLAudioElement,
+    nextSrc: () => string
+  ) => {
     const onTimeUpdate = () => {
       if (!audio.duration || audio.paused) return;
       const timeLeft = audio.duration - audio.currentTime;
+
+      // Resolve and buffer the upcoming track ahead of the crossfade window.
+      if (
+        timeLeft <= PRELOAD_LEAD &&
+        !pendingRefs.current[key] &&
+        !crossfadeRefs.current[key]
+      ) {
+        pendingRefs.current[key] = createBufferedAudio(nextSrc());
+      }
+
       if (timeLeft <= CROSSFADE_DURATION && !crossfadeRefs.current[key]) {
-        // Start a second copy for crossfade
-        const next = new Audio(src);
-        next.preload = "auto";
-        next.loop = true;
-        next.volume = 0;
+        // Use the buffered copy when there is one, otherwise fall back to a
+        // fresh element (the preload window can be missed in background tabs).
+        const next =
+          pendingRefs.current[key] ?? createBufferedAudio(nextSrc());
+        delete pendingRefs.current[key];
         crossfadeRefs.current[key] = next;
         next.play().catch(() => {});
 
@@ -48,7 +86,7 @@ export function useSound() {
             // Swap: next becomes the main audio
             audioRefs.current[key] = next;
             delete crossfadeRefs.current[key];
-            setupCrossfadeLoop(key, next, src);
+            setupCrossfadeLoop(key, next, nextSrc);
           }
         }, stepTime);
         fadeIntervals.current[key] = fade;
@@ -69,6 +107,11 @@ export function useSound() {
       cross.pause();
       delete crossfadeRefs.current[key];
     }
+    const pending = pendingRefs.current[key];
+    if (pending) {
+      pending.pause();
+      delete pendingRefs.current[key];
+    }
   };
 
   const getOrCreateAudio = (key: string, src: string): HTMLAudioElement => {
@@ -79,7 +122,7 @@ export function useSound() {
       // throttled and can miss the crossfade window entirely.
       audio.loop = true;
       audioRefs.current[key] = audio;
-      setupCrossfadeLoop(key, audio, src);
+      setupCrossfadeLoop(key, audio, makeNextSrcResolver(key, src));
     }
     return audioRefs.current[key];
   };
