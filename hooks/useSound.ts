@@ -1,7 +1,14 @@
 "use client";
 
-import { useRef, useCallback, useState } from "react";
-import { ALARM_SOUNDS, LOFI_KEY, LOFI_TRACKS } from "@/lib/constants";
+import { useRef, useCallback, useEffect } from "react";
+import {
+  ALARM_SOUNDS,
+  AMBIENT_SOUNDS,
+  LOFI_KEY,
+  LOFI_TRACKS,
+} from "@/lib/constants";
+import { STORAGE_KEYS } from "@/lib/types";
+import { useLocalStorage } from "./useLocalStorage";
 
 interface AmbientState {
   [key: string]: { active: boolean; volume: number };
@@ -10,7 +17,12 @@ interface AmbientState {
 export function useSound() {
   const alarmRef = useRef<HTMLAudioElement | null>(null);
   const audioRefs = useRef<Record<string, HTMLAudioElement>>({});
-  const [ambients, setAmbients] = useState<AmbientState>({});
+  // Persisted: someone who built a mix should find it again on their next
+  // visit instead of rebuilding it every time.
+  const [ambients, setAmbients, hydrated] = useLocalStorage<AmbientState>(
+    STORAGE_KEYS.AMBIENTS,
+    {}
+  );
 
   const crossfadeRefs = useRef<Record<string, HTMLAudioElement>>({});
   const pendingRefs = useRef<Record<string, HTMLAudioElement>>({});
@@ -228,6 +240,39 @@ export function useSound() {
     return audioRefs.current[key];
   };
 
+  // Restore a persisted mix. Browsers refuse audio.play() until the page has
+  // seen a user gesture, so a saved mix cannot simply start on load: the mixer
+  // shows its buttons as active right away, and the sound joins on the first
+  // click or keypress. Runs once, when localStorage has been read.
+  useEffect(() => {
+    if (!hydrated) return;
+    const restore = Object.entries(ambients).filter(([, s]) => s.active);
+    if (restore.length === 0) return;
+
+    let started = false;
+    const start = () => {
+      if (started) return;
+      started = true;
+      window.removeEventListener("pointerdown", start);
+      window.removeEventListener("keydown", start);
+      for (const [key, state] of restore) {
+        const sound = AMBIENT_SOUNDS.find((s) => s.key === key);
+        if (!sound) continue;
+        const audio = getOrCreateAudio(key, sound.src);
+        audio.volume = state.volume;
+        audio.play().catch(() => {});
+      }
+    };
+
+    window.addEventListener("pointerdown", start);
+    window.addEventListener("keydown", start);
+    return () => {
+      window.removeEventListener("pointerdown", start);
+      window.removeEventListener("keydown", start);
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- runs once on hydration; `ambients` is the stored mix at that moment and getOrCreateAudio only touches refs
+  }, [hydrated]);
+
   const playAlarm = useCallback((soundKey: string, volume: number) => {
     const sound = ALARM_SOUNDS[soundKey];
     if (!sound) return;
@@ -285,7 +330,7 @@ export function useSound() {
       ...prev,
       [key]: { ...prev[key], volume },
     }));
-  }, []);
+  }, [setAmbients]);
 
   const pauseAllAmbients = useCallback(() => {
     for (const key of Object.keys(audioRefs.current)) {

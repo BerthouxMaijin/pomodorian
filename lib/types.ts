@@ -64,6 +64,7 @@ export const STORAGE_KEYS = {
   SESSIONS: "pomodorian_sessions",
   CURRENT_STATE: "pomodorian_current_state",
   DATA_VERSION: "pomodorian_data_version",
+  AMBIENTS: "pomodorian_ambients",
 } as const;
 
 export const DATA_VERSION = "2";
