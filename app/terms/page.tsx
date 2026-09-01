@@ -20,8 +20,8 @@ export default function Terms() {
 
         <div className="space-y-6 text-sm text-muted leading-relaxed">
           <p>
-            <strong className="text-foreground">Last updated:</strong> March 23,
-            2026
+            <strong className="text-foreground">Last updated:</strong> September
+            1, 2026
           </p>
 
           <section className="space-y-2">
@@ -64,8 +64,39 @@ export default function Terms() {
               Ambient Sounds
             </h2>
             <p>
-              Ambient sounds included in Pomodorian (rain, caf&eacute;, lo-fi,
-              forest, fireplace) are original audio tracks generated with Suno
+              Rain, forest and fireplace are field recordings released under
+              licences that permit commercial use. Rain is{" "}
+              <a
+                href="https://freesound.org/s/728687/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline hover:text-foreground transition-colors"
+              >
+                &quot;Amb_Forest_Thunder_Rain_Night_KA&quot;
+              </a>{" "}
+              by Kristoffer_Andersson (CC0). Forest is{" "}
+              <a
+                href="https://commons.wikimedia.org/wiki/File:R%C3%A9veil_des_oiseaux.ogg"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline hover:text-foreground transition-colors"
+              >
+                &quot;R&eacute;veil des oiseaux&quot;
+              </a>{" "}
+              by Joseph Sardin (CC0). Fireplace is{" "}
+              <a
+                href="https://freesound.org/people/lurpsis/sounds/444127"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline hover:text-foreground transition-colors"
+              >
+                &quot;Lit Fireplace&quot;
+              </a>{" "}
+              by lurpsis (CC0). All three were trimmed and level-matched for
+              looping.
+            </p>
+            <p>
+              Caf&eacute; and lo-fi are original audio tracks generated with Suno
               under a paid subscription that includes commercial use rights.
               Alarm and interface sounds are original creations.
             </p>

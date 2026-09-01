@@ -75,10 +75,11 @@ export const LOFI_TRACKS = [
   "/sounds/lofi-repeat-in-the-dust.mp3",
 ];
 
+// Ordered nature -> human -> music. The mixer renders this as a 5-column grid,
+// so the array order is the reading order: leaving "lofi" in the middle put the
+// one music button in the most prominent cell, framed by the field recordings.
 export const AMBIENT_SOUNDS = [
   { key: "rain", label: "Rain", icon: "🌧", src: "/sounds/rain.mp3" },
-  { key: "cafe", label: "Café", icon: "☕", src: "/sounds/cafe.mp3" },
-  { key: LOFI_KEY, label: "Lo-fi", icon: "🎧", src: LOFI_TRACKS[0] },
   { key: "forest", label: "Forest", icon: "🌲", src: "/sounds/forest.mp3" },
   {
     key: "fireplace",
@@ -86,6 +87,8 @@ export const AMBIENT_SOUNDS = [
     icon: "🔥",
     src: "/sounds/fireplace.mp3",
   },
+  { key: "cafe", label: "Café", icon: "☕", src: "/sounds/cafe.mp3" },
+  { key: LOFI_KEY, label: "Lo-fi", icon: "🎧", src: LOFI_TRACKS[0] },
 ];
 
 export const KEYBOARD_SHORTCUTS = [
