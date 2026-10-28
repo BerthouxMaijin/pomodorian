@@ -1,6 +1,6 @@
 ---
-title: "Best Pomodoro Time: How Long Should Your Intervals Be?"
-description: "The best Pomodoro time depends on the task: 25/5 for most work, 45-60 minutes for deep work, 90 for flow. How to choose your interval, backed by research."
+title: "Best Pomodoro Time and Intervals: 25/5, 50/10 or 90/20?"
+description: "The best Pomodoro interval by task: 25/5 for shallow work, 50/10 for deep work, 90/20 for flow. A decision table, the research, and when to take a long break."
 date: "2026-03-25"
 updated: "2026-08-11"
 readTime: "12 min"
