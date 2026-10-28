@@ -123,8 +123,9 @@ export default function About() {
                     Privacy First
                   </h3>
                   <p className="text-xs">
-                    All your data stays in your browser. No account, no
-                    tracking, no analytics. Your focus sessions are yours alone.
+                    All your data stays in your browser. No account, no ads,
+                    and analytics cookies only with your consent. Your focus
+                    sessions are yours alone.
                   </p>
                 </div>
                 <div className="glass rounded-2xl p-5">

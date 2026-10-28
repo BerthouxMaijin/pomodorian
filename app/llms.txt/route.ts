@@ -49,9 +49,9 @@ export function GET() {
 
   const body = `# Pomodorian
 
-> Free AI-powered Pomodoro focus timer. Describe a goal, get a structured session plan, and work through it with ambient sounds and focus analytics. No account, no ads, no tracking.
+> Free AI-powered Pomodoro focus timer. Describe a goal, get a structured session plan, and work through it with ambient sounds and focus analytics. No account, no ads, no advertising cookies.
 
-Pomodorian is a web app built by Jean-Baptiste Berthoux. It combines a customizable Pomodoro timer with an AI session planner (Claude Haiku 4.5) that turns a plain-language goal into a task list with time estimates, five layerable ambient sounds, and a GitHub-style focus heatmap. Every task, setting and session stays in the browser's localStorage: there is no database, no account, and no analytics on user activity.
+Pomodorian is a web app built by Jean-Baptiste Berthoux. It combines a customizable Pomodoro timer with an AI session planner (Claude Haiku 4.5) that turns a plain-language goal into a task list with time estimates, five layerable ambient sounds, and a GitHub-style focus heatmap. Every task, setting and session stays in the browser's localStorage: there is no database and no account. Audience measurement is anonymous (Vercel Web Analytics), with Google Analytics only after explicit consent.
 
 - **Price**: free, all features included. No paid tier, no ads, no account required.
 - **AI session planner**: describe a goal in natural language, get a structured task list with pomodoro estimates. Supports 8 languages.

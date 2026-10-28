@@ -14,11 +14,17 @@ export function track(event: string, props?: EventProps) {
       (window.vaq = window.vaq || []).push(params);
     };
   }
-  vercelTrack(event, {
+  const payload = {
     locale:
       typeof navigator === "undefined"
         ? "en"
         : resolveBrowserLocale(navigator.languages),
     ...props,
-  });
+  };
+  vercelTrack(event, payload);
+  // Same event to GA4 (ConsentAnalytics defines window.gtag before hydration).
+  // Consent mode decides what GA4 stores: cookies only after "Accept".
+  if (typeof window !== "undefined" && typeof window.gtag === "function") {
+    window.gtag("event", event, payload);
+  }
 }

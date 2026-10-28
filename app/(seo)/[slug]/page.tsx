@@ -73,7 +73,7 @@ const features = [
   {
     icon: "🔒",
     title: "Private by Design",
-    text: "All your data stays in your browser. No account, no cloud, no tracking.",
+    text: "All your data stays in your browser. No account, no cloud, no ads.",
   },
   {
     icon: "🎨",

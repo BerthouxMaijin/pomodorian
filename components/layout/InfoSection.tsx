@@ -73,12 +73,12 @@ export function InfoSection() {
             </li>
           ))}
         </ol>
-        <a
+        <Link
           href="/blog/how-to-use-pomodorian"
           className="inline-block text-sm text-red-400 hover:text-red-300 underline underline-offset-4"
         >
           Read the complete guide with screenshots
-        </a>
+        </Link>
       </div>
 
       {/* Features */}
@@ -111,7 +111,7 @@ export function InfoSection() {
               },
               {
                 title: "Private by Design",
-                desc: "All your data stays on your device. No account, no cloud, no tracking.",
+                desc: "All your data stays on your device. No account, no cloud, no ads.",
               },
             ].map((f) => (
               <li key={f.title} className="flex gap-2">

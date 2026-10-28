@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { Metadata } from "next";
+import ConsentResetButton from "@/components/ConsentResetButton";
 
 export const metadata: Metadata = {
   title: "Privacy Policy — Pomodorian",
@@ -20,8 +21,8 @@ export default function Privacy() {
 
         <div className="space-y-6 text-sm text-muted leading-relaxed">
           <p>
-            <strong className="text-foreground">Last updated:</strong> March 23,
-            2026
+            <strong className="text-foreground">Last updated:</strong> October
+            28, 2026
           </p>
 
           <section className="space-y-2">
@@ -77,11 +78,29 @@ export default function Privacy() {
               Analytics & Tracking
             </h2>
             <p>
-              Pomodorian does not use any analytics tools, cookies, or tracking
-              scripts. We do not collect any personal information, usage data,
-              or behavioral data. Vercel (our hosting provider) may collect
-              basic server logs (IP addresses, request timestamps) as part of
-              their standard hosting infrastructure.
+              We measure how Pomodorian is used so we can improve it. We never
+              use advertising cookies, never sell data, and never see the
+              content of your tasks.
+            </p>
+            <p>
+              <strong className="text-foreground">Vercel Web Analytics</strong>{" "}
+              counts page views and a few anonymous product events (for example
+              &ldquo;timer started&rdquo; or &ldquo;pomodoro completed&rdquo;).
+              It uses no cookies and does not identify you across sites.
+            </p>
+            <p>
+              <strong className="text-foreground">Google Analytics 4</strong>{" "}
+              measures the same pages and events in more detail, and only sets
+              its cookies (<code>_ga</code>, <code>_ga_*</code>) if you click
+              &ldquo;Accept&rdquo; on the banner. Without your consent, no
+              analytics cookie is stored. Cookies expire after 13 months. You can
+              change your choice at any time:
+            </p>
+            <ConsentResetButton />
+            <p>
+              Vercel (our hosting provider) also keeps basic server logs (IP
+              addresses, request timestamps) as part of its standard hosting
+              infrastructure.
             </p>
           </section>
 
@@ -92,7 +111,11 @@ export default function Privacy() {
             <ul className="space-y-1 ml-4">
               <li>
                 &bull; <strong className="text-foreground">Vercel</strong>:
-                Hosting and deployment
+                Hosting, deployment and cookieless web analytics
+              </li>
+              <li>
+                &bull; <strong className="text-foreground">Google</strong>:
+                Audience measurement (Google Analytics, only with your consent)
               </li>
               <li>
                 &bull; <strong className="text-foreground">Anthropic</strong>:
