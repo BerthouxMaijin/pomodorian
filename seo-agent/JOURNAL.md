@@ -2,6 +2,24 @@
 
 Une entrée par run. Lire les 3 dernières avant toute décision.
 
+## Run 3 : 2026-10-28 (déclenché par JB, après 2,5 mois sans run)
+
+**Incident** : le projet OpenSEO « Pomodorian » était branché sur la GSC et le GA4 de maijin.ch. Rebranché sur `sc-domain:pomodorian.app` et GA4 `properties/545977619`. Tous les gates de l'été (G0 rétention, planner, CTA, paris au 01/09) étaient restés sans lecture.
+
+**Bilan des paris** : clics GSC 35 (juillet) → 217 (septembre) → ~375 (octobre projeté), position ~15 → ~6. Les 3 paris du run 1 sont GAGNÉS (guide intervals pos 23,5 → 5,4 avec 11 593 impressions ; title pauses pos ~15 → ~5 ; ES 23 clics). `best-physical-pomodoro-timer` est la page n°1 (82 clics, CTR 4 %) et fait cliquer 30 % de ses visiteurs vers Amazon, sans tag affilié. Pomofocus Review : trop tôt.
+
+**FIX appliqué** : title/meta de `long-pomodoro-sessions-guide` sur « best pomodoro intervals » (~450 impr à 0 clic en pos 6-7).
+
+**Décision : salve de 4 drafts EN** (dérogation explicite de JB à « 1 production par run ») : `best-visual-timer-adhd` (2 400, KD 0), `best-body-doubling-apps` (880, KD 11), `animedoro-method` (320, KD 0), `pomodoro-technique-for-studying` (6 600, KD 44).
+
+**Candidats écartés** : timer cube (SERP speedcubing), visual timer (SERP d'outils), study timer / focus timer (intention outil déjà servie), brown noise (attendre Focus Scenes). **Règle à retenir : un volume ne vaut rien sans la SERP. « timer cube » à 4 400/mois est un marché Rubik's cube.**
+
+**À surveiller** : cluster « what to do during pomodoro break » (~30 variantes pos 4-7, ~0 clic) → regarder la SERP au run 4 ; rétention J7 toujours illisible (ventilation `session_return` à relever dans Vercel) ; Bing + DDG + Brave = un tiers de Google.
+
+**Coût OpenSEO** : ~140 crédits (45 mots-clés + 5 SERP). Check GEO estimé à 2 408 crédits, non lancé (décision JB).
+
+**Livrable** : `rapports/2026-10-28.md`.
+
 ## Run 2 — 2026-08-13 (déclenché par JB, hors cadence lundi)
 
 **Contexte** : JB arrive avec le framework « les 9 types de pages SEO d'un SaaS » et la question « il me manque quoi ». Trous identifiés à l'inventaire : 0 page alternative, 0 page intégration, 0 page pricing, 1 seule page contrainte.
