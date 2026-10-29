@@ -53,8 +53,8 @@ Si un garde-fou échoue et ne peut pas être corrigé proprement dans la session
 
 ### 6. Publier
 - Commit conventionnel (`feat(seo): timer pages week N (...)`), push de la branche, puis `git push origin HEAD:main` (avance rapide uniquement ; si refusé, `git merge origin/main`, revérifier le build, repousser ; jamais de force push).
-- Attendre le déploiement Vercel puis vérifier 2 URLs en ligne (`curl -sI https://pomodorian.app/<slug>` doit renvoyer 200).
-- OpenSEO `submit_indexnow_urls` avec les nouvelles URLs et le hub de la langue (Bing pèse un tiers de Google chez nous).
+- Le réseau de la session cloud bloque `pomodorian.app` (curl et WebFetch échouent) : la preuve de mise en ligne est IndexNow. Quelques minutes après le push, OpenSEO `submit_indexnow_urls` avec les nouvelles URLs et le hub de la langue : le statut `submitted` signifie qu'OpenSEO a lu `https://pomodorian.app/f371b59d60eb46c5a9d6c0d605fbaf38.txt` en ligne, donc que le déploiement est passé. Un échec « No key file » juste après le push veut dire que Vercel n'a pas fini : réessayer après quelques minutes. Ne jamais supprimer `public/f371b59d60eb46c5a9d6c0d605fbaf38.txt`.
+- Bing pèse un tiers de Google chez nous : IndexNow n'est pas optionnel.
 - Passer les lignes en `published` avec la date dans `QUEUE.tsv`.
 
 ### 7. Rendre compte
