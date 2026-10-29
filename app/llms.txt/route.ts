@@ -1,5 +1,6 @@
 import { getPublishedArticles } from "@/lib/blog/reader";
 import { seoPages } from "@/lib/seo/pages";
+import { TIMER_HUB_PATH, timerPages } from "@/lib/seo/timers";
 import { SITE_URL } from "@/lib/constants";
 
 const BLOG_LANGS = [
@@ -22,6 +23,13 @@ export function GET() {
   const landingPages = seoPages
     .map((page) => link(page.h1, `${SITE_URL}/${page.slug}`, page.description))
     .join("\n");
+
+  const timerTools = [
+    link("All timers", `${SITE_URL}${TIMER_HUB_PATH.en}`, "Index of the free countdown timers, by duration."),
+    ...timerPages.map((page) =>
+      link(page.h1, `${SITE_URL}/${page.slug}`, page.description)
+    ),
+  ].join("\n");
 
   const blogIndexes = BLOG_LANGS.map(({ code, label, path }) => {
     const count = getPublishedArticles(code).length;
@@ -72,6 +80,10 @@ ${link("Terms", `${SITE_URL}/terms`, "Terms of use.")}
 ## Landing pages
 
 ${landingPages}
+
+## Timers
+
+${timerTools}
 
 ## Blog
 

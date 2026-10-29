@@ -47,6 +47,21 @@ export default function Home() {
   const neverDumbOpenedRef = useRef(false);
   const sessionReturnTrackedRef = useRef(false);
 
+  // Hand-off from a timer tool page (/?focus=50): the person clicked "run full
+  // Pomodoro cycles at 50 minutes", so that becomes their pomodoro length. The
+  // functional update is queued after useLocalStorage's hydration read, so it
+  // lands on top of the stored settings instead of being overwritten by them.
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const focus = Number(params.get("focus"));
+    if (!Number.isInteger(focus) || focus < 1 || focus > 180) return;
+    updateSettings({ pomodoroDuration: focus * 60 });
+    track("focus_preset_applied", { minutes: focus });
+    params.delete("focus");
+    const query = params.toString();
+    window.history.replaceState(null, "", `${window.location.pathname}${query ? `?${query}` : ""}`);
+  }, [updateSettings]);
+
   // Apply theme to HTML element
   useEffect(() => {
     document.documentElement.setAttribute("data-theme", settings.theme);

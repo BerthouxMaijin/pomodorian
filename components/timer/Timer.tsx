@@ -13,11 +13,22 @@ interface TimerProps {
   timeRemaining: number;
   progress: number;
   mode: TimerMode;
+  /** H:MM:SS for countdowns of an hour or more (timer tool pages). The app
+   * keeps MM:SS, so a 60-minute pomodoro still reads 60:00. */
+  showHours?: boolean;
 }
 
-export function Timer({ timeRemaining, progress, mode }: TimerProps) {
+function formatWithHours(seconds: number): string {
+  if (seconds < 3600) return formatTime(seconds);
+  const h = Math.floor(seconds / 3600);
+  const rest = formatTime(seconds % 3600);
+  return `${h}:${rest}`;
+}
+
+export function Timer({ timeRemaining, progress, mode, showHours }: TimerProps) {
   const offset = CIRCUMFERENCE * (1 - progress);
   const colors = MODE_COLORS[mode];
+  const display = showHours ? formatWithHours(timeRemaining) : formatTime(timeRemaining);
 
   return (
     <div className="relative flex items-center justify-center">
@@ -52,8 +63,10 @@ export function Timer({ timeRemaining, progress, mode }: TimerProps) {
       </svg>
       {/* Time display */}
       <div className="absolute inset-0 flex items-center justify-center">
-        <span className="text-7xl font-light tabular-nums tracking-tight text-foreground">
-          {formatTime(timeRemaining)}
+        <span
+          className={`${display.length > 5 ? "text-6xl" : "text-7xl"} font-light tabular-nums tracking-tight text-foreground`}
+        >
+          {display}
         </span>
       </div>
     </div>

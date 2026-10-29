@@ -1,0 +1,41 @@
+week	lang	minutes	slug	keyword	volume	market	role	breakMinutes	status	published
+1	en	5	5-minute-timer	5 minute timer	550000	US	break		published	2026-10-29
+1	en	10	10-minute-timer	10 minute timer	673000	US	break		published	2026-10-29
+1	en	15	15-minute-timer	15 minute timer	673000	US	break		published	2026-10-29
+1	en	20	20-minute-timer	20 minute timer	450000	US	focus	5	published	2026-10-29
+1	en	25	25-minute-timer	25 minute timer	110000	US	focus	5	published	2026-10-29
+1	en	30	30-minute-timer	30 minute timer	368000	US	focus	5	published	2026-10-29
+1	en	40	40-minute-timer	40 minute timer	60500	US	focus	20	published	2026-10-29
+1	en	45	45-minute-timer	45 minute timer	60500	US	focus	15	published	2026-10-29
+1	en	50	50-minute-timer	50 minute timer	40500	US	focus	10	published	2026-10-29
+1	en	60	1-hour-timer	1 hour timer	135000	US	focus	10	published	2026-10-29
+2	en	1	1-minute-timer	1 minute timer	301000	US	micro		todo
+2	en	2	2-minute-timer	2 minute timer	301000	US	micro		todo
+2	en	3	3-minute-timer	3 minute timer	246000	US	micro		todo
+2	en	35	35-minute-timer	35 minute timer	33100	US	focus	5	todo
+2	en	90	90-minute-timer	90 minute timer	8100	US	focus	20	todo
+2	en	120	2-hour-timer	2 hour timer	33100	US	focus	20	todo
+2	de	10	timer-10-minuten	timer 10 minuten	12100	DE	break		todo
+2	de	15	timer-15-minuten	timer 15 minuten	8100	DE	break		todo
+2	de	20	timer-20-minuten	timer 20 minuten	6600	DE	focus	5	todo
+2	de	5	timer-5-minuten	timer 5 minuten	6600	DE	break		todo
+3	de	30	timer-30-minuten	timer 30 minuten	5400	DE	focus	5	todo
+3	de	25	timer-25-minuten	timer 25 minuten	1000	DE	focus	5	todo
+3	de	45	timer-45-minuten	timer 45 minuten	720	DE	focus	15	todo
+3	de	60	timer-1-stunde	timer 1 stunde	720	DE	focus	10	todo
+3	fr	10	minuteur-10-minutes	minuteur 10 minutes	4400	FR	break		todo
+3	fr	5	minuteur-5-minutes	minuteur 5 minutes	3600	FR	break		todo
+3	fr	15	minuteur-15-minutes	minuteur 15 minutes	2900	FR	break		todo
+3	fr	20	minuteur-20-minutes	minuteur 20 minutes	1900	FR	focus	5	todo
+3	fr	30	minuteur-30-minutes	minuteur 30 minutes	1900	FR	focus	5	todo
+3	en	180	3-hour-timer	3 hour timer	12100	US	focus	30	todo
+4	fr	25	minuteur-25-minutes	minuteur 25 minutes	590	FR	focus	5	todo
+4	fr	45	minuteur-45-minutes	minuteur 45 minutes	390	FR	focus	15	todo
+4	fr	40	minuteur-40-minutes	minuteur 40 minutes	320	FR	focus	20	todo
+4	es	10	temporizador-10-minutos	temporizador 10 minutos	3600	MX	break		todo
+4	es	5	temporizador-5-minutos	temporizador 5 minutos	2900	MX	break		todo
+4	es	15	temporizador-15-minutos	temporizador 15 minutos	1900	MX	break		todo
+4	es	20	temporizador-20-minutos	temporizador 20 minutos	1300	MX	focus	5	todo
+4	es	30	temporizador-30-minutos	temporizador 30 minutos	1300	MX	focus	5	todo
+4	es	60	temporizador-1-hora	temporizador 1 hora	720	MX	focus	10	todo
+4	es	25	temporizador-25-minutos	temporizador 25 minutos	390	MX	focus	5	todo

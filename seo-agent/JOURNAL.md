@@ -2,6 +2,18 @@
 
 Une entrée par run. Lire les 3 dernières avant toute décision.
 
+## Pages timer, semaine 1 : 2026-10-29 (décision JB : 10 pages par semaine pendant 4 semaines, en automatique)
+
+**Contexte** : stratégie `STRATEGIE-MODELE-ALLO-2026-10-29.md`, levier de volume = pages outil par durée. JB a demandé « 10 articles par semaine sur cette strat pendant 4 semaines en automatique mais proprement et ensuite on voit ». Interprété comme 10 pages outil par semaine (c'est l'objet de la stratégie ; elle déconseille explicitement les articles de blog en masse), publication sur main sans relecture préalable, bilan en semaine 4. Procédure : `timer-pages/RUNBOOK.md`, file : `timer-pages/QUEUE.tsv`.
+
+**Données (OpenSEO, 29/10)** : US « X minute timer » ~3,2 M/mois sur 13 durées, KD 0 à 7 ; SERP « 25 minute timer » perméable (pomodorotimer.online 2e organique, Tiimo, Stagetimer, visualtimer.com y font le même jeu). Marchés locaux 100 fois plus petits : DE « timer 10 minuten » 12 100, FR « minuteur 10 minutes » 4 400, MX « temporizador 10 minutos » 3 600. D'où la file : EN d'abord, puis DE, FR, ES par volume. ~260 crédits OpenSEO au total pour la stratégie et la file.
+
+**Livré** : moteur des pages (`lib/seo/timers/`, `EmbeddedTimer` sur le reducer wall-clock de l'app, `TimerToolPage`, hub `/timers`, sitemap avec hreflang, llms.txt, lien footer, préréglage `/?focus=N` dans l'app, events `tool_timer_started`, `tool_timer_completed`, `tool_to_app_click`, `focus_preset_applied`), garde-fou `scripts/seo/check-timer-pages.ts`, et 10 pages EN : 5, 10, 15, 20, 25, 30, 40, 45, 50 min, 1 h.
+
+**Écart assumé** : les gates J+28 de la stratégie ne bloquent pas les semaines 2 à 4 (choix de JB). Ils sont lus au bilan de la semaine 4.
+
+**À surveiller** : indexation des 10 URLs (zéro impression à J+14 = problème), part de `tool_timer_started` sur les visiteurs des pages, cannibalisation éventuelle avec `/online-pomodoro-timer` sur « pomodoro timer online ».
+
 ## Run 3 : 2026-10-28 (déclenché par JB, après 2,5 mois sans run)
 
 **Incident** : le projet OpenSEO « Pomodorian » était branché sur la GSC et le GA4 de maijin.ch. Rebranché sur `sc-domain:pomodorian.app` et GA4 `properties/545977619`. Tous les gates de l'été (G0 rétention, planner, CTA, paris au 01/09) étaient restés sans lecture.

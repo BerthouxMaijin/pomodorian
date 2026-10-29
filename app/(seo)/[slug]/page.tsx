@@ -14,9 +14,18 @@ import {
   softwareAppNode,
 } from "@/lib/schema";
 import { JsonLd } from "@/components/seo/JsonLd";
+import { TimerToolPage } from "@/components/seo/TimerToolPage";
+import {
+  getTimerAlternates,
+  getTimerPageBySlug,
+  timerPages,
+} from "@/lib/seo/timers";
 
 export function generateStaticParams() {
-  return seoPages.map((p) => ({ slug: p.slug }));
+  return [
+    ...seoPages.map((p) => ({ slug: p.slug })),
+    ...timerPages.map((p) => ({ slug: p.slug })),
+  ];
 }
 
 export async function generateMetadata({
@@ -25,6 +34,32 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
   const { slug } = await params;
+
+  const timerPage = getTimerPageBySlug(slug);
+  if (timerPage) {
+    const url = `${SITE_URL}/${timerPage.slug}`;
+    return {
+      title: { absolute: timerPage.title },
+      description: timerPage.description,
+      openGraph: {
+        title: timerPage.title,
+        description: timerPage.description,
+        type: "website",
+        siteName: "Pomodorian",
+        locale: timerPage.lang,
+      },
+      twitter: {
+        card: "summary_large_image",
+        title: timerPage.title,
+        description: timerPage.description,
+      },
+      alternates: {
+        canonical: url,
+        languages: getTimerAlternates(timerPage),
+      },
+    };
+  }
+
   const page = getSeoPageBySlug(slug);
   if (!page) return {};
 
@@ -199,6 +234,10 @@ export default async function SeoPage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
+
+  const timerPage = getTimerPageBySlug(slug);
+  if (timerPage) return <TimerToolPage page={timerPage} />;
+
   const page = getSeoPageBySlug(slug);
 
   if (!page) notFound();

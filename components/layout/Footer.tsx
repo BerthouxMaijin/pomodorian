@@ -17,6 +17,12 @@ export function Footer() {
             Blog
           </Link>
           <Link
+            href="/timers"
+            className="hover:text-foreground transition-colors"
+          >
+            Timers
+          </Link>
+          <Link
             href="/about"
             className="hover:text-foreground transition-colors"
           >

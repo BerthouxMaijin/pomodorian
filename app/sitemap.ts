@@ -1,6 +1,12 @@
 import type { MetadataRoute } from "next";
 import { getPublishedArticles, getTranslations } from "@/lib/blog/reader";
 import { seoPages } from "@/lib/seo/pages";
+import {
+  TIMER_HUB_PATH,
+  getTimerAlternates,
+  timerLangsWithPages,
+  timerPages,
+} from "@/lib/seo/timers";
 import { SITE_URL } from "@/lib/constants";
 
 const BLOG_LANGS = ["en", "fr", "es", "de"] as const;
@@ -71,6 +77,26 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.6,
   }));
 
+  const timerEntries = [
+    ...timerLangsWithPages().map((lang) => ({
+      url: `${SITE_URL}${TIMER_HUB_PATH[lang]}`,
+      lastModified: new Date(
+        timerPages
+          .filter((p) => p.lang === lang)
+          .reduce((max, p) => (p.published > max ? p.published : max), "")
+      ),
+      changeFrequency: "weekly" as const,
+      priority: 0.7,
+    })),
+    ...timerPages.map((page) => ({
+      url: `${SITE_URL}/${page.slug}`,
+      lastModified: new Date(page.published),
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+      alternates: { languages: getTimerAlternates(page) },
+    })),
+  ];
+
   return [
     {
       url: SITE_URL,
@@ -86,6 +112,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     ...blogEntries,
     ...seoEntries,
+    ...timerEntries,
     {
       url: `${SITE_URL}/about`,
       lastModified: LAST_CONTENT_UPDATE,

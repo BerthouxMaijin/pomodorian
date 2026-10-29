@@ -1,5 +1,6 @@
 import { ImageResponse } from "next/og";
 import { getSeoPageBySlug } from "@/lib/seo/pages";
+import { getTimerPageBySlug } from "@/lib/seo/timers";
 
 export const alt = "Pomodorian";
 export const size = { width: 1200, height: 630 };
@@ -17,7 +18,7 @@ export default async function Image({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const page = getSeoPageBySlug(slug);
+  const page = getSeoPageBySlug(slug) ?? getTimerPageBySlug(slug);
 
   if (!page) {
     return new ImageResponse(
