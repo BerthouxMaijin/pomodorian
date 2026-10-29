@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useCallback, useEffect, useRef } from "react";
+import { useState, useCallback, useEffect, useMemo, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { track } from "@/lib/track";
 import { useTimer } from "@/hooks/useTimer";
@@ -174,6 +174,22 @@ export default function Home() {
 
   const activeTask =
     tasks.tasks.find((t) => t.id === tasks.activeTaskId) ?? null;
+
+  // Tasks behind the latest focus blocks, so the Never Dumb debrief can start
+  // from what was actually worked on.
+  const recentFocusTasks = useMemo(() => {
+    const titles: string[] = [];
+    let newest: number | null = null;
+    for (let i = analytics.sessions.length - 1; i >= 0 && titles.length < 4; i -= 1) {
+      const s = analytics.sessions[i];
+      if (s.mode !== "pomodoro" || !s.completed || !s.taskTitle) continue;
+      const ended = new Date(s.endedAt).getTime();
+      newest ??= ended;
+      if (newest - ended > 6 * 60 * 60 * 1000) break;
+      if (!titles.includes(s.taskTitle)) titles.push(s.taskTitle);
+    }
+    return titles;
+  }, [analytics.sessions]);
 
   const openNeverDumb = useCallback((source: "auto" | "manual") => {
     setSettingsOpen(false);
@@ -363,7 +379,7 @@ export default function Home() {
             onClick={() => openNeverDumb("manual")}
             className="-mt-4 rounded-full border border-accent/40 bg-accent/10 px-5 py-2.5 text-xs font-bold uppercase tracking-[0.12em] text-foreground transition-colors hover:bg-accent/20 focus:outline-none focus:ring-2 focus:ring-accent"
           >
-            {neverDumbCopy.intro.run}
+            {neverDumbCopy.home.run}
           </button>
         )}
 
@@ -427,6 +443,8 @@ export default function Home() {
           <NeverDumbModal
             timeRemaining={timer.timeRemaining}
             totalTime={timer.totalTime}
+            recentTasks={recentFocusTasks}
+            onAddTask={tasks.addTask}
             onClose={() => setNeverDumbOpen(false)}
             onPauseAmbients={sound.pauseAllAmbients}
             onResumeAmbients={sound.resumeAllAmbients}
