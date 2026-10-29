@@ -2,7 +2,7 @@
 title: "Cómo usar Pomodorian: la guía completa"
 description: "Recorrido completo por Pomodorian: el temporizador, la lista de tareas, el planificador con IA, sonidos ambientales, descansos Never Dumb, analíticas y ajustes."
 date: "2026-07-28"
-updated: "2026-07-28"
+updated: "2026-10-29"
 author: "Jean-Baptiste Berthoux"
 readTime: "12 min"
 keywords:
@@ -74,9 +74,9 @@ Puedes combinar tantos como quieras a la vez, lluvia bajo el crepitar de una chi
 
 ## Convierte los descansos en entrenamiento con Never Dumb
 
-![La pantalla de introducción de Never Dumb, "Never dump your brain"](/screenshots/never-dumb.png)
+![La pantalla principal de Never Dumb, "This break is yours.", con un ejercicio sugerido y los caminos Serio, Diversión y Reset](/screenshots/never-dumb.png)
 
-Never Dumb es la propuesta de Pomodorian para el descanso: en lugar de un temporizador en blanco, tus descansos largos pueden abrirse a un pequeño conjunto de ejercicios diseñados para devolverle a tu propio pensamiento unos minutos. Por defecto se abre automáticamente en los descansos largos, o bajo demanda mediante un botón "Iniciar Never Dumb" siempre que haya un descanso largo en marcha (a diferencia del resto de la interfaz principal, esta etiqueta sí sigue el idioma de tu navegador). Para el recorrido completo por los modos y los ejercicios, consulta [Cómo usar Never Dumb](/blog/es/como-usar-never-dumb).
+Never Dumb es la propuesta de Pomodorian para el descanso: en lugar de un temporizador en blanco, tus descansos largos pueden abrirse a una pantalla con 14 ejercicios breves, repartidos en tres caminos (Serio, Diversión y Reset), diseñados para devolverle a tu propio pensamiento unos minutos. El camino Serio incluye un Repaso que convierte tus últimos bloques de concentración en un siguiente paso que puedes añadir a tu lista de tareas. Por defecto se abre automáticamente en los descansos largos, o bajo demanda mediante un botón "Iniciar Never Dumb" siempre que haya un descanso largo en marcha (a diferencia del resto de la interfaz principal, esta etiqueta sí sigue el idioma de tu navegador). Para el recorrido completo por la pantalla principal y cada ejercicio, consulta [Cómo usar Never Dumb](/blog/es/como-usar-never-dumb).
 
 ## Sigue tu concentración
 
@@ -103,7 +103,7 @@ Abre "Settings" (ajustes) (el icono de engranaje, o pulsa S) para ajustar cómo 
 
 - **Auto Start Breaks** (inicio automático de descansos, desactivado por defecto). Cuando está activado, tu descanso empieza en el instante en que termina un pomodoro, sin necesidad de hacer clic. Actívalo si tiendes a olvidarte de tomar descansos.
 - **Auto Start Pomodoros** (inicio automático de pomodoros, desactivado por defecto). El ajuste espejo: el siguiente pomodoro se inicia solo en cuanto termina un descanso. Actívalo solo si confías en estar de verdad de vuelta en tu escritorio, de lo contrario quemarás un pomodoro hablándole a una silla vacía.
-- **Auto-open Never Dumb on long breaks** (apertura automática de Never Dumb en descansos largos, activado por defecto). Controla si la pantalla de Never Dumb aparece por sí sola en cada descanso largo. Desactívalo si prefieres activarlo tú mismo con el botón "Iniciar Never Dumb".
+- **Abrir Never Dumb automáticamente en descansos largos** (activado por defecto; como el resto de Never Dumb, esta etiqueta sigue el idioma de tu navegador). Controla si la pantalla de Never Dumb aparece por sí sola en cada descanso largo. Desactívalo si prefieres activarlo tú mismo con el botón "Iniciar Never Dumb".
 
 **Sound**
 

@@ -2,7 +2,7 @@
 title: "Pomodorian nutzen: die komplette Anleitung"
 description: "Ein kompletter Rundgang durch Pomodorian: Timer, Aufgabenliste, KI-Planer, Umgebungsgeräusche, Never-Dumb-Pausen, Statistiken und Einstellungen."
 date: "2026-07-28"
-updated: "2026-07-28"
+updated: "2026-10-29"
 author: "Jean-Baptiste Berthoux"
 readTime: "12 min"
 keywords:
@@ -74,9 +74,9 @@ Du kannst beliebig viele gleichzeitig übereinanderlegen, Regen unter einem knis
 
 ## Pausen mit Never Dumb zu Training machen
 
-![Der Einstiegsbildschirm von Never Dumb, „Never dump your brain“](/screenshots/never-dumb.png)
+![Der Startbildschirm von Never Dumb, „This break is yours.“, mit einer vorgeschlagenen Übung und den Wegen Ernst, Spaß und Reset](/screenshots/never-dumb.png)
 
-Never Dumb ist Pomodorians Version der Pause: Statt eines leeren Timers können sich deine langen Pausen zu einer kurzen Reihe von Übungen öffnen, die deinem eigenen Denken für ein paar Minuten die Kontrolle zurückgeben. Standardmäßig öffnet es sich automatisch bei langen Pausen, oder auf Wunsch über einen Button „Run Never Dumb“ (Never Dumb starten), sobald eine lange Pause läuft. Den vollständigen Rundgang durch die Modi und Übungen findest du unter [Never Dumb in Pomodorian nutzen: die Anleitung](/blog/de/never-dumb-anleitung).
+Never Dumb ist Pomodorians Version der Pause: Statt eines leeren Timers können sich deine langen Pausen zu einem Startbildschirm mit 14 kurzen Übungen öffnen, verteilt auf drei Wege (Ernst, Spaß und Reset), die deinem eigenen Denken für ein paar Minuten die Kontrolle zurückgeben. Zum Weg Ernst gehört ein Debrief, der deine letzten Fokusblöcke in einen nächsten Schritt verwandelt, den du direkt in deine Aufgabenliste übernehmen kannst. Standardmäßig öffnet es sich automatisch bei langen Pausen, oder auf Wunsch über einen Button „Never Dumb starten“, sobald eine lange Pause läuft. Den vollständigen Rundgang durch den Startbildschirm und alle Übungen findest du unter [Never Dumb in Pomodorian nutzen: die Anleitung](/blog/de/never-dumb-anleitung).
 
 ## Deinen Fokus verfolgen
 
@@ -103,7 +103,7 @@ Der Month-Tab zeigt außerdem eine GitHub-artige Beitrags-Heatmap für deine let
 
 - **Auto Start Breaks** (Pausen automatisch starten) (Standard aus). Ist es an, beginnt deine Pause in dem Moment, in dem ein Pomodoro endet, ohne Klick. Schalte es an, wenn du dazu neigst, Pausen ganz zu vergessen.
 - **Auto Start Pomodoros** (Pomodoros automatisch starten) (Standard aus). Die Spiegel-Einstellung: Der nächste Pomodoro startet von selbst, sobald eine Pause endet. Schalte das nur an, wenn du dir sicher bist, tatsächlich wieder am Schreibtisch zu sein, sonst verbrennst du einen Pomodoro damit, mit einem leeren Stuhl zu reden.
-- **Auto-open Never Dumb on long breaks** (Never Dumb bei langen Pausen automatisch öffnen) (Standard an). Steuert, ob der Never-Dumb-Bildschirm sich bei jeder langen Pause von selbst öffnet. Schalte es aus, wenn du es lieber selbst über den Button „Run Never Dumb“ auslösen willst.
+- **Never Dumb bei langen Pausen automatisch öffnen** (Standard an; wie ganz Never Dumb folgt diese Beschriftung der Sprache deines Browsers). Steuert, ob der Never-Dumb-Bildschirm sich bei jeder langen Pause von selbst öffnet. Schalte es aus, wenn du es lieber selbst über den Button „Never Dumb starten“ auslösen willst.
 
 **Sound**
 
