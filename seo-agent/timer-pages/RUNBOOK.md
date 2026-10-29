@@ -53,7 +53,8 @@ Si un garde-fou échoue et ne peut pas être corrigé proprement dans la session
 
 ### 6. Publier
 - Commit conventionnel (`feat(seo): timer pages week N (...)`), push de la branche, puis `git push origin HEAD:main` (avance rapide uniquement ; si refusé, `git merge origin/main`, revérifier le build, repousser ; jamais de force push).
-- Le réseau de la session cloud bloque `pomodorian.app` (curl et WebFetch échouent) : la preuve de mise en ligne est IndexNow. Quelques minutes après le push, OpenSEO `submit_indexnow_urls` avec les nouvelles URLs et le hub de la langue : le statut `submitted` signifie qu'OpenSEO a lu `https://pomodorian.app/f371b59d60eb46c5a9d6c0d605fbaf38.txt` en ligne, donc que le déploiement est passé. Un échec « No key file » juste après le push veut dire que Vercel n'a pas fini : réessayer après quelques minutes. Ne jamais supprimer `public/f371b59d60eb46c5a9d6c0d605fbaf38.txt`.
+- Vérifier la production (JB a autorisé `pomodorian.app` dans le réseau de l'environnement le 29/10) : `node scripts/seo/smoke-timer-pages.cjs https://pomodorian.app <nouveaux slugs>` doit finir sur `SMOKE OK`. Juste après le push, un 404 veut dire que Vercel n'a pas fini : réessayer quelques minutes plus tard. Si le domaine redevient bloqué, la preuve de secours est IndexNow (ci-dessous) : son statut `submitted` signifie qu'OpenSEO a lu le fichier de clé en ligne.
+- OpenSEO `submit_indexnow_urls` avec les nouvelles URLs et le hub de la langue. Le fichier de clé est `public/f371b59d60eb46c5a9d6c0d605fbaf38.txt`. Ne jamais supprimer `public/f371b59d60eb46c5a9d6c0d605fbaf38.txt`.
 - Bing pèse un tiers de Google chez nous : IndexNow n'est pas optionnel.
 - Passer les lignes en `published` avec la date dans `QUEUE.tsv`.
 
