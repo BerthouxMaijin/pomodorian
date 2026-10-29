@@ -28,7 +28,17 @@ Uniquement la première fois qu'une langue entre dans la file (DE en semaine 2, 
 - Titre ≤ 60 caractères avec le mot-clé de la file en tête ; description de 110 à 165 caractères ; intro qui répond en premier (« appuie sur Démarrer... ») ; 4 à 5 usages ; 3 sections ; 3 à 4 questions de FAQ.
 - Contenu propre à la durée : méthode associée, pause conseillée, usages réels. Pas deux pages qui se ressemblent.
 - `relatedArticleSlugs` : 2 à 3 articles publiés dans la même langue (vérifier dans `content/blog/{lang}/`, le statut doit être `published`).
-- Faits produit autorisés (vérifiés dans le code le 29/10) : décompte calculé sur l'horloge réelle donc juste en arrière-plan ; 5 sons (pluie, forêt, cheminée, café, lo-fi) qui se mettent en pause avec le minuteur et s'arrêtent à la fin ; alarme douce (celle choisie dans l'app si la personne l'a déjà utilisée) ; plein écran (Échap pour sortir) ; barre d'espace pour démarrer ou mettre en pause ; mode pause à côté du mode focus ; gratuit, sans compte, sans publicité ; lien vers l'app qui règle la durée de focus. Tout le reste est interdit, en particulier : hors ligne, open source, « aucune donnée envoyée », alarme garantie dans un onglet en arrière-plan, application mobile.
+- Faits produit autorisés (vérifiés dans le code le 29/10, puis corrigés par la relecture adversariale de la semaine 1) :
+  - le temps restant est toujours juste au retour sur l'onglet (horloge réelle), mais en arrière-plan certains navigateurs peuvent retarder l'alarme jusqu'à une minute sauf si un son d'ambiance joue ; sur téléphone, garder l'écran allumé et la page ouverte ;
+  - 5 sons superposables (pluie, forêt, cheminée, café, lo-fi), qui se mettent en pause avec le minuteur et s'arrêtent à la fin ; le choix est mémorisé dans le navigateur ;
+  - une alarme (celle choisie dans l'app si la personne l'a déjà utilisée, donc pas forcément « douce ») ; à la fin, le minuteur passe au mode pause s'il y en a un, sinon il se rembobine ;
+  - plein écran agrandi là où le navigateur le permet (Échap pour sortir) ; le bouton n'apparaît pas sur iPhone ;
+  - barre d'espace pour démarrer ou mettre en pause ; affichage H:MM:SS dès une heure ;
+  - gratuit, sans compte, sans publicité ; « vos tâches, réglages et statistiques restent dans le navigateur » (jamais « tout » : le planificateur IA envoie l'objectif au serveur) ;
+  - le lien vers l'app MODIFIE la durée de focus enregistrée de la personne (le dire ainsi), la pause reste celle de ses réglages ;
+  - Never Dumb n'existe que dans l'app, pendant les pauses longues.
+  Tout le reste est interdit, en particulier : hors ligne, open source, « aucune donnée envoyée », alarme garantie en arrière-plan, application mobile, normes inventées (« la plupart des gens tiennent X sessions »), superlatifs invérifiables (« la méthode la plus populaire »).
+- Anti-gabarit : ne pas ouvrir toutes les intros par la même formule ; chaque thème de FAQ (arrière-plan, plein écran, téléphone, lien vers l'app, compte) sur une ou deux pages par langue au maximum ; pas deux fois le même argument de section dans une langue.
 - Faits externes : uniquement des faits établis et attribués (Cirillo fin des années 1980, DeskTime 2014 pour 52/17, Kleitman pour le cycle ultradien présenté comme hypothèse). Pas de chiffre de santé ou d'étude non sourcé.
 - Jamais de tiret cadratin ni de « & » dans les textes.
 
@@ -36,7 +46,7 @@ Uniquement la première fois qu'une langue entre dans la file (DE en semaine 2, 
 1. `node --experimental-strip-types scripts/seo/check-timer-pages.ts` : doit finir sur `OK`.
 2. `npx eslint lib/seo/timers components/seo components/timer app` : aucune nouvelle erreur (l'erreur `hooks/useTasks.ts` est préexistante).
 3. `npm run build` vert.
-4. `PORT=3123 npm start`, puis Playwright (Chromium préinstallé) sur chaque nouvelle URL : statut 200, `<title>` attendu, `hreflang` présent, clic sur le bouton de démarrage localisé puis décompte qui baisse après 2 s, aucun débordement horizontal à 375 px. Capture de 2 pages (dont une en langue nouvelle) relue visuellement.
+4. `PORT=3123 npm start` (vérifier d'abord qu'aucun ancien serveur n'occupe le port : un serveur resté sur un ancien build sert des fichiers JS introuvables), puis `node scripts/seo/smoke-timer-pages.cjs http://localhost:3123 <slugs...>` : statut 200, titre, hreflang, décompte qui démarre et baisse, pas de défilement horizontal à 375 px, et sur le premier slug un décompte complet sur horloge simulée qui doit finir sur un minuteur réutilisable. Doit finir sur `SMOKE OK`. Mettre en premier un slug de pause (sans mode pause) d'une langue nouvelle. Capture de 2 pages (dont une en langue nouvelle) relue visuellement.
 5. Relecture adversariale du diff par un sous-agent qui n'a pas écrit les pages : faits produit contre la liste ci-dessus, faits externes, qualité de la langue, ressemblance excessive entre pages. Corriger avant de publier.
 
 Si un garde-fou échoue et ne peut pas être corrigé proprement dans la session : ne rien publier, passer les lignes en `blocked` dans la file avec la raison, et le dire à JB.

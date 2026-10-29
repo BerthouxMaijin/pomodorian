@@ -16,7 +16,7 @@ export const TIMER_UI: Record<TimerLang, TimerUiCopy> = {
     openAppFocus: (m) => `Run full Pomodoro cycles at ${m} minutes`,
     openApp: "Open the full Pomodoro timer",
     appPitch:
-      "Pomodorian is a free Pomodoro timer: focus and break cycles, an AI task planner, ambient sounds and focus stats. No account, everything stays in your browser.",
+      "Pomodorian is a free Pomodoro timer: focus and break cycles, an AI task planner, ambient sounds and focus stats. No account: your tasks, settings and stats stay in your browser.",
     usesHeading: (label) => `What a ${label} timer is good for`,
     faqHeading: "Frequently asked questions",
     relatedHeading: "Go further",
@@ -42,7 +42,7 @@ export const TIMER_UI: Record<TimerLang, TimerUiCopy> = {
     openAppFocus: (m) => `Enchaîner des cycles Pomodoro de ${m} minutes`,
     openApp: "Ouvrir le minuteur Pomodoro complet",
     appPitch:
-      "Pomodorian est un minuteur Pomodoro gratuit : cycles de travail et de pause, planificateur de tâches par IA, sons d'ambiance et statistiques de concentration. Sans compte, tout reste dans votre navigateur.",
+      "Pomodorian est un minuteur Pomodoro gratuit : cycles de travail et de pause, planificateur de tâches par IA, sons d'ambiance et statistiques de concentration. Sans compte : vos tâches, réglages et statistiques restent dans votre navigateur.",
     usesHeading: (label) => `À quoi sert un minuteur de ${label}`,
     faqHeading: "Questions fréquentes",
     relatedHeading: "Pour aller plus loin",
@@ -68,7 +68,7 @@ export const TIMER_UI: Record<TimerLang, TimerUiCopy> = {
     openAppFocus: (m) => `Haz ciclos Pomodoro completos de ${m} minutos`,
     openApp: "Abrir el temporizador Pomodoro completo",
     appPitch:
-      "Pomodorian es un temporizador Pomodoro gratuito: ciclos de trabajo y descanso, planificador de tareas con IA, sonidos ambientales y estadísticas de concentración. Sin cuenta, todo se queda en tu navegador.",
+      "Pomodorian es un temporizador Pomodoro gratuito: ciclos de trabajo y descanso, planificador de tareas con IA, sonidos ambientales y estadísticas de concentración. Sin cuenta: tus tareas, ajustes y estadísticas se quedan en tu navegador.",
     usesHeading: (label) => `Para qué sirve un temporizador de ${label}`,
     faqHeading: "Preguntas frecuentes",
     relatedHeading: "Para saber más",
@@ -94,7 +94,7 @@ export const TIMER_UI: Record<TimerLang, TimerUiCopy> = {
     openAppFocus: (m) => `Volle Pomodoro-Zyklen mit ${m} Minuten`,
     openApp: "Den vollständigen Pomodoro-Timer öffnen",
     appPitch:
-      "Pomodorian ist ein kostenloser Pomodoro-Timer: Fokus- und Pausenzyklen, KI-Aufgabenplaner, Ambient-Sounds und Fokus-Statistiken. Ohne Konto, alles bleibt in deinem Browser.",
+      "Pomodorian ist ein kostenloser Pomodoro-Timer: Fokus- und Pausenzyklen, KI-Aufgabenplaner, Ambient-Sounds und Fokus-Statistiken. Ohne Konto: Aufgaben, Einstellungen und Statistiken bleiben in deinem Browser.",
     usesHeading: (label) => `Wofür ein ${label}-Timer gut ist`,
     faqHeading: "Häufige Fragen",
     relatedHeading: "Weiterlesen",

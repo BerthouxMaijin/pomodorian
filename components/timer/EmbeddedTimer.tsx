@@ -59,15 +59,20 @@ export function EmbeddedTimer({
     sound.pauseAllAmbients();
     setFinished(true);
     track("tool_timer_completed", { slug, lang, minutes: modeMinutes, mode: timer.mode });
-    // Offer the break next, without starting it: the person decides.
+    // Offer the break next, without starting it: the person decides. A page
+    // with no break mode rewinds instead, or it would sit at 00:00 with no
+    // way to run again short of a reload.
     if (timer.mode === "pomodoro" && breakMinutes) timer.setMode("shortBreak");
     else if (timer.mode !== "pomodoro") timer.setMode("pomodoro");
+    else timer.reset();
   }, [sound, userSettings.alarmSound, userSettings.alarmVolume, slug, lang, modeMinutes, timer, breakMinutes]);
 
+  // No cleanup that unregisters: React runs every cleanup of a render before
+  // any setup, so a null here would be in place exactly when useTimer's
+  // completion effect fires, and the alarm would never ring.
   const { registerOnComplete } = timer;
   useEffect(() => {
     registerOnComplete(handleComplete);
-    return () => registerOnComplete(null);
   }, [handleComplete, registerOnComplete]);
 
   const start = useCallback(() => {
@@ -118,7 +123,12 @@ export function EmbeddedTimer({
     };
   }, [timer.status, timer.timeRemaining, t.focus]);
 
+  // iPhone Safari has no element full screen: hide the button there rather
+  // than show one that silently does nothing.
+  const [canFullscreen, setCanFullscreen] = useState(false);
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- feature detection needs the browser, so it runs after mount
+    setCanFullscreen(Boolean(document.fullscreenEnabled));
     const onChange = () => setIsFullscreen(document.fullscreenElement === containerRef.current);
     document.addEventListener("fullscreenchange", onChange);
     return () => document.removeEventListener("fullscreenchange", onChange);
@@ -211,6 +221,7 @@ export function EmbeddedTimer({
             {t.reset}
           </button>
         )}
+        {canFullscreen && (
         <button
           type="button"
           onClick={toggleFullscreen}
@@ -226,6 +237,7 @@ export function EmbeddedTimer({
             )}
           </svg>
         </button>
+        )}
       </div>
 
       <div className="w-full">
