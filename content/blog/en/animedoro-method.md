@@ -11,7 +11,7 @@ keywords:
   - anime pomodoro
   - 40 20 study method
   - temptation bundling study
-status: draft
+status: published
 score: 0
 sources:
   - "https://iwarrior.uwaterloo.ca/2021/02/26/50130/animedoro-and-the-stty-draft-the-new-magnum-opus-of-studying/"

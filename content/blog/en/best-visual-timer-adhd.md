@@ -10,7 +10,7 @@ keywords:
   - adhd timer
   - time blindness timer
   - visual countdown timer
-status: draft
+status: published
 score: 0
 sources:
   - "https://eprints.soton.ac.uk/456003"

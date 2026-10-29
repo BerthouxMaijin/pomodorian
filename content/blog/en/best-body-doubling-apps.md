@@ -10,7 +10,7 @@ keywords:
   - virtual body doubling
   - focusmate alternative
   - body doubling apps for adhd
-status: draft
+status: published
 score: 0
 translationKey: best-body-doubling-apps
 sources:

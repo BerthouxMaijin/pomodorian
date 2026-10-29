@@ -12,7 +12,7 @@ keywords:
   - best pomodoro time for studying
   - how many pomodoros a day
   - study session template
-status: draft
+status: published
 score: 0
 sources:
   - "https://www.pomodorotechnique.com/"
