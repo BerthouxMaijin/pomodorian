@@ -95,6 +95,14 @@ export function NeverDumbModal({
     [onClose]
   );
 
+  // The parent re-renders on every timer tick with a fresh onClose. Reading it
+  // through a ref keeps the effect below mount-only: re-running it would pull
+  // focus out of whatever field the person is typing in.
+  const closeRef = useRef(close);
+  useEffect(() => {
+    closeRef.current = close;
+  }, [close]);
+
   useEffect(() => {
     const previousFocus = document.activeElement as HTMLElement | null;
     const previousOverflow = document.body.style.overflow;
@@ -104,7 +112,7 @@ export function NeverDumbModal({
     const onKeyDown = (event: KeyboardEvent) => {
       if (event.key === "Escape") {
         event.preventDefault();
-        close("skip");
+        closeRef.current("skip");
         return;
       }
       if (event.key !== "Tab" || !dialogRef.current) return;
@@ -131,7 +139,7 @@ export function NeverDumbModal({
       document.body.style.overflow = previousOverflow;
       previousFocus?.focus();
     };
-  }, [close]);
+  }, []);
 
   const show = useCallback((next: View) => {
     setView(next);
