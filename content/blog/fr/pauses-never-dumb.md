@@ -1,9 +1,9 @@
 ---
 title: "Never Dumb : restez affûté pendant vos pauses Pomodoro"
-description: "Transformez vos pauses Pomodoro en entraînement cognitif plutôt qu'en doomscrolling, avec 13 exercices en trois modes intégrés à la fonction Never Dumb."
+description: "Transformez vos pauses Pomodoro en entraînement cognitif plutôt qu'en doomscrolling, avec 14 exercices courts en trois parcours : Sérieux, Fun et Reset."
 date: "2026-07-28"
-updated: "2026-07-28"
-readTime: "10 min"
+updated: "2026-10-29"
+readTime: "11 min"
 author: "Jean-Baptiste Berthoux"
 keywords:
   - exercices pause pomodoro
@@ -17,14 +17,17 @@ sources:
   - "https://news.stanford.edu/stories/2014/04/walking-vs-sitting-042414"
   - "https://pmc.ncbi.nlm.nih.gov/articles/PMC9432722/"
   - "https://pubmed.ncbi.nlm.nih.gov/21211793/"
+  - "https://pubmed.ncbi.nlm.nih.gov/21688924/"
+  - "https://kops.uni-konstanz.de/entities/publication/2e749bfb-8533-437c-8203-7e788c910c5f"
+  - "https://pages.ucsd.edu/~cmckenzie/McKenzieetal2008OBHDP.pdf"
 translationKey: never-dumb-breaks
 ---
 
-Ce que vous faites pendant votre pause détermine ce que l'IA fait à votre cerveau. Pas ce que vous faites pendant le bloc de travail : la pause. Si vous passez vos 25 minutes de concentration à raisonner soigneusement, puis vos 5 minutes de pause à laisser un fil d'actualité déverser de la nouveauté dans votre crâne, vous venez d'annuler l'effet d'entraînement du travail que vous avez fait.
+Ce que vous faites pendant votre pause détermine ce que l'IA fait à votre cerveau. Pas ce que vous faites pendant le bloc de travail : la pause. Si vous passez vos 25 minutes de concentration à raisonner soigneusement, puis votre pause à laisser un fil d'actualité déverser de la nouveauté dans votre crâne, vous venez d'annuler l'effet d'entraînement du travail que vous avez fait.
 
 Le doomscrolling n'est pas une pause. C'est un changement de flux d'entrée. Votre cerveau ne se calme pas, il se fait nourrir autre chose, quelque chose d'optimisé pour continuer à accrocher votre attention plutôt que la relâcher. C'est l'exact opposé de ce qu'une pause est censée faire.
 
-J'ai construit une fonctionnalité dans Pomodorian, appelée Never Dumb, spécifiquement pour corriger ça. Voici la réflexion qui la sous-tend, la science sur laquelle elle s'appuie, et les 13 exercices qui la composent.
+J'ai construit une fonctionnalité dans Pomodorian, appelée Never Dumb, spécifiquement pour corriger ça. Voici la réflexion qui la sous-tend, la science sur laquelle elle s'appuie, et les 14 exercices qui la composent depuis sa refonte d'octobre 2026.
 
 ## Pourquoi les pauses actives battent le fil d'actualité
 
@@ -32,7 +35,7 @@ Les pauses fonctionnent parce qu'une concentration ininterrompue se dégrade vit
 
 Une [méta-analyse de 2022 dans PLOS ONE](https://pmc.ncbi.nlm.nih.gov/articles/PMC9432722/), passant en revue 22 études et plus de 2 300 participants, a trouvé que les micro-pauses de moins de 10 minutes préservent de façon fiable la vigueur et réduisent la fatigue. La pause n'a pas besoin d'être longue. Elle doit être du bon type.
 
-Le bon type, selon les preuves, est celui qui change ce que fait votre attention plutôt que de simplement changer ce qu'elle regarde. Une [étude de Stanford par Oppezzo et Schwartz](https://news.stanford.edu/stories/2014/04/walking-vs-sitting-042414) a trouvé que 81 % des participants généraient des idées plus créatives en marchant qu'assis, et que l'effet survivait à la marche elle-même. Scroller un fil d'actualité fait l'inverse : ça garde votre cerveau dans le même mode stimulé de traitement de l'information que le travail que vous venez de quitter, sous le déguisement du repos. Pour en savoir plus sur ce qui restaure vraiment la concentration pendant une pause, [utilisez vos pauses efficacement](/blog/fr/pauses-productives-que-faire) et [les micro-pauses](/blog/micro-breaks-boost-focus) creusent davantage la recherche.
+Le bon type, selon les données disponibles, est celui qui change ce que fait votre attention plutôt que de simplement changer ce qu'elle regarde. Une [étude de Stanford par Oppezzo et Schwartz](https://news.stanford.edu/stories/2014/04/walking-vs-sitting-042414) a trouvé que 81 % des participants généraient des idées plus créatives en marchant qu'assis, et que l'effet survivait à la marche elle-même. Scroller un fil d'actualité fait l'inverse : ça garde votre cerveau dans le même mode stimulé de traitement de l'information que le travail que vous venez de quitter, sous le déguisement du repos. Pour en savoir plus sur ce qui restaure vraiment la concentration pendant une pause, [utilisez vos pauses efficacement](/blog/fr/pauses-productives-que-faire) et [les micro-pauses](/blog/micro-breaks-boost-focus) creusent davantage la recherche.
 
 Never Dumb reprend ce principe et le pointe vers un problème plus récent : ce qui arrive à votre raisonnement quand un outil IA fait la majorité de votre réflexion à votre place, toute la journée, tous les jours.
 
@@ -44,77 +47,82 @@ Bien utiliser les outils IA pendant le travail concentré, ce n'est pas un probl
 
 Je l'ai remarqué aussi dans ma vie en dehors du travail. Mes plus grandes idées n'apparaissent pas quand je regarde un écran. Elles apparaissent sous la douche, en marchant, à la piscine, dans les temps morts que je remplissais avant avec un téléphone. J'ai supprimé les applications d'IA de mon téléphone exactement pour cette raison : protéger ces temps morts, parce que c'est là que la réflexion se produit réellement, pas en tapant.
 
-Never Dumb apporte cette même protection à vos pauses Pomodoro. Il ne s'agit pas d'interdire l'IA. Il s'agit de s'assurer que quelques minutes de chaque pause vous appartiennent entièrement : pas de complétion, pas de suggestion, pas de pilote automatique, une petite revendication régulière sur votre propre [souveraineté cognitive](/blog/fr/souverainete-cognitive). C'est ce que signifie « never dump your brain » (ne jamais vider son cerveau) : ne pas déléguer la part de la réflexion qui vous revient de garder.
+Never Dumb apporte cette même protection à vos pauses Pomodoro. Il ne s'agit pas d'interdire l'IA. Il s'agit de s'assurer que quelques minutes de chaque pause longue vous appartiennent entièrement : pas de complétion, pas de suggestion, pas de pilote automatique, une petite revendication régulière sur votre propre [souveraineté cognitive](/blog/fr/souverainete-cognitive). L'écran qui s'ouvre le dit sans détour : « Cette pause t'appartient. »
 
-![L'écran d'introduction Never Dumb dans Pomodorian](/screenshots/never-dumb.png)
+![L'accueil de Never Dumb dans Pomodorian : un exercice suggéré, des statistiques locales et les parcours Sérieux, Fun et Reset côte à côte](/screenshots/never-dumb.png)
 
 Pour un guide pas à pas de chaque écran et réglage, consultez [Comment utiliser Never Dumb dans Pomodorian](/blog/fr/comment-utiliser-never-dumb).
 
-## Les 13 exercices, par mode
+## Les 14 exercices, par parcours
 
-Quand Never Dumb s'ouvre, vous choisissez ce dont vous avez besoin : Sérieux (Serious), Fun, ou Reset. Chaque mode remplit un rôle différent.
+Never Dumb s'ouvre sur un écran d'accueil unique. Vous y voyez les trois parcours côte à côte, Sérieux, Fun et Reset, avec une durée sur chaque exercice et une suggestion choisie pour le temps de pause qu'il vous reste. Chaque parcours remplit un rôle différent.
 
-### Sérieux : reconstruire le raisonnement
+### Sérieux : muscler votre propre raisonnement
 
-Le mode Sérieux est de la friction délibérée. Le but est de faire le travail mental avant d'accéder à la réponse.
+Le parcours Sérieux est de la friction délibérée. Vous faites le travail mental d'abord, et seulement ensuite vous voyez la réponse. La première version de ce parcours était trop figée : le même bout de code, le même paragraphe, à chaque fois. La refonte a rendu chaque exercice soit personnel, soit tournant, pour qu'il reste utile à la dixième pause.
 
-- **Rebuild** vous demande de reconstruire, sans rouvrir le chat IA, les trois décisions que vous avez prises pendant votre dernier bloc de concentration, en nommant chaque décision, la raison derrière, et ce qui vous ferait revenir dessus. Si vous pouvez reconstruire le raisonnement, la réponse est encore la vôtre.
-- **Break the Answer** vous donne une fonction censée retourner les utilisateurs actifs et vous demande de trouver l'erreur de logique avant de lire la solution, puis d'expliquer l'échec en une phrase précise. C'est une petite chasse au bug délibérée : le code associe chaque utilisateur à un booléen au lieu de filtrer les inactifs.
-- **Compress** prend une source et vous demande de la compresser en un invariant et une question ouverte, en 25 mots maximum au total. Un bon résumé conserve la contrainte et l'incertitude. Il ne fait pas que lisser la prose.
+- **Débrief** part de ce sur quoi vous avez réellement travaillé. Il affiche les tâches de vos derniers blocs de concentration et pose trois questions courtes, sans rouvrir aucun chat IA : qu'avez-vous vraiment fait avancer, qu'avez-vous décidé et pourquoi, et quelle est la toute première action de votre prochain bloc. La dernière réponse peut rejoindre votre liste de tâches en un clic.
+- **Trouve la faille** affiche une réponse qui a l'air sûre d'elle, dans laquelle une seule phrase casse la logique. Vous touchez la phrase fausse, vous dites à quel point vous êtes sûr, puis vous voyez l'explication. Six énigmes tournent d'une pause à l'autre : une corrélation prise pour une cause, un pourcentage calculé sur la mauvaise base, un `map` qui aurait dû être un `filter`, un résultat de test lu sans le taux de base, le biais du survivant, et un calcul de coût de réunion qui double en douce.
+- **Compresse** vous donne une courte note de travail et vous demande la règle qui ne doit pas bouger et la question encore ouverte, en 25 mots maximum. Un compteur suit vos mots en direct, et une version modèle apparaît ensuite pour comparer. Trois notes tournent.
+- **Estime** pose une question de calcul mental, par exemple combien de secondes compte une semaine, et vous répondez par une fourchette dont vous êtes sûr à 90 % qu'elle contient la réponse. La réponse s'affiche ensuite sur une ligne graduée à côté de votre fourchette, avec le raisonnement pour y arriver sans calculatrice.
 
-Les trois existent pour reconstruire un raisonnement, repérer une faille, ou compresser du bruit, exactement le type de muscle de raisonnement qui se ramollit quand un outil IA finit toujours la pensée à votre place.
+Deux de ces choix reposent sur une recherche solide. Débrief se termine sur une prochaine action concrète parce que, dans des [études de Masicampo et Baumeister publiées en 2011](https://pubmed.ncbi.nlm.nih.gov/21688924/), formuler un plan précis pour un objectif inachevé faisait disparaître les pensées intrusives et les interférences que cet objectif ouvert provoquait sinon. C'est exactement ce qu'il vous faut avant une pause : le travail mis de côté, avec un chemin clair pour y revenir. Formuler cette étape avec « un verbe et un objet » s'inspire des intentions de mise en œuvre, ces plans « si... alors » qu'une [revue de Gollwitzer et Sheeran de 2006](https://kops.uni-konstanz.de/entities/publication/2e749bfb-8533-437c-8203-7e788c910c5f) associe à un effet moyen à fort sur l'atteinte des objectifs, sur 94 tests.
 
-### Fun : bougez votre corps, prouvez que vous êtes humain
+Trouve la faille et Estime vous demandent tous deux à quel point vous êtes sûr, parce que l'assurance est ce que les réponses d'IA imitent le mieux. Les recherches sur les estimations par intervalle, comme les [travaux de McKenzie, Liersch et Yaniv en 2008](https://pages.ucsd.edu/~cmckenzie/McKenzieetal2008OBHDP.pdf), montrent régulièrement que les fourchettes que les gens disent sûres à 90 % contiennent la vraie valeur bien moins souvent que 90 % du temps, experts compris. Never Dumb vous donne une ligne de calibration après chaque réponse : juste et sûr, juste en doutant, sûr et faux. « Sûr et faux », c'est exactement comme ça qu'une réponse d'IA bien tournée passe, et le repérer chez soi, c'est la compétence.
 
-Le mode Fun échange la profondeur contre du mouvement et un peu d'absurde. Vous obtenez l'un des quatre jeux surprise.
+### Fun : bouger, rire, prouver que vous êtes humain
 
-- **CAPTCHA humain** vous donne une mission physique un peu ridicule, sans caméra, sans micro, sans score, purement sur l'honneur. Un modèle pourrait décrire la mission. Il ne pourrait pas ressentir à quel point c'était bête à faire.
-- **Room Raid** vous envoie loin du bureau trouver trois choses précises, aucune photo autorisée, puis vous demande de les rappeler sans les regarder à nouveau une fois revenu.
-- **Body Debugger** vous fait suivre une série de commandes physiques sauf celles préfixées par « AI SAYS », un petit test de mouvement plus d'inhibition. Si vous obéissez quand même à la commande de l'IA, la métaphore se passe de commentaire.
-- **Boss Canard** vous demande de répondre à des questions à voix haute avant de pouvoir « frapper » le boss, la saisie au clavier étant facultative. Le canard veut de la clarté, pas des tokens : vous vous l'expliquez vous-même avant de demander à une machine de l'expliquer à votre place.
+Le parcours Fun échange la profondeur contre du mouvement et un peu d'absurde. Vous pouvez choisir un jeu, ou laisser « Surprends-moi » choisir pour vous.
 
-Ils ont, par conception, un impact plus léger que le mode Sérieux. Ce qu'ils entraînent réellement, c'est le mouvement et une forme de preuve de vie : physique, improvisée, impossible à scripter.
+- **CAPTCHA humain** vous donne une mission physique un peu ridicule, comme dessiner un chat les yeux fermés ou citer cinq associations alimentaires impossibles en tenant sur un pied. Dix missions, un bouton pour en changer, et la fameuse case « Je ne suis pas un robot » à cocher, sur l'honneur. Un modèle pourrait décrire la mission. Il ne pourrait pas savourer le ridicule.
+- **Room Raid** vous envoie loin du bureau trouver trois choses tirées parmi douze, aucune photo autorisée. De retour, vous écrivez ce dont vous vous souvenez, puis vous cochez ce que vous aviez vraiment retenu.
+- **Body Debugger** vous fait lever et suivre une courte série de commandes, sauf celle qui commence par « AI SAYS », cachée à une position au hasard. À la fin, il vous demande si vous avez obéi à l'IA. Si oui, la métaphore se passe de commentaire.
+- **Boss Canard** pose trois questions sur ce que vous êtes en train de faire, comme « Qu'est-ce que tu évites ? » ou « Pourquoi ne pas en supprimer la moitié ? ». Chaque réponse dite à voix haute retire un point de vie au boss. Le canard veut de la clarté, pas des tokens.
 
-### Reset : respiration, méditation, marche
+Ils ont, par conception, un impact plus léger que le parcours Sérieux. Ce qu'ils entraînent réellement, c'est le mouvement et une forme de preuve de vie : physique, improvisée, impossible à scripter.
 
-Le mode Reset est l'option silencieuse, pour les moments où ce dont vous avez besoin n'est pas une énigme mais une vraie décélération.
+### Reset : ralentir sans aucun fil d'actualité
 
-- **Respiration 5–5** vous fait respirer cinq secondes en inspirant, cinq secondes en expirant, pendant trois minutes.
-- **Méditation ouverte** vous donne quelques consignes espacées pour remarquer les sons, les sensations et les pensées sans essayer de les corriger, trois minutes sans objectif de performance.
-- **Scan corporel** promène votre attention à travers chaque partie de votre corps sans essayer de rien changer, trois minutes pour assouplir ce qui peut l'être.
-- **Marche de cinq minutes** vous envoie complètement loin de l'écran, sans téléphone, sans podcast, sans objectif de productivité.
-- **Reset musical** joue trois minutes d'un morceau lofi local et vous demande de ne rien faire d'autre pendant qu'il joue.
-- **Ping-pong invisible** vous fait debout mimer un renvoi de balle de gauche à droite pendant soixante secondes, un moyen rapide de croiser la ligne médiane et de prouver que vous êtes toujours un mammifère mobile.
+Le parcours Reset est l'option silencieuse, pour les moments où ce dont vous avez besoin n'est pas une énigme mais une vraie décélération.
+
+- **Respiration 5–5** vous fait inspirer cinq secondes et expirer cinq secondes pendant trois minutes, guidé par un cercle qui grandit et se rétracte.
+- **Méditation ouverte** vous donne quelques consignes espacées pour remarquer les sons, les sensations et les pensées sans chercher à les corriger, trois minutes sans objectif de performance.
+- **Scan corporel** promène votre attention à travers neuf zones du corps, des pieds au corps entier, trois minutes pour relâcher ce qui peut l'être.
+- **Marche de cinq minutes** vous envoie complètement loin de l'écran, sans téléphone, sans podcast, sans objectif.
+- **Reset musical** joue trois minutes de lofi et vous demande de ne rien faire d'autre. Vos autres ambiances Pomodorian se mettent en pause puis reprennent ensuite.
+- **Ping-pong invisible** vous fait mimer, debout, le renvoi d'une balle du côté indiqué à l'écran pendant soixante secondes, un moyen rapide de traverser l'axe du corps et de prouver que vous êtes toujours un mammifère mobile.
 
 Six options parce que le contexte varie : certains jours vous pouvez sortir, d'autres jours vous êtes en open space et un scan corporel est le seul reset réaliste. Le but de chacune est le même : quitter le fil d'actualité, ne pas remplir la pause avec plus d'input.
 
 ## Comment l'activer
 
-Never Dumb s'ouvre automatiquement à votre pause longue, celle qui suit votre quatrième pomodoro. Vous n'avez rien à faire pour qu'elle apparaisse. Si vous préférez la déclencher manuellement ou désactiver complètement l'ouverture automatique, il y a un interrupteur dans les Réglages appelé « Ouvrir automatiquement Never Dumb pendant les pauses longues ».
+Never Dumb s'ouvre automatiquement à votre pause longue, celle qui suit votre quatrième pomodoro par défaut. Vous n'avez rien à faire pour qu'il apparaisse. Pendant toute pause longue en cours, un bouton « Lancer Never Dumb » vous permet aussi de l'ouvrir vous-même. Si vous préférez qu'il n'apparaisse jamais sans y être invité, il y a un interrupteur dans les Réglages appelé « Ouvrir automatiquement Never Dumb pendant les pauses longues ».
 
-Autant être honnête sur où en est cette fonctionnalité : elle est jeune. J'ai construit la première version des exercices et des modes en me basant sur la philosophie ci-dessus, mais je ne l'ai pas encore affinée sur des mois d'usage réel. Si une consigne tombe à plat, si un exercice sonne faux, ou si vous avez une idée pour en améliorer un, le formulaire de feedback intégré à l'app arrive directement chez moi. C'est réellement comme ça que cette fonctionnalité s'améliore.
+Tout reste sur votre appareil. Vos réponses disparaissent quand vous fermez Never Dumb, et la seule chose conservée est un petit compteur local (pauses reprises, jours d'affilée, aujourd'hui) ainsi que la prochaine énigme à servir, pour ne pas retomber deux fois de suite sur la même. Seule exception : la prochaine action d'un Débrief, si vous choisissez de l'ajouter à vos tâches.
+
+La refonte vient de l'observation de la première version en usage réel : les exercices Sérieux étaient trop figés pour rester utiles, et l'écran demandait trois clics avant que quoi que ce soit ne commence. La fonctionnalité continue d'évoluer. Si une consigne tombe à plat, si un exercice sonne faux, ou si vous avez une idée pour en améliorer un, le formulaire de feedback intégré à l'app arrive directement chez moi.
 
 ## À retenir
 
 - Le doomscrolling pendant une pause n'est pas du repos, c'est un changement de flux d'entrée qui garde votre cerveau dans le même mode stimulé de traitement de l'information que le travail.
-- Les pauses actives, qui changent le mode d'attention, ont un appui mesurable : l'Illinois a trouvé que de brèves diversions préviennent le déclin de vigilance, et Stanford a trouvé que la marche augmente la production créative de 81 %.
+- Les pauses actives, qui changent le mode d'attention, ont un appui mesurable : l'Illinois a trouvé que de brèves diversions préviennent le déclin de vigilance, et Stanford a trouvé que la marche augmente la production créative chez 81 % des participants.
 - La philosophie de Never Dumb est simple : l'IA peut finir la phrase, elle ne doit pas finir la pensée. Les pauses sont l'endroit où vous vous exercez à raisonner sans que l'outil le fasse à votre place.
-- Les 13 exercices se répartissent en trois rôles : Sérieux reconstruit le raisonnement par la friction, Fun ajoute du mouvement et une preuve d'humanité, Reset offre une vraie décélération physiologique.
-- Never Dumb s'ouvre automatiquement à votre pause longue (après votre 4e pomodoro) et peut être désactivé dans les Réglages si vous préférez le déclencher manuellement.
+- Les 14 exercices se répartissent en trois rôles : Sérieux muscle votre raisonnement (Débrief, Trouve la faille, Compresse, Estime), Fun ajoute du mouvement et une preuve d'humanité, Reset offre une vraie décélération.
+- Débrief transforme vos derniers blocs en une prochaine action écrite, ce que la recherche sur la planification associe à moins de pensées intrusives liées au travail inachevé.
 
 ## Questions fréquentes
 
 ### Qu'est-ce que Never Dumb dans Pomodorian ?
-Never Dumb est une fonctionnalité de pause dans Pomodorian qui propose 13 exercices courts répartis en trois modes, Sérieux, Fun et Reset, pour que vos pauses Pomodoro construisent de la résilience cognitive au lieu de basculer par défaut vers le fil d'actualité du téléphone.
+Never Dumb est une fonctionnalité de pause dans Pomodorian qui propose 14 exercices courts répartis en trois parcours, Sérieux, Fun et Reset, pour que vos pauses Pomodoro longues construisent de la résilience cognitive au lieu de basculer par défaut vers le fil d'actualité du téléphone.
 
 ### Quand Never Dumb s'ouvre-t-il ?
-Il s'ouvre automatiquement pendant votre pause longue, celle qui suit chaque quatrième pomodoro. Vous pouvez désactiver l'ouverture automatique dans les Réglages et le lancer manuellement à la place si vous préférez choisir vous-même quand il apparaît.
+Il s'ouvre automatiquement pendant votre pause longue, celle qui suit chaque quatrième pomodoro par défaut. Vous pouvez désactiver l'ouverture automatique dans les Réglages et utiliser à la place le bouton « Lancer Never Dumb » pendant une pause longue.
 
 ### Never Dumb enregistre-t-il ou envoie-t-il ce que je tape ?
-Non. Tout ce que vous tapez pendant un exercice reste local à votre appareil. Rien n'est enregistré ni envoyé nulle part, la même approche sans base de données que Pomodorian utilise pour toutes vos autres données.
+Non. Tout tourne sur votre appareil et rien n'est envoyé nulle part. Vos réponses disparaissent à la fermeture. Pomodorian garde seulement un compteur local des exercices terminés et de votre série de jours, plus la prochaine action que vous choisissez d'ajouter à vos tâches.
+
+### Quel exercice choisir après une grosse session avec l'IA ?
+Commencez par Débrief ou Trouve la faille. Débrief vous fait reconstruire ce que vous venez de faire et écrire vous-même votre prochaine action, et Trouve la faille entraîne le réflexe de vérifier une réponse assurée au lieu de croire son ton.
 
 ### Pourquoi ne pas simplement scroller pendant une pause ?
-Scroller garde votre cerveau dans le même mode stimulé de traitement de l'information que le travail concentré, donc ça ne vous offre pas le type de changement d'attention qu'une vraie récupération exige. Les exercices de Never Dumb sont construits pour changer de mode délibérément, par le raisonnement, le mouvement, ou un vrai reset physiologique.
-
-### Never Dumb est-il terminé, ou encore en cours d'amélioration ?
-C'est une fonctionnalité récente. Les 13 exercices reflètent un premier jet de la philosophie, pas un ensemble final et parfaitement calibré. Les retours envoyés via le formulaire intégré à l'app façonnent directement ce qui sera ajouté ou modifié ensuite.
+Scroller garde votre cerveau dans le même mode stimulé de traitement de l'information que le travail concentré, donc ça ne vous offre pas le type de changement d'attention qu'une vraie récupération exige. Les exercices de Never Dumb changent de mode délibérément, par le raisonnement, le mouvement, ou un vrai reset physiologique.

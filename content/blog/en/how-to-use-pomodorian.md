@@ -2,7 +2,7 @@
 title: "How to Use Pomodorian: The Complete Guide"
 description: "A complete walkthrough of Pomodorian: the timer, task list, AI planner, ambient sounds, Never Dumb breaks, analytics, and settings."
 date: "2026-07-28"
-updated: "2026-07-28"
+updated: "2026-10-29"
 author: "Jean-Baptiste Berthoux"
 readTime: "11 min"
 keywords:
@@ -74,9 +74,9 @@ You can layer as many as you like at once, rain under a crackling fireplace work
 
 ## Turn Breaks into Training with Never Dumb
 
-![The Never Dumb intro screen, "Never dump your brain"](/screenshots/never-dumb.png)
+![The Never Dumb hub, "This break is yours.", with a suggested exercise and the Serious, Fun and Reset paths](/screenshots/never-dumb.png)
 
-Never Dumb is Pomodorian's take on the break: instead of a blank timer, your long breaks can open into a short set of exercises designed to give your own thinking a few minutes back. It opens automatically on long breaks by default, or on demand through a "Run Never Dumb" button whenever a long break is running. For the full walkthrough of the modes and exercises, see [How to Use Never Dumb](/blog/how-to-use-never-dumb).
+Never Dumb is Pomodorian's take on the break: instead of a blank timer, your long breaks can open into a hub of 14 short exercises, split into Serious, Fun and Reset paths, designed to give your own thinking a few minutes back. The Serious path includes a Debrief that turns your last focus blocks into a next step you can add to your task list. It opens automatically on long breaks by default, or on demand through a "Run Never Dumb" button whenever a long break is running. For the full walkthrough of the hub and every exercise, see [How to Use Never Dumb](/blog/how-to-use-never-dumb).
 
 ## Track Your Focus
 

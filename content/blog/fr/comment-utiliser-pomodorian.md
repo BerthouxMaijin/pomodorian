@@ -2,7 +2,7 @@
 title: "Comment utiliser Pomodorian : le guide complet"
 description: "Le guide complet de Pomodorian : minuteur, tâches, planificateur IA, sons d'ambiance, pauses Never Dumb, statistiques et réglages."
 date: "2026-07-28"
-updated: "2026-07-28"
+updated: "2026-10-29"
 author: "Jean-Baptiste Berthoux"
 readTime: "13 min"
 keywords:
@@ -76,9 +76,9 @@ Vous pouvez en superposer autant que vous voulez, la pluie sous un feu de chemin
 
 ## Transformez vos pauses en entraînement avec Never Dumb
 
-![L'écran d'introduction de Never Dumb, avec le titre affiché à l'écran « Never dump your brain » (dont l'équivalent français est « Ne vide jamais ton cerveau »)](/screenshots/never-dumb.png)
+![L'accueil de Never Dumb, avec le titre « This break is yours. » (en français : « Cette pause t'appartient. »), un exercice suggéré et les parcours Sérieux, Fun et Reset](/screenshots/never-dumb.png)
 
-Never Dumb, c'est la vision de Pomodorian sur la pause : au lieu d'un minuteur vide, vos pauses longues peuvent s'ouvrir sur une courte série d'exercices pensés pour redonner quelques minutes à votre propre réflexion. Ça s'ouvre automatiquement pendant les pauses longues par défaut, ou à la demande via un bouton « Lancer Never Dumb » dès qu'une pause longue est en cours. Pour le tour complet des modes et des exercices, consultez [Comment utiliser Never Dumb](/blog/fr/comment-utiliser-never-dumb).
+Never Dumb, c'est la vision de Pomodorian sur la pause : au lieu d'un minuteur vide, vos pauses longues peuvent s'ouvrir sur un écran de 14 exercices courts, répartis en trois parcours (Sérieux, Fun et Reset), pensés pour redonner quelques minutes à votre propre réflexion. Le parcours Sérieux comprend un Débrief qui transforme vos derniers blocs de concentration en une prochaine action à ajouter à votre liste de tâches. Ça s'ouvre automatiquement pendant les pauses longues par défaut, ou à la demande via un bouton « Lancer Never Dumb » dès qu'une pause longue est en cours. Pour le tour complet de l'accueil et de chaque exercice, consultez [Comment utiliser Never Dumb](/blog/fr/comment-utiliser-never-dumb).
 
 ## Suivez votre concentration
 
