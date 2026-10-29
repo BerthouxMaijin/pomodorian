@@ -1,157 +1,306 @@
 ---
-title: "Best Pomodoro App in 2026: 7 Options Compared"
-description: "7 Pomodoro apps compared for 2026: exact pricing, real limits, and who each one (including our own) is actually best for."
+title: "Best Pomodoro Apps in 2026: 10 Timers Compared"
+description: "Pomofocus, Forest, Focus To-Do, Session, Flow, Toggl Track, TickTick and Pomodorian compared: prices, platforms, offline use and AI planning, checked Oct 2026."
 date: "2026-03-23"
-updated: "2026-07-27"
+updated: "2026-10-29"
 author: "Jean-Baptiste Berthoux"
-readTime: "8 min"
+readTime: "11 min"
 keywords:
   - best pomodoro app
-  - pomodoro timer app
+  - best pomodoro timer app
+  - best ai pomodoro timer
+  - pomodoro app comparison
   - pomofocus alternative
-  - focus app
 status: published
 score: 10
 sources:
   - "https://pomofocus.io/"
-  - "https://www.trustradius.com/products/pomofocus/pricing"
-  - "https://www.indiehackers.com/product/pomofocus/earned-first-100-from-subscription--M3UzaeUjGq8gzkbPazu"
-  - "https://www.pwalist.app/app/pomofocus"
-  - "https://www.forestapp.cc/"
+  - "https://pomofocus.io/privacy"
+  - "https://forestapp.cc/"
   - "https://apps.apple.com/us/app/focus-to-do-focus-timer-tasks/id966057213"
   - "https://www.focustodo.cn/"
+  - "https://www.focustodo.cn/privacy-policy"
+  - "https://www.stayinsession.com/pricing"
+  - "https://apps.apple.com/us/app/session-pomodoro-focus-timer/id1521432881"
+  - "https://flowapp.info/pricing"
+  - "https://flowapp.info/download/"
   - "https://toggl.com/track/pricing/"
-  - "https://support.toggl.com/en/articles/2220695-can-toggl-track-work-offline"
-  - "https://apps.apple.com/gb/app/focus-keeper-pomodoro-timer/id867374917"
-  - "https://focuskeeper.co/blog/focus-timer-subscription-pricing-and-plans-compared-a-complete-guide"
-  - "https://focuskeeper.co/"
+  - "https://support.toggl.com/en-us/article/how-to-enable-the-pomodoro-timer-1ra91f7/"
+  - "https://support.toggl.com/can-toggl-track-work-offline"
+  - "https://ticktick.com/upgrade"
+  - "https://ticktick.com/download"
+  - "https://help.ticktick.com/articles/7444685542580551680"
+  - "https://rize.io/pricing"
+  - "https://rize.io/features/productivity"
+  - "https://apps.apple.com/us/app/focus-keeper-pomodoro-timer/id867374917"
   - "https://reclaim.ai/pricing"
-  - "https://reclaim.ai/"
-  - "https://schedulingkit.com/pricing-guides/reclaim-ai-pricing"
+  - "https://help.reclaim.ai/en/articles/6405975-how-reclaim-s-pricing-and-plans-work"
+  - "https://www.usemotion.com/pricing"
 translationKey: best-pomodoro-apps-2026
 ---
 
-If you just want the short answer: **[Pomodorian](https://pomodorian.app)** is the best pick if you want a free Pomodoro timer with an AI planner that breaks your goals into sessions, no account and no paywall involved. It is not the right fit for everyone. Pick **Forest** if you need mobile gamification to stay off your phone, **Toggl Track** if you bill clients by the hour and want offline desktop tracking, or **Focus To-Do** if you want full project management bolted onto your timer. Here is how all seven options actually compare.
+The best Pomodoro app depends on what you need: **Pomofocus** for the simplest free browser timer, **Forest** to stay off your phone, **Focus To-Do** for a task manager and timer in one, **Session** for Apple devices, **Flow** for a Mac menu bar timer, **Toggl Track** for billable hours, **TickTick** for to-dos plus habits, and **[Pomodorian](https://pomodorian.app)** for free AI planning in the browser with no account. The table below compares all ten apps on price, platforms, offline use and account requirements.
 
-| You want... | Best pick |
-|---|---|
-| A free AI planner that breaks down tasks | Pomodorian |
-| The simplest possible timer, nothing else | Pomofocus |
-| Mobile gamification to stay off your phone | Forest |
-| Full project management plus a timer | Focus To-Do |
-| Billable hours with offline desktop tracking | Toggl Track |
+> **Disclosure:** Pomodorian is built and published by the author of this site, so we compete with every app on this page. No app paid for placement. Where a competitor is the better tool for a job, we say so.
 
-New to the method itself, not just the tools? Start with our [complete Pomodoro Technique guide](/blog/pomodoro-technique-complete-guide).
+**How we verified:** every price, platform, offline and account detail comes from the vendor's own pricing page, App Store listing or help center, never from a third-party estimate, **last checked on October 29, 2026** (US prices, before tax). When a vendor does not publish a figure, we write "not published" rather than quote a third-party estimate. App Store prices vary by country.
 
-> **How we compared these apps:** Pomodorian is built and published by the author of this site. This comparison is based on each app's publicly available features and pricing, verified on July 27, 2026. No app paid for placement or ranking here.
+New to the method? Start with our [complete Pomodoro Technique guide](/blog/pomodoro-technique-complete-guide).
 
-## 1. Pomodorian: Best for Free AI-Powered Planning
+## At a glance: 10 Pomodoro apps compared
 
-Pomodorian is a free, web-based Pomodoro timer built around an AI Session Planner: describe a goal in plain language and it returns an editable list of pomodoro-sized tasks with time estimates, powered by Claude and available in 8 languages. Everything else is free too: five layerable ambient sounds (rain, cafe, lo-fi, forest, fireplace), a GitHub-style focus heatmap, and a glassmorphism dark mode. All data stays in your browser's local storage. There is no account, no cloud sync, and no ads.
+| App | Best for | Platforms | Free tier | Paid price (US) | AI planning | Works offline | Account needed |
+|---|---|---|---|---|---|---|---|
+| Pomofocus | Simplest free browser timer | Web; desktop apps for Mac, Windows, Linux | Yes, with ads | Premium $3/mo, $18/yr or $54 lifetime | No | Not documented | No (basic use) |
+| Forest | Staying off your phone | iPhone, iPad, Android, Chrome and Firefox extensions | Yes | Plus: not published (varies by region) | No | Yes (core timer) | Only for sync |
+| Focus To-Do | Tasks plus timer in one app | Android, iPhone, iPad, Apple Watch, Mac, Windows, Chrome extension | Yes | $1.99, $3.99 for 3 months, $11.99 lifetime | No | Not documented | No (local mode) |
+| Session | Apple devices | iPhone, iPad, Mac, Apple Watch | Yes (2 days of analytics) | Pro $4.99/mo or $39.99/yr | No | Not documented | For trial and sync |
+| Flow | Mac menu bar timer | Mac, iPhone, iPad, Apple Watch | Yes, no ads | Pro from $1.49/mo | No | Not documented | No |
+| Toggl Track | Billable hours | Web, Windows, macOS, iOS, Android, browser extensions | Yes (up to 5 users) | Starter $9/user/mo, Premium $18/user/mo (annual) | No | Yes (desktop apps) | Yes |
+| TickTick | To-dos, habits and a timer | Web, iOS, Android, Windows, macOS, Linux | Yes (list limits) | Premium $49.99/yr | AI Assistant breaks down projects | Not documented | Yes |
+| Pomodorian | Free AI planning in the browser | Web browser | Everything is free | None | Yes (goal to pomodoro tasks) | No | No |
+| Rize | Automatic time tracking | macOS, Windows | 7-day trial only | Basic $9.99/mo, Pro $23.99/mo (annual) | AI breaks and categorization | Not documented | Yes |
+| Focus Keeper | Simple native iPhone timer | iPhone, iPad, Apple Watch | Yes | Pro $3.99/mo, $34.99/yr or $99.99 once | No | Not documented | Not documented |
+
+<!-- [À VALIDER JB] Toggl Track : prix Starter 9 $ / Premium 18 $ (annuel) et 10 $ / 20 $ (mensuel) confirmés via le blog et la communauté Toggl, la page toggl.com/track/pricing n'a pas pu être ouverte directement le 29/10. -->
+<!-- [À VALIDER JB] TickTick « Account needed: Yes » : très probable (inscription), mais non lu noir sur blanc dans l'aide TickTick. -->
+
+## 1. Pomofocus
+
+Pomofocus is a free, browser-based Pomodoro timer for people who want to start a session in one click.
+
+**Best for:** the simplest free timer in a browser tab.
+
+**Platforms:** web, plus downloadable desktop apps for Mac, Windows and Linux.
+
+**Price:** free with ads. Premium is listed in the app at $3 per month, $18 per year or $54 lifetime.
+
+**What stands out:** no sign-up needed. The free tier covers the timer, a task list with pomodoro estimates, templates, adjustable durations and sounds, and reports. Premium removes ads and adds projects, yearly reports, CSV export, Todoist import and webhooks.
+
+**Limitations:** ads on the free tier, no AI features, and offline use is not documented on its site.
+
+**Choose it if:** you want a timer you can use in five seconds. See [Pomodorian vs Pomofocus](/pomodorian-vs-pomofocus).
+
+<!-- [À VALIDER JB] Pomofocus : prix vus dans le panneau Premium de l'app (pomofocus.io/login et /app), pas sur une page tarifs datée. « No sign-up needed » vient de la vérif du 27/07, non relu explicitement le 29/10. -->
+
+## 2. Forest
+
+Forest is a gamified focus app for people whose phone is their main distraction: a virtual tree grows while you focus and withers if you leave the app.
+
+**Best for:** staying off your phone.
+
+**Platforms:** iPhone, iPad and Android, plus Chrome and Firefox extensions that sync with the same account.
+
+**Price:** the core app is free. Forest Plus is an optional subscription with an in-app free trial; Forest does not publish a single price and says it varies by region and platform.
+
+**What stands out:** the core timer and tree growth work offline and sync once you reconnect. Plus can fund real tree planting.
+
+**Limitations:** no native desktop app and no AI features.
+
+**Choose it if:** gamification keeps you honest. Compare it in [Pomodorian vs Forest](/pomodorian-vs-forest).
+
+## 3. Focus To-Do
+
+Focus To-Do is a task manager with a built-in Pomodoro timer, for people who want planning and execution in the same app.
+
+**Best for:** a full to-do list and a timer in one place.
+
+**Platforms:** Android, iPhone, iPad, Apple Watch, Mac, Windows and a Chrome extension.
+
+**Price:** free, with Premium on the US App Store at $1.99, a 3-month pass at $3.99, or $11.99 lifetime.
+
+**What stands out:** projects, subtasks, due dates and reminders, plus adjustable pomodoro and break lengths. Its privacy policy says it works without registration in a local mode.
+
+**Limitations:** no sync without an account (local data is lost if you uninstall), a busier interface than a pure timer, and no AI features.
+
+**Choose it if:** you want one app for your task list and your focus sessions. See [Pomodorian vs Focus To-Do](/pomodorian-vs-focus-to-do).
+
+<!-- [À VALIDER JB] Focus To-Do : prix US App Store (1,99 / 3,99 / 11,99 $) identiques au 27/07 mais l'instantané indexé est ancien ; reconfirmer sur la fiche US. -->
+
+## 4. Session
+
+Session is a native Pomodoro timer with analytics, built for iPhone, iPad, Mac and Apple Watch users.
+
+**Best for:** people who work across Apple devices.
+
+**Platforms:** iPhone, iPad, Mac and Apple Watch (controls via Live Activities on watchOS 11).
+
+**Price:** free plan available. Pro costs $4.99 per month or $39.99 per year, with a 7-day trial when you create an account.
+
+**What stands out:** real-time sync lets you start on a Mac and finish on an iPhone. Pro adds custom durations, full history, and app and website blocking on the Mac, plus Apple Focus and Shortcuts support.
+
+**Limitations:** the free plan keeps two days of analytics, sync is a Pro feature, and there is no Windows or Android version.
+
+**Choose it if:** you live in the Apple ecosystem and want blocking plus detailed stats.
+
+## 5. Flow
+
+Flow is a Pomodoro timer that lives in the Mac menu bar, also available on iPhone, iPad and Apple Watch.
+
+**Best for:** a quiet, always-visible Mac timer.
+
+**Platforms:** Mac, iPhone, iPad and Apple Watch.
+
+**Price:** the basics are free, with no ads and no sign-up. The developer's pricing page lists Pro from $1.49 per month, with a discounted yearly option and a lifetime option.
+
+**What stands out:** the free tier includes the timer, statistics and break reminders. Pro adds app and website blocking, Apple Calendar sync, custom cycles, timer sync across devices and export.
+
+**Limitations:** Apple only, no AI features, and App Store prices can differ from the developer's page.
+
+**Choose it if:** you work on a Mac and want a timer that stays out of your way.
+
+<!-- [À VALIDER JB] Flow : 1,49 $/mois vient de flowapp.info/pricing (page ancienne) ; certains instantanés App Store montrent 2,99 $/mois, 17,99 $/an, 39,99 $ à vie. Vérifier l'App Store US. -->
+
+## 6. Toggl Track
+
+Toggl Track is a time tracker with a Pomodoro mode, for freelancers and teams who need to report or bill their hours.
+
+**Best for:** billable time and client reporting.
+
+**Platforms:** web, Windows, macOS, iOS, Android and browser extensions. The Pomodoro timer is not available in the web app.
+
+**Price:** free for up to 5 users. Starter costs $9 per user per month billed annually ($10 monthly), Premium $18 per user per month billed annually ($20 monthly).
+
+**What stands out:** each pomodoro is logged as tracked time against a project, and the desktop apps work offline, syncing later.
+
+**Limitations:** a time tracker first, so Pomodoro is a setting rather than the core experience. An account is required and there is no AI planning.
+
+**Choose it if:** you invoice by the hour. See [Pomodorian vs Toggl Track](/pomodorian-vs-toggl).
+
+## 7. TickTick
+
+TickTick is a to-do list and calendar app with a built-in Pomodoro timer and habit tracker.
+
+**Best for:** people who want tasks, habits and focus sessions in one account.
+
+**Platforms:** web, iOS and iPadOS, Android, Windows, macOS, Linux and a browser extension.
+
+**Price:** free plan with list limits (9 lists, 99 tasks per list). Premium costs $49.99 per year.
+
+**What stands out:** the Pomo timer and focus statistics are available to all users, and TickTick's help center describes an AI Assistant that can create tasks and break down projects from a plain-language request.
+
+**Limitations:** the timer is one module among many, and TickTick does not state which AI features require Premium.
+
+**Choose it if:** you already want a full task manager and a timer is a bonus.
+
+## 8. Pomodorian
+
+Pomodorian is a free, browser-based Pomodoro timer with an AI Session Planner that turns a written goal into pomodoro-sized tasks.
+
+**Best for:** free AI planning in the browser, with no account.
+
+**Platforms:** web browser only, with no native apps.
+
+**Price:** free, with no ads and no paid tier.
+
+**What stands out:** the AI Session Planner (powered by Claude, in 8 languages) returns tasks with pomodoro estimates, and the running pomodoro links to a task. Durations run from 1 to 120 minutes, with a long break every 1 to 10 cycles. It adds 5 layerable ambient sounds (rain, cafe, lo-fi, forest, fireplace), a focus heatmap and streak, Never Dumb break exercises and keyboard shortcuts. Data stays in your browser's localStorage.
 
 ![Pomodorian AI Session Planner review screen](/screenshots/ai-planner.png)
 ![Pomodorian focus analytics](/screenshots/analytics.png)
 
-**Limitations:** Pomodorian is web-only. There are no native iOS or Android apps, no offline mode (it needs a connection to load, though a session already running keeps ticking if your signal drops mid-session), and no third-party integrations like Todoist or Google Calendar.
+**Limitations:** no offline mode, no sync across devices, no integrations such as Todoist or Google Calendar, and no app blocking.
 
-**Choose it if:** you want a modern, free timer with AI help breaking down tasks, and you don't need offline access or native mobile apps.
+**Choose it if:** you work on a computer and want help breaking a goal into sessions. See the [online Pomodoro timer](/online-pomodoro-timer) and [AI task planner](/ai-task-planner).
 
-## 2. Pomofocus: Best for Bare-Bones Simplicity
+## 9. Rize
 
-Pomofocus is one of the most recognizable web Pomodoro timers. The free tier includes the timer, task list, activity reports, customizable ambient sounds, and a fullscreen mode, and it doesn't require signing up. It's installable as a PWA and the core timer works offline. The free tier does show ads; Premium removes them and adds multiple projects with productivity tracking, more saved templates, CSV report exports, Todoist import, and webhooks. Pomofocus's own pricing page returned an error when we checked it, but third-party trackers list Premium at around $3/month, roughly $18/year, or a $54 lifetime option. Treat that figure as indicative rather than official. Pomofocus is also available as a downloadable app for Mac, Windows, and Linux, and has no AI planning features. See our full [Pomodorian vs Pomofocus comparison](/pomodorian-vs-pomofocus) for a deeper look.
+Rize is an automatic time tracker for Mac and Windows that uses AI to categorize your work and suggest breaks.
 
-**Limitations:** ads on the free tier, no AI features, a dated interface.
+**Best for:** knowledge workers who want to measure focus without starting timers.
 
-**Choose it if:** you want the simplest possible timer and don't mind occasional ads.
+**Platforms:** macOS and Windows.
 
-## 3. Forest: Best for Mobile Gamification
+**Price:** 7-day free trial, no permanent free plan. Basic costs $9.99 per month and Pro $23.99 per month, both billed annually; monthly billing costs more.
 
-Forest turns focus sessions into a game: start a timer and a virtual tree grows, leave the app and it dies. The free tier includes the focus timer, Deep Focus app blocking, Time Guard for one app, one soundscape ("Mindful Space"), tree species, and focus tracking, with no card required. Forest Plus, its subscription, unlocks every soundscape, multi-app Time Guard, detailed Focus Analytics, and real tree planting (up to 5 per account, via a partnership with Trees for the Future), at around $39.99/year (about $3.33/month) according to third-party trackers, with a 7-day free trial; Forest's own site doesn't publish an exact figure and says pricing varies by region and platform. Forest works fully offline (timer, tree growth, and stats all run without a signal), but it's mobile-only: iPhone, iPad, Android, Apple Watch, and Chrome/Firefox extensions, no desktop app. An account is only needed for multi-device sync. See how it stacks up in our [Pomodorian vs Forest comparison](/pomodorian-vs-forest).
+**What stands out:** Rize tracks activity in the background and its AI suggests breaks based on how you work. You can also time focus sessions.
 
-**Limitations:** no desktop app, no AI features, most soundscapes are locked behind Plus.
+**Limitations:** not a classic Pomodoro timer (its site says "no pomodoro timers necessary"), no mobile app, and no permanent free plan.
 
-**Choose it if:** you're motivated by gamification and mostly work from your phone.
+**Choose it if:** you want data on where your hours go more than a fixed 25/5 rhythm.
 
-## 4. Focus To-Do: Best for Full Task Management
+## 10. Focus Keeper
 
-Focus To-Do pairs a complete task manager (subtasks, due dates, projects, reminders) with a Pomodoro timer and basic white noise built in. According to its official App Store listing, Premium is available as a $1.99 subscription, a $3.99 three-month pass, or an $11.99 lifetime purchase, unlocking multi-device sync, more white noise options, detailed stats, custom themes, and unlimited project folders. It runs on Android, iPhone/iPad, Mac, Windows, and Apple Watch, plus a Chrome extension. Focus To-Do doesn't publish clear information on whether an account is required for the free tier or whether it works offline, so we're not going to guess. Compare it directly in our [Pomodorian vs Focus To-Do writeup](/pomodorian-vs-focus-to-do).
+Focus Keeper is a native Pomodoro timer app for iPhone, iPad and Apple Watch.
 
-**Limitations:** a busier interface than a pure timer, no AI features.
+**Best for:** a simple, classic Pomodoro timer on iPhone.
 
-**Choose it if:** you want one app for planning and executing, not just timing.
+**Platforms:** iPhone, iPad and Apple Watch (watchOS 8 or later).
 
-## 5. Toggl Track: Best for Billable Time and Offline Desktop
+**Price:** free to download. Pro on the US App Store costs $3.99 per month, $34.99 per year or $99.99 as a one-time purchase.
 
-Toggl Track is a time-tracking tool first and a Pomodoro app second. The free tier (up to 5 users) includes unlimited time tracking, unlimited projects and clients, an autotracker, idle detection, calendar integration, 100+ integrations, and CSV/PDF export, with no card required. The Pomodoro timer itself lives in the browser extension, desktop app, and mobile app rather than the plain web app, with configurable break reminders and a Focus mode. Paid plans start with Starter at $9 per user per month billed annually, adding billable rates, project time estimates, and rounding; Premium runs $18 per user per month annually (Toggl was running a $14 first-year promotion at the time of writing), adding profitability tracking, forecasting, and Jira or Salesforce integrations. The desktop app for Mac and Windows works fully offline, storing time entries locally and syncing once you're back online. An account is required. See our [Pomodorian vs Toggl Track comparison](/pomodorian-vs-toggl).
+**What stands out:** a focused, single-purpose timer with ticking sounds and a clean interface, from a long-running app.
 
-**Limitations:** not built as a Pomodoro app first, no AI features, overkill if all you want is a timer.
+**Limitations:** Apple only, no AI features, and its public documentation on the free tier, offline use and accounts is thin.
 
-**Choose it if:** you need to bill hours and want offline tracking on desktop.
+**Choose it if:** you want a straightforward timer on your phone and wrist.
 
-## 6. Focus Keeper: Best for the Apple Ecosystem
+<!-- [À VALIDER JB] Focus Keeper : l'ancienne version citait une version web (focuskeeper.co) avec compte et un Mac Apple Silicon ; non reconfirmé le 29/10, retiré. La fiche US apparaît aussi sous le nom « ADHD Planner & Study Friend » : vérifier le nom actuel. -->
 
-Focus Keeper is a native Pomodoro app built for Apple devices: iPhone (iOS 16+), iPad, Mac on Apple Silicon, Apple Watch, and Apple Vision, plus a web version at focuskeeper.co that requires an account. Two independent sources converge on Pro pricing of $3.99/month or $34.99/year (US pricing); other figures listed on its App Store page look like regional or legacy tiers we couldn't confirm, so we're leaving them out. Focus Keeper doesn't publish clear details on ambient sounds, offline support, or ads for its free tier.
+## What is the best AI Pomodoro timer?
 
-**Limitations:** built around Apple devices, no AI features, thin public documentation on the free tier.
+An AI Pomodoro timer is a focus timer that uses AI to plan, schedule or adapt your work sessions. In practice, "AI Pomodoro" covers three different jobs:
 
-**Choose it if:** you live in the Apple ecosystem and want a native, polished app.
+1. **AI planning:** you describe a goal and the AI turns it into pomodoro-sized tasks. Pomodorian does this for free in the browser. TickTick's AI Assistant breaks down projects inside a full to-do app; its documentation does not mention pomodoro estimates per task.
+2. **AI scheduling:** the AI places focus blocks on your calendar around meetings. **Motion** and **Reclaim.ai** are AI schedulers, not Pomodoro timers.
+3. **Adaptive intervals:** a timer that changes session length based on your behaviour. We could not verify any app that does this on its vendor's own pages, so we list none. Rize comes closest with AI-suggested breaks, but it does not run a Pomodoro cycle.
 
-## 7. Reclaim.ai: Best for Calendar-Driven Scheduling (Not a Pomodoro Timer)
+| Tool | Type | What the AI does | Free option | Paid price (US) |
+|---|---|---|---|---|
+| Pomodorian | AI planning + timer | Goal to tasks with pomodoro estimates | Yes, everything | None |
+| TickTick | To-do app + timer | Creates tasks, breaks down projects | Yes | $49.99/yr |
+| Rize | Time tracker | Categorizes activity, suggests breaks | 7-day trial | From $9.99/mo (annual) |
+| Reclaim.ai | AI scheduler | Blocks focus time and habits on your calendar | Yes (Lite, 1 user) | Starter $10/seat/mo, Business $15/seat/mo (annual) |
+| Motion | AI scheduler | Plans tasks and projects on your calendar | Trial only | Pro AI from $19/seat/mo |
 
-Reclaim.ai is worth including with a caveat: it's a Google or Outlook calendar add-on, not a Pomodoro app. Its "AI Agents" automatically block Focus Time, Habits, Buffer Time, and Smart Meetings on your existing calendar, and an AI Planner can be driven by chat through ChatGPT, Claude MCP, or Microsoft Copilot integrations. That's scheduling around commitments you already have, not the goal-to-pomodoro breakdown Pomodorian's planner does. The free "Lite" tier covers one user and a one-week planning horizon. Starter costs $10 to $12 per seat monthly (up to 10 users, 8-week horizon); Business, the most popular tier, runs $15 to $18 per seat monthly (up to 100 users, 12-week horizon); Enterprise runs around $22 per seat monthly, adding SSO and org-wide analytics. An account through Google or Microsoft is mandatory, and there's no ambient sound or offline concept since it isn't a timer at all.
+**Podomodo** is often named as an AI Pomodoro timer. We have not yet verified its features, platforms or price against its own pages, so it is not in our tables. If you compare it with Pomodorian, check whether it needs an account, whether it estimates pomodoros per task, and whether its AI is free.
 
-**Limitations:** requires full calendar access, per-seat cost adds up for teams, not a Pomodoro timer in the traditional sense.
+In short: to have AI break a goal into sessions and then run the timer, use Pomodorian or TickTick. If your problem is a calendar full of meetings, Reclaim.ai or Motion will help more than any timer.
 
-**Choose it if:** your day is ruled by meetings and you want AI defending focus blocks on your calendar automatically.
+<!-- [À VALIDER JB] Podomodo : introuvable via la recherche (ni podomodo.com ni fiche store) le 29/10. Si JB a l'URL, vérifier prix, plateformes, compte, et l'ajouter au tableau principal à la place de Rize. -->
+<!-- [À VALIDER JB] Motion : 19 $/siège/mois (Pro AI) lu sur usemotion.com/pricing, page non datée dans les résultats ; « Trial only » repose sur un essai de 7 jours cité par le blog Motion. Reconfirmer. Reclaim : 10 / 15 $ par siège (annuel) lus sur le blog et l'aide Reclaim. -->
 
-## Where Another App Clearly Wins
+## Where another app clearly wins
 
-Pomodorian isn't the right tool for every job. Three cases where a competitor genuinely does more:
+Pomodorian is not the right tool for every job. Cases where another app does more:
 
-- **Mobile gamification.** Forest's tree-dies-if-you-leave mechanic and social tree-planting build a stronger anti-phone habit loop than any timer with a plain analytics dashboard, Pomodorian included.
-- **All-in-one project management.** Focus To-Do's subtasks, due dates, and multi-device sync handle ongoing project work that a session-based planner like Pomodorian's was never built for.
-- **Billable hours and offline desktop work.** Toggl Track's client and project reporting, plus a fully offline desktop app, are built for freelancers who need to invoice, not just focus.
-
-## Comparison Table
-
-| App | AI Planning | Ambient Sounds | Offline | Price | Account required |
-|---|---|---|---|---|---|
-| **Pomodorian** | Yes | Yes (5, free) | No | Free | No |
-| Pomofocus | No | Yes (free tier) | Yes (PWA) | Free; Premium ~$3/mo* | No (basic use) |
-| Forest | No | Partial (1 free) | Yes | Free; Plus ~$3.33/mo* | No (yes for sync) |
-| Focus To-Do | No | Partial (white noise) | Not disclosed | Free; Premium from $1.99 | Not disclosed |
-| Toggl Track | No | Not found | Yes (desktop) | Free (5 users); Starter $9/user/mo | Yes |
-| Focus Keeper | No | Not disclosed | Not disclosed | Free; Pro $3.99/mo | Yes (web) |
-| Reclaim.ai | Yes (calendar AI) | N/A | N/A | Free (Lite); Starter from $10/seat/mo | Yes |
-
-*Pomofocus's and Forest's premium prices come from third-party trackers, not each app's own site: Pomofocus's official pricing page was unreachable at verification time, and Forest's site declines to publish an exact figure, saying only that pricing varies by region and platform.
-
-## Key Takeaways
-
-- Pomodorian is the only app here that's completely free with no account, no ads, and a built-in AI planner, but it has no offline mode and no native apps.
-- Pomofocus is the simplest pure timer; its premium pricing (around $3/month) comes from third-party trackers, not from Pomofocus's own site.
-- Forest is the strongest choice for mobile gamification and works fully offline, but it has no desktop app.
-- Toggl Track and Focus To-Do beat Pomodorian on task and time-management depth, at the cost of a more complex interface.
-- Reclaim.ai isn't a Pomodoro app at all: it's an AI calendar assistant worth considering only if meetings, not timers, are your real problem.
+- **Staying off your phone.** Forest's tree mechanic and app blocking build a stronger anti-phone habit than any browser timer, Pomodorian included.
+- **Offline work.** Forest's core timer and Toggl Track's desktop apps keep working without a connection. Pomodorian needs one.
+- **Apple-native experience.** Session and Flow sync across Mac, iPhone and Apple Watch and can block apps and websites.
+- **Ongoing project management.** Focus To-Do and TickTick handle due dates, reminders and recurring tasks that a session planner was not built for.
+- **Billable hours.** Toggl Track's client and project reporting is built for invoicing, not just focus.
 
 ## Frequently Asked Questions
 
 ### What is the best free Pomodoro app in 2026?
 
-Pomodorian is the most fully-featured free option: an AI session planner, five ambient sounds, and analytics, all without an account or paywall. Pomofocus and Toggl Track also have usable free tiers, though Pomofocus shows ads and Toggl's free plan is really a time-tracking tool with a Pomodoro mode attached.
+Pomofocus is the simplest free browser timer, though it shows ads. Pomodorian is free with no ads and includes AI planning, sounds and analytics, but it is browser-only. Forest, Focus To-Do, Flow and TickTick have useful free tiers on mobile or desktop.
+
+### What is the best AI Pomodoro timer?
+
+For turning a goal into pomodoro-sized tasks, Pomodorian does it for free with no account, and TickTick's AI Assistant breaks down projects inside a to-do app. For placing focus blocks on your calendar, Reclaim.ai and Motion are AI schedulers rather than timers.
+
+### What is the best Pomodoro app for Mac and iPhone?
+
+Session is the most complete Apple option, with real-time sync and app blocking on Mac in Pro. Flow is a lighter menu bar timer for Mac that also runs on iPhone. Focus Keeper is a simple iPhone and Apple Watch timer.
 
 ### Does Pomodorian work offline?
 
-No. Pomodorian needs a connection to load, and there's currently no offline mode or service worker. A pomodoro that's already running will keep counting down if your signal drops briefly, but you can't start a fresh session offline. If offline use matters to you, Forest, Pomofocus as an installed PWA, or Toggl Track's desktop app are better fits.
+No. Pomodorian is a web app with no offline mode, so it needs a connection. Forest's core timer and Toggl Track's desktop apps work offline.
 
-### Which Pomodoro app has AI features?
+### What is the best Pomodoro app for ADHD?
 
-Pomodorian's AI Session Planner turns a written goal into a list of pomodoro-sized tasks with time estimates. Reclaim.ai also uses AI, but for a different job: it auto-schedules focus time, habits, and meetings on your calendar rather than breaking down a specific task list.
+Look for visible progress and flexible interval lengths: Forest's growing tree and Pomodorian's adjustable durations (from 1 minute) are two examples. See our guides to [Pomodoro for ADHD](/blog/pomodoro-adhd), the [best visual timers for ADHD](/blog/best-visual-timer-adhd) and [body doubling apps](/blog/best-body-doubling-apps).
 
-### Is Forest or Pomodorian better for staying off my phone?
+### Do I need to pay for a Pomodoro app?
 
-Forest, if your phone is the main distraction: its tree dies if you leave the app, a stronger deterrent than any dashboard can offer. Pomodorian is browser-based and doesn't have that mobile-specific mechanic, so it fits desktop-first work like coding or writing better.
+No. Nine of the ten apps in our main table have free options that run a Pomodoro cycle; paid plans mainly add sync, longer history, app blocking or team features. Rize, and Motion in the AI section, offer trials instead.
 
-### Do any of these apps require a paid plan to be useful?
+## Key Takeaways
 
-No. Pomodorian, Pomofocus, Forest, Focus To-Do, and Toggl Track all have usable free tiers for solo use. Paid plans mainly add sync across devices, detailed reports, or team features rather than gating the core timer.
+- No single app wins every need: Pomofocus, Forest, Focus To-Do, Session and Toggl Track each lead in one.
+- Pomodorian is the free, no-account option for AI planning in the browser, but it has no offline mode, no native apps and no sync.
+- For Apple users, Session and Flow are the native picks; for phone discipline, Forest.
+- "AI Pomodoro timer" can mean AI planning (Pomodorian, TickTick), AI scheduling (Motion, Reclaim.ai) or adaptive intervals, and we found no verified example of the last one.
+- Prices were verified on vendors' own pages on October 29, 2026, and change often.
+
+Prefer a desk device to an app? See our ranking of the [best physical Pomodoro timers](/blog/best-physical-pomodoro-timer), or our guide to [long Pomodoro sessions](/blog/long-pomodoro-sessions-guide) if 25 minutes feels too short.
