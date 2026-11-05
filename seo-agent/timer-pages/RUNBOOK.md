@@ -24,7 +24,7 @@ Uniquement la première fois qu'une langue entre dans la file (DE en semaine 2, 
 ### 4. Écrire les pages
 - Langue cible écrite nativement, jamais une traduction mot à mot de la page EN : formulations du marché (« minuteur », « temporizador », « Timer ... Minuten »), conventions locales (heures de cours, pauses, références culturelles exactes).
 - Nouveau fichier de langue : `export const {lang}TimerPages: TimerPage[]`, enregistré dans `lib/seo/timers/index.ts` (import plus ajout au tableau `timerPages`).
-- Champs : `slug` et `role`, `breakMinutes` exactement comme dans la file ; `label` dans la forme attendue par `TIMER_UI[lang].usesHeading` (en : « 25 minute », fr : « 25 minutes », es : « 25 minutos », de : « 25-Minuten ») ; `published` = date du jour.
+- Champs : `slug` et `role`, `breakMinutes` exactement comme dans la file (rôles : `focus` règle la durée de focus dans l'app via le lien, `break` et `micro` ne la touchent pas, `frame` pour 2 h et plus, présenté comme le cadre d'une session avec des pauses dedans, jamais comme un bloc de focus) ; `label` dans la forme attendue par `TIMER_UI[lang].usesHeading` (en : « 25 minute », fr : « 25 minutes », es : « 25 minutos », de : « 25-Minuten ») ; `published` = date du jour.
 - Titre ≤ 60 caractères avec le mot-clé de la file en tête ; description de 110 à 165 caractères ; intro qui répond en premier (« appuie sur Démarrer... ») ; 4 à 5 usages ; 3 sections ; 3 à 4 questions de FAQ.
 - Contenu propre à la durée : méthode associée, pause conseillée, usages réels. Pas deux pages qui se ressemblent.
 - `relatedArticleSlugs` : 2 à 3 articles publiés dans la même langue (vérifier dans `content/blog/{lang}/`, le statut doit être `published`).

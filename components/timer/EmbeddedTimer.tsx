@@ -258,7 +258,7 @@ export function EmbeddedTimer({
                     : "border-border text-muted hover:text-foreground"
                 )}
               >
-                <span aria-hidden="true">{s.icon}</span> {s.label}
+                <span aria-hidden="true">{s.icon}</span> {t.soundLabels[s.key] ?? s.label}
               </button>
             );
           })}

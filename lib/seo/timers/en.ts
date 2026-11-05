@@ -1,6 +1,6 @@
 import type { TimerPage } from "./types";
 
-// Week 1 of the timer tool pages (2026-10-29). Volumes are US monthly searches
+// Timer tool pages: week 1 (2026-10-29), week 2 (2026-11-05). Volumes are US monthly searches
 // from OpenSEO on 2026-10-29; see seo-agent/timer-pages/QUEUE.tsv.
 // Each FAQ topic lives on one or two pages only, so the set does not read as
 // one template with the number swapped.
@@ -555,5 +555,333 @@ export const enTimerPages: TimerPage[] = [
       "science-of-flow-state",
     ],
     published: "2026-10-29",
+  },
+  // Week 2 (2026-11-05).
+  {
+    slug: "1-minute-timer",
+    lang: "en",
+    minutes: 1,
+    role: "micro",
+    label: "1 minute",
+    title: "1 Minute Timer: Free 60 Second Countdown",
+    description:
+      "A free 1 minute timer for planks, quick resets and the one-minute rule. One click, a 60 second countdown, an alarm at the end, no sign-up.",
+    h1: "1 Minute Timer",
+    intro:
+      "Sixty seconds, counted down, with an alarm at zero. One minute sounds like nothing, which is exactly why it works: it is short enough to start anything, and long enough to hold a plank, take a few slow breaths or clear one small task off your list.",
+    useCases: [
+      "Holding a plank or a stretch for a full minute.",
+      "Slow breathing to come down before a call.",
+      "Applying the one-minute rule to small chores.",
+      "Practicing a one-minute pitch or introduction out loud.",
+      "A screen break: look out of the window until the alarm.",
+    ],
+    sections: [
+      {
+        heading: "The one-minute rule",
+        body: "The writer Gretchen Rubin popularized a simple habit: if a task takes less than a minute, do it now instead of noting it for later. Hang up the coat, reply yes to the message, put the cup in the dishwasher. A one-minute countdown makes the rule concrete, and it shows how many of the things you postpone actually take less time than thinking about them.",
+      },
+      {
+        heading: "A minute of breathing between two tasks",
+        body: "Moving straight from one task to the next carries the tension of the first into the second. A minute of slow breathing, eyes closed or fixed on one spot, is a cheap way to draw a line between them. Breathe in through the nose, out a little longer than in, and let the alarm tell you when to open your eyes.",
+      },
+      {
+        heading: "Sixty seconds for speaking practice",
+        body: "Many introductions, pitches and interview answers have to fit in about a minute. Start the timer, say your version out loud, and notice where you are when the alarm rings. Most people run over on the first try. Cut a sentence, try again, and repeat until the important part lands before the minute is up.",
+      },
+    ],
+    faq: [
+      {
+        q: "How do I use a 1 minute timer for a plank?",
+        a: "Get into position first, then press the space bar to start without reaching for the mouse. Hold until the alarm, rest, and repeat if you want a second set.",
+      },
+      {
+        q: "Is one minute of breathing worth it?",
+        a: "As a reset between tasks, yes. It will not replace a real break, but it is enough to slow down and arrive at the next task less rushed.",
+      },
+      {
+        q: "Can I restart the timer quickly?",
+        a: "Yes. When the alarm rings the countdown rewinds to 1:00 on its own, so pressing Start again runs another minute.",
+      },
+    ],
+    relatedArticleSlugs: [
+      "micro-breaks-boost-focus",
+      "2-minute-rule-with-pomodoro",
+      "recover-focus-after-interruption",
+    ],
+    published: "2026-11-05",
+  },
+  {
+    slug: "2-minute-timer",
+    lang: "en",
+    minutes: 2,
+    role: "micro",
+    label: "2 minute",
+    title: "2 Minute Timer: Free Countdown for the 2-Minute Rule",
+    description:
+      "A free 2 minute timer for the two-minute rule, tooth brushing and tiny habits. Starts in one click and rings at the end, no account needed.",
+    h1: "2 Minute Timer",
+    intro:
+      "Press Start and this timer counts down two minutes. Two minutes is the threshold of David Allen's two-minute rule, the starting size James Clear recommends for a new habit, and the brushing time dentists suggest: small enough to say yes to, long enough to matter.",
+    useCases: [
+      "The two-minute rule: tasks this short get done now.",
+      "Starting a new habit in its smallest possible version.",
+      "Brushing your teeth for the full two minutes.",
+      "A quick tidy of your desk before a focus session.",
+      "A short stretch for your neck and shoulders.",
+    ],
+    sections: [
+      {
+        heading: "David Allen's two-minute rule",
+        body: "In Getting Things Done, David Allen suggests that any action taking less than two minutes should be done immediately, because tracking it would cost more than doing it. Set the timer when you sort your inbox or your to-do list: if the alarm rings before you finish, the task was not a two-minute task, and it goes into a proper work session instead.",
+      },
+      {
+        heading: "The two-minute version of a habit",
+        body: "In Atomic Habits, James Clear describes the other two-minute rule: shrink a new habit until it takes two minutes to do. Read one page, do one push-up, write one sentence. The point is to make starting automatic before worrying about doing more. A visible countdown helps on days when even two minutes feels like a lot.",
+      },
+      {
+        heading: "Two minutes before a Pomodoro",
+        body: "A focus session goes better when the desk is clear and the next step is written down. Spending two minutes on that before starting a 25-minute session is a small investment: close the tabs you will not need, put the phone away, write the first action. Pomodorian's guide on the two-minute rule shows how the two ideas fit together.",
+      },
+    ],
+    faq: [
+      {
+        q: "What is the two-minute rule?",
+        a: "Two ideas share the name: David Allen's rule (do anything that takes under two minutes immediately) and James Clear's rule (start a new habit with a two-minute version of it).",
+      },
+      {
+        q: "Is two minutes really how long to brush teeth?",
+        a: "Two minutes, twice a day, is the common recommendation from dental associations such as the American Dental Association.",
+      },
+      {
+        q: "Why is the timer quiet while it counts?",
+        a: "It only rings at the end. If you want sound during the countdown, pick a background sound such as rain or lo-fi under the timer.",
+      },
+    ],
+    relatedArticleSlugs: [
+      "2-minute-rule-with-pomodoro",
+      "stop-procrastinating-timeboxing",
+      "build-daily-focus-habit-30-days",
+    ],
+    published: "2026-11-05",
+  },
+  {
+    slug: "3-minute-timer",
+    lang: "en",
+    minutes: 3,
+    role: "micro",
+    label: "3 minute",
+    title: "3 Minute Timer: Free Countdown for a Breathing Reset",
+    description:
+      "A free 3 minute timer for a breathing space, steeping tea or a quick reset between tasks. One click to start, an alarm when the time is up.",
+    h1: "3 Minute Timer",
+    intro:
+      "This timer runs for three minutes and rings at zero. Three minutes is the length of a well-known mindfulness exercise, the three-minute breathing space, and a handy unit for everyday things: steeping a cup of tea, a round of stretches, or a pause before you answer a difficult message.",
+    useCases: [
+      "A three-minute breathing space between two tasks.",
+      "Steeping black tea without forgetting it.",
+      "A short round of stretches at your desk.",
+      "Cooling down before replying to a tense email.",
+      "Rehearsing a short talk or a toast.",
+    ],
+    sections: [
+      {
+        heading: "The three-minute breathing space",
+        body: "Mindfulness-Based Cognitive Therapy includes a short practice called the three-minute breathing space. Roughly, it moves in three steps: notice what is going on in your mind and body, narrow your attention to the breath, then widen it again to the whole body. It is designed to fit into an ordinary day, which makes it a good use of a short break.",
+      },
+      {
+        heading: "A pause before you reply",
+        body: "Messages that annoy us tend to get answered fast and regretted later. Starting a three-minute countdown before replying gives the first reaction time to settle. Read the message once, start the timer, do something else with your hands, and write your answer after the alarm. It is usually shorter and calmer than the first draft would have been.",
+      },
+      {
+        heading: "Small timers for small things",
+        body: "Plenty of daily tasks run on a few minutes: tea, a face mask, a rest between sets at the gym. Keeping this page open in a tab means the countdown is always one click away, and because the remaining time is calculated from the real clock, it stays right even if you switch to another tab while you wait.",
+      },
+    ],
+    faq: [
+      {
+        q: "How long should I steep tea?",
+        a: "It depends on the tea and the packaging advice, but black tea is often steeped for about 3 to 5 minutes. Three minutes gives a lighter cup.",
+      },
+      {
+        q: "Can a three-minute exercise really help?",
+        a: "It is not a cure for anything, but a short, structured pause is an easy way to step out of autopilot between two demanding tasks.",
+      },
+      {
+        q: "Is there a longer meditation option?",
+        a: "Yes. The 10 minute timer suits a beginner meditation, and Pomodorian's article on meditation during breaks describes a simple protocol.",
+      },
+    ],
+    relatedArticleSlugs: [
+      "meditation-pomodoro-breaks",
+      "micro-breaks-boost-focus",
+      "why-breaks-make-you-more-productive",
+    ],
+    published: "2026-11-05",
+  },
+  {
+    slug: "35-minute-timer",
+    lang: "en",
+    minutes: 35,
+    role: "focus",
+    breakMinutes: 5,
+    label: "35 minute",
+    title: "35 Minute Timer: Free Focus Countdown with a Break",
+    description:
+      "A free 35 minute timer with a 5 minute break, a middle ground between the 25 minute Pomodoro and longer 45 or 50 minute focus blocks.",
+    h1: "35 Minute Timer",
+    intro:
+      "A 35-minute countdown, with a 5-minute break ready beside it. Thirty-five minutes sits between the classic 25-minute Pomodoro and the longer 45 or 50-minute blocks, which makes it a good stepping stone when 25 feels short but an hour feels out of reach.",
+    useCases: [
+      "A slightly longer Pomodoro when 25 minutes cuts you off.",
+      "A step between 25 and 50 minute focus blocks.",
+      "Drafting one section of a report or an essay.",
+      "A lunchtime workout that fits a short break.",
+      "Practice sessions for an instrument or a language.",
+    ],
+    sections: [
+      {
+        heading: "A stepping stone to longer sessions",
+        body: "Jumping from 25 to 50 minutes in one go often fails: the second half of the longer block turns into staring at the screen. Adding ten minutes at a time is gentler. Run 35-minute sessions for a week, and if finishing them is easy, move to 45. If it is not, there is no shame in going back to 25. The right length is the one you complete.",
+      },
+      {
+        heading: "Why the extra ten minutes help",
+        body: "Many tasks have a slow start: rereading the last paragraph, finding the file, remembering where the bug was. In a 25-minute session that start eats a big share of the time. Ten more minutes does not change the structure of your day much, but it leaves noticeably more time for the part where the work actually moves.",
+      },
+      {
+        heading: "Keeping the break short",
+        body: "At this length a 5-minute break is still enough. Stand up, drink something, look away from the screen, and come back. After three or four rounds, take a long break of 15 to 30 minutes, the same rule as in the classic Pomodoro cycle, just with slightly longer blocks.",
+      },
+    ],
+    faq: [
+      {
+        q: "Is 35 minutes a recognized Pomodoro length?",
+        a: "It is not the classic length, but the Pomodoro Technique is about single-tasking and regular breaks more than an exact number. Many people adjust the block to their work.",
+      },
+      {
+        q: "When should I move up from 35 minutes?",
+        a: "When you regularly reach the alarm still focused and a little frustrated to stop. Try 45 minutes with a 15-minute break next.",
+      },
+      {
+        q: "Does the timer remember where I was if I reload the page?",
+        a: "No. This page is a simple countdown; a reload starts it again at 35:00. For sessions you want to keep a record of, use the full app.",
+      },
+    ],
+    relatedArticleSlugs: [
+      "customize-pomodoro-intervals",
+      "long-pomodoro-sessions-guide",
+      "pomodoro-technique-beginners-guide",
+    ],
+    published: "2026-11-05",
+  },
+  {
+    slug: "90-minute-timer",
+    lang: "en",
+    minutes: 90,
+    role: "focus",
+    breakMinutes: 20,
+    label: "90 minute",
+    title: "90 Minute Timer: Free Countdown for Deep Work",
+    description:
+      "A free 90 minute timer with a 20 minute break for 90/20 deep work blocks. Shows 1:30:00, runs in your browser, rings when the block ends.",
+    h1: "90 Minute Timer",
+    intro:
+      "This timer counts down an hour and a half, shown as 1:30:00, with a 20-minute break mode beside it. Ninety minutes is the classic length of a deep work block: long enough for a demanding task to really move, and a common way to plan one or two serious sessions in a day.",
+    useCases: [
+      "A 90/20 deep work block on one hard problem.",
+      "A long writing or design session without switching.",
+      "An exam simulation for a 90-minute paper.",
+      "A study block split into reading and practice.",
+      "A long practice session for music or sport.",
+    ],
+    sections: [
+      {
+        heading: "Where the 90-minute idea comes from",
+        body: "The sleep researcher Nathaniel Kleitman proposed that the roughly 90-minute cycle seen in sleep might continue during the day as a basic rest and activity cycle. The evidence for a precise daytime rhythm is mixed, so treat 90 minutes as a practical length rather than a law of biology. What is well established is that attention fades over long stretches and that real breaks help it recover.",
+      },
+      {
+        heading: "How to run a 90/20 block",
+        body: "Decide the outcome before you start: a finished section, a fixed bug, a draft. Clear everything else from the screen and start the countdown. Halfway through, if you notice yourself drifting, stand up for a minute and come back, rather than forcing it. When the alarm rings, take the full 20-minute break away from screens. Two of these blocks make a very productive day.",
+      },
+      {
+        heading: "Not for every task",
+        body: "Ninety minutes is a big commitment, and it suits work that needs your whole attention for a long time. For admin, email or fragmented days, shorter blocks waste less when interruptions come. If you are new to long sessions, build up from 45 or 50 minutes first; Pomodorian's guide to Pomodoro intervals compares the options.",
+      },
+    ],
+    faq: [
+      {
+        q: "Is 90 minutes better than the 25 minute Pomodoro?",
+        a: "Not in general. It suits long, demanding tasks once you are used to sustained focus; 25 minutes suits fragmented days and tasks you are avoiding.",
+      },
+      {
+        q: "How many 90 minute blocks can I do per day?",
+        a: "There is no rule. Plan one or two, with real breaks between them, and stop when you notice your attention clearly dropping.",
+      },
+      {
+        q: "What is the ultradian rhythm?",
+        a: "A biological rhythm shorter than a day. Kleitman's basic rest and activity cycle is the best-known proposal for a roughly 90-minute daytime rhythm; the evidence for it is debated.",
+      },
+    ],
+    relatedArticleSlugs: [
+      "ultradian-rhythms-natural-focus-cycles",
+      "deep-work-programmers-framework",
+      "science-of-flow-state",
+    ],
+    published: "2026-11-05",
+  },
+  {
+    slug: "2-hour-timer",
+    lang: "en",
+    minutes: 120,
+    role: "frame",
+    breakMinutes: 20,
+    label: "2 hour",
+    title: "2 Hour Timer: Free 120 Minute Countdown",
+    description:
+      "A free 2 hour timer for long exams, study marathons with planned breaks, or a firm limit on screen time. Shows 2:00:00 and rings at the end.",
+    h1: "2 Hour Timer",
+    intro:
+      "A two-hour countdown, displayed as 2:00:00, with a 20-minute break mode next to it. Two hours is too long for most people to focus without a pause, so this timer is best used as an outer frame: a full exam simulation, a planned study block with breaks inside it, or a hard limit on something that tends to run on.",
+    useCases: [
+      "Simulating a two-hour exam under real conditions.",
+      "Framing a study block that contains short breaks.",
+      "Putting a limit on gaming or streaming time.",
+      "A long rehearsal or a practice match.",
+      "Keeping a workshop or a meeting to its slot.",
+    ],
+    sections: [
+      {
+        heading: "Two hours as a frame, not one block",
+        body: "Very few people keep deep focus for two hours straight. A more realistic use is to start the two-hour countdown as the frame of a work session, then work in shorter blocks inside it, such as two 50-minute blocks with a 10-minute break between them. The big timer tells you when the whole session is over, so you can stop on time instead of drifting into the evening.",
+      },
+      {
+        heading: "Rehearsing a long exam",
+        body: "If your exam lasts two hours, at least one full rehearsal at that length is worth doing. It shows you how your concentration holds in the second hour and how long each part of the paper really takes. Start the timer, put away your notes and phone, and keep going until the alarm, exactly as on the day.",
+      },
+      {
+        heading: "A limit for open-ended activities",
+        body: "Games, series and scrolling have no natural end, which is why they eat evenings. Deciding the limit in advance and starting a visible countdown turns a vague intention into a clear stop. When the alarm rings, finish the current round or episode and close it. It works better than checking the clock, which is easy to ignore.",
+      },
+    ],
+    faq: [
+      {
+        q: "Can I focus for two hours straight?",
+        a: "Rarely, and it is not necessary. Use the two-hour countdown as a frame and take short breaks inside it.",
+      },
+      {
+        q: "Why is the break mode 20 minutes?",
+        a: "After a long session a longer pause helps you recover. Take it away from screens if you can.",
+      },
+      {
+        q: "Will the timer still be right after two hours in a background tab?",
+        a: "The remaining time will be correct when you return, since it is based on the real clock. In a background tab the alarm itself can ring up to about a minute late in some browsers unless a background sound is playing.",
+      },
+    ],
+    relatedArticleSlugs: [
+      "prepare-exams-without-burnout",
+      "long-pomodoro-sessions-guide",
+      "stop-procrastinating-timeboxing",
+    ],
+    published: "2026-11-05",
   },
 ];

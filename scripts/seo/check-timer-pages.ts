@@ -107,7 +107,7 @@ for (const p of pages) {
   if (p.description.length < 110 || p.description.length > 165)
     err(p, `description ${p.description.length} chars (110 to 165)`);
   if (!/^\d{4}-\d{2}-\d{2}$/.test(p.published)) err(p, "published must be YYYY-MM-DD");
-  if (!["focus", "break", "micro"].includes(p.role)) err(p, `unknown role ${p.role}`);
+  if (!["focus", "break", "micro", "frame"].includes(p.role)) err(p, `unknown role ${p.role}`);
   if (p.role === "focus" && !p.breakMinutes) warn(p, "focus page without a break mode");
   if (p.useCases.length < 4) err(p, "needs at least 4 use cases");
   if (p.sections.length < 3) err(p, "needs at least 3 sections");

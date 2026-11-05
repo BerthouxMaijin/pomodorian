@@ -4,9 +4,11 @@ export type TimerLang = (typeof TIMER_LANGS)[number];
 /**
  * What the duration is for on a Pomodoro day. Drives the copy of the hand-off
  * to the app: a focus duration becomes the user's pomodoro length, a break or
- * micro duration does not touch their settings.
+ * micro duration does not touch their settings. A frame (2 hours and up) is
+ * the outer limit of a session with breaks inside it, not one focus block, so
+ * it leaves the settings alone too.
  */
-export type TimerRole = "focus" | "break" | "micro";
+export type TimerRole = "focus" | "break" | "micro" | "frame";
 
 /**
  * A tool page: a working countdown preset to one duration, plus copy that is
@@ -49,6 +51,8 @@ export interface TimerUiCopy {
   fullscreen: string;
   exitFullscreen: string;
   sounds: string;
+  /** Ambient sound names, keyed like AMBIENT_SOUNDS in lib/constants.ts. */
+  soundLabels: Record<string, string>;
   done: string;
   timeUp: string;
   openAppFocus: (minutes: number) => string;

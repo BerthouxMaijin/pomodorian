@@ -1,6 +1,7 @@
 import { SITE_URL } from "@/lib/constants";
 import { TIMER_LANGS, type TimerLang, type TimerPage } from "./types";
 import { enTimerPages } from "./en";
+import { deTimerPages } from "./de";
 
 export * from "./types";
 export { TIMER_UI, TIMER_HUB_PATH } from "./copy";
@@ -10,7 +11,7 @@ export { TIMER_UI, TIMER_HUB_PATH } from "./copy";
  * only appends to one list. Slugs are flat and localized (/25-minute-timer,
  * /minuteur-25-minutes) and share the [slug] route with the SEO landing pages.
  */
-export const timerPages: TimerPage[] = [...enTimerPages];
+export const timerPages: TimerPage[] = [...enTimerPages, ...deTimerPages];
 
 const bySlug = new Map(timerPages.map((p) => [p.slug, p]));
 
