@@ -2,8 +2,8 @@ import type { TimerPage } from "./types";
 
 // German timer pages, from week 2 (2026-11-05). Volumes are monthly searches
 // in Germany from OpenSEO on 2026-10-29; see seo-agent/timer-pages/QUEUE.tsv.
-// Written for German readers (du-form, local conventions), not translated
-// from the English pages.
+// Written for German readers (du-form, local habits such as Stoßlüften,
+// Feierabend or the Arbeitszeitgesetz), not translated from the English pages.
 export const deTimerPages: TimerPage[] = [
   {
     slug: "timer-5-minuten",
@@ -13,53 +13,53 @@ export const deTimerPages: TimerPage[] = [
     label: "5-Minuten",
     title: "Timer 5 Minuten: Kostenloser Countdown für die Pause",
     description:
-      "Kostenloser 5-Minuten-Timer: ein Klick, und die kurze Pause der Pomodoro-Technik läuft. Mit Regen, Wald oder Lo-fi im Hintergrund, ohne Konto.",
+      "Kostenloser 5-Minuten-Timer für die kurze Pomodoro-Pause, zum Stoßlüften oder für einen schnellen Neustart zwischen zwei Aufgaben.",
     h1: "Timer 5 Minuten",
     intro:
-      "Ein Klick auf Start, und der Timer zählt fünf Minuten herunter, am Ende ertönt ein Signal. Fünf Minuten sind die klassische kurze Pause der Pomodoro-Technik: genug, um aufzustehen, etwas zu trinken und die Augen zu entspannen, aber kurz genug, damit der Faden nicht reißt.",
+      "Fünf Minuten Countdown, danach ein Signal. Mehr braucht die kurze Pause der Pomodoro-Technik nicht: aufstehen, Fenster auf, ein Glas Wasser, und zurück an den Schreibtisch, bevor der Gedanke von eben verloren geht.",
     useCases: [
-      "Die kurze Pause zwischen zwei Pomodoro-Einheiten von 25 Minuten.",
-      "Einmal aufstehen und Schultern und Nacken lockern.",
-      "Den Schreibtisch aufräumen, bevor die nächste Aufgabe beginnt.",
-      "Eine unangenehme Aufgabe anfangen: nur fünf Minuten, dann sehen wir weiter.",
-      "Kurz durchatmen vor einem Telefonat oder einem Meeting.",
+      "Die kurze Pause nach einer Pomodoro-Einheit von 25 Minuten.",
+      "Stoßlüften, damit im Büro oder Arbeitszimmer wieder frische Luft ist.",
+      "Kurz an die frische Luft oder einmal durchs Treppenhaus.",
+      "Eine Aufgabe anfangen, vor der du dich drückst: nur bis zum Signal.",
+      "Vor einem Telefonat oder Meeting kurz zur Ruhe kommen.",
     ],
     sections: [
       {
-        heading: "Warum fünf Minuten Pause",
-        body: "Bei der Pomodoro-Technik folgt auf jede Arbeitseinheit von 25 Minuten eine kurze Pause von drei bis fünf Minuten, nach vier Einheiten eine längere. Fünf Minuten reichen, um den Kopf von der Aufgabe zu lösen, sind aber zu kurz für alles, was einen länger festhält. Das funktioniert nur, wenn die Pause wirklich eine Pause ist: Postfach und Social Media bleiben zu.",
+        heading: "Die kurze Pause im Pomodoro-Zyklus",
+        body: "Die Pomodoro-Technik wechselt 25 Minuten konzentrierte Arbeit mit einer kurzen Pause von drei bis fünf Minuten ab. Diese Pause ist kein Luxus, sondern Teil der Methode: Sie trennt eine Einheit von der nächsten und verhindert, dass ein langer Vormittag zu einem einzigen zähen Block verschwimmt. Wichtig ist nur, dass du die Pause nicht mit Mails oder Nachrichten füllst.",
       },
       {
-        heading: "Was in fünf Minuten guttut",
-        body: "Bewegung schlägt Scrollen. Steh auf, streck dich, schau aus dem Fenster in die Ferne, damit die Augen nicht ständig auf Bildschirmabstand scharfstellen müssen, und füll dein Wasserglas auf. Entscheidend ist, dass du dir in der Pause keine neuen Informationen in den Kopf holst, die dich in die nächste Einheit begleiten.",
+        heading: "Fenster auf: fünf Minuten Stoßlüften",
+        body: "Gerade im Herbst und Winter wird die Luft im Arbeitszimmer schnell stickig, und viele merken, dass dann auch die Konzentration nachlässt. Viele Ratgeber empfehlen deshalb, mehrmals am Tag ein paar Minuten lang das Fenster weit zu öffnen, statt es dauerhaft zu kippen. Die kurze Pause ist dafür der ideale Moment: Fenster auf, Timer starten, beim Signal wieder schließen.",
       },
       {
-        heading: "Fünf Minuten gegen das Aufschieben",
-        body: "Ein Countdown von fünf Minuten hilft auch beim Anfangen. Nimm dir vor, nur bis zum Signal an der Aufgabe zu arbeiten, die du seit Tagen vor dir herschiebst. Der Anfang ist meistens das Schwerste, und wenn der Timer einmal läuft, machen viele einfach weiter. Hörst du nach fünf Minuten auf, hast du trotzdem etwas geschafft.",
+        heading: "Nur fünf Minuten, dann schaust du weiter",
+        body: "Wenn eine Aufgabe seit Tagen liegen bleibt, hilft ein bewusst kleiner Anfang. Starte den Timer und arbeite nur bis zum Signal daran. Das senkt die Hürde, und oft läuft es danach von selbst weiter. Wenn nicht, hast du immerhin angefangen, und der nächste Versuch fällt leichter.",
       },
     ],
     faq: [
       {
-        q: "Reichen fünf Minuten Pause?",
-        a: "Zwischen kurzen Arbeitseinheiten ja. Nach etwa vier Einheiten empfiehlt die Pomodoro-Technik eine längere Pause von 15 bis 30 Minuten.",
+        q: "Was kommt nach der vierten Pomodoro-Einheit?",
+        a: "Eine lange Pause statt der kurzen, je nach Tagesform eine Viertelstunde oder länger. Dafür gibt es den Timer für 15 Minuten.",
       },
       {
-        q: "Kann ich während des Countdowns ein Geräusch abspielen?",
-        a: "Ja. Unter dem Timer kannst du Regen, Wald, Kaminfeuer, Café oder Lo-fi auswählen, auch mehrere gleichzeitig. Der Klang pausiert mit dem Timer und stoppt am Ende.",
+        q: "Kann ich einen Hintergrundklang abspielen?",
+        a: "Ja. Unter dem Timer stehen Regen, Wald, Kaminfeuer, Café und Lo-fi zur Wahl, auch mehrere gleichzeitig. Der Klang pausiert mit dem Timer und stoppt am Ende.",
       },
       {
         q: "Was passiert, wenn die Zeit abgelaufen ist?",
         a: "Ein Signal ertönt, und der Timer springt zurück auf 05:00, bereit für die nächste Pause.",
       },
       {
-        q: "Was mache ich nach vier kurzen Pausen?",
-        a: "Dann ist die lange Pause dran: 15 bis 30 Minuten, idealerweise weg vom Bildschirm. Dafür gibt es den Timer für 15 Minuten.",
+        q: "Muss ich in der Pause aufstehen?",
+        a: "Es lohnt sich. Wer sitzen bleibt, landet schnell wieder am Bildschirm. Schon ein paar Schritte und ein Blick aus dem Fenster unterbrechen die Arbeit spürbarer.",
       },
     ],
     relatedArticleSlugs: [
       "pomodoro-technik-leitfaden-anfaenger",
       "never-dumb-pausen",
-      "meditation-pomodoro-pausen",
+      "homeoffice-fokussiert-bleiben",
     ],
     published: "2026-11-05",
   },
@@ -69,54 +69,54 @@ export const deTimerPages: TimerPage[] = [
     minutes: 10,
     role: "break",
     label: "10-Minuten",
-    title: "Timer 10 Minuten: Kostenloser Countdown mit Sounds",
+    title: "Timer 10 Minuten: Countdown für Pause und Meditation",
     description:
-      "Kostenloser 10-Minuten-Timer, startet mit einem Klick: für Pausen nach langen Arbeitsblöcken, kurze Meditationen und kleine Aufgaben am Stück.",
+      "Kostenloser 10-Minuten-Timer: für das Feierabend-Ritual, eine kurze Meditation oder die Pause nach 50 Minuten Arbeit. Startet mit einem Klick.",
     h1: "Timer 10 Minuten",
     intro:
-      "Zehn Minuten, ein Klick: Der Countdown läuft, am Ende ertönt ein Signal. Zehn Minuten passen gut als Pause nach einem langen Arbeitsblock, für eine kurze Meditation oder für eine Handvoll kleiner Aufgaben, die du endlich vom Tisch haben willst.",
+      "Dieser Timer läuft zehn Minuten und meldet sich mit einem Signal. Zehn Minuten sind lang genug, um wirklich abzuschalten oder etwas Kleines komplett zu erledigen, und kurz genug, um sie in jeden Tag zu passen.",
     useCases: [
-      "Die Pause nach 50 Minuten konzentrierter Arbeit (50/10-Rhythmus).",
+      "Das Feierabend-Ritual: aufräumen und den nächsten Tag vorbereiten.",
       "Eine kurze Meditation oder Atemübung.",
-      "Notizen wiederholen, kurz bevor die Vorlesung beginnt.",
-      "Kleinkram gesammelt erledigen: Mails, Termine, Ablage.",
-      "Eine bildschirmfreie Pause am Nachmittag.",
+      "Notizen noch einmal durchgehen, bevor die Vorlesung beginnt.",
+      "Die Pause nach 50 Minuten Arbeit.",
+      "Eine Runde um den Block in der Mittagspause.",
     ],
     sections: [
       {
-        heading: "Die passende Pause für längere Blöcke",
-        body: "Wer länger als 25 Minuten am Stück arbeitet, empfindet fünf Minuten Pause schnell als zu knapp. Der 50/10-Rhythmus, also 50 Minuten Arbeit und 10 Minuten Pause, ist deshalb eine der beliebtesten Varianten der Pomodoro-Technik. Das Verhältnis von etwa fünf zu eins bleibt gleich, aber der Kopf bekommt mehr Raum zum Erholen.",
+        heading: "Zehn Minuten für einen sauberen Feierabend",
+        body: "Wer im Homeoffice arbeitet, kennt das Problem: Der Arbeitstag hört nicht auf, er franst aus. Ein festes Ritual von zehn Minuten hilft, einen klaren Schlussstrich zu ziehen. Offene Tabs schließen, die erste Aufgabe für morgen aufschreiben, den Schreibtisch freiräumen. Wenn das Signal kommt, ist Feierabend, und der Kopf weiß das auch.",
       },
       {
-        heading: "Kleinkram in einem Rutsch",
-        body: "Manche Aufgaben sind zu klein für eine eigene Arbeitseinheit, aber zu zahlreich, um sie zu ignorieren: drei Nachrichten beantworten, einen Arzttermin buchen, zwei Dokumente ablegen. Wenn du sie in einem Block von zehn Minuten bündelst, unterbrechen sie nicht den ganzen Tag deine eigentliche Arbeit. Was beim Signal übrig ist, kommt in den nächsten Block.",
+        heading: "Zehn Minuten für den Kopf",
+        body: "Für den Einstieg in die Meditation sind zehn Minuten eine angenehme Länge. Wähle Regen oder Wald als Hintergrundklang, starte den Timer, schließ die Augen und überlass dem Signal das Zeitgefühl, statt zwischendurch auf die Uhr zu schauen. Eine einfache Anleitung findest du im Artikel über Meditation in den Pomodoro-Pausen.",
       },
       {
-        heading: "Eine kurze Meditation",
-        body: "Zehn Minuten sind eine angenehme Länge für den Einstieg in die Meditation. Stell Regen oder Wald als Hintergrund ein, starte den Timer, schließ die Augen und lass dir vom Signal sagen, wann du fertig bist, statt auf die Uhr zu schauen. Im Artikel über Meditation in den Pomodoro-Pausen findest du eine einfache Anleitung.",
+        heading: "Die Pause im 50/10-Rhythmus",
+        body: "Wer in längeren Blöcken arbeitet, etwa 50 Minuten am Stück, braucht danach mehr als fünf Minuten Pause. Der 50/10-Rhythmus ist eine verbreitete Variante der Pomodoro-Technik: Das Verhältnis von Arbeit zu Pause bleibt ungefähr gleich, die Pause reicht aber für einen Kaffee in der Küche oder einen kurzen Gang nach draußen.",
       },
     ],
     faq: [
       {
         q: "Ist der Timer kostenlos?",
-        a: "Ja, vollständig. Kein Konto, keine Werbung, keine kostenpflichtige Version.",
+        a: "Ja. Kein Konto, keine Werbung, nichts zu installieren.",
       },
       {
         q: "Kann ich den Timer im Vollbild zeigen, etwa im Unterricht?",
-        a: "Ja, sofern der Browser es erlaubt: Der Vollbild-Button vergrößert den Countdown, sodass er auch von hinten im Raum lesbar ist, und Escape bringt dich zurück. Auf dem iPhone bieten Browser kein Vollbild für Webseiten an, dort erscheint der Button nicht.",
+        a: "Ja, sofern der Browser es erlaubt: Der Vollbild-Button vergrößert den Countdown, mit der Esc-Taste kommst du zurück. Auf dem iPhone bieten Browser kein Vollbild für Webseiten an, dort erscheint der Button nicht.",
       },
       {
         q: "Läuft der Timer weiter, wenn ich den Tab wechsle?",
         a: "Ja. Die Restzeit wird aus der echten Uhrzeit berechnet und stimmt immer, wenn du zurückkommst. In einem Hintergrund-Tab kann manch ein Browser das Signal um bis zu eine Minute verzögern, außer es läuft ein Hintergrundklang.",
       },
       {
-        q: "Ist 50/10 besser als 25/5?",
-        a: "Nicht grundsätzlich. 50/10 passt zu Aufgaben mit langer Anlaufzeit, 25/5 zu zerstückelten Tagen und zu Aufgaben, die du lieber aufschieben würdest. Viele wechseln je nach Arbeit.",
+        q: "Wann ist 50/10 sinnvoller als 25/5?",
+        a: "Bei Aufgaben mit langer Anlaufzeit, etwa Programmieren oder Schreiben. An Tagen mit vielen Unterbrechungen sind die kürzeren 25-Minuten-Einheiten oft leichter durchzuhalten.",
       },
     ],
     relatedArticleSlugs: [
       "meditation-pomodoro-pausen",
-      "pomodoro-technik-leitfaden-anfaenger",
+      "homeoffice-fokussiert-bleiben",
       "beste-ambient-sounds-konzentrieren",
     ],
     published: "2026-11-05",
@@ -129,53 +129,53 @@ export const deTimerPages: TimerPage[] = [
     label: "15-Minuten",
     title: "Timer 15 Minuten: Countdown für Pause und Powernap",
     description:
-      "Kostenloser 15-Minuten-Timer: die lange Pause der Pomodoro-Technik, ein kurzer Powernap oder eine kleine Aufgabe von Anfang bis Ende.",
+      "Kostenloser 15-Minuten-Timer: die lange Pomodoro-Pause, ein Powernap oder eine Ruhepause nach Arbeitszeitgesetz, mit Signal am Ende.",
     h1: "Timer 15 Minuten",
     intro:
-      "Dieser Timer zählt eine Viertelstunde herunter und gibt am Ende ein Signal. Fünfzehn Minuten sind die lange Pause der Pomodoro-Technik, die nach vier Arbeitseinheiten kommt, und eignen sich genauso für einen Powernap oder einen kurzen Spaziergang um den Block.",
+      "Eine Viertelstunde, heruntergezählt, mit Signal am Ende. Fünfzehn Minuten sind das untere Ende der langen Pause, die bei der Pomodoro-Technik nach vier Arbeitseinheiten kommt, und genau richtig für einen Powernap, der dich nicht benommen zurücklässt.",
     useCases: [
       "Die lange Pause nach vier Pomodoro-Einheiten.",
-      "Ein Powernap, der endet, bevor der Tiefschlaf beginnt.",
-      "Ein kurzer Spaziergang an der frischen Luft.",
-      "Eine kleine, klar umrissene Aufgabe von Anfang bis Ende.",
+      "Ein Powernap am frühen Nachmittag.",
+      "Eine Ruhepause, die auch nach Arbeitszeitgesetz zählt.",
       "Einen Vortrag oder eine Präsentation zeitlich proben.",
+      "Eine kleine, klar umrissene Aufgabe von Anfang bis Ende.",
     ],
     sections: [
       {
-        heading: "Die lange Pause im Pomodoro-Zyklus",
-        body: "Ein typischer Pomodoro-Zyklus besteht aus vier Einheiten von 25 Minuten mit kurzen Pausen dazwischen und endet mit einer langen Pause von 15 bis 30 Minuten. In dieser Pause erholst du dich wirklich: etwas essen, Tageslicht tanken oder einfach nichts tun. Eine Viertelstunde ist das untere Ende dieser Spanne und passt in die meisten Arbeitstage.",
+        heading: "Die Viertelstunde im Arbeitszeitgesetz",
+        body: "Das deutsche Arbeitszeitgesetz schreibt Angestellten bei mehr als sechs Stunden Arbeit mindestens 30 Minuten Ruhepause vor, die in Abschnitte von jeweils mindestens 15 Minuten aufgeteilt werden dürfen. Eine Viertelstunde ist also die kürzeste Pause, die rechtlich als Ruhepause zählt. Wer seine Pausen gern aufteilt, kann zwei Mal den 15-Minuten-Timer nehmen.",
       },
       {
         heading: "Ein Powernap ohne Nachwirkungen",
-        body: "Kurze Nickerchen von etwa 10 bis 20 Minuten werden oft empfohlen, weil sie enden, bevor du in den Tiefschlaf rutschst, der das Aufwachen so schwer macht. Starte den Timer, leg dich hin und lass dich vom Signal wecken. Auf dem Handy gilt: Bildschirm an und Seite geöffnet lassen, denn ein gesperrtes Telefon lässt eine Webseite oft nicht klingeln.",
+        body: "Kurze Nickerchen von etwa 10 bis 20 Minuten werden oft empfohlen, weil sie enden, bevor du in den Tiefschlaf rutschst, aus dem das Aufwachen schwerfällt. Leg dich hin, starte den Timer und lass dich vom Signal wecken. Auf dem Handy lass die Seite geöffnet: Solange der Timer läuft, hält sie den Bildschirm wach, sofern dein Browser das unterstützt.",
       },
       {
-        heading: "Fünfzehn Minuten als Arbeitsblock",
-        body: "Eine Viertelstunde ist auch eine gute Länge für Aufgaben, vor denen du dich drückst. Sie ist kurz genug, dass der Anfang machbar wirkt, und lang genug für sichtbaren Fortschritt: der erste Absatz, die ersten zehn Punkte einer Liste, die Vorlage für ein Dokument. Wenn lange Einheiten gerade schwerfallen, ist das ein guter Einstieg.",
+        heading: "Die lange Pause richtig nutzen",
+        body: "Nach vier Einheiten ist die lange Pause fällig, und sie sollte sich auch so anfühlen. Iss etwas, geh ans Tageslicht, sprich mit jemandem, der nicht über die Arbeit reden will. Was sich nicht eignet: die Zeit mit Nachrichten-Apps zu füllen. Die Viertelstunde ist dann zwar vorbei, aber erholt hat sich der Kopf nicht.",
       },
     ],
     faq: [
       {
-        q: "Wie lang sollte die lange Pomodoro-Pause sein?",
-        a: "Zwischen 15 und 30 Minuten, nach vier Arbeitseinheiten. Eine Viertelstunde reicht an den meisten Tagen, nach einem anstrengenden Vormittag dürfen es 30 sein.",
+        q: "Wie lang sollte ein Powernap sein?",
+        a: "Meist werden 10 bis 20 Minuten empfohlen. Plane ein paar Minuten zum Einschlafen ein, eine Viertelstunde auf dem Timer passt deshalb gut.",
       },
       {
         q: "Funktioniert der Timer auf dem Handy?",
-        a: "Ja, in jedem aktuellen mobilen Browser, ohne App. Lass den Bildschirm an und die Seite geöffnet, sonst ertönt das Signal unter Umständen nicht.",
+        a: "Ja, im mobilen Browser, ohne App. Lass die Seite geöffnet; während der Timer läuft, hält sie den Bildschirm wach, wo der Browser das erlaubt.",
       },
       {
         q: "Kann ich pausieren und weitermachen?",
-        a: "Ja. Pause hält die Restzeit fest, Weiter setzt dort fort. Zurücksetzen, oder das Ende des Countdowns, stellt wieder 15 Minuten ein.",
+        a: "Ja. Pause hält die Restzeit fest, Weiter setzt dort fort. Zurücksetzen oder das Ende des Countdowns stellt wieder 15 Minuten ein.",
       },
       {
-        q: "Wie lang sollte ein Powernap sein?",
-        a: "Meist werden 10 bis 20 Minuten empfohlen. Plane ein paar Minuten zum Einschlafen ein, eine Viertelstunde auf dem Timer passt deshalb gut.",
+        q: "Zählt die lange Pomodoro-Pause als Ruhepause?",
+        a: "Wenn sie mindestens 15 Minuten dauert, im Voraus feststeht und du in dieser Zeit wirklich nicht arbeitest, kann sie als Ruhepause im Sinne des Arbeitszeitgesetzes gelten. Kurzpausen von fünf Minuten zählen dafür nicht. Im Zweifel klären das Arbeitsvertrag oder Betriebsrat.",
       },
     ],
     relatedArticleSlugs: [
       "pomodoro-technik-leitfaden-anfaenger",
       "never-dumb-pausen",
-      "homeoffice-fokussiert-bleiben",
+      "ultradiane-rhythmen-fokus-zyklen",
     ],
     published: "2026-11-05",
   },
@@ -188,39 +188,35 @@ export const deTimerPages: TimerPage[] = [
     label: "20-Minuten",
     title: "Timer 20 Minuten: Kostenloser Fokus-Countdown",
     description:
-      "Kostenloser 20-Minuten-Timer für kurze Fokuseinheiten, mit 5 Minuten Pause per Klick. Leichter anzufangen als eine volle Pomodoro-Einheit.",
+      "Kostenloser 20-Minuten-Timer für kurze Lerneinheiten, Karteikarten und Lernen zu zweit. Mit 5-Minuten-Pause, ohne Anmeldung.",
     h1: "Timer 20 Minuten",
     intro:
-      "Starte den Countdown von 20 Minuten und wechsle beim Signal in die 5-Minuten-Pause. Zwanzig Minuten sind eine sanfte Fokuseinheit, etwas kürzer als ein klassischer Pomodoro, und deshalb leichter anzufangen, wenn die Konzentration zerstreut ist oder die Aufgabe schwer wirkt.",
+      "Zwanzig Minuten Fokus, dann fünf Minuten Pause: Beim Signal springt der Timer auf die 5-Minuten-Pause, ein Klick auf Start genügt. Eine etwas kürzere Einheit als der klassische Pomodoro, gut geeignet, wenn du unkonzentriert bist oder eine Aufgabe dir schwer im Magen liegt.",
     useCases: [
-      "Kurze Fokuseinheiten, wenn 25 Minuten zu viel sind.",
-      "Lerneinheiten für Schülerinnen und Schüler oder an müden Abenden.",
-      "Eine Aufwärmrunde vor längeren Arbeitsblöcken.",
-      "Ein Kapitel oder einen langen Artikel mit voller Aufmerksamkeit lesen.",
-      "Ein Zirkeltraining oder eine Dehnroutine timen.",
+      "Karteikarten oder Vokabeln in einer festen Runde.",
+      "Lernen zu zweit, beide mit demselben Takt.",
+      "Ein sanfter Einstieg am Montagmorgen.",
+      "Hausaufgaben in überschaubaren Etappen.",
+      "Ein Zirkeltraining oder eine Dehnroutine.",
     ],
     sections: [
       {
-        heading: "Wann 20 statt 25 Minuten",
-        body: "Die 25 Minuten der Pomodoro-Technik sind eine Konvention, kein Gesetz. Wenn du regelmäßig um die fünfzehnte Minute herum abschweifst, ist ein Block von 20 Minuten, den du wirklich zu Ende bringst, mehr wert als einer von 25, den du abbrichst. Viele Menschen mit Konzentrationsschwierigkeiten, etwa bei ADHS, kommen mit kürzeren Einheiten leichter in Gang.",
+        heading: "Kürzer anfangen, länger durchhalten",
+        body: "Die 25 Minuten der Pomodoro-Technik sind eine Konvention. Wer nach einer Viertelstunde regelmäßig gedanklich abdriftet, fährt mit 20 Minuten oft besser: Eine Einheit, die du zu Ende bringst, zählt mehr als eine längere, die du abbrichst. Bei Konzentrationsschwierigkeiten, etwa mit ADHS, kann eine kürzere Einheit den Einstieg erleichtern. Wenn es gut läuft, verlängerst du später.",
       },
       {
-        heading: "Schrittweise verlängern",
-        body: "Sieh 20 Minuten als Startpunkt. Wenn dir die Einheiten ein paar Tage lang leichtfallen, probier 25, dann 30. Es geht darum, die längste Einheit zu finden, die du ohne inneren Kampf schaffst, nicht darum, eine Zahl zu erzwingen. Der Pausenmodus liegt direkt neben dem Fokusmodus, ein ganzer Zyklus braucht also zwei Klicks.",
+        heading: "Zwanzig Minuten Karteikarten",
+        body: "Mit Karteikarten zu lernen, funktioniert am besten in kurzen, regelmäßigen Runden statt in einer langen Sitzung. Zwanzig Minuten reichen für einen Stapel, inklusive der Karten, die du zurücklegen musst. Danach fünf Minuten Pause, dann der nächste Stapel oder ein anderes Fach. So bleibt die Abfrage aktiv, statt in ein müdes Durchblättern überzugehen.",
       },
       {
-        heading: "Zwanzig Minuten zum Lesen",
-        body: "Konzentriertes Lesen leidet als Erstes, wenn die Aufmerksamkeit zersplittert ist. Ein Timer von 20 Minuten und das Handy in einem anderen Raum sind ein einfacher Weg zurück: ein Kapitel, ein langer Artikel, ein Fachtext. Wenn dich Stille unruhig macht, leg Kaminfeuer oder Regen darunter, und hör beim Signal auf, damit du Lust auf die nächste Runde hast.",
+        heading: "Im gleichen Takt mit anderen",
+        body: "Gemeinsam lernen oder arbeiten klappt besser, wenn alle denselben Rhythmus haben. Verabredet euch auf 20 Minuten Fokus und 5 Minuten Pause, jede Person startet den Timer zur gleichen Zeit, und in der Pause wird geredet, vorher nicht. Dieses Prinzip heißt Body Doubling und hilft vielen, dranzubleiben.",
       },
     ],
     faq: [
       {
         q: "Reichen 20 Minuten, um sich zu konzentrieren?",
-        a: "Für viele Aufgaben ja. Es ist genug Zeit, um reinzukommen und voranzukommen, und kurz genug, um ohne Widerstand anzufangen.",
-      },
-      {
-        q: "Wie lange sollte die Pause nach 20 Minuten sein?",
-        a: "Etwa 5 Minuten, genau der Pausenmodus dieses Timers.",
+        a: "Für viele Aufgaben ja: genug Zeit, um reinzukommen und voranzukommen, und kurz genug, um ohne großen Widerstand anzufangen.",
       },
       {
         q: "Was macht der Link zur vollständigen App?",
@@ -230,11 +226,15 @@ export const deTimerPages: TimerPage[] = [
         q: "Brauche ich ein Konto oder eine App?",
         a: "Nein. Der Timer läuft direkt im Browser, ohne Anmeldung und ohne Installation. Einen gewählten Hintergrundklang merkt sich dein Browser für den nächsten Besuch.",
       },
+      {
+        q: "Was, wenn ich beim Signal gerade richtig drin bin?",
+        a: "Bring den Gedanken zu Ende und schreib dir den nächsten Schritt auf, aber nimm die Pause trotzdem. Passiert dir das oft, ist es Zeit, auf 25 oder 30 Minuten zu verlängern. Der Pausenmodus lässt sich jederzeit mit einem Klick wieder auf Fokus stellen.",
+      },
     ],
     relatedArticleSlugs: [
       "pomodoro-adhs",
-      "pomodoro-technik-leitfaden-anfaenger",
       "body-doubling",
+      "pomodoro-technik-leitfaden-anfaenger",
     ],
     published: "2026-11-05",
   },

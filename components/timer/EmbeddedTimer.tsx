@@ -113,6 +113,32 @@ export function EmbeddedTimer({
     return () => window.removeEventListener("keydown", onKey);
   }, [timer.status, pause, start]);
 
+  // Keep the screen awake while counting, where the browser allows it: a
+  // phone that auto-locks during a nap or a plank may never ring. The lock
+  // drops when the tab is hidden, so it is taken again on return.
+  useEffect(() => {
+    if (timer.status !== "running" || !("wakeLock" in navigator)) return;
+    let lock: WakeLockSentinel | null = null;
+    let cancelled = false;
+    const acquire = () => {
+      if (document.visibilityState !== "visible") return;
+      navigator.wakeLock
+        .request("screen")
+        .then((l) => {
+          if (cancelled) l.release().catch(() => {});
+          else lock = l;
+        })
+        .catch(() => {});
+    };
+    acquire();
+    document.addEventListener("visibilitychange", acquire);
+    return () => {
+      cancelled = true;
+      document.removeEventListener("visibilitychange", acquire);
+      lock?.release().catch(() => {});
+    };
+  }, [timer.status]);
+
   // Time in the tab title while counting, restored afterwards.
   useEffect(() => {
     if (timer.status === "idle") return;

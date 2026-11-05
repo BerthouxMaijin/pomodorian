@@ -587,7 +587,7 @@ export const enTimerPages: TimerPage[] = [
       },
       {
         heading: "Sixty seconds for speaking practice",
-        body: "Many introductions, pitches and interview answers have to fit in about a minute. Start the timer, say your version out loud, and notice where you are when the alarm rings. Most people run over on the first try. Cut a sentence, try again, and repeat until the important part lands before the minute is up.",
+        body: "Many introductions, pitches and interview answers have to fit in about a minute. Start the timer, say your version out loud, and notice where you are when the alarm rings. It is easy to run over on the first try. Cut a sentence, try again, and repeat until the important part lands before the minute is up.",
       },
     ],
     faq: [
@@ -601,7 +601,7 @@ export const enTimerPages: TimerPage[] = [
       },
       {
         q: "Can I restart the timer quickly?",
-        a: "Yes. When the alarm rings the countdown rewinds to 1:00 on its own, so pressing Start again runs another minute.",
+        a: "Yes. When the alarm rings the countdown rewinds to 01:00 on its own, so pressing Start again runs another minute.",
       },
     ],
     relatedArticleSlugs: [
@@ -627,7 +627,7 @@ export const enTimerPages: TimerPage[] = [
       "The two-minute rule: tasks this short get done now.",
       "Starting a new habit in its smallest possible version.",
       "Brushing your teeth for the full two minutes.",
-      "A quick tidy of your desk before a focus session.",
+      "Writing down the first step of your next task.",
       "A short stretch for your neck and shoulders.",
     ],
     sections: [
@@ -641,7 +641,7 @@ export const enTimerPages: TimerPage[] = [
       },
       {
         heading: "Two minutes before a Pomodoro",
-        body: "A focus session goes better when the desk is clear and the next step is written down. Spending two minutes on that before starting a 25-minute session is a small investment: close the tabs you will not need, put the phone away, write the first action. Pomodorian's guide on the two-minute rule shows how the two ideas fit together.",
+        body: "A focus session goes better when the next step is already written down. Spending two minutes on that before starting a 25-minute session is a small investment: close the tabs you will not need, put the phone away, write the first action in one line. Pomodorian's guide on the two-minute rule shows how the two ideas fit together.",
       },
     ],
     faq: [
@@ -654,8 +654,8 @@ export const enTimerPages: TimerPage[] = [
         a: "Two minutes, twice a day, is the common recommendation from dental associations such as the American Dental Association.",
       },
       {
-        q: "Why is the timer quiet while it counts?",
-        a: "It only rings at the end. If you want sound during the countdown, pick a background sound such as rain or lo-fi under the timer.",
+        q: "What if a two-minute task takes longer?",
+        a: "Stop when the alarm rings and schedule it properly. A task that overruns once is a sign it needs a real work session, not a quick fix squeezed between others.",
       },
     ],
     relatedArticleSlugs: [
@@ -695,7 +695,7 @@ export const enTimerPages: TimerPage[] = [
       },
       {
         heading: "Small timers for small things",
-        body: "Plenty of daily tasks run on a few minutes: tea, a face mask, a rest between sets at the gym. Keeping this page open in a tab means the countdown is always one click away, and because the remaining time is calculated from the real clock, it stays right even if you switch to another tab while you wait.",
+        body: "Plenty of daily tasks run on a few minutes: tea, a face mask, a rest between sets at the gym. Keep this tab in front while you wait: the remaining time is always right when you come back to it, but in a background tab some browsers can delay the alarm by up to a minute unless a background sound is playing, which matters a lot for a three-minute cup of tea.",
       },
     ],
     faq: [
@@ -728,29 +728,29 @@ export const enTimerPages: TimerPage[] = [
     label: "35 minute",
     title: "35 Minute Timer: Free Focus Countdown with a Break",
     description:
-      "A free 35 minute timer with a 5 minute break, a middle ground between the 25 minute Pomodoro and longer 45 or 50 minute focus blocks.",
+      "A free 35 minute timer with a 5 minute break. Three rounds of 35 plus 5 fill exactly two hours, a tidy way to plan a morning or an afternoon.",
     h1: "35 Minute Timer",
     intro:
-      "A 35-minute countdown, with a 5-minute break ready beside it. Thirty-five minutes sits between the classic 25-minute Pomodoro and the longer 45 or 50-minute blocks, which makes it a good stepping stone when 25 feels short but an hour feels out of reach.",
+      "A 35-minute countdown, with a 5-minute break ready beside it. Thirty-five minutes of work plus five of rest makes a 40-minute round, and three rounds fill exactly two hours: a simple way to plan a morning that starts at nine and still leaves time for a long break before lunch.",
     useCases: [
+      "Three 35/5 rounds to fill a two-hour morning block.",
       "A slightly longer Pomodoro when 25 minutes cuts you off.",
-      "A step between 25 and 50 minute focus blocks.",
       "Drafting one section of a report or an essay.",
-      "A lunchtime workout that fits a short break.",
       "Practice sessions for an instrument or a language.",
+      "A lunchtime workout that leaves time to eat.",
     ],
     sections: [
       {
-        heading: "A stepping stone to longer sessions",
-        body: "Jumping from 25 to 50 minutes in one go often fails: the second half of the longer block turns into staring at the screen. Adding ten minutes at a time is gentler. Run 35-minute sessions for a week, and if finishing them is easy, move to 45. If it is not, there is no shame in going back to 25. The right length is the one you complete.",
+        heading: "Three rounds, two hours",
+        body: "Planning in Pomodoros gets easier when the rounds add up to round numbers. With 35 minutes of work and a 5-minute break, each round takes 40 minutes, so three of them make two hours. Start at nine, and by eleven you have done three real focus blocks with breaks built in, and the long break lands right before lunch.",
       },
       {
-        heading: "Why the extra ten minutes help",
-        body: "Many tasks have a slow start: rereading the last paragraph, finding the file, remembering where the bug was. In a 25-minute session that start eats a big share of the time. Ten more minutes does not change the structure of your day much, but it leaves noticeably more time for the part where the work actually moves.",
+        heading: "Treat your interval as an experiment",
+        body: "Nobody can tell you in advance which length suits your work. Pick one, run it for a week, and look at what you actually finished. The full Pomodorian app keeps a record of completed sessions, so you can compare a week at 35 minutes with a week at 25 instead of relying on how it felt. Then adjust by five or ten minutes and try again.",
       },
       {
         heading: "Keeping the break short",
-        body: "At this length a 5-minute break is still enough. Stand up, drink something, look away from the screen, and come back. After three or four rounds, take a long break of 15 to 30 minutes, the same rule as in the classic Pomodoro cycle, just with slightly longer blocks.",
+        body: "At this length a 5-minute break is still enough. Stand up, drink something, look away from the screen, and come back. After four rounds, take a long break of 15 to 30 minutes, the same rule as in the classic Pomodoro cycle, just with slightly longer blocks.",
       },
     ],
     faq: [
@@ -764,7 +764,7 @@ export const enTimerPages: TimerPage[] = [
       },
       {
         q: "Does the timer remember where I was if I reload the page?",
-        a: "No. This page is a simple countdown; a reload starts it again at 35:00. For sessions you want to keep a record of, use the full app.",
+        a: "No. A reload resets it to 35:00, stopped. For sessions you want to keep a record of, use the full app.",
       },
     ],
     relatedArticleSlugs: [
@@ -786,12 +786,12 @@ export const enTimerPages: TimerPage[] = [
       "A free 90 minute timer with a 20 minute break for 90/20 deep work blocks. Shows 1:30:00, runs in your browser, rings when the block ends.",
     h1: "90 Minute Timer",
     intro:
-      "This timer counts down an hour and a half, shown as 1:30:00, with a 20-minute break mode beside it. Ninety minutes is the classic length of a deep work block: long enough for a demanding task to really move, and a common way to plan one or two serious sessions in a day.",
+      "This timer counts down an hour and a half, shown as 1:30:00, with a 20-minute break mode beside it. Ninety minutes is a common length for a deep work block: long enough for a demanding task to really move, and a natural unit to plan one or two serious sessions in a day around.",
     useCases: [
       "A 90/20 deep work block on one hard problem.",
       "A long writing or design session without switching.",
       "An exam simulation for a 90-minute paper.",
-      "A study block split into reading and practice.",
+      "A study block that alternates reading and practice.",
       "A long practice session for music or sport.",
     ],
     sections: [
@@ -801,31 +801,31 @@ export const enTimerPages: TimerPage[] = [
       },
       {
         heading: "How to run a 90/20 block",
-        body: "Decide the outcome before you start: a finished section, a fixed bug, a draft. Clear everything else from the screen and start the countdown. Halfway through, if you notice yourself drifting, stand up for a minute and come back, rather than forcing it. When the alarm rings, take the full 20-minute break away from screens. Two of these blocks make a very productive day.",
+        body: "Decide the outcome before you start: a finished section, a fixed bug, a draft. Clear everything else from the screen and start the countdown. If you notice yourself drifting halfway through, stand up for a minute and come back, rather than forcing it. When the alarm rings, take the full 20-minute break away from screens before deciding on a second block.",
       },
       {
-        heading: "Not for every task",
-        body: "Ninety minutes is a big commitment, and it suits work that needs your whole attention for a long time. For admin, email or fragmented days, shorter blocks waste less when interruptions come. If you are new to long sessions, build up from 45 or 50 minutes first; Pomodorian's guide to Pomodoro intervals compares the options.",
+        heading: "Placing the block in your day",
+        body: "A 90-minute block works best when nothing is scheduled to break into it, which usually means before the first meeting or the first look at email. Protect that slot in your calendar the way you would protect a meeting. Pomodorian's guide to customizing Pomodoro intervals compares 90/20 with the shorter options if you want to mix them.",
       },
     ],
     faq: [
       {
-        q: "Is 90 minutes better than the 25 minute Pomodoro?",
-        a: "Not in general. It suits long, demanding tasks once you are used to sustained focus; 25 minutes suits fragmented days and tasks you are avoiding.",
+        q: "What should I do in the 20 minute break?",
+        a: "Something physical and away from screens: a walk, food, daylight. After a long block, the break is where your attention recovers, so do not spend it on messages.",
       },
       {
-        q: "How many 90 minute blocks can I do per day?",
-        a: "There is no rule. Plan one or two, with real breaks between them, and stop when you notice your attention clearly dropping.",
+        q: "What if my focus fades before the alarm?",
+        a: "Pause, stand up for a minute, and resume. If it happens every time, try 50 or 60 minutes instead; a block you finish is worth more than a long one you fight.",
       },
       {
-        q: "What is the ultradian rhythm?",
-        a: "A biological rhythm shorter than a day. Kleitman's basic rest and activity cycle is the best-known proposal for a roughly 90-minute daytime rhythm; the evidence for it is debated.",
+        q: "Does the app link set 90 minute sessions?",
+        a: "Yes. It opens Pomodorian with your saved focus length set to 90 minutes; set the break you want in the settings.",
       },
     ],
     relatedArticleSlugs: [
       "ultradian-rhythms-natural-focus-cycles",
       "deep-work-programmers-framework",
-      "science-of-flow-state",
+      "customize-pomodoro-intervals",
     ],
     published: "2026-11-05",
   },
@@ -838,39 +838,39 @@ export const enTimerPages: TimerPage[] = [
     label: "2 hour",
     title: "2 Hour Timer: Free 120 Minute Countdown",
     description:
-      "A free 2 hour timer for long exams, study marathons with planned breaks, or a firm limit on screen time. Shows 2:00:00 and rings at the end.",
+      "A free 2 hour timer to frame a long session with breaks inside it: an exam rehearsal, a workshop or a study sprint. Shows 2:00:00.",
     h1: "2 Hour Timer",
     intro:
-      "A two-hour countdown, displayed as 2:00:00, with a 20-minute break mode next to it. Two hours is too long for most people to focus without a pause, so this timer is best used as an outer frame: a full exam simulation, a planned study block with breaks inside it, or a hard limit on something that tends to run on.",
+      "A two-hour countdown, displayed as 2:00:00, with a 20-minute break mode next to it. Deep focus rarely holds for two hours straight, so this timer works best as an outer frame: the limit of a session that has shorter work blocks and breaks inside it.",
     useCases: [
-      "Simulating a two-hour exam under real conditions.",
-      "Framing a study block that contains short breaks.",
-      "Putting a limit on gaming or streaming time.",
+      "Rehearsing a two-hour exam from start to finish.",
+      "Framing a study sprint that contains short breaks.",
+      "Keeping a workshop or a long meeting to its slot.",
       "A long rehearsal or a practice match.",
-      "Keeping a workshop or a meeting to its slot.",
+      "Putting a limit on gaming or streaming time.",
     ],
     sections: [
       {
         heading: "Two hours as a frame, not one block",
-        body: "Very few people keep deep focus for two hours straight. A more realistic use is to start the two-hour countdown as the frame of a work session, then work in shorter blocks inside it, such as two 50-minute blocks with a 10-minute break between them. The big timer tells you when the whole session is over, so you can stop on time instead of drifting into the evening.",
+        body: "Start the two-hour countdown here as the outer limit of your session. For the work inside it, run shorter blocks with the 50 minute timer in another tab, or with the cycles of the full app. When the big countdown rings, the session is over, whatever the inner timers say, so you stop on time instead of drifting into the evening.",
       },
       {
-        heading: "Rehearsing a long exam",
-        body: "If your exam lasts two hours, at least one full rehearsal at that length is worth doing. It shows you how your concentration holds in the second hour and how long each part of the paper really takes. Start the timer, put away your notes and phone, and keep going until the alarm, exactly as on the day.",
+        heading: "What fits inside two hours",
+        body: "A workable shape: 10 minutes to plan and write down what done looks like, 50 minutes of work, a 10-minute break, 40 more minutes of work, and 10 minutes at the end to review and note the next step. That leaves room for a real break in the middle and ends with something you can pick up tomorrow without warming up from zero.",
       },
       {
-        heading: "A limit for open-ended activities",
-        body: "Games, series and scrolling have no natural end, which is why they eat evenings. Deciding the limit in advance and starting a visible countdown turns a vague intention into a clear stop. When the alarm rings, finish the current round or episode and close it. It works better than checking the clock, which is easy to ignore.",
+        heading: "Running a workshop on time",
+        body: "Long workshops and meetings tend to overrun their final part, which is usually where decisions are made. Put the countdown in full screen where everyone can see it, agree on checkpoints at the start, and when the last 20 minutes begin, switch the discussion to decisions and owners. People keep to time much better when they can see it.",
       },
     ],
     faq: [
       {
-        q: "Can I focus for two hours straight?",
-        a: "Rarely, and it is not necessary. Use the two-hour countdown as a frame and take short breaks inside it.",
+        q: "Can I run the inner blocks and the two hours at the same time?",
+        a: "Yes. Keep this page open for the two-hour frame and open a shorter timer, such as the 50 minute timer, in another tab for the blocks inside it.",
       },
       {
         q: "Why is the break mode 20 minutes?",
-        a: "After a long session a longer pause helps you recover. Take it away from screens if you can.",
+        a: "It is there for the break after the whole session. Inside the two hours, use shorter breaks between blocks.",
       },
       {
         q: "Will the timer still be right after two hours in a background tab?",
@@ -880,7 +880,7 @@ export const enTimerPages: TimerPage[] = [
     relatedArticleSlugs: [
       "prepare-exams-without-burnout",
       "long-pomodoro-sessions-guide",
-      "stop-procrastinating-timeboxing",
+      "group-pomodoro-team-sessions",
     ],
     published: "2026-11-05",
   },

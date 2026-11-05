@@ -29,7 +29,9 @@ Uniquement la première fois qu'une langue entre dans la file (DE en semaine 2, 
 - Contenu propre à la durée : méthode associée, pause conseillée, usages réels. Pas deux pages qui se ressemblent.
 - `relatedArticleSlugs` : 2 à 3 articles publiés dans la même langue (vérifier dans `content/blog/{lang}/`, le statut doit être `published`).
 - Faits produit autorisés (vérifiés dans le code le 29/10, puis corrigés par la relecture adversariale de la semaine 1) :
-  - le temps restant est toujours juste au retour sur l'onglet (horloge réelle), mais en arrière-plan certains navigateurs peuvent retarder l'alarme jusqu'à une minute sauf si un son d'ambiance joue ; sur téléphone, garder l'écran allumé et la page ouverte ;
+  - le temps restant est toujours juste au retour sur l'onglet (horloge réelle), mais en arrière-plan certains navigateurs peuvent retarder l'alarme jusqu'à une minute sauf si un son d'ambiance joue ;
+  - pendant le décompte, la page garde l'écran allumé là où le navigateur le permet (Wake Lock, ajouté le 05/11) ; sur téléphone, dire de laisser la page ouverte, et toujours nuancer (« si ton navigateur le permet ») ;
+  - les libellés des sons sont traduits dans chaque langue (`soundLabels` dans `copy.ts`) : nommer les sons comme à l'écran ;
   - 5 sons superposables (pluie, forêt, cheminée, café, lo-fi), qui se mettent en pause avec le minuteur et s'arrêtent à la fin ; le choix est mémorisé dans le navigateur ;
   - une alarme (celle choisie dans l'app si la personne l'a déjà utilisée, donc pas forcément « douce ») ; à la fin, le minuteur passe au mode pause s'il y en a un, sinon il se rembobine ;
   - plein écran agrandi là où le navigateur le permet (Échap pour sortir) ; le bouton n'apparaît pas sur iPhone ;
