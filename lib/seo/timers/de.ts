@@ -36,7 +36,7 @@ export const deTimerPages: TimerPage[] = [
       },
       {
         heading: "Fünf Minuten zwischen zwei Videocalls",
-        body: "Wer Termine direkt hintereinander legt, sitzt am Ende eines Tages oft stundenlang ohne Unterbrechung vor der Kamera. Plane zwischen zwei Calls fünf Minuten Luft ein und starte den Timer, sobald der erste endet: Notizen festhalten, aufstehen, kurz aus dem Fenster schauen. Beim Signal bist du bereit für den nächsten, statt abgehetzt hineinzustolpern.",
+        body: "Wer Termine direkt hintereinanderlegt, sitzt oft stundenlang ohne Unterbrechung vor der Kamera. Plane zwischen zwei Calls fünf Minuten Luft ein und starte den Timer, sobald der erste endet: Notizen festhalten, aufstehen, kurz aus dem Fenster schauen. Beim Signal bist du bereit für den nächsten, statt abgehetzt hineinzustolpern.",
       },
     ],
     faq: [
@@ -54,7 +54,7 @@ export const deTimerPages: TimerPage[] = [
       },
       {
         q: "Darf ich die Pause verlängern, wenn ich müde bin?",
-        a: "Ja, aber bewusst: Starte den Timer einfach ein zweites Mal, statt ohne Ende weiterzumachen. Wenn du ständig verlängern willst, ist vermutlich die lange Pause fällig oder dein Arbeitsblock zu lang.",
+        a: "Ja, aber bewusst: Starte den Timer einfach ein zweites Mal, statt die Pause offen auslaufen zu lassen. Wenn du ständig verlängern willst, ist vermutlich die lange Pause fällig oder dein Arbeitsblock zu lang.",
       },
     ],
     relatedArticleSlugs: [
@@ -90,7 +90,7 @@ export const deTimerPages: TimerPage[] = [
       },
       {
         heading: "Raus aus dem Nachmittagstief",
-        body: "Nach dem Mittagessen sackt bei vielen die Energie ab, und der Griff zum nächsten Kaffee liegt nahe. Probier stattdessen zehn Minuten draußen: einmal um den Block, Treppe statt Aufzug, ein paar Minuten Tageslicht. Mit dem Timer weißt du, wann du umkehren musst, und kommst nicht mit schlechtem Gewissen zu spät an den Schreibtisch zurück.",
+        body: "Nach dem Mittagessen sackt bei vielen die Energie ab, und der Griff zum nächsten Kaffee liegt nahe. Probier stattdessen zehn Minuten draußen: einmal um den Block, Treppe statt Aufzug, ein paar Minuten Tageslicht. Dreh nach etwa fünf Minuten um, dann bist du beim Signal wieder am Schreibtisch und musst kein schlechtes Gewissen haben.",
       },
       {
         heading: "Vor der Klausur: durchgehen, nicht neu lernen",
@@ -100,7 +100,7 @@ export const deTimerPages: TimerPage[] = [
     faq: [
       {
         q: "Kann ich den Timer für eine Meditation nutzen?",
-        a: "Ja. Wähle Regen oder Wald als Hintergrundklang, schließ die Augen und überlass dem Signal das Zeitgefühl. Eine einfache Anleitung steht im Artikel über Meditation in den Pomodoro-Pausen.",
+        a: "Ja. Wähle Regen oder Wald als Hintergrundklang, schließ die Augen und überlass es dem Signal, die Zeit im Blick zu behalten. Eine einfache Anleitung steht im Artikel über Meditation in den Pomodoro-Pausen.",
       },
       {
         q: "Lässt sich der Countdown groß für eine Klasse oder ein Team anzeigen?",
@@ -148,7 +148,7 @@ export const deTimerPages: TimerPage[] = [
       },
       {
         heading: "Das akademische Viertel",
-        body: "An vielen deutschen Hochschulen beginnt eine Vorlesung mit dem Zusatz c.t., cum tempore, eine Viertelstunde nach der angegebenen Zeit. Diese fünfzehn Minuten sind eine kleine Institution: Raumwechsel, Kaffee, ein kurzer Blick in die Unterlagen. Mit dem Timer verpasst du den Beginn nicht, auch wenn das Gespräch in der Cafeteria gerade gut ist.",
+        body: "Steht an einer deutschen Hochschule c.t. (cum tempore) hinter der Uhrzeit, beginnt die Vorlesung eine Viertelstunde später. Diese fünfzehn Minuten sind eine kleine Institution: Raumwechsel, Kaffee, ein kurzer Blick in die Unterlagen. Mit dem Timer verpasst du den Beginn nicht, auch wenn das Gespräch in der Cafeteria gerade gut ist.",
       },
       {
         heading: "Die lange Pause richtig nutzen",
@@ -199,15 +199,15 @@ export const deTimerPages: TimerPage[] = [
     sections: [
       {
         heading: "Zwanzig Minuten mit der Leitner-Kartei",
-        body: "Die Lernkartei nach Sebastian Leitner sortiert Karteikarten in Fächer: Was du weißt, wandert nach hinten und kommt seltener dran, was du nicht weißt, bleibt vorne. Das funktioniert am besten in kurzen, regelmäßigen Runden. Zwanzig Minuten reichen für das vorderste Fach und ein paar Wiederholungen, danach fünf Minuten Pause, dann das nächste Fach oder ein anderes Thema.",
+        body: "Die Lernkartei nach Sebastian Leitner sortiert Karteikarten in Fächer: Was du weißt, rückt ein Fach nach hinten und kommt seltener dran, was du nicht weißt, wandert zurück ins erste Fach. Das funktioniert am besten in kurzen, regelmäßigen Runden. Zwanzig Minuten reichen für das vorderste Fach und ein paar Wiederholungen, danach fünf Minuten Pause, dann das nächste Fach oder ein anderes Thema.",
       },
       {
         heading: "Hausaufgaben in Etappen",
-        body: "Ein ganzer Nachmittag voller Hausaufgaben wirkt für Kinder wie ein Berg. In Etappen von 20 Minuten mit einer echten Pause dazwischen wird daraus eine Reihe kleiner Hügel, und der Streit darüber, wie lange es noch dauert, erledigt sich oft von selbst, weil der Timer es zeigt. In der Pause wird gespielt oder gegessen, nicht weitergerechnet.",
+        body: "Ein ganzer Nachmittag voller Hausaufgaben wirkt auf Kinder wie ein Berg. In Etappen von 20 Minuten mit einer echten Pause dazwischen wird daraus eine Reihe kleiner Hügel, und der Streit darüber, wie lange es noch dauert, erledigt sich oft von selbst, weil der Timer es zeigt. In der Pause wird gespielt oder gegessen, nicht weitergerechnet.",
       },
       {
         heading: "Im gleichen Takt mit anderen",
-        body: "Arbeitet jemand mit, auch per Videocall, fällt vielen das Dranbleiben leichter; das nennt sich Body Doubling. Ein gemeinsamer Takt macht es noch einfacher: Ihr startet den Timer zur selben Zeit, arbeitet 20 Minuten jede für sich und redet erst in der Pause. Wer im Lernduo arbeitet, kann so auch schwierige Fächer besser durchziehen.",
+        body: "Arbeitet jemand mit, auch per Videocall, fällt vielen das Dranbleiben leichter; das nennt sich Body Doubling. Ein gemeinsamer Takt macht es noch einfacher: Ihr startet den Timer zur selben Zeit, arbeitet 20 Minuten still für euch und redet erst in der Pause. Wer im Lernduo arbeitet, kann so auch schwierige Themen besser durchziehen.",
       },
     ],
     faq: [

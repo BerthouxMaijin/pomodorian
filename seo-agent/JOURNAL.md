@@ -2,6 +2,18 @@
 
 Une entrée par run. Lire les 3 dernières avant toute décision.
 
+## Pages timer, semaine 2 : 2026-11-05 (salve automatique)
+
+**Publié** : 6 EN (1, 2, 3, 35, 90 min, 2 h) et 4 DE (5, 10, 15, 20 min), nouvelle langue avec `/timers/de`. Rapport : `rapports/2026-11-05-timers-s2.md`.
+
+**Leçons** :
+- Une page allemande « écrite nativement » qui reprend les sections de la page anglaise reste une traduction. Il faut partir d'angles propres au marché (Arbeitszeitgesetz, akademisches Viertel, Stoßlüften, Leitner-Kartei), pas reformuler l'anglais. Il a fallu 3 passes de relecture pour y arriver : à la semaine 3 (FR), commencer directement par une liste d'angles locaux avant d'écrire.
+- Le seuil de 380 mots pénalise l'allemand, plus compact. Garder le seuil et ajouter du contenu utile (une 4e question de FAQ), ne pas le baisser.
+- Une affirmation produit vraie mais incomplète (« garde l'écran allumé » sans wake lock) se corrige mieux dans le code que dans le texte : Wake Lock ajouté à `EmbeddedTimer`.
+- Les durées de 2 h et plus sont un cadre, pas un bloc de focus : rôle `frame`, sans préréglage dans l'app.
+
+**Mesure S1 à J+7** : `/25-minute-timer` 36 impressions en position 7, `/1-hour-timer` 19 en position 7,5, 1 clic chacune ; les 7 autres pas encore visibles. Relire au 12/11.
+
 ## Pages timer, semaine 1 : 2026-10-29 (décision JB : 10 pages par semaine pendant 4 semaines, en automatique)
 
 **Contexte** : stratégie `STRATEGIE-MODELE-ALLO-2026-10-29.md`, levier de volume = pages outil par durée. JB a demandé « 10 articles par semaine sur cette strat pendant 4 semaines en automatique mais proprement et ensuite on voit ». Interprété comme 10 pages outil par semaine (c'est l'objet de la stratégie ; elle déconseille explicitement les articles de blog en masse), publication sur main sans relecture préalable, bilan en semaine 4. Procédure : `timer-pages/RUNBOOK.md`, file : `timer-pages/QUEUE.tsv`.
