@@ -582,8 +582,8 @@ export const enTimerPages: TimerPage[] = [
         body: "The writer Gretchen Rubin popularized a simple habit: if a task takes less than a minute, do it now instead of noting it for later. Hang up the coat, reply yes to the message, put the cup in the dishwasher. A one-minute countdown makes the rule concrete, and it shows how many of the things you postpone actually take less time than thinking about them.",
       },
       {
-        heading: "A minute of breathing between two tasks",
-        body: "Moving straight from one task to the next carries the tension of the first into the second. A minute of slow breathing, eyes closed or fixed on one spot, is a cheap way to draw a line between them. Breathe in through the nose, out a little longer than in, and let the alarm tell you when to open your eyes.",
+        heading: "Timing plank sets",
+        body: "A one-minute plank is a common target, and counting seconds in your head tends to speed up as it gets hard. Get into position, start the timer with the space bar, and hold until the alarm. Because the countdown rewinds by itself, the next set is one press away: rest for as long as you need, then go again. If a full minute is out of reach, hold what you can and build up.",
       },
       {
         heading: "Sixty seconds for speaking practice",
@@ -592,16 +592,16 @@ export const enTimerPages: TimerPage[] = [
     ],
     faq: [
       {
-        q: "How do I use a 1 minute timer for a plank?",
-        a: "Get into position first, then press the space bar to start without reaching for the mouse. Hold until the alarm, rest, and repeat if you want a second set.",
+        q: "Can I use it for a one-minute breathing reset?",
+        a: "Yes. Close your eyes, breathe out a little longer than you breathe in, and let the alarm end it. It will not replace a real break, but it slows you down between two tasks.",
       },
       {
-        q: "Is one minute of breathing worth it?",
-        a: "As a reset between tasks, yes. It will not replace a real break, but it is enough to slow down and arrive at the next task less rushed.",
-      },
-      {
-        q: "Can I restart the timer quickly?",
+        q: "Can I time several sets in a row?",
         a: "Yes. When the alarm rings the countdown rewinds to 01:00 on its own, so pressing Start again runs another minute.",
+      },
+      {
+        q: "How much can I say in one minute?",
+        a: "Roughly 120 to 150 words at a calm speaking pace. Write your pitch shorter than you think, then test it out loud against the timer.",
       },
     ],
     relatedArticleSlugs: [
@@ -654,8 +654,8 @@ export const enTimerPages: TimerPage[] = [
         a: "Two minutes, twice a day, is the common recommendation from dental associations such as the American Dental Association.",
       },
       {
-        q: "What if a two-minute task takes longer?",
-        a: "Stop when the alarm rings and schedule it properly. A task that overruns once is a sign it needs a real work session, not a quick fix squeezed between others.",
+        q: "Can I use it on my phone while brushing my teeth?",
+        a: "Yes, in the mobile browser. While the countdown runs, the page keeps the screen awake where the browser supports it, so it does not lock halfway through.",
       },
     ],
     relatedArticleSlugs: [
@@ -695,7 +695,7 @@ export const enTimerPages: TimerPage[] = [
       },
       {
         heading: "Small timers for small things",
-        body: "Plenty of daily tasks run on a few minutes: tea, a face mask, a rest between sets at the gym. Keep this tab in front while you wait: the remaining time is always right when you come back to it, but in a background tab some browsers can delay the alarm by up to a minute unless a background sound is playing, which matters a lot for a three-minute cup of tea.",
+        body: "Plenty of daily tasks run on a few minutes: tea, a face mask, a rest between sets at the gym. Keep this tab in front while you wait: the remaining time is always right when you come back to it, but in a background tab some browsers can delay the alarm by up to a minute unless a background sound is playing, and a minute late is a lot on a three-minute tea.",
       },
     ],
     faq: [
@@ -728,10 +728,10 @@ export const enTimerPages: TimerPage[] = [
     label: "35 minute",
     title: "35 Minute Timer: Free Focus Countdown with a Break",
     description:
-      "A free 35 minute timer with a 5 minute break. Three rounds of 35 plus 5 fill exactly two hours, a tidy way to plan a morning or an afternoon.",
+      "A free 35 minute timer with a 5 minute break, for when 25 minutes cuts you off just as you get going. Starts in one click, no sign-up.",
     h1: "35 Minute Timer",
     intro:
-      "A 35-minute countdown, with a 5-minute break ready beside it. Thirty-five minutes of work plus five of rest makes a 40-minute round, and three rounds fill exactly two hours: a simple way to plan a morning that starts at nine and still leaves time for a long break before lunch.",
+      "A 35-minute countdown, with a 5-minute break ready beside it. Thirty-five minutes is for when the classic 25-minute Pomodoro cuts you off just as you get going, but a 50-minute block still feels like a stretch.",
     useCases: [
       "Three 35/5 rounds to fill a two-hour morning block.",
       "A slightly longer Pomodoro when 25 minutes cuts you off.",
@@ -750,7 +750,7 @@ export const enTimerPages: TimerPage[] = [
       },
       {
         heading: "Keeping the break short",
-        body: "At this length a 5-minute break is still enough. Stand up, drink something, look away from the screen, and come back. After four rounds, take a long break of 15 to 30 minutes, the same rule as in the classic Pomodoro cycle, just with slightly longer blocks.",
+        body: "At this length a 5-minute break is still enough. Stand up, drink something, look away from the screen, and come back. After three rounds, take a long break of 15 to 30 minutes: with 35-minute blocks, that is the point where the two hours are up.",
       },
     ],
     faq: [
@@ -797,11 +797,11 @@ export const enTimerPages: TimerPage[] = [
     sections: [
       {
         heading: "Where the 90-minute idea comes from",
-        body: "The sleep researcher Nathaniel Kleitman proposed that the roughly 90-minute cycle seen in sleep might continue during the day as a basic rest and activity cycle. The evidence for a precise daytime rhythm is mixed, so treat 90 minutes as a practical length rather than a law of biology. What is well established is that attention fades over long stretches and that real breaks help it recover.",
+        body: "The sleep researcher Nathaniel Kleitman proposed that the roughly 90-minute cycle seen in sleep might continue during the day as a basic rest and activity cycle. The evidence for a precise daytime rhythm is mixed, so treat 90 minutes as a practical length rather than a law of biology. What is better supported is that attention fades over long stretches and that real breaks help it recover.",
       },
       {
         heading: "How to run a 90/20 block",
-        body: "Decide the outcome before you start: a finished section, a fixed bug, a draft. Clear everything else from the screen and start the countdown. If you notice yourself drifting halfway through, stand up for a minute and come back, rather than forcing it. When the alarm rings, take the full 20-minute break away from screens before deciding on a second block.",
+        body: "Decide the outcome before you start: a finished section, a fixed bug, a draft. Clear everything else from the screen, keep a sheet of paper next to you for stray thoughts, and start the countdown. When the alarm rings, take the full 20-minute break away from screens before deciding on a second block.",
       },
       {
         heading: "Placing the block in your day",
@@ -865,8 +865,8 @@ export const enTimerPages: TimerPage[] = [
     ],
     faq: [
       {
-        q: "Can I run the inner blocks and the two hours at the same time?",
-        a: "Yes. Keep this page open for the two-hour frame and open a shorter timer, such as the 50 minute timer, in another tab for the blocks inside it.",
+        q: "Can I use it to limit screen time?",
+        a: "Yes. Decide the limit before you start, start the countdown, and stop at the alarm. Finishing the current round or episode is fine; starting a new one is not.",
       },
       {
         q: "Why is the break mode 20 minutes?",
