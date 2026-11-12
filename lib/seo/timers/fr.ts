@@ -68,35 +68,35 @@ export const frTimerPages: TimerPage[] = [
     label: "10 minutes",
     title: "Minuteur 10 minutes : compte à rebours gratuit en ligne",
     description:
-      "Minuteur de 10 minutes gratuit : pour aérer la pièce, lire avec un enfant ou couper les notifications en fin de journée. Sans inscription.",
+      "Minuteur de 10 minutes gratuit : pour aérer la pièce, lire avec un enfant ou ranger la maison en famille avant le dîner. Sans inscription.",
     h1: "Minuteur 10 minutes",
     intro:
-      "Appuyez sur Démarrer : dix minutes s'écoulent, l'alarme sonne. Dix minutes, c'est le temps qu'on recommande pour aérer une pièce, celui d'une lecture partagée avec un enfant, ou d'un vrai décrochage avant la soirée.",
+      "Appuyez sur Démarrer : dix minutes s'écoulent, l'alarme sonne. Dix minutes, c'est le temps qu'on recommande pour aérer une pièce, celui d'une lecture partagée avec un enfant, ou d'un rangement express à plusieurs.",
     useCases: [
       "Aérer la pièce en grand, fenêtres ouvertes.",
       "Lire chaque soir avec un enfant qui apprend à lire.",
-      "Couper les notifications professionnelles avant la soirée.",
+      "Un rangement express en famille avant le dîner.",
       "Boucler une petite tâche du début à la fin.",
       "Se préparer au calme avant une visioconférence importante.",
     ],
     sections: [
       {
         heading: "Dix minutes pour aérer",
-        body: "Les campagnes de santé publique recommandent d'aérer son logement au moins dix minutes par jour, même en hiver. En télétravail, on y pense rarement, alors que l'air d'une pièce fermée s'alourdit vite. Profitez d'une pause : ouvrez grand, lancez le minuteur et refermez à l'alarme, au lieu de laisser la fenêtre ouverte en vous demandant depuis quand.",
+        body: "Le ministère de la Santé et l'ADEME recommandent d'aérer son logement au moins dix minutes par jour, même en hiver. En télétravail, on y pense rarement, alors que l'air d'une pièce fermée s'alourdit vite. Profitez d'une pause : ouvrez grand, lancez le minuteur et refermez à l'alarme, au lieu de laisser la fenêtre ouverte en vous demandant depuis quand.",
       },
       {
         heading: "Lire avec un enfant, un peu chaque jour",
-        body: "Quand un enfant apprend à lire, beaucoup d'enseignants conseillent de lire un peu avec lui chaque jour plutôt que longtemps de temps en temps. Dix minutes, c'est assez pour une page ou deux à voix haute, pas assez pour que la séance tourne au bras de fer. Le minuteur fixe la limite à votre place : à l'alarme, on s'arrête, même au milieu d'une phrase.",
+        body: "Quand un enfant apprend à lire, beaucoup d'enseignants conseillent de lire un peu avec lui chaque jour plutôt que longtemps de temps en temps. Dix minutes, c'est assez pour une page ou deux à voix haute, pas assez pour que la séance tourne au bras de fer. Le minuteur fixe la limite à votre place : à l'alarme, on s'arrête à la fin de la phrase.",
       },
       {
-        heading: "Décrocher pour de bon",
-        body: "Le droit à la déconnexion est inscrit dans le Code du travail, mais en télétravail, le téléphone professionnel reste souvent à portée de main. Prenez dix minutes en fin de journée pour faire le ménage : mettre la messagerie en mode silencieux, désactiver les notifications de l'outil de discussion, poser le téléphone dans un tiroir. À l'alarme, la soirée commence vraiment.",
+        heading: "Le rangement express à plusieurs",
+        body: "Ranger seul une maison entière décourage ; ranger dix minutes à plusieurs, beaucoup moins. Avant le dîner, lancez le minuteur et donnez à chacun une zone : le salon, l'entrée, sa chambre. Personne ne discute la durée, puisque tout le monde voit le temps qui reste, et à l'alarme on s'arrête, même si tout n'est pas parfait. Répété chaque soir, ça suffit souvent.",
       },
     ],
     faq: [
       {
         q: "Faut-il aérer même quand il fait froid ?",
-        a: "Oui, c'est justement ce que recommandent les campagnes de santé publique : tous les jours, en grand, y compris l'hiver. Le minuteur évite de laisser la fenêtre ouverte plus que nécessaire.",
+        a: "Oui, c'est justement la recommandation : tous les jours, en grand, y compris l'hiver. Le minuteur évite de laisser la fenêtre ouverte plus que nécessaire.",
       },
       {
         q: "Le minuteur continue-t-il dans un onglet en arrière-plan ?",
@@ -120,18 +120,18 @@ export const frTimerPages: TimerPage[] = [
     minutes: 15,
     role: "break",
     label: "15 minutes",
-    title: "Minuteur 15 minutes : pause longue et micro-sieste",
+    title: "Minuteur 15 minutes : lecture, exposé et récréation",
     description:
       "Minuteur de 15 minutes gratuit : un quart d'heure de lecture, la récréation, la répétition d'un exposé ou la pause longue Pomodoro.",
     h1: "Minuteur 15 minutes",
     intro:
-      "Un quart d'heure, et l'alarme sonne. C'est la durée d'une récréation à l'école élémentaire, du quart d'heure de lecture que certaines écoles ont rendu quotidien, ou d'un exposé de classe, et c'est aussi le bas de la fourchette de la pause longue Pomodoro.",
+      "Un quart d'heure, et l'alarme sonne. C'est la durée d'une récréation à l'école élémentaire, du quart d'heure de lecture que certaines écoles ont rendu quotidien, ou d'un exposé de quinze minutes à préparer.",
     useCases: [
       "Un quart d'heure de lecture, téléphone posé.",
       "Chronométrer une récréation ou un temps libre.",
       "Répéter un exposé de quinze minutes en temps réel.",
-      "Une micro-sieste en début d'après-midi.",
       "La pause longue après quatre sessions Pomodoro.",
+      "Un temps de calme avant le coucher.",
     ],
     sections: [
       {
@@ -153,12 +153,12 @@ export const frTimerPages: TimerPage[] = [
         a: "Quelques pages d'un roman, un long article, un chapitre de bande dessinée. Un livre papier évite les notifications qui interrompent la lecture sur écran.",
       },
       {
-        q: "Et pour une micro-sieste ?",
-        a: "On recommande souvent 10 à 20 minutes, pour se réveiller avant le sommeil profond et ne pas se sentir vaseux. Un quart d'heure laisse quelques minutes pour s'endormir.",
+        q: "Comment découper un exposé de quinze minutes ?",
+        a: "Une introduction courte, deux ou trois parties, une conclusion. Notez à quelle minute chaque partie doit commencer, puis vérifiez-le en répétant avec le minuteur.",
       },
       {
-        q: "Que faire si l'alarme ne sonne pas sur mon téléphone ?",
-        a: "Vérifiez le volume, laissez la page ouverte et ne verrouillez pas l'appareil vous-même. Tant que le minuteur tourne, la page garde l'écran allumé si votre navigateur le permet.",
+        q: "Peut-on afficher le minuteur en classe pendant la récréation ?",
+        a: "Oui, sur l'ordinateur relié au tableau numérique. Le bouton plein écran agrandit le compte à rebours là où le navigateur le permet, et la touche Échap ramène à la page.",
       },
     ],
     relatedArticleSlugs: [
@@ -186,12 +186,12 @@ export const frTimerPages: TimerPage[] = [
       "Prendre vraiment sa pause légale de vingt minutes.",
       "Accompagner les devoirs d'un enfant, par étapes.",
       "Une session de révision courte avec auto-interrogation.",
-      "Un circuit de renforcement ou d'étirements.",
+      "Un oral blanc à deux, chacun son tour.",
     ],
     sections: [
       {
         heading: "S'entraîner au Grand oral",
-        body: "Au baccalauréat, le Grand oral dure vingt minutes, après vingt minutes de préparation : une présentation, puis un échange avec le jury. S'entraîner avec un vrai compte à rebours apprend à tenir le temps. Lancez le minuteur pour la préparation ; à l'alarme, revenez sur « Minuteur 20 min » et cliquez sur Démarrer pour l'épreuve, à voix haute, sans tricher.",
+        body: "Au baccalauréat, le Grand oral dure vingt minutes, après vingt minutes de préparation : une présentation, puis un échange avec le jury. S'entraîner avec un vrai compte à rebours apprend à tenir le temps. Chronométrez la préparation, puis l'épreuve elle-même, à voix haute et sans tricher sur le temps : la manipulation est détaillée dans les questions plus bas.",
       },
       {
         heading: "Vingt minutes, c'est aussi la pause légale",
@@ -208,8 +208,8 @@ export const frTimerPages: TimerPage[] = [
         a: "Lancez les vingt minutes de préparation. À l'alarme, le minuteur passe sur la pause : cliquez sur « Minuteur 20 min », puis sur Démarrer, pour chronométrer l'épreuve.",
       },
       {
-        q: "À quoi sert le lien vers l'application complète ?",
-        a: "Il ouvre Pomodorian et règle votre durée de concentration enregistrée sur 20 minutes, jusqu'à ce que vous la changiez dans les réglages. La durée de pause reste celle de vos réglages.",
+        q: "Comment utiliser les vingt minutes de préparation ?",
+        a: "Une possibilité : quelques minutes pour choisir l'angle, le reste pour un plan et une poignée de mots-clés, pas un texte rédigé. L'oral sonne plus naturel quand on ne lit pas.",
       },
       {
         q: "Le minuteur fonctionne-t-il sur téléphone pendant un oral blanc ?",
@@ -250,7 +250,7 @@ export const frTimerPages: TimerPage[] = [
       },
       {
         heading: "S'entraîner au code de la route",
-        body: "L'examen théorique du code se passe sur une série de quarante questions, en une demi-heure environ. S'entraîner dans les mêmes conditions aide à gérer le rythme : lancez le minuteur, enchaînez une série sans faire de pause, puis corrigez vos erreurs une fois l'alarme passée. Vous saurez si vous bloquez trop longtemps sur certaines questions.",
+        body: "L'examen théorique du code se passe sur une série de quarante questions, avec une vingtaine de secondes par question, soit une demi-heure environ en tout. Pour vous y préparer, faites une série complète d'une traite : lancez le minuteur, enchaînez les quarante questions sans vous arrêter, et ne regardez la correction qu'après l'alarme, comme le jour de l'examen.",
       },
       {
         heading: "Les devoirs du soir, avec une fin annoncée",
@@ -269,6 +269,10 @@ export const frTimerPages: TimerPage[] = [
       {
         q: "Et si les devoirs ne sont pas finis à l'alarme ?",
         a: "Faites une courte pause, puis décidez ensemble : une seconde demi-heure, ou la suite demain. L'important est que la limite ait été posée avant de commencer.",
+      },
+      {
+        q: "Le lien vers l'application change-t-il mes réglages ?",
+        a: "Oui : il règle votre durée de concentration enregistrée sur 30 minutes. La durée de pause reste celle de vos réglages, et vous pouvez tout modifier à tout moment.",
       },
     ],
     relatedArticleSlugs: [

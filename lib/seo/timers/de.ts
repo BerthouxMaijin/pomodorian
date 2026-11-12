@@ -263,7 +263,7 @@ export const deTimerPages: TimerPage[] = [
       },
       {
         heading: "Pomodoro im Großraumbüro",
-        body: "Im Großraumbüro ist die größte Gefahr nicht der eigene Kopf, sondern die Frage vom Nebentisch. Vereinbare mit dem Team ein einfaches Zeichen, zum Beispiel: Kopfhörer auf heißt gerade Fokus. Rückfragen sammelst du für die Pause. Die meisten Anliegen können fünfundzwanzig Minuten warten, und du beantwortest sie dann gebündelt statt verstreut über den Vormittag.",
+        body: "Im Großraumbüro kommt die Störung oft nicht aus dem eigenen Kopf, sondern vom Nebentisch. Ein einfaches, vereinbartes Zeichen hilft, zum Beispiel: Kopfhörer auf heißt gerade Fokus. Wer es kennt, wartet mit der Frage bis zur nächsten Pause, und die ist bei einem Pomodoro nie weiter als 25 Minuten entfernt. Das macht die Bitte um Ruhe für die anderen leichter.",
       },
       {
         heading: "Aufgaben in Pomodoros schätzen",
@@ -276,16 +276,16 @@ export const deTimerPages: TimerPage[] = [
         a: "Nach Cirillos Methode ist ein Pomodoro unteilbar: Wenn du die Aufgabe wechselst oder dich ablenken lässt, zählt die Einheit nicht und du beginnst neu. Kurze Notizen zu Störgedanken sind erlaubt.",
       },
       {
-        q: "Was mache ich mit Gedanken, die während der Einheit auftauchen?",
-        a: "Schreib sie kurz auf einen Zettel neben dir und arbeite weiter. In der Pause entscheidest du, was davon wirklich wichtig ist.",
+        q: "Was, wenn eine Aufgabe kürzer ist als ein Pomodoro?",
+        a: "Fasse mehrere kleine Aufgaben zu einem Pomodoro zusammen, zum Beispiel drei kurze Antworten und einen Anruf. So bleibt die Einheit voll, ohne dass du sie künstlich streckst.",
       },
       {
         q: "Muss es eine Küchenuhr sein?",
         a: "Nein. Für Cirillo war das Aufziehen der Tomatenuhr ein kleines Startritual. Heute erfüllt der Klick auf Start dieselbe Aufgabe.",
       },
       {
-        q: "Läuft der Countdown weiter, wenn ich den Tab verlasse?",
-        a: "Ja, die Restzeit stimmt beim Zurückkehren immer. Im Hintergrund kann manch ein Browser das Signal um bis zu eine Minute verzögern, außer es läuft ein Hintergrundklang.",
+        q: "Kann ich den Timer mit der Tastatur steuern?",
+        a: "Ja. Die Leertaste startet den Countdown und pausiert ihn wieder, ohne dass du zur Maus greifen musst.",
       },
     ],
     relatedArticleSlugs: [
@@ -304,25 +304,25 @@ export const deTimerPages: TimerPage[] = [
     label: "30-Minuten",
     title: "Timer 30 Minuten: Kostenloser Countdown mit Pause",
     description:
-      "Kostenloser 30-Minuten-Timer mit 5 Minuten Pause: für die halbe Stunde Bewegung nach WHO, den Papierkram am Stück oder feste E-Mail-Zeiten.",
+      "Kostenloser 30-Minuten-Timer mit 5 Minuten Pause: für die Steuererklärung in Etappen, den Wochenrückblick am Freitag oder feste E-Mail-Zeiten.",
     h1: "Timer 30 Minuten",
     intro:
-      "Start drücken, dreißig Minuten laufen lassen, beim Signal aufhören. Eine halbe Stunde reicht für eine Trainingseinheit, für einen Stapel Formulare oder für den Posteingang, wenn du ihn nicht den ganzen Tag offen haben willst.",
+      "Start drücken, dreißig Minuten laufen lassen, beim Signal aufhören. Eine halbe Stunde reicht für einen Abschnitt der Steuererklärung, für den Wochenrückblick am Freitag oder für den Posteingang, wenn du ihn nicht den ganzen Tag offen haben willst.",
     useCases: [
-      "Eine halbe Stunde Bewegung am Tag.",
-      "Papierkram und Steuerunterlagen am Stück erledigen.",
+      "Die Steuererklärung in Etappen statt an einem Wochenende.",
+      "Der Wochenrückblick am Freitagnachmittag.",
       "Feste Zeiten für den Posteingang.",
       "Eine Fokuseinheit mit 5 Minuten Pause.",
       "Eine Lernrunde am Abend, nicht länger.",
     ],
     sections: [
       {
-        heading: "Eine halbe Stunde Bewegung",
-        body: "Die Weltgesundheitsorganisation empfiehlt Erwachsenen mindestens 150 Minuten moderate Bewegung pro Woche. Auf fünf Tage verteilt sind das etwa dreißig Minuten am Tag: zügig spazieren, Rad fahren, eine kurze Einheit zu Hause. Mit dem Timer hat die halbe Stunde einen klaren Anfang und ein klares Ende, und genau das macht es leichter, sie wirklich durchzuziehen.",
+        heading: "Der Wochenrückblick am Freitag",
+        body: "Eine halbe Stunde am Freitagnachmittag kann viel Ordnung in die nächste Woche bringen: offene Punkte durchsehen, Erledigtes abhaken, Notizzettel und Downloads aufräumen, die drei wichtigsten Aufgaben für Montag festlegen. Mit dem Timer bleibt der Rückblick ein Ritual und wächst nicht zu einer zweiten Arbeitsschicht aus.",
       },
       {
-        heading: "Papierkram in einem Block",
-        body: "Steuerunterlagen, Formulare, Rechnungen für die Ablage: Papierkram hat die Eigenschaft, sich über ein ganzes Wochenende zu verteilen. Gib ihm eine halbe Stunde, starte den Timer und arbeite bis zum Signal. Was dann noch offen ist, kommt in den nächsten Block, aber der Rest des Tages gehört wieder dir.",
+        heading: "Die Steuererklärung in Etappen",
+        body: "Die Steuererklärung wirkt am Stück wie ein Berg, in Etappen wie eine Liste. Plane mehrere halbe Stunden: eine, um die Belege zu sammeln, eine für die Werbungskosten, eine für den Rest und die Kontrolle. Da ELSTER angefangene Erklärungen speichert, kannst du jederzeit beim Signal aufhören und beim nächsten Mal genau dort weitermachen.",
       },
       {
         heading: "Feste Zeiten für den Posteingang",
@@ -331,16 +331,16 @@ export const deTimerPages: TimerPage[] = [
     ],
     faq: [
       {
-        q: "Zählen auch kürzere Bewegungseinheiten?",
-        a: "Ja. Nach den aktuellen Empfehlungen der WHO zählt jede Bewegung. Wenn eine halbe Stunde am Stück nicht passt, helfen auch mehrere kürzere Einheiten über den Tag.",
+        q: "Was gehört in den Wochenrückblick?",
+        a: "Offene Aufgaben prüfen, Termine der kommenden Woche ansehen, lose Notizen einsortieren und die wichtigsten Ziele für Montag festhalten. Mehr braucht es für den Anfang nicht.",
       },
       {
-        q: "Funktioniert der Timer auch auf dem Handy, zum Beispiel beim Sport?",
+        q: "Funktioniert der Timer auch unterwegs auf dem Handy?",
         a: "Ja, im mobilen Browser. Lass die Seite offen: Während der Timer läuft, hält sie den Bildschirm wach, sofern dein Browser das unterstützt.",
       },
       {
-        q: "Kann ich zwei Einheiten ohne Pause hintereinander machen?",
-        a: "Besser nicht, denn die Pause ist Teil der Methode. Wenn sie dich regelmäßig aus der Arbeit reißt, probier lieber längere Blöcke von 45 oder 50 Minuten mit entsprechend längerer Pause.",
+        q: "Warum gerade dreißig Minuten für Mails?",
+        a: "Lang genug, um den Posteingang wirklich abzuarbeiten statt nur zu überfliegen, und kurz genug, damit er nicht den Vormittag frisst. Passt es bei dir nicht, nimm 20 oder 45 Minuten.",
       },
       {
         q: "Wie oft am Tag sollte ich Mails abrufen?",
@@ -381,7 +381,7 @@ export const deTimerPages: TimerPage[] = [
       },
       {
         heading: "Die Doppelstunde zu Hause",
-        body: "In der Schule werden 90 Minuten oft am Stück durchgezogen. Zu Hause musst du das nicht: Zwei Blöcke von 45 Minuten mit einer Pause dazwischen fallen vielen leichter. Nimm nach dem ersten Block die Pause; wenn sie abgelaufen ist, stell auf „Timer 45 min“ zurück und starte die zweite Hälfte.",
+        body: "In der Schule werden 90 Minuten oft am Stück durchgezogen. Zu Hause musst du das nicht: Zwei Blöcke von 45 Minuten mit einer Pause dazwischen fallen vielen leichter. Nimm nach dem ersten Block die Pause; beim Signal springt der Timer wieder auf 45 Minuten, und du startest einfach die zweite Hälfte.",
       },
       {
         heading: "Nachhilfe mit klarem Ende",
@@ -390,8 +390,8 @@ export const deTimerPages: TimerPage[] = [
     ],
     faq: [
       {
-        q: "Sind 45 Minuten zu lang zum Konzentrieren?",
-        a: "Nicht unbedingt, wenn du die Aufgabe verstehst. Fällt es dir schwer, starte mit 25 oder 30 Minuten und verlängere schrittweise.",
+        q: "Eignet sich der Timer für eine Klassenarbeit?",
+        a: "Ja, für eine Klassenarbeit von einer Schulstunde. Starte ihn beim Austeilen: Das Signal zeigt allen gleichzeitig das Ende an, ohne dass jemand die Zeit ansagen muss.",
       },
       {
         q: "Kann ich die Pause auf fünf Minuten verkürzen?",
@@ -440,17 +440,17 @@ export const deTimerPages: TimerPage[] = [
       },
       {
         heading: "Eine Sprechstunde fürs Team",
-        body: "Ärztinnen und Professoren haben Sprechstunden, warum nicht auch du? Wenn Kolleginnen und Kollegen ständig mit kleinen Fragen kommen, biete eine feste Stunde am Tag an, in der du für sie da bist, und bitte darum, alles andere bis dahin zu sammeln. Der Timer markiert Anfang und Ende, und die übrigen Stunden gehören wieder deiner eigenen Arbeit.",
+        body: "Ärztinnen und Professoren haben Sprechstunden, warum nicht auch du? Wenn Kolleginnen und Kollegen ständig mit kleinen Fragen kommen, biete eine feste Stunde am Tag an, in der deine Tür offen steht und niemand sich für eine Frage entschuldigen muss. Der Timer markiert Anfang und Ende, und die übrigen Stunden gehören wieder deiner eigenen Arbeit.",
       },
       {
         heading: "Die Übungsstunde am Instrument",
-        body: "Eine Stunde Üben wird ergiebiger, wenn sie eine Struktur hat: einige Minuten Einspielen, dann der Hauptteil mit der schwierigen Stelle, am Ende ein Durchlauf des ganzen Stücks. Mit dem Countdown im Blick verteilst du die Zeit bewusster, statt die schönen Passagen immer wieder zu spielen und die schwierigen aufzuschieben.",
+        body: "Eine Stunde Üben wird ergiebiger, wenn sie eine Struktur hat: einige Minuten Einspielen, dann der Hauptteil mit der schwierigen Stelle, am Ende ein Durchlauf des ganzen Stücks. Mit dem Countdown im Blick verteilst du die Zeit bewusster, statt die schönen Passagen immer wieder zu spielen und die schwierigen aufzuschieben. Ist eine Stunde am Stück zu viel, teil sie: Zweimal dreißig Minuten am Tag fallen vielen leichter als eine lange Sitzung am Wochenende.",
       },
     ],
     faq: [
       {
-        q: "Was tun, wenn ich nach 40 Minuten abschweife?",
-        a: "Steh kurz auf, trink etwas und mach weiter. Passiert dir das regelmäßig, ist die Stunde für diese Aufgabe zu lang: Versuch es mit 45 oder 50 Minuten. Ein Block, den du schaffst, bringt mehr als einer, gegen den du ankämpfst.",
+        q: "Was, wenn die Stunde nicht reicht?",
+        a: "Mach trotzdem die Pause und entscheide danach, ob du eine zweite Stunde anhängst. Wenn das regelmäßig passiert, blocke dir lieber gleich zwei Stunden im Kalender, mit Pause dazwischen.",
       },
       {
         q: "Kann ich die Stunde unterbrechen, wenn jemand anruft?",

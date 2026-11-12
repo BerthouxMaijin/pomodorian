@@ -2,6 +2,14 @@
 
 Une entrée par run. Lire les 3 dernières avant toute décision.
 
+## Pages timer, semaine 3 : 2026-11-12 (salve automatique)
+
+**Publié** : 5 FR (5, 10, 15, 20, 30 min, nouvelle langue avec `/timers/fr`), 4 DE (25, 30, 45 min, 1 Stunde), 1 EN (3 h, cadre). Rapport : `rapports/2026-11-12-timers-s3.md`.
+
+**Signal majeur, J+14 sur la semaine 1** : l'inspection GSC montre que seules les URL dont l'indexation a été demandée sont indexées. Les autres sont « inconnues de Google » ou « découvertes, non indexées ». Les pages explorées se placent pourtant en première page (`/25-minute-timer` pos 9,7, `/1-hour-timer` pos 6,9). Le goulot est la découverte : aucun article de blog ne lie vers les minuteurs. Recommandation à JB : maillage depuis le blog et l'accueil (hors périmètre de la publication automatique), plus des demandes d'indexation manuelles.
+
+**Leçon** : pour la deuxième semaine de suite, il a fallu deux relectures pour sortir de la traduction déguisée. Changer les références locales ne suffit pas : il faut des sections, des usages et des FAQ différents de ceux des pages de même durée dans les autres langues. Règle ajoutée au runbook : lire ces pages avant d'écrire, et ne reprendre aucune de leurs idées.
+
 ## Pages timer, semaine 2 : 2026-11-05 (salve automatique)
 
 **Publié** : 6 EN (1, 2, 3, 35, 90 min, 2 h) et 4 DE (5, 10, 15, 20 min), nouvelle langue avec `/timers/de`. Rapport : `rapports/2026-11-05-timers-s2.md`.

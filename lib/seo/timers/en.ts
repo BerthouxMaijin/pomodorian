@@ -903,12 +903,12 @@ export const enTimerPages: TimerPage[] = [
       "A group study session with a fixed end time.",
       "A hackathon or design sprint segment.",
       "A Saturday afternoon on a hobby project.",
-      "A hard stop for a gaming or streaming evening.",
+      "Clearing a backlog of small tasks in one go.",
     ],
     sections: [
       {
-        heading: "An afternoon in three parts",
-        body: "Three hours split well into three parts of about an hour each. Spend the first block on the hardest task while you are fresh, take a real break, use the second for the work that needs less judgment, break again, and keep the last part for review, loose ends and writing down where you will start tomorrow.",
+        heading: "A half day for the backlog",
+        body: "Small tasks pile up: forms, replies, fixes nobody scheduled. Instead of letting them nibble at every day, give them one bounded afternoon. List everything first, do what takes minutes, schedule what needs real work, and drop what no longer matters. When the countdown ends, the list that is left is short and honest, and the rest of the week is cleaner for it.",
       },
       {
         heading: "Running a group study session",
@@ -921,16 +921,16 @@ export const enTimerPages: TimerPage[] = [
     ],
     faq: [
       {
-        q: "Should I work three hours without stopping?",
-        a: "No. Use the three hours as a frame and take breaks inside it, for example after each block of about an hour.",
+        q: "How should I split three hours?",
+        a: "One option is three blocks of about 50 minutes with 10-minute breaks between them. Run the blocks with the 50 minute timer or the app, and keep this page as the outer limit.",
       },
       {
         q: "Can I pause the frame for lunch?",
         a: "Yes. Pause keeps the remaining time, and Resume picks up from there when you are back.",
       },
       {
-        q: "Can I rehearse a three-hour exam with it?",
-        a: "Yes. Run at least one full rehearsal at the real length, notes away, to see how your attention holds in the last hour and how long each part of the paper really takes.",
+        q: "What if we finish early?",
+        a: "Stop. The three hours are a maximum, not a target; ending a session early because the work is done is the best possible outcome.",
       },
     ],
     relatedArticleSlugs: [

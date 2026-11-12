@@ -19,16 +19,16 @@ week	lang	minutes	slug	keyword	volume	market	role	breakMinutes	status	published
 2	de	15	timer-15-minuten	timer 15 minuten	8100	DE	break		published	2026-11-05
 2	de	20	timer-20-minuten	timer 20 minuten	6600	DE	focus	5	published	2026-11-05
 2	de	5	timer-5-minuten	timer 5 minuten	6600	DE	break		published	2026-11-05
-3	de	30	timer-30-minuten	timer 30 minuten	5400	DE	focus	5	todo
-3	de	25	timer-25-minuten	timer 25 minuten	1000	DE	focus	5	todo
-3	de	45	timer-45-minuten	timer 45 minuten	720	DE	focus	15	todo
-3	de	60	timer-1-stunde	timer 1 stunde	720	DE	focus	10	todo
-3	fr	10	minuteur-10-minutes	minuteur 10 minutes	4400	FR	break		todo
-3	fr	5	minuteur-5-minutes	minuteur 5 minutes	3600	FR	break		todo
-3	fr	15	minuteur-15-minutes	minuteur 15 minutes	2900	FR	break		todo
-3	fr	20	minuteur-20-minutes	minuteur 20 minutes	1900	FR	focus	5	todo
-3	fr	30	minuteur-30-minutes	minuteur 30 minutes	1900	FR	focus	5	todo
-3	en	180	3-hour-timer	3 hour timer	12100	US	frame	30	todo
+3	de	30	timer-30-minuten	timer 30 minuten	5400	DE	focus	5	published	2026-11-12
+3	de	25	timer-25-minuten	timer 25 minuten	1000	DE	focus	5	published	2026-11-12
+3	de	45	timer-45-minuten	timer 45 minuten	720	DE	focus	15	published	2026-11-12
+3	de	60	timer-1-stunde	timer 1 stunde	720	DE	focus	10	published	2026-11-12
+3	fr	10	minuteur-10-minutes	minuteur 10 minutes	4400	FR	break		published	2026-11-12
+3	fr	5	minuteur-5-minutes	minuteur 5 minutes	3600	FR	break		published	2026-11-12
+3	fr	15	minuteur-15-minutes	minuteur 15 minutes	2900	FR	break		published	2026-11-12
+3	fr	20	minuteur-20-minutes	minuteur 20 minutes	1900	FR	focus	5	published	2026-11-12
+3	fr	30	minuteur-30-minutes	minuteur 30 minutes	1900	FR	focus	5	published	2026-11-12
+3	en	180	3-hour-timer	3 hour timer	12100	US	frame	30	published	2026-11-12
 4	fr	25	minuteur-25-minutes	minuteur 25 minutes	590	FR	focus	5	todo
 4	fr	45	minuteur-45-minutes	minuteur 45 minutes	390	FR	focus	15	todo
 4	fr	40	minuteur-40-minutes	minuteur 40 minutes	320	FR	focus	20	todo
