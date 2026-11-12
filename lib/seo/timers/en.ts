@@ -884,4 +884,60 @@ export const enTimerPages: TimerPage[] = [
     ],
     published: "2026-11-05",
   },
+  // Week 3 (2026-11-12).
+  {
+    slug: "3-hour-timer",
+    lang: "en",
+    minutes: 180,
+    role: "frame",
+    breakMinutes: 30,
+    label: "3 hour",
+    title: "3 Hour Timer: Free 180 Minute Countdown",
+    description:
+      "A free 3 hour timer to frame an afternoon of work, a study day or a hackathon sprint, with real breaks inside it. Shows 3:00:00 and rings at the end.",
+    h1: "3 Hour Timer",
+    intro:
+      "A three-hour countdown, displayed as 3:00:00, with a 30-minute break mode next to it. Nobody focuses for three hours in one stretch, so think of this timer as the walls of a long session: an afternoon, a study day, a sprint, with shorter blocks and breaks inside it.",
+    useCases: [
+      "Framing a whole afternoon of project work.",
+      "A group study session with a fixed end time.",
+      "A hackathon or design sprint segment.",
+      "A long practice session for music or sport.",
+      "A hard stop for a gaming or streaming evening.",
+    ],
+    sections: [
+      {
+        heading: "An afternoon in three parts",
+        body: "Three hours split well into three parts of about an hour each. Spend the first block on the hardest task while you are fresh, take a real break, use the second for the work that needs less judgment, break again, and keep the last part for review, loose ends and writing down where you will start tomorrow. The big countdown tells you when the afternoon is over.",
+      },
+      {
+        heading: "Running a group study session",
+        body: "Study groups tend to drift: someone arrives late, the break turns into an hour of chatting, and nobody remembers who was explaining what. Agree on the three hours up front, start the countdown where everyone can see it, and set a simple rule, such as questions wait for the breaks. A shared, visible end time keeps the group honest without anyone having to play the strict one.",
+      },
+      {
+        heading: "Sprints with a fixed end",
+        body: "Hackathons and design sprints work because the deadline is real. Inside a three-hour segment, decide at the start what the demo or the deliverable will be, cut scope early rather than late, and stop building in the last half hour to prepare what you will show. A visible countdown makes those calls easier because everyone sees the same time left.",
+      },
+    ],
+    faq: [
+      {
+        q: "Should I work three hours without stopping?",
+        a: "No. Use the three hours as a frame and take breaks inside it, for example after each block of about an hour.",
+      },
+      {
+        q: "Why is the break mode 30 minutes?",
+        a: "It is meant for after the whole session. Three hours of work earns a proper break away from screens.",
+      },
+      {
+        q: "Does the timer need an account or an install?",
+        a: "No. It runs in your browser, nothing to install and nothing to sign up for.",
+      },
+    ],
+    relatedArticleSlugs: [
+      "group-pomodoro-team-sessions",
+      "long-pomodoro-sessions-guide",
+      "prepare-exams-without-burnout",
+    ],
+    published: "2026-11-12",
+  },
 ];

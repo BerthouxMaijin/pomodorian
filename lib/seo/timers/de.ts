@@ -235,4 +235,241 @@ export const deTimerPages: TimerPage[] = [
     ],
     published: "2026-11-05",
   },
+  // Week 3 (2026-11-12).
+  {
+    slug: "timer-25-minuten",
+    lang: "de",
+    minutes: 25,
+    role: "focus",
+    breakMinutes: 5,
+    label: "25-Minuten",
+    title: "Timer 25 Minuten: Kostenloser Pomodoro-Countdown",
+    description:
+      "Der klassische 25-Minuten-Timer der Pomodoro-Technik, mit 5 Minuten Pause per Klick. Für Abschlussarbeit, Klausurvorbereitung und Großraumbüro.",
+    h1: "Timer 25 Minuten",
+    intro:
+      "Fünfundzwanzig Minuten sind ein Pomodoro: eine Aufgabe, keine Ablenkung, bis das Signal kommt. Danach springt der Timer auf die 5-Minuten-Pause, ein Klick auf Start genügt. Nach vier Runden folgt eine lange Pause.",
+    useCases: [
+      "Ein klassischer Pomodoro: 25 Minuten an genau einer Aufgabe.",
+      "Die Bachelor- oder Masterarbeit Absatz für Absatz.",
+      "Klausurvorbereitung in zählbaren Einheiten.",
+      "Konzentriert arbeiten im Großraumbüro.",
+      "Eine Aufgabe messen: Wie viele Pomodoros braucht sie wirklich?",
+    ],
+    sections: [
+      {
+        heading: "Woher die 25 Minuten kommen",
+        body: "Francesco Cirillo entwickelte die Pomodoro-Technik Ende der 1980er-Jahre als Student, mit einer Küchenuhr in Tomatenform, auf Italienisch pomodoro. Fünfundzwanzig Minuten sind kurz genug, um sich ohne inneres Verhandeln darauf einzulassen, und lang genug, um wirklich etwas zu schaffen. Entscheidend sind die Regeln drumherum: eine Aufgabe pro Einheit, keine Unterbrechung, danach echte Pause.",
+      },
+      {
+        heading: "Die Abschlussarbeit in Pomodoros",
+        body: "Eine Bachelor- oder Masterarbeit lähmt oft gerade durch ihre Größe. In Pomodoros wird sie zählbar: Statt „heute an der Arbeit sitzen“ heißt das Ziel „sechs Pomodoros für Kapitel 3“. Notiere vor jeder Einheit den nächsten konkreten Schritt, etwa eine Quelle auswerten oder einen Absatz überarbeiten, und streiche ihn danach ab. So siehst du am Abend, was du geschafft hast.",
+      },
+      {
+        heading: "Pomodoro im Großraumbüro",
+        body: "Im Großraumbüro ist die größte Gefahr nicht der eigene Kopf, sondern die Frage vom Nebentisch. Vereinbare mit dem Team ein einfaches Zeichen, zum Beispiel Kopfhörer auf heißt gerade Fokus, und sammle Rückfragen für die Pause. Die meisten Anliegen können fünfundzwanzig Minuten warten, und du beantwortest sie dann gebündelt statt verstreut über den Vormittag.",
+      },
+    ],
+    faq: [
+      {
+        q: "Was ist ein Pomodoro?",
+        a: "Eine Einheit von 25 Minuten konzentrierter Arbeit an einer einzigen Aufgabe, gefolgt von einer kurzen Pause. Nach vier Pomodoros kommt eine längere Pause.",
+      },
+      {
+        q: "Sind 25 Minuten die beste Länge?",
+        a: "Sie sind das Original und ein guter Standard. Für tiefe Arbeit kommen viele mit 50/10 besser zurecht; die richtige Länge ist die, die du regelmäßig durchhältst.",
+      },
+      {
+        q: "Was mache ich mit Gedanken, die während der Einheit auftauchen?",
+        a: "Schreib sie kurz auf einen Zettel neben dir und arbeite weiter. In der Pause entscheidest du, was davon wirklich wichtig ist.",
+      },
+      {
+        q: "Kann ich den Timer im Hintergrund laufen lassen?",
+        a: "Ja. Die Restzeit stimmt immer, wenn du zum Tab zurückkehrst. Im Hintergrund kann manch ein Browser das Signal um bis zu eine Minute verzögern, außer es läuft ein Hintergrundklang.",
+      },
+    ],
+    relatedArticleSlugs: [
+      "pomodoro-technik-leitfaden-anfaenger",
+      "kontextwechsel-kosten-entwickler",
+      "homeoffice-fokussiert-bleiben",
+    ],
+    published: "2026-11-12",
+  },
+  {
+    slug: "timer-30-minuten",
+    lang: "de",
+    minutes: 30,
+    role: "focus",
+    breakMinutes: 5,
+    label: "30-Minuten",
+    title: "Timer 30 Minuten: Kostenloser Countdown mit Pause",
+    description:
+      "Kostenloser 30-Minuten-Timer mit 5 Minuten Pause: für die halbe Stunde Bewegung, den Papierkram am Stück oder eine Fokuseinheit nach Kalender.",
+    h1: "Timer 30 Minuten",
+    intro:
+      "Eine halbe Stunde, heruntergezählt, mit Signal am Ende und einem Pausenmodus von fünf Minuten daneben. Dreißig Minuten sind die Einheit, in der viele ohnehin denken: ein Kalenderslot, eine Trainingseinheit, eine Lernrunde am Abend.",
+    useCases: [
+      "Eine halbe Stunde Bewegung am Tag.",
+      "Papierkram und Steuerunterlagen am Stück erledigen.",
+      "Eine Fokuseinheit, die in jeden Kalenderslot passt.",
+      "Ein Telefonat auf die geplante Zeit begrenzen.",
+      "Eine Lernrunde am Abend, nicht länger.",
+    ],
+    sections: [
+      {
+        heading: "Eine halbe Stunde Bewegung",
+        body: "Die Weltgesundheitsorganisation empfiehlt Erwachsenen mindestens 150 Minuten moderate Bewegung pro Woche. Auf fünf Tage verteilt sind das etwa dreißig Minuten am Tag: zügig spazieren, Rad fahren, eine kurze Einheit zu Hause. Mit dem Timer hat die halbe Stunde einen klaren Anfang und ein klares Ende, und genau das macht es leichter, sie wirklich durchzuziehen.",
+      },
+      {
+        heading: "Papierkram in einem Block",
+        body: "Steuerunterlagen, Formulare, Rechnungen für die Ablage: Papierkram hat die Eigenschaft, sich über ein ganzes Wochenende zu verteilen. Gib ihm eine halbe Stunde, starte den Timer und arbeite bis zum Signal. Was dann noch offen ist, kommt in den nächsten Block, aber der Rest des Tages gehört wieder dir.",
+      },
+      {
+        heading: "Eine Pomodoro-Variante nach Kalender",
+        body: "Ein Rhythmus von 30 Minuten Arbeit und 5 Minuten Pause behält den Kern der Pomodoro-Technik bei und passt zugleich zu Kalendern, die in halben Stunden denken. Zwei Einheiten mit Pausen dauern gut eine Stunde. Für alle, denen 25 Minuten etwas kurz sind, ist das ein guter Zwischenschritt vor längeren Blöcken.",
+      },
+    ],
+    faq: [
+      {
+        q: "Wie viele 30-Minuten-Einheiten pro Tag?",
+        a: "Eine feste Zahl gibt es nicht. Plane die Einheiten, die deine Arbeit braucht, und hör auf, weitere dranzuhängen, wenn die Aufmerksamkeit deutlich nachlässt.",
+      },
+      {
+        q: "Welche Pause passt nach 30 Minuten?",
+        a: "Fünf Minuten, genau der Pausenmodus dieses Timers. Nach drei oder vier Einheiten ist eine lange Pause von 15 bis 30 Minuten dran.",
+      },
+      {
+        q: "Funktioniert der Timer auch auf dem Handy, zum Beispiel beim Sport?",
+        a: "Ja, im mobilen Browser. Lass die Seite offen: Während der Timer läuft, hält sie den Bildschirm wach, sofern dein Browser das unterstützt.",
+      },
+      {
+        q: "Kann ich zwei Einheiten ohne Pause hintereinander machen?",
+        a: "Besser nicht, denn die Pause ist Teil der Methode. Wenn sie dich regelmäßig aus der Arbeit reißt, probier lieber längere Blöcke von 45 oder 50 Minuten mit entsprechend längerer Pause.",
+      },
+    ],
+    relatedArticleSlugs: [
+      "pomodoro-technik-leitfaden-anfaenger",
+      "homeoffice-fokussiert-bleiben",
+      "beste-ambient-sounds-konzentrieren",
+    ],
+    published: "2026-11-12",
+  },
+  {
+    slug: "timer-45-minuten",
+    lang: "de",
+    minutes: 45,
+    role: "focus",
+    breakMinutes: 15,
+    label: "45-Minuten",
+    title: "Timer 45 Minuten: Countdown wie eine Schulstunde",
+    description:
+      "Kostenloser 45-Minuten-Timer mit 15 Minuten Pause, so lang wie eine Schulstunde. Für Klausurtraining, Nachhilfe und 45/15-Fokusblöcke.",
+    h1: "Timer 45 Minuten",
+    intro:
+      "Ein Countdown von 45 Minuten mit einer 15-Minuten-Pause direkt daneben. Fünfundvierzig Minuten kennt in Deutschland jede und jeder aus der Schule: So lang dauert eine Schulstunde, zwei davon ergeben eine Doppelstunde.",
+    useCases: [
+      "Lernen im Takt einer Schulstunde.",
+      "Klausurtraining unter echten Zeitbedingungen.",
+      "Eine Nachhilfestunde mit klarem Ende.",
+      "45/15-Blöcke: drei Runden füllen einen Vormittag.",
+      "Eine Doppelstunde in zwei Hälften mit Pause dazwischen.",
+    ],
+    sections: [
+      {
+        heading: "Lernen im Takt der Schulstunde",
+        body: "Die Schulstunde von 45 Minuten ist eine Konvention, an die sich viele seit der Grundschule gewöhnt haben. Genau das macht sie nützlich: Ein 45-Minuten-Block fühlt sich vertraut an und nicht wie eine Prüfung der eigenen Disziplin. Wer zu Hause lernt, kann den Tag wie einen Stundenplan aufbauen, mit festen Fächern pro Block und einer echten Pause dazwischen.",
+      },
+      {
+        heading: "Klausurtraining mit echter Uhr",
+        body: "Viele Klausuren in Schule und Ausbildung dauern eine oder mehrere Schulstunden. Eine Übungsklausur unter denselben Bedingungen zeigt dir, wo du Zeit verlierst. Starte den Timer, leg die Unterlagen weg und schreib, bis das Signal kommt. Die Korrektur gehört in die Pause oder auf später, nicht in den Countdown.",
+      },
+      {
+        heading: "Der 45/15-Rhythmus",
+        body: "45 Minuten Arbeit und 15 Minuten Pause teilen jede Stunde sauber auf: ein Block pro Stunde, Beginn zur vollen Stunde. Die Viertelstunde Pause reicht, um wirklich vom Schreibtisch wegzukommen. Der Rhythmus passt zu allen, denen 25 Minuten zu früh abbrechen, die aber trotzdem eine feste Struktur wollen.",
+      },
+    ],
+    faq: [
+      {
+        q: "Sind 45 Minuten zu lang zum Konzentrieren?",
+        a: "Für die meisten Erwachsenen nicht, wenn sie die Aufgabe verstehen. Fällt es dir schwer, starte mit 25 oder 30 Minuten und verlängere schrittweise.",
+      },
+      {
+        q: "Muss ich die vollen 15 Minuten Pause machen?",
+        a: "Ab dem zweiten Block lohnt es sich. Wer Pausen regelmäßig verkürzt, merkt das meist am Nachmittag.",
+      },
+      {
+        q: "Wie lerne ich zu Hause eine Doppelstunde lang?",
+        a: "Du musst die 90 Minuten nicht am Stück durchziehen wie in der Schule. Zwei Blöcke von 45 Minuten mit fünf bis zehn Minuten Pause dazwischen fallen vielen leichter, und der Timer zeigt dir, wann die zweite Hälfte beginnt.",
+      },
+      {
+        q: "Kann ich den Timer im Klassenzimmer groß anzeigen?",
+        a: "Ja, wo der Browser es erlaubt: Der Vollbild-Button vergrößert den Countdown, mit der Esc-Taste geht es zurück. Auf dem iPhone fehlt der Button, weil Browser dort kein Vollbild für Webseiten anbieten.",
+      },
+    ],
+    relatedArticleSlugs: [
+      "pomodoro-technik-leitfaden-anfaenger",
+      "ultradiane-rhythmen-fokus-zyklen",
+      "pomodoro-adhs",
+    ],
+    published: "2026-11-12",
+  },
+  {
+    slug: "timer-1-stunde",
+    lang: "de",
+    minutes: 60,
+    role: "focus",
+    breakMinutes: 10,
+    label: "1-Stunden",
+    title: "Timer 1 Stunde: Kostenloser 60-Minuten-Countdown",
+    description:
+      "Kostenloser Timer für eine Stunde mit 10 Minuten Pause. Für eine geblockte Fokusstunde im Kalender, eine Lernstunde oder eine feste Grenze für E-Mails.",
+    h1: "Timer 1 Stunde",
+    intro:
+      "Dieser Timer zählt sechzig Minuten herunter, angezeigt als 1:00:00, und bietet daneben eine Pause von zehn Minuten. Eine Stunde eignet sich für anspruchsvolle Aufgaben, sobald du drin bist, und als feste Grenze für alles, was sonst den ganzen Tag frisst.",
+    useCases: [
+      "Eine im Kalender geblockte Fokusstunde.",
+      "Eine Lernstunde mit anschließender Pause.",
+      "Eine Übungsstunde für Instrument oder Sprache.",
+      "Eine feste Grenze für E-Mails und Verwaltungskram.",
+      "Eine Probeklausur von einer Stunde.",
+    ],
+    sections: [
+      {
+        heading: "Die Fokusstunde im Kalender",
+        body: "Wer seinen Kalender anderen überlässt, findet darin selten eine ungestörte Stunde. Blocke sie dir selbst, am besten vor dem ersten Termin, und behandle sie wie ein Meeting mit dir selbst. Der Timer sorgt dafür, dass die Stunde auch endet: Beim Signal ist Schluss, statt dass der Fokusblock unbemerkt in die Mittagspause wächst.",
+      },
+      {
+        heading: "Die Stunde schützen",
+        body: "Eine lange Einheit lohnt sich nur, wenn nichts dazwischenkommt. Schließ vorher Chat und Mailprogramm, stell Benachrichtigungen stumm und schreib das eine Ergebnis auf, das die Stunde liefern soll. Taucht unterwegs ein anderer Gedanke auf, notiere ihn und mach weiter. Beim Signal nimmst du die zehn Minuten Pause, auch wenn du dich noch frisch fühlst.",
+      },
+      {
+        heading: "Eine Stunde als Grenze",
+        body: "Derselbe Timer funktioniert auch umgekehrt: für Aufgaben, die sich ausdehnen, sobald man sie lässt. Gib deinem Posteingang, der Verwaltung oder der Recherche eine Stunde, starte den Countdown und hör beim Signal auf. Wer weiß, dass die Zeit begrenzt ist, setzt innerhalb der Stunde automatisch klarere Prioritäten.",
+      },
+    ],
+    faq: [
+      {
+        q: "Kann ich mich eine ganze Stunde konzentrieren?",
+        a: "Viele schaffen das bei einer Aufgabe, die sie verstehen, vor allem nach ein paar kürzeren Einheiten zum Aufwärmen. Wenn eine Stunde lang wirkt, probier zuerst 45 Minuten.",
+      },
+      {
+        q: "Was tun, wenn ich nach 40 Minuten abschweife?",
+        a: "Steh kurz auf, trink etwas und mach weiter. Passiert dir das regelmäßig, ist die Stunde für diese Aufgabe zu lang: Versuch es mit 45 oder 50 Minuten. Ein Block, den du schaffst, bringt mehr als einer, gegen den du ankämpfst.",
+      },
+      {
+        q: "Warum steht 1:00:00 statt 60:00 auf dem Timer?",
+        a: "Ab einer Stunde zeigt der Timer Stunden, Minuten und Sekunden an, damit man 60:00 nicht für eine Uhrzeit hält.",
+      },
+      {
+        q: "Was macht der Link zur App?",
+        a: "Er öffnet Pomodorian und stellt deine gespeicherte Fokusdauer auf 60 Minuten. Die Pause bleibt die aus deinen Einstellungen, und du kannst beides jederzeit ändern.",
+      },
+    ],
+    relatedArticleSlugs: [
+      "ultradiane-rhythmen-fokus-zyklen",
+      "kontextwechsel-kosten-entwickler",
+      "homeoffice-fokussiert-bleiben",
+    ],
+    published: "2026-11-12",
+  },
 ];
