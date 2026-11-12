@@ -2,9 +2,9 @@ import type { TimerPage } from "./types";
 
 // French timer pages, from week 3 (2026-11-12). Volumes are monthly searches
 // in France from OpenSEO on 2026-10-29; see seo-agent/timer-pages/QUEUE.tsv.
-// Written for French readers (vouvoiement, as in the UI strings) around local
-// references: cohérence cardiaque 365, Code du travail, Grand oral du bac,
-// "Silence, on lit !", not translated from the English pages.
+// Written for French readers (vouvoiement, as in the UI strings). Each page
+// is built on French references and its own FAQ topics, so it does not
+// mirror the English or German page of the same duration.
 export const frTimerPages: TimerPage[] = [
   {
     slug: "minuteur-5-minutes",
@@ -14,49 +14,49 @@ export const frTimerPages: TimerPage[] = [
     label: "5 minutes",
     title: "Minuteur 5 minutes : compte à rebours gratuit",
     description:
-      "Minuteur de 5 minutes gratuit, en un clic : pour la pause courte Pomodoro, une séance de cohérence cardiaque ou l'interclasse.",
+      "Minuteur de 5 minutes gratuit, en un clic : pour une séance de cohérence cardiaque, l'interclasse ou la pause courte de la méthode Pomodoro.",
     h1: "Minuteur 5 minutes",
     intro:
-      "Cinq minutes de compte à rebours, puis une alarme. C'est la pause courte de la méthode Pomodoro, mais aussi la durée d'une séance de cohérence cardiaque ou d'un interclasse : assez pour souffler, trop court pour se perdre dans autre chose.",
+      "Cinq minutes, une alarme, rien d'autre. C'est la durée d'une séance de cohérence cardiaque, d'un interclasse au collège ou de la pause courte de la méthode Pomodoro : le temps de souffler, sans que la suite vous échappe.",
     useCases: [
-      "La pause courte entre deux sessions Pomodoro de 25 minutes.",
       "Une séance de cohérence cardiaque selon la méthode 365.",
       "L'interclasse, pour changer de salle sans courir.",
-      "Se lever, s'étirer et remplir son verre d'eau.",
-      "Un sas entre deux visioconférences.",
+      "La pause courte entre deux sessions Pomodoro.",
+      "Une pause pour tout le monde, fumeurs ou non.",
+      "Un temps calme avant de prendre la parole.",
     ],
     sections: [
-      {
-        heading: "La pause courte de la méthode Pomodoro",
-        body: "La méthode Pomodoro alterne 25 minutes de travail concentré et une pause de 3 à 5 minutes, avec une pause plus longue toutes les quatre sessions. Cinq minutes suffisent pour décrocher de la tâche sans perdre le fil : le cerveau souffle, la suite reste fraîche. À condition que la pause en soit une, c'est-à-dire sans messagerie ni fil d'actualité.",
-      },
       {
         heading: "Cinq minutes de cohérence cardiaque",
         body: "La cohérence cardiaque, popularisée en France par le médecin David O'Hare sous le nom de méthode 365, propose de respirer lentement, environ six respirations par minute, pendant cinq minutes, trois fois par jour. Lancez le minuteur, inspirez sur cinq secondes, expirez sur cinq secondes, et laissez l'alarme vous dire quand c'est terminé, sans regarder l'heure.",
       },
       {
-        heading: "Un sas entre deux rendez-vous",
-        body: "Enchaîner les visioconférences sans respirer, c'est arriver à la troisième avec la tête encore dans la première. Prévoyez cinq minutes entre deux réunions et lancez le minuteur dès que la première se termine : noter les décisions, se lever, regarder par la fenêtre. À l'alarme, vous êtes prêt pour la suivante, au lieu d'y entrer en courant.",
+        heading: "L'interclasse, en classe et ailleurs",
+        body: "Dans beaucoup de collèges et de lycées, cinq minutes séparent deux cours : le temps de ranger ses affaires, de changer de salle et de s'installer. Les enseignants peuvent afficher ce minuteur pour que tout le monde voie le temps qui reste. À la maison, le même principe aide à passer d'une matière à l'autre sans traîner entre les deux.",
+      },
+      {
+        heading: "Une pause, même sans cigarette",
+        body: "Dans bien des bureaux, les fumeurs s'accordent naturellement quelques minutes dehors, quand les autres restent rivés à l'écran. Rien n'empêche de s'offrir la même respiration sans cigarette : se lever, marcher jusqu'à la fenêtre, discuter deux minutes avec un collègue. Cinq minutes au minuteur, et vous revenez sans culpabiliser.",
       },
     ],
     faq: [
       {
-        q: "Cinq minutes de pause, est-ce suffisant ?",
-        a: "Entre deux sessions courtes, oui. Après quatre sessions, la méthode Pomodoro prévoit une pause plus longue, de 15 à 30 minutes.",
+        q: "Le minuteur donne-t-il le rythme des respirations ?",
+        a: "Non. Il décompte seulement les cinq minutes. Pour le rythme de cinq secondes à l'inspiration et cinq à l'expiration, comptez dans votre tête ; le minuteur vous évite simplement de surveiller l'heure.",
       },
       {
-        q: "Que se passe-t-il à la fin du compte à rebours ?",
-        a: "Une alarme retentit, puis le minuteur revient à 05:00, prêt pour la prochaine pause.",
+        q: "Combien de séances de cohérence cardiaque par jour ?",
+        a: "La méthode 365 en propose trois par jour, par exemple le matin, avant le déjeuner et en fin d'après-midi.",
       },
       {
-        q: "Puis-je ajouter un son d'ambiance ?",
-        a: "Oui. Sous le minuteur, choisissez pluie, forêt, cheminée, café ou lo-fi, seuls ou à plusieurs. Le son se met en pause avec le minuteur et s'arrête à la fin.",
+        q: "Peut-on l'afficher sur un tableau numérique ou un vidéoprojecteur ?",
+        a: "Oui, depuis le navigateur de l'ordinateur de la classe. Le bouton plein écran agrandit le compte à rebours là où le navigateur le permet, et la touche Échap ramène à la page.",
       },
     ],
     relatedArticleSlugs: [
       "guide-complet-pomodoro-debutants",
-      "pauses-productives-que-faire",
       "meditation-pauses-pomodoro",
+      "pauses-productives-que-faire",
     ],
     published: "2026-11-12",
   },
@@ -68,49 +68,49 @@ export const frTimerPages: TimerPage[] = [
     label: "10 minutes",
     title: "Minuteur 10 minutes : compte à rebours gratuit en ligne",
     description:
-      "Minuteur de 10 minutes gratuit : pour aérer la pièce, fermer sa journée de travail ou relire ses fiches avant un partiel. Sans inscription.",
+      "Minuteur de 10 minutes gratuit : pour aérer la pièce, lire avec un enfant ou couper les notifications en fin de journée. Sans inscription.",
     h1: "Minuteur 10 minutes",
     intro:
-      "Ce minuteur décompte dix minutes et sonne à la fin. Dix minutes, c'est assez pour vraiment couper ou boucler une petite chose de A à Z, et assez court pour trouver sa place dans n'importe quelle journée.",
+      "Appuyez sur Démarrer : dix minutes s'écoulent, l'alarme sonne. Dix minutes, c'est le temps qu'on recommande pour aérer une pièce, celui d'une lecture partagée avec un enfant, ou d'un vrai décrochage avant la soirée.",
     useCases: [
       "Aérer la pièce en grand, fenêtres ouvertes.",
-      "Fermer sa journée de télétravail avant de décrocher.",
-      "Relire ses fiches juste avant un partiel.",
-      "Prendre un café à la machine sans que ça dure une heure.",
-      "La pause après 50 minutes de travail.",
+      "Lire chaque soir avec un enfant qui apprend à lire.",
+      "Couper les notifications professionnelles avant la soirée.",
+      "Boucler une petite tâche du début à la fin.",
+      "Se préparer au calme avant une visioconférence importante.",
     ],
     sections: [
       {
         heading: "Dix minutes pour aérer",
-        body: "Les campagnes de santé publique recommandent d'aérer son logement au moins dix minutes par jour, même en hiver. En télétravail, on y pense rarement, alors que l'air d'une pièce fermée s'alourdit vite. Profitez d'une pause : ouvrez grand, lancez le minuteur, et refermez à l'alarme, au lieu de laisser la fenêtre ouverte en vous demandant depuis quand.",
+        body: "Les campagnes de santé publique recommandent d'aérer son logement au moins dix minutes par jour, même en hiver. En télétravail, on y pense rarement, alors que l'air d'une pièce fermée s'alourdit vite. Profitez d'une pause : ouvrez grand, lancez le minuteur et refermez à l'alarme, au lieu de laisser la fenêtre ouverte en vous demandant depuis quand.",
       },
       {
-        heading: "Le rituel de fin de journée",
-        body: "Le droit à la déconnexion existe dans le Code du travail, mais en télétravail, c'est souvent à soi de tracer la ligne. Dix minutes suffisent pour un rituel de fermeture : noter ce qui reste, écrire la première tâche de demain, fermer les onglets et ranger le bureau. À l'alarme, la journée est finie, et le cerveau le sait.",
+        heading: "Lire avec un enfant, un peu chaque jour",
+        body: "Quand un enfant apprend à lire, beaucoup d'enseignants conseillent de lire un peu avec lui chaque jour plutôt que longtemps de temps en temps. Dix minutes, c'est assez pour une page ou deux à voix haute, pas assez pour que la séance tourne au bras de fer. Le minuteur fixe la limite à votre place : à l'alarme, on s'arrête, même au milieu d'une phrase.",
       },
       {
-        heading: "Avant un partiel : relire, pas apprendre",
-        body: "Les dernières minutes avant un examen ne servent plus à apprendre du neuf. Utilisez-les pour relire calmement vos fiches : le plan, les formules, les deux ou trois points que vous vouliez absolument retenir. Dix minutes donnent un cadre clair, et quand l'alarme sonne, vous rangez tout et vous entrez dans la salle.",
+        heading: "Décrocher pour de bon",
+        body: "Le droit à la déconnexion est inscrit dans le Code du travail, mais en télétravail, le téléphone professionnel reste souvent à portée de main. Prenez dix minutes en fin de journée pour faire le ménage : mettre la messagerie en mode silencieux, désactiver les notifications de l'outil de discussion, poser le téléphone dans un tiroir. À l'alarme, la soirée commence vraiment.",
       },
     ],
     faq: [
       {
-        q: "Le minuteur est-il gratuit ?",
-        a: "Oui. Pas de compte, pas de publicité, rien à installer.",
+        q: "Faut-il aérer même quand il fait froid ?",
+        a: "Oui, c'est justement ce que recommandent les campagnes de santé publique : tous les jours, en grand, y compris l'hiver. Le minuteur évite de laisser la fenêtre ouverte plus que nécessaire.",
       },
       {
-        q: "Puis-je l'afficher en grand pour une classe ou une réunion ?",
-        a: "Oui, si le navigateur le permet : le bouton plein écran agrandit le compte à rebours, et la touche Échap vous ramène à la page. Sur iPhone, les navigateurs ne proposent pas le plein écran pour les pages web, le bouton n'apparaît donc pas.",
+        q: "Le minuteur continue-t-il dans un onglet en arrière-plan ?",
+        a: "Oui. Le temps restant est calculé à partir de l'heure réelle et reste exact à votre retour. Certains navigateurs peuvent toutefois retarder l'alarme d'une minute au plus dans un onglet en arrière-plan, sauf si un son d'ambiance est en cours.",
       },
       {
-        q: "Le minuteur continue-t-il si je change d'onglet ?",
-        a: "Oui. Le temps restant est calculé à partir de l'heure réelle et reste exact à votre retour. Dans un onglet en arrière-plan, certains navigateurs peuvent retarder l'alarme d'une minute au plus, sauf si un son d'ambiance est en cours.",
+        q: "Peut-on lancer plusieurs fois dix minutes d'affilée ?",
+        a: "Oui. À l'alarme, le minuteur revient à 10:00 : un clic sur Démarrer suffit pour repartir.",
       },
     ],
     relatedArticleSlugs: [
       "organiser-journee-teletravail",
-      "pomodoro-etudiants-reviser-efficacement",
       "pauses-productives-que-faire",
+      "recuperer-concentration-apres-interruption",
     ],
     published: "2026-11-12",
   },
@@ -122,49 +122,49 @@ export const frTimerPages: TimerPage[] = [
     label: "15 minutes",
     title: "Minuteur 15 minutes : pause longue et micro-sieste",
     description:
-      "Minuteur de 15 minutes gratuit : la pause longue de la méthode Pomodoro, un quart d'heure de lecture ou une micro-sieste en début d'après-midi.",
+      "Minuteur de 15 minutes gratuit : un quart d'heure de lecture, la récréation, la répétition d'un exposé ou la pause longue Pomodoro.",
     h1: "Minuteur 15 minutes",
     intro:
-      "Un quart d'heure, décompté, avec une alarme à la fin. C'est la pause longue de la méthode Pomodoro, celle qui vient après quatre sessions de travail, et un format qui a fait ses preuves ailleurs, de la micro-sieste au quart d'heure de lecture.",
+      "Un quart d'heure, et l'alarme sonne. C'est la durée d'une récréation à l'école élémentaire, du quart d'heure de lecture que certaines écoles ont rendu quotidien, ou d'un exposé de classe, et c'est aussi le bas de la fourchette de la pause longue Pomodoro.",
     useCases: [
-      "La pause longue après quatre sessions Pomodoro.",
       "Un quart d'heure de lecture, téléphone posé.",
+      "Chronométrer une récréation ou un temps libre.",
+      "Répéter un exposé de quinze minutes en temps réel.",
       "Une micro-sieste en début d'après-midi.",
-      "Faire un tour du pâté de maisons.",
-      "Répéter une présentation en temps réel.",
+      "La pause longue après quatre sessions Pomodoro.",
     ],
     sections: [
       {
-        heading: "La pause longue de la méthode Pomodoro",
-        body: "Après quatre sessions de 25 minutes, la méthode Pomodoro prévoit une pause plus longue, de 15 à 30 minutes. C'est celle-là qui recharge vraiment : manger quelque chose, sortir à la lumière du jour, parler à quelqu'un d'autre que son écran. Quinze minutes en sont le bas de la fourchette et conviennent à la plupart des journées.",
-      },
-      {
         heading: "Le quart d'heure de lecture",
-        body: "L'association Silence, on lit ! a popularisé dans des écoles et des entreprises un principe simple : chaque jour, tout le monde s'arrête un quart d'heure pour lire le livre de son choix. Vous pouvez l'appliquer seul. Posez le téléphone dans une autre pièce, lancez le minuteur, et lisez jusqu'à l'alarme. C'est court, mais quotidien, c'est beaucoup de pages sur une année.",
+        body: "L'association Silence, on lit ! a popularisé dans des écoles et des entreprises un principe simple : chaque jour, tout le monde s'arrête un quart d'heure pour lire le livre de son choix. Vous pouvez l'appliquer seul. Posez le téléphone dans une autre pièce, lancez le minuteur et lisez jusqu'à l'alarme. C'est court, mais chaque jour, cela fait beaucoup de pages sur une année.",
       },
       {
-        heading: "Une micro-sieste qui ne laisse pas groggy",
-        body: "On recommande souvent les siestes courtes, autour de 10 à 20 minutes, parce qu'elles s'arrêtent avant le sommeil profond, celui qui rend le réveil pénible. Allongez-vous, lancez le minuteur et laissez l'alarme vous réveiller. Sur téléphone, laissez la page ouverte et ne verrouillez pas l'appareil vous-même : tant que le minuteur tourne, la page garde l'écran allumé si votre navigateur le permet.",
+        heading: "Répéter un exposé en temps réel",
+        body: "Un exposé de quinze minutes se prépare montre en main. Répétez-le à voix haute avec le minuteur, et notez où vous en êtes au milieu : si l'introduction a déjà mangé sept minutes, c'est elle qu'il faut couper. Deux ou trois passages suffisent souvent pour trouver le bon rythme, et le jour J, vous saurez à quoi ressemblent quinze minutes.",
+      },
+      {
+        heading: "La récréation, côté parents et enseignants",
+        body: "À l'école élémentaire, la récréation dure en général un quart d'heure par demi-journée. À la maison, le même format marche bien entre deux devoirs : quinze minutes vraiment libres, puis retour au bureau à l'alarme. Le minuteur évite le débat sur le temps qui reste, puisque tout le monde le voit.",
       },
     ],
     faq: [
       {
-        q: "Combien de temps doit durer la pause longue ?",
-        a: "Entre 15 et 30 minutes, après quatre sessions. Un quart d'heure suffit la plupart du temps ; prenez davantage après une matinée exigeante.",
+        q: "Que lire en un quart d'heure ?",
+        a: "Quelques pages d'un roman, un long article, un chapitre de bande dessinée. Un livre papier évite les notifications qui interrompent la lecture sur écran.",
       },
       {
-        q: "Puis-je enchaîner deux quarts d'heure ?",
-        a: "Oui. À l'alarme, le minuteur revient à 15:00, et un clic sur Démarrer lance le second. Cela fait une demi-heure, par exemple pour la pause déjeuner.",
+        q: "Et pour une micro-sieste ?",
+        a: "On recommande souvent 10 à 20 minutes, pour se réveiller avant le sommeil profond et ne pas se sentir vaseux. Un quart d'heure laisse quelques minutes pour s'endormir.",
       },
       {
-        q: "Puis-je mettre en pause puis reprendre ?",
-        a: "Oui. Pause conserve le temps restant, Reprendre repart de là, et Réinitialiser remet le minuteur à 15 minutes.",
+        q: "Que faire si l'alarme ne sonne pas sur mon téléphone ?",
+        a: "Vérifiez le volume, laissez la page ouverte et ne verrouillez pas l'appareil vous-même. Tant que le minuteur tourne, la page garde l'écran allumé si votre navigateur le permet.",
       },
     ],
     relatedArticleSlugs: [
-      "guide-complet-pomodoro-debutants",
+      "habitude-concentration-quotidienne-30-jours",
       "pauses-never-dumb",
-      "rythmes-ultradiens-cycles-concentration-naturels",
+      "guide-complet-pomodoro-debutants",
     ],
     published: "2026-11-12",
   },
@@ -177,49 +177,49 @@ export const frTimerPages: TimerPage[] = [
     label: "20 minutes",
     title: "Minuteur 20 minutes : compte à rebours pour se concentrer",
     description:
-      "Minuteur de 20 minutes gratuit avec pause de 5 minutes : pour réviser par petites sessions ou s'entraîner au Grand oral du bac.",
+      "Minuteur de 20 minutes gratuit avec pause de 5 minutes : pour s'entraîner au Grand oral du bac ou prendre enfin sa pause légale de 20 minutes.",
     h1: "Minuteur 20 minutes",
     intro:
-      "Vingt minutes de concentration, puis cinq minutes de pause : à l'alarme, le minuteur passe de lui-même sur la pause, il suffit de cliquer sur Démarrer. Un peu plus court qu'un Pomodoro classique, ce format aide à se lancer quand la tâche paraît lourde ou que la concentration flanche.",
+      "Vingt minutes, c'est la durée du Grand oral du bac et celle de la pause minimale prévue par le Code du travail. Ce minuteur les décompte, avec une pause de cinq minutes à côté pour qui l'utilise comme session de travail courte.",
     useCases: [
       "S'entraîner au Grand oral du bac en conditions réelles.",
-      "Réviser par petites sessions, avec une pause entre chaque.",
-      "Faire les devoirs d'un enfant par étapes.",
-      "Commencer une tâche qu'on repousse depuis des jours.",
+      "Prendre vraiment sa pause légale de vingt minutes.",
+      "Accompagner les devoirs d'un enfant, par étapes.",
+      "Une session de révision courte avec auto-interrogation.",
       "Un circuit de renforcement ou d'étirements.",
     ],
     sections: [
       {
         heading: "S'entraîner au Grand oral",
-        body: "Au baccalauréat, le Grand oral dure vingt minutes, après vingt minutes de préparation : environ cinq minutes de présentation, dix minutes d'échange avec le jury, puis cinq minutes sur le projet d'orientation. S'entraîner avec un vrai compte à rebours apprend à tenir ce rythme. Lancez le minuteur pour la préparation, puis relancez-le pour l'épreuve, à voix haute, sans tricher sur le temps.",
+        body: "Au baccalauréat, le Grand oral dure vingt minutes, après vingt minutes de préparation : une présentation, puis un échange avec le jury. S'entraîner avec un vrai compte à rebours apprend à tenir le temps. Lancez le minuteur pour la préparation ; à l'alarme, revenez sur « Minuteur 20 min » et cliquez sur Démarrer pour l'épreuve, à voix haute, sans tricher.",
       },
       {
         heading: "Vingt minutes, c'est aussi la pause légale",
-        body: "Le Code du travail prévoit qu'à partir de six heures de travail dans la journée, le salarié a droit à une pause d'au moins vingt minutes consécutives. Si vous avez tendance à la grignoter en restant devant l'écran, ce minuteur peut servir à l'inverse : lancez-le au début de la pause, levez-vous, et ne revenez qu'à l'alarme.",
+        body: "Le Code du travail prévoit qu'à partir de six heures de travail dans la journée, le salarié a droit à une pause d'au moins vingt minutes consécutives. Si vous avez tendance à la grignoter en restant devant l'écran, lancez le minuteur au début de la pause, levez-vous, et ne revenez qu'à l'alarme.",
       },
       {
-        heading: "Réviser par petites sessions",
-        body: "Réviser trois heures d'affilée donne l'impression de travailler, mais l'attention décroche bien avant la fin. Des sessions de vingt minutes, avec une vraie pause entre chacune, obligent à se tester régulièrement au lieu de relire en boucle. Fermez le cours, essayez de retrouver l'essentiel de mémoire, et vérifiez ensuite.",
+        heading: "Réviser en s'interrogeant",
+        body: "Relire un cours donne l'impression de travailler, mais on retient mieux en se testant. Une session de vingt minutes est l'occasion de le faire : lisez une partie, fermez le cours, essayez de retrouver l'essentiel de mémoire sur une feuille, puis vérifiez. Cinq minutes de pause, et on passe à la partie suivante.",
       },
     ],
     faq: [
       {
-        q: "Pourquoi 20 minutes plutôt que 25 ?",
-        a: "Les 25 minutes de la méthode Pomodoro sont une convention. En cas de difficulté de concentration, par exemple avec un TDAH, une session plus courte peut faciliter le démarrage. Si tout va bien, vous allongerez ensuite.",
+        q: "Comment enchaîner préparation et épreuve du Grand oral ?",
+        a: "Lancez les vingt minutes de préparation. À l'alarme, le minuteur passe sur la pause : cliquez sur « Minuteur 20 min », puis sur Démarrer, pour chronométrer l'épreuve.",
       },
       {
         q: "À quoi sert le lien vers l'application complète ?",
-        a: "Il ouvre Pomodorian et règle votre durée de concentration enregistrée sur 20 minutes, jusqu'à ce que vous la changiez dans les réglages. La durée de pause reste celle de vos réglages. L'application ajoute une liste de tâches, un planificateur par IA et des statistiques de concentration.",
+        a: "Il ouvre Pomodorian et règle votre durée de concentration enregistrée sur 20 minutes, jusqu'à ce que vous la changiez dans les réglages. La durée de pause reste celle de vos réglages.",
       },
       {
-        q: "Faut-il un compte ou une application ?",
-        a: "Non. Le minuteur fonctionne directement dans le navigateur, sans inscription ni installation. Le son d'ambiance choisi est mémorisé par votre navigateur pour la prochaine visite.",
+        q: "Le minuteur fonctionne-t-il sur téléphone pendant un oral blanc ?",
+        a: "Oui, dans le navigateur, sans application. Laissez la page ouverte : pendant le décompte, elle garde l'écran allumé si votre navigateur le permet.",
       },
     ],
     relatedArticleSlugs: [
       "pomodoro-etudiants-reviser-efficacement",
-      "pomodoro-tdah",
       "meilleures-techniques-etude-science",
+      "pomodoro-tdah",
     ],
     published: "2026-11-12",
   },
@@ -232,49 +232,49 @@ export const frTimerPages: TimerPage[] = [
     label: "30 minutes",
     title: "Minuteur 30 minutes : compte à rebours gratuit",
     description:
-      "Minuteur de 30 minutes gratuit avec pause de 5 minutes : une demi-heure de sport par jour, une séance de travail ou un appel tenu à l'heure.",
+      "Minuteur de 30 minutes gratuit avec pause de 5 minutes : une demi-heure de sport, un entraînement à l'examen du code ou les devoirs du soir.",
     h1: "Minuteur 30 minutes",
     intro:
-      "Une demi-heure, décomptée, avec une alarme à la fin et une pause de cinq minutes juste à côté. Trente minutes, c'est l'unité que tout le monde a déjà en tête : un créneau d'agenda, une séance de sport, une demi-heure de révisions le soir.",
+      "Trente minutes au compteur, une pause de cinq minutes en réserve. Une demi-heure, c'est la dose quotidienne d'activité physique recommandée aux adultes, la durée approximative de l'examen du code de la route, et un bon format pour les devoirs du soir.",
     useCases: [
-      "La demi-heure d'activité physique quotidienne.",
-      "Une séance de travail de 30 minutes suivie de 5 minutes de pause.",
-      "Une demi-heure de révisions le soir, pas une de plus.",
-      "Tenir un appel ou une réunion dans son créneau.",
-      "Avancer sur la paperasse sans y passer l'après-midi.",
+      "La demi-heure d'activité physique de la journée.",
+      "Une série d'entraînement au code de la route.",
+      "Les devoirs du soir, avec une fin annoncée.",
+      "Une séance de travail suivie de 5 minutes de pause.",
+      "Une lecture de dossier avant une réunion.",
     ],
     sections: [
       {
         heading: "La demi-heure d'activité physique",
-        body: "Les recommandations françaises de santé publique invitent les adultes à pratiquer au moins trente minutes d'activité physique dynamique par jour, et l'école élémentaire a généralisé trente minutes d'activité physique quotidienne. Marche rapide, vélo, séance à la maison : avec un minuteur, la demi-heure a un début et une fin nets, ce qui aide à s'y tenir.",
+        body: "Les recommandations françaises de santé publique invitent les adultes à pratiquer au moins trente minutes d'activité physique dynamique par jour, et le ministère a généralisé en 2022 trente minutes d'activité physique quotidienne à l'école primaire. Marche rapide, vélo, séance à la maison : avec un minuteur, la demi-heure a un début et une fin nets, ce qui aide à s'y tenir.",
       },
       {
-        heading: "La paperasse en un bloc",
-        body: "Déclaration d'impôts, dossier de mutuelle, factures à classer : la paperasse a le don de s'étaler sur tout un week-end. Donnez-lui une demi-heure, lancez le minuteur et avancez jusqu'à l'alarme. Ce qui n'est pas fini passe au prochain bloc, mais il ne déborde plus sur le reste de la journée.",
+        heading: "S'entraîner au code de la route",
+        body: "L'examen théorique du code se passe sur une série de quarante questions, en une demi-heure environ. S'entraîner dans les mêmes conditions aide à gérer le rythme : lancez le minuteur, enchaînez une série sans faire de pause, puis corrigez vos erreurs une fois l'alarme passée. Vous saurez si vous bloquez trop longtemps sur certaines questions.",
       },
       {
-        heading: "Une variante du Pomodoro",
-        body: "Un rythme de 30 minutes de travail et 5 minutes de pause garde l'esprit de la méthode Pomodoro tout en collant aux créneaux de l'agenda. Deux sessions et leurs pauses tiennent en un peu plus d'une heure. C'est une bonne étape pour ceux qui trouvent 25 minutes un peu court, sans aller jusqu'aux blocs de 50 minutes.",
+        heading: "Les devoirs du soir, avec une fin annoncée",
+        body: "Les devoirs qui n'en finissent pas usent tout le monde. Annoncez une demi-heure, lancez le minuteur à la vue de l'enfant et tenez-vous-en à l'alarme : ce qui n'est pas fini sera repris demain ou signalé à l'enseignant. Une fin connue d'avance rend souvent le début plus facile.",
       },
     ],
     faq: [
       {
-        q: "Combien de sessions de 30 minutes par jour ?",
-        a: "Il n'y a pas de bon chiffre. Prévoyez celles dont votre travail a besoin, et arrêtez d'en ajouter quand vous sentez nettement l'attention baisser.",
+        q: "Trente minutes de sport d'un seul coup ou en plusieurs fois ?",
+        a: "Les deux comptent. Si une demi-heure d'affilée est difficile à caser, plusieurs séances plus courtes dans la journée vont aussi dans le bon sens.",
       },
       {
-        q: "Quelle pause après 30 minutes ?",
-        a: "Cinq minutes, c'est le mode pause intégré au minuteur. Après trois ou quatre sessions, prenez une pause longue de 15 à 30 minutes.",
+        q: "Peut-on écouter de la musique pendant la séance ?",
+        a: "Oui. Sous le minuteur, le son lo-fi ou un son de pluie peut tourner pendant le décompte ; il se met en pause avec le minuteur et s'arrête à l'alarme.",
       },
       {
-        q: "Le lien vers l'application change-t-il mes réglages ?",
-        a: "Oui : il règle votre durée de concentration enregistrée sur 30 minutes. Vous pouvez la modifier à tout moment dans les réglages de l'application.",
+        q: "Et si les devoirs ne sont pas finis à l'alarme ?",
+        a: "Faites une courte pause, puis décidez ensemble : une seconde demi-heure, ou la suite demain. L'important est que la limite ait été posée avant de commencer.",
       },
     ],
     relatedArticleSlugs: [
       "personnaliser-intervalles-pomodoro",
       "vaincre-procrastination-pomodoro",
-      "organiser-journee-teletravail",
+      "meilleures-techniques-etude-science",
     ],
     published: "2026-11-12",
   },
