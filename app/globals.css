@@ -92,6 +92,32 @@ body {
   border: 1px solid var(--border);
 }
 
+/* No flash of English. The home page is prerendered in English; for a visitor
+   whose language is another one, the inline locale-init script (app/layout.tsx)
+   sets data-i18n-pending on <html> before first paint, which hides the
+   translatable text of the app (elements marked data-i18n) while keeping the
+   layout. The app removes the attribute on its first client render, already in
+   the right language. If JavaScript never runs, the delayed animation reveals
+   the English text after 2 seconds. Once the app code runs and is fetching
+   the visitor's copy, it switches the attribute to "loading", which stops that
+   timer: the app reveals the text itself, translated, or in English after a
+   few seconds if the copy cannot be fetched. English visitors never get the
+   attribute. */
+html[data-i18n-pending] [data-i18n] {
+  visibility: hidden;
+  animation: i18n-reveal 0s linear 2s forwards;
+}
+
+html[data-i18n-pending="loading"] [data-i18n] {
+  animation: none;
+}
+
+@keyframes i18n-reveal {
+  to {
+    visibility: visible;
+  }
+}
+
 /* iOS Safari zooms the whole page when a focused field has text under 16px,
    and does not zoom back out. Unlayered on purpose, so it wins over the
    size utilities on touch devices only. */

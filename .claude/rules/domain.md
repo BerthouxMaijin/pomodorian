@@ -25,12 +25,21 @@
 - Clés définies dans `lib/types.ts` (STORAGE_KEYS)
 - Hook générique `useLocalStorage.ts` pour la persistance
 
+## Langues de l'app
+- 8 langues (`UiLocale` : en, fr, es, de, pt, it, ja, zh). Textes du coeur de l'app dans `lib/i18n/app/` : `types.ts` (`AppCopy`) + un fichier par langue, donc une clé manquante est une erreur de type
+- Tout texte visible (y compris `aria-label` et `title`) passe par `useAppCopy()` : jamais de chaîne en dur dans un composant de l'app
+- Un seul réglage `language` (`auto` ou une langue). Résolution : `language` explicite, sinon ancien `aiLanguage` différent de `en`, sinon langue du navigateur. Hook : `useUiLocale()`. Il pilote l'interface, les dates (`lib/i18n/format.ts`) et le planificateur IA
+- L'anglais est livré avec la page ; les 7 autres langues sont chargées à la demande (un petit fichier chacune)
+- La page d'accueil reste prérendue en anglais (SEO). Pas de flash d'anglais : le script inline `locale-init` de `app/layout.tsx` masque les textes marqués `data-i18n` jusqu'à ce que la langue soit chargée (secours CSS à 2s). Tout nouveau texte présent dans le HTML prérendu de `/` doit porter `data-i18n`
+- Restent en anglais : `InfoSection`, `Footer`, pages SEO / blog / timers (langue propre à chaque page), export CSV/Markdown, page hors ligne du service worker
+- Sous 360px de large, les onglets de mode et la grille des sons sont resserrés : vérifier toute nouvelle étiquette à 320px dans les 8 langues
+
 ## AI Planner
 - Route POST `/api/ai-planner`
 - Utilise Claude Haiku 4.5 (Anthropic SDK)
 - Rate-limité : 10 requêtes/heure/IP
 - Input : objectif texte libre → Output : JSON liste de tâches
-- Prompt template dans `lib/ai-prompt.ts` (multilingue)
+- Prompt template dans `lib/ai-prompt.ts` (multilingue) ; la langue envoyée est celle de `useUiLocale()`
 
 ## Feedback / bug reports
 - Route POST `/api/feedback` : formulaire in-app (modale `FeedbackPrompt`, 8 langues) → email via Resend

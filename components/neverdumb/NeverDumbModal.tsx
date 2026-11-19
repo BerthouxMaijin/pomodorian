@@ -5,7 +5,7 @@ import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { track } from "@/lib/track";
 import { formatTime } from "@/lib/utils";
 import type { UiLocale } from "@/lib/i18n/locales";
-import { useBrowserLocale } from "@/hooks/useBrowserLocale";
+import { useUiLocale } from "@/hooks/useUiLocale";
 import { useNeverDumbStats } from "@/hooks/useNeverDumbStats";
 import { EXERCISES_BY_MODE, FOCUS_RING, modeOf, poolSize } from "./catalog";
 import { NEVER_DUMB_COPY, type ExerciseId } from "./neverDumbCopy";
@@ -77,7 +77,7 @@ export function NeverDumbModal({
   onPauseAmbients,
   onResumeAmbients,
 }: NeverDumbModalProps) {
-  const locale = useBrowserLocale();
+  const locale = useUiLocale();
   const copy = NEVER_DUMB_COPY[locale];
   const stats = useNeverDumbStats();
   const { takeFromPool, recordCompletion } = stats;

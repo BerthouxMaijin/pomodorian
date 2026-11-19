@@ -16,7 +16,12 @@ interface TimerProps {
   /** H:MM:SS for countdowns of an hour or more (timer tool pages). The app
    * keeps MM:SS, so a 60-minute pomodoro still reads 60:00. */
   showHours?: boolean;
+  /** aria-label of the countdown. The app passes its translated copy; the
+   * timer tool pages, which have their own per-page language, keep this. */
+  remainingLabel?: (time: string) => string;
 }
+
+const englishRemaining = (time: string) => `${time} remaining`;
 
 function formatWithHours(seconds: number): string {
   if (seconds < 3600) return formatTime(seconds);
@@ -25,7 +30,13 @@ function formatWithHours(seconds: number): string {
   return `${h}:${rest}`;
 }
 
-export function Timer({ timeRemaining, progress, mode, showHours }: TimerProps) {
+export function Timer({
+  timeRemaining,
+  progress,
+  mode,
+  showHours,
+  remainingLabel = englishRemaining,
+}: TimerProps) {
   const offset = CIRCUMFERENCE * (1 - progress);
   const colors = MODE_COLORS[mode];
   const display = showHours ? formatWithHours(timeRemaining) : formatTime(timeRemaining);
@@ -34,7 +45,7 @@ export function Timer({ timeRemaining, progress, mode, showHours }: TimerProps) 
     <div
       className="relative flex items-center justify-center"
       role="timer"
-      aria-label={`${display} remaining`}
+      aria-label={remainingLabel(display)}
     >
       <svg
         aria-hidden="true"

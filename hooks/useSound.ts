@@ -45,6 +45,10 @@ const INPUT_EVENTS = [
   "touchstart",
 ] as const;
 
+// Alarm keys come from stored settings, so they are looked up as plain strings:
+// an unknown key simply plays nothing.
+const ALARM_SOURCES: Record<string, { src: string } | undefined> = ALARM_SOUNDS;
+
 export function useSound() {
   const audioRefs = useRef<Record<string, HTMLAudioElement>>({});
   // Persisted: someone who built a mix should find it again on their next
@@ -330,7 +334,7 @@ export function useSound() {
   const duckTimer = useRef<ReturnType<typeof setInterval> | null>(null);
 
   const getAlarmElement = (soundKey: string): HTMLAudioElement | null => {
-    const sound = ALARM_SOUNDS[soundKey];
+    const sound = ALARM_SOURCES[soundKey];
     if (!sound) return null;
     let audio = alarmEls.current[soundKey];
     if (!audio) {
@@ -501,7 +505,7 @@ export function useSound() {
 
   // Settings preview: one ring, from a gesture, so it also unlocks that sound.
   const previewAlarm = useCallback((soundKey: string, volume: number) => {
-    if (!ALARM_SOUNDS[soundKey]) return;
+    if (!ALARM_SOURCES[soundKey]) return;
     primedAlarms.current[soundKey] = true;
     startAlarm(soundKey, volume, 1);
     // eslint-disable-next-line react-hooks/exhaustive-deps -- startAlarm only touches refs

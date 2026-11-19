@@ -2,12 +2,15 @@
 
 import { useState, useRef, useEffect } from "react";
 import { cn } from "@/lib/utils";
-import type { DisplayTask } from "@/hooks/useTaskHistory";
+import {
+  DELETED_TASK_TITLE,
+  UNTRACKED_TASK_TITLE,
+  type DisplayTask,
+} from "@/hooks/useTaskHistory";
 import { TaskEditor, type TaskChanges } from "./TaskEditor";
-
-const COPY = {
-  edit: "Edit task",
-};
+import { useAppCopy } from "@/hooks/useAppCopy";
+import { useUiLocale } from "@/hooks/useUiLocale";
+import { formatNumber } from "@/lib/i18n/format";
 
 interface TaskItemProps {
   task: DisplayTask;
@@ -35,6 +38,9 @@ export function TaskItem({
   dragHandle,
   isDragging = false,
 }: TaskItemProps) {
+  const locale = useUiLocale();
+  const copy = useAppCopy();
+  const COPY = copy.tasks;
   const [isEditing, setIsEditing] = useState(false);
   const editButtonRef = useRef<HTMLButtonElement>(null);
   // Set when the editor closes, so focus goes back to the pencil once the row
@@ -108,8 +114,8 @@ export function TaskItem({
       aria-label={
         canActivate
           ? isActive
-            ? `${task.title} — linked to the timer, click to unlink`
-            : `${task.title} — link the timer to this task`
+            ? COPY.linked(task.title)
+            : COPY.link(task.title)
           : undefined
       }
     >
@@ -131,7 +137,7 @@ export function TaskItem({
           if (canToggle) onToggle();
         }}
         disabled={!canToggle}
-        aria-label={task.completed ? "Mark as not done" : "Mark as done"}
+        aria-label={task.completed ? COPY.markNotDone : COPY.markDone}
         aria-pressed={task.completed}
         className={cn(
           "w-5 h-5 mt-0.5 rounded-md border-2 flex-shrink-0 flex items-center justify-center transition-colors",
@@ -174,13 +180,17 @@ export function TaskItem({
           setIsEditing(true);
         }}
       >
-        {task.title}
+        {task.isGhost && task.key === "untracked" && task.title === UNTRACKED_TASK_TITLE
+          ? COPY.untracked
+          : task.isGhost && task.title === DELETED_TASK_TITLE
+            ? COPY.deletedTask
+            : task.title}
       </span>
 
       {/* Pomodoro count */}
       {showDailyStats || task.isGhost ? (
         <span className="text-xs text-muted tabular-nums flex-shrink-0 mt-0.5">
-          {task.pomodorosForDay} · {task.minutesForDay}m
+          {formatNumber(task.pomodorosForDay, locale)} · {copy.units.minutes(formatNumber(task.minutesForDay, locale))}
         </span>
       ) : (
         task.estimatedPomodoros !== null &&
@@ -194,7 +204,7 @@ export function TaskItem({
       {/* AI badge */}
       {task.aiGenerated && (
         <span className="text-[10px] px-1.5 py-0.5 rounded bg-purple-500/20 text-purple-300 flex-shrink-0">
-          AI
+          {COPY.aiBadge}
         </span>
       )}
 
@@ -252,7 +262,7 @@ export function TaskItem({
             canEdit && "[@media(pointer:coarse)]:hidden",
             "relative before:absolute before:-inset-3 before:content-['']"
           )}
-          aria-label="Delete task"
+          aria-label={COPY.deleteTask}
         >
           <svg
             width="14"

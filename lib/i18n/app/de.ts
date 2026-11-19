@@ -1,0 +1,158 @@
+import type { AppCopy } from "./types";
+
+export const de: AppCopy = {
+  modes: {
+    pomodoro: "Pomodoro",
+    shortBreak: "Kurze Pause",
+    longBreak: "Lange Pause",
+  },
+  documentTitle: (time, mode) => `${time} - ${mode}`,
+
+  timer: {
+    modeGroupLabel: "Timer-Modus",
+    remaining: (time) => `Noch ${time}`,
+    start: "START",
+    pause: "PAUSE",
+    resume: "WEITER",
+    skipToBreak: "Zur Pause springen",
+    skipBreak: "Pause überspringen",
+    reset: "Timer zurücksetzen",
+    timeToFocus: "Zeit für Fokus!",
+  },
+
+  notifications: {
+    breakTime: "Gut gemacht! Zeit für eine Pause.",
+    focusTime: "Die Pause ist vorbei. Zurück an die Arbeit!",
+  },
+
+  undo: {
+    stoppedAt: "Pomodoro gestoppt bei",
+    undo: "Rückgängig",
+    undoHint: "Rückgängig (Z)",
+  },
+
+  header: {
+    blog: "Blog",
+    pomodorosCompleted: "Abgeschlossene Pomodoros",
+    analytics: "Statistik",
+    reportHint: "Bericht (R)",
+    settings: "Einstellungen",
+    settingsHint: "Einstellungen (S)",
+  },
+
+  sounds: {
+    toggle: "Ambient-Sounds",
+    names: {
+      rain: "Regen",
+      forest: "Wald",
+      fireplace: "Kamin",
+      cafe: "Café",
+      lofi: "Lo-fi",
+    },
+    volume: (name) => `Lautstärke: ${name}`,
+  },
+
+  tasks: {
+    previousDay: "Vorheriger Tag",
+    nextDay: "Nächster Tag",
+    today: "Heute",
+    emptyToday: "Noch keine Aufgaben.",
+    emptyPast: "An diesem Tag wurden keine Aufgaben erfasst.",
+    newTaskPlaceholder: "Woran arbeitest du?",
+    titleLabel: "Titel der Aufgabe",
+    cancel: "Abbrechen",
+    add: "Hinzufügen",
+    addTask: "+ Aufgabe hinzufügen",
+    planWithAI: "Mit KI planen",
+    linked: (title) =>
+      `${title}, mit dem Timer verknüpft. Klicken, um die Verknüpfung zu lösen.`,
+    link: (title) => `${title}, Timer mit dieser Aufgabe verknüpfen`,
+    markDone: "Als erledigt markieren",
+    markNotDone: "Als offen markieren",
+    edit: "Aufgabe bearbeiten",
+    delete: "Löschen",
+    deleteTask: "Aufgabe löschen",
+    save: "Speichern",
+    reorder: (title) =>
+      `${title} verschieben. Mit den Pfeiltasten nach oben und unten verschieben.`,
+    aiBadge: "KI",
+    untracked: "Fokuszeit ohne Aufgabe",
+    deletedTask: "(gelöschte Aufgabe)",
+    estimateLabel: "Pomodoros",
+    estimateDecrease: "Ein Pomodoro weniger",
+    estimateIncrease: "Ein Pomodoro mehr",
+  },
+
+  units: {
+    minutes: (n) => `${n}\u00a0Min.`,
+    hours: (n) => `${n}h`,
+    days: (n) => `${n}\u00a0T.`,
+  },
+
+  settings: {
+    title: "Einstellungen",
+    close: "Schließen",
+    timerSection: "Timer (Minuten)",
+    longBreakInterval: "Pomodoros bis zur langen Pause",
+    automation: "Automatik",
+    autoStartBreaks: "Pausen automatisch starten",
+    autoStartPomodoros: "Pomodoros automatisch starten",
+    sound: "Ton",
+    alarmSound: "Alarmton",
+    alarmSounds: {
+      gentle: "Sanft",
+      classic: "Digitaler Alarm",
+      bell: "Glocke",
+    },
+    volume: "Lautstärke",
+    display: "Anzeige",
+    language: "Sprache",
+    languageAuto: "Automatisch",
+    showTimeInTitle: "Zeit im Tab-Titel anzeigen",
+    notifications: "Desktop-Benachrichtigungen",
+    theme: "Design",
+    themeSystem: "System",
+    themeLight: "Hell",
+    themeDark: "Dunkel",
+  },
+
+  shortcuts: {
+    title: "Tastenkürzel",
+    dialogLabel: "Tastenkürzel",
+    close: "Schließen",
+    actions: {
+      " ": "Timer starten oder pausieren",
+      "1": "Zu Pomodoro wechseln",
+      "2": "Zur kurzen Pause wechseln",
+      "3": "Zur langen Pause wechseln",
+      s: "Einstellungen öffnen oder schließen",
+      r: "Bericht öffnen oder schließen",
+    },
+    spaceKey: "Leertaste",
+    showShortcuts: "Tastenkürzel anzeigen",
+  },
+
+  report: {
+    title: "Statistik",
+    dialogLabel: "Bericht",
+    close: "Schließen",
+    periods: { day: "Tag", week: "Woche", month: "Monat" },
+    previousPeriod: "Vorheriger Zeitraum",
+    nextPeriod: "Nächster Zeitraum",
+    now: "Jetzt",
+    statFocus: "Fokus",
+    statPomodoros: "Pomos",
+    statTasks: "Aufgaben",
+    statStreak: "Serie",
+    statAllTime: "Gesamt",
+    noSessions: "Keine Fokus-Sessions in diesem Zeitraum.",
+    noTasks: "Keine Aufgaben in diesem Zeitraum erfasst.",
+    last20Weeks: "Letzte 20 Wochen",
+    export: "Exportieren",
+    heatmapTitle: "Fokus-Verlauf",
+    less: "Weniger",
+    more: "Mehr",
+    cellTitle: (date, minutes) => `${date}: ${minutes} Fokus`,
+    barTitle: (date, minutes) => `${date}: ${minutes}`,
+  },
+};

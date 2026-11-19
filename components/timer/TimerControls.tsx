@@ -4,6 +4,7 @@ import { memo } from "react";
 import { cn } from "@/lib/utils";
 import { MODE_COLORS } from "@/lib/constants";
 import type { TimerMode, TimerStatus } from "@/lib/types";
+import { useAppCopy } from "@/hooks/useAppCopy";
 
 interface TimerControlsProps {
   status: TimerStatus;
@@ -25,6 +26,8 @@ export const TimerControls = memo(function TimerControls({
   onReset,
 }: TimerControlsProps) {
   const colors = MODE_COLORS[mode];
+  const copy = useAppCopy().timer;
+  const skipLabel = mode === "pomodoro" ? copy.skipToBreak : copy.skipBreak;
 
   return (
     <div className="flex items-center gap-4">
@@ -34,7 +37,7 @@ export const TimerControls = memo(function TimerControls({
           className="px-12 py-3 rounded-xl text-lg font-semibold text-background transition-all duration-200 hover:scale-105 active:scale-95"
           style={{ backgroundColor: colors.accent }}
         >
-          START
+          <span data-i18n>{copy.start}</span>
         </button>
       )}
 
@@ -44,13 +47,13 @@ export const TimerControls = memo(function TimerControls({
             onClick={onPause}
             className="px-12 py-3 rounded-xl text-lg font-semibold glass text-foreground transition-all duration-200 hover:bg-surface-hover active:scale-95"
           >
-            PAUSE
+            <span data-i18n>{copy.pause}</span>
           </button>
           <button
             onClick={onSkip}
             className="p-3.5 rounded-xl glass text-muted hover:text-foreground hover:bg-surface-hover transition-all duration-200 active:scale-95"
-            aria-label={mode === "pomodoro" ? "Skip to break" : "Skip break"}
-            title={mode === "pomodoro" ? "Skip to break" : "Skip break"}
+            aria-label={skipLabel}
+            title={skipLabel}
           >
             <svg
               width="24"
@@ -71,15 +74,15 @@ export const TimerControls = memo(function TimerControls({
             className="px-12 py-3 rounded-xl text-lg font-semibold text-background transition-all duration-200 hover:scale-105 active:scale-95"
             style={{ backgroundColor: colors.accent }}
           >
-            RESUME
+            <span data-i18n>{copy.resume}</span>
           </button>
           <button
             onClick={onReset}
             className={cn(
               "p-3.5 rounded-xl glass text-muted hover:text-foreground hover:bg-surface-hover transition-all duration-200 active:scale-95"
             )}
-            aria-label="Reset timer"
-            title="Reset timer"
+            aria-label={copy.reset}
+            title={copy.reset}
           >
             <svg
               width="24"

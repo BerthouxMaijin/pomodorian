@@ -3,6 +3,11 @@
 import { useCallback, useMemo, useState } from "react";
 import { getDateKey, type FocusSession, type Task } from "@/lib/types";
 
+// Placeholder titles of ghost rows. Stored as English and swapped for the
+// active locale at render time (TaskItem).
+export const UNTRACKED_TASK_TITLE = "Untracked focus time";
+export const DELETED_TASK_TITLE = "(deleted task)";
+
 export interface DisplayTask {
   // Unique key for React lists.
   key: string;
@@ -121,7 +126,7 @@ export function useTaskHistory({ tasks, sessions }: UseTaskHistoryArgs) {
       result.push({
         key: `ghost:${taskId}`,
         taskId: null,
-        title: agg.lastTitle ?? "(deleted task)",
+        title: agg.lastTitle ?? DELETED_TASK_TITLE,
         completed: false,
         pomodorosForDay: agg.pomodoros,
         minutesForDay: agg.minutes,
@@ -136,7 +141,7 @@ export function useTaskHistory({ tasks, sessions }: UseTaskHistoryArgs) {
       result.push({
         key: "untracked",
         taskId: null,
-        title: "Untracked focus time",
+        title: UNTRACKED_TASK_TITLE,
         completed: false,
         pomodorosForDay: untrackedPomodoros,
         minutesForDay: untrackedMinutes,
