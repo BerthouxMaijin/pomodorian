@@ -76,7 +76,7 @@ export const InfoSection = memo(function InfoSection() {
         </ol>
         <Link
           href="/blog/how-to-use-pomodorian"
-          className="inline-block text-sm text-red-400 hover:text-red-300 underline underline-offset-4"
+          className="inline-block text-sm text-red-400 hover:text-red-300 light:text-red-600 light:hover:text-red-700 underline underline-offset-4"
         >
           Read the complete guide with screenshots
         </Link>
@@ -116,7 +116,7 @@ export const InfoSection = memo(function InfoSection() {
               },
             ].map((f) => (
               <li key={f.title} className="flex gap-2">
-                <span className="text-red-400 mt-0.5 flex-shrink-0">
+                <span className="text-red-400 light:text-red-600 mt-0.5 flex-shrink-0">
                   &#10003;
                 </span>
                 <div>
@@ -156,7 +156,7 @@ export const InfoSection = memo(function InfoSection() {
               },
             ].map((f) => (
               <li key={f.title} className="flex gap-2">
-                <span className="text-emerald-400 mt-0.5 flex-shrink-0">
+                <span className="text-emerald-400 light:text-emerald-600 mt-0.5 flex-shrink-0">
                   &#10003;
                 </span>
                 <div>
@@ -196,7 +196,7 @@ export const InfoSection = memo(function InfoSection() {
               ].map(([feature, pomo, focus]) => (
                 <tr key={feature} className="border-b border-border/50">
                   <td className="py-2 pr-4">{feature}</td>
-                  <td className="py-2 px-4 text-emerald-400">{pomo}</td>
+                  <td className="py-2 px-4 text-emerald-400 light:text-emerald-700">{pomo}</td>
                   <td className="py-2 px-4">{focus}</td>
                 </tr>
               ))}

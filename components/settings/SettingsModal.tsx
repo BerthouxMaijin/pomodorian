@@ -204,12 +204,13 @@ export function SettingsModal({
             <select
               value={settings.theme}
               onChange={(e) =>
-                onUpdate({ theme: e.target.value as "dark" | "light" })
+                onUpdate({ theme: e.target.value as AppSettings["theme"] })
               }
               className="px-3 py-1.5 rounded-lg bg-surface text-foreground text-sm border border-border outline-none"
             >
-              <option value="dark">Dark</option>
+              <option value="system">System</option>
               <option value="light">Light</option>
+              <option value="dark">Dark</option>
             </select>
           </div>
         </section>
