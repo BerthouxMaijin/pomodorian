@@ -19,6 +19,18 @@ only record of provenance once a track is in the repo.
 `alarm-gentle.mp3`, `alarm-classic.mp3`, `alarm-bell.mp3`, `tick-start.mp3` —
 original creations.
 
+The three alarms were mastered 10 to 20 dB under their headroom and sat at or
+below the ambients, so the alarm was easy to miss. In November 2026 each one
+got a plain static gain (ffmpeg `volume`, no compression, no limiter) bringing
+its true peak to about -1 dBTP, re-encoded mono 44.1 kHz at the original
+bitrate (192 kbps, bell 96 kbps):
+
+| File | Gain | Before | After |
+|---|---|---|---|
+| `alarm-gentle.mp3` | +9.07 dB | -17.4 LUFS, -10.1 dBTP | -8.6 LUFS, -1.3 dBTP |
+| `alarm-classic.mp3` | +11.32 dB | -21.0 LUFS, -12.3 dBTP | -10.0 LUFS, -1.3 dBTP |
+| `alarm-bell.mp3` | +21.94 dB | -29.9 LUFS, -22.9 dBTP | -8.4 LUFS, -1.5 dBTP |
+
 ## Licence rule for new ambient sounds
 
 Commercial use must be unambiguous. **CC0** and **CC BY** only. Never

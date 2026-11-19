@@ -78,6 +78,8 @@ export function EmbeddedTimer({
 
   const start = useCallback(() => {
     sound.stopAlarm();
+    // Inside the click: unlocks the alarm so it can ring later (Safari, iOS).
+    sound.primeAlarm();
     setFinished(false);
     sound.resumeAllAmbients();
     if (timer.status === "paused") timer.resume();
