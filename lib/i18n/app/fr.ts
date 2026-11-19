@@ -31,6 +31,13 @@ export const fr: AppCopy = {
     undoHint: "Annuler (Z)",
   },
 
+  miniTimer: {
+    open: "Ouvrir le mini minuteur",
+    close: "Fermer le mini minuteur",
+    hint: "Mini minuteur, toujours au premier plan",
+    windowTitle: "Mini minuteur Pomodorian",
+  },
+
   header: {
     blog: "Blog",
     pomodorosCompleted: "Pomodoros terminés",
@@ -38,6 +45,13 @@ export const fr: AppCopy = {
     reportHint: "Rapport (R)",
     settings: "Réglages",
     settingsHint: "Réglages (S)",
+  },
+
+  focus: {
+    focusMode: "Estomper les distractions pendant un pomodoro",
+    dailyGoal: "Objectif du jour (pomodoros)",
+    goalProgress: (done, goal) => `Aujourd'hui : ${done} pomodoros sur ${goal}`,
+    goalReached: (done, goal) => `Objectif du jour atteint : ${done} pomodoros sur ${goal}`,
   },
 
   sounds: {
@@ -50,6 +64,12 @@ export const fr: AppCopy = {
       lofi: "Lo-fi",
     },
     volume: (name) => `Volume : ${name}`,
+  },
+
+  flow: {
+    extend: "+5\u00a0min",
+    extendLabel: "Continuer 5 minutes de plus",
+    quietBreaks: "Couper l'ambiance pendant les pauses",
   },
 
   tasks: {
@@ -129,6 +149,30 @@ export const fr: AppCopy = {
     },
     spaceKey: "Espace",
     showShortcuts: "Afficher les raccourcis",
+  },
+
+  backup: {
+    title: "Données",
+    export: "Exporter une sauvegarde",
+    import: "Importer une sauvegarde",
+    fileLabel: "Fichier de sauvegarde",
+    note: "Tes données restent dans ce navigateur. Le fichier exporté est ta seule copie.",
+    replaceWarning: "Cela remplace les données de cet appareil.",
+    summary: (tasks, pomodoros, date) => {
+      const parts = `${tasks} ${tasks > 1 ? "tâches" : "tâche"}, ${pomodoros} ${pomodoros > 1 ? "pomodoros" : "pomodoro"}`;
+      return date ? `Sauvegarde du ${date} : ${parts}.` : `Sauvegarde : ${parts}.`;
+    },
+    replace: "Remplacer",
+    cancel: "Annuler",
+    errors: {
+      tooLarge: "Ce fichier est trop lourd pour être une sauvegarde Pomodorian. Rien n'a été modifié.",
+      notJson: "Ce fichier est illisible. Choisis une sauvegarde Pomodorian (.json). Rien n'a été modifié.",
+      notBackup: "Ce fichier n'est pas une sauvegarde Pomodorian. Rien n'a été modifié.",
+      unsupported: "Cette sauvegarde vient d'une version plus récente de Pomodorian. Recharge la page et réessaie. Rien n'a été modifié.",
+      invalid: "Cette sauvegarde est abîmée ou incomplète. Rien n'a été modifié.",
+      readFailed: "Impossible de lire le fichier. Rien n'a été modifié.",
+      writeFailed: "Impossible d'enregistrer les données dans ce navigateur. Rien n'a été modifié.",
+    },
   },
 
   report: {

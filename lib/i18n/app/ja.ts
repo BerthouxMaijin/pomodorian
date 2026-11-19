@@ -31,6 +31,13 @@ export const ja: AppCopy = {
     undoHint: "元に戻す (Z)",
   },
 
+  miniTimer: {
+    open: "ミニタイマーを開く",
+    close: "ミニタイマーを閉じる",
+    hint: "ミニタイマー（常に最前面に表示）",
+    windowTitle: "Pomodorian ミニタイマー",
+  },
+
   header: {
     blog: "ブログ",
     pomodorosCompleted: "完了したポモドーロ",
@@ -38,6 +45,13 @@ export const ja: AppCopy = {
     reportHint: "レポート (R)",
     settings: "設定",
     settingsHint: "設定 (S)",
+  },
+
+  focus: {
+    focusMode: "ポモドーロ中は周りを目立たなくする",
+    dailyGoal: "1日の目標（ポモドーロ数）",
+    goalProgress: (done, goal) => `今日のポモドーロ：${goal}個中${done}個`,
+    goalReached: (done, goal) => `今日の目標を達成：${goal}個中${done}個`,
   },
 
   sounds: {
@@ -50,6 +64,12 @@ export const ja: AppCopy = {
       lofi: "Lo-fi",
     },
     volume: (name) => `${name}の音量`,
+  },
+
+  flow: {
+    extend: "+5分",
+    extendLabel: "あと5分集中する",
+    quietBreaks: "休憩中は環境音を止める",
   },
 
   tasks: {
@@ -128,6 +148,30 @@ export const ja: AppCopy = {
     },
     spaceKey: "スペース",
     showShortcuts: "ショートカットを表示",
+  },
+
+  backup: {
+    title: "データ",
+    export: "バックアップを書き出す",
+    import: "バックアップを読み込む",
+    fileLabel: "バックアップファイル",
+    note: "データはこのブラウザ内にだけ保存されます。書き出したファイルが唯一のコピーです。",
+    replaceWarning: "このデバイスのデータが置き換えられます。",
+    summary: (tasks, pomodoros, date) => {
+      const parts = `タスク${tasks}件、ポモドーロ${pomodoros}回`;
+      return date ? `${date}のバックアップ：${parts}` : `バックアップ：${parts}`;
+    },
+    replace: "置き換える",
+    cancel: "キャンセル",
+    errors: {
+      tooLarge: "このファイルはPomodorianのバックアップとしては大きすぎます。何も変更されていません。",
+      notJson: "このファイルを読み取れません。Pomodorianのバックアップ（.json）を選んでください。何も変更されていません。",
+      notBackup: "このファイルはPomodorianのバックアップではありません。何も変更されていません。",
+      unsupported: "このバックアップは新しいバージョンのPomodorianで作成されています。ページを再読み込みしてから、もう一度お試しください。何も変更されていません。",
+      invalid: "このバックアップは破損しているか、不完全です。何も変更されていません。",
+      readFailed: "ファイルを読み取れませんでした。何も変更されていません。",
+      writeFailed: "このブラウザにデータを保存できませんでした。何も変更されていません。",
+    },
   },
 
   report: {

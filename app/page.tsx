@@ -9,10 +9,12 @@ import { useSettings } from "@/hooks/useSettings";
 import { useSound } from "@/hooks/useSound";
 import { useAnalytics } from "@/hooks/useAnalytics";
 import { useWakeLock } from "@/hooks/useWakeLock";
+import { useFocusMode } from "@/hooks/useFocusMode";
 import { Timer } from "@/components/timer/Timer";
 import { ModeSelector } from "@/components/timer/ModeSelector";
 import { TimerControls } from "@/components/timer/TimerControls";
 import { UndoBanner } from "@/components/timer/UndoBanner";
+import { MiniTimer } from "@/components/timer/MiniTimer";
 import { Background } from "@/components/layout/Background";
 import { Header } from "@/components/layout/Header";
 import { TaskList } from "@/components/tasks/TaskList";
@@ -34,6 +36,11 @@ import { loadAppCopy } from "@/lib/i18n/app";
 import { useUiLocale } from "@/hooks/useUiLocale";
 import { HTML_LANG } from "@/lib/i18n/locales";
 import { NEVER_DUMB_COPY } from "@/components/neverdumb/neverDumbCopy";
+
+// "+5 min": when a pomodoro ends mid-thought, five more minutes of focus are
+// offered for about a minute. They extend the pomodoro just recorded.
+const FLOW_EXTENSION_SECONDS = 5 * 60;
+const FLOW_OFFER_MS = 60 * 1000;
 
 export default function Home() {
   const { settings, updateSettings, hydrated: settingsHydrated } = useSettings();
@@ -61,10 +68,23 @@ export default function Home() {
     captured: TimerCapture;
     stoppedAt: number;
   } | null>(null);
+  // "+5 min" on offer: the session it would extend and the task it belongs to.
+  const [flowOffer, setFlowOffer] = useState<{
+    id: number;
+    sessionId: string;
+    taskId: string | null;
+  } | null>(null);
 
   // A phone that locks its screen mid-pomodoro suspends the page: the alarm
   // would only ring once it is unlocked again.
   useWakeLock(timer.status === "running");
+
+  // Focus mode: during a running pomodoro, everything but the timer fades back
+  // after a few idle seconds. An attribute on <html>, no React state.
+  useFocusMode(
+    settings.focusMode && timer.mode === "pomodoro" && timer.status === "running",
+    "[data-focus-anchor]"
+  );
 
   // Hand-off from a timer tool page (/?focus=50): the person clicked "run full
   // Pomodoro cycles at 50 minutes", so that becomes their pomodoro length. The
@@ -131,6 +151,13 @@ export default function Home() {
   const handleComplete = useCallback(() => {
     setNeverDumbOpen(false);
     sound.playAlarm(settings.alarmSound, settings.alarmVolume);
+    // The end of a "+5 min": its minutes go to the pomodoro it extends, which
+    // was already recorded and counted.
+    const extensionOf = timer.mode === "pomodoro" ? timer.extensionOf : null;
+    if (extensionOf) {
+      analytics.extendSession(extensionOf, FLOW_EXTENSION_SECONDS / 60);
+      track("flow_extension_completed");
+    }
 
     const durationMinutes = Math.round(
       (timer.mode === "pomodoro"
@@ -142,14 +169,14 @@ export default function Home() {
     const activeTask = tasks.activeTaskId
       ? tasks.tasks.find((t) => t.id === tasks.activeTaskId)
       : null;
-    analytics.recordSession(
+    const sessionId = extensionOf ?? analytics.recordSession(
       timer.mode,
       durationMinutes,
       tasks.activeTaskId,
       activeTask?.title ?? null
     );
 
-    if (timer.mode === "pomodoro") {
+    if (timer.mode === "pomodoro" && !extensionOf) {
       track("pomodoro_completed");
       if (tasks.activeTaskId) {
         tasks.incrementPomodoro(tasks.activeTaskId);
@@ -157,7 +184,7 @@ export default function Home() {
     }
 
     const completedPomodoros =
-      timer.mode === "pomodoro"
+      timer.mode === "pomodoro" && !extensionOf
         ? timer.pomodorosCompleted + 1
         : timer.pomodorosCompleted;
     const nextMode: TimerMode =
@@ -173,6 +200,9 @@ export default function Home() {
     neverDumbOpenedRef.current = false;
 
     timer.setMode(nextMode);
+    if (timer.mode === "pomodoro") {
+      setFlowOffer({ id: Date.now(), sessionId, taskId: tasks.activeTaskId });
+    }
 
     if (
       (nextMode !== "pomodoro" && settings.autoStartBreaks) ||
@@ -207,11 +237,13 @@ export default function Home() {
     capture: timerCapture,
     revert: timerRevert,
     status: timerStatus,
+    extend: timerExtend,
   } = timer;
   const { playClick, pauseAllAmbients, resumeAllAmbients } = sound;
   const { notificationsEnabled } = settings;
 
   const startTimer = useCallback(() => {
+    setFlowOffer(null);
     if (timerMode === "pomodoro") ensureActiveTask();
     playClick();
     timerStart();
@@ -238,6 +270,7 @@ export default function Home() {
   }, [timerPause, pauseAllAmbients]);
 
   const resumeTimer = useCallback(() => {
+    setFlowOffer(null);
     playClick();
     timerResume();
     resumeAllAmbients();
@@ -249,6 +282,9 @@ export default function Home() {
   const offerUndo = useCallback(() => {
     const captured = timerCapture();
     if (captured.mode !== "pomodoro") return;
+    // An abandoned "+5 min" is bonus time on a pomodoro already recorded:
+    // nothing is lost, so nothing to undo.
+    if (captured.extensionOf) return;
     if (captured.status !== "running" && captured.status !== "paused") return;
     const remaining =
       captured.status === "running" && captured.endTime
@@ -273,8 +309,42 @@ export default function Home() {
     if (timerStatus === "running") setUndoOffer(null);
   }, [timerStatus]);
 
+  // The "+5 min" offer lasts about a minute.
+  useEffect(() => {
+    if (!flowOffer) return;
+    const timeout = window.setTimeout(() => setFlowOffer(null), FLOW_OFFER_MS);
+    return () => window.clearTimeout(timeout);
+  }, [flowOffer]);
+
+  // Five more minutes on the same task, replacing the break (even one that
+  // auto-started). playClick stops the alarm and its repeats.
+  const takeFlowExtension = useCallback(() => {
+    if (!flowOffer) return;
+    setFlowOffer(null);
+    setNeverDumbOpen(false);
+    setNeverDumbEligible(false);
+    neverDumbOpenedRef.current = false;
+    const task = tasks.tasks.find((t) => t.id === flowOffer.taskId);
+    if (task && !task.completed) tasks.setActiveTask(task.id);
+    playClick();
+    timerExtend(FLOW_EXTENSION_SECONDS, flowOffer.sessionId);
+    track("flow_extension_started");
+  }, [flowOffer, tasks, playClick, timerExtend]);
+
+  // Quiet breaks: ambients rest from the moment a break begins until the next
+  // pomodoro actually runs (an idle pomodoro after a break stays quiet).
+  const breakQuietRef = useRef(false);
+  const { setAmbientsQuiet } = sound;
+  const { pauseAmbientsOnBreak } = settings;
+  useEffect(() => {
+    if (timerMode !== "pomodoro") breakQuietRef.current = true;
+    else if (timerStatus === "running") breakQuietRef.current = false;
+    setAmbientsQuiet(pauseAmbientsOnBreak && breakQuietRef.current);
+  }, [timerMode, timerStatus, pauseAmbientsOnBreak, setAmbientsQuiet]);
+
   const setModeManually = useCallback(
     (mode: TimerMode) => {
+      setFlowOffer(null);
       offerUndo();
       setNeverDumbOpen(false);
       setNeverDumbEligible(false);
@@ -292,6 +362,7 @@ export default function Home() {
   }, [timerMode, setModeManually]);
 
   const resetTimer = useCallback(() => {
+    setFlowOffer(null);
     offerUndo();
     setNeverDumbOpen(false);
     setNeverDumbEligible(false);
@@ -484,7 +555,12 @@ export default function Home() {
       <HomeSchemas />
       <Background mode={timer.mode} />
       <Header
-        pomodorosCompleted={timer.pomodorosCompleted}
+        pomodorosCompleted={analytics.todayPomodoros}
+        dailyGoal={
+          analytics.hydrated && settingsHydrated
+            ? Math.min(24, Math.max(1, Math.round(settings.dailyGoal) || 8))
+            : null
+        }
         onOpenSettings={openSettings}
         onOpenAnalytics={openAnalytics}
       />
@@ -494,6 +570,7 @@ export default function Home() {
 
         <motion.div
           key={timer.mode}
+          data-focus-anchor
           initial={{ scale: 0.95, opacity: 0.5 }}
           animate={{ scale: 1, opacity: 1 }}
           transition={{ duration: 0.3, ease: "easeOut" }}
@@ -522,6 +599,30 @@ export default function Home() {
           />
         </motion.div>
 
+        <AnimatePresence initial={false}>
+          {flowOffer && timer.mode !== "pomodoro" && (
+            <motion.div
+              key="flow-extend"
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: "auto" }}
+              exit={{ opacity: 0, height: 0 }}
+              transition={{ duration: 0.2, ease: "easeOut" }}
+              className="-my-3 overflow-hidden"
+            >
+              <button
+                type="button"
+                data-testid="flow-extend"
+                onClick={takeFlowExtension}
+                aria-label={copy.flow.extendLabel}
+                title={copy.flow.extendLabel}
+                className="min-h-10 rounded-full px-4 text-sm font-medium text-muted transition-colors hover:text-foreground hover:bg-surface-hover focus:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-foreground/30"
+              >
+                {copy.flow.extend}
+              </button>
+            </motion.div>
+          )}
+        </AnimatePresence>
+
         {timer.mode === "longBreak" && timer.status === "running" && !neverDumbOpen && (
           <button
             type="button"
@@ -536,7 +637,7 @@ export default function Home() {
         {timer.mode === "pomodoro" && (
           <div className="flex items-center gap-1.5 max-w-full px-4 text-sm text-muted">
             <span className="tabular-nums flex-shrink-0">
-              #{timer.pomodorosCompleted + 1}
+              #{timer.pomodorosCompleted + (timer.extensionOf ? 0 : 1)}
             </span>
             <span aria-hidden="true" className="flex-shrink-0">
               &middot;
@@ -566,6 +667,7 @@ export default function Home() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2 }}
         >
+          <div data-focus-fade>
           <TaskList
             tasks={tasks.tasks}
             sessions={analytics.sessions}
@@ -579,8 +681,20 @@ export default function Home() {
             onReorder={tasks.reorderTasks}
             onOpenAIPlanner={openAIPlanner}
           />
+          </div>
         </motion.div>
       </main>
+
+      <MiniTimer
+        timeRemaining={timer.timeRemaining}
+        progress={timer.progress}
+        mode={timer.mode}
+        status={timer.status}
+        taskTitle={timer.mode === "pomodoro" ? activeTask?.title ?? null : null}
+        onStart={startTimer}
+        onPause={pauseTimer}
+        onResume={resumeTimer}
+      />
 
       <InfoSection />
       <Footer />

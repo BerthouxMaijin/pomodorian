@@ -3,18 +3,29 @@
 import { memo } from "react";
 import Link from "next/link";
 import { useAppCopy } from "@/hooks/useAppCopy";
+import { MiniTimerButton } from "@/components/timer/MiniTimerButton";
 
 interface HeaderProps {
+  /** Today's completed pomodoros (analytics, survives reloads). */
   pomodorosCompleted: number;
+  /** Today's goal, null until the settings and sessions are read. */
+  dailyGoal: number | null;
   onOpenSettings: () => void;
   onOpenAnalytics: () => void;
 }
 
-export const Header = memo(function Header({ pomodorosCompleted, onOpenSettings, onOpenAnalytics }: HeaderProps) {
+export const Header = memo(function Header({ pomodorosCompleted, dailyGoal, onOpenSettings, onOpenAnalytics }: HeaderProps) {
   const copy = useAppCopy().header;
+  const focusCopy = useAppCopy().focus;
+  const goalLabel =
+    dailyGoal === null
+      ? undefined
+      : pomodorosCompleted >= dailyGoal
+        ? focusCopy.goalReached(pomodorosCompleted, dailyGoal)
+        : focusCopy.goalProgress(pomodorosCompleted, dailyGoal);
   return (
-    <header className="flex items-center justify-between pl-6 pr-3 py-3 sm:py-4 max-w-2xl mx-auto w-full">
-      <div className="flex items-center gap-3">
+    <header data-focus-fade className="flex items-center justify-between gap-1 pl-4 min-[360px]:pl-6 pr-3 py-3 sm:py-4 max-w-2xl mx-auto w-full">
+      <div className="flex items-center gap-2 min-[360px]:gap-3">
         <div className="w-8 h-8 rounded-lg bg-red-500/20 flex items-center justify-center">
           <svg
             width="20"
@@ -44,10 +55,22 @@ export const Header = memo(function Header({ pomodorosCompleted, onOpenSettings,
         >
           <span data-i18n>{copy.blog}</span>
         </Link>
-        {pomodorosCompleted > 0 && (
-          <span className="text-sm text-muted tabular-nums px-2" title={copy.pomodorosCompleted}>
-            #{pomodorosCompleted}
-          </span>
+        {dailyGoal !== null && (
+          <button
+            type="button"
+            data-testid="daily-goal"
+            data-reached={pomodorosCompleted >= dailyGoal || undefined}
+            onClick={onOpenAnalytics}
+            aria-label={goalLabel}
+            title={goalLabel}
+            className={`min-h-11 min-w-10 px-1.5 grid place-items-center rounded-lg text-sm tabular-nums hover:bg-surface-hover transition-colors ${
+              pomodorosCompleted >= dailyGoal
+                ? "text-emerald-400 light:text-emerald-700 font-medium"
+                : "text-muted hover:text-foreground"
+            }`}
+          >
+            {pomodorosCompleted}/{dailyGoal}
+          </button>
         )}
         <button
           onClick={onOpenAnalytics}
@@ -89,6 +112,7 @@ export const Header = memo(function Header({ pomodorosCompleted, onOpenSettings,
             <circle cx="12" cy="12" r="3" />
           </svg>
         </button>
+        <MiniTimerButton />
       </div>
     </header>
   );

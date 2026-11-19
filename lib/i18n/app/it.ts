@@ -31,6 +31,13 @@ export const it: AppCopy = {
     undoHint: "Annulla (Z)",
   },
 
+  miniTimer: {
+    open: "Apri il mini timer",
+    close: "Chiudi il mini timer",
+    hint: "Mini timer, sempre in primo piano",
+    windowTitle: "Mini timer di Pomodorian",
+  },
+
   header: {
     blog: "Blog",
     pomodorosCompleted: "Pomodori completati",
@@ -38,6 +45,13 @@ export const it: AppCopy = {
     reportHint: "Report (R)",
     settings: "Impostazioni",
     settingsHint: "Impostazioni (S)",
+  },
+
+  focus: {
+    focusMode: "Attenua le distrazioni durante un pomodoro",
+    dailyGoal: "Obiettivo giornaliero (pomodori)",
+    goalProgress: (done, goal) => `Oggi: ${done} pomodori su ${goal}`,
+    goalReached: (done, goal) => `Obiettivo giornaliero raggiunto: ${done} pomodori su ${goal}`,
   },
 
   sounds: {
@@ -50,6 +64,12 @@ export const it: AppCopy = {
       lofi: "Lo-fi",
     },
     volume: (name) => `Volume: ${name}`,
+  },
+
+  flow: {
+    extend: "+5\u00a0min",
+    extendLabel: "Continua a concentrarti per altri 5 minuti",
+    quietBreaks: "Silenzia i suoni ambientali in pausa",
   },
 
   tasks: {
@@ -130,6 +150,30 @@ export const it: AppCopy = {
     },
     spaceKey: "Spazio",
     showShortcuts: "Mostra le scorciatoie",
+  },
+
+  backup: {
+    title: "Dati",
+    export: "Esporta backup",
+    import: "Importa backup",
+    fileLabel: "File di backup",
+    note: "I tuoi dati restano in questo browser. Il file esportato è la tua unica copia.",
+    replaceWarning: "Questo sostituisce i dati su questo dispositivo.",
+    summary: (tasks, pomodoros, date) => {
+      const parts = `${tasks} attività, ${pomodoros} ${pomodoros === 1 ? "pomodoro" : "pomodori"}`;
+      return date ? `Backup del ${date}: ${parts}.` : `Backup: ${parts}.`;
+    },
+    replace: "Sostituisci",
+    cancel: "Annulla",
+    errors: {
+      tooLarge: "Questo file è troppo grande per essere un backup di Pomodorian. Non è stato modificato nulla.",
+      notJson: "Impossibile leggere questo file. Scegli un backup di Pomodorian (.json). Non è stato modificato nulla.",
+      notBackup: "Questo file non è un backup di Pomodorian. Non è stato modificato nulla.",
+      unsupported: "Questo backup viene da una versione più recente di Pomodorian. Ricarica la pagina e riprova. Non è stato modificato nulla.",
+      invalid: "Questo backup è danneggiato o incompleto. Non è stato modificato nulla.",
+      readFailed: "Impossibile leggere il file. Non è stato modificato nulla.",
+      writeFailed: "Impossibile salvare i dati in questo browser. Non è stato modificato nulla.",
+    },
   },
 
   report: {

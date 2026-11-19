@@ -37,6 +37,18 @@ export type AppCopy = {
     undoHint: string;
   };
 
+  /** The floating mini timer (Document Picture-in-Picture window). */
+  miniTimer: {
+    /** Header button, aria-label while the mini timer is closed. */
+    open: string;
+    /** Header button, aria-label while the mini timer is open. */
+    close: string;
+    /** Header button tooltip while closed: says what the window is. */
+    hint: string;
+    /** document.title of the mini window. */
+    windowTitle: string;
+  };
+
   header: {
     blog: string;
     pomodorosCompleted: string;
@@ -46,10 +58,32 @@ export type AppCopy = {
     settingsHint: string;
   };
 
+  /** Focus mode and the daily goal chip in the header. */
+  focus: {
+    /** Settings toggle (Display): fades everything but the timer while a pomodoro runs. */
+    focusMode: string;
+    /** Settings row (Timer): number of pomodoros aimed for each day. */
+    dailyGoal: string;
+    /** Label of the header chip "3/8", which opens the report. */
+    goalProgress: (done: number, goal: number) => string;
+    /** Same, once the goal is reached. */
+    goalReached: (done: number, goal: number) => string;
+  };
+
   sounds: {
     toggle: string;
     names: Record<AmbientSoundKey, string>;
     volume: (name: string) => string;
+  };
+
+  /** "+5 min" after a pomodoro, and the quiet breaks setting. */
+  flow: {
+    /** Short button label offered when a pomodoro ends: "+5 min". */
+    extend: string;
+    /** aria-label and title of that button. */
+    extendLabel: string;
+    /** Settings toggle (Sound section): ambients stop during breaks. */
+    quietBreaks: string;
   };
 
   tasks: {
@@ -118,6 +152,30 @@ export type AppCopy = {
     actions: Record<ShortcutKey, string>;
     spaceKey: string;
     showShortcuts: string;
+  };
+
+  backup: {
+    title: string;
+    export: string;
+    import: string;
+    /** Accessible name of the hidden file input. */
+    fileLabel: string;
+    /** Under the buttons: where the data lives. */
+    note: string;
+    replaceWarning: string;
+    /** `date` is already formatted, or null when the file's date is unusable. */
+    summary: (tasks: number, pomodoros: number, date: string | null) => string;
+    replace: string;
+    cancel: string;
+    errors: {
+      tooLarge: string;
+      notJson: string;
+      notBackup: string;
+      unsupported: string;
+      invalid: string;
+      readFailed: string;
+      writeFailed: string;
+    };
   };
 
   report: {

@@ -31,6 +31,13 @@ export const zh: AppCopy = {
     undoHint: "撤销 (Z)",
   },
 
+  miniTimer: {
+    open: "打开迷你计时器",
+    close: "关闭迷你计时器",
+    hint: "迷你计时器（始终置顶）",
+    windowTitle: "Pomodorian 迷你计时器",
+  },
+
   header: {
     blog: "博客",
     pomodorosCompleted: "已完成的番茄钟",
@@ -38,6 +45,13 @@ export const zh: AppCopy = {
     reportHint: "报告 (R)",
     settings: "设置",
     settingsHint: "设置 (S)",
+  },
+
+  focus: {
+    focusMode: "番茄钟进行时淡化干扰",
+    dailyGoal: "每日目标（番茄钟数）",
+    goalProgress: (done, goal) => `今日番茄钟：已完成 ${done} 个，目标 ${goal} 个`,
+    goalReached: (done, goal) => `今日目标已达成：已完成 ${done} 个，目标 ${goal} 个`,
   },
 
   sounds: {
@@ -50,6 +64,12 @@ export const zh: AppCopy = {
       lofi: "Lo-fi",
     },
     volume: (name) => `${name}音量`,
+  },
+
+  flow: {
+    extend: "+5\u00a0分钟",
+    extendLabel: "再专注 5 分钟",
+    quietBreaks: "休息时暂停环境音",
   },
 
   tasks: {
@@ -128,6 +148,30 @@ export const zh: AppCopy = {
     },
     spaceKey: "空格",
     showShortcuts: "显示快捷键",
+  },
+
+  backup: {
+    title: "数据",
+    export: "导出备份",
+    import: "导入备份",
+    fileLabel: "备份文件",
+    note: "你的数据只保存在这个浏览器里。导出的文件是唯一的副本。",
+    replaceWarning: "这会替换此设备上的数据。",
+    summary: (tasks, pomodoros, date) => {
+      const parts = `${tasks} 个任务，${pomodoros} 个番茄钟`;
+      return date ? `${date} 的备份：${parts}` : `备份：${parts}`;
+    },
+    replace: "替换",
+    cancel: "取消",
+    errors: {
+      tooLarge: "这个文件太大，不是 Pomodorian 备份。未做任何更改。",
+      notJson: "无法读取这个文件。请选择 Pomodorian 备份（.json）。未做任何更改。",
+      notBackup: "这个文件不是 Pomodorian 备份。未做任何更改。",
+      unsupported: "这个备份来自更新版本的 Pomodorian。请刷新页面后重试。未做任何更改。",
+      invalid: "这个备份已损坏或不完整。未做任何更改。",
+      readFailed: "无法读取文件。未做任何更改。",
+      writeFailed: "无法在此浏览器中保存数据。未做任何更改。",
+    },
   },
 
   report: {

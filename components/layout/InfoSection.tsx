@@ -7,7 +7,7 @@ import { PromoVideo } from "./PromoVideo";
 
 export const InfoSection = memo(function InfoSection() {
   return (
-    <section className="w-full max-w-3xl mx-auto px-6 mt-[50vh] space-y-16 text-sm leading-relaxed">
+    <section data-focus-fade className="w-full max-w-3xl mx-auto px-6 mt-[50vh] space-y-16 text-sm leading-relaxed">
       {/* Hero */}
       <div className="text-center space-y-3">
         <h1 className="text-2xl font-bold text-foreground">

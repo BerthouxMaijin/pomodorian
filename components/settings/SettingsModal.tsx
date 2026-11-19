@@ -12,6 +12,7 @@ import {
   UI_LOCALES,
   type LanguageSetting,
 } from "@/lib/i18n/locales";
+import { BackupSection } from "./BackupSection";
 
 interface SettingsModalProps {
   settings: AppSettings;
@@ -113,6 +114,18 @@ export function SettingsModal({
               className="w-16 flex-shrink-0 px-2 py-1 rounded-lg bg-surface text-foreground text-center text-sm border border-border outline-none focus:ring-1 focus:ring-foreground/30"
             />
           </div>
+
+          <div className="flex items-center justify-between gap-3">
+            <span className="text-sm text-foreground">{appCopy.focus.dailyGoal}</span>
+            <NumberField
+              ariaLabel={appCopy.focus.dailyGoal}
+              value={settings.dailyGoal}
+              min={1}
+              max={24}
+              onChange={(v) => onUpdate({ dailyGoal: v })}
+              className="w-16 flex-shrink-0 px-2 py-1 rounded-lg bg-surface text-foreground text-center text-sm border border-border outline-none focus:ring-1 focus:ring-foreground/30"
+            />
+          </div>
         </section>
 
         {/* Toggles */}
@@ -182,6 +195,11 @@ export function SettingsModal({
               className="w-32 flex-shrink-0 accent-red-500"
             />
           </div>
+          <Toggle
+            label={appCopy.flow.quietBreaks}
+            checked={settings.pauseAmbientsOnBreak}
+            onChange={(v) => onUpdate({ pauseAmbientsOnBreak: v })}
+          />
         </section>
 
         {/* Display */}
@@ -221,6 +239,11 @@ export function SettingsModal({
             checked={settings.notificationsEnabled}
             onChange={(v) => onUpdate({ notificationsEnabled: v })}
           />
+          <Toggle
+            label={appCopy.focus.focusMode}
+            checked={settings.focusMode}
+            onChange={(v) => onUpdate({ focusMode: v })}
+          />
           <div className="flex items-center justify-between gap-3">
             <span className="text-sm text-foreground">{copy.theme}</span>
             <select
@@ -236,6 +259,9 @@ export function SettingsModal({
             </select>
           </div>
         </section>
+
+        {/* Data: backup export and import */}
+        <BackupSection />
       </div>
     </div>
   );

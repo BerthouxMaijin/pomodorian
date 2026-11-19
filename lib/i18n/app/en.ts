@@ -31,6 +31,13 @@ export const en: AppCopy = {
     undoHint: "Undo (Z)",
   },
 
+  miniTimer: {
+    open: "Open the mini timer",
+    close: "Close the mini timer",
+    hint: "Mini timer, always on top",
+    windowTitle: "Pomodorian mini timer",
+  },
+
   header: {
     blog: "Blog",
     pomodorosCompleted: "Pomodoros completed",
@@ -38,6 +45,13 @@ export const en: AppCopy = {
     reportHint: "Report (R)",
     settings: "Settings",
     settingsHint: "Settings (S)",
+  },
+
+  focus: {
+    focusMode: "Fade distractions during a Pomodoro",
+    dailyGoal: "Daily goal (Pomodoros)",
+    goalProgress: (done, goal) => `${done} of ${goal} Pomodoros today`,
+    goalReached: (done, goal) => `Daily goal reached: ${done} of ${goal} Pomodoros today`,
   },
 
   sounds: {
@@ -50,6 +64,12 @@ export const en: AppCopy = {
       lofi: "Lo-fi",
     },
     volume: (name) => `${name} volume`,
+  },
+
+  flow: {
+    extend: "+5 min",
+    extendLabel: "Keep focusing for 5 more minutes",
+    quietBreaks: "Pause Ambient Sounds on Breaks",
   },
 
   tasks: {
@@ -130,6 +150,30 @@ export const en: AppCopy = {
     },
     spaceKey: "Space",
     showShortcuts: "Show shortcuts",
+  },
+
+  backup: {
+    title: "Data",
+    export: "Export backup",
+    import: "Import backup",
+    fileLabel: "Backup file",
+    note: "Your data stays in this browser. The exported file is your only copy.",
+    replaceWarning: "This replaces the data on this device.",
+    summary: (tasks, pomodoros, date) => {
+      const parts = `${tasks} ${tasks === 1 ? "task" : "tasks"}, ${pomodoros} ${pomodoros === 1 ? "pomodoro" : "pomodoros"}`;
+      return date ? `Backup from ${date}: ${parts}.` : `Backup: ${parts}.`;
+    },
+    replace: "Replace",
+    cancel: "Cancel",
+    errors: {
+      tooLarge: "This file is too large to be a Pomodorian backup. Nothing was changed.",
+      notJson: "This file can't be read. Choose a Pomodorian backup (.json). Nothing was changed.",
+      notBackup: "This file is not a Pomodorian backup. Nothing was changed.",
+      unsupported: "This backup comes from a newer version of Pomodorian. Reload the page and try again. Nothing was changed.",
+      invalid: "This backup is damaged or incomplete. Nothing was changed.",
+      readFailed: "The file could not be read. Nothing was changed.",
+      writeFailed: "The data could not be saved in this browser. Nothing was changed.",
+    },
   },
 
   report: {

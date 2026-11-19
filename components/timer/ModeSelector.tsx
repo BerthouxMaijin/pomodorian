@@ -17,6 +17,7 @@ export const ModeSelector = memo(function ModeSelector({ mode, onChange }: ModeS
   return (
     <div
       role="group"
+      data-focus-fade
       aria-label={copy.timer.modeGroupLabel}
       // Below 360px (a 320px phone) the tabs tighten a little: at full size the
       // three labels overflowed the screen, in English as in French.
