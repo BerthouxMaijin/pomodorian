@@ -31,6 +31,13 @@ export const ja: AppCopy = {
     undoHint: "元に戻す (Z)",
   },
 
+  miniTimer: {
+    open: "ミニタイマーを開く",
+    close: "ミニタイマーを閉じる",
+    hint: "ミニタイマー（常に最前面に表示）",
+    windowTitle: "Pomodorian ミニタイマー",
+  },
+
   header: {
     blog: "ブログ",
     pomodorosCompleted: "完了したポモドーロ",

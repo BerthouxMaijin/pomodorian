@@ -31,6 +31,13 @@ export const zh: AppCopy = {
     undoHint: "撤销 (Z)",
   },
 
+  miniTimer: {
+    open: "打开迷你计时器",
+    close: "关闭迷你计时器",
+    hint: "迷你计时器（始终置顶）",
+    windowTitle: "Pomodorian 迷你计时器",
+  },
+
   header: {
     blog: "博客",
     pomodorosCompleted: "已完成的番茄钟",
