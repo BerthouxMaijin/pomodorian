@@ -76,10 +76,20 @@ export default function Home() {
 
   // Apply theme to HTML element. The inline script in the root layout already
   // set it before first paint: wait for the stored settings, or this effect
-  // would force the dark default back for a frame.
+  // would force the dark default back for a frame. "system" follows the
+  // device's color scheme, live.
   useEffect(() => {
     if (!settingsHydrated) return;
-    document.documentElement.setAttribute("data-theme", settings.theme);
+    const root = document.documentElement;
+    if (settings.theme === "dark" || settings.theme === "light") {
+      root.setAttribute("data-theme", settings.theme);
+      return;
+    }
+    const query = window.matchMedia("(prefers-color-scheme: light)");
+    const apply = () => root.setAttribute("data-theme", query.matches ? "light" : "dark");
+    apply();
+    query.addEventListener("change", apply);
+    return () => query.removeEventListener("change", apply);
   }, [settings.theme, settingsHydrated]);
 
   // Auto-advance to break/pomodoro on complete

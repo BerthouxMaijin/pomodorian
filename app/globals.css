@@ -1,5 +1,10 @@
 @import "tailwindcss";
 
+/* `light:` utilities: for the few hardcoded accents (red-400 links, emerald-400
+   text) that are too pale on the light background. The dark rendering keeps
+   the base class untouched. */
+@custom-variant light (&:where([data-theme="light"], [data-theme="light"] *));
+
 :root {
   --background: #0a0a0a;
   --foreground: #f5f5f5;
@@ -28,7 +33,9 @@
   --surface-hover: rgba(0, 0, 0, 0.07);
   --surface-active: rgba(0, 0, 0, 0.1);
   --border: rgba(0, 0, 0, 0.08);
-  --muted: rgba(0, 0, 0, 0.45);
+  /* 0.55, not lower: body copy on the blog, SEO and timer pages is muted, and
+     0.45 fell under 4.5:1 on the light background. */
+  --muted: rgba(0, 0, 0, 0.55);
   --accent-text: #7e22ce;
   --nd-serious: #4f46e5;
   --nd-fun: #d9530f;
@@ -199,6 +206,14 @@ a,
 
 .prose-custom a:hover {
   color: #f87171;
+}
+
+[data-theme="light"] .prose-custom a {
+  color: #dc2626;
+}
+
+[data-theme="light"] .prose-custom a:hover {
+  color: #b91c1c;
 }
 
 .prose-custom strong {

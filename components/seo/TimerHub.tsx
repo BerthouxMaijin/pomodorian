@@ -96,7 +96,7 @@ export function TimerHub({ lang }: { lang: TimerLang }) {
                     key={l}
                     href={TIMER_HUB_PATH[l]}
                     hrefLang={l}
-                    className="text-red-400 hover:text-red-300 underline underline-offset-2"
+                    className="text-red-400 hover:text-red-300 light:text-red-600 light:hover:text-red-700 underline underline-offset-2"
                   >
                     {TIMER_UI[l].hubTitle}
                   </Link>

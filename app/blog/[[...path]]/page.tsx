@@ -223,7 +223,7 @@ function LangPicker({ current }: { current: Lang }) {
           href={l === "en" ? "/blog" : `/blog/${l}`}
           className={`px-3 py-1 rounded-lg transition-colors ${
             l === current
-              ? "bg-red-500/20 text-red-400 font-medium"
+              ? "bg-red-500/20 text-red-400 light:bg-red-500/10 light:text-red-700 font-medium"
               : "text-muted hover:text-foreground"
           }`}
         >
@@ -420,7 +420,7 @@ export default async function BlogPage({
                         href={source}
                         rel="noopener noreferrer"
                         target="_blank"
-                        className="text-red-400 hover:text-red-300 underline underline-offset-2 break-all"
+                        className="text-red-400 hover:text-red-300 light:text-red-600 light:hover:text-red-700 underline underline-offset-2 break-all"
                       >
                         {formatSourceUrl(source)}
                       </a>
@@ -538,7 +538,7 @@ export default async function BlogPage({
                 <span>&middot;</span>
                 <span>{article.readTime} read</span>
               </div>
-              <h2 className="text-xl font-semibold text-foreground group-hover:text-white transition-colors">
+              <h2 className="text-xl font-semibold text-foreground group-hover:text-white light:group-hover:text-foreground transition-colors">
                 {article.title}
               </h2>
               <p className="text-sm text-muted mt-2 leading-relaxed">

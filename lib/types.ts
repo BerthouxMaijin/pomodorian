@@ -26,7 +26,8 @@ export interface TimerSettings {
 }
 
 export interface AppSettings extends TimerSettings {
-  theme: "dark" | "light";
+  /** "system" follows the device's prefers-color-scheme, live. */
+  theme: "system" | "dark" | "light";
   notificationsEnabled: boolean;
   showTimeInTitle: boolean;
   neverDumbAutoOpen: boolean;

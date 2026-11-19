@@ -34,7 +34,7 @@ export default function ConsentResetButton() {
     <button
       type="button"
       onClick={reset}
-      className="mt-3 rounded-full border border-border px-4 py-2 text-sm font-semibold text-foreground transition-colors hover:border-red-400/60 hover:text-red-400"
+      className="mt-3 rounded-full border border-border px-4 py-2 text-sm font-semibold text-foreground transition-colors hover:border-red-400/60 hover:text-red-400 light:hover:text-red-700"
     >
       Change my analytics choice
     </button>

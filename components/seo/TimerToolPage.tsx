@@ -163,7 +163,7 @@ export function TimerToolPage({ page }: { page: TimerPage }) {
                   <Link
                     key={p.slug}
                     href={`/${p.slug}`}
-                    className="text-sm text-red-400 hover:text-red-300 underline underline-offset-2"
+                    className="text-sm text-red-400 hover:text-red-300 light:text-red-600 light:hover:text-red-700 underline underline-offset-2"
                   >
                     {p.h1}
                   </Link>
