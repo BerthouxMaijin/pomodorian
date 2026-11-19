@@ -49,3 +49,12 @@ qa/shots/
 
 # worktrees des sous-agents Claude Code (copies de travail temporaires)
 /.claude/worktrees/
+
+# sorties des tests navigateur (captures, résultats, profils)
+/qa/e2e/shots/
+/qa/e2e/*-results.txt
+/qa/e2e/*.json
+# ...sauf la référence des textes anglais, lue par i18n.js
+!/qa/e2e/base-en.json
+/qa/e2e/*.log
+/qa/e2e/profile*/

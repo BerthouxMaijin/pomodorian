@@ -15,6 +15,8 @@ const eslintConfig = defineConfig([
     // Temporary working copies of this repo used by Claude Code sub-agents
     // (each holds its own build output).
     ".claude/worktrees/**",
+    // Browser test scripts (plain Node, CommonJS), run by hand.
+    "qa/e2e/**",
   ]),
 ]);
 
