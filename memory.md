@@ -28,7 +28,7 @@ Ce fichier garde ce qu'une prochaine session doit savoir pour ne pas refaire les
 | Pomodoro fini page fermée : crédité s'il a fini il y a moins d'1 h | Même logique qu'un portable qui se réveille ; au-delà, plus personne ne s'en souvient |
 | Skip n'enregistre rien | Le bloc n'a pas été terminé |
 | Une seule langue pour toute l'app | Deux réglages de langue (interface et IA) compliquaient pour rien |
-| Les 8 langues d'un coup | Le mécanisme et trois écrans traduits existaient déjà en 8 langues |
+| Les 8 langues d'un coup | Le mécanisme et plusieurs écrans traduits existaient déjà en 8 langues |
 | Page d'accueil prérendue en anglais | Ne pas toucher au HTML vu par Google |
 | Section d'information et pied de page en anglais | Contenu SEO de la page anglaise |
 | Mode focus activé par défaut | C'est le coeur de la promesse ; un interrupteur permet de le couper |
@@ -38,6 +38,7 @@ Ce fichier garde ce qu'une prochaine session doit savoir pour ne pas refaire les
 | Import de sauvegarde : remplace tout | L'appareil contient exactement ce que contient le fichier, pas de mélange |
 | Pas de Web Push | Pas de serveur pour les données utilisateur |
 | Pas de chargement différé des modales | Mesuré : la page devenait plus lourde (305 Ko contre 293) |
+| Logique de sauvegarde chargée à la demande | Elle embarque Zod, soit 64 Ko de plus pour chaque visiteur si elle part avec la page |
 
 ## Pièges rencontrés
 
@@ -57,6 +58,8 @@ Ce fichier garde ce qu'une prochaine session doit savoir pour ne pas refaire les
 - La permission de notification est refusée en mode sans écran par défaut : lancer avec `channel: 'chromium'`.
 - La modale de feedback s'ouvre seule après quelques sessions : poser `pomodorian-feedback-prompt-v1-dismissed` dans le navigateur de test.
 - Seul Chromium est disponible dans le cloud. Firefox, Safari et les vrais appareils ne sont jamais vérifiés ici : le dire à chaque fois.
+- Un script qui plante n'affiche aucune ligne FAIL. Compter les PASS ne suffit pas : vérifier le code de sortie. La batterie de traduction a planté ainsi sans bruit, faute de son fichier de référence.
+- Des scripts gardés dans un dossier temporaire disparaissent avec la session. Les ranger dans `qa/e2e/` avec tout ce qu'ils lisent.
 
 **Avec le code**
 - Tailwind lit les fichiers comme du texte : un nom de classe écrit dans un commentaire génère la classe.
@@ -66,12 +69,14 @@ Ce fichier garde ce qu'une prochaine session doit savoir pour ne pas refaire les
 - Chrome sur Android refuse `new Notification()` : il faut passer par le service worker.
 - `cache.put` refuse les réponses partielles (206). Pour l'audio, mettre le fichier entier en cache et découper les plages soi-même.
 - `z.object` ignore les clés inconnues : tout nouveau réglage doit être ajouté au schéma de `lib/backup.ts`.
+- Zod pèse environ 64 Ko compressés côté navigateur. Ne jamais l'importer dans un fichier chargé avec la page : passer par `import()` au moment du besoin, comme dans `components/settings/BackupSection.tsx`. Côté serveur (routes `/api`), aucun souci.
+- Remesurer le poids de la page après chaque lot (`qa/e2e` ne le fait pas) : cette régression est passée à travers 796 contrôles au vert et n'a été vue qu'en remesurant.
 
 ## Mesures de référence
 
 | Mesure | Valeur |
 |---|---|
-| JavaScript transféré au premier chargement | 300 Ko en anglais, 303 Ko dans une autre langue |
+| JavaScript transféré au premier chargement, en anglais | 306 Ko (294 avant l'audit, 300 après la traduction, 370 avant le correctif Zod) |
 | Temps de script, timer en marche | environ 43 ms par 10 s (106 ms avant l'audit) |
 | Alarmes après correction | -8,6 / -10,0 / -8,4 LUFS (Gentle, Digital Alert, Bell) |
 | Ambiances | -13 à -18 LUFS |

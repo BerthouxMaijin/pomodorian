@@ -54,7 +54,7 @@ Pendant un pomodoro, après 4 s sans activité, tout sauf le timer passe à 25 %
 L'en-tête affiche les pomodoros du jour sur l'objectif (`3/8`). Réglage `dailyGoal`. Fichier : `components/layout/Header.tsx`.
 
 ### Sauvegarde
-Section Données des réglages : export JSON et import validé, tout ou rien. Fichiers : `lib/backup.ts`, `components/settings/BackupSection.tsx`.
+Section Données des réglages : export JSON et import validé, tout ou rien. La logique est chargée à la demande, au clic, pour ne pas alourdir la page. Fichiers : `lib/backup.ts`, `components/settings/BackupSection.tsx`.
 
 ### Prolonger de 5 minutes
 Bouton `+5 min` proposé 60 s à la fin d'un pomodoro. Les minutes s'ajoutent à la session déjà enregistrée. Fichiers : `extend()` dans `hooks/useTimer.ts`, `extendSession()` dans `hooks/useAnalytics.ts`.
@@ -101,6 +101,10 @@ bash qa/e2e/run-all.sh
 
 Total attendu : 796. La batterie des tâches affiche en plus une ligne INFO (voir Défauts connus).
 
+`i18n.js` compare l'anglais affiché à une référence, `base-en.json`. Si un texte anglais change volontairement, la régénérer avec `node qa/e2e/capture-english-baseline.js`.
+
+Les batteries ne mesurent pas le poids de la page. Le mesurer à part après chaque lot : il doit rester autour de 306 Ko de JavaScript au premier chargement.
+
 À chaque changement : `npx tsc --noEmit`, `npm run lint`, `npm run build`, puis les batteries.
 
 ## À vérifier sur de vrais appareils
@@ -114,6 +118,10 @@ Rien de ce qui suit n'a pu être testé : seul Chromium était disponible.
 - [ ] **Téléphone en mode avion** après une visite : l'app s'ouvre, le timer tourne, l'alarme sonne.
 - [ ] **À l'oreille** : le volume de l'alarme convient.
 - [ ] **Japonais et chinois** : relecture par quelqu'un qui lit ces langues.
+
+## En attente de mise en production
+
+- **Sauvegarde chargée à la demande** : sur la branche `claude/busy-maxwell-guo5rw`, pas encore dans `main`. Tant que ce n'est pas poussé, le site en ligne charge 370 Ko de JavaScript au lieu de 306.
 
 ## Défauts connus
 
