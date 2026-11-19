@@ -66,6 +66,12 @@ export const pt: AppCopy = {
     volume: (name) => `Volume: ${name}`,
   },
 
+  flow: {
+    extend: "+5\u00a0min",
+    extendLabel: "Continuar focado por mais 5 minutos",
+    quietBreaks: "Silenciar os sons ambientes nas pausas",
+  },
+
   tasks: {
     previousDay: "Dia anterior",
     nextDay: "Próximo dia",

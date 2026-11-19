@@ -195,6 +195,11 @@ export function SettingsModal({
               className="w-32 flex-shrink-0 accent-red-500"
             />
           </div>
+          <Toggle
+            label={appCopy.flow.quietBreaks}
+            checked={settings.pauseAmbientsOnBreak}
+            onChange={(v) => onUpdate({ pauseAmbientsOnBreak: v })}
+          />
         </section>
 
         {/* Display */}

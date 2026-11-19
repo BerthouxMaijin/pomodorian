@@ -76,6 +76,16 @@ export type AppCopy = {
     volume: (name: string) => string;
   };
 
+  /** "+5 min" after a pomodoro, and the quiet breaks setting. */
+  flow: {
+    /** Short button label offered when a pomodoro ends: "+5 min". */
+    extend: string;
+    /** aria-label and title of that button. */
+    extendLabel: string;
+    /** Settings toggle (Sound section): ambients stop during breaks. */
+    quietBreaks: string;
+  };
+
   tasks: {
     previousDay: string;
     nextDay: string;

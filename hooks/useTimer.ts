@@ -11,6 +11,12 @@ interface TimerState {
   totalTime: number;
   pomodorosCompleted: number;
   endTime: number | null;
+  /**
+   * Id of the focus session this run extends ("+5 min" after a pomodoro), or
+   * null for an ordinary run. An extension adds its minutes to that session
+   * instead of counting a new pomodoro.
+   */
+  extensionOf: string | null;
   /** False until the saved snapshot has been read: nothing is written before. */
   restored: boolean;
 }
@@ -24,6 +30,8 @@ interface TimerSnapshot {
   pomodorosCompleted: number;
   endTime: number | null;
   savedAt: number;
+  /** Absent in snapshots written before extensions existed. */
+  extensionOf?: string | null;
 }
 
 /**
@@ -37,6 +45,7 @@ export interface TimerCapture {
   totalTime: number;
   pomodorosCompleted: number;
   endTime: number | null;
+  extensionOf?: string | null;
 }
 
 interface UseTimerOptions {
@@ -71,7 +80,11 @@ function readSnapshot(key: string): TimerSnapshot | null {
     ) {
       return null;
     }
-    return v as TimerSnapshot;
+    // A malformed extension id only loses the extension: the run restores as
+    // a plain pomodoro instead of dropping the whole snapshot.
+    const extensionOf =
+      typeof v.extensionOf === "string" && v.extensionOf ? v.extensionOf : null;
+    return { ...(v as TimerSnapshot), extensionOf };
   } catch {
     return null;
   }
@@ -88,7 +101,8 @@ type TimerAction =
   | { type: "COMPLETE" }
   | { type: "SYNC_SETTINGS"; duration: number }
   | { type: "RESTORE"; snapshot: TimerSnapshot | null; now: number }
-  | { type: "REVERT"; captured: TimerCapture; now: number };
+  | { type: "REVERT"; captured: TimerCapture; now: number }
+  | { type: "EXTEND"; seconds: number; sessionId: string; now: number };
 
 function timerReducer(state: TimerState, action: TimerAction): TimerState {
   switch (action.type) {
@@ -117,8 +131,9 @@ function timerReducer(state: TimerState, action: TimerAction): TimerState {
       return { ...state, timeRemaining: remaining };
     }
     case "COMPLETE": {
+      // An extension continues a pomodoro that was already counted.
       const pomodorosCompleted =
-        state.mode === "pomodoro"
+        state.mode === "pomodoro" && !state.extensionOf
           ? state.pomodorosCompleted + 1
           : state.pomodorosCompleted;
       return { ...state, pomodorosCompleted };
@@ -130,6 +145,7 @@ function timerReducer(state: TimerState, action: TimerAction): TimerState {
         status: "idle",
         timeRemaining: state.totalTime,
         endTime: null,
+        extensionOf: null,
       };
     case "SET_MODE":
       return {
@@ -139,6 +155,7 @@ function timerReducer(state: TimerState, action: TimerAction): TimerState {
         timeRemaining: action.duration,
         totalTime: action.duration,
         endTime: null,
+        extensionOf: null,
       };
     case "SYNC_SETTINGS":
       if (state.status !== "idle") return state;
@@ -153,7 +170,14 @@ function timerReducer(state: TimerState, action: TimerAction): TimerState {
 
       const fresh = now - snapshot.savedAt < SNAPSHOT_MAX_AGE_MS;
       const pomodorosCompleted = fresh ? snapshot.pomodorosCompleted : 0;
-      const base = { ...state, restored: true, pomodorosCompleted };
+      const base = {
+        ...state,
+        restored: true,
+        pomodorosCompleted,
+        extensionOf: null,
+      };
+      const extensionOf =
+        snapshot.mode === "pomodoro" ? snapshot.extensionOf ?? null : null;
 
       if (snapshot.status === "running" && snapshot.endTime) {
         const msLeft = snapshot.endTime - now;
@@ -165,6 +189,7 @@ function timerReducer(state: TimerState, action: TimerAction): TimerState {
             endTime: snapshot.endTime,
             totalTime: snapshot.totalTime,
             timeRemaining: Math.max(1, Math.round(msLeft / 1000)),
+            extensionOf,
           };
         }
         if (-msLeft < ENDED_WHILE_AWAY_MAX_MS) {
@@ -178,6 +203,7 @@ function timerReducer(state: TimerState, action: TimerAction): TimerState {
             endTime: snapshot.endTime,
             totalTime: snapshot.totalTime,
             timeRemaining: 1,
+            extensionOf,
           };
         }
         return base;
@@ -191,6 +217,7 @@ function timerReducer(state: TimerState, action: TimerAction): TimerState {
           endTime: null,
           totalTime: snapshot.totalTime,
           timeRemaining: snapshot.timeRemaining,
+          extensionOf,
         };
       }
 
@@ -203,6 +230,7 @@ function timerReducer(state: TimerState, action: TimerAction): TimerState {
         mode: captured.mode,
         totalTime: captured.totalTime,
         pomodorosCompleted: captured.pomodorosCompleted,
+        extensionOf: captured.extensionOf ?? null,
       };
       if (captured.status === "running" && captured.endTime) {
         // Same endTime: the clock kept flowing while the undo was on offer. If
@@ -223,6 +251,19 @@ function timerReducer(state: TimerState, action: TimerAction): TimerState {
         timeRemaining: captured.timeRemaining,
       };
     }
+    case "EXTEND":
+      // Straight from wherever the timer is (usually the break that just
+      // began) to a running pomodoro of `seconds`, in one transition: going
+      // through SET_MODE would let SYNC_SETTINGS reset it to the full length.
+      return {
+        ...state,
+        mode: "pomodoro",
+        status: "running",
+        timeRemaining: action.seconds,
+        totalTime: action.seconds,
+        endTime: action.now + action.seconds * 1000,
+        extensionOf: action.sessionId,
+      };
     default:
       return state;
   }
@@ -239,6 +280,7 @@ export function useTimer(settings: AppSettings, options: UseTimerOptions = {}) {
     totalTime: initialDuration,
     pomodorosCompleted: 0,
     endTime: null,
+    extensionOf: null,
     restored: false,
   });
 
@@ -278,6 +320,7 @@ export function useTimer(settings: AppSettings, options: UseTimerOptions = {}) {
       pomodorosCompleted: state.pomodorosCompleted,
       endTime: state.endTime,
       savedAt: Date.now(),
+      extensionOf: state.extensionOf,
     };
     try {
       localStorage.setItem(persistKey, JSON.stringify(snapshot));
@@ -292,6 +335,7 @@ export function useTimer(settings: AppSettings, options: UseTimerOptions = {}) {
     state.totalTime,
     state.pomodorosCompleted,
     state.endTime,
+    state.extensionOf,
     persistedRemaining,
   ]);
 
@@ -362,7 +406,15 @@ export function useTimer(settings: AppSettings, options: UseTimerOptions = {}) {
   const start = useCallback(() => dispatch({ type: "START" }), []);
   const pause = useCallback(() => dispatch({ type: "PAUSE" }), []);
   const resume = useCallback(() => dispatch({ type: "RESUME" }), []);
-  const reset = useCallback(() => dispatch({ type: "RESET" }), []);
+  // Resetting a "+5 min" goes back to a full pomodoro, not to a 5-minute one.
+  const reset = useCallback(() => {
+    if (stateRef.current.extensionOf) {
+      const duration = getDurationForMode("pomodoro", settings);
+      dispatch({ type: "SET_MODE", mode: "pomodoro", duration });
+      return;
+    }
+    dispatch({ type: "RESET" });
+  }, [settings]);
   const skip = useCallback(() => dispatch({ type: "SKIP" }), []);
 
   const capture = useCallback((): TimerCapture => {
@@ -374,11 +426,18 @@ export function useTimer(settings: AppSettings, options: UseTimerOptions = {}) {
       totalTime: s.totalTime,
       pomodorosCompleted: s.pomodorosCompleted,
       endTime: s.endTime,
+      extensionOf: s.extensionOf,
     };
   }, []);
   const revert = useCallback(
     (captured: TimerCapture) =>
       dispatch({ type: "REVERT", captured, now: Date.now() }),
+    []
+  );
+
+  const extend = useCallback(
+    (seconds: number, sessionId: string) =>
+      dispatch({ type: "EXTEND", seconds, sessionId, now: Date.now() }),
     []
   );
 
@@ -401,6 +460,7 @@ export function useTimer(settings: AppSettings, options: UseTimerOptions = {}) {
     timeRemaining: state.timeRemaining,
     totalTime: state.totalTime,
     pomodorosCompleted: state.pomodorosCompleted,
+    extensionOf: state.extensionOf,
     progress,
     start,
     pause,
@@ -410,6 +470,7 @@ export function useTimer(settings: AppSettings, options: UseTimerOptions = {}) {
     setMode,
     capture,
     revert,
+    extend,
     registerOnComplete,
   };
 }

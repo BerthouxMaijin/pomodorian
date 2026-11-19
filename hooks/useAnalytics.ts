@@ -117,6 +117,23 @@ export function useAnalytics() {
         completed: true,
       };
       setSessions((prev) => [...prev, session]);
+      return session.id;
+    },
+    [setSessions]
+  );
+
+  // "+5 min" after a pomodoro: the extra focus belongs to the session just
+  // recorded. Its duration and end move; no second session, no extra pomodoro.
+  const extendSession = useCallback(
+    (id: string, extraMinutes: number) => {
+      const endedAt = new Date().toISOString();
+      setSessions((prev) =>
+        prev.map((s) =>
+          s.id === id
+            ? { ...s, durationMinutes: s.durationMinutes + extraMinutes, endedAt }
+            : s
+        )
+      );
     },
     [setSessions]
   );
@@ -172,5 +189,5 @@ export function useAnalytics() {
     };
   }, [sessions]);
 
-  return { sessions, recordSession, hydrated, ...stats };
+  return { sessions, recordSession, extendSession, hydrated, ...stats };
 }
