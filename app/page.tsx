@@ -3,6 +3,7 @@
 import { useState, useCallback, useEffect, useMemo, useRef } from "react";
 import { motion, AnimatePresence, MotionConfig } from "framer-motion";
 import { track } from "@/lib/track";
+import { notify } from "@/lib/notify";
 import { useTimer, type TimerCapture } from "@/hooks/useTimer";
 import { useSettings } from "@/hooks/useSettings";
 import { useSound } from "@/hooks/useSound";
@@ -149,16 +150,13 @@ export default function Home() {
       setTimeout(() => timer.start(), 100);
     }
 
-    if (settings.notificationsEnabled && "Notification" in window) {
-      if (Notification.permission === "granted") {
-        new Notification("Pomodorian", {
-          body:
-            timer.mode === "pomodoro"
-              ? "Great work! Time for a break."
-              : "Break is over. Let's focus!",
-          icon: "/icon.svg",
-        });
-      }
+    if (settings.notificationsEnabled) {
+      void notify(
+        "Pomodorian",
+        timer.mode === "pomodoro"
+          ? "Great work! Time for a break."
+          : "Break is over. Let's focus!"
+      );
     }
   }, [timer, tasks, settings, sound, analytics]);
 
