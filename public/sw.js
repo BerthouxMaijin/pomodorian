@@ -26,7 +26,7 @@
 // next load. Bump VERSION whenever this file's caching rules change: the
 // caches of the previous version are deleted on activate.
 
-const VERSION = "v1";
+const VERSION = "v2";
 const PAGES = `pomodorian-pages-${VERSION}`;
 const STATIC = `pomodorian-static-${VERSION}`;
 const AUDIO = `pomodorian-audio-${VERSION}`;
