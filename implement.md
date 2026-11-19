@@ -13,6 +13,7 @@ Tout ce qui suit est en production sur pomodorian.app (branche `main`, déployé
 | 1 | Audit, fiabilité du timer, bandeau Annuler, édition des tâches, thème système, service worker, alarme audible | BerthouxMaijin/pomodorian#3 | 2026-11-19 |
 | 2 | Traduction du coeur de l'app en 8 langues | BerthouxMaijin/pomodorian#4 | 2026-11-19 |
 | 3 | Mode focus, objectif du jour, sauvegarde, +5 min, sons coupés en pause, mini timer flottant | BerthouxMaijin/pomodorian#5 | 2026-11-19 |
+| 4 | Sauvegarde chargée à la demande (page ramenée de 370 à 306 Ko), tests rangés dans `qa/e2e/`, `implement.md` et `memory.md` | BerthouxMaijin/pomodorian#6 | 2026-11-19 |
 
 ## Ce qui a été construit
 
@@ -118,10 +119,6 @@ Rien de ce qui suit n'a pu être testé : seul Chromium était disponible.
 - [ ] **Téléphone en mode avion** après une visite : l'app s'ouvre, le timer tourne, l'alarme sonne.
 - [ ] **À l'oreille** : le volume de l'alarme convient.
 - [ ] **Japonais et chinois** : relecture par quelqu'un qui lit ces langues.
-
-## En attente de mise en production
-
-- **Sauvegarde chargée à la demande** : sur la branche `claude/busy-maxwell-guo5rw`, pas encore dans `main`. Tant que ce n'est pas poussé, le site en ligne charge 370 Ko de JavaScript au lieu de 306.
 
 ## Défauts connus
 
