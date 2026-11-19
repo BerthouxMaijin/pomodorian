@@ -21,6 +21,10 @@ Produit, ajouté en route : écran maintenu allumé pendant le décompte, libell
 
 Qualité : chaque salve est passée par le garde-fou automatique, le build, un test navigateur en local puis en production, et 2 ou 3 relectures adversariales. Ces relectures ont attrapé de vrais problèmes à chaque fois : faits faux (Grand oral, code de la route), consignes d'usage fausses, et pages qui reprenaient trop la page d'une autre langue. Toutes les pages publiées ont été corrigées avant leur mise en ligne.
 
+### Note de méthode sur la règle anti-traduction
+
+À chaque salve, la relecture a demandé que chaque page soit distincte des pages de même durée dans les autres langues, y compris pour les FAQ générales du produit (pause, onglet en arrière-plan, plein écran). Cela a coûté 2 à 3 passes par semaine. Pour la suite, il faut savoir que Google *attend* que des pages reliées par hreflang soient équivalentes d'une langue à l'autre : ces recoupements ne pénalisent pas le référencement. L'exigence d'écriture native reste un bon standard de qualité, mais si la production reprend, on peut l'assouplir sur les FAQ purement produit pour réduire le coût de relecture.
+
 ## Indexation Google (inspection d'URL, 19/11)
 
 | État | Pages des semaines 1 à 3 |

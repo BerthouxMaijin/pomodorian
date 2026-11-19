@@ -310,11 +310,11 @@ export const frTimerPages: TimerPage[] = [
       },
       {
         heading: "Informer, négocier, rappeler",
-        body: "Pour les interruptions venues des autres, Cirillo propose une séquence simple : informer la personne que vous êtes occupé, négocier un moment pour lui répondre, puis la rappeler comme promis à la fin du pomodoro. Dans la plupart des cas, la demande peut attendre vingt minutes, et la personne est rassurée de savoir quand vous reviendrez vers elle.",
+        body: "Pour les interruptions venues des autres, Cirillo propose une séquence simple : informer la personne que vous êtes occupé, négocier un moment pour lui répondre, puis la rappeler comme promis à la fin du pomodoro. Souvent, la demande peut attendre vingt minutes, et la personne est rassurée de savoir quand vous reviendrez vers elle.",
       },
       {
-        heading: "Télétravailler avec les enfants à la maison",
-        body: "Pendant les vacances ou un jour de grève, travailler avec des enfants autour de soi semble impossible. Le pomodoro donne un cadre lisible pour eux aussi : tant que le minuteur tourne, on ne dérange pas, sauf urgence ; à la pause, vous êtes entièrement disponible. Montrez-leur l'écran, et faites de la pause un vrai moment partagé.",
+        heading: "Un pomodoro pour chacun, même les enfants",
+        body: "Pendant les vacances ou un jour de grève, travailler avec des enfants autour de soi semble impossible. Proposez-leur leur propre séance : un dessin, un puzzle, une page de lecture, avec leur minuteur à eux. Vous travaillez chacun de votre côté, et la pause devient un rendez-vous commun où l'on se montre ce qu'on a fait.",
       },
     ],
     faq: [
@@ -323,8 +323,8 @@ export const frTimerPages: TimerPage[] = [
         a: "Le principe, oui, mais 25 minutes peuvent être longues pour les plus jeunes. Commencez par des sessions plus courtes, avec le minuteur de 15 ou 20 minutes, et allongez avec l'âge.",
       },
       {
-        q: "Que faire pendant les cinq minutes de pause ?",
-        a: "Se lever, boire un verre d'eau, regarder au loin. Évitez les réseaux sociaux et la messagerie, qui vous suivraient dans le pomodoro suivant.",
+        q: "Que noter sur la fiche du jour ?",
+        a: "Les quelques tâches que vous comptez vraiment faire aujourd'hui, une par ligne, avec une case par pomodoro passé dessus. Tout le reste va dans l'inventaire des activités.",
       },
       {
         q: "Faut-il créer un compte ?",
@@ -361,7 +361,7 @@ export const frTimerPages: TimerPage[] = [
     sections: [
       {
         heading: "La réunion de 45 minutes",
-        body: "Une réunion programmée sur une heure en remplit presque toujours une. En la fixant à 45 minutes, vous rendez un quart d'heure à chacun pour souffler, noter les décisions ou arriver à l'heure au rendez-vous suivant. Le minuteur affiché à l'écran aide l'animateur : quand il reste dix minutes, on passe aux décisions et aux prochaines étapes.",
+        body: "Une réunion programmée sur une heure en remplit souvent une. En la fixant à 45 minutes, vous rendez un quart d'heure à chacun pour souffler, noter les décisions ou arriver à l'heure au rendez-vous suivant. Le minuteur affiché à l'écran aide l'animateur : quand il reste dix minutes, on passe aux décisions et aux prochaines étapes.",
       },
       {
         heading: "Le plan d'une dissertation",
@@ -374,16 +374,16 @@ export const frTimerPages: TimerPage[] = [
     ],
     faq: [
       {
-        q: "Comment enchaîner deux blocs de 45 minutes ?",
-        a: "Prenez la pause de 15 minutes après le premier bloc. À l'alarme de la pause, le minuteur revient de lui-même sur 45 minutes : il suffit de cliquer sur Démarrer.",
+        q: "Pourquoi 45 minutes plutôt que 50 ?",
+        a: "Quarante-cinq minutes plus quinze de pause font exactement une heure : chaque bloc commence à l'heure pile, ce qui simplifie l'agenda et les rendez-vous avec les autres.",
       },
       {
         q: "Le lien vers l'application règle-t-il 45 minutes ?",
         a: "Oui : il règle votre durée de concentration enregistrée sur 45 minutes. La pause reste celle de vos réglages, que vous pouvez modifier à tout moment.",
       },
       {
-        q: "Puis-je garder un son de cheminée pendant tout le bloc ?",
-        a: "Oui. Le son choisi sous le minuteur tourne pendant le décompte, se met en pause avec lui et s'arrête à l'alarme.",
+        q: "Combien de temps pour le plan le jour de l'examen ?",
+        a: "Cela dépend de la durée de l'épreuve et des conseils de vos professeurs. L'entraînement en 45 minutes sert surtout à savoir combien de temps il vous faut, à vous, pour un plan solide.",
       },
     ],
     relatedArticleSlugs: [
@@ -416,15 +416,15 @@ export const frTimerPages: TimerPage[] = [
     sections: [
       {
         heading: "Le vrai créneau entre deux réunions",
-        body: "Sur l'agenda, une heure sépare deux réunions. En pratique, la première déborde, et il faut quelques minutes pour préparer la suivante. Reste environ quarante minutes. Plutôt que de les perdre à vérifier ses messages, lancez le minuteur sur une seule tâche dès que vous êtes assis : ce sont souvent les quarante minutes les plus productives de la journée.",
+        body: "Sur l'agenda, une heure sépare deux réunions. En pratique, la première déborde, et il faut quelques minutes pour préparer la suivante. Reste environ quarante minutes. Plutôt que de les perdre à vérifier ses messages, lancez le minuteur sur une seule tâche dès que vous êtes assis : quarante minutes sans dispersion, c'est déjà beaucoup.",
       },
       {
         heading: "En cuisine",
-        body: "Gâteau, quiche, gratin : de nombreuses cuissons au four tournent autour de quarante minutes, selon la recette et le four. Lancez le minuteur en enfournant et laissez cet onglet au premier plan : dans un onglet en arrière-plan, certains navigateurs peuvent retarder l'alarme d'une minute, et une minute compte pour une croûte.",
+        body: "Gâteau, quiche, gratin : de nombreuses cuissons au four tournent autour de quarante minutes, selon la recette et le four. Lancez le minuteur en enfournant et laissez cet onglet au premier plan : dans un onglet en arrière-plan, certains navigateurs peuvent retarder l'alarme jusqu'à une minute, et une minute compte pour une croûte.",
       },
       {
         heading: "Les révisions avant le dîner",
-        body: "Après la journée de cours, une séance de quarante minutes avant le repas est un format réaliste : assez pour revoir une leçon et faire quelques exercices, assez court pour ne pas déborder sur la soirée. À l'alarme, on range, on dîne, et la pause de vingt minutes sert de transition plutôt que de prétexte pour reprendre.",
+        body: "Après la journée de cours, une séance de quarante minutes avant le repas est un format réaliste : assez pour revoir une leçon et faire quelques exercices, assez court pour ne pas déborder sur la soirée. À l'alarme, on range les cahiers et on passe à table : la soirée commence, et les révisions ne débordent pas dessus.",
       },
     ],
     faq: [
@@ -433,12 +433,12 @@ export const frTimerPages: TimerPage[] = [
         a: "Lancez le minuteur quand vous vous asseyez, pas à l'heure prévue. Mieux vaut trente minutes de vraie concentration que d'empiéter sur la réunion suivante.",
       },
       {
-        q: "Puis-je raccourcir la pause de vingt minutes ?",
-        a: "La pause intégrée dure vingt minutes. Pour une pause plus courte, ouvrez le minuteur de 5 ou 10 minutes dans un autre onglet.",
+        q: "Peut-on enchaîner deux cuissons ?",
+        a: "Oui. À l'alarme, le minuteur passe sur la pause de vingt minutes : cliquez sur « Minuteur 40 min », puis sur Démarrer, pour relancer quarante minutes.",
       },
       {
         q: "Le minuteur garde-t-il l'écran du téléphone allumé ?",
-        a: "Oui, pendant le décompte, si votre navigateur le permet. Laissez la page ouverte et ne verrouillez pas le téléphone vous-même.",
+        a: "Oui, pendant le décompte, si votre navigateur le permet. Gardez simplement la page affichée au premier plan.",
       },
     ],
     relatedArticleSlugs: [

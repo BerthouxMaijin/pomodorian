@@ -2,6 +2,16 @@
 
 Une entrée par run. Lire les 3 dernières avant toute décision.
 
+## Pages timer, semaine 4 et bilan : 2026-11-19 (salve automatique, la dernière)
+
+**Publié** : 7 ES (5, 10, 15, 20, 25, 30 min, 1 hora, nouvelle langue avec `/timers/es`) et 3 FR (25, 45, 40 min). Total sur 4 semaines : 40 pages en 4 langues. JB n'a pas tranché entre publier la semaine 4 et la remplacer par le maillage : la décision du 29/10 a été appliquée.
+
+**Bilan** (`rapports/2026-11-19-timers-bilan.md`) : 8 pages sur 30 indexées au 19/11 (2 au 12/11), dont 5 via le sitemap sans demande manuelle. Les pages indexées se placent entre la 5e et la 10e position. Total : 5 clics, 3 utilisateurs GA4 ont lancé un minuteur. Le site entier fait +80 % de clics, grâce au blog et à l'accueil.
+
+**Recommandation** : arrêter la production, ne pas élargir aux variantes, faire le maillage interne (à valider par JB) et les demandes d'indexation, remesurer mi-décembre, avec trois issues chiffrées dans le rapport. Aucune salve suivante n'est programmée.
+
+**Leçon** : la règle anti-traduction a coûté 2 à 3 relectures par semaine. Google attend des pages hreflang équivalentes : on peut l'assouplir sur les FAQ purement produit si la production reprend.
+
 ## Pages timer, semaine 3 : 2026-11-12 (salve automatique)
 
 **Publié** : 5 FR (5, 10, 15, 20, 30 min, nouvelle langue avec `/timers/fr`), 4 DE (25, 30, 45 min, 1 Stunde), 1 EN (3 h, cadre). Rapport : `rapports/2026-11-12-timers-s3.md`.
