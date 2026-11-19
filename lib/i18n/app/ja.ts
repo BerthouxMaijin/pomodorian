@@ -130,6 +130,30 @@ export const ja: AppCopy = {
     showShortcuts: "ショートカットを表示",
   },
 
+  backup: {
+    title: "データ",
+    export: "バックアップを書き出す",
+    import: "バックアップを読み込む",
+    fileLabel: "バックアップファイル",
+    note: "データはこのブラウザ内にだけ保存されます。書き出したファイルが唯一のコピーです。",
+    replaceWarning: "このデバイスのデータが置き換えられます。",
+    summary: (tasks, pomodoros, date) => {
+      const parts = `タスク${tasks}件、ポモドーロ${pomodoros}回`;
+      return date ? `${date}のバックアップ：${parts}` : `バックアップ：${parts}`;
+    },
+    replace: "置き換える",
+    cancel: "キャンセル",
+    errors: {
+      tooLarge: "このファイルはPomodorianのバックアップとしては大きすぎます。何も変更されていません。",
+      notJson: "このファイルを読み取れません。Pomodorianのバックアップ（.json）を選んでください。何も変更されていません。",
+      notBackup: "このファイルはPomodorianのバックアップではありません。何も変更されていません。",
+      unsupported: "このバックアップは新しいバージョンのPomodorianで作成されています。ページを再読み込みしてから、もう一度お試しください。何も変更されていません。",
+      invalid: "このバックアップは破損しているか、不完全です。何も変更されていません。",
+      readFailed: "ファイルを読み取れませんでした。何も変更されていません。",
+      writeFailed: "このブラウザにデータを保存できませんでした。何も変更されていません。",
+    },
+  },
+
   report: {
     title: "統計",
     dialogLabel: "レポート",

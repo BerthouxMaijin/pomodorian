@@ -120,6 +120,30 @@ export type AppCopy = {
     showShortcuts: string;
   };
 
+  backup: {
+    title: string;
+    export: string;
+    import: string;
+    /** Accessible name of the hidden file input. */
+    fileLabel: string;
+    /** Under the buttons: where the data lives. */
+    note: string;
+    replaceWarning: string;
+    /** `date` is already formatted, or null when the file's date is unusable. */
+    summary: (tasks: number, pomodoros: number, date: string | null) => string;
+    replace: string;
+    cancel: string;
+    errors: {
+      tooLarge: string;
+      notJson: string;
+      notBackup: string;
+      unsupported: string;
+      invalid: string;
+      readFailed: string;
+      writeFailed: string;
+    };
+  };
+
   report: {
     title: string;
     dialogLabel: string;

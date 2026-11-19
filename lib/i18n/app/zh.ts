@@ -130,6 +130,30 @@ export const zh: AppCopy = {
     showShortcuts: "显示快捷键",
   },
 
+  backup: {
+    title: "数据",
+    export: "导出备份",
+    import: "导入备份",
+    fileLabel: "备份文件",
+    note: "你的数据只保存在这个浏览器里。导出的文件是唯一的副本。",
+    replaceWarning: "这会替换此设备上的数据。",
+    summary: (tasks, pomodoros, date) => {
+      const parts = `${tasks} 个任务，${pomodoros} 个番茄钟`;
+      return date ? `${date} 的备份：${parts}` : `备份：${parts}`;
+    },
+    replace: "替换",
+    cancel: "取消",
+    errors: {
+      tooLarge: "这个文件太大，不是 Pomodorian 备份。未做任何更改。",
+      notJson: "无法读取这个文件。请选择 Pomodorian 备份（.json）。未做任何更改。",
+      notBackup: "这个文件不是 Pomodorian 备份。未做任何更改。",
+      unsupported: "这个备份来自更新版本的 Pomodorian。请刷新页面后重试。未做任何更改。",
+      invalid: "这个备份已损坏或不完整。未做任何更改。",
+      readFailed: "无法读取文件。未做任何更改。",
+      writeFailed: "无法在此浏览器中保存数据。未做任何更改。",
+    },
+  },
+
   report: {
     title: "统计",
     dialogLabel: "报告",

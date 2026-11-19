@@ -12,6 +12,7 @@ import {
   UI_LOCALES,
   type LanguageSetting,
 } from "@/lib/i18n/locales";
+import { BackupSection } from "./BackupSection";
 
 interface SettingsModalProps {
   settings: AppSettings;
@@ -236,6 +237,9 @@ export function SettingsModal({
             </select>
           </div>
         </section>
+
+        {/* Data: backup export and import */}
+        <BackupSection />
       </div>
     </div>
   );
