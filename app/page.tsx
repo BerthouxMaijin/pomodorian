@@ -13,6 +13,7 @@ import { Timer } from "@/components/timer/Timer";
 import { ModeSelector } from "@/components/timer/ModeSelector";
 import { TimerControls } from "@/components/timer/TimerControls";
 import { UndoBanner } from "@/components/timer/UndoBanner";
+import { MiniTimer } from "@/components/timer/MiniTimer";
 import { Background } from "@/components/layout/Background";
 import { Header } from "@/components/layout/Header";
 import { TaskList } from "@/components/tasks/TaskList";
@@ -581,6 +582,17 @@ export default function Home() {
           />
         </motion.div>
       </main>
+
+      <MiniTimer
+        timeRemaining={timer.timeRemaining}
+        progress={timer.progress}
+        mode={timer.mode}
+        status={timer.status}
+        taskTitle={timer.mode === "pomodoro" ? activeTask?.title ?? null : null}
+        onStart={startTimer}
+        onPause={pauseTimer}
+        onResume={resumeTimer}
+      />
 
       <InfoSection />
       <Footer />

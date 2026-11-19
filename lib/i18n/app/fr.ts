@@ -31,6 +31,13 @@ export const fr: AppCopy = {
     undoHint: "Annuler (Z)",
   },
 
+  miniTimer: {
+    open: "Ouvrir le mini minuteur",
+    close: "Fermer le mini minuteur",
+    hint: "Mini minuteur, toujours au premier plan",
+    windowTitle: "Mini minuteur Pomodorian",
+  },
+
   header: {
     blog: "Blog",
     pomodorosCompleted: "Pomodoros terminés",

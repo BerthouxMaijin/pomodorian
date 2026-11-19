@@ -37,6 +37,18 @@ export type AppCopy = {
     undoHint: string;
   };
 
+  /** The floating mini timer (Document Picture-in-Picture window). */
+  miniTimer: {
+    /** Header button, aria-label while the mini timer is closed. */
+    open: string;
+    /** Header button, aria-label while the mini timer is open. */
+    close: string;
+    /** Header button tooltip while closed: says what the window is. */
+    hint: string;
+    /** document.title of the mini window. */
+    windowTitle: string;
+  };
+
   header: {
     blog: string;
     pomodorosCompleted: string;

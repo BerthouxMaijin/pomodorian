@@ -3,6 +3,7 @@
 import { memo } from "react";
 import Link from "next/link";
 import { useAppCopy } from "@/hooks/useAppCopy";
+import { MiniTimerButton } from "@/components/timer/MiniTimerButton";
 
 interface HeaderProps {
   pomodorosCompleted: number;
@@ -89,6 +90,7 @@ export const Header = memo(function Header({ pomodorosCompleted, onOpenSettings,
             <circle cx="12" cy="12" r="3" />
           </svg>
         </button>
+        <MiniTimerButton />
       </div>
     </header>
   );
