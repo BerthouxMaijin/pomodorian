@@ -10,12 +10,15 @@ import { NEVER_DUMB_COPY } from "@/components/neverdumb/neverDumbCopy";
 interface SettingsModalProps {
   settings: AppSettings;
   onUpdate: (partial: Partial<AppSettings>) => void;
+  // Plays an alarm sound once, so the choice and the volume can be heard.
+  onPreviewAlarm?: (soundKey: string, volume: number) => void;
   onClose: () => void;
 }
 
 export function SettingsModal({
   settings,
   onUpdate,
+  onPreviewAlarm,
   onClose,
 }: SettingsModalProps) {
   const locale = useBrowserLocale();
@@ -138,7 +141,10 @@ export function SettingsModal({
             <span className="text-sm text-foreground">Alarm Sound</span>
             <select
               value={settings.alarmSound}
-              onChange={(e) => onUpdate({ alarmSound: e.target.value })}
+              onChange={(e) => {
+                onUpdate({ alarmSound: e.target.value });
+                onPreviewAlarm?.(e.target.value, settings.alarmVolume);
+              }}
               className="px-3 py-1.5 rounded-lg bg-surface text-foreground text-sm border border-border outline-none"
             >
               {Object.entries(ALARM_SOUNDS).map(([key, { label }]) => (
@@ -158,6 +164,13 @@ export function SettingsModal({
               onChange={(e) =>
                 onUpdate({ alarmVolume: parseInt(e.target.value) / 100 })
               }
+              onPointerUp={(e) =>
+                onPreviewAlarm?.(settings.alarmSound, parseInt(e.currentTarget.value) / 100)
+              }
+              onKeyUp={(e) => {
+                if (!/^(Arrow|Page|Home|End)/.test(e.key)) return;
+                onPreviewAlarm?.(settings.alarmSound, parseInt(e.currentTarget.value) / 100);
+              }}
               className="w-32 accent-red-500"
             />
           </div>

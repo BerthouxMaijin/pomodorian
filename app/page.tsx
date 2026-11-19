@@ -578,6 +578,7 @@ export default function Home() {
           <SettingsModal
             settings={settings}
             onUpdate={updateSettings}
+            onPreviewAlarm={sound.previewAlarm}
             onClose={() => setSettingsOpen(false)}
           />
         )}
