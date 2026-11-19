@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { Reorder, useDragControls } from "framer-motion";
 import { TaskItem } from "./TaskItem";
+import type { TaskChanges } from "./TaskEditor";
 import { cn } from "@/lib/utils";
 import type { DisplayTask } from "@/hooks/useTaskHistory";
 
@@ -16,7 +17,7 @@ interface SortableTaskItemProps {
   onMove: (delta: number) => void;
   onToggle?: () => void;
   onDelete?: () => void;
-  onEdit?: (title: string) => void;
+  onEdit?: (changes: TaskChanges) => void;
   onSetActive?: () => void;
 }
 

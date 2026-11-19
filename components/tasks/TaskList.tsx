@@ -4,6 +4,8 @@ import { memo, useState } from "react";
 import { Reorder } from "framer-motion";
 import { TaskItem } from "./TaskItem";
 import { SortableTaskItem } from "./SortableTaskItem";
+import { EstimateStepper } from "./EstimateStepper";
+import type { TaskChanges } from "./TaskEditor";
 import { useTaskHistory } from "@/hooks/useTaskHistory";
 import type { FocusSession, Task } from "@/lib/types";
 
@@ -15,7 +17,7 @@ interface TaskListProps {
   onAdd: (title: string, estimatedPomodoros?: number) => void;
   onToggle: (id: string) => void;
   onDelete: (id: string) => void;
-  onEdit: (id: string, title: string) => void;
+  onEdit: (id: string, changes: TaskChanges) => void;
   onSetActive: (id: string | null) => void;
   onIncrementPomodoro: (id: string) => void;
   onReorder: (orderedIds: string[]) => void;
@@ -37,6 +39,7 @@ export const TaskList = memo(function TaskList({
 }: TaskListProps) {
   const history = useTaskHistory({ tasks, sessions });
   const [newTaskTitle, setNewTaskTitle] = useState("");
+  const [newTaskEstimate, setNewTaskEstimate] = useState(1);
   const [isAdding, setIsAdding] = useState(false);
 
   // Only today's rows are editable, and only rows backed by a live task can
@@ -64,9 +67,16 @@ export const TaskList = memo(function TaskList({
     e.preventDefault();
     const title = newTaskTitle.trim();
     if (!title) return;
-    onAdd(title);
+    onAdd(title, newTaskEstimate);
     setNewTaskTitle("");
+    setNewTaskEstimate(1);
     setIsAdding(false);
+  };
+
+  const cancelAdding = () => {
+    setIsAdding(false);
+    setNewTaskTitle("");
+    setNewTaskEstimate(1);
   };
 
   const dateLabel = formatDateLabel(history.viewDate, history.isToday, locale);
@@ -139,7 +149,7 @@ export const TaskList = memo(function TaskList({
                     onMove={(delta) => moveTask(task.taskId!, delta)}
                     onToggle={() => onToggle(task.taskId!)}
                     onDelete={() => onDelete(task.taskId!)}
-                    onEdit={(title) => onEdit(task.taskId!, title)}
+                    onEdit={(changes) => onEdit(task.taskId!, changes)}
                     onSetActive={() =>
                       onSetActive(
                         task.taskId === activeTaskId ? null : task.taskId
@@ -165,7 +175,7 @@ export const TaskList = memo(function TaskList({
                 }
                 onEdit={
                   task.taskId
-                    ? (title) => onEdit(task.taskId!, title)
+                    ? (changes) => onEdit(task.taskId!, changes)
                     : undefined
                 }
                 onSetActive={
@@ -185,7 +195,18 @@ export const TaskList = memo(function TaskList({
       {history.isToday && (
         <>
           {isAdding ? (
-            <form onSubmit={handleSubmit} className="mt-3">
+            <form
+              onSubmit={handleSubmit}
+              onKeyDown={(e) => {
+                if (e.key === "Escape") {
+                  e.preventDefault();
+                  cancelAdding();
+                }
+                // Space on the stepper must not start the timer.
+                e.stopPropagation();
+              }}
+              className="mt-3"
+            >
               <div className="glass rounded-xl p-3 space-y-3">
                 <input
                   type="text"
@@ -197,13 +218,14 @@ export const TaskList = memo(function TaskList({
                   className="w-full bg-transparent text-foreground placeholder:text-muted outline-none text-sm"
                   autoFocus
                 />
+                <EstimateStepper
+                  value={newTaskEstimate}
+                  onChange={setNewTaskEstimate}
+                />
                 <div className="flex items-center justify-between">
                   <button
                     type="button"
-                    onClick={() => {
-                      setIsAdding(false);
-                      setNewTaskTitle("");
-                    }}
+                    onClick={cancelAdding}
                     className="text-xs text-muted hover:text-foreground transition-colors py-2.5 pr-3"
                   >
                     Cancel
