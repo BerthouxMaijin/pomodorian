@@ -282,4 +282,170 @@ export const frTimerPages: TimerPage[] = [
     ],
     published: "2026-11-12",
   },
+  // Week 4 (2026-11-19).
+  {
+    slug: "minuteur-25-minutes",
+    lang: "fr",
+    minutes: 25,
+    role: "focus",
+    breakMinutes: 5,
+    label: "25 minutes",
+    title: "Minuteur 25 minutes : méthode Pomodoro gratuite",
+    description:
+      "Minuteur de 25 minutes gratuit pour la méthode Pomodoro, avec pause de 5 minutes. Fiche du jour, gestion des interruptions, télétravail avec enfants.",
+    h1: "Minuteur 25 minutes",
+    intro:
+      "Vingt-cinq minutes, c'est un pomodoro. Lancez ce minuteur sur une seule tâche ; à l'alarme, il passe de lui-même sur la pause de cinq minutes. Au-delà du chronomètre, la méthode de Francesco Cirillo tient dans quelques outils très simples, dont deux sont détaillés plus bas.",
+    useCases: [
+      "Un pomodoro de 25 minutes sur une seule tâche.",
+      "Avancer en télétravail quand les enfants sont à la maison.",
+      "Vider sa fiche « À faire aujourd'hui », une tâche à la fois.",
+      "Traiter un dossier qu'on repousse depuis des semaines.",
+      "Une séance de révision suivie de cinq minutes de pause.",
+    ],
+    sections: [
+      {
+        heading: "La fiche « À faire aujourd'hui »",
+        body: "Dans sa méthode, Cirillo ne se contente pas d'un minuteur. Il propose une fiche « À faire aujourd'hui », où l'on note le matin les seules tâches de la journée, et un inventaire des activités pour tout le reste. La fiche du jour reste courte. À chaque pomodoro terminé, on coche une case à côté de la tâche : le soir, on voit noir sur blanc où est passé le temps.",
+      },
+      {
+        heading: "Informer, négocier, rappeler",
+        body: "Pour les interruptions venues des autres, Cirillo propose une séquence simple : informer la personne que vous êtes occupé, négocier un moment pour lui répondre, puis la rappeler comme promis à la fin du pomodoro. Dans la plupart des cas, la demande peut attendre vingt minutes, et la personne est rassurée de savoir quand vous reviendrez vers elle.",
+      },
+      {
+        heading: "Télétravailler avec les enfants à la maison",
+        body: "Pendant les vacances ou un jour de grève, travailler avec des enfants autour de soi semble impossible. Le pomodoro donne un cadre lisible pour eux aussi : tant que le minuteur tourne, on ne dérange pas, sauf urgence ; à la pause, vous êtes entièrement disponible. Montrez-leur l'écran, et faites de la pause un vrai moment partagé.",
+      },
+    ],
+    faq: [
+      {
+        q: "La méthode convient-elle aux enfants ?",
+        a: "Le principe, oui, mais 25 minutes peuvent être longues pour les plus jeunes. Commencez par des sessions plus courtes, avec le minuteur de 15 ou 20 minutes, et allongez avec l'âge.",
+      },
+      {
+        q: "Que faire pendant les cinq minutes de pause ?",
+        a: "Se lever, boire un verre d'eau, regarder au loin. Évitez les réseaux sociaux et la messagerie, qui vous suivraient dans le pomodoro suivant.",
+      },
+      {
+        q: "Faut-il créer un compte ?",
+        a: "Non. Le minuteur fonctionne directement dans le navigateur, sans inscription ni publicité.",
+      },
+    ],
+    relatedArticleSlugs: [
+      "guide-complet-pomodoro-debutants",
+      "vaincre-procrastination-pomodoro",
+      "organiser-journee-teletravail",
+    ],
+    published: "2026-11-19",
+  },
+  {
+    slug: "minuteur-45-minutes",
+    lang: "fr",
+    minutes: 45,
+    role: "focus",
+    breakMinutes: 15,
+    label: "45 minutes",
+    title: "Minuteur 45 minutes : compte à rebours gratuit",
+    description:
+      "Minuteur de 45 minutes gratuit avec pause de 15 minutes : pour une réunion qui laisse du temps libre, le plan d'une dissertation ou un cours de yoga.",
+    h1: "Minuteur 45 minutes",
+    intro:
+      "Quarante-cinq minutes au compteur, et un quart d'heure de pause prêt à prendre le relais. C'est un format qui libère du temps sans en avoir l'air : une réunion de 45 minutes plutôt qu'une heure, un plan de dissertation construit sans se presser, une séance de yoga complète.",
+    useCases: [
+      "Une réunion de 45 minutes plutôt qu'une heure.",
+      "Construire le plan d'une dissertation au brouillon.",
+      "Un cours de yoga ou de renforcement en ligne.",
+      "Un bloc de travail suivi de 15 minutes de vraie pause.",
+      "Préparer un oral ou une présentation.",
+    ],
+    sections: [
+      {
+        heading: "La réunion de 45 minutes",
+        body: "Une réunion programmée sur une heure en remplit presque toujours une. En la fixant à 45 minutes, vous rendez un quart d'heure à chacun pour souffler, noter les décisions ou arriver à l'heure au rendez-vous suivant. Le minuteur affiché à l'écran aide l'animateur : quand il reste dix minutes, on passe aux décisions et aux prochaines étapes.",
+      },
+      {
+        heading: "Le plan d'une dissertation",
+        body: "Beaucoup de professeurs de philosophie et de lettres conseillent de passer un long moment au brouillon avant de rédiger. Quarante-cinq minutes, c'est un temps raisonnable pour analyser le sujet, chercher les exemples et bâtir un plan solide en deux ou trois parties. En s'entraînant avec le minuteur, on apprend à ne pas rédiger trop tôt, ni trop tard.",
+      },
+      {
+        heading: "Une séance de yoga ou de renforcement",
+        body: "De nombreux cours de yoga ou de renforcement en ligne durent autour de 45 minutes. Lancer le minuteur en même temps que la vidéo, c'est s'engager à aller jusqu'au bout, y compris jusqu'au temps de relaxation final, souvent sacrifié. Le quart d'heure de pause qui suit sert à boire, se changer et reprendre doucement.",
+      },
+    ],
+    faq: [
+      {
+        q: "Comment enchaîner deux blocs de 45 minutes ?",
+        a: "Prenez la pause de 15 minutes après le premier bloc. À l'alarme de la pause, le minuteur revient de lui-même sur 45 minutes : il suffit de cliquer sur Démarrer.",
+      },
+      {
+        q: "Le lien vers l'application règle-t-il 45 minutes ?",
+        a: "Oui : il règle votre durée de concentration enregistrée sur 45 minutes. La pause reste celle de vos réglages, que vous pouvez modifier à tout moment.",
+      },
+      {
+        q: "Puis-je garder un son de cheminée pendant tout le bloc ?",
+        a: "Oui. Le son choisi sous le minuteur tourne pendant le décompte, se met en pause avec lui et s'arrête à l'alarme.",
+      },
+    ],
+    relatedArticleSlugs: [
+      "sessions-pomodoro-longues-guide",
+      "meilleures-techniques-etude-science",
+      "deep-work-concentration-profonde",
+    ],
+    published: "2026-11-19",
+  },
+  {
+    slug: "minuteur-40-minutes",
+    lang: "fr",
+    minutes: 40,
+    role: "focus",
+    breakMinutes: 20,
+    label: "40 minutes",
+    title: "Minuteur 40 minutes : compte à rebours gratuit",
+    description:
+      "Minuteur de 40 minutes gratuit avec pause de 20 minutes : le créneau réel entre deux réunions, une cuisson au four ou les révisions avant le dîner.",
+    h1: "Minuteur 40 minutes",
+    intro:
+      "Quarante minutes, puis une pause de vingt. C'est souvent le temps vraiment disponible entre deux réunions, celui d'une cuisson au four ou d'une séance de révisions avant de passer à table. Ce minuteur les décompte et sonne à la fin.",
+    useCases: [
+      "Le créneau réellement libre entre deux réunions.",
+      "Surveiller une cuisson au four.",
+      "Les révisions avant le dîner.",
+      "Un bloc de travail suivi de 20 minutes de pause.",
+      "Ranger un placard ou trier des papiers.",
+    ],
+    sections: [
+      {
+        heading: "Le vrai créneau entre deux réunions",
+        body: "Sur l'agenda, une heure sépare deux réunions. En pratique, la première déborde, et il faut quelques minutes pour préparer la suivante. Reste environ quarante minutes. Plutôt que de les perdre à vérifier ses messages, lancez le minuteur sur une seule tâche dès que vous êtes assis : ce sont souvent les quarante minutes les plus productives de la journée.",
+      },
+      {
+        heading: "En cuisine",
+        body: "Gâteau, quiche, gratin : de nombreuses cuissons au four tournent autour de quarante minutes, selon la recette et le four. Lancez le minuteur en enfournant et laissez cet onglet au premier plan : dans un onglet en arrière-plan, certains navigateurs peuvent retarder l'alarme d'une minute, et une minute compte pour une croûte.",
+      },
+      {
+        heading: "Les révisions avant le dîner",
+        body: "Après la journée de cours, une séance de quarante minutes avant le repas est un format réaliste : assez pour revoir une leçon et faire quelques exercices, assez court pour ne pas déborder sur la soirée. À l'alarme, on range, on dîne, et la pause de vingt minutes sert de transition plutôt que de prétexte pour reprendre.",
+      },
+    ],
+    faq: [
+      {
+        q: "Que faire si la réunion précédente déborde ?",
+        a: "Lancez le minuteur quand vous vous asseyez, pas à l'heure prévue. Mieux vaut trente minutes de vraie concentration que d'empiéter sur la réunion suivante.",
+      },
+      {
+        q: "Puis-je raccourcir la pause de vingt minutes ?",
+        a: "La pause intégrée dure vingt minutes. Pour une pause plus courte, ouvrez le minuteur de 5 ou 10 minutes dans un autre onglet.",
+      },
+      {
+        q: "Le minuteur garde-t-il l'écran du téléphone allumé ?",
+        a: "Oui, pendant le décompte, si votre navigateur le permet. Laissez la page ouverte et ne verrouillez pas le téléphone vous-même.",
+      },
+    ],
+    relatedArticleSlugs: [
+      "personnaliser-intervalles-pomodoro",
+      "pomodoro-etudiants-reviser-efficacement",
+      "organiser-journee-teletravail",
+    ],
+    published: "2026-11-19",
+  },
 ];
