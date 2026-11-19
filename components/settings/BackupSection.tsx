@@ -5,20 +5,18 @@ import { useAppCopy } from "@/hooks/useAppCopy";
 import { useUiLocale } from "@/hooks/useUiLocale";
 import { HTML_LANG } from "@/lib/i18n/locales";
 import { downloadBlob } from "@/lib/export";
-import {
-  BACKUP_MAX_BYTES,
-  applyBackup,
-  backupFilename,
-  backupSummary,
-  createBackup,
-  parseBackup,
-  type Backup,
-  type BackupError,
-} from "@/lib/backup";
+import type { Backup, BackupError } from "@/lib/backup";
+
+// The backup logic pulls in the validation library (about 70 KB of JavaScript
+// once compressed). It is fetched when someone clicks Export or picks a file,
+// not with the page: almost nobody opens this section on a given visit.
+const loadBackup = () => import("@/lib/backup");
+
+type Summary = { tasks: number; pomodoros: number; exportedAt: string };
 
 type View =
   | { kind: "idle" }
-  | { kind: "confirm"; backup: Backup }
+  | { kind: "confirm"; backup: Backup; summary: Summary }
   | { kind: "error"; error: BackupError };
 
 const BUTTON =
@@ -32,7 +30,8 @@ export function BackupSection() {
   const [view, setView] = useState<View>({ kind: "idle" });
   const [busy, setBusy] = useState(false);
 
-  const handleExport = () => {
+  const handleExport = async () => {
+    const { createBackup, backupFilename } = await loadBackup();
     const now = new Date();
     downloadBlob(
       JSON.stringify(createBackup(now), null, 2),
@@ -43,28 +42,40 @@ export function BackupSection() {
 
   const handleFile = async (file: File | undefined) => {
     if (!file) return;
-    if (file.size > BACKUP_MAX_BYTES) {
-      setView({ kind: "error", error: "tooLarge" });
-      return;
-    }
     let text: string;
+    let backupLib: Awaited<ReturnType<typeof loadBackup>>;
     try {
+      backupLib = await loadBackup();
+      // Size is checked before the file is read.
+      if (file.size > backupLib.BACKUP_MAX_BYTES) {
+        setView({ kind: "error", error: "tooLarge" });
+        return;
+      }
       text = await file.text();
     } catch {
       setView({ kind: "error", error: "readFailed" });
       return;
     }
-    const result = parseBackup(text);
+    const result = backupLib.parseBackup(text);
     setView(
       result.ok
-        ? { kind: "confirm", backup: result.backup }
+        ? {
+            kind: "confirm",
+            backup: result.backup,
+            summary: backupLib.backupSummary(result.backup),
+          }
         : { kind: "error", error: result.error }
     );
   };
 
-  const handleReplace = (backup: Backup) => {
+  const handleReplace = async (backup: Backup) => {
     setBusy(true);
-    const result = applyBackup(backup);
+    let result: { ok: true } | { ok: false; error: BackupError };
+    try {
+      result = (await loadBackup()).applyBackup(backup);
+    } catch {
+      result = { ok: false, error: "writeFailed" };
+    }
     if (!result.ok) {
       setBusy(false);
       setView({ kind: "error", error: result.error });
@@ -102,14 +113,13 @@ export function BackupSection() {
           className="rounded-xl border border-border bg-surface p-3 space-y-3 outline-none"
         >
           <p className="text-sm font-medium text-foreground">{copy.replaceWarning}</p>
-          {(() => {
-            const s = backupSummary(view.backup);
-            return (
-              <p className="text-xs text-muted break-words" data-testid="backup-summary">
-                {copy.summary(s.tasks, s.pomodoros, formatDate(s.exportedAt))}
-              </p>
-            );
-          })()}
+          <p className="text-xs text-muted break-words" data-testid="backup-summary">
+            {copy.summary(
+              view.summary.tasks,
+              view.summary.pomodoros,
+              formatDate(view.summary.exportedAt)
+            )}
+          </p>
           <div className="flex flex-wrap gap-2">
             <button
               type="button"
