@@ -3,6 +3,11 @@
 import { useState, useRef, useEffect } from "react";
 import { cn } from "@/lib/utils";
 import type { DisplayTask } from "@/hooks/useTaskHistory";
+import { TaskEditor, type TaskChanges } from "./TaskEditor";
+
+const COPY = {
+  edit: "Edit task",
+};
 
 interface TaskItemProps {
   task: DisplayTask;
@@ -12,7 +17,7 @@ interface TaskItemProps {
   onToggle?: () => void;
   onDelete?: () => void;
   onSetActive?: () => void;
-  onEdit?: (title: string) => void;
+  onEdit?: (changes: TaskChanges) => void;
   /** Rendered before the checkbox. Supplied by TaskList when reordering is on. */
   dragHandle?: React.ReactNode;
   isDragging?: boolean;
@@ -31,13 +36,15 @@ export function TaskItem({
   isDragging = false,
 }: TaskItemProps) {
   const [isEditing, setIsEditing] = useState(false);
-  const [editValue, setEditValue] = useState(task.title);
-  const inputRef = useRef<HTMLInputElement>(null);
+  const editButtonRef = useRef<HTMLButtonElement>(null);
+  // Set when the editor closes, so focus goes back to the pencil once the row
+  // is rendered again.
+  const restoreFocus = useRef(false);
 
   useEffect(() => {
-    if (isEditing) {
-      inputRef.current?.focus();
-      inputRef.current?.select();
+    if (!isEditing && restoreFocus.current) {
+      restoreFocus.current = false;
+      editButtonRef.current?.focus();
     }
   }, [isEditing]);
 
@@ -46,27 +53,31 @@ export function TaskItem({
   const canDelete = !readOnly && !task.isGhost && onDelete;
   const canActivate = !readOnly && !task.isGhost && onSetActive;
 
-  const handleSave = () => {
-    const trimmed = editValue.trim();
-    if (trimmed && trimmed !== task.title && onEdit) {
-      onEdit(trimmed);
-    }
-    setEditValue(trimmed || task.title);
+  const closeEditor = () => {
+    restoreFocus.current = true;
     setIsEditing(false);
   };
 
-  const handleCancel = () => {
-    setEditValue(task.title);
-    setIsEditing(false);
-  };
-
-  const handleKeyDown = (e: React.KeyboardEvent) => {
-    if (e.key === "Enter") {
-      handleSave();
-    } else if (e.key === "Escape") {
-      handleCancel();
-    }
-  };
+  if (isEditing && canEdit) {
+    return (
+      <TaskEditor
+        initialTitle={task.title}
+        initialEstimate={task.estimatedPomodoros ?? 1}
+        isActive={isActive}
+        onSave={(changes) => {
+          if (
+            changes.title !== task.title ||
+            changes.estimatedPomodoros !== task.estimatedPomodoros
+          ) {
+            onEdit(changes);
+          }
+          closeEditor();
+        }}
+        onCancel={closeEditor}
+        onDelete={canDelete ? onDelete : undefined}
+      />
+    );
+  }
 
   return (
     <div
@@ -150,36 +161,21 @@ export function TaskItem({
       </button>
 
       {/* Title */}
-      {isEditing && canEdit ? (
-        <input
-          ref={inputRef}
-          type="text"
-          value={editValue}
-          onChange={(e) => setEditValue(e.target.value)}
-          onBlur={handleSave}
-          onKeyDown={handleKeyDown}
-          onClick={(e) => e.stopPropagation()}
-          aria-label="Task title"
-          enterKeyHint="done"
-          className="flex-1 min-w-0 text-sm text-foreground bg-transparent outline-none border-b border-border py-0"
-        />
-      ) : (
-        <span
-          className={cn(
-            "flex-1 min-w-0 text-sm text-foreground break-words",
-            isActive && "font-medium",
-            task.completed && "line-through",
-            task.isGhost && "italic"
-          )}
-          onDoubleClick={(e) => {
-            if (!canEdit) return;
-            e.stopPropagation();
-            setIsEditing(true);
-          }}
-        >
-          {task.title}
-        </span>
-      )}
+      <span
+        className={cn(
+          "flex-1 min-w-0 text-sm text-foreground break-words",
+          isActive && "font-medium",
+          task.completed && "line-through",
+          task.isGhost && "italic"
+        )}
+        onDoubleClick={(e) => {
+          if (!canEdit) return;
+          e.stopPropagation();
+          setIsEditing(true);
+        }}
+      >
+        {task.title}
+      </span>
 
       {/* Pomodoro count */}
       {showDailyStats || task.isGhost ? (
@@ -202,9 +198,45 @@ export function TaskItem({
         </span>
       )}
 
+      {/* Edit */}
+      {canEdit && (
+        <button
+          ref={editButtonRef}
+          type="button"
+          onClick={(e) => {
+            e.stopPropagation();
+            setIsEditing(true);
+          }}
+          className={cn(
+            "text-muted hover:text-foreground transition-all flex-shrink-0 mt-0.5",
+            // Same reveal rule as the delete button below.
+            "opacity-0 group-hover:opacity-100 focus-visible:opacity-100 [@media(pointer:coarse)]:opacity-60",
+            // Invisible padding: 14px icon, 40px to the finger.
+            "relative before:absolute before:-inset-[13px] before:content-['']"
+          )}
+          aria-label={COPY.edit}
+        >
+          <svg
+            width="14"
+            height="14"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            aria-hidden="true"
+          >
+            <path d="M12 20h9" />
+            <path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z" />
+          </svg>
+        </button>
+      )}
+
       {/* Delete */}
       {canDelete && (
         <button
+          type="button"
           onClick={(e) => {
             e.stopPropagation();
             onDelete();
@@ -213,8 +245,11 @@ export function TaskItem({
             "text-muted hover:text-red-400 transition-all flex-shrink-0 mt-0.5",
             // Hover reveal on desktop. A touch screen has no hover, so the
             // button was unreachable there: always shown on coarse pointers,
-            // and whenever it holds keyboard focus.
+            // and whenever it holds keyboard focus. With a pencil on the row,
+            // touch screens delete from the editor instead: one action icon
+            // keeps the row uncluttered.
             "opacity-0 group-hover:opacity-100 focus-visible:opacity-100 [@media(pointer:coarse)]:opacity-60",
+            canEdit && "[@media(pointer:coarse)]:hidden",
             "relative before:absolute before:-inset-3 before:content-['']"
           )}
           aria-label="Delete task"

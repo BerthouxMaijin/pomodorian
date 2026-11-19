@@ -17,12 +17,18 @@ function readTasksFromStorage(): Task[] {
   }
 }
 
+/** Fields the inline editor can change. `completedPomodoros` is never touched. */
+export interface TaskEdit {
+  title?: string;
+  estimatedPomodoros?: number;
+}
+
 type TaskAction =
   | { type: "SET"; tasks: Task[] }
   | { type: "ADD"; title: string; estimatedPomodoros?: number; aiGenerated?: boolean }
   | { type: "DELETE"; id: string }
   | { type: "TOGGLE"; id: string }
-  | { type: "EDIT"; id: string; title: string }
+  | { type: "EDIT"; id: string; changes: TaskEdit }
   | { type: "INCREMENT_POMODORO"; id: string }
   | { type: "REORDER"; orderedIds: string[] }
   | { type: "IMPORT_AI"; entries: { id: string; suggestion: AITaskSuggestion }[] };
@@ -37,7 +43,7 @@ function taskReducer(state: Task[], action: TaskAction): Task[] {
         {
           id: generateId(),
           title: action.title,
-          estimatedPomodoros: action.estimatedPomodoros ?? 1,
+          estimatedPomodoros: Math.min(20, Math.max(1, Math.round(action.estimatedPomodoros ?? 1))),
           completedPomodoros: 0,
           completed: false,
           createdAt: new Date().toISOString(),
@@ -58,10 +64,21 @@ function taskReducer(state: Task[], action: TaskAction): Task[] {
           completedAt: nextCompleted ? new Date().toISOString() : null,
         };
       });
-    case "EDIT":
-      return state.map((t) =>
-        t.id === action.id ? { ...t, title: action.title } : t
-      );
+    case "EDIT": {
+      const title = action.changes.title?.trim();
+      const estimate = action.changes.estimatedPomodoros;
+      return state.map((t) => {
+        if (t.id !== action.id) return t;
+        return {
+          ...t,
+          ...(title ? { title } : {}),
+          // An estimate below what is already done is allowed.
+          ...(estimate !== undefined && Number.isFinite(estimate)
+            ? { estimatedPomodoros: Math.min(20, Math.max(1, Math.round(estimate))) }
+            : {}),
+        };
+      });
+    }
     case "INCREMENT_POMODORO":
       return state.map((t) =>
         t.id === action.id
@@ -158,8 +175,8 @@ export function useTasks() {
     dispatch({ type: "TOGGLE", id });
   }, []);
 
-  const editTask = useCallback((id: string, title: string) => {
-    dispatch({ type: "EDIT", id, title });
+  const editTask = useCallback((id: string, changes: TaskEdit) => {
+    dispatch({ type: "EDIT", id, changes });
   }, []);
 
   const incrementPomodoro = useCallback((id: string) => {
