@@ -45,6 +45,11 @@
 - MP3 dans `public/sounds/`
 - Gérés par `useSound.ts` — volumes indépendants par son
 - Son d'alarme séparé en fin de timer
+- Alarmes : les 3 fichiers sont normalisés à environ -1 dBTP (bien plus forts que les ambiances, voir `CREDITS.md`). Modifier un fichier d'alarme = incrémenter `VERSION` dans `public/sw.js` (ils sont mis en cache)
+- Pendant la sonnerie, les ambiances sont baissées à 20 % puis remontées (facteur appliqué par-dessus le volume demandé, les volumes stockés ne bougent pas)
+- L'alarme se répète (5 sonneries max, 8s d'écart) tant que personne ne réagit ; une entrée clavier ou souris arrête les répétitions, un nouveau départ coupe le son. Une seule sonnerie si la personne est visiblement là, ou si la page n'a jamais reçu de geste
+- Safari / iOS : les éléments audio d'alarme sont créés une fois et amorcés (lecture muette) dans le geste du START via `primeAlarm()`, puis réutilisés. Ne jamais faire `new Audio()` au moment de la fin
+- Réglages : choisir un son ou relâcher le curseur de volume joue un aperçu (`previewAlarm`)
 
 ## Themes
 - Dark/Light via attribut `data-theme` sur `<html>`
