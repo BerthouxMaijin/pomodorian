@@ -1,26 +1,26 @@
 "use client";
 
+import { memo } from "react";
 import { MODE_COLORS } from "@/lib/constants";
 import type { TimerMode } from "@/lib/types";
 
 interface BackgroundProps {
   mode: TimerMode;
-  theme?: string;
 }
 
-export function Background({ mode, theme = "dark" }: BackgroundProps) {
+// Theme comes from CSS variables, not from a prop: the theme attribute is set
+// before first paint (see the inline script in app/layout.tsx), so a light
+// theme user no longer gets a dark page until React has hydrated.
+export const Background = memo(function Background({ mode }: BackgroundProps) {
   const colors = MODE_COLORS[mode];
-  const isLight = theme === "light";
 
   return (
     <div
-      className="fixed inset-0 -z-10 transition-all duration-700 ease-in-out"
+      className="fixed inset-0 -z-10"
       style={{
-        background: isLight
-          ? `radial-gradient(ellipse at 50% 30%, ${colors.accent}12 0%, transparent 50%), linear-gradient(to bottom, #f8f9fa, #f0f0f0)`
-          : `radial-gradient(ellipse at 50% 30%, ${colors.accent}15 0%, transparent 60%), linear-gradient(to bottom, #0a0a0a, #0a0a0a)`,
+        background: `radial-gradient(ellipse at 50% 30%, ${colors.accent}14 0%, transparent var(--glow-reach)), linear-gradient(to bottom, var(--background), var(--background-end))`,
         transition: "background 0.7s ease-in-out",
       }}
     />
   );
-}
+});

@@ -26,7 +26,8 @@ export interface TimerSettings {
 }
 
 export interface AppSettings extends TimerSettings {
-  theme: "dark" | "light";
+  /** "system" follows the device's prefers-color-scheme, live. */
+  theme: "system" | "dark" | "light";
   notificationsEnabled: boolean;
   showTimeInTitle: boolean;
   neverDumbAutoOpen: boolean;
@@ -63,6 +64,7 @@ export const STORAGE_KEYS = {
   SETTINGS: "pomodorian_settings",
   SESSIONS: "pomodorian_sessions",
   CURRENT_STATE: "pomodorian_current_state",
+  ACTIVE_TASK: "pomodorian_active_task",
   DATA_VERSION: "pomodorian_data_version",
   AMBIENTS: "pomodorian_ambients",
   NEVER_DUMB: "pomodorian_neverdumb",

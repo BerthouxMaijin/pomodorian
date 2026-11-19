@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { memo, useState } from "react";
 import { AMBIENT_SOUNDS } from "@/lib/constants";
 import { cn } from "@/lib/utils";
 
@@ -10,7 +10,7 @@ interface SoundMixerProps {
   onVolumeChange: (key: string, volume: number) => void;
 }
 
-export function SoundMixer({
+export const SoundMixer = memo(function SoundMixer({
   ambients,
   onToggle,
   onVolumeChange,
@@ -21,8 +21,10 @@ export function SoundMixer({
   return (
     <div className="w-full">
       <button
+        type="button"
         onClick={() => setExpanded((v) => !v)}
-        className="flex items-center gap-2 text-sm text-muted hover:text-foreground transition-colors mx-auto"
+        aria-expanded={expanded}
+        className="flex items-center gap-2 text-sm text-muted hover:text-foreground transition-colors mx-auto min-h-11 px-3 -my-3 rounded-lg"
       >
         <svg
           width="16"
@@ -40,7 +42,7 @@ export function SoundMixer({
         </svg>
         Ambient Sounds
         {activeCount > 0 && (
-          <span className="text-xs px-1.5 py-0.5 rounded-full bg-white/10">
+          <span className="text-xs px-1.5 py-0.5 rounded-full bg-surface-active">
             {activeCount}
           </span>
         )}
@@ -70,16 +72,18 @@ export function SoundMixer({
               return (
                 <button
                   key={sound.key}
+                  type="button"
                   onClick={() => onToggle(sound.key, sound.src)}
+                  aria-pressed={isActive}
                   className={cn(
-                    "flex flex-col items-center gap-1 p-2 rounded-lg transition-all",
+                    "flex flex-col items-center gap-1 px-1 py-2.5 rounded-lg transition-all",
                     isActive
-                      ? "bg-white/15 text-foreground"
-                      : "text-muted hover:bg-white/5 hover:text-foreground"
+                      ? "bg-surface-active text-foreground"
+                      : "text-muted hover:bg-surface-hover hover:text-foreground"
                   )}
                 >
-                  <span className="text-lg">{sound.icon}</span>
-                  <span className="text-[10px]">{sound.label}</span>
+                  <span className="text-lg" aria-hidden="true">{sound.icon}</span>
+                  <span className="text-[11px]">{sound.label}</span>
                 </button>
               );
             })}
@@ -92,7 +96,7 @@ export function SoundMixer({
                 key={sound.key}
                 className="flex items-center gap-3 text-xs text-muted"
               >
-                <span className="w-16 truncate">{sound.icon} {sound.label}</span>
+                <span className="w-20 truncate" aria-hidden="true">{sound.icon} {sound.label}</span>
                 <input
                   type="range"
                   min={0}
@@ -101,7 +105,8 @@ export function SoundMixer({
                   onChange={(e) =>
                     onVolumeChange(sound.key, parseInt(e.target.value) / 100)
                   }
-                  className="flex-1 accent-white/50 h-1"
+                  aria-label={`${sound.label} volume`}
+                  className="flex-1 accent-neutral-400 h-6"
                 />
               </div>
             )
@@ -110,4 +115,4 @@ export function SoundMixer({
       )}
     </div>
   );
-}
+});

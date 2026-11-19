@@ -114,12 +114,17 @@ export function AnalyticsPanel({
         className="absolute inset-0 bg-black/60 backdrop-blur-sm"
         onClick={onClose}
       />
-      <div className="relative glass rounded-2xl w-full max-w-md max-h-[85vh] overflow-y-auto p-6 space-y-4">
+      <div
+        role="dialog"
+        aria-modal="true"
+        aria-label="Report"
+        className="relative glass-modal rounded-2xl w-full max-w-md max-h-[85dvh] overflow-y-auto overscroll-contain p-6 space-y-4"
+      >
         <div className="flex items-center justify-between">
           <h2 className="text-lg font-semibold text-foreground">Analytics</h2>
           <button
             onClick={onClose}
-            className="text-muted hover:text-foreground transition-colors"
+            className="size-11 -m-3 grid place-items-center rounded-lg text-muted hover:text-foreground transition-colors"
             aria-label="Close"
           >
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -134,7 +139,7 @@ export function AnalyticsPanel({
         <div className="flex items-center justify-between gap-2">
           <button
             onClick={() => shift(-1)}
-            className="p-1 rounded text-muted hover:text-foreground hover:bg-white/5 transition-colors"
+            className="p-1 rounded text-muted hover:text-foreground hover:bg-surface-hover transition-colors"
             aria-label="Previous period"
           >
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -148,7 +153,7 @@ export function AnalyticsPanel({
             {!isCurrent && (
               <button
                 onClick={jumpToCurrent}
-                className="text-xs px-2 py-0.5 rounded bg-white/10 text-foreground hover:bg-white/15 transition-colors"
+                className="text-xs px-2 py-0.5 rounded bg-surface-hover text-foreground hover:bg-surface-active transition-colors"
               >
                 Now
               </button>
@@ -157,7 +162,7 @@ export function AnalyticsPanel({
           <button
             onClick={() => shift(1)}
             disabled={isCurrent}
-            className="p-1 rounded text-muted hover:text-foreground hover:bg-white/5 transition-colors disabled:opacity-30 disabled:cursor-not-allowed"
+            className="p-1 rounded text-muted hover:text-foreground hover:bg-surface-hover transition-colors disabled:opacity-30 disabled:cursor-not-allowed"
             aria-label="Next period"
           >
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -231,7 +236,7 @@ export function AnalyticsPanel({
         <div className="relative pt-1">
           <button
             onClick={() => setExportOpen((v) => !v)}
-            className="w-full py-2 rounded-lg glass text-sm text-foreground hover:bg-white/10 transition-colors flex items-center justify-center gap-2"
+            className="w-full py-2 rounded-lg glass text-sm text-foreground hover:bg-surface-active transition-colors flex items-center justify-center gap-2"
           >
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
@@ -244,13 +249,13 @@ export function AnalyticsPanel({
             <div className="absolute left-0 right-0 bottom-full mb-1 glass rounded-lg p-1 space-y-0.5 z-10">
               <button
                 onClick={() => handleExport("csv")}
-                className="w-full text-left px-3 py-1.5 text-sm text-foreground hover:bg-white/10 rounded transition-colors"
+                className="w-full text-left px-3 py-1.5 text-sm text-foreground hover:bg-surface-active rounded transition-colors"
               >
                 CSV
               </button>
               <button
                 onClick={() => handleExport("markdown")}
-                className="w-full text-left px-3 py-1.5 text-sm text-foreground hover:bg-white/10 rounded transition-colors"
+                className="w-full text-left px-3 py-1.5 text-sm text-foreground hover:bg-surface-active rounded transition-colors"
               >
                 Markdown
               </button>

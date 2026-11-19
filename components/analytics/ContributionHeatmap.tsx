@@ -7,7 +7,7 @@ interface ContributionHeatmapProps {
 }
 
 function getIntensity(minutes: number): string {
-  if (minutes === 0) return "bg-white/10";
+  if (minutes === 0) return "bg-surface-active";
   if (minutes < 30) return "bg-emerald-900/60";
   if (minutes < 60) return "bg-emerald-700/60";
   if (minutes < 120) return "bg-emerald-500/60";
@@ -91,7 +91,7 @@ export function ContributionHeatmap({ heatmap }: ContributionHeatmapProps) {
       {/* Legend */}
       <div className="flex items-center gap-1 text-[9px] text-muted justify-end">
         <span>Less</span>
-        <div className="w-3 h-3 rounded-sm bg-white/10" />
+        <div className="w-3 h-3 rounded-sm bg-surface-active" />
         <div className="w-3 h-3 rounded-sm bg-emerald-900/60" />
         <div className="w-3 h-3 rounded-sm bg-emerald-700/60" />
         <div className="w-3 h-3 rounded-sm bg-emerald-500/60" />

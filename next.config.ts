@@ -41,6 +41,12 @@ const nextConfig: NextConfig = {
       source: "/(.*)",
       headers: securityHeaders,
     },
+    {
+      // Browsers must always revalidate the service worker, or a fix (or the
+      // kill switch described at the top of the file) would not reach them.
+      source: "/sw.js",
+      headers: [{ key: "Cache-Control", value: "no-cache" }],
+    },
   ],
 };
 

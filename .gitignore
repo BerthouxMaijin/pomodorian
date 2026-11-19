@@ -46,3 +46,6 @@ next-env.d.ts
 
 # QA screenshots (local visual checks)
 qa/shots/
+
+# worktrees des sous-agents Claude Code (copies de travail temporaires)
+/.claude/worktrees/

@@ -164,7 +164,7 @@ export function AIPlannerModal({
         onClick={onClose}
       />
 
-      <div className="relative glass rounded-2xl w-full max-w-lg max-h-[85vh] overflow-y-auto p-6 space-y-5">
+      <div className="relative glass-modal rounded-2xl w-full max-w-lg max-h-[85dvh] overflow-y-auto overscroll-contain p-6 space-y-5">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2">
             <div className="w-8 h-8 rounded-lg bg-purple-500/20 flex items-center justify-center">
@@ -190,7 +190,7 @@ export function AIPlannerModal({
             type="button"
             onClick={onClose}
             aria-label={copy.closeAriaLabel}
-            className="text-muted hover:text-foreground transition-colors"
+            className="size-11 -m-3 grid place-items-center rounded-lg text-muted hover:text-foreground transition-colors"
           >
             <svg
               width="20"
@@ -322,7 +322,7 @@ export function AIPlannerModal({
                 type="button"
                 onClick={() => handleImport(false)}
                 disabled={validTasks.length === 0}
-                className="order-2 sm:order-none sm:flex-1 py-3 rounded-xl glass text-sm text-foreground hover:bg-white/5 transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
+                className="order-2 sm:order-none sm:flex-1 py-3 rounded-xl glass text-sm text-foreground hover:bg-surface-hover transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
               >
                 {copy.addOnlyCta(validTasks.length)}
               </button>

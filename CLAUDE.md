@@ -26,8 +26,8 @@ app/
   privacy/ terms/ contact/  # Legal pages
   sitemap.ts robots.ts feed.xml/ manifest.ts
 components/
-  timer/                # Timer, ModeSelector, TimerControls
-  tasks/                # TaskList, TaskItem
+  timer/                # Timer, ModeSelector, TimerControls, UndoBanner
+  tasks/                # TaskList, TaskItem, TaskEditor, EstimateStepper
   sounds/               # SoundMixer (5 ambient sounds, layerable)
   ai-planner/           # AIPlannerModal (calls /api/ai-planner)
   feedback/             # FeedbackPrompt modal (form posting to /api/feedback)
@@ -36,6 +36,7 @@ components/
   settings/             # SettingsModal, ShortcutsModal
   layout/               # Header, Footer, Background, InfoSection
   seo/                  # HomeSchemas (JSON-LD)
+  pwa/                  # ServiceWorkerRegister (production only)
 hooks/
   useTimer.ts           # Timer state machine (useReducer, wall-clock based)
   useTasks.ts           # Task CRUD + AI import (useReducer + localStorage)
@@ -43,28 +44,34 @@ hooks/
   useAnalytics.ts       # Focus session recording, streak, heatmap
   useSound.ts           # Ambient + alarm audio management
   useLocalStorage.ts    # Generic localStorage hook
+  useWakeLock.ts        # Keeps the screen awake while a timer runs
 lib/
   types.ts              # Domain types + STORAGE_KEYS
   constants.ts          # Defaults, modes, sounds, keyboard shortcuts
   utils.ts              # formatTime, cn, generateId, getDurationForMode
   ai-prompt.ts          # buildAIPlannerPrompt (multilingual)
+  notify.ts             # End-of-timer notification (service worker first)
   seo/pages.ts          # SEO landing page definitions
   blog/reader.ts        # Markdown article reader (fs-based, SSG only)
 content/blog/{en,fr,es,de}/  # Markdown articles (gray-matter frontmatter)
 scripts/seo/            # Article generation & audit scripts (excluded from TS)
 public/sounds/          # MP3 audio files (ambient + alarms)
+public/timer-worker.js  # Heartbeat for the countdown (not throttled in background tabs)
+public/sw.js            # Service worker: offline app shell + notifications (kill switch documented inside)
 ```
 
 ## Key Domain Rules
 
 - **No database**: all user data (tasks, settings, sessions) lives in localStorage
 - **Timer uses wall-clock**: `endTime = Date.now() + remaining * 1000`, ticks every 200ms
+- **Timer survives a reload**: snapshot in `pomodorian_current_state`, written on transitions only
 - **Pomodoro cycle**: pomodoro -> short break (repeat), every Nth pomodoro -> long break
 - **AI planner**: `/api/ai-planner`, rate-limited (10 req/hr/IP), returns JSON task list
 - **Feedback**: `/api/feedback` emails reports via Resend (3 sends/hr/IP, honeypot, no storage)
 - **Blog is SSG**: articles read from filesystem at build time, not runtime
 - **SEO pages**: defined in `lib/seo/pages.ts`, statically generated via `generateStaticParams`
-- **Themes**: dark/light via `data-theme` attribute on `<html>`, CSS variables in globals.css
+- **Themes**: dark/light via `data-theme` attribute on `<html>`, CSS variables in globals.css; setting defaults to `system` (follows the device)
+- **Offline**: service worker `public/sw.js` (network first for pages), no Web Push
 
 ## Dev Commands
 

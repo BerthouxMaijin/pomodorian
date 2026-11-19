@@ -1,3 +1,4 @@
+import { memo } from "react";
 import { SITE_URL } from "@/lib/constants";
 import { FAQ } from "@/lib/faq";
 import {
@@ -50,10 +51,10 @@ const promoVideo = {
   publisher: { "@id": ORG_ID },
 };
 
-export function HomeSchemas() {
+export const HomeSchemas = memo(function HomeSchemas() {
   return (
     <JsonLd
       data={graph([...siteNodes, softwareAppNode, homePage, promoVideo])}
     />
   );
-}
+});

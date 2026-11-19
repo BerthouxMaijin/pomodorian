@@ -133,7 +133,7 @@ export function TimerToolPage({ page }: { page: TimerPage }) {
                   <Link
                     key={article.slug}
                     href={blogHref(page.lang, article.slug)}
-                    className="block glass rounded-xl p-4 hover:bg-white/5 transition-colors"
+                    className="block glass rounded-xl p-4 hover:bg-surface-hover transition-colors"
                   >
                     <div className="font-semibold">{article.title}</div>
                     <div className="text-sm text-muted mt-1">{article.description}</div>
@@ -163,7 +163,7 @@ export function TimerToolPage({ page }: { page: TimerPage }) {
                   <Link
                     key={p.slug}
                     href={`/${p.slug}`}
-                    className="text-sm text-red-400 hover:text-red-300 underline underline-offset-2"
+                    className="text-sm text-red-400 hover:text-red-300 light:text-red-600 light:hover:text-red-700 underline underline-offset-2"
                   >
                     {p.h1}
                   </Link>

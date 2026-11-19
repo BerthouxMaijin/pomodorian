@@ -207,7 +207,7 @@ function ComparisonTable({ page }: { page: typeof seoPages[number] }) {
         <thead>
           <tr className="border-b border-border">
             <th className="text-left py-3 px-4 text-muted">Feature</th>
-            <th className="text-left py-3 px-4 text-red-400 font-semibold">Pomodorian</th>
+            <th className="text-left py-3 px-4 text-red-400 light:text-red-600 font-semibold">Pomodorian</th>
             <th className="text-left py-3 px-4 text-muted">{competitor}</th>
           </tr>
         </thead>
@@ -387,7 +387,7 @@ export default async function SeoPage({
                       <Link
                         key={s}
                         href={`/blog/${s}`}
-                        className="block glass rounded-xl p-4 hover:bg-white/5 transition-colors"
+                        className="block glass rounded-xl p-4 hover:bg-surface-hover transition-colors"
                       >
                         <div className="font-semibold">{article.title}</div>
                         <div className="text-sm text-muted mt-1">
@@ -429,7 +429,7 @@ export default async function SeoPage({
                   <Link
                     key={p.slug}
                     href={`/${p.slug}`}
-                    className="text-sm text-red-400 hover:text-red-300 underline underline-offset-2"
+                    className="text-sm text-red-400 hover:text-red-300 light:text-red-600 light:hover:text-red-700 underline underline-offset-2"
                   >
                     {p.h1}
                   </Link>

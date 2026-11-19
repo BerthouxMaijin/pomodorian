@@ -1,9 +1,11 @@
 "use client";
 
-import { useState } from "react";
+import { memo, useState } from "react";
 import { Reorder } from "framer-motion";
 import { TaskItem } from "./TaskItem";
 import { SortableTaskItem } from "./SortableTaskItem";
+import { EstimateStepper } from "./EstimateStepper";
+import type { TaskChanges } from "./TaskEditor";
 import { useTaskHistory } from "@/hooks/useTaskHistory";
 import type { FocusSession, Task } from "@/lib/types";
 
@@ -15,14 +17,14 @@ interface TaskListProps {
   onAdd: (title: string, estimatedPomodoros?: number) => void;
   onToggle: (id: string) => void;
   onDelete: (id: string) => void;
-  onEdit: (id: string, title: string) => void;
+  onEdit: (id: string, changes: TaskChanges) => void;
   onSetActive: (id: string | null) => void;
   onIncrementPomodoro: (id: string) => void;
   onReorder: (orderedIds: string[]) => void;
   onOpenAIPlanner: () => void;
 }
 
-export function TaskList({
+export const TaskList = memo(function TaskList({
   tasks,
   sessions,
   activeTaskId,
@@ -37,6 +39,7 @@ export function TaskList({
 }: TaskListProps) {
   const history = useTaskHistory({ tasks, sessions });
   const [newTaskTitle, setNewTaskTitle] = useState("");
+  const [newTaskEstimate, setNewTaskEstimate] = useState(1);
   const [isAdding, setIsAdding] = useState(false);
 
   // Only today's rows are editable, and only rows backed by a live task can
@@ -64,9 +67,16 @@ export function TaskList({
     e.preventDefault();
     const title = newTaskTitle.trim();
     if (!title) return;
-    onAdd(title);
+    onAdd(title, newTaskEstimate);
     setNewTaskTitle("");
+    setNewTaskEstimate(1);
     setIsAdding(false);
+  };
+
+  const cancelAdding = () => {
+    setIsAdding(false);
+    setNewTaskTitle("");
+    setNewTaskEstimate(1);
   };
 
   const dateLabel = formatDateLabel(history.viewDate, history.isToday, locale);
@@ -74,11 +84,12 @@ export function TaskList({
 
   return (
     <div className="w-full">
-      <div className="flex items-center justify-between mb-3 gap-2">
-        <div className="flex items-center gap-1">
+      <div className="flex items-center justify-between mb-2 gap-2">
+        <div className="flex items-center -ml-2.5">
           <button
+            type="button"
             onClick={history.goPrev}
-            className="p-1 rounded text-muted hover:text-foreground hover:bg-white/5 transition-colors"
+            className="size-10 grid place-items-center rounded-lg text-muted hover:text-foreground hover:bg-surface-hover transition-colors"
             aria-label="Previous day"
           >
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -89,9 +100,10 @@ export function TaskList({
             {dateLabel}
           </h2>
           <button
+            type="button"
             onClick={history.goNext}
             disabled={history.isToday}
-            className="p-1 rounded text-muted hover:text-foreground hover:bg-white/5 transition-colors disabled:opacity-30 disabled:cursor-not-allowed"
+            className="size-10 grid place-items-center rounded-lg text-muted hover:text-foreground hover:bg-surface-hover transition-colors disabled:opacity-30 disabled:cursor-not-allowed"
             aria-label="Next day"
           >
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -101,7 +113,7 @@ export function TaskList({
           {!history.isToday && (
             <button
               onClick={history.goToday}
-              className="ml-1 text-xs px-2 py-0.5 rounded bg-white/10 text-foreground hover:bg-white/15 transition-colors"
+              className="ml-1 text-xs px-3 py-2 rounded-lg bg-surface-hover text-foreground hover:bg-surface-active transition-colors"
             >
               Today
             </button>
@@ -137,7 +149,7 @@ export function TaskList({
                     onMove={(delta) => moveTask(task.taskId!, delta)}
                     onToggle={() => onToggle(task.taskId!)}
                     onDelete={() => onDelete(task.taskId!)}
-                    onEdit={(title) => onEdit(task.taskId!, title)}
+                    onEdit={(changes) => onEdit(task.taskId!, changes)}
                     onSetActive={() =>
                       onSetActive(
                         task.taskId === activeTaskId ? null : task.taskId
@@ -163,7 +175,7 @@ export function TaskList({
                 }
                 onEdit={
                   task.taskId
-                    ? (title) => onEdit(task.taskId!, title)
+                    ? (changes) => onEdit(task.taskId!, changes)
                     : undefined
                 }
                 onSetActive={
@@ -183,31 +195,45 @@ export function TaskList({
       {history.isToday && (
         <>
           {isAdding ? (
-            <form onSubmit={handleSubmit} className="mt-3">
+            <form
+              onSubmit={handleSubmit}
+              onKeyDown={(e) => {
+                if (e.key === "Escape") {
+                  e.preventDefault();
+                  cancelAdding();
+                }
+                // Space on the stepper must not start the timer.
+                e.stopPropagation();
+              }}
+              className="mt-3"
+            >
               <div className="glass rounded-xl p-3 space-y-3">
                 <input
                   type="text"
                   value={newTaskTitle}
                   onChange={(e) => setNewTaskTitle(e.target.value)}
                   placeholder="What are you working on?"
+                  aria-label="Task title"
+                  enterKeyHint="done"
                   className="w-full bg-transparent text-foreground placeholder:text-muted outline-none text-sm"
                   autoFocus
+                />
+                <EstimateStepper
+                  value={newTaskEstimate}
+                  onChange={setNewTaskEstimate}
                 />
                 <div className="flex items-center justify-between">
                   <button
                     type="button"
-                    onClick={() => {
-                      setIsAdding(false);
-                      setNewTaskTitle("");
-                    }}
-                    className="text-xs text-muted hover:text-foreground transition-colors"
+                    onClick={cancelAdding}
+                    className="text-xs text-muted hover:text-foreground transition-colors py-2.5 pr-3"
                   >
                     Cancel
                   </button>
                   <button
                     type="submit"
                     disabled={!newTaskTitle.trim()}
-                    className="px-4 py-1.5 rounded-lg bg-white/10 text-sm font-medium text-foreground hover:bg-white/15 transition-colors disabled:opacity-30 disabled:cursor-not-allowed"
+                    className="px-5 py-2.5 rounded-lg bg-surface-hover text-sm font-medium text-foreground hover:bg-surface-active transition-colors disabled:opacity-30 disabled:cursor-not-allowed"
                   >
                     Add
                   </button>
@@ -247,7 +273,7 @@ export function TaskList({
       )}
     </div>
   );
-}
+});
 
 function formatDateLabel(viewDate: string, isToday: boolean, locale: string): string {
   if (isToday) return "Today";

@@ -1,5 +1,6 @@
 "use client";
 
+import { memo } from "react";
 import { cn } from "@/lib/utils";
 import { MODE_COLORS } from "@/lib/constants";
 import type { TimerMode, TimerStatus } from "@/lib/types";
@@ -14,7 +15,7 @@ interface TimerControlsProps {
   onReset: () => void;
 }
 
-export function TimerControls({
+export const TimerControls = memo(function TimerControls({
   status,
   mode,
   onStart,
@@ -47,8 +48,9 @@ export function TimerControls({
           </button>
           <button
             onClick={onSkip}
-            className="p-3 rounded-xl glass text-muted hover:text-foreground hover:bg-surface-hover transition-all duration-200"
-            aria-label="Skip to next"
+            className="p-3.5 rounded-xl glass text-muted hover:text-foreground hover:bg-surface-hover transition-all duration-200 active:scale-95"
+            aria-label={mode === "pomodoro" ? "Skip to break" : "Skip break"}
+            title={mode === "pomodoro" ? "Skip to break" : "Skip break"}
           >
             <svg
               width="24"
@@ -74,9 +76,10 @@ export function TimerControls({
           <button
             onClick={onReset}
             className={cn(
-              "p-3 rounded-xl glass text-muted hover:text-foreground hover:bg-surface-hover transition-all duration-200"
+              "p-3.5 rounded-xl glass text-muted hover:text-foreground hover:bg-surface-hover transition-all duration-200 active:scale-95"
             )}
             aria-label="Reset timer"
+            title="Reset timer"
           >
             <svg
               width="24"
@@ -96,4 +99,4 @@ export function TimerControls({
       )}
     </div>
   );
-}
+});

@@ -1,15 +1,18 @@
 "use client";
 
 import { useState, useCallback, useEffect, useMemo, useRef } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, MotionConfig } from "framer-motion";
 import { track } from "@/lib/track";
-import { useTimer } from "@/hooks/useTimer";
+import { notify } from "@/lib/notify";
+import { useTimer, type TimerCapture } from "@/hooks/useTimer";
 import { useSettings } from "@/hooks/useSettings";
 import { useSound } from "@/hooks/useSound";
 import { useAnalytics } from "@/hooks/useAnalytics";
+import { useWakeLock } from "@/hooks/useWakeLock";
 import { Timer } from "@/components/timer/Timer";
 import { ModeSelector } from "@/components/timer/ModeSelector";
 import { TimerControls } from "@/components/timer/TimerControls";
+import { UndoBanner } from "@/components/timer/UndoBanner";
 import { Background } from "@/components/layout/Background";
 import { Header } from "@/components/layout/Header";
 import { TaskList } from "@/components/tasks/TaskList";
@@ -24,15 +27,15 @@ import { FeedbackPrompt } from "@/components/feedback/FeedbackPrompt";
 import { NeverDumbModal } from "@/components/neverdumb/NeverDumbModal";
 import { formatTime } from "@/lib/utils";
 import { MODE_LABELS } from "@/lib/constants";
-import type { TimerMode, AITaskSuggestion } from "@/lib/types";
+import { STORAGE_KEYS, type TimerMode, type AITaskSuggestion } from "@/lib/types";
 import { useTasks } from "@/hooks/useTasks";
 import { HomeSchemas } from "@/components/seo/HomeSchemas";
 import { useBrowserLocale } from "@/hooks/useBrowserLocale";
 import { NEVER_DUMB_COPY } from "@/components/neverdumb/neverDumbCopy";
 
 export default function Home() {
-  const { settings, updateSettings } = useSettings();
-  const timer = useTimer(settings);
+  const { settings, updateSettings, hydrated: settingsHydrated } = useSettings();
+  const timer = useTimer(settings, { persistKey: STORAGE_KEYS.CURRENT_STATE });
   const tasks = useTasks();
   const sound = useSound();
   const analytics = useAnalytics();
@@ -46,6 +49,16 @@ export default function Home() {
   const [neverDumbEligible, setNeverDumbEligible] = useState(false);
   const neverDumbOpenedRef = useRef(false);
   const sessionReturnTrackedRef = useRef(false);
+  // A pomodoro wiped by a stray key or click, offered back for a few seconds.
+  const [undoOffer, setUndoOffer] = useState<{
+    id: number;
+    captured: TimerCapture;
+    stoppedAt: number;
+  } | null>(null);
+
+  // A phone that locks its screen mid-pomodoro suspends the page: the alarm
+  // would only ring once it is unlocked again.
+  useWakeLock(timer.status === "running");
 
   // Hand-off from a timer tool page (/?focus=50): the person clicked "run full
   // Pomodoro cycles at 50 minutes", so that becomes their pomodoro length. The
@@ -62,10 +75,23 @@ export default function Home() {
     window.history.replaceState(null, "", `${window.location.pathname}${query ? `?${query}` : ""}`);
   }, [updateSettings]);
 
-  // Apply theme to HTML element
+  // Apply theme to HTML element. The inline script in the root layout already
+  // set it before first paint: wait for the stored settings, or this effect
+  // would force the dark default back for a frame. "system" follows the
+  // device's color scheme, live.
   useEffect(() => {
-    document.documentElement.setAttribute("data-theme", settings.theme);
-  }, [settings.theme]);
+    if (!settingsHydrated) return;
+    const root = document.documentElement;
+    if (settings.theme === "dark" || settings.theme === "light") {
+      root.setAttribute("data-theme", settings.theme);
+      return;
+    }
+    const query = window.matchMedia("(prefers-color-scheme: light)");
+    const apply = () => root.setAttribute("data-theme", query.matches ? "light" : "dark");
+    apply();
+    query.addEventListener("change", apply);
+    return () => query.removeEventListener("change", apply);
+  }, [settings.theme, settingsHydrated]);
 
   // Auto-advance to break/pomodoro on complete
   const handleComplete = useCallback(() => {
@@ -124,38 +150,126 @@ export default function Home() {
       setTimeout(() => timer.start(), 100);
     }
 
-    if (settings.notificationsEnabled && "Notification" in window) {
-      if (Notification.permission === "granted") {
-        new Notification("Pomodorian", {
-          body:
-            timer.mode === "pomodoro"
-              ? "Great work! Time for a break."
-              : "Break is over. Let's focus!",
-          icon: "/icon.svg",
-        });
-      }
+    if (settings.notificationsEnabled) {
+      void notify(
+        "Pomodorian",
+        timer.mode === "pomodoro"
+          ? "Great work! Time for a break."
+          : "Break is over. Let's focus!"
+      );
     }
   }, [timer, tasks, settings, sound, analytics]);
 
   // Single entry point for starting the timer: a pomodoro always gets linked to
   // a task, so the session and its pomodoro count land somewhere.
   const { ensureActiveTask } = tasks;
+  const {
+    mode: timerMode,
+    start: timerStart,
+    pause: timerPause,
+    resume: timerResume,
+    reset: timerReset,
+    setMode: timerSetMode,
+    capture: timerCapture,
+    revert: timerRevert,
+    status: timerStatus,
+  } = timer;
+  const { playClick, pauseAllAmbients, resumeAllAmbients } = sound;
+  const { notificationsEnabled } = settings;
+
   const startTimer = useCallback(() => {
-    if (timer.mode === "pomodoro") ensureActiveTask();
-    sound.playClick();
-    timer.start();
-    track("timer_started", { mode: timer.mode });
-  }, [timer, sound, ensureActiveTask]);
+    if (timerMode === "pomodoro") ensureActiveTask();
+    playClick();
+    timerStart();
+    track("timer_started", { mode: timerMode });
+
+    // Ask for notifications here, when the reason is obvious ("tell me when
+    // this ends"), instead of on the first click anywhere on the page.
+    if (
+      notificationsEnabled &&
+      "Notification" in window &&
+      Notification.permission === "default"
+    ) {
+      try {
+        void Notification.requestPermission();
+      } catch {
+        // Older Safari only has the callback form: skipping the prompt is fine.
+      }
+    }
+  }, [timerMode, timerStart, playClick, ensureActiveTask, notificationsEnabled]);
+
+  const pauseTimer = useCallback(() => {
+    timerPause();
+    pauseAllAmbients();
+  }, [timerPause, pauseAllAmbients]);
+
+  const resumeTimer = useCallback(() => {
+    playClick();
+    timerResume();
+    resumeAllAmbients();
+    track("timer_started", { mode: timerMode });
+  }, [playClick, timerResume, resumeAllAmbients, timerMode]);
+
+  // Called just before a manual action ends the current block: a pomodoro with
+  // at least a minute of focus behind it can be brought back with Undo.
+  const offerUndo = useCallback(() => {
+    const captured = timerCapture();
+    if (captured.mode !== "pomodoro") return;
+    if (captured.status !== "running" && captured.status !== "paused") return;
+    const remaining =
+      captured.status === "running" && captured.endTime
+        ? Math.max(0, Math.round((captured.endTime - Date.now()) / 1000))
+        : captured.timeRemaining;
+    if (captured.totalTime - remaining < 60) return;
+    setUndoOffer({ id: Date.now(), captured, stoppedAt: remaining });
+  }, [timerCapture]);
+
+  const undoInterrupt = useCallback(() => {
+    if (!undoOffer) return;
+    timerRevert(undoOffer.captured);
+    setUndoOffer(null);
+    track("timer_interrupt_undone", { status: undoOffer.captured.status });
+  }, [undoOffer, timerRevert]);
+
+  const dismissUndo = useCallback(() => setUndoOffer(null), []);
+
+  // Starting a new timer (by hand, auto-start or the AI planner) closes the
+  // offer. Every interruption leaves the timer idle, so any run is a new one.
+  useEffect(() => {
+    if (timerStatus === "running") setUndoOffer(null);
+  }, [timerStatus]);
 
   const setModeManually = useCallback(
     (mode: TimerMode) => {
+      offerUndo();
       setNeverDumbOpen(false);
       setNeverDumbEligible(false);
       neverDumbOpenedRef.current = false;
-      timer.setMode(mode);
+      timerSetMode(mode);
     },
-    [timer]
+    [timerSetMode, offerUndo]
   );
+
+  // Skip moves on: out of a pomodoro into a short break, out of a break back
+  // to focus. Nothing is recorded, since the block was not finished.
+  const skipTimer = useCallback(() => {
+    track("timer_skipped", { mode: timerMode });
+    setModeManually(timerMode === "pomodoro" ? "shortBreak" : "pomodoro");
+  }, [timerMode, setModeManually]);
+
+  const resetTimer = useCallback(() => {
+    offerUndo();
+    setNeverDumbOpen(false);
+    setNeverDumbEligible(false);
+    timerReset();
+  }, [timerReset, offerUndo]);
+
+  const openSettings = useCallback(() => setSettingsOpen(true), []);
+  const openAnalytics = useCallback(() => setAnalyticsOpen(true), []);
+  const openAIPlanner = useCallback(() => {
+    track("ai_planner_opened");
+    setAIPlannerOpen(true);
+  }, []);
 
   const handleImportAndStart = useCallback(
     (suggestions: AITaskSuggestion[]) => {
@@ -264,26 +378,15 @@ export default function Home() {
   }, [timer.timeRemaining, timer.mode, timer.status, settings.showTimeInTitle]);
 
   useEffect(() => {
-    if (
-      settings.notificationsEnabled &&
-      "Notification" in window &&
-      Notification.permission === "default"
-    ) {
-      const handler = () => {
-        Notification.requestPermission();
-        document.removeEventListener("click", handler);
-      };
-      document.addEventListener("click", handler);
-      return () => document.removeEventListener("click", handler);
-    }
-  }, [settings.notificationsEnabled]);
-
-  useEffect(() => {
     function handleKeyDown(e: KeyboardEvent) {
       if (neverDumbOpen || aiPlannerOpen) return;
+      // Cmd+R, Ctrl+S, Ctrl+1 and friends belong to the browser: without this
+      // a page reload also toggled the report, and a tab switch reset the timer.
+      if (e.metaKey || e.ctrlKey || e.altKey) return;
       if (
         e.target instanceof HTMLInputElement ||
-        e.target instanceof HTMLTextAreaElement
+        e.target instanceof HTMLTextAreaElement ||
+        e.target instanceof HTMLSelectElement
       ) {
         return;
       }
@@ -291,9 +394,9 @@ export default function Home() {
       switch (e.key) {
         case " ":
           e.preventDefault();
-          if (timer.status === "idle") { startTimer(); }
-          else if (timer.status === "running") { timer.pause(); sound.pauseAllAmbients(); }
-          else if (timer.status === "paused") { timer.resume(); sound.resumeAllAmbients(); track("timer_started", { mode: timer.mode }); }
+          if (timer.status === "idle") startTimer();
+          else if (timer.status === "running") pauseTimer();
+          else if (timer.status === "paused") resumeTimer();
           break;
         case "1":
           setModeManually("pomodoro");
@@ -315,24 +418,41 @@ export default function Home() {
         case "?":
           setShortcutsOpen((v) => !v);
           break;
+        case "z":
+        case "Z":
+          if (undoOffer) {
+            e.preventDefault();
+            undoInterrupt();
+          }
+          break;
       }
     }
 
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [timer, sound, neverDumbOpen, aiPlannerOpen, setModeManually, startTimer]);
+  }, [
+    timer.status,
+    neverDumbOpen,
+    aiPlannerOpen,
+    setModeManually,
+    startTimer,
+    pauseTimer,
+    resumeTimer,
+    undoOffer,
+    undoInterrupt,
+  ]);
 
   return (
-    <>
+    <MotionConfig reducedMotion="user">
       <HomeSchemas />
-      <Background mode={timer.mode} theme={settings.theme} />
+      <Background mode={timer.mode} />
       <Header
         pomodorosCompleted={timer.pomodorosCompleted}
-        onOpenSettings={() => setSettingsOpen(true)}
-        onOpenAnalytics={() => setAnalyticsOpen(true)}
+        onOpenSettings={openSettings}
+        onOpenAnalytics={openAnalytics}
       />
 
-      <main className="flex-1 flex flex-col items-center gap-8 px-4 pt-8 pb-16 max-w-lg mx-auto w-full">
+      <main className="flex-1 flex flex-col items-center gap-6 sm:gap-8 px-4 pt-4 sm:pt-8 pb-16 max-w-lg mx-auto w-full">
         <ModeSelector mode={timer.mode} onChange={setModeManually} />
 
         <motion.div
@@ -357,18 +477,10 @@ export default function Home() {
             status={timer.status}
             mode={timer.mode}
             onStart={startTimer}
-            onPause={() => { timer.pause(); sound.pauseAllAmbients(); }}
-            onResume={() => { sound.playClick(); timer.resume(); sound.resumeAllAmbients(); track("timer_started", { mode: timer.mode }); }}
-            onSkip={() => {
-              setNeverDumbOpen(false);
-              setNeverDumbEligible(false);
-              timer.skip();
-            }}
-            onReset={() => {
-              setNeverDumbOpen(false);
-              setNeverDumbEligible(false);
-              timer.reset();
-            }}
+            onPause={pauseTimer}
+            onResume={resumeTimer}
+            onSkip={skipTimer}
+            onReset={resetTimer}
           />
         </motion.div>
 
@@ -428,7 +540,7 @@ export default function Home() {
             onSetActive={tasks.setActiveTask}
             onIncrementPomodoro={tasks.incrementPomodoro}
             onReorder={tasks.reorderTasks}
-            onOpenAIPlanner={() => { track("ai_planner_opened"); setAIPlannerOpen(true); }}
+            onOpenAIPlanner={openAIPlanner}
           />
         </motion.div>
       </main>
@@ -437,6 +549,17 @@ export default function Home() {
       <Footer />
 
       {!neverDumbOpen && <FeedbackPrompt />}
+
+      <AnimatePresence>
+        {undoOffer && (
+          <UndoBanner
+            key={undoOffer.id}
+            stoppedAt={undoOffer.stoppedAt}
+            onUndo={undoInterrupt}
+            onDismiss={dismissUndo}
+          />
+        )}
+      </AnimatePresence>
 
       <AnimatePresence>
         {neverDumbOpen && (
@@ -455,6 +578,7 @@ export default function Home() {
           <SettingsModal
             settings={settings}
             onUpdate={updateSettings}
+            onPreviewAlarm={sound.previewAlarm}
             onClose={() => setSettingsOpen(false)}
           />
         )}
@@ -482,6 +606,6 @@ export default function Home() {
           <ShortcutsModal onClose={() => setShortcutsOpen(false)} />
         )}
       </AnimatePresence>
-    </>
+    </MotionConfig>
   );
 }

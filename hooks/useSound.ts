@@ -14,8 +14,38 @@ interface AmbientState {
   [key: string]: { active: boolean; volume: number };
 }
 
+// One alarm sequence: the same element rung up to maxRings times.
+interface AlarmRun {
+  audio: HTMLAudioElement;
+  volume: number;
+  rings: number;
+  maxRings: number;
+  timers: ReturnType<typeof setTimeout>[];
+  onEnded: (() => void) | null;
+}
+
+// A single ring lasts 2.5 to 4 s and was easy to miss, so an unattended alarm
+// repeats: 5 rings in total, 8 s apart (start to start), about 36 s of alarm.
+const ALARM_RINGS = 5;
+const ALARM_REPEAT_INTERVAL_MS = 8000;
+// Input this recent, on a visible tab, means the person is at the page.
+const PRESENCE_WINDOW_MS = 5000;
+// While the alarm rings, ambients drop to this fraction of their level (about
+// -14 dB), over DUCK_FADE_MS, and come back the same way afterwards.
+const DUCK_LEVEL = 0.2;
+const DUCK_FADE_MS = 300;
+// Used when a ring's duration is unknown (metadata not loaded yet).
+const RING_BACKSTOP_MS = 5000;
+const clampVolume = (v: number) => Math.max(0, Math.min(1, v));
+const INPUT_EVENTS = [
+  "pointerdown",
+  "pointermove",
+  "keydown",
+  "wheel",
+  "touchstart",
+] as const;
+
 export function useSound() {
-  const alarmRef = useRef<HTMLAudioElement | null>(null);
   const audioRefs = useRef<Record<string, HTMLAudioElement>>({});
   // Persisted: someone who built a mix should find it again on their next
   // visit instead of rebuilding it every time.
@@ -54,11 +84,26 @@ export function useSound() {
 
   const isMusicLane = (key: string) => key === LOFI_KEY;
 
+  // Ambient volumes go through setVol / getVol. The level a fade or a slider
+  // asks for (the "logical" volume) is kept per element, and what reaches the
+  // speaker is that level times the duck factor. Fades, crossfades and the lofi
+  // hand-off keep working in logical levels, so ducking for the alarm can never
+  // be baked into a fade target, and the stored mix is never touched.
+  const logicalVolumes = useRef(new WeakMap<HTMLAudioElement, number>());
+  const duckLevel = useRef(1);
+  const setVol = useCallback((audio: HTMLAudioElement, volume: number) => {
+    const v = clampVolume(volume);
+    logicalVolumes.current.set(audio, v);
+    audio.volume = clampVolume(v * duckLevel.current);
+  }, []);
+  const getVol = (audio: HTMLAudioElement): number =>
+    logicalVolumes.current.get(audio) ?? audio.volume;
+
   const createBufferedAudio = (src: string, loop: boolean): HTMLAudioElement => {
     const audio = new Audio(src);
     audio.preload = "auto";
     audio.loop = loop;
-    audio.volume = 0;
+    setVol(audio, 0);
     return audio;
   };
 
@@ -76,14 +121,13 @@ export function useSound() {
 
     const steps = Math.max(10, Math.round(seconds * 30)); // ~30 steps per second
     const stepTime = (seconds * 1000) / steps;
-    const clamp = (v: number) => Math.max(0, Math.min(1, v));
     let step = 0;
 
-    audio.volume = clamp(from);
+    setVol(audio, from);
     const timer = setInterval(() => {
       step++;
       const progress = Math.min(1, step / steps);
-      audio.volume = clamp(from + (to - from) * progress);
+      setVol(audio, from + (to - from) * progress);
       if (step >= steps) {
         clearInterval(timer);
         delete fadeIntervals.current[key];
@@ -102,14 +146,14 @@ export function useSound() {
   ) => {
     if (handoffKeys.current[key]) return;
     handoffKeys.current[key] = true;
-    const targetVolume = audio.volume;
+    const targetVolume = getVol(audio);
 
     const beginNext = () => {
       const next =
         pendingRefs.current[key] ?? createBufferedAudio(nextSrc(), false);
       delete pendingRefs.current[key];
       next.loop = false;
-      next.volume = 0;
+      setVol(next, 0);
       audioRefs.current[key] = next;
       delete handoffKeys.current[key];
       next.play().catch(() => {});
@@ -127,7 +171,7 @@ export function useSound() {
     fadeVolume(key, audio, targetVolume, 0, MUSIC_FADE_DURATION, () => {
       audio.pause();
       audio.currentTime = 0;
-      audio.volume = targetVolume;
+      setVol(audio, targetVolume);
       beginNext();
     });
   };
@@ -172,19 +216,19 @@ export function useSound() {
         // Fade out current, fade in next
         const fadeSteps = 20;
         const stepTime = (CROSSFADE_DURATION * 1000) / fadeSteps;
-        const targetVolume = audio.volume;
+        const targetVolume = getVol(audio);
         let step = 0;
         const fade = setInterval(() => {
           step++;
           const progress = step / fadeSteps;
-          next.volume = Math.min(targetVolume, targetVolume * progress);
-          audio.volume = Math.max(0, targetVolume * (1 - progress));
+          setVol(next, Math.min(targetVolume, targetVolume * progress));
+          setVol(audio, Math.max(0, targetVolume * (1 - progress)));
           if (step >= fadeSteps) {
             clearInterval(fade);
             delete fadeIntervals.current[key];
             audio.pause();
             audio.currentTime = 0;
-            audio.volume = targetVolume;
+            setVol(audio, targetVolume);
             // Swap: next becomes the main audio
             audioRefs.current[key] = next;
             delete crossfadeRefs.current[key];
@@ -259,7 +303,7 @@ export function useSound() {
         const sound = AMBIENT_SOUNDS.find((s) => s.key === key);
         if (!sound) continue;
         const audio = getOrCreateAudio(key, sound.src);
-        audio.volume = state.volume;
+        setVol(audio, state.volume);
         audio.play().catch(() => {});
       }
     };
@@ -273,33 +317,230 @@ export function useSound() {
     // eslint-disable-next-line react-hooks/exhaustive-deps -- runs once on hydration; `ambients` is the stored mix at that moment and getOrCreateAudio only touches refs
   }, [hydrated]);
 
-  const playAlarm = useCallback((soundKey: string, volume: number) => {
+  // ---------- Alarm ----------
+  // One element per alarm sound, created once and reused. Safari (macOS and
+  // iOS) only lets an element play without a user gesture if that same element
+  // was already started from one, so a fresh `new Audio()` at completion time
+  // was refused there. primeAlarm() starts each element, muted, inside the
+  // START gesture; the completion then replays those same elements.
+  const alarmEls = useRef<Record<string, HTMLAudioElement>>({});
+  const primedAlarms = useRef<Record<string, true>>({});
+  const alarmRun = useRef<AlarmRun | null>(null);
+  const lastInputAt = useRef(0);
+  const duckTimer = useRef<ReturnType<typeof setInterval> | null>(null);
+
+  const getAlarmElement = (soundKey: string): HTMLAudioElement | null => {
     const sound = ALARM_SOUNDS[soundKey];
-    if (!sound) return;
-
-    if (alarmRef.current) {
-      alarmRef.current.pause();
-      alarmRef.current.currentTime = 0;
+    if (!sound) return null;
+    let audio = alarmEls.current[soundKey];
+    if (!audio) {
+      audio = new Audio(sound.src);
+      audio.preload = "auto";
+      alarmEls.current[soundKey] = audio;
     }
+    return audio;
+  };
 
-    const audio = new Audio(sound.src);
-    audio.volume = Math.max(0, Math.min(1, volume));
-    alarmRef.current = audio;
-    audio.play().catch(() => {});
+  // Push the current duck factor to every live ambient element. Only elements
+  // with a known logical level are touched, so nothing is multiplied twice.
+  const applyDuck = () => {
+    const live = [
+      ...Object.values(audioRefs.current),
+      ...Object.values(crossfadeRefs.current),
+    ];
+    for (const el of live) {
+      const v = logicalVolumes.current.get(el);
+      if (v !== undefined) el.volume = clampVolume(v * duckLevel.current);
+    }
+  };
+
+  // Ramp the duck factor toward `target`. Its own timer, not fadeIntervals:
+  // crossfades and hand-offs keep running underneath, in logical levels.
+  // Progress follows the clock, so a throttled timer still lands on time.
+  const duckAmbients = (target: number) => {
+    if (duckTimer.current) clearInterval(duckTimer.current);
+    duckTimer.current = null;
+    const from = duckLevel.current;
+    if (from === target) return;
+    const startedAt = Date.now();
+    duckTimer.current = setInterval(() => {
+      const progress = Math.min(1, (Date.now() - startedAt) / DUCK_FADE_MS);
+      duckLevel.current = from + (target - from) * progress;
+      applyDuck();
+      if (progress >= 1 && duckTimer.current) {
+        clearInterval(duckTimer.current);
+        duckTimer.current = null;
+      }
+    }, 30);
+  };
+
+  // End a run: no more rings, ambients come back up. `cut` also silences the
+  // ring in progress (a new timer started); otherwise it has already ended.
+  const finishRun = (run: AlarmRun, cut: boolean) => {
+    for (const t of run.timers) clearTimeout(t);
+    run.timers = [];
+    if (run.onEnded) run.audio.removeEventListener("ended", run.onEnded);
+    run.onEnded = null;
+    if (cut) {
+      run.audio.pause();
+      run.audio.currentTime = 0;
+    }
+    if (alarmRun.current === run) {
+      alarmRun.current = null;
+      duckAmbients(1);
+    }
+  };
+
+  // No ring after the current one: let it play out, then finish the run.
+  const wrapUp = (run: AlarmRun) => {
+    for (const t of run.timers) clearTimeout(t);
+    run.timers = [];
+    run.maxRings = run.rings;
+    if (run.audio.paused || run.audio.ended) {
+      finishRun(run, false);
+      return;
+    }
+    if (run.onEnded) return;
+    const onEnded = () => finishRun(run, false);
+    run.onEnded = onEnded;
+    run.audio.addEventListener("ended", onEnded);
+    // Backstop in case "ended" never arrives (stalled or refused playback).
+    const left = Number.isFinite(run.audio.duration)
+      ? (run.audio.duration - run.audio.currentTime) * 1000
+      : RING_BACKSTOP_MS;
+    run.timers.push(setTimeout(onEnded, Math.max(0, left) + 1000));
+  };
+
+  const ring = (run: AlarmRun) => {
+    if (alarmRun.current !== run) return;
+    run.rings++;
+    const audio = run.audio;
+    audio.muted = false;
+    audio.volume = clampVolume(run.volume);
+    audio.currentTime = 0;
+    audio.play().catch(() => {
+      if (alarmRun.current === run && run.rings >= run.maxRings) {
+        finishRun(run, false);
+      }
+    });
+    if (run.rings < run.maxRings) {
+      run.timers.push(setTimeout(() => ring(run), ALARM_REPEAT_INTERVAL_MS));
+    } else {
+      wrapUp(run);
+    }
+  };
+
+  const startAlarm = (soundKey: string, volume: number, maxRings: number) => {
+    const audio = getAlarmElement(soundKey);
+    if (!audio) return;
+    // Replace any run in progress without bringing the ambients up in between.
+    const previous = alarmRun.current;
+    alarmRun.current = null;
+    if (previous) finishRun(previous, true);
+    const run: AlarmRun = {
+      audio,
+      volume,
+      rings: 0,
+      maxRings,
+      timers: [],
+      onEnded: null,
+    };
+    alarmRun.current = run;
+    duckAmbients(DUCK_LEVEL);
+    ring(run);
+  };
+
+  const stopAlarm = useCallback(() => {
+    const run = alarmRun.current;
+    if (run) finishRun(run, true);
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- finishRun only touches refs
   }, []);
 
+  // Call from inside a user gesture (START, resume). Stops a ringing alarm,
+  // since starting the next timer means it was heard, then unlocks every alarm
+  // element once: muted play, paused as soon as it starts. No audible blip.
+  const primeAlarm = useCallback(() => {
+    stopAlarm();
+    for (const key of Object.keys(ALARM_SOUNDS)) {
+      if (primedAlarms.current[key]) continue;
+      const audio = getAlarmElement(key);
+      if (!audio) continue;
+      primedAlarms.current[key] = true;
+      audio.muted = true;
+      audio.play().then(
+        () => {
+          if (alarmRun.current?.audio === audio) return; // a real ring took over
+          audio.pause();
+          audio.currentTime = 0;
+          audio.muted = false;
+        },
+        () => {
+          // Refused: try again on the next gesture.
+          delete primedAlarms.current[key];
+          if (alarmRun.current?.audio !== audio) audio.muted = false;
+        }
+      );
+    }
+  }, [stopAlarm]);
+
+  // Timer completion. Rings up to ALARM_RINGS times, ALARM_REPEAT_INTERVAL_MS
+  // apart, until the person reacts (any pointer or key input, or a new timer
+  // started by hand). Someone visibly at the page gets a single ring, and so
+  // does a page nobody has touched yet (a timer that ended while it was closed).
+  const playAlarm = useCallback((soundKey: string, volume: number) => {
+    const sinceInput = Date.now() - lastInputAt.current;
+    const present =
+      document.visibilityState === "visible" &&
+      lastInputAt.current > 0 &&
+      sinceInput < PRESENCE_WINDOW_MS;
+    const touched =
+      lastInputAt.current > 0 || Object.keys(primedAlarms.current).length > 0;
+    startAlarm(soundKey, volume, present || !touched ? 1 : ALARM_RINGS);
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- startAlarm only touches refs
+  }, []);
+
+  // Settings preview: one ring, from a gesture, so it also unlocks that sound.
+  const previewAlarm = useCallback((soundKey: string, volume: number) => {
+    if (!ALARM_SOUNDS[soundKey]) return;
+    primedAlarms.current[soundKey] = true;
+    startAlarm(soundKey, volume, 1);
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- startAlarm only touches refs
+  }, []);
+
+  // Track input (presence, and "the alarm was noticed"), and make sure nothing
+  // keeps ringing or stays ducked once the component unmounts.
+  useEffect(() => {
+    const onInput = () => {
+      lastInputAt.current = Date.now();
+      const run = alarmRun.current;
+      if (run && run.rings < run.maxRings) wrapUp(run);
+    };
+    for (const type of INPUT_EVENTS) {
+      window.addEventListener(type, onInput, { capture: true, passive: true });
+    }
+    const els = alarmEls.current;
+    return () => {
+      for (const type of INPUT_EVENTS) {
+        window.removeEventListener(type, onInput, { capture: true });
+      }
+      stopAlarm();
+      for (const el of Object.values(els)) el.pause();
+      if (duckTimer.current) clearInterval(duckTimer.current);
+      duckTimer.current = null;
+      duckLevel.current = 1;
+      applyDuck();
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- wrapUp and applyDuck only touch refs
+  }, [stopAlarm]);
+
+  // The start sound is always played from a gesture (START, resume, start
+  // from the AI planner): the moment to unlock the alarm.
   const playClick = useCallback(() => {
+    primeAlarm();
     const audio = new Audio("/sounds/tick-start.mp3");
     audio.volume = 0.6;
     audio.play().catch(() => {});
-  }, []);
-
-  const stopAlarm = useCallback(() => {
-    if (alarmRef.current) {
-      alarmRef.current.pause();
-      alarmRef.current.currentTime = 0;
-    }
-  }, []);
+  }, [primeAlarm]);
 
   const toggleAmbient = useCallback((key: string, src: string) => {
     setAmbients((prev) => {
@@ -313,7 +554,7 @@ export function useSound() {
         return { ...prev, [key]: { ...current, active: false } };
       } else {
         const volume = current?.volume ?? 0.5;
-        audio.volume = volume;
+        setVol(audio, volume);
         audio.play().catch((err) => console.warn("Audio play failed:", err));
         return { ...prev, [key]: { active: true, volume } };
       }
@@ -324,13 +565,13 @@ export function useSound() {
   const setAmbientVolume = useCallback((key: string, volume: number) => {
     const audio = audioRefs.current[key];
     if (audio) {
-      audio.volume = Math.max(0, Math.min(1, volume));
+      setVol(audio, volume);
     }
     setAmbients((prev) => ({
       ...prev,
       [key]: { ...prev[key], volume },
     }));
-  }, [setAmbients]);
+  }, [setAmbients, setVol]);
 
   const pauseAllAmbients = useCallback(() => {
     for (const key of Object.keys(audioRefs.current)) {
@@ -345,14 +586,16 @@ export function useSound() {
       const audio = audioRefs.current[key];
       if (state.active && audio) {
         // Restore volume: an aborted crossfade may have left it mid-fade
-        audio.volume = state.volume;
+        setVol(audio, state.volume);
         audio.play().catch(() => {});
       }
     }
-  }, [ambients]);
+  }, [ambients, setVol]);
 
   return {
     playAlarm,
+    previewAlarm,
+    primeAlarm,
     playClick,
     stopAlarm,
     toggleAmbient,

@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import { SITE_URL } from "@/lib/constants";
 import ConsentAnalytics from "@/components/ConsentAnalytics";
+import ServiceWorkerRegister from "@/components/pwa/ServiceWorkerRegister";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -14,6 +15,14 @@ const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
 });
+
+// Runs before first paint: the saved theme is applied while the HTML is still
+// being parsed, so a light theme user never sees the dark default flash by.
+// A stored "dark" or "light" wins; anything else (no settings, no theme,
+// "system") follows the device. The settings are re-read on every device
+// change, so pages outside the app (blog, SEO, timers) follow it live too and
+// an explicit choice made in the app is never overridden.
+const THEME_INIT = `try{var m=matchMedia("(prefers-color-scheme: light)"),a=function(){var t;try{t=JSON.parse(localStorage.getItem("pomodorian_settings")||"null");t=t&&t.theme}catch(e){}document.documentElement.setAttribute("data-theme",t==="dark"||t==="light"?t:m.matches?"light":"dark")};a();m.addEventListener("change",a)}catch(e){}`;
 
 export const viewport: Viewport = {
   themeColor: "#ef4444",
@@ -92,6 +101,7 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col relative overflow-x-hidden">
+        <script id="theme-init" dangerouslySetInnerHTML={{ __html: THEME_INIT }} />
         <link
           rel="alternate"
           type="application/rss+xml"
@@ -101,6 +111,7 @@ export default function RootLayout({
         {children}
         <Analytics />
         <ConsentAnalytics />
+        <ServiceWorkerRegister />
       </body>
     </html>
   );

@@ -16,7 +16,7 @@ const TABS: { kind: PeriodKind; label: string }[] = [
 
 export function PeriodTabs({ value, onChange }: PeriodTabsProps) {
   return (
-    <div className="flex items-center gap-1 p-1 rounded-lg bg-white/5 w-fit">
+    <div className="flex items-center gap-1 p-1 rounded-lg bg-surface w-fit">
       {TABS.map((t) => (
         <button
           key={t.kind}
@@ -24,7 +24,7 @@ export function PeriodTabs({ value, onChange }: PeriodTabsProps) {
           className={cn(
             "px-3 py-1 text-xs font-medium rounded-md transition-colors",
             value === t.kind
-              ? "bg-white/15 text-foreground"
+              ? "bg-surface-active text-foreground"
               : "text-muted hover:text-foreground"
           )}
         >

@@ -179,7 +179,7 @@ export function FeedbackPrompt() {
         ref={triggerRef}
         type="button"
         onClick={openManually}
-        className="fixed bottom-4 left-4 z-40 flex items-center gap-2 rounded-full border border-border bg-neutral-950/85 px-3.5 py-2 text-xs font-medium text-white shadow-[0_12px_40px_rgba(0,0,0,0.35)] backdrop-blur-xl transition hover:border-red-400/40 hover:bg-neutral-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-400/70 sm:bottom-5 sm:left-5"
+        className="fixed bottom-4 left-4 z-40 flex min-h-11 min-w-11 items-center justify-center gap-2 rounded-full border border-border bg-neutral-950/85 px-3 py-2 text-xs font-medium text-white shadow-[0_12px_40px_rgba(0,0,0,0.35)] backdrop-blur-xl transition hover:border-red-400/40 hover:bg-neutral-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-400/70 sm:bottom-5 sm:left-5"
         aria-label={copy.triggerAriaLabel}
       >
         <svg
@@ -195,7 +195,7 @@ export function FeedbackPrompt() {
           <path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z" />
           <path d="M8 9h8M8 13h5" />
         </svg>
-        {copy.triggerLabel}
+        <span className="hidden sm:inline">{copy.triggerLabel}</span>
       </button>
 
       <AnimatePresence>
@@ -217,7 +217,7 @@ export function FeedbackPrompt() {
             />
 
             <motion.div
-              className="glass relative max-h-[85dvh] w-full max-w-md overflow-y-auto rounded-3xl p-6 shadow-[0_30px_100px_rgba(0,0,0,0.55)] sm:p-8"
+              className="glass-modal relative max-h-[85dvh] w-full max-w-md overflow-y-auto overscroll-contain rounded-3xl p-6 shadow-[0_30px_100px_rgba(0,0,0,0.55)] sm:p-8"
               initial={{ opacity: 0, y: 18, scale: 0.97 }}
               animate={{ opacity: 1, y: 0, scale: 1 }}
               exit={{ opacity: 0, y: 10, scale: 0.98 }}
@@ -259,7 +259,7 @@ export function FeedbackPrompt() {
                   ref={closeRef}
                   type="button"
                   onClick={dismiss}
-                  className="grid size-8 shrink-0 place-items-center rounded-full text-muted transition hover:bg-white/5 hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-400/70"
+                  className="grid size-8 shrink-0 place-items-center rounded-full text-muted transition hover:bg-surface-hover hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-400/70"
                   aria-label={copy.closeAriaLabel}
                 >
                   <svg viewBox="0 0 24 24" className="size-4" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">

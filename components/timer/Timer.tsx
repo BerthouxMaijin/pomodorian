@@ -31,8 +31,13 @@ export function Timer({ timeRemaining, progress, mode, showHours }: TimerProps) 
   const display = showHours ? formatWithHours(timeRemaining) : formatTime(timeRemaining);
 
   return (
-    <div className="relative flex items-center justify-center">
+    <div
+      className="relative flex items-center justify-center"
+      role="timer"
+      aria-label={`${display} remaining`}
+    >
       <svg
+        aria-hidden="true"
         width={SIZE}
         height={SIZE}
         className="transform -rotate-90"
