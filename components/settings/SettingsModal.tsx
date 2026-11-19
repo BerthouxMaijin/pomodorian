@@ -114,6 +114,18 @@ export function SettingsModal({
               className="w-16 flex-shrink-0 px-2 py-1 rounded-lg bg-surface text-foreground text-center text-sm border border-border outline-none focus:ring-1 focus:ring-foreground/30"
             />
           </div>
+
+          <div className="flex items-center justify-between gap-3">
+            <span className="text-sm text-foreground">{appCopy.focus.dailyGoal}</span>
+            <NumberField
+              ariaLabel={appCopy.focus.dailyGoal}
+              value={settings.dailyGoal}
+              min={1}
+              max={24}
+              onChange={(v) => onUpdate({ dailyGoal: v })}
+              className="w-16 flex-shrink-0 px-2 py-1 rounded-lg bg-surface text-foreground text-center text-sm border border-border outline-none focus:ring-1 focus:ring-foreground/30"
+            />
+          </div>
         </section>
 
         {/* Toggles */}
@@ -221,6 +233,11 @@ export function SettingsModal({
             label={copy.notifications}
             checked={settings.notificationsEnabled}
             onChange={(v) => onUpdate({ notificationsEnabled: v })}
+          />
+          <Toggle
+            label={appCopy.focus.focusMode}
+            checked={settings.focusMode}
+            onChange={(v) => onUpdate({ focusMode: v })}
           />
           <div className="flex items-center justify-between gap-3">
             <span className="text-sm text-foreground">{copy.theme}</span>

@@ -21,7 +21,7 @@ export const SoundMixer = memo(function SoundMixer({
   const activeCount = Object.values(ambients).filter((a) => a.active).length;
 
   return (
-    <div className="w-full">
+    <div data-focus-fade className="w-full">
       <button
         type="button"
         onClick={() => setExpanded((v) => !v)}

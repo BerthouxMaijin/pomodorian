@@ -167,6 +167,7 @@ export function FeedbackPrompt() {
       <button
         ref={triggerRef}
         type="button"
+        data-focus-fade
         onClick={openManually}
         className="fixed bottom-4 left-4 z-40 flex min-h-11 min-w-11 items-center justify-center gap-2 rounded-full border border-border bg-neutral-950/85 px-3 py-2 text-xs font-medium text-white shadow-[0_12px_40px_rgba(0,0,0,0.35)] backdrop-blur-xl transition hover:border-red-400/40 hover:bg-neutral-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-400/70 sm:bottom-5 sm:left-5"
         aria-label={copy.triggerAriaLabel}

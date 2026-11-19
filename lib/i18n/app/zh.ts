@@ -47,6 +47,13 @@ export const zh: AppCopy = {
     settingsHint: "设置 (S)",
   },
 
+  focus: {
+    focusMode: "番茄钟进行时淡化干扰",
+    dailyGoal: "每日目标（番茄钟数）",
+    goalProgress: (done, goal) => `今日番茄钟：已完成 ${done} 个，目标 ${goal} 个`,
+    goalReached: (done, goal) => `今日目标已达成：已完成 ${done} 个，目标 ${goal} 个`,
+  },
+
   sounds: {
     toggle: "环境音",
     names: {

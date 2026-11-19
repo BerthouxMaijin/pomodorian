@@ -5,7 +5,7 @@ import Link from "next/link";
 
 export const Footer = memo(function Footer() {
   return (
-    <footer className="w-full border-t border-border mt-16">
+    <footer data-focus-fade className="w-full border-t border-border mt-16">
       <div className="max-w-3xl mx-auto px-6 py-8">
         <div className="flex flex-wrap items-center justify-center gap-4 text-xs text-muted">
           <Link href="/" className="hover:text-foreground transition-colors">

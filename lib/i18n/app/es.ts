@@ -47,6 +47,13 @@ export const es: AppCopy = {
     settingsHint: "Ajustes (S)",
   },
 
+  focus: {
+    focusMode: "Atenuar las distracciones durante un pomodoro",
+    dailyGoal: "Objetivo diario (pomodoros)",
+    goalProgress: (done, goal) => `Hoy: ${done} de ${goal} pomodoros`,
+    goalReached: (done, goal) => `Objetivo diario cumplido: ${done} de ${goal} pomodoros`,
+  },
+
   sounds: {
     toggle: "Sonidos ambientales",
     names: {

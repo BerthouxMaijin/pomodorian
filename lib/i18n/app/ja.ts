@@ -47,6 +47,13 @@ export const ja: AppCopy = {
     settingsHint: "設定 (S)",
   },
 
+  focus: {
+    focusMode: "ポモドーロ中は周りを目立たなくする",
+    dailyGoal: "1日の目標（ポモドーロ数）",
+    goalProgress: (done, goal) => `今日のポモドーロ：${goal}個中${done}個`,
+    goalReached: (done, goal) => `今日の目標を達成：${goal}個中${done}個`,
+  },
+
   sounds: {
     toggle: "環境音",
     names: {
