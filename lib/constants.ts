@@ -13,6 +13,7 @@ export const DEFAULT_SETTINGS: AppSettings = {
   neverDumbAutoOpen: true,
   alarmSound: "gentle",
   alarmVolume: 0.5,
+  pauseAmbientsOnBreak: false,
   theme: "system",
   notificationsEnabled: true,
   showTimeInTitle: true,

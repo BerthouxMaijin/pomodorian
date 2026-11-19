@@ -36,6 +36,10 @@ const DUCK_LEVEL = 0.2;
 const DUCK_FADE_MS = 300;
 // Used when a ring's duration is unknown (metadata not loaded yet).
 const RING_BACKSTOP_MS = 5000;
+// Quiet breaks: ambients fade out over this once a break has begun and the
+// alarm is done, and fade back in over QUIET_RETURN_MS with the next pomodoro.
+const QUIET_FADE_MS = 1500;
+const QUIET_RETURN_MS = 800;
 const clampVolume = (v: number) => Math.max(0, Math.min(1, v));
 const INPUT_EVENTS = [
   "pointerdown",
@@ -62,6 +66,23 @@ export function useSound() {
   const pendingRefs = useRef<Record<string, HTMLAudioElement>>({});
   const fadeIntervals = useRef<Record<string, ReturnType<typeof setInterval>>>({});
   const handoffKeys = useRef<Record<string, true>>({});
+
+  // Quiet breaks (setting pauseAmbientsOnBreak), driven by setAmbientsQuiet.
+  // The stored mix is never touched: the mixer keeps showing the sounds as
+  // active, only their playback stops. `quietKeys` are the ambients this
+  // silenced; crossfades and hand-offs leave them alone until they come back.
+  const quiet = useRef(false);
+  const quietPending = useRef(false); // asked while the alarm rings
+  const quietKeys = useRef<Record<string, true>>({});
+  const returningKeys = useRef<Record<string, true>>({}); // fading back in
+  const quietDuckTimeout = useRef<ReturnType<typeof setTimeout> | null>(null);
+  // pauseAllAmbients in force (timer paused, Never Dumb exercise): leaving the
+  // quiet break must not override it.
+  const held = useRef(false);
+  const ambientsRef = useRef(ambients);
+  useEffect(() => {
+    ambientsRef.current = ambients;
+  }, [ambients]);
 
   // An ambient loops one seamless file, so briefly overlapping two copies of it
   // is what hides the loop seam.
@@ -149,6 +170,7 @@ export function useSound() {
     skipFadeOut = false
   ) => {
     if (handoffKeys.current[key]) return;
+    if (quietKeys.current[key] || returningKeys.current[key]) return;
     handoffKeys.current[key] = true;
     const targetVolume = getVol(audio);
 
@@ -189,6 +211,7 @@ export function useSound() {
 
     const onTimeUpdate = () => {
       if (!audio.duration || audio.paused) return;
+      if (quietKeys.current[key] || returningKeys.current[key]) return;
       const timeLeft = audio.duration - audio.currentTime;
 
       // Resolve and buffer the upcoming track ahead of the handover window.
@@ -272,6 +295,7 @@ export function useSound() {
       delete pendingRefs.current[key];
     }
     delete handoffKeys.current[key];
+    delete returningKeys.current[key];
   };
 
   const getOrCreateAudio = (key: string, src: string): HTMLAudioElement => {
@@ -308,6 +332,11 @@ export function useSound() {
         if (!sound) continue;
         const audio = getOrCreateAudio(key, sound.src);
         setVol(audio, state.volume);
+        // In a quiet break the mix waits for the next pomodoro.
+        if (quiet.current) {
+          quietKeys.current[key] = true;
+          continue;
+        }
         audio.play().catch(() => {});
       }
     };
@@ -391,7 +420,67 @@ export function useSound() {
     }
     if (alarmRun.current === run) {
       alarmRun.current = null;
-      duckAmbients(1);
+      // A quiet break waiting for the alarm: fade out from the ducked level,
+      // and lift the duck only once everything is silent (no swell between).
+      if (quietPending.current) beginQuietFade();
+      else duckAmbients(1);
+    }
+  };
+
+  const beginQuietFade = () => {
+    quietPending.current = false;
+    for (const [key, audio] of Object.entries(audioRefs.current)) {
+      if (!ambientsRef.current[key]?.active) continue;
+      quietKeys.current[key] = true;
+      if (audio.paused) continue;
+      abortCrossfade(key);
+      fadeVolume(key, audio, getVol(audio), 0, QUIET_FADE_MS / 1000, () => {
+        if (quietKeys.current[key]) audio.pause();
+      });
+    }
+    if (quietDuckTimeout.current) clearTimeout(quietDuckTimeout.current);
+    quietDuckTimeout.current = null;
+    if (duckLevel.current !== 1 || duckTimer.current) {
+      quietDuckTimeout.current = setTimeout(() => {
+        quietDuckTimeout.current = null;
+        if (!quiet.current || alarmRun.current) return;
+        if (duckTimer.current) clearInterval(duckTimer.current);
+        duckTimer.current = null;
+        duckLevel.current = 1;
+        applyDuck();
+      }, QUIET_FADE_MS + 100);
+    }
+  };
+
+  // Back from a quiet break: the silenced ambients fade in at their stored
+  // volume, unless something else holds them paused (it resumes them itself).
+  const liftQuiet = () => {
+    quietPending.current = false;
+    if (quietDuckTimeout.current) clearTimeout(quietDuckTimeout.current);
+    quietDuckTimeout.current = null;
+    if (!alarmRun.current && duckLevel.current !== 1) duckAmbients(1);
+    const keys = Object.keys(quietKeys.current);
+    quietKeys.current = {};
+    for (const key of keys) {
+      const fade = fadeIntervals.current[key];
+      if (fade) {
+        clearInterval(fade);
+        delete fadeIntervals.current[key];
+      }
+      const audio = audioRefs.current[key];
+      if (!audio) continue;
+      const state = ambientsRef.current[key];
+      if (held.current || !state?.active) {
+        if (!audio.paused) audio.pause();
+        continue;
+      }
+      const from = audio.paused ? 0 : getVol(audio);
+      setVol(audio, from);
+      audio.play().catch(() => {});
+      returningKeys.current[key] = true;
+      fadeVolume(key, audio, from, state.volume, QUIET_RETURN_MS / 1000, () => {
+        delete returningKeys.current[key];
+      });
     }
   };
 
@@ -528,6 +617,8 @@ export function useSound() {
         window.removeEventListener(type, onInput, { capture: true });
       }
       stopAlarm();
+      if (quietDuckTimeout.current) clearTimeout(quietDuckTimeout.current);
+      quietDuckTimeout.current = null;
       for (const el of Object.values(els)) el.pause();
       if (duckTimer.current) clearInterval(duckTimer.current);
       duckTimer.current = null;
@@ -551,6 +642,8 @@ export function useSound() {
       const current = prev[key];
       const audio = getOrCreateAudio(key, src);
 
+      // A sound switched on or off by hand is out of the quiet break's hands.
+      delete quietKeys.current[key];
       if (current?.active) {
         abortCrossfade(key);
         audio.pause();
@@ -578,6 +671,7 @@ export function useSound() {
   }, [setAmbients, setVol]);
 
   const pauseAllAmbients = useCallback(() => {
+    held.current = true;
     for (const key of Object.keys(audioRefs.current)) {
       abortCrossfade(key);
       const audio = audioRefs.current[key];
@@ -586,8 +680,11 @@ export function useSound() {
   }, []);
 
   const resumeAllAmbients = useCallback(() => {
+    held.current = false;
     for (const [key, state] of Object.entries(ambients)) {
       const audio = audioRefs.current[key];
+      // Silenced by a quiet break: they come back with the next pomodoro.
+      if (quiet.current && quietKeys.current[key]) continue;
       if (state.active && audio) {
         // Restore volume: an aborted crossfade may have left it mid-fade
         setVol(audio, state.volume);
@@ -596,7 +693,22 @@ export function useSound() {
     }
   }, [ambients, setVol]);
 
+  // Quiet breaks: true once a break has begun (the fade waits for the alarm
+  // to finish), false when the next pomodoro starts or the setting goes off.
+  const setAmbientsQuiet = useCallback((on: boolean) => {
+    if (quiet.current === on) return;
+    quiet.current = on;
+    if (!on) {
+      liftQuiet();
+      return;
+    }
+    if (alarmRun.current) quietPending.current = true;
+    else beginQuietFade();
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- liftQuiet and beginQuietFade only touch refs
+  }, []);
+
   return {
+    setAmbientsQuiet,
     playAlarm,
     previewAlarm,
     primeAlarm,

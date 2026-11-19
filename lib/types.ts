@@ -25,6 +25,8 @@ export interface TimerSettings {
   autoStartPomodoros: boolean;
   alarmSound: string;
   alarmVolume: number;
+  /** Ambient sounds stop during breaks and come back with the next pomodoro. */
+  pauseAmbientsOnBreak: boolean;
 }
 
 export interface AppSettings extends TimerSettings {

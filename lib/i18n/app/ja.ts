@@ -52,6 +52,12 @@ export const ja: AppCopy = {
     volume: (name) => `${name}の音量`,
   },
 
+  flow: {
+    extend: "+5分",
+    extendLabel: "あと5分集中する",
+    quietBreaks: "休憩中は環境音を止める",
+  },
+
   tasks: {
     previousDay: "前の日",
     nextDay: "次の日",

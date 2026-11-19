@@ -52,6 +52,12 @@ export const zh: AppCopy = {
     volume: (name) => `${name}音量`,
   },
 
+  flow: {
+    extend: "+5\u00a0分钟",
+    extendLabel: "再专注 5 分钟",
+    quietBreaks: "休息时暂停环境音",
+  },
+
   tasks: {
     previousDay: "前一天",
     nextDay: "后一天",
