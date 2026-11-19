@@ -15,6 +15,10 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+// Runs before first paint: the saved theme is applied while the HTML is still
+// being parsed, so a light theme user never sees the dark default flash by.
+const THEME_INIT = `try{var s=JSON.parse(localStorage.getItem("pomodorian_settings")||"null");if(s&&s.theme==="light")document.documentElement.setAttribute("data-theme","light")}catch(e){}`;
+
 export const viewport: Viewport = {
   themeColor: "#ef4444",
   width: "device-width",
@@ -92,6 +96,7 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col relative overflow-x-hidden">
+        <script id="theme-init" dangerouslySetInnerHTML={{ __html: THEME_INIT }} />
         <link
           rel="alternate"
           type="application/rss+xml"

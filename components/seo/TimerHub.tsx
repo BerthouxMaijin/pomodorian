@@ -80,7 +80,7 @@ export function TimerHub({ lang }: { lang: TimerLang }) {
               <Link
                 key={p.slug}
                 href={`/${p.slug}`}
-                className="block glass rounded-xl p-4 hover:bg-white/5 transition-colors"
+                className="block glass rounded-xl p-4 hover:bg-surface-hover transition-colors"
               >
                 <div className="font-semibold">{p.h1}</div>
                 <div className="text-sm text-muted mt-1">{p.description}</div>

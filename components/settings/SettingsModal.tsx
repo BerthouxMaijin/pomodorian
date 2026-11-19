@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { track } from "@/lib/track";
 import type { AppSettings } from "@/lib/types";
 import { ALARM_SOUNDS, AI_LANGUAGES } from "@/lib/constants";
@@ -38,12 +38,19 @@ export function SettingsModal({
       />
 
       {/* Modal */}
-      <div className="relative glass rounded-2xl w-full max-w-md max-h-[80vh] overflow-y-auto p-6 space-y-6">
+      <div
+        role="dialog"
+        aria-modal="true"
+        aria-label="Settings"
+        className="relative glass-modal rounded-2xl w-full max-w-md max-h-[85dvh] overflow-y-auto overscroll-contain p-6 space-y-6"
+      >
         <div className="flex items-center justify-between">
           <h2 className="text-lg font-semibold text-foreground">Settings</h2>
           <button
+            type="button"
             onClick={onClose}
-            className="text-muted hover:text-foreground transition-colors"
+            aria-label="Close"
+            className="size-11 -m-3 grid place-items-center rounded-lg text-muted hover:text-foreground transition-colors"
           >
             <svg
               width="20"
@@ -86,17 +93,13 @@ export function SettingsModal({
 
           <div className="flex items-center justify-between">
             <span className="text-sm text-foreground">Long Break interval</span>
-            <input
-              type="number"
+            <NumberField
+              ariaLabel="Long Break interval"
+              value={settings.longBreakInterval}
               min={1}
               max={10}
-              value={settings.longBreakInterval}
-              onChange={(e) =>
-                onUpdate({
-                  longBreakInterval: Math.max(1, parseInt(e.target.value) || 4),
-                })
-              }
-              className="w-16 px-2 py-1 rounded-lg bg-surface text-foreground text-center text-sm border border-border outline-none focus:ring-1 focus:ring-white/20"
+              onChange={(v) => onUpdate({ longBreakInterval: v })}
+              className="w-16 px-2 py-1 rounded-lg bg-surface text-foreground text-center text-sm border border-border outline-none focus:ring-1 focus:ring-foreground/30"
             />
           </div>
         </section>
@@ -225,17 +228,61 @@ function DurationInput({
   onChange: (v: number) => void;
 }) {
   return (
-    <div className="space-y-1">
-      <label className="text-xs text-muted">{label}</label>
-      <input
-        type="number"
-        min={1}
-        max={120}
+    <label className="block space-y-1">
+      <span className="block text-xs text-muted">{label}</span>
+      <NumberField
         value={value}
-        onChange={(e) => onChange(Math.max(1, parseInt(e.target.value) || 1))}
-        className="w-full px-3 py-2 rounded-lg bg-surface text-foreground text-center text-sm border border-border outline-none focus:ring-1 focus:ring-white/20"
+        min={1}
+        max={180}
+        onChange={onChange}
+        className="w-full px-3 py-2 rounded-lg bg-surface text-foreground text-center text-sm border border-border outline-none focus:ring-1 focus:ring-foreground/30"
       />
-    </div>
+    </label>
+  );
+}
+
+/**
+ * Number input that can be emptied while typing. The previous version forced
+ * a value on every keystroke: clearing "25" snapped to "1", and typing "50"
+ * after that gave "150". The draft is free text; only a valid number in range
+ * is committed, and leaving the field shows the committed value again.
+ */
+function NumberField({
+  value,
+  min,
+  max,
+  onChange,
+  className,
+  ariaLabel,
+}: {
+  value: number;
+  min: number;
+  max: number;
+  onChange: (v: number) => void;
+  className: string;
+  ariaLabel?: string;
+}) {
+  const [draft, setDraft] = useState<string | null>(null);
+
+  return (
+    <input
+      type="number"
+      inputMode="numeric"
+      aria-label={ariaLabel}
+      min={min}
+      max={max}
+      value={draft ?? String(value)}
+      onChange={(e) => {
+        setDraft(e.target.value);
+        const n = Number(e.target.value);
+        if (e.target.value !== "" && Number.isInteger(n) && n >= min && n <= max) {
+          onChange(n);
+        }
+      }}
+      onFocus={(e) => e.target.select()}
+      onBlur={() => setDraft(null)}
+      className={className}
+    />
   );
 }
 
@@ -256,7 +303,7 @@ function Toggle({
         aria-label={label}
         aria-pressed={checked}
         onClick={() => onChange(!checked)}
-        className={`w-10 h-6 rounded-full transition-colors relative ${
+        className={`w-10 h-6 rounded-full transition-colors relative before:absolute before:-inset-y-2.5 before:-inset-x-1 before:content-[''] ${
           checked ? "bg-emerald-500" : "bg-surface-active"
         }`}
       >

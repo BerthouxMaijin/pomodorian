@@ -22,14 +22,21 @@ export function ShortcutsModal({ onClose }: ShortcutsModalProps) {
         className="absolute inset-0 bg-black/60 backdrop-blur-sm"
         onClick={onClose}
       />
-      <div className="relative glass rounded-2xl w-full max-w-sm p-6 space-y-4">
+      <div
+        role="dialog"
+        aria-modal="true"
+        aria-label="Keyboard shortcuts"
+        className="relative glass-modal rounded-2xl w-full max-w-sm p-6 space-y-4"
+      >
         <div className="flex items-center justify-between">
           <h2 className="text-lg font-semibold text-foreground">
             Keyboard Shortcuts
           </h2>
           <button
+            type="button"
+            aria-label="Close"
             onClick={onClose}
-            className="text-muted hover:text-foreground transition-colors"
+            className="size-11 -m-3 grid place-items-center rounded-lg text-muted hover:text-foreground transition-colors"
           >
             <svg
               width="20"
@@ -54,14 +61,14 @@ export function ShortcutsModal({ onClose }: ShortcutsModalProps) {
               className="flex items-center justify-between py-1.5"
             >
               <span className="text-sm text-foreground">{shortcut.action}</span>
-              <kbd className="px-2 py-1 rounded-md bg-white/10 text-xs font-mono text-muted border border-border">
+              <kbd className="px-2 py-1 rounded-md bg-surface-active text-xs font-mono text-muted border border-border">
                 {shortcut.label}
               </kbd>
             </div>
           ))}
           <div className="flex items-center justify-between py-1.5">
             <span className="text-sm text-foreground">Show shortcuts</span>
-            <kbd className="px-2 py-1 rounded-md bg-white/10 text-xs font-mono text-muted border border-border">
+            <kbd className="px-2 py-1 rounded-md bg-surface-active text-xs font-mono text-muted border border-border">
               ?
             </kbd>
           </div>

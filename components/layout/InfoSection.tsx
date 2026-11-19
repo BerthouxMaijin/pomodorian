@@ -1,10 +1,11 @@
 "use client";
 
+import { memo } from "react";
 import Link from "next/link";
 import { FAQ } from "@/lib/faq";
 import { PromoVideo } from "./PromoVideo";
 
-export function InfoSection() {
+export const InfoSection = memo(function InfoSection() {
   return (
     <section className="w-full max-w-3xl mx-auto px-6 mt-[50vh] space-y-16 text-sm leading-relaxed">
       {/* Hero */}
@@ -234,4 +235,4 @@ export function InfoSection() {
       </div>
     </section>
   );
-}
+});

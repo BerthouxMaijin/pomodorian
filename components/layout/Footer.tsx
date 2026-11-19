@@ -1,8 +1,9 @@
 "use client";
 
+import { memo } from "react";
 import Link from "next/link";
 
-export function Footer() {
+export const Footer = memo(function Footer() {
   return (
     <footer className="w-full border-t border-border mt-16">
       <div className="max-w-3xl mx-auto px-6 py-8">
@@ -74,4 +75,4 @@ export function Footer() {
       </div>
     </footer>
   );
-}
+});

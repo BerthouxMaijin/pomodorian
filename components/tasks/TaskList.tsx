@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { memo, useState } from "react";
 import { Reorder } from "framer-motion";
 import { TaskItem } from "./TaskItem";
 import { SortableTaskItem } from "./SortableTaskItem";
@@ -22,7 +22,7 @@ interface TaskListProps {
   onOpenAIPlanner: () => void;
 }
 
-export function TaskList({
+export const TaskList = memo(function TaskList({
   tasks,
   sessions,
   activeTaskId,
@@ -74,11 +74,12 @@ export function TaskList({
 
   return (
     <div className="w-full">
-      <div className="flex items-center justify-between mb-3 gap-2">
-        <div className="flex items-center gap-1">
+      <div className="flex items-center justify-between mb-2 gap-2">
+        <div className="flex items-center -ml-2.5">
           <button
+            type="button"
             onClick={history.goPrev}
-            className="p-1 rounded text-muted hover:text-foreground hover:bg-white/5 transition-colors"
+            className="size-10 grid place-items-center rounded-lg text-muted hover:text-foreground hover:bg-surface-hover transition-colors"
             aria-label="Previous day"
           >
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -89,9 +90,10 @@ export function TaskList({
             {dateLabel}
           </h2>
           <button
+            type="button"
             onClick={history.goNext}
             disabled={history.isToday}
-            className="p-1 rounded text-muted hover:text-foreground hover:bg-white/5 transition-colors disabled:opacity-30 disabled:cursor-not-allowed"
+            className="size-10 grid place-items-center rounded-lg text-muted hover:text-foreground hover:bg-surface-hover transition-colors disabled:opacity-30 disabled:cursor-not-allowed"
             aria-label="Next day"
           >
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -101,7 +103,7 @@ export function TaskList({
           {!history.isToday && (
             <button
               onClick={history.goToday}
-              className="ml-1 text-xs px-2 py-0.5 rounded bg-white/10 text-foreground hover:bg-white/15 transition-colors"
+              className="ml-1 text-xs px-3 py-2 rounded-lg bg-surface-hover text-foreground hover:bg-surface-active transition-colors"
             >
               Today
             </button>
@@ -190,6 +192,8 @@ export function TaskList({
                   value={newTaskTitle}
                   onChange={(e) => setNewTaskTitle(e.target.value)}
                   placeholder="What are you working on?"
+                  aria-label="Task title"
+                  enterKeyHint="done"
                   className="w-full bg-transparent text-foreground placeholder:text-muted outline-none text-sm"
                   autoFocus
                 />
@@ -200,14 +204,14 @@ export function TaskList({
                       setIsAdding(false);
                       setNewTaskTitle("");
                     }}
-                    className="text-xs text-muted hover:text-foreground transition-colors"
+                    className="text-xs text-muted hover:text-foreground transition-colors py-2.5 pr-3"
                   >
                     Cancel
                   </button>
                   <button
                     type="submit"
                     disabled={!newTaskTitle.trim()}
-                    className="px-4 py-1.5 rounded-lg bg-white/10 text-sm font-medium text-foreground hover:bg-white/15 transition-colors disabled:opacity-30 disabled:cursor-not-allowed"
+                    className="px-5 py-2.5 rounded-lg bg-surface-hover text-sm font-medium text-foreground hover:bg-surface-active transition-colors disabled:opacity-30 disabled:cursor-not-allowed"
                   >
                     Add
                   </button>
@@ -247,7 +251,7 @@ export function TaskList({
       )}
     </div>
   );
-}
+});
 
 function formatDateLabel(viewDate: string, isToday: boolean, locale: string): string {
   if (isToday) return "Today";

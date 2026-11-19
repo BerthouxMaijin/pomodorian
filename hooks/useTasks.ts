@@ -3,6 +3,7 @@
 import { useReducer, useEffect, useCallback, useState } from "react";
 import { generateId } from "@/lib/utils";
 import { STORAGE_KEYS, type Task, type AITaskSuggestion } from "@/lib/types";
+import { useLocalStorage } from "./useLocalStorage";
 
 function readTasksFromStorage(): Task[] {
   if (typeof window === "undefined") return [];
@@ -112,7 +113,12 @@ function taskReducer(state: Task[], action: TaskAction): Task[] {
 
 export function useTasks() {
   const [tasks, dispatch] = useReducer(taskReducer, []);
-  const [activeTaskId, setActiveTaskId] = useState<string | null>(null);
+  // Persisted with the timer: after a reload mid-pomodoro the session must
+  // still land on the task it was started for.
+  const [activeTaskId, setActiveTaskId] = useLocalStorage<string | null>(
+    STORAGE_KEYS.ACTIVE_TASK,
+    null
+  );
   const [hydrated, setHydrated] = useState(false);
 
   // Hydrate from localStorage after mount. Deferred to a useEffect so the
@@ -122,6 +128,7 @@ export function useTasks() {
     if (stored.length > 0) {
       dispatch({ type: "SET", tasks: stored });
     }
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- SSR hydration: localStorage can only be read after mount, and the persist effect below must wait for it
     setHydrated(true);
   }, []);
 
@@ -171,9 +178,12 @@ export function useTasks() {
     return entries.map((e) => e.id);
   }, []);
 
-  const setActiveTask = useCallback((id: string | null) => {
-    setActiveTaskId(id);
-  }, []);
+  const setActiveTask = useCallback(
+    (id: string | null) => {
+      setActiveTaskId(id);
+    },
+    [setActiveTaskId]
+  );
 
   // Called when a pomodoro starts: guarantees the timer is linked to a task.
   // Users kept running unattributed pomodoros because nothing told them a task
@@ -191,7 +201,7 @@ export function useTasks() {
     const nextId = next?.id ?? null;
     setActiveTaskId(nextId);
     return nextId;
-  }, [tasks, activeTaskId]);
+  }, [tasks, activeTaskId, setActiveTaskId]);
 
   return {
     tasks,

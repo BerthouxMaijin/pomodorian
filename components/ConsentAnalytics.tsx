@@ -175,26 +175,24 @@ export default function ConsentAnalytics() {
           role="region"
           aria-label={texts.title}
           lang={locale}
+          // Position, padding and type size live in globals.css (.consent-*):
+          // they change with the screen size, which inline styles cannot do.
+          className="consent-banner"
           style={{
             position: "fixed",
-            left: 16,
-            right: 16,
-            bottom: "calc(16px + env(safe-area-inset-bottom))",
             zIndex: 9999,
             maxWidth: 440,
             margin: "0 auto",
-            padding: 20,
             borderRadius: 16,
             background: "#111",
             color: "#f5f5f5",
             border: "1px solid rgba(255, 255, 255, 0.12)",
             boxShadow: "0 12px 40px rgba(0, 0, 0, 0.35)",
-            fontSize: 14,
             lineHeight: 1.5,
           }}
         >
-          <p style={{ margin: 0, fontWeight: 700, fontSize: 16 }}>{texts.title}</p>
-          <p style={{ margin: "6px 0 16px", color: "#d4d4d4" }}>
+          <p className="consent-title">{texts.title}</p>
+          <p className="consent-message" style={{ color: "#d4d4d4" }}>
             {texts.message}{" "}
             <Link href="/privacy" style={{ color: "#f5f5f5", textDecoration: "underline" }}>
               {texts.privacy}

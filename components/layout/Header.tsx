@@ -1,5 +1,6 @@
 "use client";
 
+import { memo } from "react";
 import Link from "next/link";
 
 interface HeaderProps {
@@ -8,9 +9,9 @@ interface HeaderProps {
   onOpenAnalytics: () => void;
 }
 
-export function Header({ pomodorosCompleted, onOpenSettings, onOpenAnalytics }: HeaderProps) {
+export const Header = memo(function Header({ pomodorosCompleted, onOpenSettings, onOpenAnalytics }: HeaderProps) {
   return (
-    <header className="flex items-center justify-between px-6 py-4 max-w-2xl mx-auto w-full">
+    <header className="flex items-center justify-between pl-6 pr-3 py-3 sm:py-4 max-w-2xl mx-auto w-full">
       <div className="flex items-center gap-3">
         <div className="w-8 h-8 rounded-lg bg-red-500/20 flex items-center justify-center">
           <svg
@@ -34,22 +35,23 @@ export function Header({ pomodorosCompleted, onOpenSettings, onOpenAnalytics }: 
         </span>
       </div>
 
-      <div className="flex items-center gap-3">
+      <div className="flex items-center gap-1">
         <Link
           href="/blog"
-          className="text-xs text-muted hover:text-foreground transition-colors hidden sm:block"
+          className="text-xs text-muted hover:text-foreground transition-colors hidden sm:block px-3 py-3"
         >
           Blog
         </Link>
         {pomodorosCompleted > 0 && (
-          <span className="text-sm text-muted tabular-nums">
+          <span className="text-sm text-muted tabular-nums px-2" title="Pomodoros completed">
             #{pomodorosCompleted}
           </span>
         )}
         <button
           onClick={onOpenAnalytics}
-          className="p-2 rounded-lg text-muted hover:text-foreground hover:bg-surface-hover transition-colors"
+          className="size-11 grid place-items-center rounded-lg text-muted hover:text-foreground hover:bg-surface-hover transition-colors"
           aria-label="Analytics"
+          title="Report (R)"
         >
           <svg
             width="20"
@@ -67,8 +69,9 @@ export function Header({ pomodorosCompleted, onOpenSettings, onOpenAnalytics }: 
         </button>
         <button
           onClick={onOpenSettings}
-          className="p-2 rounded-lg text-muted hover:text-foreground hover:bg-surface-hover transition-colors"
+          className="size-11 grid place-items-center rounded-lg text-muted hover:text-foreground hover:bg-surface-hover transition-colors"
           aria-label="Settings"
+          title="Settings (S)"
         >
           <svg
             width="20"
@@ -87,4 +90,4 @@ export function Header({ pomodorosCompleted, onOpenSettings, onOpenAnalytics }: 
       </div>
     </header>
   );
-}
+});

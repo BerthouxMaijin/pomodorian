@@ -6,7 +6,7 @@ import { DEFAULT_SETTINGS } from "@/lib/constants";
 import { STORAGE_KEYS, type AppSettings } from "@/lib/types";
 
 export function useSettings() {
-  const [storedSettings, setSettings] = useLocalStorage<AppSettings>(
+  const [storedSettings, setSettings, hydrated] = useLocalStorage<AppSettings>(
     STORAGE_KEYS.SETTINGS,
     DEFAULT_SETTINGS
   );
@@ -27,5 +27,5 @@ export function useSettings() {
     setSettings(DEFAULT_SETTINGS);
   }, [setSettings]);
 
-  return { settings, updateSettings, resetSettings };
+  return { settings, updateSettings, resetSettings, hydrated };
 }

@@ -74,10 +74,10 @@ export function TaskItem({
         "group glass relative overflow-hidden rounded-xl px-3 py-2.5 flex items-start gap-3 transition-all duration-200",
         canActivate &&
           "cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent-text/60",
-        isActive && "ring-1 ring-accent-text/40 bg-white/8",
+        isActive && "ring-1 ring-accent-text/40 bg-surface-hover",
         task.completed && "opacity-50",
         task.isGhost && "opacity-60",
-        isDragging && "ring-1 ring-white/25 bg-white/10 shadow-lg cursor-grabbing"
+        isDragging && "ring-1 ring-white/25 bg-surface-active shadow-lg cursor-grabbing"
       )}
       onClick={canActivate ? onSetActive : undefined}
       onKeyDown={
@@ -120,8 +120,12 @@ export function TaskItem({
           if (canToggle) onToggle();
         }}
         disabled={!canToggle}
+        aria-label={task.completed ? "Mark as not done" : "Mark as done"}
+        aria-pressed={task.completed}
         className={cn(
           "w-5 h-5 mt-0.5 rounded-md border-2 flex-shrink-0 flex items-center justify-center transition-colors",
+          // Invisible padding: the box stays 20px, the finger gets about 40px.
+          "relative before:absolute before:-inset-y-3.5 before:-left-2.5 before:-right-3.5 before:content-['']",
           task.completed
             ? "border-emerald-500 bg-emerald-500"
             : "border-muted",
@@ -155,12 +159,14 @@ export function TaskItem({
           onBlur={handleSave}
           onKeyDown={handleKeyDown}
           onClick={(e) => e.stopPropagation()}
-          className="flex-1 text-sm text-foreground bg-transparent outline-none border-b border-white/20 py-0"
+          aria-label="Task title"
+          enterKeyHint="done"
+          className="flex-1 min-w-0 text-sm text-foreground bg-transparent outline-none border-b border-border py-0"
         />
       ) : (
         <span
           className={cn(
-            "flex-1 text-sm text-foreground break-words",
+            "flex-1 min-w-0 text-sm text-foreground break-words",
             isActive && "font-medium",
             task.completed && "line-through",
             task.isGhost && "italic"
@@ -203,7 +209,14 @@ export function TaskItem({
             e.stopPropagation();
             onDelete();
           }}
-          className="opacity-0 group-hover:opacity-100 text-muted hover:text-red-400 transition-all flex-shrink-0 mt-0.5"
+          className={cn(
+            "text-muted hover:text-red-400 transition-all flex-shrink-0 mt-0.5",
+            // Hover reveal on desktop. A touch screen has no hover, so the
+            // button was unreachable there: always shown on coarse pointers,
+            // and whenever it holds keyboard focus.
+            "opacity-0 group-hover:opacity-100 focus-visible:opacity-100 [@media(pointer:coarse)]:opacity-60",
+            "relative before:absolute before:-inset-3 before:content-['']"
+          )}
           aria-label="Delete task"
         >
           <svg

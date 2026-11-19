@@ -79,6 +79,7 @@ export function SortableTaskItem({
               style={{ touchAction: "none" }}
               className={cn(
                 "flex-shrink-0 mt-0.5 -ml-1 p-0.5 rounded text-muted transition-all",
+                "relative before:absolute before:-inset-y-3 before:-left-2 before:-right-1 before:content-['']",
                 "cursor-grab active:cursor-grabbing hover:text-foreground",
                 "focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-white/40",
                 // Hover reveal on desktop, always visible where there is no

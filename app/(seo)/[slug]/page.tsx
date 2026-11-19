@@ -387,7 +387,7 @@ export default async function SeoPage({
                       <Link
                         key={s}
                         href={`/blog/${s}`}
-                        className="block glass rounded-xl p-4 hover:bg-white/5 transition-colors"
+                        className="block glass rounded-xl p-4 hover:bg-surface-hover transition-colors"
                       >
                         <div className="font-semibold">{article.title}</div>
                         <div className="text-sm text-muted mt-1">

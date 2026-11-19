@@ -43,6 +43,7 @@ hooks/
   useAnalytics.ts       # Focus session recording, streak, heatmap
   useSound.ts           # Ambient + alarm audio management
   useLocalStorage.ts    # Generic localStorage hook
+  useWakeLock.ts        # Keeps the screen awake while a timer runs
 lib/
   types.ts              # Domain types + STORAGE_KEYS
   constants.ts          # Defaults, modes, sounds, keyboard shortcuts
@@ -53,12 +54,14 @@ lib/
 content/blog/{en,fr,es,de}/  # Markdown articles (gray-matter frontmatter)
 scripts/seo/            # Article generation & audit scripts (excluded from TS)
 public/sounds/          # MP3 audio files (ambient + alarms)
+public/timer-worker.js  # Heartbeat for the countdown (not throttled in background tabs)
 ```
 
 ## Key Domain Rules
 
 - **No database**: all user data (tasks, settings, sessions) lives in localStorage
 - **Timer uses wall-clock**: `endTime = Date.now() + remaining * 1000`, ticks every 200ms
+- **Timer survives a reload**: snapshot in `pomodorian_current_state`, written on transitions only
 - **Pomodoro cycle**: pomodoro -> short break (repeat), every Nth pomodoro -> long break
 - **AI planner**: `/api/ai-planner`, rate-limited (10 req/hr/IP), returns JSON task list
 - **Feedback**: `/api/feedback` emails reports via Resend (3 sends/hr/IP, honeypot, no storage)

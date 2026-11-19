@@ -63,6 +63,7 @@ export const STORAGE_KEYS = {
   SETTINGS: "pomodorian_settings",
   SESSIONS: "pomodorian_sessions",
   CURRENT_STATE: "pomodorian_current_state",
+  ACTIVE_TASK: "pomodorian_active_task",
   DATA_VERSION: "pomodorian_data_version",
   AMBIENTS: "pomodorian_ambients",
   NEVER_DUMB: "pomodorian_neverdumb",
