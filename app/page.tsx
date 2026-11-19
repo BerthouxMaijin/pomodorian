@@ -3,7 +3,7 @@
 import { useState, useCallback, useEffect, useMemo, useRef } from "react";
 import { motion, AnimatePresence, MotionConfig } from "framer-motion";
 import { track } from "@/lib/track";
-import { useTimer } from "@/hooks/useTimer";
+import { useTimer, type TimerCapture } from "@/hooks/useTimer";
 import { useSettings } from "@/hooks/useSettings";
 import { useSound } from "@/hooks/useSound";
 import { useAnalytics } from "@/hooks/useAnalytics";
@@ -11,6 +11,7 @@ import { useWakeLock } from "@/hooks/useWakeLock";
 import { Timer } from "@/components/timer/Timer";
 import { ModeSelector } from "@/components/timer/ModeSelector";
 import { TimerControls } from "@/components/timer/TimerControls";
+import { UndoBanner } from "@/components/timer/UndoBanner";
 import { Background } from "@/components/layout/Background";
 import { Header } from "@/components/layout/Header";
 import { TaskList } from "@/components/tasks/TaskList";
@@ -47,6 +48,12 @@ export default function Home() {
   const [neverDumbEligible, setNeverDumbEligible] = useState(false);
   const neverDumbOpenedRef = useRef(false);
   const sessionReturnTrackedRef = useRef(false);
+  // A pomodoro wiped by a stray key or click, offered back for a few seconds.
+  const [undoOffer, setUndoOffer] = useState<{
+    id: number;
+    captured: TimerCapture;
+    stoppedAt: number;
+  } | null>(null);
 
   // A phone that locks its screen mid-pomodoro suspends the page: the alarm
   // would only ring once it is unlocked again.
@@ -155,6 +162,9 @@ export default function Home() {
     resume: timerResume,
     reset: timerReset,
     setMode: timerSetMode,
+    capture: timerCapture,
+    revert: timerRevert,
+    status: timerStatus,
   } = timer;
   const { playClick, pauseAllAmbients, resumeAllAmbients } = sound;
   const { notificationsEnabled } = settings;
@@ -192,14 +202,44 @@ export default function Home() {
     track("timer_started", { mode: timerMode });
   }, [playClick, timerResume, resumeAllAmbients, timerMode]);
 
+  // Called just before a manual action ends the current block: a pomodoro with
+  // at least a minute of focus behind it can be brought back with Undo.
+  const offerUndo = useCallback(() => {
+    const captured = timerCapture();
+    if (captured.mode !== "pomodoro") return;
+    if (captured.status !== "running" && captured.status !== "paused") return;
+    const remaining =
+      captured.status === "running" && captured.endTime
+        ? Math.max(0, Math.round((captured.endTime - Date.now()) / 1000))
+        : captured.timeRemaining;
+    if (captured.totalTime - remaining < 60) return;
+    setUndoOffer({ id: Date.now(), captured, stoppedAt: remaining });
+  }, [timerCapture]);
+
+  const undoInterrupt = useCallback(() => {
+    if (!undoOffer) return;
+    timerRevert(undoOffer.captured);
+    setUndoOffer(null);
+    track("timer_interrupt_undone", { status: undoOffer.captured.status });
+  }, [undoOffer, timerRevert]);
+
+  const dismissUndo = useCallback(() => setUndoOffer(null), []);
+
+  // Starting a new timer (by hand, auto-start or the AI planner) closes the
+  // offer. Every interruption leaves the timer idle, so any run is a new one.
+  useEffect(() => {
+    if (timerStatus === "running") setUndoOffer(null);
+  }, [timerStatus]);
+
   const setModeManually = useCallback(
     (mode: TimerMode) => {
+      offerUndo();
       setNeverDumbOpen(false);
       setNeverDumbEligible(false);
       neverDumbOpenedRef.current = false;
       timerSetMode(mode);
     },
-    [timerSetMode]
+    [timerSetMode, offerUndo]
   );
 
   // Skip moves on: out of a pomodoro into a short break, out of a break back
@@ -210,10 +250,11 @@ export default function Home() {
   }, [timerMode, setModeManually]);
 
   const resetTimer = useCallback(() => {
+    offerUndo();
     setNeverDumbOpen(false);
     setNeverDumbEligible(false);
     timerReset();
-  }, [timerReset]);
+  }, [timerReset, offerUndo]);
 
   const openSettings = useCallback(() => setSettingsOpen(true), []);
   const openAnalytics = useCallback(() => setAnalyticsOpen(true), []);
@@ -369,6 +410,13 @@ export default function Home() {
         case "?":
           setShortcutsOpen((v) => !v);
           break;
+        case "z":
+        case "Z":
+          if (undoOffer) {
+            e.preventDefault();
+            undoInterrupt();
+          }
+          break;
       }
     }
 
@@ -382,6 +430,8 @@ export default function Home() {
     startTimer,
     pauseTimer,
     resumeTimer,
+    undoOffer,
+    undoInterrupt,
   ]);
 
   return (
@@ -491,6 +541,17 @@ export default function Home() {
       <Footer />
 
       {!neverDumbOpen && <FeedbackPrompt />}
+
+      <AnimatePresence>
+        {undoOffer && (
+          <UndoBanner
+            key={undoOffer.id}
+            stoppedAt={undoOffer.stoppedAt}
+            onUndo={undoInterrupt}
+            onDismiss={dismissUndo}
+          />
+        )}
+      </AnimatePresence>
 
       <AnimatePresence>
         {neverDumbOpen && (

@@ -26,6 +26,19 @@ interface TimerSnapshot {
   savedAt: number;
 }
 
+/**
+ * A timer state captured just before a manual interruption (mode switch, skip,
+ * reset), so the interruption can be undone with `revert`.
+ */
+export interface TimerCapture {
+  mode: TimerMode;
+  status: TimerStatus;
+  timeRemaining: number;
+  totalTime: number;
+  pomodorosCompleted: number;
+  endTime: number | null;
+}
+
 interface UseTimerOptions {
   /** localStorage key for the snapshot. Omit for a timer that should not persist. */
   persistKey?: string;
@@ -74,7 +87,8 @@ type TimerAction =
   | { type: "SET_MODE"; mode: TimerMode; duration: number }
   | { type: "COMPLETE" }
   | { type: "SYNC_SETTINGS"; duration: number }
-  | { type: "RESTORE"; snapshot: TimerSnapshot | null; now: number };
+  | { type: "RESTORE"; snapshot: TimerSnapshot | null; now: number }
+  | { type: "REVERT"; captured: TimerCapture; now: number };
 
 function timerReducer(state: TimerState, action: TimerAction): TimerState {
   switch (action.type) {
@@ -182,6 +196,33 @@ function timerReducer(state: TimerState, action: TimerAction): TimerState {
 
       return base;
     }
+    case "REVERT": {
+      const { captured, now } = action;
+      const base = {
+        ...state,
+        mode: captured.mode,
+        totalTime: captured.totalTime,
+        pomodorosCompleted: captured.pomodorosCompleted,
+      };
+      if (captured.status === "running" && captured.endTime) {
+        // Same endTime: the clock kept flowing while the undo was on offer. If
+        // it already ran out, one second left lets the next beat run the
+        // normal completion path.
+        const msLeft = captured.endTime - now;
+        return {
+          ...base,
+          status: "running",
+          endTime: captured.endTime,
+          timeRemaining: Math.max(1, Math.round(msLeft / 1000)),
+        };
+      }
+      return {
+        ...base,
+        status: captured.status,
+        endTime: null,
+        timeRemaining: captured.timeRemaining,
+      };
+    }
     default:
       return state;
   }
@@ -202,6 +243,12 @@ export function useTimer(settings: AppSettings, options: UseTimerOptions = {}) {
   });
 
   const onCompleteRef = useRef<(() => void) | null>(null);
+
+  // Latest state, read by capture() without making it change on every tick.
+  const stateRef = useRef(state);
+  useEffect(() => {
+    stateRef.current = state;
+  }, [state]);
 
   const registerOnComplete = useCallback((fn: (() => void) | null) => {
     onCompleteRef.current = fn;
@@ -318,6 +365,23 @@ export function useTimer(settings: AppSettings, options: UseTimerOptions = {}) {
   const reset = useCallback(() => dispatch({ type: "RESET" }), []);
   const skip = useCallback(() => dispatch({ type: "SKIP" }), []);
 
+  const capture = useCallback((): TimerCapture => {
+    const s = stateRef.current;
+    return {
+      mode: s.mode,
+      status: s.status,
+      timeRemaining: s.timeRemaining,
+      totalTime: s.totalTime,
+      pomodorosCompleted: s.pomodorosCompleted,
+      endTime: s.endTime,
+    };
+  }, []);
+  const revert = useCallback(
+    (captured: TimerCapture) =>
+      dispatch({ type: "REVERT", captured, now: Date.now() }),
+    []
+  );
+
   const setMode = useCallback(
     (mode: TimerMode) => {
       const duration = getDurationForMode(mode, settings);
@@ -344,6 +408,8 @@ export function useTimer(settings: AppSettings, options: UseTimerOptions = {}) {
     reset,
     skip,
     setMode,
+    capture,
+    revert,
     registerOnComplete,
   };
 }
