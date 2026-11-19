@@ -26,14 +26,14 @@ app/
   privacy/ terms/ contact/  # Legal pages
   sitemap.ts robots.ts feed.xml/ manifest.ts
 components/
-  timer/                # Timer, ModeSelector, TimerControls, UndoBanner
+  timer/                # Timer, ModeSelector, TimerControls, UndoBanner, MiniTimer (floating window)
   tasks/                # TaskList, TaskItem, TaskEditor, EstimateStepper
   sounds/               # SoundMixer (5 ambient sounds, layerable)
   ai-planner/           # AIPlannerModal (calls /api/ai-planner)
   feedback/             # FeedbackPrompt modal (form posting to /api/feedback)
   neverdumb/            # NeverDumb modal
   analytics/            # AnalyticsPanel, ContributionHeatmap, StatsCards
-  settings/             # SettingsModal, ShortcutsModal
+  settings/             # SettingsModal, ShortcutsModal, BackupSection
   layout/               # Header, Footer, Background, InfoSection
   seo/                  # HomeSchemas (JSON-LD)
   pwa/                  # ServiceWorkerRegister (production only)
@@ -47,6 +47,8 @@ hooks/
   useWakeLock.ts        # Keeps the screen awake while a timer runs
   useUiLocale.ts        # Active language (setting, legacy setting, browser)
   useAppCopy.ts         # Translated copy for the app core
+  useFocusMode.ts       # Fades everything but the timer during a running pomodoro
+  useMiniTimerWindow.ts # Document Picture-in-Picture window state
 lib/
   types.ts              # Domain types + STORAGE_KEYS
   constants.ts          # Defaults, modes, sounds, keyboard shortcuts
@@ -54,6 +56,7 @@ lib/
   ai-prompt.ts          # buildAIPlannerPrompt (multilingual)
   i18n/                 # locales.ts, app/ (AppCopy + one file per language), format.ts
   notify.ts             # End-of-timer notification (service worker first)
+  backup.ts             # Export / import of all user data (Zod-validated)
   seo/pages.ts          # SEO landing page definitions
   blog/reader.ts        # Markdown article reader (fs-based, SSG only)
 content/blog/{en,fr,es,de}/  # Markdown articles (gray-matter frontmatter)

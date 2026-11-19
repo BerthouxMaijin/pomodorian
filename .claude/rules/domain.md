@@ -13,6 +13,22 @@
 - Skip = passer à la suite (pomodoro → pause courte, pause → pomodoro), sans rien enregistrer
 - `useWakeLock` garde l'écran allumé tant que le timer tourne (app + pages timer)
 - Interruption manuelle d'un pomodoro (onglet de mode, touches 1/2/3, Skip, Reset) avec au moins 60s écoulées : bandeau `UndoBanner` pendant 8s, Undo ou touche Z restaure l'état exact (`capture()` / `revert()` dans `useTimer`). Jamais de bandeau en quittant une pause ni sur une fin naturelle
+- Prolongation : à la fin d'un pomodoro, un bouton `+5 min` est proposé pendant 60s. Il relance 5 minutes sur la même tâche (`extend()` dans `useTimer`, champ `extensionOf` persisté). À la fin, les minutes s'ajoutent à la session déjà enregistrée (`extendSession`) : jamais de deuxième session ni de pomodoro compté en plus. Une prolongation abandonnée n'ajoute rien
+
+## Mode focus
+- Pomodoro en cours + 4s sans activité : les zones marquées `data-focus-fade` passent à 25 % d'opacité (`<html data-focus-mode="dim">`, règles dans `globals.css`, logique dans `hooks/useFocusMode.ts`). Toute activité les restaure
+- Opacité seulement : rien n'est désactivé (pas de `inert`, `aria-hidden` ni `pointer-events: none`). Aucun état React : un attribut et du CSS
+- Jamais d'estompage en pause, à l'arrêt, pendant une pause, quand le timer n'est plus à l'écran, ni pendant la saisie dans un champ
+- Tout nouveau bloc de la page d'accueil hors timer doit porter `data-focus-fade` ; le timer, les contrôles, la ligne de tâche en cours, les modales et les bandeaux n'en portent jamais
+- Réglage `focusMode` (défaut activé)
+
+## Objectif du jour
+- L'en-tête affiche `faits/objectif` : pomodoros terminés aujourd'hui (`todayPomodoros` de `useAnalytics`) sur le réglage `dailyGoal` (défaut 8, de 1 à 24). Vert quand l'objectif est atteint, clic = ouvre le rapport
+
+## Mini timer flottant
+- API Document Picture-in-Picture (`hooks/useMiniTimerWindow.ts`, `components/timer/MiniTimer.tsx`, `MiniTimerButton.tsx`). Le bouton n'est rendu que si l'API existe (détection après montage) et à partir de 400px de large : en dessous, l'en-tête n'a plus la place
+- Rendu par un portail depuis `app/page.tsx` : une seule source de vérité pour le timer. Styles, polices et `data-theme` sont copiés dans la fenêtre
+- `requestWindow` doit être appelé directement dans le clic (activation utilisateur), sans `await` avant
 
 ## Tâches
 - Édition par le bouton crayon (`TaskEditor` en place dans la ligne) : titre + estimation en pomodoros (`EstimateStepper`, 1 à 20), Delete / Cancel / Save. Le double clic sur le titre ouvre le même éditeur
@@ -24,6 +40,9 @@
 - Pas de base de données, pas de backend pour les données utilisateur
 - Clés définies dans `lib/types.ts` (STORAGE_KEYS)
 - Hook générique `useLocalStorage.ts` pour la persistance
+- Sauvegarde : section « Données » des réglages (`components/settings/BackupSection.tsx`, `lib/backup.ts`). Export JSON des tâches, réglages, sessions, mix de sons et stats Never Dumb ; import validé par Zod puis remplacement tout ou rien, migrations, rechargement
+- ⚠️ Tout nouveau réglage d'`AppSettings` doit être ajouté à `settingsSchema` dans `lib/backup.ts` : les clés inconnues sont ignorées à l'import, donc un réglage oublié est perdu à la restauration
+- Jamais dans la sauvegarde : minuteur en cours, tâche active, consentement analytics, « feedback déjà vu »
 
 ## Langues de l'app
 - 8 langues (`UiLocale` : en, fr, es, de, pt, it, ja, zh). Textes du coeur de l'app dans `lib/i18n/app/` : `types.ts` (`AppCopy`) + un fichier par langue, donc une clé manquante est une erreur de type
@@ -59,6 +78,7 @@
 - L'alarme se répète (5 sonneries max, 8s d'écart) tant que personne ne réagit ; une entrée clavier ou souris arrête les répétitions, un nouveau départ coupe le son. Une seule sonnerie si la personne est visiblement là, ou si la page n'a jamais reçu de geste
 - Safari / iOS : les éléments audio d'alarme sont créés une fois et amorcés (lecture muette) dans le geste du START via `primeAlarm()`, puis réutilisés. Ne jamais faire `new Audio()` au moment de la fin
 - Réglages : choisir un son ou relâcher le curseur de volume joue un aperçu (`previewAlarm`)
+- Réglage `pauseAmbientsOnBreak` (défaut désactivé) : les ambiances se taisent quand une pause commence (après l'alarme, en fondu) et reviennent quand un pomodoro tourne (`setAmbientsQuiet` dans `useSound`). Le mix stocké ne change jamais
 
 ## Themes
 - Dark/Light via attribut `data-theme` sur `<html>`

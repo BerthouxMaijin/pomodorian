@@ -60,15 +60,20 @@ const tasksSchema = z
   .max(10_000)
   .refine((tasks) => new Set(tasks.map((t) => t.id)).size === tasks.length);
 
+// Every field of AppSettings must be listed here: z.object drops unknown keys,
+// so a setting missing from this list is silently lost on restore.
 const settingsSchema = z.object({
   pomodoroDuration: z.number().int().min(1).max(86_400).optional(),
   shortBreakDuration: z.number().int().min(1).max(86_400).optional(),
   longBreakDuration: z.number().int().min(1).max(86_400).optional(),
   longBreakInterval: z.number().int().min(1).max(100).optional(),
+  dailyGoal: z.number().int().min(1).max(24).optional(),
+  focusMode: z.boolean().optional(),
   autoStartBreaks: z.boolean().optional(),
   autoStartPomodoros: z.boolean().optional(),
   alarmSound: z.string().min(1).max(40).optional(),
   alarmVolume: z.number().min(0).max(1).optional(),
+  pauseAmbientsOnBreak: z.boolean().optional(),
   theme: z.enum(["system", "dark", "light"]).optional(),
   notificationsEnabled: z.boolean().optional(),
   showTimeInTitle: z.boolean().optional(),

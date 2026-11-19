@@ -20,7 +20,11 @@ export function MiniTimerButton() {
       onClick={toggleMiniTimer}
       data-testid="mini-timer-button"
       aria-pressed={open}
-      className={`size-11 grid place-items-center rounded-lg hover:text-foreground hover:bg-surface-hover transition-colors ${
+      // Hidden under 400px: the header has no room left for a fourth control
+      // there (logo, name, daily goal, report, settings), and a window that
+      // narrow has no use for a floating copy of itself. Phones never get here,
+      // the API does not exist on them.
+      className={`size-11 hidden min-[400px]:grid place-items-center rounded-lg hover:text-foreground hover:bg-surface-hover transition-colors ${
         open ? "text-foreground bg-surface-active" : "text-muted"
       }`}
       aria-label={open ? copy.close : copy.open}
