@@ -12,6 +12,12 @@
 - La tâche active est persistée aussi (`STORAGE_KEYS.ACTIVE_TASK`), sinon la session restaurée ne serait rattachée à rien
 - Skip = passer à la suite (pomodoro → pause courte, pause → pomodoro), sans rien enregistrer
 - `useWakeLock` garde l'écran allumé tant que le timer tourne (app + pages timer)
+- Interruption manuelle d'un pomodoro (onglet de mode, touches 1/2/3, Skip, Reset) avec au moins 60s écoulées : bandeau `UndoBanner` pendant 8s, Undo ou touche Z restaure l'état exact (`capture()` / `revert()` dans `useTimer`). Jamais de bandeau en quittant une pause ni sur une fin naturelle
+
+## Tâches
+- Édition par le bouton crayon (`TaskEditor` en place dans la ligne) : titre + estimation en pomodoros (`EstimateStepper`, 1 à 20), Delete / Cancel / Save. Le double clic sur le titre ouvre le même éditeur
+- Sur écran tactile, la croix de suppression n'est pas sur la ligne : la suppression passe par l'éditeur
+- L'estimation se choisit aussi à l'ajout d'une tâche
 
 ## Stockage localStorage
 - Toutes les données utilisateur (tasks, settings, sessions, analytics) vivent dans localStorage
@@ -42,6 +48,8 @@
 
 ## Themes
 - Dark/Light via attribut `data-theme` sur `<html>`
+- Réglage `theme` : `system` (défaut, suit `prefers-color-scheme` en direct), `dark`, `light`. Un `dark`/`light` déjà stocké est conservé
+- Accents codés en dur trop pâles en clair (liens `red-400`, texte `emerald-400`) : ajouter la variante `light:` (définie dans `globals.css`), ne pas toucher la classe de base pour ne pas changer le rendu sombre
 - Variables CSS dans `globals.css`
 - Toujours tester les deux thèmes
 - Le thème sauvegardé est appliqué avant le premier paint par le script inline `theme-init` de `app/layout.tsx` (toutes les pages, pas seulement l'app)
@@ -51,4 +59,8 @@
 ## PWA
 - `manifest.ts` génère le manifest.json
 - Icons dans `public/`
-- Service worker : aucun (pas de offline mode actuellement)
+- Service worker : `public/sw.js`, fichier statique sans plugin, enregistré en production seulement par `components/pwa/ServiceWorkerRegister.tsx`
+- Règles de cache : pages en réseau d'abord (copie en cache hors ligne) ; `/_next/static/*` en cache d'abord ; `/timer-worker.js`, icônes, les 3 alarmes et `tick-start.mp3` en cache. Jamais intercepté : `/api/*`, `/_vercel/*`, requêtes RSC, cross-origin, les MP3 d'ambiance
+- Changer une règle de cache = incrémenter `VERSION` dans `sw.js` (les anciens caches sont supprimés à l'activation)
+- Procédure d'arrêt d'urgence : décrite en tête de `sw.js` (version qui se désenregistre et vide les caches, retirer `<ServiceWorkerRegister />` dans le même déploiement)
+- Notifications de fin : toujours via `lib/notify.ts` (`showNotification` du service worker, obligatoire sur Android ; repli sur `new Notification`). Pas de Web Push : aucun serveur
