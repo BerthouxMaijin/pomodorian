@@ -9,6 +9,7 @@ import { useSettings } from "@/hooks/useSettings";
 import { useSound } from "@/hooks/useSound";
 import { useAnalytics } from "@/hooks/useAnalytics";
 import { useWakeLock } from "@/hooks/useWakeLock";
+import { useFocusMode } from "@/hooks/useFocusMode";
 import { Timer } from "@/components/timer/Timer";
 import { ModeSelector } from "@/components/timer/ModeSelector";
 import { TimerControls } from "@/components/timer/TimerControls";
@@ -65,6 +66,13 @@ export default function Home() {
   // A phone that locks its screen mid-pomodoro suspends the page: the alarm
   // would only ring once it is unlocked again.
   useWakeLock(timer.status === "running");
+
+  // Focus mode: during a running pomodoro, everything but the timer fades back
+  // after a few idle seconds. An attribute on <html>, no React state.
+  useFocusMode(
+    settings.focusMode && timer.mode === "pomodoro" && timer.status === "running",
+    "[data-focus-anchor]"
+  );
 
   // Hand-off from a timer tool page (/?focus=50): the person clicked "run full
   // Pomodoro cycles at 50 minutes", so that becomes their pomodoro length. The
@@ -484,7 +492,12 @@ export default function Home() {
       <HomeSchemas />
       <Background mode={timer.mode} />
       <Header
-        pomodorosCompleted={timer.pomodorosCompleted}
+        pomodorosCompleted={analytics.todayPomodoros}
+        dailyGoal={
+          analytics.hydrated && settingsHydrated
+            ? Math.min(24, Math.max(1, Math.round(settings.dailyGoal) || 8))
+            : null
+        }
         onOpenSettings={openSettings}
         onOpenAnalytics={openAnalytics}
       />
@@ -494,6 +507,7 @@ export default function Home() {
 
         <motion.div
           key={timer.mode}
+          data-focus-anchor
           initial={{ scale: 0.95, opacity: 0.5 }}
           animate={{ scale: 1, opacity: 1 }}
           transition={{ duration: 0.3, ease: "easeOut" }}
@@ -566,6 +580,7 @@ export default function Home() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2 }}
         >
+          <div data-focus-fade>
           <TaskList
             tasks={tasks.tasks}
             sessions={analytics.sessions}
@@ -579,6 +594,7 @@ export default function Home() {
             onReorder={tasks.reorderTasks}
             onOpenAIPlanner={openAIPlanner}
           />
+          </div>
         </motion.div>
       </main>
 

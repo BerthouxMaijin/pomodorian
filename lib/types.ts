@@ -21,6 +21,10 @@ export interface TimerSettings {
   shortBreakDuration: number;
   longBreakDuration: number;
   longBreakInterval: number;
+  /** Pomodoros aimed for each day, shown in the header as "3/8". 1 to 24. */
+  dailyGoal: number;
+  /** While a pomodoro runs, everything but the timer fades after a few idle seconds. */
+  focusMode: boolean;
   autoStartBreaks: boolean;
   autoStartPomodoros: boolean;
   alarmSound: string;

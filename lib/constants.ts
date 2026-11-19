@@ -8,6 +8,8 @@ export const DEFAULT_SETTINGS: AppSettings = {
   shortBreakDuration: 5 * 60,
   longBreakDuration: 15 * 60,
   longBreakInterval: 4,
+  dailyGoal: 8,
+  focusMode: true,
   autoStartBreaks: false,
   autoStartPomodoros: false,
   neverDumbAutoOpen: true,

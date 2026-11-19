@@ -148,6 +148,26 @@ a,
   }
 }
 
+/* Focus mode (hooks/useFocusMode.ts). While a pomodoro runs, <html> carries
+   data-focus-mode="armed"; after a few idle seconds it turns to "dim" and the
+   areas marked data-focus-fade (header, mode tabs, sounds, tasks, info,
+   footer, feedback pill) fade back. Slow to fade, quick to come back. Opacity
+   only: everything stays clickable and readable by assistive tech. */
+html[data-focus-mode] [data-focus-fade] {
+  transition: opacity 200ms ease-out;
+}
+
+html[data-focus-mode="dim"] [data-focus-fade] {
+  opacity: 0.25;
+  transition: opacity 1200ms ease-in-out;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html[data-focus-mode] [data-focus-fade] {
+    transition: none;
+  }
+}
+
 /* Consent banner: full card on roomy screens, compact strip on phones, where
    the card covered the Start button on a first visit. */
 .consent-banner {

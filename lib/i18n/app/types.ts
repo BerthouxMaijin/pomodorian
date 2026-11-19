@@ -46,6 +46,18 @@ export type AppCopy = {
     settingsHint: string;
   };
 
+  /** Focus mode and the daily goal chip in the header. */
+  focus: {
+    /** Settings toggle (Display): fades everything but the timer while a pomodoro runs. */
+    focusMode: string;
+    /** Settings row (Timer): number of pomodoros aimed for each day. */
+    dailyGoal: string;
+    /** Label of the header chip "3/8", which opens the report. */
+    goalProgress: (done: number, goal: number) => string;
+    /** Same, once the goal is reached. */
+    goalReached: (done: number, goal: number) => string;
+  };
+
   sounds: {
     toggle: string;
     names: Record<AmbientSoundKey, string>;
