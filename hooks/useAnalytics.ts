@@ -24,7 +24,8 @@ export interface RangeStats {
   }[];
 }
 
-const UNTRACKED_TITLE = "Untracked focus time";
+// Stored in English; TaskBreakdown shows it in the active locale.
+export const UNTRACKED_TITLE = "Untracked focus time";
 
 export function computeRangeStats(
   sessions: FocusSession[],

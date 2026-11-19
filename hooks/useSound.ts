@@ -274,7 +274,7 @@ export function useSound() {
   }, [hydrated]);
 
   const playAlarm = useCallback((soundKey: string, volume: number) => {
-    const sound = ALARM_SOUNDS[soundKey];
+    const sound = (ALARM_SOUNDS as Record<string, { src: string } | undefined>)[soundKey];
     if (!sound) return;
 
     if (alarmRef.current) {

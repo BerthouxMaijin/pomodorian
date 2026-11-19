@@ -26,11 +26,13 @@ import { Footer } from "@/components/layout/Footer";
 import { FeedbackPrompt } from "@/components/feedback/FeedbackPrompt";
 import { NeverDumbModal } from "@/components/neverdumb/NeverDumbModal";
 import { formatTime } from "@/lib/utils";
-import { MODE_LABELS } from "@/lib/constants";
 import { STORAGE_KEYS, type TimerMode, type AITaskSuggestion } from "@/lib/types";
 import { useTasks } from "@/hooks/useTasks";
 import { HomeSchemas } from "@/components/seo/HomeSchemas";
-import { useBrowserLocale } from "@/hooks/useBrowserLocale";
+import { useAppCopy, useAppCopyReady } from "@/hooks/useAppCopy";
+import { loadAppCopy } from "@/lib/i18n/app";
+import { useUiLocale } from "@/hooks/useUiLocale";
+import { HTML_LANG } from "@/lib/i18n/locales";
 import { NEVER_DUMB_COPY } from "@/components/neverdumb/neverDumbCopy";
 
 export default function Home() {
@@ -39,8 +41,12 @@ export default function Home() {
   const tasks = useTasks();
   const sound = useSound();
   const analytics = useAnalytics();
-  const browserLocale = useBrowserLocale();
-  const neverDumbCopy = NEVER_DUMB_COPY[browserLocale];
+  const locale = useUiLocale();
+  const copy = useAppCopy();
+  const neverDumbCopy = NEVER_DUMB_COPY[locale];
+  // False while hydrating the English prerender, true once the visitor's copy
+  // is loaded (at once for English, which ships with the page).
+  const copyReady = useAppCopyReady();
   const [settingsOpen, setSettingsOpen] = useState(false);
   const [aiPlannerOpen, setAIPlannerOpen] = useState(false);
   const [analyticsOpen, setAnalyticsOpen] = useState(false);
@@ -74,6 +80,34 @@ export default function Home() {
     const query = params.toString();
     window.history.replaceState(null, "", `${window.location.pathname}${query ? `?${query}` : ""}`);
   }, [updateSettings]);
+
+  // <html lang> follows the app's language while it is mounted. The rest of
+  // the site (blog, SEO and timer pages) declares its own language.
+  useEffect(() => {
+    document.documentElement.lang = HTML_LANG[locale];
+  }, [locale]);
+  useEffect(() => () => {
+    document.documentElement.lang = "en";
+  }, []);
+
+  // No flash of English: the inline locale-init script in the root layout
+  // hides the translatable text (data-i18n) of a non-English visit. It is
+  // shown again once the visitor's copy is loaded and committed, or in English
+  // if that copy cannot be fetched.
+  useEffect(() => {
+    const root = document.documentElement;
+    if (copyReady) {
+      root.removeAttribute("data-i18n-pending");
+      return;
+    }
+    let cancelled = false;
+    loadAppCopy(locale).catch(() => {
+      if (!cancelled) root.removeAttribute("data-i18n-pending");
+    });
+    return () => {
+      cancelled = true;
+    };
+  }, [copyReady, locale]);
 
   // Apply theme to HTML element. The inline script in the root layout already
   // set it before first paint: wait for the stored settings, or this effect
@@ -154,11 +188,11 @@ export default function Home() {
       void notify(
         "Pomodorian",
         timer.mode === "pomodoro"
-          ? "Great work! Time for a break."
-          : "Break is over. Let's focus!"
+          ? copy.notifications.breakTime
+          : copy.notifications.focusTime
       );
     }
-  }, [timer, tasks, settings, sound, analytics]);
+  }, [timer, tasks, settings, sound, analytics, copy]);
 
   // Single entry point for starting the timer: a pomodoro always gets linked to
   // a task, so the session and its pomodoro count land somewhere.
@@ -371,11 +405,14 @@ export default function Home() {
 
   useEffect(() => {
     if (settings.showTimeInTitle && timer.status !== "idle") {
-      document.title = `${formatTime(timer.timeRemaining)} - ${MODE_LABELS[timer.mode]}`;
+      document.title = copy.documentTitle(
+        formatTime(timer.timeRemaining),
+        copy.modes[timer.mode]
+      );
     } else {
       document.title = "Pomodorian";
     }
-  }, [timer.timeRemaining, timer.mode, timer.status, settings.showTimeInTitle]);
+  }, [timer.timeRemaining, timer.mode, timer.status, settings.showTimeInTitle, copy]);
 
   useEffect(() => {
     function handleKeyDown(e: KeyboardEvent) {
@@ -465,6 +502,7 @@ export default function Home() {
             timeRemaining={timer.timeRemaining}
             progress={timer.progress}
             mode={timer.mode}
+            remainingLabel={copy.timer.remaining}
           />
         </motion.div>
 
@@ -511,7 +549,7 @@ export default function Home() {
                 {activeTask.title}
               </span>
             ) : (
-              <span>Time to focus!</span>
+              <span data-i18n>{copy.timer.timeToFocus}</span>
             )}
           </div>
         )}
@@ -532,7 +570,6 @@ export default function Home() {
             tasks={tasks.tasks}
             sessions={analytics.sessions}
             activeTaskId={tasks.activeTaskId}
-            locale={settings.aiLanguage}
             onAdd={tasks.addTask}
             onToggle={tasks.toggleComplete}
             onDelete={tasks.deleteTask}
@@ -596,7 +633,6 @@ export default function Home() {
             sessions={analytics.sessions}
             streak={analytics.streak}
             totalHours={analytics.totalHours}
-            locale={settings.aiLanguage}
             onClose={() => setAnalyticsOpen(false)}
           />
         )}

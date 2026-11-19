@@ -3,12 +3,7 @@
 import { useEffect } from "react";
 import { motion, useReducedMotion } from "framer-motion";
 import { formatTime } from "@/lib/utils";
-
-const UNDO_COPY = {
-  stoppedAt: "Pomodoro stopped at",
-  undo: "Undo",
-  undoHint: "Undo (Z)",
-} as const;
+import { useAppCopy } from "@/hooks/useAppCopy";
 
 export const UNDO_BANNER_MS = 8000;
 
@@ -21,6 +16,7 @@ interface UndoBannerProps {
 
 export function UndoBanner({ stoppedAt, onUndo, onDismiss }: UndoBannerProps) {
   const reduceMotion = useReducedMotion();
+  const UNDO_COPY = useAppCopy().undo;
 
   useEffect(() => {
     const timeout = window.setTimeout(onDismiss, UNDO_BANNER_MS);

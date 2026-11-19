@@ -2,6 +2,7 @@
 
 import { memo } from "react";
 import Link from "next/link";
+import { useAppCopy } from "@/hooks/useAppCopy";
 
 interface HeaderProps {
   pomodorosCompleted: number;
@@ -10,6 +11,7 @@ interface HeaderProps {
 }
 
 export const Header = memo(function Header({ pomodorosCompleted, onOpenSettings, onOpenAnalytics }: HeaderProps) {
+  const copy = useAppCopy().header;
   return (
     <header className="flex items-center justify-between pl-6 pr-3 py-3 sm:py-4 max-w-2xl mx-auto w-full">
       <div className="flex items-center gap-3">
@@ -40,18 +42,18 @@ export const Header = memo(function Header({ pomodorosCompleted, onOpenSettings,
           href="/blog"
           className="text-xs text-muted hover:text-foreground transition-colors hidden sm:block px-3 py-3"
         >
-          Blog
+          <span data-i18n>{copy.blog}</span>
         </Link>
         {pomodorosCompleted > 0 && (
-          <span className="text-sm text-muted tabular-nums px-2" title="Pomodoros completed">
+          <span className="text-sm text-muted tabular-nums px-2" title={copy.pomodorosCompleted}>
             #{pomodorosCompleted}
           </span>
         )}
         <button
           onClick={onOpenAnalytics}
           className="size-11 grid place-items-center rounded-lg text-muted hover:text-foreground hover:bg-surface-hover transition-colors"
-          aria-label="Analytics"
-          title="Report (R)"
+          aria-label={copy.analytics}
+          title={copy.reportHint}
         >
           <svg
             width="20"
@@ -70,8 +72,8 @@ export const Header = memo(function Header({ pomodorosCompleted, onOpenSettings,
         <button
           onClick={onOpenSettings}
           className="size-11 grid place-items-center rounded-lg text-muted hover:text-foreground hover:bg-surface-hover transition-colors"
-          aria-label="Settings"
-          title="Settings (S)"
+          aria-label={copy.settings}
+          title={copy.settingsHint}
         >
           <svg
             width="20"

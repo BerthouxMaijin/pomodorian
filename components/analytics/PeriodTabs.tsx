@@ -2,33 +2,31 @@
 
 import { cn } from "@/lib/utils";
 import type { PeriodKind } from "@/lib/date-range";
+import { useAppCopy } from "@/hooks/useAppCopy";
 
 interface PeriodTabsProps {
   value: PeriodKind;
   onChange: (kind: PeriodKind) => void;
 }
 
-const TABS: { kind: PeriodKind; label: string }[] = [
-  { kind: "day", label: "Day" },
-  { kind: "week", label: "Week" },
-  { kind: "month", label: "Month" },
-];
+const TABS: PeriodKind[] = ["day", "week", "month"];
 
 export function PeriodTabs({ value, onChange }: PeriodTabsProps) {
+  const labels = useAppCopy().report.periods;
   return (
     <div className="flex items-center gap-1 p-1 rounded-lg bg-surface w-fit">
-      {TABS.map((t) => (
+      {TABS.map((kind) => (
         <button
-          key={t.kind}
-          onClick={() => onChange(t.kind)}
+          key={kind}
+          onClick={() => onChange(kind)}
           className={cn(
             "px-3 py-1 text-xs font-medium rounded-md transition-colors",
-            value === t.kind
+            value === kind
               ? "bg-surface-active text-foreground"
               : "text-muted hover:text-foreground"
           )}
         >
-          {t.label}
+          {labels[kind]}
         </button>
       ))}
     </div>

@@ -8,12 +8,15 @@ import { EstimateStepper } from "./EstimateStepper";
 import type { TaskChanges } from "./TaskEditor";
 import { useTaskHistory } from "@/hooks/useTaskHistory";
 import type { FocusSession, Task } from "@/lib/types";
+import { useAppCopy } from "@/hooks/useAppCopy";
+import { useUiLocale } from "@/hooks/useUiLocale";
+import { HTML_LANG, type UiLocale } from "@/lib/i18n/locales";
+import { formatNumber } from "@/lib/i18n/format";
 
 interface TaskListProps {
   tasks: Task[];
   sessions: FocusSession[];
   activeTaskId: string | null;
-  locale: string;
   onAdd: (title: string, estimatedPomodoros?: number) => void;
   onToggle: (id: string) => void;
   onDelete: (id: string) => void;
@@ -28,7 +31,6 @@ export const TaskList = memo(function TaskList({
   tasks,
   sessions,
   activeTaskId,
-  locale,
   onAdd,
   onToggle,
   onDelete,
@@ -37,6 +39,9 @@ export const TaskList = memo(function TaskList({
   onReorder,
   onOpenAIPlanner,
 }: TaskListProps) {
+  const locale = useUiLocale();
+  const copy = useAppCopy();
+  const t = copy.tasks;
   const history = useTaskHistory({ tasks, sessions });
   const [newTaskTitle, setNewTaskTitle] = useState("");
   const [newTaskEstimate, setNewTaskEstimate] = useState(1);
@@ -79,7 +84,9 @@ export const TaskList = memo(function TaskList({
     setNewTaskEstimate(1);
   };
 
-  const dateLabel = formatDateLabel(history.viewDate, history.isToday, locale);
+  const dateLabel = history.isToday
+    ? t.today
+    : formatDateLabel(history.viewDate, locale);
   const completedCount = history.tasksForDate.filter((t) => t.completed).length;
 
   return (
@@ -90,21 +97,21 @@ export const TaskList = memo(function TaskList({
             type="button"
             onClick={history.goPrev}
             className="size-10 grid place-items-center rounded-lg text-muted hover:text-foreground hover:bg-surface-hover transition-colors"
-            aria-label="Previous day"
+            aria-label={t.previousDay}
           >
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <polyline points="15 18 9 12 15 6" />
             </svg>
           </button>
           <h2 className="text-base font-semibold text-foreground tabular-nums">
-            {dateLabel}
+            <span data-i18n>{dateLabel}</span>
           </h2>
           <button
             type="button"
             onClick={history.goNext}
             disabled={history.isToday}
             className="size-10 grid place-items-center rounded-lg text-muted hover:text-foreground hover:bg-surface-hover transition-colors disabled:opacity-30 disabled:cursor-not-allowed"
-            aria-label="Next day"
+            aria-label={t.nextDay}
           >
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <polyline points="9 18 15 12 9 6" />
@@ -115,20 +122,21 @@ export const TaskList = memo(function TaskList({
               onClick={history.goToday}
               className="ml-1 text-xs px-3 py-2 rounded-lg bg-surface-hover text-foreground hover:bg-surface-active transition-colors"
             >
-              Today
+              {t.today}
             </button>
           )}
         </div>
         <span className="text-xs text-muted tabular-nums">
           {completedCount}/{history.tasksForDate.length}
-          {history.totalMinutesForDate > 0 && ` · ${history.totalMinutesForDate}m`}
+          {history.totalMinutesForDate > 0 &&
+            ` · ${copy.units.minutes(formatNumber(history.totalMinutesForDate, locale))}`}
         </span>
       </div>
 
       <div className="flex flex-col gap-1.5">
         {history.tasksForDate.length === 0 ? (
           <div className="glass rounded-xl px-3 py-6 text-center text-sm text-muted">
-            {history.isToday ? "No tasks yet." : "No tasks tracked on this day."}
+            <span data-i18n>{history.isToday ? t.emptyToday : t.emptyPast}</span>
           </div>
         ) : (
           <>
@@ -212,8 +220,8 @@ export const TaskList = memo(function TaskList({
                   type="text"
                   value={newTaskTitle}
                   onChange={(e) => setNewTaskTitle(e.target.value)}
-                  placeholder="What are you working on?"
-                  aria-label="Task title"
+                  placeholder={t.newTaskPlaceholder}
+                  aria-label={t.titleLabel}
                   enterKeyHint="done"
                   className="w-full bg-transparent text-foreground placeholder:text-muted outline-none text-sm"
                   autoFocus
@@ -228,14 +236,14 @@ export const TaskList = memo(function TaskList({
                     onClick={cancelAdding}
                     className="text-xs text-muted hover:text-foreground transition-colors py-2.5 pr-3"
                   >
-                    Cancel
+                    {t.cancel}
                   </button>
                   <button
                     type="submit"
                     disabled={!newTaskTitle.trim()}
                     className="px-5 py-2.5 rounded-lg bg-surface-hover text-sm font-medium text-foreground hover:bg-surface-active transition-colors disabled:opacity-30 disabled:cursor-not-allowed"
                   >
-                    Add
+                    {t.add}
                   </button>
                 </div>
               </div>
@@ -246,7 +254,7 @@ export const TaskList = memo(function TaskList({
                 onClick={() => setIsAdding(true)}
                 className="w-full py-3 rounded-xl border-2 border-dashed border-border text-sm text-muted hover:text-foreground hover:border-foreground/20 transition-colors"
               >
-                + Add Task
+                <span data-i18n>{t.addTask}</span>
               </button>
               <button
                 onClick={onOpenAIPlanner}
@@ -265,7 +273,7 @@ export const TaskList = memo(function TaskList({
                   <path d="M12 2a4 4 0 0 0-4 4v2H6a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V10a2 2 0 0 0-2-2h-2V6a4 4 0 0 0-4-4z" />
                   <circle cx="12" cy="15" r="2" />
                 </svg>
-                Plan with AI
+                <span data-i18n>{t.planWithAI}</span>
               </button>
             </div>
           )}
@@ -275,12 +283,11 @@ export const TaskList = memo(function TaskList({
   );
 });
 
-function formatDateLabel(viewDate: string, isToday: boolean, locale: string): string {
-  if (isToday) return "Today";
+function formatDateLabel(viewDate: string, locale: UiLocale): string {
   const [y, m, d] = viewDate.split("-").map(Number);
   const date = new Date(Date.UTC(y, m - 1, d));
   try {
-    return new Intl.DateTimeFormat(locale, {
+    return new Intl.DateTimeFormat(HTML_LANG[locale], {
       weekday: "short",
       day: "numeric",
       month: "short",

@@ -3,9 +3,15 @@
 import { useEffect, useState } from "react";
 import { track } from "@/lib/track";
 import type { AppSettings } from "@/lib/types";
-import { ALARM_SOUNDS, AI_LANGUAGES } from "@/lib/constants";
-import { useBrowserLocale } from "@/hooks/useBrowserLocale";
+import { ALARM_SOUND_KEYS } from "@/lib/constants";
+import { useAppCopy } from "@/hooks/useAppCopy";
+import { useUiLocale } from "@/hooks/useUiLocale";
 import { NEVER_DUMB_COPY } from "@/components/neverdumb/neverDumbCopy";
+import {
+  LANGUAGE_NAMES,
+  UI_LOCALES,
+  type LanguageSetting,
+} from "@/lib/i18n/locales";
 
 interface SettingsModalProps {
   settings: AppSettings;
@@ -18,8 +24,10 @@ export function SettingsModal({
   onUpdate,
   onClose,
 }: SettingsModalProps) {
-  const locale = useBrowserLocale();
+  const locale = useUiLocale();
   const neverDumbCopy = NEVER_DUMB_COPY[locale];
+  const appCopy = useAppCopy();
+  const copy = appCopy.settings;
   // Close on Escape
   useEffect(() => {
     const handler = (e: KeyboardEvent) => {
@@ -41,15 +49,15 @@ export function SettingsModal({
       <div
         role="dialog"
         aria-modal="true"
-        aria-label="Settings"
+        aria-label={copy.title}
         className="relative glass-modal rounded-2xl w-full max-w-md max-h-[85dvh] overflow-y-auto overscroll-contain p-6 space-y-6"
       >
         <div className="flex items-center justify-between">
-          <h2 className="text-lg font-semibold text-foreground">Settings</h2>
+          <h2 className="text-lg font-semibold text-foreground">{copy.title}</h2>
           <button
             type="button"
             onClick={onClose}
-            aria-label="Close"
+            aria-label={copy.close}
             className="size-11 -m-3 grid place-items-center rounded-lg text-muted hover:text-foreground transition-colors"
           >
             <svg
@@ -71,35 +79,35 @@ export function SettingsModal({
         {/* Timer section */}
         <section className="space-y-4">
           <h3 className="text-xs font-medium uppercase tracking-wider text-muted">
-            Timer (minutes)
+            {copy.timerSection}
           </h3>
           <div className="grid grid-cols-3 gap-3">
             <DurationInput
-              label="Pomodoro"
+              label={appCopy.modes.pomodoro}
               value={settings.pomodoroDuration / 60}
               onChange={(v) => onUpdate({ pomodoroDuration: v * 60 })}
             />
             <DurationInput
-              label="Short Break"
+              label={appCopy.modes.shortBreak}
               value={settings.shortBreakDuration / 60}
               onChange={(v) => onUpdate({ shortBreakDuration: v * 60 })}
             />
             <DurationInput
-              label="Long Break"
+              label={appCopy.modes.longBreak}
               value={settings.longBreakDuration / 60}
               onChange={(v) => onUpdate({ longBreakDuration: v * 60 })}
             />
           </div>
 
-          <div className="flex items-center justify-between">
-            <span className="text-sm text-foreground">Long Break interval</span>
+          <div className="flex items-center justify-between gap-3">
+            <span className="text-sm text-foreground">{copy.longBreakInterval}</span>
             <NumberField
-              ariaLabel="Long Break interval"
+              ariaLabel={copy.longBreakInterval}
               value={settings.longBreakInterval}
               min={1}
               max={10}
               onChange={(v) => onUpdate({ longBreakInterval: v })}
-              className="w-16 px-2 py-1 rounded-lg bg-surface text-foreground text-center text-sm border border-border outline-none focus:ring-1 focus:ring-foreground/30"
+              className="w-16 flex-shrink-0 px-2 py-1 rounded-lg bg-surface text-foreground text-center text-sm border border-border outline-none focus:ring-1 focus:ring-foreground/30"
             />
           </div>
         </section>
@@ -107,15 +115,15 @@ export function SettingsModal({
         {/* Toggles */}
         <section className="space-y-3">
           <h3 className="text-xs font-medium uppercase tracking-wider text-muted">
-            Automation
+            {copy.automation}
           </h3>
           <Toggle
-            label="Auto Start Breaks"
+            label={copy.autoStartBreaks}
             checked={settings.autoStartBreaks}
             onChange={(v) => onUpdate({ autoStartBreaks: v })}
           />
           <Toggle
-            label="Auto Start Pomodoros"
+            label={copy.autoStartPomodoros}
             checked={settings.autoStartPomodoros}
             onChange={(v) => onUpdate({ autoStartPomodoros: v })}
           />
@@ -132,24 +140,24 @@ export function SettingsModal({
         {/* Sound */}
         <section className="space-y-3">
           <h3 className="text-xs font-medium uppercase tracking-wider text-muted">
-            Sound
+            {copy.sound}
           </h3>
-          <div className="flex items-center justify-between">
-            <span className="text-sm text-foreground">Alarm Sound</span>
+          <div className="flex items-center justify-between gap-3">
+            <span className="text-sm text-foreground">{copy.alarmSound}</span>
             <select
               value={settings.alarmSound}
               onChange={(e) => onUpdate({ alarmSound: e.target.value })}
-              className="px-3 py-1.5 rounded-lg bg-surface text-foreground text-sm border border-border outline-none"
+              className="flex-shrink-0 px-3 py-1.5 rounded-lg bg-surface text-foreground text-sm border border-border outline-none"
             >
-              {Object.entries(ALARM_SOUNDS).map(([key, { label }]) => (
+              {ALARM_SOUND_KEYS.map((key) => (
                 <option key={key} value={key}>
-                  {label}
+                  {copy.alarmSounds[key]}
                 </option>
               ))}
             </select>
           </div>
-          <div className="flex items-center justify-between">
-            <span className="text-sm text-foreground">Volume</span>
+          <div className="flex items-center justify-between gap-3">
+            <span className="text-sm text-foreground">{copy.volume}</span>
             <input
               type="range"
               min={0}
@@ -158,59 +166,60 @@ export function SettingsModal({
               onChange={(e) =>
                 onUpdate({ alarmVolume: parseInt(e.target.value) / 100 })
               }
-              className="w-32 accent-red-500"
+              className="w-32 flex-shrink-0 accent-red-500"
             />
-          </div>
-        </section>
-
-        {/* AI */}
-        <section className="space-y-3">
-          <h3 className="text-xs font-medium uppercase tracking-wider text-muted">
-            AI Planner
-          </h3>
-          <div className="flex items-center justify-between">
-            <span className="text-sm text-foreground">Language</span>
-            <select
-              value={settings.aiLanguage}
-              onChange={(e) => onUpdate({ aiLanguage: e.target.value })}
-              className="px-3 py-1.5 rounded-lg bg-surface text-foreground text-sm border border-border outline-none"
-            >
-              {AI_LANGUAGES.map((lang) => (
-                <option key={lang.code} value={lang.code}>
-                  {lang.label}
-                </option>
-              ))}
-            </select>
           </div>
         </section>
 
         {/* Display */}
         <section className="space-y-3">
           <h3 className="text-xs font-medium uppercase tracking-wider text-muted">
-            Display
+            {copy.display}
           </h3>
+          {/* Language: one setting for the whole app and the AI planner.
+              It replaces "AI Planner > Language". */}
+          <div className="flex items-center justify-between gap-3">
+            <span className="text-sm text-foreground">{copy.language}</span>
+            {/* Unset reads as "Auto": the person never chose, so the app
+                follows a legacy AI language or the browser. */}
+            <select
+              data-testid="language-select"
+              value={settings.language ?? "auto"}
+              onChange={(e) =>
+                onUpdate({ language: e.target.value as LanguageSetting })
+              }
+              className="flex-shrink-0 px-3 py-1.5 rounded-lg bg-surface text-foreground text-sm border border-border outline-none"
+            >
+              <option value="auto">{copy.languageAuto}</option>
+              {UI_LOCALES.map((code) => (
+                <option key={code} value={code} lang={code}>
+                  {LANGUAGE_NAMES[code]}
+                </option>
+              ))}
+            </select>
+          </div>
           <Toggle
-            label="Show time in title"
+            label={copy.showTimeInTitle}
             checked={settings.showTimeInTitle}
             onChange={(v) => onUpdate({ showTimeInTitle: v })}
           />
           <Toggle
-            label="Desktop notifications"
+            label={copy.notifications}
             checked={settings.notificationsEnabled}
             onChange={(v) => onUpdate({ notificationsEnabled: v })}
           />
-          <div className="flex items-center justify-between">
-            <span className="text-sm text-foreground">Theme</span>
+          <div className="flex items-center justify-between gap-3">
+            <span className="text-sm text-foreground">{copy.theme}</span>
             <select
               value={settings.theme}
               onChange={(e) =>
                 onUpdate({ theme: e.target.value as AppSettings["theme"] })
               }
-              className="px-3 py-1.5 rounded-lg bg-surface text-foreground text-sm border border-border outline-none"
+              className="flex-shrink-0 px-3 py-1.5 rounded-lg bg-surface text-foreground text-sm border border-border outline-none"
             >
-              <option value="system">System</option>
-              <option value="light">Light</option>
-              <option value="dark">Dark</option>
+              <option value="system">{copy.themeSystem}</option>
+              <option value="light">{copy.themeLight}</option>
+              <option value="dark">{copy.themeDark}</option>
             </select>
           </div>
         </section>
@@ -297,14 +306,14 @@ function Toggle({
   onChange: (v: boolean) => void;
 }) {
   return (
-    <div className="flex items-center justify-between">
+    <div className="flex items-center justify-between gap-3">
       <span className="text-sm text-foreground">{label}</span>
       <button
         type="button"
         aria-label={label}
         aria-pressed={checked}
         onClick={() => onChange(!checked)}
-        className={`w-10 h-6 rounded-full transition-colors relative before:absolute before:-inset-y-2.5 before:-inset-x-1 before:content-[''] ${
+        className={`w-10 h-6 flex-shrink-0 rounded-full transition-colors relative before:absolute before:-inset-y-2.5 before:-inset-x-1 before:content-[''] ${
           checked ? "bg-emerald-500" : "bg-surface-active"
         }`}
       >

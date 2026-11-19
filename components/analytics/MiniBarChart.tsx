@@ -3,6 +3,8 @@
 interface MiniBarChartProps {
   data: { date: string; minutes: number }[];
   labelFor?: (date: string, index: number) => string | null;
+  /** Tooltip of a column, in the active locale. */
+  titleFor: (date: string, minutes: number) => string;
 }
 
 // Inline rgba gradient instead of Tailwind's gradient utilities: v4 compiles
@@ -14,7 +16,7 @@ interface MiniBarChartProps {
 const BAR_BACKGROUND =
   "linear-gradient(to top, rgba(255, 101, 104, 0.3), rgba(255, 101, 104, 0.7))";
 
-export function MiniBarChart({ data, labelFor }: MiniBarChartProps) {
+export function MiniBarChart({ data, labelFor, titleFor }: MiniBarChartProps) {
   const max = Math.max(1, ...data.map((d) => d.minutes));
 
   return (
@@ -33,7 +35,7 @@ export function MiniBarChart({ data, labelFor }: MiniBarChartProps) {
             <div
               key={d.date}
               className="flex-1 flex flex-col justify-end gap-1 min-w-0"
-              title={`${d.date} — ${d.minutes}m`}
+              title={titleFor(d.date, d.minutes)}
             >
               <div
                 className="w-full rounded-t min-h-[2px]"

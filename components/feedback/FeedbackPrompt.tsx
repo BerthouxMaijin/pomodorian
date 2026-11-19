@@ -8,10 +8,7 @@ import {
   FEEDBACK_COPY,
   type FeedbackType,
 } from "./feedbackCopy";
-import {
-  resolveBrowserLocale,
-  type UiLocale,
-} from "@/lib/i18n/locales";
+import { useUiLocale } from "@/hooks/useUiLocale";
 
 const DISMISSED_KEY = "pomodorian-feedback-prompt-v1-dismissed";
 const MIN_MESSAGE_LENGTH = 10;
@@ -30,7 +27,7 @@ function collectContext() {
 
 export function FeedbackPrompt() {
   const [open, setOpen] = useState(false);
-  const [locale, setLocale] = useState<UiLocale>("en");
+  const locale = useUiLocale();
   const [view, setView] = useState<View>("choose");
   const [type, setType] = useState<FeedbackType>("feedback");
   const [message, setMessage] = useState("");
@@ -42,14 +39,6 @@ export function FeedbackPrompt() {
   const closeRef = useRef<HTMLButtonElement>(null);
   const messageRef = useRef<HTMLTextAreaElement>(null);
   const copy = FEEDBACK_COPY[locale];
-
-  useEffect(() => {
-    const timeout = window.setTimeout(() => {
-      setLocale(resolveBrowserLocale(navigator.languages));
-    }, 0);
-
-    return () => window.clearTimeout(timeout);
-  }, []);
 
   const rememberDismissal = useCallback(() => {
     try {

@@ -1,4 +1,4 @@
-import { UI_LOCALES, type UiLocale } from "@/lib/i18n/locales";
+import type { UiLocale } from "@/lib/i18n/locales";
 
 export type PlannerCopy = {
   title: string;
@@ -248,10 +248,3 @@ export const PLANNER_COPY = {
     addAndStartCta: "添加并开始",
   },
 } satisfies Record<UiLocale, PlannerCopy>;
-
-export function resolvePlannerLocale(language: string): UiLocale {
-  const base = language.toLowerCase().split(/[-_]/)[0];
-  return (UI_LOCALES as readonly string[]).includes(base)
-    ? (base as UiLocale)
-    : "en";
-}

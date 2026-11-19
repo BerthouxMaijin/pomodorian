@@ -2,12 +2,7 @@
 
 import { useId } from "react";
 import { cn } from "@/lib/utils";
-
-const COPY = {
-  label: "Pomodoros",
-  decrease: "One pomodoro less",
-  increase: "One pomodoro more",
-};
+import { useAppCopy } from "@/hooks/useAppCopy";
 
 export const MIN_ESTIMATE = 1;
 export const MAX_ESTIMATE = 20;
@@ -24,6 +19,12 @@ interface EstimateStepperProps {
 
 /** Minus / value / plus control for a task's estimated pomodoros (1 to 20). */
 export function EstimateStepper({ value, onChange }: EstimateStepperProps) {
+  const tasksCopy = useAppCopy().tasks;
+  const COPY = {
+    label: tasksCopy.estimateLabel,
+    decrease: tasksCopy.estimateDecrease,
+    increase: tasksCopy.estimateIncrease,
+  };
   const labelId = useId();
   const atMin = value <= MIN_ESTIMATE;
   const atMax = value >= MAX_ESTIMATE;
