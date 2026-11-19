@@ -20,12 +20,15 @@ import {
   sessionsToMarkdown,
 } from "@/lib/export";
 import type { FocusSession } from "@/lib/types";
+import { useAppCopy } from "@/hooks/useAppCopy";
+import { useUiLocale } from "@/hooks/useUiLocale";
+import { HTML_LANG } from "@/lib/i18n/locales";
+import { formatDateKey, formatNumber } from "@/lib/i18n/format";
 
 interface AnalyticsPanelProps {
   sessions: FocusSession[];
   streak: number;
   totalHours: number;
-  locale: string;
   onClose: () => void;
 }
 
@@ -33,9 +36,13 @@ export function AnalyticsPanel({
   sessions,
   streak,
   totalHours,
-  locale,
   onClose,
 }: AnalyticsPanelProps) {
+  const locale = useUiLocale();
+  const intlLocale = HTML_LANG[locale];
+  const appCopy = useAppCopy();
+  const copy = appCopy.report;
+  const units = appCopy.units;
   // Opens on "week" so a chart is visible right away: the panel's own header
   // icon is a line chart, but the "day" view renders no chart at all.
   const [periodKind, setPeriodKind] = useState<PeriodKind>("week");
@@ -55,7 +62,7 @@ export function AnalyticsPanel({
     [periodKind, anchorDate]
   );
   const isCurrent = isPeriodCurrent(period);
-  const periodLabel = formatPeriodLabel(period, locale);
+  const periodLabel = formatPeriodLabel(period, intlLocale);
   const days = useMemo(() => enumerateDays(period), [period]);
   const stats = useMemo(
     () => computeRangeStats(sessions, period.fromKey, period.toKey, days),
@@ -107,6 +114,7 @@ export function AnalyticsPanel({
   }
 
   const totalH = Math.round((stats.totalMinutes / 60) * 10) / 10;
+  const num = (n: number) => formatNumber(n, locale);
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
@@ -117,15 +125,15 @@ export function AnalyticsPanel({
       <div
         role="dialog"
         aria-modal="true"
-        aria-label="Report"
+        aria-label={copy.dialogLabel}
         className="relative glass-modal rounded-2xl w-full max-w-md max-h-[85dvh] overflow-y-auto overscroll-contain p-6 space-y-4"
       >
         <div className="flex items-center justify-between">
-          <h2 className="text-lg font-semibold text-foreground">Analytics</h2>
+          <h2 className="text-lg font-semibold text-foreground">{copy.title}</h2>
           <button
             onClick={onClose}
             className="size-11 -m-3 grid place-items-center rounded-lg text-muted hover:text-foreground transition-colors"
-            aria-label="Close"
+            aria-label={copy.close}
           >
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <line x1="18" y1="6" x2="6" y2="18" />
@@ -140,7 +148,7 @@ export function AnalyticsPanel({
           <button
             onClick={() => shift(-1)}
             className="p-1 rounded text-muted hover:text-foreground hover:bg-surface-hover transition-colors"
-            aria-label="Previous period"
+            aria-label={copy.previousPeriod}
           >
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <polyline points="15 18 9 12 15 6" />
@@ -155,7 +163,7 @@ export function AnalyticsPanel({
                 onClick={jumpToCurrent}
                 className="text-xs px-2 py-0.5 rounded bg-surface-hover text-foreground hover:bg-surface-active transition-colors"
               >
-                Now
+                {copy.now}
               </button>
             )}
           </div>
@@ -163,7 +171,7 @@ export function AnalyticsPanel({
             onClick={() => shift(1)}
             disabled={isCurrent}
             className="p-1 rounded text-muted hover:text-foreground hover:bg-surface-hover transition-colors disabled:opacity-30 disabled:cursor-not-allowed"
-            aria-label="Next period"
+            aria-label={copy.nextPeriod}
           >
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
               <polyline points="9 18 15 12 9 6" />
@@ -172,27 +180,27 @@ export function AnalyticsPanel({
         </div>
 
         <div className="grid grid-cols-4 gap-2">
-          <StatCard label="Focus" value={`${totalH}h`} color="text-red-400" />
+          <StatCard label={copy.statFocus} value={units.hours(num(totalH))} color="text-red-400" />
           <StatCard
-            label="Pomos"
-            value={`${stats.totalPomodoros}`}
+            label={copy.statPomodoros}
+            value={num(stats.totalPomodoros)}
             color="text-amber-400"
           />
           <StatCard
-            label="Tasks"
-            value={`${stats.distinctTasks}`}
+            label={copy.statTasks}
+            value={num(stats.distinctTasks)}
             color="text-blue-400"
           />
           {periodKind === "day" ? (
             <StatCard
-              label="Streak"
-              value={`${streak}d`}
+              label={copy.statStreak}
+              value={units.days(num(streak))}
               color="text-orange-400"
             />
           ) : (
             <StatCard
-              label="All time"
-              value={`${totalHours}h`}
+              label={copy.statAllTime}
+              value={units.hours(num(totalHours))}
               color="text-purple-400"
             />
           )}
@@ -200,7 +208,7 @@ export function AnalyticsPanel({
 
         {periodKind !== "day" && stats.totalPomodoros === 0 && (
           <div className="glass rounded-xl px-3 py-6 text-center text-sm text-muted">
-            No focus sessions in this period.
+            {copy.noSessions}
           </div>
         )}
 
@@ -212,7 +220,7 @@ export function AnalyticsPanel({
             }))}
             labelFor={(date, i) => {
               if (periodKind === "week") {
-                return new Intl.DateTimeFormat(locale, {
+                return new Intl.DateTimeFormat(intlLocale, {
                   weekday: "narrow",
                   timeZone: "UTC",
                 }).format(new Date(date + "T00:00:00Z"));
@@ -221,6 +229,9 @@ export function AnalyticsPanel({
               if (i % 5 !== 0) return null;
               return date.slice(8, 10);
             }}
+            titleFor={(date, minutes) =>
+              copy.barTitle(formatDateKey(date, locale), units.minutes(num(minutes)))
+            }
           />
         )}
 
@@ -228,7 +239,7 @@ export function AnalyticsPanel({
 
         {periodKind === "month" && (
           <div className="pt-2">
-            <p className="text-xs text-muted mb-2">Last 20 weeks</p>
+            <p className="text-xs text-muted mb-2">{copy.last20Weeks}</p>
             <ContributionHeatmap heatmap={heatmap} />
           </div>
         )}
@@ -243,7 +254,7 @@ export function AnalyticsPanel({
               <polyline points="7 10 12 15 17 10" />
               <line x1="12" y1="15" x2="12" y2="3" />
             </svg>
-            Export
+            {copy.export}
           </button>
           {exportOpen && (
             <div className="absolute left-0 right-0 bottom-full mb-1 glass rounded-lg p-1 space-y-0.5 z-10">
@@ -277,7 +288,9 @@ function StatCard({
   color: string;
 }) {
   return (
-    <div className="glass rounded-xl p-2 text-center">
+    // px-1: on a 320px phone a card is 44px wide, and "Aufgaben", "Pomodori"
+    // or even "1.3h" did not fit inside the former 8px side padding.
+    <div className="glass rounded-xl px-1 py-2 text-center">
       <p className={`text-xl font-semibold tabular-nums ${color}`}>{value}</p>
       <p className="text-[10px] text-muted">{label}</p>
     </div>

@@ -1,6 +1,9 @@
 "use client";
 
 import { useMemo } from "react";
+import { useAppCopy } from "@/hooks/useAppCopy";
+import { useUiLocale } from "@/hooks/useUiLocale";
+import { formatDateKey, formatNumber, weekdayNames } from "@/lib/i18n/format";
 
 interface ContributionHeatmapProps {
   heatmap: Record<string, number>;
@@ -14,10 +17,17 @@ function getIntensity(minutes: number): string {
   return "bg-emerald-400/80";
 }
 
-const DAYS_OF_WEEK = ["", "Mon", "", "Wed", "", "Fri", ""];
+// Rows run Sunday to Saturday; only Monday, Wednesday and Friday are labelled.
+const LABELLED_DAYS = new Set([1, 3, 5]);
 const WEEKS_TO_SHOW = 20;
 
 export function ContributionHeatmap({ heatmap }: ContributionHeatmapProps) {
+  const locale = useUiLocale();
+  const copy = useAppCopy();
+  const dayLabels = useMemo(
+    () => weekdayNames(locale).map((name, i) => (LABELLED_DAYS.has(i) ? name : "")),
+    [locale]
+  );
   const grid = useMemo(() => {
     const today = new Date();
     const dayOfWeek = today.getUTCDay(); // 0=Sun, UTC to match session date keys
@@ -51,12 +61,12 @@ export function ContributionHeatmap({ heatmap }: ContributionHeatmapProps) {
   return (
     <div className="space-y-2">
       <h3 className="text-xs font-medium text-muted uppercase tracking-wider">
-        Focus History
+        {copy.report.heatmapTitle}
       </h3>
       <div className="flex gap-0.5 overflow-x-auto pb-1">
         {/* Day labels */}
         <div className="flex flex-col gap-0.5 mr-1 flex-shrink-0">
-          {DAYS_OF_WEEK.map((label, i) => (
+          {dayLabels.map((label, i) => (
             <div
               key={i}
               className="w-6 h-3 text-[9px] text-muted flex items-center"
@@ -80,7 +90,10 @@ export function ContributionHeatmap({ heatmap }: ContributionHeatmapProps) {
                 <div
                   key={di}
                   className={`w-3 h-3 rounded-sm ${getIntensity(cell.minutes)} transition-colors`}
-                  title={`${cell.date}: ${cell.minutes}m focused`}
+                  title={copy.report.cellTitle(
+                    formatDateKey(cell.date, locale),
+                    copy.units.minutes(formatNumber(cell.minutes, locale))
+                  )}
                 />
               );
             })}
@@ -90,13 +103,13 @@ export function ContributionHeatmap({ heatmap }: ContributionHeatmapProps) {
 
       {/* Legend */}
       <div className="flex items-center gap-1 text-[9px] text-muted justify-end">
-        <span>Less</span>
+        <span>{copy.report.less}</span>
         <div className="w-3 h-3 rounded-sm bg-surface-active" />
         <div className="w-3 h-3 rounded-sm bg-emerald-900/60" />
         <div className="w-3 h-3 rounded-sm bg-emerald-700/60" />
         <div className="w-3 h-3 rounded-sm bg-emerald-500/60" />
         <div className="w-3 h-3 rounded-sm bg-emerald-400/80" />
-        <span>More</span>
+        <span>{copy.report.more}</span>
       </div>
     </div>
   );

@@ -9,7 +9,8 @@ import {
   formatApproxDuration,
   type EditableTask,
 } from "@/lib/plan";
-import { PLANNER_COPY, resolvePlannerLocale } from "./plannerCopy";
+import { PLANNER_COPY } from "./plannerCopy";
+import { useUiLocale } from "@/hooks/useUiLocale";
 import { PlanTaskRow } from "./PlanTaskRow";
 
 interface AIPlannerModalProps {
@@ -33,7 +34,8 @@ export function AIPlannerModal({
   const [lastAddedKey, setLastAddedKey] = useState<string | null>(null);
   const importedRef = useRef(false);
 
-  const copy = PLANNER_COPY[resolvePlannerLocale(settings.aiLanguage)];
+  const locale = useUiLocale();
+  const copy = PLANNER_COPY[locale];
 
   useEffect(() => {
     const handler = (e: KeyboardEvent) => {
@@ -64,7 +66,7 @@ export function AIPlannerModal({
         body: JSON.stringify({
           goal: goal.trim(),
           pomodoroDuration: settings.pomodoroDuration / 60,
-          language: settings.aiLanguage,
+          language: locale,
         }),
       });
 

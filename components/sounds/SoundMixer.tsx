@@ -3,6 +3,7 @@
 import { memo, useState } from "react";
 import { AMBIENT_SOUNDS } from "@/lib/constants";
 import { cn } from "@/lib/utils";
+import { useAppCopy } from "@/hooks/useAppCopy";
 
 interface SoundMixerProps {
   ambients: Record<string, { active: boolean; volume: number }>;
@@ -15,6 +16,7 @@ export const SoundMixer = memo(function SoundMixer({
   onToggle,
   onVolumeChange,
 }: SoundMixerProps) {
+  const copy = useAppCopy().sounds;
   const [expanded, setExpanded] = useState(false);
   const activeCount = Object.values(ambients).filter((a) => a.active).length;
 
@@ -40,7 +42,7 @@ export const SoundMixer = memo(function SoundMixer({
           <circle cx="6" cy="18" r="3" />
           <circle cx="18" cy="16" r="3" />
         </svg>
-        Ambient Sounds
+        <span data-i18n>{copy.toggle}</span>
         {activeCount > 0 && (
           <span className="text-xs px-1.5 py-0.5 rounded-full bg-surface-active">
             {activeCount}
@@ -64,7 +66,8 @@ export const SoundMixer = memo(function SoundMixer({
 
       {expanded && (
         <div className="mt-3 glass rounded-xl p-4 space-y-3">
-          <div className="grid grid-cols-5 gap-2">
+          {/* Tighter gap on a 320px phone: "Fireplace" was wider than its cell. */}
+          <div className="grid grid-cols-5 gap-1 min-[360px]:gap-2">
             {AMBIENT_SOUNDS.map((sound) => {
               const state = ambients[sound.key];
               const isActive = state?.active ?? false;
@@ -83,7 +86,7 @@ export const SoundMixer = memo(function SoundMixer({
                   )}
                 >
                   <span className="text-lg" aria-hidden="true">{sound.icon}</span>
-                  <span className="text-[11px]">{sound.label}</span>
+                  <span className="text-[11px]">{copy.names[sound.key]}</span>
                 </button>
               );
             })}
@@ -96,7 +99,7 @@ export const SoundMixer = memo(function SoundMixer({
                 key={sound.key}
                 className="flex items-center gap-3 text-xs text-muted"
               >
-                <span className="w-20 truncate" aria-hidden="true">{sound.icon} {sound.label}</span>
+                <span className="w-20 truncate" aria-hidden="true">{sound.icon} {copy.names[sound.key]}</span>
                 <input
                   type="range"
                   min={0}
@@ -105,7 +108,7 @@ export const SoundMixer = memo(function SoundMixer({
                   onChange={(e) =>
                     onVolumeChange(sound.key, parseInt(e.target.value) / 100)
                   }
-                  aria-label={`${sound.label} volume`}
+                  aria-label={copy.volume(copy.names[sound.key])}
                   className="flex-1 accent-neutral-400 h-6"
                 />
               </div>

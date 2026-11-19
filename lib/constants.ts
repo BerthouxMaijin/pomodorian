@@ -16,25 +16,12 @@ export const DEFAULT_SETTINGS: AppSettings = {
   theme: "system",
   notificationsEnabled: true,
   showTimeInTitle: true,
-  aiLanguage: "en",
+  // No `language` here: an absent value is how a stored legacy `aiLanguage`
+  // is told apart from an explicit "auto" (see resolveUiLocale).
 };
 
-export const AI_LANGUAGES = [
-  { code: "en", label: "English" },
-  { code: "fr", label: "Français" },
-  { code: "es", label: "Español" },
-  { code: "de", label: "Deutsch" },
-  { code: "pt", label: "Português" },
-  { code: "it", label: "Italiano" },
-  { code: "ja", label: "日本語" },
-  { code: "zh", label: "中文" },
-];
-
-export const MODE_LABELS: Record<TimerMode, string> = {
-  pomodoro: "Pomodoro",
-  shortBreak: "Short Break",
-  longBreak: "Long Break",
-};
+// User-facing labels for the modes, alarm sounds, ambient sounds and keyboard
+// shortcuts live in the app copy (lib/i18n/app), keyed like these constants.
 
 export const MODE_COLORS: Record<
   TimerMode,
@@ -57,11 +44,14 @@ export const MODE_COLORS: Record<
   },
 };
 
-export const ALARM_SOUNDS: Record<string, { label: string; src: string }> = {
-  gentle: { label: "Gentle", src: "/sounds/alarm-gentle.mp3" },
-  classic: { label: "Digital Alert", src: "/sounds/alarm-classic.mp3" },
-  bell: { label: "Bell", src: "/sounds/alarm-bell.mp3" },
-};
+export const ALARM_SOUNDS = {
+  gentle: { src: "/sounds/alarm-gentle.mp3" },
+  classic: { src: "/sounds/alarm-classic.mp3" },
+  bell: { src: "/sounds/alarm-bell.mp3" },
+} as const satisfies Record<string, { src: string }>;
+
+export type AlarmSoundKey = keyof typeof ALARM_SOUNDS;
+export const ALARM_SOUND_KEYS = Object.keys(ALARM_SOUNDS) as AlarmSoundKey[];
 
 export const LOFI_KEY = "lofi";
 
@@ -79,25 +69,25 @@ export const LOFI_TRACKS = [
 // so the array order is the reading order: leaving "lofi" in the middle put the
 // one music button in the most prominent cell, framed by the field recordings.
 export const AMBIENT_SOUNDS = [
-  { key: "rain", label: "Rain", icon: "🌧", src: "/sounds/rain.mp3" },
-  { key: "forest", label: "Forest", icon: "🌲", src: "/sounds/forest.mp3" },
-  {
-    key: "fireplace",
-    label: "Fireplace",
-    icon: "🔥",
-    src: "/sounds/fireplace.mp3",
-  },
-  { key: "cafe", label: "Café", icon: "☕", src: "/sounds/cafe.mp3" },
-  { key: LOFI_KEY, label: "Lo-fi", icon: "🎧", src: LOFI_TRACKS[0] },
-];
+  { key: "rain", icon: "🌧", src: "/sounds/rain.mp3" },
+  { key: "forest", icon: "🌲", src: "/sounds/forest.mp3" },
+  { key: "fireplace", icon: "🔥", src: "/sounds/fireplace.mp3" },
+  { key: "cafe", icon: "☕", src: "/sounds/cafe.mp3" },
+  { key: LOFI_KEY, icon: "🎧", src: LOFI_TRACKS[0] },
+] as const;
 
+export type AmbientSoundKey = (typeof AMBIENT_SOUNDS)[number]["key"];
+
+// `label` is the key cap; null for keys whose name is translated (Space).
 export const KEYBOARD_SHORTCUTS = [
-  { key: " ", label: "Space", action: "Start / Pause timer" },
-  { key: "1", label: "1", action: "Switch to Pomodoro" },
-  { key: "2", label: "2", action: "Switch to Short Break" },
-  { key: "3", label: "3", action: "Switch to Long Break" },
+  { key: " ", label: null },
+  { key: "1", label: "1" },
+  { key: "2", label: "2" },
+  { key: "3", label: "3" },
   // Only list shortcuts that have a matching handler in app/page.tsx:
   // this array feeds the user-facing ShortcutsModal.
-  { key: "s", label: "S", action: "Open / Close settings" },
-  { key: "r", label: "R", action: "Open / Close report" },
+  { key: "s", label: "S" },
+  { key: "r", label: "R" },
 ] as const;
+
+export type ShortcutKey = (typeof KEYBOARD_SHORTCUTS)[number]["key"];

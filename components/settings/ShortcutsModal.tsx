@@ -2,12 +2,14 @@
 
 import { useEffect } from "react";
 import { KEYBOARD_SHORTCUTS } from "@/lib/constants";
+import { useAppCopy } from "@/hooks/useAppCopy";
 
 interface ShortcutsModalProps {
   onClose: () => void;
 }
 
 export function ShortcutsModal({ onClose }: ShortcutsModalProps) {
+  const copy = useAppCopy().shortcuts;
   useEffect(() => {
     const handler = (e: KeyboardEvent) => {
       if (e.key === "Escape" || e.key === "?") onClose();
@@ -25,16 +27,16 @@ export function ShortcutsModal({ onClose }: ShortcutsModalProps) {
       <div
         role="dialog"
         aria-modal="true"
-        aria-label="Keyboard shortcuts"
+        aria-label={copy.dialogLabel}
         className="relative glass-modal rounded-2xl w-full max-w-sm p-6 space-y-4"
       >
         <div className="flex items-center justify-between">
           <h2 className="text-lg font-semibold text-foreground">
-            Keyboard Shortcuts
+            {copy.title}
           </h2>
           <button
             type="button"
-            aria-label="Close"
+            aria-label={copy.close}
             onClick={onClose}
             className="size-11 -m-3 grid place-items-center rounded-lg text-muted hover:text-foreground transition-colors"
           >
@@ -60,14 +62,14 @@ export function ShortcutsModal({ onClose }: ShortcutsModalProps) {
               key={shortcut.key}
               className="flex items-center justify-between py-1.5"
             >
-              <span className="text-sm text-foreground">{shortcut.action}</span>
+              <span className="text-sm text-foreground">{copy.actions[shortcut.key]}</span>
               <kbd className="px-2 py-1 rounded-md bg-surface-active text-xs font-mono text-muted border border-border">
-                {shortcut.label}
+                {shortcut.label ?? copy.spaceKey}
               </kbd>
             </div>
           ))}
           <div className="flex items-center justify-between py-1.5">
-            <span className="text-sm text-foreground">Show shortcuts</span>
+            <span className="text-sm text-foreground">{copy.showShortcuts}</span>
             <kbd className="px-2 py-1 rounded-md bg-surface-active text-xs font-mono text-muted border border-border">
               ?
             </kbd>

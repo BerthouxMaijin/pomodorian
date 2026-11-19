@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import { SITE_URL } from "@/lib/constants";
+import { UI_LOCALES } from "@/lib/i18n/locales";
 import ConsentAnalytics from "@/components/ConsentAnalytics";
 import ServiceWorkerRegister from "@/components/pwa/ServiceWorkerRegister";
 import "./globals.css";
@@ -23,6 +24,16 @@ const geistMono = Geist_Mono({
 // change, so pages outside the app (blog, SEO, timers) follow it live too and
 // an explicit choice made in the app is never overridden.
 const THEME_INIT = `try{var m=matchMedia("(prefers-color-scheme: light)"),a=function(){var t;try{t=JSON.parse(localStorage.getItem("pomodorian_settings")||"null");t=t&&t.theme}catch(e){}document.documentElement.setAttribute("data-theme",t==="dark"||t==="light"?t:m.matches?"light":"dark")};a();m.addEventListener("change",a)}catch(e){}`;
+
+// Runs before first paint, on the home page only: resolves the app's language
+// with the same rules as resolveUiLocale (lib/i18n/locales.ts): an explicit
+// `language`, else a stored legacy `aiLanguage` other than "en", else the
+// browser. When it is not English, data-i18n-pending hides the translatable
+// text until the app has rendered it in that language (see globals.css). The
+// prerendered HTML, the one crawlers read, stays English.
+const LOCALE_INIT = `try{if(location.pathname==="/"){var L=${JSON.stringify(
+  UI_LOCALES
+)},k=function(v){return L.indexOf(v)>-1},s=null,r=null;try{s=JSON.parse(localStorage.getItem("pomodorian_settings")||"null")}catch(e){}if(s&&typeof s==="object"){if(k(s.language))r=s.language;else if(s.language===undefined&&k(s.aiLanguage)&&s.aiLanguage!=="en")r=s.aiLanguage}if(!r){var n=navigator.languages||[];for(var i=0;i<n.length&&!r;i++){var b=String(n[i]).toLowerCase().split(/[-_]/)[0];if(k(b))r=b}}if(r&&r!=="en")document.documentElement.setAttribute("data-i18n-pending","")}}catch(e){}`;
 
 export const viewport: Viewport = {
   themeColor: "#ef4444",
@@ -102,6 +113,7 @@ export default function RootLayout({
     >
       <body className="min-h-full flex flex-col relative overflow-x-hidden">
         <script id="theme-init" dangerouslySetInnerHTML={{ __html: THEME_INIT }} />
+        <script id="locale-init" dangerouslySetInnerHTML={{ __html: LOCALE_INIT }} />
         <link
           rel="alternate"
           type="application/rss+xml"

@@ -1,3 +1,5 @@
+import type { LanguageSetting } from "./i18n/locales";
+
 export type TimerMode = "pomodoro" | "shortBreak" | "longBreak";
 
 export type TimerStatus = "idle" | "running" | "paused";
@@ -31,7 +33,12 @@ export interface AppSettings extends TimerSettings {
   notificationsEnabled: boolean;
   showTimeInTitle: boolean;
   neverDumbAutoOpen: boolean;
-  aiLanguage: string;
+  /** Language of the app and the AI planner. Absent until chosen in Settings;
+   * "auto" follows the browser. Read through useUiLocale(), never directly. */
+  language?: LanguageSetting;
+  /** Legacy "AI Planner > Language". Only read by resolveUiLocale, which keeps
+   * a value other than "en" as the person's choice while `language` is unset. */
+  aiLanguage?: string;
 }
 
 export interface FocusSession {

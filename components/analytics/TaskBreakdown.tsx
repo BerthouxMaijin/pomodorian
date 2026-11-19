@@ -1,5 +1,10 @@
 "use client";
 
+import { useAppCopy } from "@/hooks/useAppCopy";
+import { useUiLocale } from "@/hooks/useUiLocale";
+import { UNTRACKED_TITLE } from "@/hooks/useAnalytics";
+import { formatNumber } from "@/lib/i18n/format";
+
 interface TaskBreakdownProps {
   tasks: {
     taskId: string | null;
@@ -10,10 +15,12 @@ interface TaskBreakdownProps {
 }
 
 export function TaskBreakdown({ tasks }: TaskBreakdownProps) {
+  const locale = useUiLocale();
+  const copy = useAppCopy();
   if (tasks.length === 0) {
     return (
       <div className="glass rounded-xl px-3 py-6 text-center text-sm text-muted">
-        No tasks tracked in this period.
+        {copy.report.noTasks}
       </div>
     );
   }
@@ -35,10 +42,13 @@ export function TaskBreakdown({ tasks }: TaskBreakdownProps) {
             />
             <div className="relative px-3 py-2 flex items-center gap-3">
               <span className="flex-1 text-sm text-foreground break-words">
-                {t.title}
+                {/* No task, or a deleted task without a stored title */}
+                {t.title === UNTRACKED_TITLE
+                  ? copy.tasks.untracked
+                  : t.title}
               </span>
               <span className="text-xs text-muted tabular-nums flex-shrink-0">
-                {t.pomodoros} · {t.minutes}m
+                {formatNumber(t.pomodoros, locale)} · {copy.units.minutes(formatNumber(t.minutes, locale))}
               </span>
             </div>
           </div>

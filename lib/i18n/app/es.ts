@@ -1,0 +1,158 @@
+import type { AppCopy } from "./types";
+
+export const es: AppCopy = {
+  modes: {
+    pomodoro: "Pomodoro",
+    shortBreak: "Pausa corta",
+    longBreak: "Pausa larga",
+  },
+  documentTitle: (time, mode) => `${time} - ${mode}`,
+
+  timer: {
+    modeGroupLabel: "Modo del temporizador",
+    remaining: (time) => `Quedan ${time}`,
+    start: "INICIAR",
+    pause: "PAUSA",
+    resume: "REANUDAR",
+    skipToBreak: "Saltar a la pausa",
+    skipBreak: "Saltar la pausa",
+    reset: "Reiniciar el temporizador",
+    timeToFocus: "¡Hora de concentrarse!",
+  },
+
+  notifications: {
+    breakTime: "¡Buen trabajo! Hora de una pausa.",
+    focusTime: "Se acabó la pausa. ¡A concentrarse!",
+  },
+
+  undo: {
+    stoppedAt: "Pomodoro detenido en",
+    undo: "Deshacer",
+    undoHint: "Deshacer (Z)",
+  },
+
+  header: {
+    blog: "Blog",
+    pomodorosCompleted: "Pomodoros completados",
+    analytics: "Estadísticas",
+    reportHint: "Informe (R)",
+    settings: "Ajustes",
+    settingsHint: "Ajustes (S)",
+  },
+
+  sounds: {
+    toggle: "Sonidos ambientales",
+    names: {
+      rain: "Lluvia",
+      forest: "Bosque",
+      fireplace: "Fuego",
+      cafe: "Cafetería",
+      lofi: "Lo-fi",
+    },
+    volume: (name) => `Volumen: ${name}`,
+  },
+
+  tasks: {
+    previousDay: "Día anterior",
+    nextDay: "Día siguiente",
+    today: "Hoy",
+    emptyToday: "Aún no hay tareas.",
+    emptyPast: "No hay tareas registradas este día.",
+    newTaskPlaceholder: "¿En qué estás trabajando?",
+    titleLabel: "Título de la tarea",
+    cancel: "Cancelar",
+    add: "Añadir",
+    addTask: "+ Añadir tarea",
+    planWithAI: "Planificar con IA",
+    linked: (title) =>
+      `${title}, vinculada al temporizador. Haz clic para desvincularla.`,
+    link: (title) => `${title}, vincular el temporizador a esta tarea`,
+    markDone: "Marcar como hecha",
+    markNotDone: "Marcar como pendiente",
+    edit: "Editar tarea",
+    delete: "Eliminar",
+    deleteTask: "Eliminar la tarea",
+    save: "Guardar",
+    reorder: (title) =>
+      `Reordenar ${title}. Usa las flechas arriba y abajo para moverla.`,
+    aiBadge: "IA",
+    untracked: "Concentración sin tarea",
+    deletedTask: "(tarea eliminada)",
+    estimateLabel: "Pomodoros",
+    estimateDecrease: "Un pomodoro menos",
+    estimateIncrease: "Un pomodoro más",
+  },
+
+  units: {
+    minutes: (n) => `${n}\u00a0min`,
+    hours: (n) => `${n}h`,
+    days: (n) => `${n}d`,
+  },
+
+  settings: {
+    title: "Ajustes",
+    close: "Cerrar",
+    timerSection: "Temporizador (minutos)",
+    longBreakInterval: "Pomodoros antes de la pausa larga",
+    automation: "Automatización",
+    autoStartBreaks: "Iniciar las pausas automáticamente",
+    autoStartPomodoros: "Iniciar los pomodoros automáticamente",
+    sound: "Sonido",
+    alarmSound: "Sonido de la alarma",
+    alarmSounds: {
+      gentle: "Suave",
+      classic: "Alerta digital",
+      bell: "Campana",
+    },
+    volume: "Volumen",
+    display: "Pantalla",
+    language: "Idioma",
+    languageAuto: "Automático",
+    showTimeInTitle: "Mostrar el tiempo en la pestaña",
+    notifications: "Notificaciones de escritorio",
+    theme: "Tema",
+    themeSystem: "Sistema",
+    themeLight: "Claro",
+    themeDark: "Oscuro",
+  },
+
+  shortcuts: {
+    title: "Atajos de teclado",
+    dialogLabel: "Atajos de teclado",
+    close: "Cerrar",
+    actions: {
+      " ": "Iniciar o pausar el temporizador",
+      "1": "Cambiar a Pomodoro",
+      "2": "Cambiar a pausa corta",
+      "3": "Cambiar a pausa larga",
+      s: "Abrir o cerrar los ajustes",
+      r: "Abrir o cerrar el informe",
+    },
+    spaceKey: "Espacio",
+    showShortcuts: "Mostrar los atajos",
+  },
+
+  report: {
+    title: "Estadísticas",
+    dialogLabel: "Informe",
+    close: "Cerrar",
+    periods: { day: "Día", week: "Semana", month: "Mes" },
+    previousPeriod: "Periodo anterior",
+    nextPeriod: "Periodo siguiente",
+    now: "Ahora",
+    statFocus: "Enfoque",
+    statPomodoros: "Pomos",
+    statTasks: "Tareas",
+    statStreak: "Racha",
+    statAllTime: "En total",
+    noSessions: "No hay sesiones de concentración en este periodo.",
+    noTasks: "No hay tareas registradas en este periodo.",
+    last20Weeks: "Últimas 20 semanas",
+    export: "Exportar",
+    heatmapTitle: "Historial de concentración",
+    less: "Menos",
+    more: "Más",
+    cellTitle: (date, minutes) => `${date}: ${minutes} de concentración`,
+    barTitle: (date, minutes) => `${date}: ${minutes}`,
+  },
+};

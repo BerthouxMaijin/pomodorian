@@ -3,14 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { cn } from "@/lib/utils";
 import { EstimateStepper, clampEstimate } from "./EstimateStepper";
-
-const COPY = {
-  titleLabel: "Task title",
-  delete: "Delete",
-  deleteLabel: "Delete task",
-  cancel: "Cancel",
-  save: "Save",
-};
+import { useAppCopy } from "@/hooks/useAppCopy";
 
 export interface TaskChanges {
   title: string;
@@ -35,6 +28,14 @@ export function TaskEditor({
   onCancel,
   onDelete,
 }: TaskEditorProps) {
+  const tasksCopy = useAppCopy().tasks;
+  const COPY = {
+    titleLabel: tasksCopy.titleLabel,
+    delete: tasksCopy.delete,
+    deleteLabel: tasksCopy.deleteTask,
+    cancel: tasksCopy.cancel,
+    save: tasksCopy.save,
+  };
   const [title, setTitle] = useState(initialTitle);
   const [estimate, setEstimate] = useState(() => clampEstimate(initialEstimate));
   const inputRef = useRef<HTMLInputElement>(null);

@@ -6,6 +6,7 @@ import { TaskItem } from "./TaskItem";
 import type { TaskChanges } from "./TaskEditor";
 import { cn } from "@/lib/utils";
 import type { DisplayTask } from "@/hooks/useTaskHistory";
+import { useAppCopy } from "@/hooks/useAppCopy";
 
 interface SortableTaskItemProps {
   task: DisplayTask;
@@ -32,6 +33,7 @@ export function SortableTaskItem({
   onEdit,
   onSetActive,
 }: SortableTaskItemProps) {
+  const copy = useAppCopy().tasks;
   const dragControls = useDragControls();
   const [isDragging, setIsDragging] = useState(false);
 
@@ -58,7 +60,7 @@ export function SortableTaskItem({
           canReorder ? (
             <button
               type="button"
-              aria-label={`Reorder ${task.title}. Use arrow up and arrow down to move it.`}
+              aria-label={copy.reorder(task.title)}
               onPointerDown={(e) => {
                 e.stopPropagation();
                 dragControls.start(e);
