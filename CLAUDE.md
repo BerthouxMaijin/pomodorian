@@ -45,11 +45,14 @@ hooks/
   useSound.ts           # Ambient + alarm audio management
   useLocalStorage.ts    # Generic localStorage hook
   useWakeLock.ts        # Keeps the screen awake while a timer runs
+  useUiLocale.ts        # Active language (setting, legacy setting, browser)
+  useAppCopy.ts         # Translated copy for the app core
 lib/
   types.ts              # Domain types + STORAGE_KEYS
   constants.ts          # Defaults, modes, sounds, keyboard shortcuts
   utils.ts              # formatTime, cn, generateId, getDurationForMode
   ai-prompt.ts          # buildAIPlannerPrompt (multilingual)
+  i18n/                 # locales.ts, app/ (AppCopy + one file per language), format.ts
   notify.ts             # End-of-timer notification (service worker first)
   seo/pages.ts          # SEO landing page definitions
   blog/reader.ts        # Markdown article reader (fs-based, SSG only)
