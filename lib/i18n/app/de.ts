@@ -132,6 +132,30 @@ export const de: AppCopy = {
     showShortcuts: "Tastenkürzel anzeigen",
   },
 
+  backup: {
+    title: "Daten",
+    export: "Backup exportieren",
+    import: "Backup importieren",
+    fileLabel: "Backup-Datei",
+    note: "Deine Daten bleiben in diesem Browser. Die exportierte Datei ist deine einzige Kopie.",
+    replaceWarning: "Damit werden die Daten auf diesem Gerät ersetzt.",
+    summary: (tasks, pomodoros, date) => {
+      const parts = `${tasks} ${tasks === 1 ? "Aufgabe" : "Aufgaben"}, ${pomodoros} ${pomodoros === 1 ? "Pomodoro" : "Pomodoros"}`;
+      return date ? `Backup vom ${date}: ${parts}.` : `Backup: ${parts}.`;
+    },
+    replace: "Ersetzen",
+    cancel: "Abbrechen",
+    errors: {
+      tooLarge: "Diese Datei ist zu groß für ein Pomodorian-Backup. Es wurde nichts geändert.",
+      notJson: "Diese Datei kann nicht gelesen werden. Wähle ein Pomodorian-Backup (.json). Es wurde nichts geändert.",
+      notBackup: "Diese Datei ist kein Pomodorian-Backup. Es wurde nichts geändert.",
+      unsupported: "Dieses Backup stammt aus einer neueren Version von Pomodorian. Lade die Seite neu und versuche es noch einmal. Es wurde nichts geändert.",
+      invalid: "Dieses Backup ist beschädigt oder unvollständig. Es wurde nichts geändert.",
+      readFailed: "Die Datei konnte nicht gelesen werden. Es wurde nichts geändert.",
+      writeFailed: "Die Daten konnten in diesem Browser nicht gespeichert werden. Es wurde nichts geändert.",
+    },
+  },
+
   report: {
     title: "Statistik",
     dialogLabel: "Bericht",
