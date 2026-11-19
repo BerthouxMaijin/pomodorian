@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import { Analytics } from "@vercel/analytics/next";
 import { SITE_URL } from "@/lib/constants";
 import ConsentAnalytics from "@/components/ConsentAnalytics";
+import ServiceWorkerRegister from "@/components/pwa/ServiceWorkerRegister";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -106,6 +107,7 @@ export default function RootLayout({
         {children}
         <Analytics />
         <ConsentAnalytics />
+        <ServiceWorkerRegister />
       </body>
     </html>
   );
